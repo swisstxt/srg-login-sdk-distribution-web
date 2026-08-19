@@ -18,7 +18,7 @@ Add the dependency (npm resolves it against this repo's git tags via a semver ra
 // package.json
 {
   "dependencies": {
-    "@swisstxt/srg-login-sdk": "github:swisstxt/srg-login-sdk-distribution-web#semver:^1.0.0"
+    "@swisstxt/srg-login-sdk": "github:swisstxt/srg-login-sdk-distribution-web#semver:1.0.0-rc.2"
   }
 }
 ```
@@ -27,14 +27,18 @@ Add the dependency (npm resolves it against this repo's git tags via a semver ra
 npm install
 ```
 
+> **Pre-release phase:** only pre-releases (`v1.0.0-rc.N`) are published so far, so pin an **exact**
+> version as above. A range like `#semver:^1.0.0` will match only once the stable `1.0.0` ships
+> (semver excludes pre-releases from ranges).
+
 Then import it in your app:
 
 ```ts
-import SrgLoginSdk from "@swisstxt/srg-login-sdk";
+import { SrgLoginWeb } from "@swisstxt/srg-login-sdk";
 ```
 
 The package is a browser-only **ES module** with generated **TypeScript** definitions
-(`srg-login-sdk.d.mts`).
+(`srg-login-sdk.d.mts`), exposed as flat named exports (`SrgLoginWeb`, `LoginResultJs`, `UserInfoJs`).
 
 ## Documentation
 
@@ -45,7 +49,7 @@ The package is a browser-only **ES module** with generated **TypeScript** defini
 ## Versioning
 
 - Each release is a git **tag** `vX.Y.Z` (semantic versioning), matching the SDK's unified version.
-- Pin a range (`#semver:^1.0.0`) or an exact version (`#semver:1.0.0`).
+- During pre-release, pin an **exact** version (e.g. `#semver:1.0.0-rc.2`). Once stable `1.0.0` ships, a range like `#semver:^1.0.0` works.
 - Pre-releases follow `vX.Y.Z-rc.N` and must be opted into explicitly (e.g. `#semver:1.0.0-rc.2`).
 
 ## Repository layout
