@@ -45,7 +45,7 @@ function formatMessage(severity, tag, message) {
     return _Message___get_message__impl__3t69n4(message);
   var sb = StringBuilder_init_$Create$();
   if (!(severity == null)) {
-    sb.q(this.h40(severity)).q(' ');
+    sb.q(this.j40(severity)).q(' ');
   }
   var tmp_1;
   var tmp_2 = tag;
@@ -57,7 +57,7 @@ function formatMessage(severity, tag, message) {
     tmp_1 = false;
   }
   if (tmp_1) {
-    sb.q(this.i40(tag)).q(' ');
+    sb.q(this.k40(tag)).q(' ');
   }
   sb.q(_Message___get_message__impl__3t69n4(message));
   return sb.toString();
@@ -76,18 +76,18 @@ function get_DEFAULT_MIN_SEVERITY() {
 }
 var DEFAULT_MIN_SEVERITY;
 function BaseLogger(config) {
-  this.w3z_1 = config;
+  this.y3z_1 = config;
 }
-protoOf(BaseLogger).x3z = function () {
-  return this.w3z_1;
+protoOf(BaseLogger).z3z = function () {
+  return this.y3z_1;
 };
-protoOf(BaseLogger).y3z = function (severity, tag, throwable, message) {
+protoOf(BaseLogger).a40 = function (severity, tag, throwable, message) {
   // Inline function 'kotlin.collections.forEach' call
-  var _iterator__ex2g4s = this.x3z().z3z().t();
+  var _iterator__ex2g4s = this.z3z().b40().t();
   while (_iterator__ex2g4s.u()) {
     var element = _iterator__ex2g4s.v();
-    if (element.b40(tag, severity)) {
-      element.a40(severity, message, tag, throwable);
+    if (element.d40(tag, severity)) {
+      element.c40(severity, message, tag, throwable);
     }
   }
 };
@@ -101,10 +101,10 @@ function _init_properties_BaseLogger_kt__lobnq7() {
 function CommonWriter(messageStringFormatter) {
   messageStringFormatter = messageStringFormatter === VOID ? DefaultFormatter_instance : messageStringFormatter;
   LogWriter.call(this);
-  this.c40_1 = messageStringFormatter;
+  this.e40_1 = messageStringFormatter;
 }
-protoOf(CommonWriter).a40 = function (severity, message, tag, throwable) {
-  println(this.c40_1.d40(severity, _Tag___init__impl__opaqzl(tag), _Message___init__impl__p3e8y6(message)));
+protoOf(CommonWriter).c40 = function (severity, message, tag, throwable) {
+  println(this.e40_1.f40(severity, _Tag___init__impl__opaqzl(tag), _Message___init__impl__p3e8y6(message)));
   if (throwable == null)
     null;
   else {
@@ -113,27 +113,27 @@ protoOf(CommonWriter).a40 = function (severity, message, tag, throwable) {
 };
 function LogWriter() {
 }
-protoOf(LogWriter).b40 = function (tag, severity) {
+protoOf(LogWriter).d40 = function (tag, severity) {
   return true;
 };
 function StaticConfig(minSeverity, logWriterList) {
   minSeverity = minSeverity === VOID ? get_DEFAULT_MIN_SEVERITY() : minSeverity;
   logWriterList = logWriterList === VOID ? listOf(new CommonWriter()) : logWriterList;
-  this.e40_1 = minSeverity;
-  this.f40_1 = logWriterList;
+  this.g40_1 = minSeverity;
+  this.h40_1 = logWriterList;
 }
-protoOf(StaticConfig).g40 = function () {
-  return this.e40_1;
+protoOf(StaticConfig).i40 = function () {
+  return this.g40_1;
 };
-protoOf(StaticConfig).z3z = function () {
-  return this.f40_1;
+protoOf(StaticConfig).b40 = function () {
+  return this.h40_1;
 };
 protoOf(StaticConfig).toString = function () {
-  return 'StaticConfig(minSeverity=' + this.e40_1.toString() + ', logWriterList=' + toString(this.f40_1) + ')';
+  return 'StaticConfig(minSeverity=' + this.g40_1.toString() + ', logWriterList=' + toString(this.h40_1) + ')';
 };
 protoOf(StaticConfig).hashCode = function () {
-  var result = this.e40_1.hashCode();
-  result = imul(result, 31) + hashCode(this.f40_1) | 0;
+  var result = this.g40_1.hashCode();
+  result = imul(result, 31) + hashCode(this.h40_1) | 0;
   return result;
 };
 protoOf(StaticConfig).equals = function (other) {
@@ -142,9 +142,9 @@ protoOf(StaticConfig).equals = function (other) {
   if (!(other instanceof StaticConfig))
     return false;
   var tmp0_other_with_cast = other instanceof StaticConfig ? other : THROW_CCE();
-  if (!this.e40_1.equals(tmp0_other_with_cast.e40_1))
+  if (!this.g40_1.equals(tmp0_other_with_cast.g40_1))
     return false;
-  if (!equals(this.f40_1, tmp0_other_with_cast.f40_1))
+  if (!equals(this.h40_1, tmp0_other_with_cast.h40_1))
     return false;
   return true;
 };
@@ -171,21 +171,21 @@ function Tag__hashCode_impl_848yrc($this) {
 function Tag__equals_impl_6ocp5g($this, other) {
   if (!(other instanceof Tag))
     return false;
-  if (!($this === (other instanceof Tag ? other.j40_1 : THROW_CCE())))
+  if (!($this === (other instanceof Tag ? other.l40_1 : THROW_CCE())))
     return false;
   return true;
 }
 function Tag(tag) {
-  this.j40_1 = tag;
+  this.l40_1 = tag;
 }
 protoOf(Tag).toString = function () {
-  return Tag__toString_impl_tvevk7(this.j40_1);
+  return Tag__toString_impl_tvevk7(this.l40_1);
 };
 protoOf(Tag).hashCode = function () {
-  return Tag__hashCode_impl_848yrc(this.j40_1);
+  return Tag__hashCode_impl_848yrc(this.l40_1);
 };
 protoOf(Tag).equals = function (other) {
-  return Tag__equals_impl_6ocp5g(this.j40_1, other);
+  return Tag__equals_impl_6ocp5g(this.l40_1, other);
 };
 function _Message___init__impl__p3e8y6(message) {
   return message;
@@ -248,11 +248,11 @@ function ConsoleWriter_init_$Create$(messageStringFormatter) {
 }
 function ConsoleWriter(messageStringFormatter, console) {
   LogWriter.call(this);
-  this.k40_1 = messageStringFormatter;
-  this.l40_1 = console;
+  this.m40_1 = messageStringFormatter;
+  this.n40_1 = console;
 }
-protoOf(ConsoleWriter).a40 = function (severity, message, tag, throwable) {
-  var output = this.k40_1.d40(null, _Tag___init__impl__opaqzl(tag), _Message___init__impl__p3e8y6(message));
+protoOf(ConsoleWriter).c40 = function (severity, message, tag, throwable) {
+  var output = this.m40_1.f40(null, _Tag___init__impl__opaqzl(tag), _Message___init__impl__p3e8y6(message));
   if (throwable == null)
     null;
   else {
@@ -262,29 +262,29 @@ protoOf(ConsoleWriter).a40 = function (severity, message, tag, throwable) {
   switch (severity.u2_1) {
     case 5:
     case 4:
-      this.l40_1.z3x(output);
+      this.n40_1.b3y(output);
       break;
     case 3:
-      this.l40_1.f3y(output);
+      this.n40_1.h3y(output);
       break;
     case 2:
-      this.l40_1.m40(output);
+      this.n40_1.o40(output);
       break;
     case 1:
     case 0:
-      this.l40_1.n40(output);
+      this.n40_1.p40(output);
       break;
   }
 };
 function JsMutableLoggerConfig(logWriters) {
-  this.o40_1 = get_DEFAULT_MIN_SEVERITY();
-  this.p40_1 = logWriters;
+  this.q40_1 = get_DEFAULT_MIN_SEVERITY();
+  this.r40_1 = logWriters;
 }
-protoOf(JsMutableLoggerConfig).g40 = function () {
-  return this.o40_1;
+protoOf(JsMutableLoggerConfig).i40 = function () {
+  return this.q40_1;
 };
-protoOf(JsMutableLoggerConfig).z3z = function () {
-  return this.p40_1;
+protoOf(JsMutableLoggerConfig).b40 = function () {
+  return this.r40_1;
 };
 function mutableLoggerConfigInit(logWriters) {
   return new JsMutableLoggerConfig(logWriters);
@@ -295,16 +295,16 @@ function platformLogWriter(messageStringFormatter) {
 }
 function ConsoleActual() {
 }
-protoOf(ConsoleActual).z3x = function (output) {
+protoOf(ConsoleActual).b3y = function (output) {
   console.error(output);
 };
-protoOf(ConsoleActual).f3y = function (output) {
+protoOf(ConsoleActual).h3y = function (output) {
   console.warn(output);
 };
-protoOf(ConsoleActual).m40 = function (output) {
+protoOf(ConsoleActual).o40 = function (output) {
   console.info(output);
 };
-protoOf(ConsoleActual).n40 = function (output) {
+protoOf(ConsoleActual).p40 = function (output) {
   console.log(output);
 };
 var ConsoleActual_instance;
@@ -312,9 +312,9 @@ function ConsoleActual_getInstance() {
   return ConsoleActual_instance;
 }
 //region block: post-declaration
-protoOf(DefaultFormatter).h40 = formatSeverity;
-protoOf(DefaultFormatter).i40 = formatTag;
-protoOf(DefaultFormatter).d40 = formatMessage;
+protoOf(DefaultFormatter).j40 = formatSeverity;
+protoOf(DefaultFormatter).k40 = formatTag;
+protoOf(DefaultFormatter).f40 = formatMessage;
 //endregion
 //region block: init
 DefaultFormatter_instance = new DefaultFormatter();

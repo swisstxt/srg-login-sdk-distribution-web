@@ -26,21 +26,21 @@ initMetadataForClass(SHA256, 'SHA256', SHA256_init_$Create$, Bit32Digest);
 function Bit32Digest_init_$Init$(bitStrength, h, $this) {
   Digest_init_$Init$('SHA-' + bitStrength, 64, bitStrength / 8 | 0, $this);
   Bit32Digest.call($this);
-  $this.e42_1 = h;
-  $this.f42_1 = new Int32Array(64);
+  $this.g42_1 = h;
+  $this.h42_1 = new Int32Array(64);
   var tmp = $this;
   // Inline function 'kotlin.collections.copyOf' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.g42_1 = h.slice();
-  $this.h42_1 = Bit32_init_$Create$(64);
+  tmp.i42_1 = h.slice();
+  $this.j42_1 = Bit32_init_$Create$(64);
   return $this;
 }
 function Companion() {
   Companion_instance = this;
-  this.i42_1 = 64;
+  this.k42_1 = 64;
   var tmp = this;
   // Inline function 'kotlin.intArrayOf' call
-  tmp.j42_1 = new Int32Array([1116352408, 1899447441, -1245643825, -373957723, 961987163, 1508970993, -1841331548, -1424204075, -670586216, 310598401, 607225278, 1426881987, 1925078388, -2132889090, -1680079193, -1046744716, -459576895, -272742522, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, -1740746414, -1473132947, -1341970488, -1084653625, -958395405, -710438585, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, -2117940946, -1838011259, -1564481375, -1474664885, -1035236496, -949202525, -778901479, -694614492, -200395387, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, -2067236844, -1933114872, -1866530822, -1538233109, -1090935817, -965641998]);
+  tmp.l42_1 = new Int32Array([1116352408, 1899447441, -1245643825, -373957723, 961987163, 1508970993, -1841331548, -1424204075, -670586216, 310598401, 607225278, 1426881987, 1925078388, -2132889090, -1680079193, -1046744716, -459576895, -272742522, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, -1740746414, -1473132947, -1341970488, -1084653625, -958395405, -710438585, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, -2117940946, -1838011259, -1564481375, -1474664885, -1035236496, -949202525, -778901479, -694614492, -200395387, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, -2067236844, -1933114872, -1866530822, -1538233109, -1090935817, -965641998]);
 }
 var Companion_instance;
 function Companion_getInstance() {
@@ -48,12 +48,12 @@ function Companion_getInstance() {
     new Companion();
   return Companion_instance;
 }
-protoOf(Bit32Digest).c41 = function (input, offset) {
-  var x = this.f42_1;
+protoOf(Bit32Digest).e41 = function (input, offset) {
+  var x = this.h42_1;
   Big_getInstance();
   // Inline function 'org.kotlincrypto.bitops.endian.Big.bePackIntoUnsafe' call
   var sourceIndexEnd = offset + 64 | 0;
-  Big_getInstance().z41(input, x, 0, offset, sourceIndexEnd);
+  Big_getInstance().b42(input, x, 0, offset, sourceIndexEnd);
   var inductionVariable = 16;
   if (inductionVariable < 64)
     do {
@@ -68,8 +68,8 @@ protoOf(Bit32Digest).c41 = function (input, offset) {
       x[i] = ((x16 + s0 | 0) + x7 | 0) + s1 | 0;
     }
      while (inductionVariable < 64);
-  var k = Companion_getInstance().j42_1;
-  var state = this.g42_1;
+  var k = Companion_getInstance().l42_1;
+  var state = this.i42_1;
   var a = state[0];
   var b = state[1];
   var c = state[2];
@@ -107,40 +107,40 @@ protoOf(Bit32Digest).c41 = function (input, offset) {
   state[5] = state[5] + f | 0;
   state[6] = state[6] + g | 0;
   state[7] = state[7] + h | 0;
-  this.h42_1.n41();
+  this.j42_1.p41();
 };
-protoOf(Bit32Digest).a41 = function (buf, bufPos) {
-  var digest = new Int8Array(this.w40());
-  this.k42(digest, 0, buf, bufPos);
+protoOf(Bit32Digest).c41 = function (buf, bufPos) {
+  var digest = new Int8Array(this.y40());
+  this.m42(digest, 0, buf, bufPos);
   return digest;
 };
-protoOf(Bit32Digest).k42 = function (dest, destOffset, buf, bufPos) {
-  var tmp0_container = this.h42_1.o41(bufPos).l41();
+protoOf(Bit32Digest).m42 = function (dest, destOffset, buf, bufPos) {
+  var tmp0_container = this.j42_1.q41(bufPos).n41();
   var bitsLo = tmp0_container.re();
   var bitsHi = tmp0_container.se();
   buf[bufPos] = -128;
   if ((bufPos + 1 | 0) > 56) {
-    this.c41(buf, 0);
+    this.e41(buf, 0);
     fill(buf, 0, 0, 56);
   }
   // Inline function 'org.kotlincrypto.bitops.endian.Big.bePackIntoUnsafe' call
   Big_getInstance();
-  Big_getInstance().x41(bitsHi, buf, 56);
+  Big_getInstance().z41(bitsHi, buf, 56);
   // Inline function 'org.kotlincrypto.bitops.endian.Big.bePackIntoUnsafe' call
   Big_getInstance();
-  Big_getInstance().x41(bitsLo, buf, 60);
-  this.c41(buf, 0);
+  Big_getInstance().z41(bitsLo, buf, 60);
+  this.e41(buf, 0);
   Big_getInstance();
-  var tmp2 = this.g42_1;
+  var tmp2 = this.i42_1;
   // Inline function 'org.kotlincrypto.bitops.endian.Big.bePackIntoUnsafe' call
-  var sourceIndexEnd = this.w40() / 4 | 0;
-  Big_getInstance().y41(tmp2, dest, destOffset, 0, sourceIndexEnd);
+  var sourceIndexEnd = this.y40() / 4 | 0;
+  Big_getInstance().a42(tmp2, dest, destOffset, 0, sourceIndexEnd);
 };
-protoOf(Bit32Digest).b41 = function () {
-  fill_0(this.f42_1, 0);
-  var tmp0 = this.e42_1;
+protoOf(Bit32Digest).d41 = function () {
+  fill_0(this.h42_1, 0);
+  var tmp0 = this.g42_1;
   // Inline function 'kotlin.collections.copyInto' call
-  var destination = this.g42_1;
+  var destination = this.i42_1;
   var endIndex = tmp0.length;
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
@@ -148,13 +148,13 @@ protoOf(Bit32Digest).b41 = function () {
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
   arrayCopy(tmp, destination, 0, 0, endIndex);
-  this.h42_1.d2j();
+  this.j42_1.e2j();
 };
 function Bit32Digest() {
   Companion_getInstance();
 }
 function SHA256_init_$Init$($this) {
-  Bit32Digest_init_$Init$(256, Companion_getInstance_0().l42_1, $this);
+  Bit32Digest_init_$Init$(256, Companion_getInstance_0().n42_1, $this);
   SHA256.call($this);
   return $this;
 }
@@ -165,7 +165,7 @@ function Companion_0() {
   Companion_instance_0 = this;
   var tmp = this;
   // Inline function 'kotlin.intArrayOf' call
-  tmp.l42_1 = new Int32Array([1779033703, -1150833019, 1013904242, -1521486534, 1359893119, -1694144372, 528734635, 1541459225]);
+  tmp.n42_1 = new Int32Array([1779033703, -1150833019, 1013904242, -1521486534, 1359893119, -1694144372, 528734635, 1541459225]);
 }
 var Companion_instance_0;
 function Companion_getInstance_0() {

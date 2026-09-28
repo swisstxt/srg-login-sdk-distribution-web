@@ -30,7 +30,7 @@ function Logger(config, tag) {
   Companion_getInstance();
   tag = tag === VOID ? '' : tag;
   BaseLogger.call(this, config);
-  this.r40_1 = tag;
+  this.t40_1 = tag;
 }
 var defaultTag;
 //region block: init

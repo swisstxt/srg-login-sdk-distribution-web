@@ -16,7 +16,7 @@ function get_DefaultJson() {
 var DefaultJson;
 function json(_this__u8e3s4, json, contentType) {
   json = json === VOID ? get_DefaultJson() : json;
-  contentType = contentType === VOID ? Application_getInstance().x2x_1 : contentType;
+  contentType = contentType === VOID ? Application_getInstance().y2x_1 : contentType;
   _init_properties_JsonSupport_kt__yf438r();
   serialization(_this__u8e3s4, contentType, json);
 }

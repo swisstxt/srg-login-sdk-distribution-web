@@ -21,7 +21,7 @@ function Big() {
   Big_instance = this;
   Endian.call(this);
 }
-protoOf(Big).x41 = function (source, dest, destOffset) {
+protoOf(Big).z41 = function (source, dest, destOffset) {
   // Inline function 'org.kotlincrypto.bitops.endian.internal.packBEInt' call
   dest[destOffset] = toByte(source >>> 24 | 0);
   dest[destOffset + 1 | 0] = toByte(source >>> 16 | 0);
@@ -29,7 +29,7 @@ protoOf(Big).x41 = function (source, dest, destOffset) {
   dest[destOffset + 3 | 0] = toByte(source);
   return dest;
 };
-protoOf(Big).y41 = function (source, dest, destOffset, sourceIndexStart, sourceIndexEnd) {
+protoOf(Big).a42 = function (source, dest, destOffset, sourceIndexStart, sourceIndexEnd) {
   // Inline function 'org.kotlincrypto.bitops.endian.internal.packArray' call
   var destPos = destOffset;
   var sourcePos = sourceIndexStart;
@@ -47,7 +47,7 @@ protoOf(Big).y41 = function (source, dest, destOffset, sourceIndexStart, sourceI
   }
   return dest;
 };
-protoOf(Big).z41 = function (source, dest, destOffset, sourceIndexStart, sourceIndexEnd) {
+protoOf(Big).b42 = function (source, dest, destOffset, sourceIndexStart, sourceIndexEnd) {
   // Inline function 'org.kotlincrypto.bitops.endian.internal.packArray' call
   var destPos = destOffset;
   var sourcePos = sourceIndexStart;

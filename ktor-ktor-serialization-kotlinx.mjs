@@ -90,7 +90,7 @@ function extensions(format) {
   var _iterator__ex2g4s = tmp0.t();
   while (_iterator__ex2g4s.u()) {
     var element = _iterator__ex2g4s.v();
-    var tmp0_safe_receiver = element.j3b(format);
+    var tmp0_safe_receiver = element.l3b(format);
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -101,24 +101,24 @@ function extensions(format) {
   return destination;
 }
 function serialization(_this__u8e3s4, contentType, format) {
-  _this__u8e3s4.d39(contentType, new KotlinxSerializationConverter(format));
+  _this__u8e3s4.f39(contentType, new KotlinxSerializationConverter(format));
 }
 function KotlinxSerializationConverter$serializeNullable$o$collect$slambda($$this$unsafeFlow, $contentType, $charset, $typeInfo, $value, resultContinuation) {
-  this.s3b_1 = $$this$unsafeFlow;
-  this.t3b_1 = $contentType;
-  this.u3b_1 = $charset;
-  this.v3b_1 = $typeInfo;
-  this.w3b_1 = $value;
+  this.u3b_1 = $$this$unsafeFlow;
+  this.v3b_1 = $contentType;
+  this.w3b_1 = $charset;
+  this.x3b_1 = $typeInfo;
+  this.y3b_1 = $value;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).i3a = function (value, $completion) {
-  var tmp = this.j3a(value, $completion);
+protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).k3a = function (value, $completion) {
+  var tmp = this.l3a(value, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).z8 = function (p1, $completion) {
-  return this.i3a((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
+  return this.k3a((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -128,11 +128,11 @@ protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).q8 = 
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          var tmp0 = this.s3b_1;
-          var tmp2 = this.x3b_1;
-          this.y3b_1 = tmp0;
+          var tmp0 = this.u3b_1;
+          var tmp2 = this.z3b_1;
+          this.a3c_1 = tmp0;
           this.i8_1 = 1;
-          suspendResult = tmp2.z3b(this.t3b_1, this.u3b_1, this.v3b_1, this.w3b_1, this);
+          suspendResult = tmp2.b3c(this.v3b_1, this.w3b_1, this.x3b_1, this.y3b_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -141,7 +141,7 @@ protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).q8 = 
         case 1:
           var ARGUMENT = suspendResult;
           this.i8_1 = 2;
-          suspendResult = this.y3b_1.j1x(ARGUMENT, this);
+          suspendResult = this.a3c_1.k1x(ARGUMENT, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -163,23 +163,23 @@ protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).q8 = 
     }
    while (true);
 };
-protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).j3a = function (value, completion) {
-  var i = new KotlinxSerializationConverter$serializeNullable$o$collect$slambda(this.s3b_1, this.t3b_1, this.u3b_1, this.v3b_1, this.w3b_1, completion);
-  i.x3b_1 = value;
+protoOf(KotlinxSerializationConverter$serializeNullable$o$collect$slambda).l3a = function (value, completion) {
+  var i = new KotlinxSerializationConverter$serializeNullable$o$collect$slambda(this.u3b_1, this.v3b_1, this.w3b_1, this.x3b_1, this.y3b_1, completion);
+  i.z3b_1 = value;
   return i;
 };
 function KotlinxSerializationConverter$serializeNullable$o$collect$slambda_0($$this$unsafeFlow, $contentType, $charset, $typeInfo, $value, resultContinuation) {
   var i = new KotlinxSerializationConverter$serializeNullable$o$collect$slambda($$this$unsafeFlow, $contentType, $charset, $typeInfo, $value, resultContinuation);
   var l = function (value, $completion) {
-    return i.i3a(value, $completion);
+    return i.k3a(value, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function $collectCOROUTINE$(_this__u8e3s4, collector, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.i3c_1 = _this__u8e3s4;
-  this.j3c_1 = collector;
+  this.k3c_1 = _this__u8e3s4;
+  this.l3c_1 = collector;
 }
 protoOf($collectCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -189,10 +189,10 @@ protoOf($collectCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 2;
-          var $this$unsafeFlow = this.j3c_1;
+          var $this$unsafeFlow = this.l3c_1;
           this.i8_1 = 1;
-          var tmp_0 = KotlinxSerializationConverter$serializeNullable$o$collect$slambda_0($this$unsafeFlow, this.i3c_1.l3c_1, this.i3c_1.m3c_1, this.i3c_1.n3c_1, this.i3c_1.o3c_1, null);
-          suspendResult = this.i3c_1.k3c_1.v1w(new sam$kotlinx_coroutines_flow_FlowCollector$0(tmp_0), this);
+          var tmp_0 = KotlinxSerializationConverter$serializeNullable$o$collect$slambda_0($this$unsafeFlow, this.k3c_1.n3c_1, this.k3c_1.o3c_1, this.k3c_1.p3c_1, this.k3c_1.q3c_1, null);
+          suspendResult = this.k3c_1.m3c_1.w1w(new sam$kotlinx_coroutines_flow_FlowCollector$0(tmp_0), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -215,20 +215,20 @@ protoOf($collectCOROUTINE$).q8 = function () {
    while (true);
 };
 function KotlinxSerializationConverter$deserialize$o$collect$slambda($$this$unsafeFlow, $charset, $typeInfo, $content, resultContinuation) {
-  this.x3c_1 = $$this$unsafeFlow;
-  this.y3c_1 = $charset;
-  this.z3c_1 = $typeInfo;
-  this.a3d_1 = $content;
+  this.z3c_1 = $$this$unsafeFlow;
+  this.a3d_1 = $charset;
+  this.b3d_1 = $typeInfo;
+  this.c3d_1 = $content;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).i3a = function (value, $completion) {
-  var tmp = this.j3a(value, $completion);
+protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).k3a = function (value, $completion) {
+  var tmp = this.l3a(value, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).z8 = function (p1, $completion) {
-  return this.i3a((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
+  return this.k3a((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -238,11 +238,11 @@ protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).q8 = functi
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          var tmp0 = this.x3c_1;
-          var tmp2 = this.b3d_1;
-          this.c3d_1 = tmp0;
+          var tmp0 = this.z3c_1;
+          var tmp2 = this.d3d_1;
+          this.e3d_1 = tmp0;
           this.i8_1 = 1;
-          suspendResult = tmp2.g39(this.y3c_1, this.z3c_1, this.a3d_1, this);
+          suspendResult = tmp2.i39(this.a3d_1, this.b3d_1, this.c3d_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -251,7 +251,7 @@ protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).q8 = functi
         case 1:
           var ARGUMENT = suspendResult;
           this.i8_1 = 2;
-          suspendResult = this.c3d_1.j1x(ARGUMENT, this);
+          suspendResult = this.e3d_1.k1x(ARGUMENT, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -273,23 +273,23 @@ protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).q8 = functi
     }
    while (true);
 };
-protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).j3a = function (value, completion) {
-  var i = new KotlinxSerializationConverter$deserialize$o$collect$slambda(this.x3c_1, this.y3c_1, this.z3c_1, this.a3d_1, completion);
-  i.b3d_1 = value;
+protoOf(KotlinxSerializationConverter$deserialize$o$collect$slambda).l3a = function (value, completion) {
+  var i = new KotlinxSerializationConverter$deserialize$o$collect$slambda(this.z3c_1, this.a3d_1, this.b3d_1, this.c3d_1, completion);
+  i.d3d_1 = value;
   return i;
 };
 function KotlinxSerializationConverter$deserialize$o$collect$slambda_0($$this$unsafeFlow, $charset, $typeInfo, $content, resultContinuation) {
   var i = new KotlinxSerializationConverter$deserialize$o$collect$slambda($$this$unsafeFlow, $charset, $typeInfo, $content, resultContinuation);
   var l = function (value, $completion) {
-    return i.i3a(value, $completion);
+    return i.k3a(value, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function $collectCOROUTINE$_0(_this__u8e3s4, collector, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.l3d_1 = _this__u8e3s4;
-  this.m3d_1 = collector;
+  this.n3d_1 = _this__u8e3s4;
+  this.o3d_1 = collector;
 }
 protoOf($collectCOROUTINE$_0).q8 = function () {
   var suspendResult = this.k8_1;
@@ -299,10 +299,10 @@ protoOf($collectCOROUTINE$_0).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 2;
-          var $this$unsafeFlow = this.m3d_1;
+          var $this$unsafeFlow = this.o3d_1;
           this.i8_1 = 1;
-          var tmp_0 = KotlinxSerializationConverter$deserialize$o$collect$slambda_0($this$unsafeFlow, this.l3d_1.o3d_1, this.l3d_1.p3d_1, this.l3d_1.q3d_1, null);
-          suspendResult = this.l3d_1.n3d_1.v1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
+          var tmp_0 = KotlinxSerializationConverter$deserialize$o$collect$slambda_0($this$unsafeFlow, this.n3d_1.q3d_1, this.n3d_1.r3d_1, this.n3d_1.s3d_1, null);
+          suspendResult = this.n3d_1.p3d_1.w1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -341,13 +341,13 @@ function serializeContent($this, serializer, format, value, contentType, charset
   return tmp;
 }
 function sam$kotlinx_coroutines_flow_FlowCollector$0(function_0) {
-  this.r3d_1 = function_0;
+  this.t3d_1 = function_0;
 }
-protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).j1x = function (value, $completion) {
-  return this.r3d_1(value, $completion);
+protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).k1x = function (value, $completion) {
+  return this.t3d_1(value, $completion);
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).d3 = function () {
-  return this.r3d_1;
+  return this.t3d_1;
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).equals = function (other) {
   var tmp;
@@ -368,13 +368,13 @@ protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).hashCode = function () {
   return hashCode(this.d3());
 };
 function sam$kotlinx_coroutines_flow_FlowCollector$0_0(function_0) {
-  this.s3d_1 = function_0;
+  this.u3d_1 = function_0;
 }
-protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).j1x = function (value, $completion) {
-  return this.s3d_1(value, $completion);
+protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).k1x = function (value, $completion) {
+  return this.u3d_1(value, $completion);
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).d3 = function () {
-  return this.s3d_1;
+  return this.u3d_1;
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).equals = function (other) {
   var tmp;
@@ -395,32 +395,32 @@ protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).hashCode = function () {
   return hashCode(this.d3());
 };
 function KotlinxSerializationConverter$serializeNullable$$inlined$map$1($this, $contentType, $charset, $typeInfo, $value) {
-  this.k3c_1 = $this;
-  this.l3c_1 = $contentType;
-  this.m3c_1 = $charset;
-  this.n3c_1 = $typeInfo;
-  this.o3c_1 = $value;
+  this.m3c_1 = $this;
+  this.n3c_1 = $contentType;
+  this.o3c_1 = $charset;
+  this.p3c_1 = $typeInfo;
+  this.q3c_1 = $value;
 }
-protoOf(KotlinxSerializationConverter$serializeNullable$$inlined$map$1).k1x = function (collector, $completion) {
+protoOf(KotlinxSerializationConverter$serializeNullable$$inlined$map$1).l1x = function (collector, $completion) {
   var tmp = new $collectCOROUTINE$(this, collector, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(KotlinxSerializationConverter$serializeNullable$$inlined$map$1).v1w = function (collector, $completion) {
-  return this.k1x(collector, $completion);
+protoOf(KotlinxSerializationConverter$serializeNullable$$inlined$map$1).w1w = function (collector, $completion) {
+  return this.l1x(collector, $completion);
 };
 function KotlinxSerializationConverter$serializeNullable$slambda(resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(KotlinxSerializationConverter$serializeNullable$slambda).c3e = function (it, $completion) {
-  var tmp = this.d3e(it, $completion);
+protoOf(KotlinxSerializationConverter$serializeNullable$slambda).e3e = function (it, $completion) {
+  var tmp = this.f3e(it, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(KotlinxSerializationConverter$serializeNullable$slambda).z8 = function (p1, $completion) {
-  return this.c3e((p1 == null ? true : p1 instanceof OutgoingContent) ? p1 : THROW_CCE(), $completion);
+  return this.e3e((p1 == null ? true : p1 instanceof OutgoingContent) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(KotlinxSerializationConverter$serializeNullable$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -429,7 +429,7 @@ protoOf(KotlinxSerializationConverter$serializeNullable$slambda).q8 = function (
       var tmp = this.i8_1;
       if (tmp === 0) {
         this.j8_1 = 1;
-        return !(this.b3e_1 == null);
+        return !(this.d3e_1 == null);
       } else if (tmp === 1) {
         throw this.l8_1;
       }
@@ -439,46 +439,46 @@ protoOf(KotlinxSerializationConverter$serializeNullable$slambda).q8 = function (
     }
    while (true);
 };
-protoOf(KotlinxSerializationConverter$serializeNullable$slambda).d3e = function (it, completion) {
+protoOf(KotlinxSerializationConverter$serializeNullable$slambda).f3e = function (it, completion) {
   var i = new KotlinxSerializationConverter$serializeNullable$slambda(completion);
-  i.b3e_1 = it;
+  i.d3e_1 = it;
   return i;
 };
 function KotlinxSerializationConverter$serializeNullable$slambda_0(resultContinuation) {
   var i = new KotlinxSerializationConverter$serializeNullable$slambda(resultContinuation);
   var l = function (it, $completion) {
-    return i.c3e(it, $completion);
+    return i.e3e(it, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function KotlinxSerializationConverter$deserialize$$inlined$map$1($this, $charset, $typeInfo, $content) {
-  this.n3d_1 = $this;
-  this.o3d_1 = $charset;
-  this.p3d_1 = $typeInfo;
-  this.q3d_1 = $content;
+  this.p3d_1 = $this;
+  this.q3d_1 = $charset;
+  this.r3d_1 = $typeInfo;
+  this.s3d_1 = $content;
 }
-protoOf(KotlinxSerializationConverter$deserialize$$inlined$map$1).k1x = function (collector, $completion) {
+protoOf(KotlinxSerializationConverter$deserialize$$inlined$map$1).l1x = function (collector, $completion) {
   var tmp = new $collectCOROUTINE$_0(this, collector, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(KotlinxSerializationConverter$deserialize$$inlined$map$1).v1w = function (collector, $completion) {
-  return this.k1x(collector, $completion);
+protoOf(KotlinxSerializationConverter$deserialize$$inlined$map$1).w1w = function (collector, $completion) {
+  return this.l1x(collector, $completion);
 };
 function KotlinxSerializationConverter$deserialize$slambda($content, resultContinuation) {
-  this.m3e_1 = $content;
+  this.o3e_1 = $content;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(KotlinxSerializationConverter$deserialize$slambda).i3b = function (it, $completion) {
-  var tmp = this.j3a(it, $completion);
+protoOf(KotlinxSerializationConverter$deserialize$slambda).k3b = function (it, $completion) {
+  var tmp = this.l3a(it, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(KotlinxSerializationConverter$deserialize$slambda).z8 = function (p1, $completion) {
-  return this.i3b((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
+  return this.k3b((p1 == null ? true : !(p1 == null)) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(KotlinxSerializationConverter$deserialize$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -487,7 +487,7 @@ protoOf(KotlinxSerializationConverter$deserialize$slambda).q8 = function () {
       var tmp = this.i8_1;
       if (tmp === 0) {
         this.j8_1 = 1;
-        return !(this.n3e_1 == null) || this.m3e_1.s2b();
+        return !(this.p3e_1 == null) || this.o3e_1.t2b();
       } else if (tmp === 1) {
         throw this.l8_1;
       }
@@ -497,26 +497,26 @@ protoOf(KotlinxSerializationConverter$deserialize$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(KotlinxSerializationConverter$deserialize$slambda).j3a = function (it, completion) {
-  var i = new KotlinxSerializationConverter$deserialize$slambda(this.m3e_1, completion);
-  i.n3e_1 = it;
+protoOf(KotlinxSerializationConverter$deserialize$slambda).l3a = function (it, completion) {
+  var i = new KotlinxSerializationConverter$deserialize$slambda(this.o3e_1, completion);
+  i.p3e_1 = it;
   return i;
 };
 function KotlinxSerializationConverter$deserialize$slambda_0($content, resultContinuation) {
   var i = new KotlinxSerializationConverter$deserialize$slambda($content, resultContinuation);
   var l = function (it, $completion) {
-    return i.i3b(it, $completion);
+    return i.k3b(it, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function $serializeNullableCOROUTINE$(_this__u8e3s4, contentType, charset, typeInfo, value, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.w3e_1 = _this__u8e3s4;
-  this.x3e_1 = contentType;
-  this.y3e_1 = charset;
-  this.z3e_1 = typeInfo;
-  this.a3f_1 = value;
+  this.y3e_1 = _this__u8e3s4;
+  this.z3e_1 = contentType;
+  this.a3f_1 = charset;
+  this.b3f_1 = typeInfo;
+  this.c3f_1 = value;
 }
 protoOf($serializeNullableCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -527,8 +527,8 @@ protoOf($serializeNullableCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          var this_0 = asFlow(this.w3e_1.c3f_1);
-          var tmp_0 = new KotlinxSerializationConverter$serializeNullable$$inlined$map$1(this_0, this.x3e_1, this.y3e_1, this.z3e_1, this.a3f_1);
+          var this_0 = asFlow(this.y3e_1.e3f_1);
+          var tmp_0 = new KotlinxSerializationConverter$serializeNullable$$inlined$map$1(this_0, this.z3e_1, this.a3f_1, this.b3f_1, this.c3f_1);
           suspendResult = firstOrNull_0(tmp_0, KotlinxSerializationConverter$serializeNullable$slambda_0(null), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
@@ -541,12 +541,12 @@ protoOf($serializeNullableCOROUTINE$).q8 = function () {
             return fromExtension;
           var tmp_1;
           try {
-            tmp_1 = serializerForTypeInfo(this.w3e_1.b3f_1.um(), this.z3e_1);
+            tmp_1 = serializerForTypeInfo(this.y3e_1.d3f_1.um(), this.b3f_1);
           } catch ($p) {
             var tmp_2;
             if ($p instanceof SerializationException) {
               var cause = $p;
-              tmp_2 = guessSerializer(this.a3f_1, this.w3e_1.b3f_1.um());
+              tmp_2 = guessSerializer(this.c3f_1, this.y3e_1.d3f_1.um());
             } else {
               throw $p;
             }
@@ -554,7 +554,7 @@ protoOf($serializeNullableCOROUTINE$).q8 = function () {
           }
 
           var serializer = tmp_1;
-          return serializeContent(this.w3e_1, serializer, this.w3e_1.b3f_1, this.a3f_1, this.x3e_1, this.y3e_1);
+          return serializeContent(this.y3e_1, serializer, this.y3e_1.d3f_1, this.c3f_1, this.z3e_1, this.a3f_1);
         case 2:
           throw this.l8_1;
       }
@@ -571,10 +571,10 @@ protoOf($serializeNullableCOROUTINE$).q8 = function () {
 };
 function $deserializeCOROUTINE$(_this__u8e3s4, charset, typeInfo, content, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.l3f_1 = _this__u8e3s4;
-  this.m3f_1 = charset;
-  this.n3f_1 = typeInfo;
-  this.o3f_1 = content;
+  this.n3f_1 = _this__u8e3s4;
+  this.o3f_1 = charset;
+  this.p3f_1 = typeInfo;
+  this.q3f_1 = content;
 }
 protoOf($deserializeCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -585,9 +585,9 @@ protoOf($deserializeCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 5;
           this.i8_1 = 1;
-          var this_0 = asFlow(this.l3f_1.c3f_1);
-          var tmp_0 = new KotlinxSerializationConverter$deserialize$$inlined$map$1(this_0, this.m3f_1, this.n3f_1, this.o3f_1);
-          suspendResult = firstOrNull_0(tmp_0, KotlinxSerializationConverter$deserialize$slambda_0(this.o3f_1, null), this);
+          var this_0 = asFlow(this.n3f_1.e3f_1);
+          var tmp_0 = new KotlinxSerializationConverter$deserialize$$inlined$map$1(this_0, this.o3f_1, this.p3f_1, this.q3f_1);
+          suspendResult = firstOrNull_0(tmp_0, KotlinxSerializationConverter$deserialize$slambda_0(this.q3f_1, null), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -596,17 +596,17 @@ protoOf($deserializeCOROUTINE$).q8 = function () {
         case 1:
           var fromExtension = suspendResult;
           var tmp_1;
-          if (!this.l3f_1.c3f_1.r()) {
-            tmp_1 = !(fromExtension == null) || this.o3f_1.s2b();
+          if (!this.n3f_1.e3f_1.r()) {
+            tmp_1 = !(fromExtension == null) || this.q3f_1.t2b();
           } else {
             tmp_1 = false;
           }
 
           if (tmp_1)
             return fromExtension;
-          this.p3f_1 = serializerForTypeInfo(this.l3f_1.b3f_1.um(), this.n3f_1);
+          this.r3f_1 = serializerForTypeInfo(this.n3f_1.d3f_1.um(), this.p3f_1);
           this.i8_1 = 2;
-          suspendResult = this.o3f_1.j2h(VOID, this);
+          suspendResult = this.q3f_1.k2h(VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -615,16 +615,16 @@ protoOf($deserializeCOROUTINE$).q8 = function () {
         case 2:
           var contentPacket = suspendResult;
           this.j8_1 = 3;
-          var tmp0_subject = this.l3f_1.b3f_1;
+          var tmp0_subject = this.n3f_1.d3f_1;
           var tmp_2;
           if (isInterface(tmp0_subject, StringFormat)) {
-            tmp_2 = this.l3f_1.b3f_1.tm(this.p3f_1, readText(contentPacket, this.m3f_1));
+            tmp_2 = this.n3f_1.d3f_1.tm(this.r3f_1, readText(contentPacket, this.o3f_1));
           } else {
             if (isInterface(tmp0_subject, BinaryFormat)) {
-              tmp_2 = this.l3f_1.b3f_1.wm(this.p3f_1, readBytes(contentPacket));
+              tmp_2 = this.n3f_1.d3f_1.wm(this.r3f_1, readBytes(contentPacket));
             } else {
               discard(contentPacket);
-              var message = 'Unsupported format ' + toString(this.l3f_1.b3f_1);
+              var message = 'Unsupported format ' + toString(this.n3f_1.d3f_1);
               throw IllegalStateException_init_$Create$(toString(message));
             }
           }
@@ -658,38 +658,38 @@ protoOf($deserializeCOROUTINE$).q8 = function () {
    while (true);
 };
 function KotlinxSerializationConverter(format) {
-  this.b3f_1 = format;
-  this.c3f_1 = extensions(this.b3f_1);
+  this.d3f_1 = format;
+  this.e3f_1 = extensions(this.d3f_1);
   var tmp;
-  var tmp_0 = this.b3f_1;
+  var tmp_0 = this.d3f_1;
   if (isInterface(tmp_0, BinaryFormat)) {
     tmp = true;
   } else {
-    var tmp_1 = this.b3f_1;
+    var tmp_1 = this.d3f_1;
     tmp = isInterface(tmp_1, StringFormat);
   }
   // Inline function 'kotlin.require' call
   if (!tmp) {
-    var message = 'Only binary and string formats are supported, ' + toString(this.b3f_1) + ' is not supported.';
+    var message = 'Only binary and string formats are supported, ' + toString(this.d3f_1) + ' is not supported.';
     throw IllegalArgumentException_init_$Create$(toString(message));
   }
 }
-protoOf(KotlinxSerializationConverter).q3f = function (contentType, charset, typeInfo, value, $completion) {
-  return this.r3f(contentType, charset, typeInfo, value, $completion);
+protoOf(KotlinxSerializationConverter).s3f = function (contentType, charset, typeInfo, value, $completion) {
+  return this.t3f(contentType, charset, typeInfo, value, $completion);
 };
-protoOf(KotlinxSerializationConverter).e39 = function (contentType, charset, typeInfo, value, $completion) {
-  return this.q3f(contentType, charset, typeInfo, value, $completion);
+protoOf(KotlinxSerializationConverter).g39 = function (contentType, charset, typeInfo, value, $completion) {
+  return this.s3f(contentType, charset, typeInfo, value, $completion);
 };
-protoOf(KotlinxSerializationConverter).r3f = function (contentType, charset, typeInfo, value, $completion) {
+protoOf(KotlinxSerializationConverter).t3f = function (contentType, charset, typeInfo, value, $completion) {
   var tmp = new $serializeNullableCOROUTINE$(this, contentType, charset, typeInfo, value, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(KotlinxSerializationConverter).f39 = function (contentType, charset, typeInfo, value, $completion) {
-  return this.r3f(contentType, charset, typeInfo, value, $completion);
+protoOf(KotlinxSerializationConverter).h39 = function (contentType, charset, typeInfo, value, $completion) {
+  return this.t3f(contentType, charset, typeInfo, value, $completion);
 };
-protoOf(KotlinxSerializationConverter).g39 = function (charset, typeInfo, content, $completion) {
+protoOf(KotlinxSerializationConverter).i39 = function (charset, typeInfo, content, $completion) {
   var tmp = new $deserializeCOROUTINE$(this, charset, typeInfo, content, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -697,7 +697,7 @@ protoOf(KotlinxSerializationConverter).g39 = function (charset, typeInfo, conten
 };
 function serializerForTypeInfo(_this__u8e3s4, typeInfo) {
   var module_0 = _this__u8e3s4;
-  var tmp0_safe_receiver = typeInfo.g2x_1;
+  var tmp0_safe_receiver = typeInfo.h2x_1;
   var tmp;
   if (tmp0_safe_receiver == null) {
     tmp = null;
@@ -714,13 +714,13 @@ function serializerForTypeInfo(_this__u8e3s4, typeInfo) {
   var tmp2_elvis_lhs = tmp;
   var tmp_1;
   if (tmp2_elvis_lhs == null) {
-    var tmp1_safe_receiver = module_0.zm(typeInfo.e2x_1);
+    var tmp1_safe_receiver = module_0.zm(typeInfo.f2x_1);
     tmp_1 = tmp1_safe_receiver == null ? null : maybeNullable(tmp1_safe_receiver, typeInfo);
   } else {
     tmp_1 = tmp2_elvis_lhs;
   }
   var tmp3_elvis_lhs = tmp_1;
-  return tmp3_elvis_lhs == null ? maybeNullable(serializer(typeInfo.e2x_1), typeInfo) : tmp3_elvis_lhs;
+  return tmp3_elvis_lhs == null ? maybeNullable(serializer(typeInfo.f2x_1), typeInfo) : tmp3_elvis_lhs;
 }
 function guessSerializer(value, module_0) {
   var tmp;
@@ -762,7 +762,7 @@ function guessSerializer(value, module_0) {
 }
 function maybeNullable(_this__u8e3s4, typeInfo) {
   var tmp;
-  var tmp0_safe_receiver = typeInfo.g2x_1;
+  var tmp0_safe_receiver = typeInfo.h2x_1;
   if ((tmp0_safe_receiver == null ? null : tmp0_safe_receiver.l()) === true) {
     tmp = get_nullable(_this__u8e3s4);
   } else {

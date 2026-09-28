@@ -3528,11 +3528,11 @@ function listOf(element) {
 function setOf(element) {
   return hashSetOf([element]);
 }
-function mapCapacity(expectedSize) {
-  return expectedSize;
-}
 function mapOf(pair) {
   return hashMapOf([pair]);
+}
+function mapCapacity(expectedSize) {
+  return expectedSize;
 }
 function sortWith_0(_this__u8e3s4, comparator) {
   collectionsSort(_this__u8e3s4, comparator);
@@ -14562,6 +14562,7 @@ export {
   listOf as listOfvhqybd2zx248,
   listOf_0 as listOf1jh22dvmctj1r,
   mapCapacity as mapCapacity1h45rc3eh9p2l,
+  mapOf as mapOf2zpbbmyqk8xpf,
   mapOf_0 as mapOf1xd03cq9cnmy8,
   mutableListOf as mutableListOf6oorvk2mtdmp,
   plus_3 as plus1ogy4liedzq5j,

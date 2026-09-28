@@ -104,6 +104,7 @@ import {
   DurationUnit_HOURS_getInstancesmc8700j37ar as DurationUnit_HOURS_getInstance,
   toDuration7gy6v749ektt as toDuration,
   _Duration___get_inWholeMilliseconds__impl__msfiryatkl295bksdl as _Duration___get_inWholeMilliseconds__impl__msfiry,
+  Collection1k04j3hzsbod0 as Collection,
   endsWith3cq61xxngobwh as endsWith,
   take9j4462mea726 as take,
   Regex_init_$Create$9xrx4twz2i6q as Regex_init_$Create$,
@@ -140,6 +141,7 @@ import {
   isDigit3mimrri4wkzop as isDigit,
   equals2v6cggk171b6e as equals_0,
   toList383f556t1dixk as toList_0,
+  mapOf2zpbbmyqk8xpf as mapOf_0,
 } from './kotlin-kotlin-stdlib.mjs';
 import {
   HttpClient39cej141v2lkr as HttpClient,
@@ -177,13 +179,16 @@ import {
   JsonElementf07o4p6p57al as JsonElement,
   Default_getInstancejkv49nkel8hp as Default_getInstance_1,
   JsonObjectee06ihoeeiqj as JsonObject,
+  get_longOrNull1kg1ha9scz5pa as get_longOrNull,
+  get_doubleOrNull2fo14gjg922um as get_doubleOrNull,
+  JsonNull2liwjj96vm0w2 as JsonNull,
   JsonPrimitive1xkjzc5d7ihuv as JsonPrimitive_0,
   JsonPrimitive2fp8648nd60dn as JsonPrimitive_1,
   JsonPrimitiveolttw629wj53 as JsonPrimitive_2,
   JsonNull_getInstance3cean630pgfyb as JsonNull_getInstance,
-  get_longOrNull1kg1ha9scz5pa as get_longOrNull,
-  get_doubleOrNull2fo14gjg922um as get_doubleOrNull,
-  JsonNull2liwjj96vm0w2 as JsonNull,
+  Companion_instance2ikyq4bbz6wqt as Companion_instance_0,
+  JsonEncoder1qlse6simkfi1 as JsonEncoder,
+  JsonDecoder1rijst5ne6qla as JsonDecoder,
   get_booleanOrNull376axlcpdhkmo as get_booleanOrNull,
   JsonObjectSerializer_getInstance3o7o9v4y0v2ri as JsonObjectSerializer_getInstance,
 } from './kotlinx-serialization-kotlinx-serialization-json.mjs';
@@ -210,6 +215,7 @@ import {
   BooleanSerializer_getInstancei6giaf3o69cd as BooleanSerializer_getInstance,
   throwArrayMissingFieldExceptionbk1mj238w44a as throwArrayMissingFieldException,
   LongSerializer_getInstance1rq8rtbkqcjan as LongSerializer_getInstance,
+  SerializationException_init_$Create$2gf2fbfh3gfxm as SerializationException_init_$Create$,
 } from './kotlinx-serialization-kotlinx-serialization-core.mjs';
 import {
   Mutex16li1l0asjv17 as Mutex,
@@ -226,6 +232,7 @@ import {
   cancel36mj9lv3a0whl as cancel,
   flow3tazazxj2t7g4 as flow,
   catchrcnx5mlu3pkp as catch_0,
+  ensureActive2yo7199srjlgl as ensureActive,
   BufferOverflow_DROP_OLDEST_getInstance19p135qqjnhf2 as BufferOverflow_DROP_OLDEST_getInstance,
   MutableSharedFlow3g4w4npzofx4w as MutableSharedFlow,
   asSharedFlow2buz3fbrowsyg as asSharedFlow,
@@ -236,6 +243,9 @@ import {
 import {
   encodeURLParameter1u3y18ab0iker as encodeURLParameter,
   decodeURLQueryComponent1psnpw5x5jp3h as decodeURLQueryComponent,
+  HttpHeaders_getInstance1z5nmwg0t7mku as HttpHeaders_getInstance,
+  isSuccess1pokn37fdu56v as isSuccess,
+  parseQueryString1nwcni3n22i7m as parseQueryString,
   Companion_getInstance12092dx8psw4e as Companion_getInstance_4,
   Companion_getInstance1qo23ej9noujo as Companion_getInstance_5,
   ParametersBuilder1ry9ntvvg567r as ParametersBuilder,
@@ -308,6 +318,8 @@ initMetadataForClass(LogoutTokenValidationService, 'LogoutTokenValidationService
 initMetadataForClass(LogoutType, 'LogoutType');
 initMetadataForObject(LocalOnly, 'LocalOnly', VOID, LogoutType);
 initMetadataForClass(FrontChannel, 'FrontChannel', VOID, LogoutType);
+initMetadataForObject(DeviceOnly, 'DeviceOnly', VOID, LogoutType);
+initMetadataForClass(Silent, 'Silent', VOID, LogoutType);
 initMetadataForClass(BackChannel, 'BackChannel', VOID, LogoutType);
 initMetadataForClass(LogoutResult, 'LogoutResult');
 initMetadataForClass(Success_0, 'Success', VOID, LogoutResult);
@@ -323,7 +335,7 @@ initMetadataForCoroutine($saveUsedTokensCOROUTINE$, CoroutineImpl);
 initMetadataForClass(PersistentReplayCache, 'PersistentReplayCache', VOID, VOID, VOID, [1, 0]);
 function getAccessToken$default(forceRefresh, $completion, $super) {
   forceRefresh = forceRefresh === VOID ? false : forceRefresh;
-  return $super === VOID ? this.i5c(forceRefresh, $completion) : $super.i5c.call(this, forceRefresh, $completion);
+  return $super === VOID ? this.m5c(forceRefresh, $completion) : $super.m5c.call(this, forceRefresh, $completion);
 }
 initMetadataForInterface(TokenManager, 'TokenManager', VOID, VOID, VOID, [0, 1]);
 initMetadataForLambda(TokenManagerImpl$slambda$slambda, CoroutineImpl, VOID, [1]);
@@ -399,19 +411,48 @@ initMetadataForCoroutine($logoutCOROUTINE$, CoroutineImpl);
 initMetadataForCoroutine($performLocalLogoutCOROUTINE$, CoroutineImpl);
 initMetadataForCoroutine($bestEffortClearCOROUTINE$, CoroutineImpl);
 initMetadataForClass(LogoutHandler, 'LogoutHandler', VOID, VOID, VOID, [1, 0]);
-initMetadataForClass(WebLogoutHandler, 'WebLogoutHandler', VOID, LogoutHandler, [LogoutHandler, BackChannelLogoutCapable, FrontChannelLogoutCapable], [1, 0]);
+initMetadataForClass(SilentServerLogoutOutcome, 'SilentServerLogoutOutcome');
+initMetadataForCompanion(Companion_3);
+initMetadataForLambda(SilentLogoutCapable$performSilentLogout$slambda, CoroutineImpl, VOID, [0]);
+initMetadataForLambda(SilentLogoutCapable$performDeviceOnlyLogout$slambda, CoroutineImpl, VOID, [0]);
+initMetadataForCoroutine($performSilentLogoutCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($performDeviceOnlyLogoutCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($clearLocallyAndCombineCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($runCatchingServerLogoutCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($silentServerLogoutCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($endSessionCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($deviceServerLogoutCOROUTINE$, CoroutineImpl);
+initMetadataForCoroutine($revokeBestEffortCOROUTINE$, CoroutineImpl);
+function performSilentLogout(type, $completion) {
+  var tmp = new $performSilentLogoutCOROUTINE$(this, type, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function performDeviceOnlyLogout($completion) {
+  var tmp = new $performDeviceOnlyLogoutCOROUTINE$(this, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+initMetadataForInterface(SilentLogoutCapable, 'SilentLogoutCapable', VOID, VOID, VOID, [0, 1, 2, 3]);
+initMetadataForClass(WebLogoutHandler, 'WebLogoutHandler', VOID, LogoutHandler, [LogoutHandler, BackChannelLogoutCapable, FrontChannelLogoutCapable, SilentLogoutCapable], [1, 0]);
 initMetadataForObject(SdkSentryConfig, 'SdkSentryConfig');
 function sha256(input) {
-  return SHA256_init_$Create$().y40(input);
+  return SHA256_init_$Create$().a41(input);
 }
 initMetadataForInterface(CryptoService, 'CryptoService', VOID, VOID, VOID, [4]);
 initMetadataForInterface(OpenIdConfigRepository, 'OpenIdConfigRepository', VOID, VOID, VOID, [0]);
-initMetadataForCompanion(Companion_3);
+initMetadataForCompanion(Companion_4);
 initMetadataForClass(CachedConfig, 'CachedConfig');
 initMetadataForCoroutine($getConfigurationCOROUTINE$, CoroutineImpl);
 initMetadataForClass(OpenIdConfigRepositoryImpl, 'OpenIdConfigRepositoryImpl', VOID, VOID, [OpenIdConfigRepository], [0]);
+initMetadataForCompanion(Companion_5);
+initMetadataForCoroutine($endSessionCOROUTINE$_0, CoroutineImpl);
+initMetadataForCoroutine($revokeTokenCOROUTINE$, CoroutineImpl);
+initMetadataForClass(SessionTerminationClient, 'SessionTerminationClient', VOID, VOID, VOID, [4, 5]);
 initMetadataForInterface(SrgAuthApiService, 'SrgAuthApiService', VOID, VOID, VOID, [1, 5, 4, 3, 7, 2]);
-initMetadataForCompanion(Companion_4);
+initMetadataForCompanion(Companion_6);
 initMetadataForCoroutine($getOpenIdConfigurationCOROUTINE$, CoroutineImpl);
 initMetadataForCoroutine($exchangeCodeForTokenCOROUTINE$, CoroutineImpl);
 initMetadataForCoroutine($getJwksCOROUTINE$_0, CoroutineImpl);
@@ -433,6 +474,7 @@ initMetadataForClass(AuthenticationTimeout, 'AuthenticationTimeout', VOID, SrgLo
 initMetadataForClass(UnsupportedPlatform, 'UnsupportedPlatform', VOID, SrgLoginError);
 initMetadataForClass(PlatformError, 'PlatformError', VOID, SrgLoginError);
 initMetadataForClass(InvalidLogoutToken, 'InvalidLogoutToken', VOID, SrgLoginError);
+initMetadataForClass(InteractionRequired, 'InteractionRequired', VOID, SrgLoginError);
 initMetadataForClass(UnknownError, 'UnknownError', VOID, SrgLoginError);
 initMetadataForInterface(EventEmitter, 'EventEmitter', VOID, VOID, VOID, [1]);
 initMetadataForClass(SdkEventEmitter, 'SdkEventEmitter', SdkEventEmitter, VOID, [EventEmitter], [1]);
@@ -457,97 +499,100 @@ initMetadataForClass(StorageError, 'StorageError', VOID, SdkLifecycleEvent);
 initMetadataForClass(TokenStateChanged, 'TokenStateChanged', VOID, SdkLifecycleEvent);
 initMetadataForClass(StorageOperation, 'StorageOperation', VOID, Enum);
 initMetadataForClass(Pkce, 'Pkce');
-initMetadataForCompanion(Companion_5);
+initMetadataForCompanion(Companion_7);
 initMetadataForClass(SecurityUtils, 'SecurityUtils');
 initMetadataForClass(ErrorLevel, 'ErrorLevel', VOID, Enum);
 initMetadataForObject(ErrorHandlerRegistry, 'ErrorHandlerRegistry');
 initMetadataForClass(LogCategory, 'LogCategory', VOID, Enum);
 initMetadataForClass(LogEntry, 'LogEntry');
-initMetadataForCompanion(Companion_6);
+initMetadataForCompanion(Companion_8);
 initMetadataForClass(LogSeverity, 'LogSeverity', VOID, Enum);
 initMetadataForLambda(SdkErrorReporter$captureException$slambda, CoroutineImpl, VOID, [1]);
+initMetadataForLambda(SdkErrorReporter$captureMessage$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForCoroutine($sendEventCOROUTINE$, CoroutineImpl);
 initMetadataForClass(SdkErrorReporter, 'SdkErrorReporter', VOID, VOID, VOID, [1]);
-initMetadataForCompanion(Companion_7);
+initMetadataForCompanion(Companion_9);
 initMetadataForClass(SentryDsn, 'SentryDsn');
-initMetadataForCompanion(Companion_8);
+initMetadataForCompanion(Companion_10);
 initMetadataForObject($serializer, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryEvent, 'SentryEvent', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance});
-initMetadataForCompanion(Companion_9);
+initMetadataForCompanion(Companion_11);
 initMetadataForObject($serializer_0, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryExceptionData, 'SentryExceptionData', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_0});
-initMetadataForCompanion(Companion_10);
+initMetadataForCompanion(Companion_12);
 initMetadataForObject($serializer_1, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryException, 'SentryException', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_1});
-initMetadataForCompanion(Companion_11);
+initMetadataForCompanion(Companion_13);
 initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryStacktrace, 'SentryStacktrace', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_2});
-initMetadataForCompanion(Companion_12);
+initMetadataForCompanion(Companion_14);
 initMetadataForObject($serializer_3, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryStackFrame, 'SentryStackFrame', SentryStackFrame, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_3});
-initMetadataForCompanion(Companion_13);
+initMetadataForCompanion(Companion_15);
 initMetadataForObject($serializer_4, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryContexts, 'SentryContexts', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_4});
-initMetadataForCompanion(Companion_14);
+initMetadataForCompanion(Companion_16);
 initMetadataForObject($serializer_5, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryAppContext, 'SentryAppContext', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_5});
-initMetadataForCompanion(Companion_15);
+initMetadataForCompanion(Companion_17);
 initMetadataForObject($serializer_6, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryDeviceContext, 'SentryDeviceContext', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_6});
-initMetadataForCompanion(Companion_16);
+initMetadataForCompanion(Companion_18);
 initMetadataForObject($serializer_7, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryOsContext, 'SentryOsContext', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_7});
-initMetadataForCompanion(Companion_17);
+initMetadataForCompanion(Companion_19);
 initMetadataForObject($serializer_8, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(SentryUser, 'SentryUser', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_8});
 initMetadataForObject(SdkLogger, 'SdkLogger');
-initMetadataForCompanion(Companion_18);
+initMetadataForCompanion(Companion_20);
 initMetadataForClass(TelemetryContext, 'TelemetryContext');
 initMetadataForClass(UserContextMode, 'UserContextMode', VOID, Enum);
-initMetadataForCompanion(Companion_19);
+initMetadataForCompanion(Companion_21);
 initMetadataForClass(AccessToken, 'AccessToken');
 initMetadataForClass(Address, 'Address');
-initMetadataForClass(ClaimValue, 'ClaimValue');
-initMetadataForObject(Null, 'Null', VOID, ClaimValue);
-initMetadataForClass(Text, 'Text', VOID, ClaimValue);
-initMetadataForClass(Integer, 'Integer', VOID, ClaimValue);
-initMetadataForClass(Decimal, 'Decimal', VOID, ClaimValue);
-initMetadataForClass(Bool, 'Bool', VOID, ClaimValue);
-initMetadataForClass(Array_0, 'Array', VOID, ClaimValue);
-initMetadataForClass(Object_0, 'Object', VOID, ClaimValue);
-initMetadataForCompanion(Companion_20);
+initMetadataForCompanion(Companion_22);
 initMetadataForClass(IdTokenClaims, 'IdTokenClaims');
-initMetadataForCompanion(Companion_21);
+initMetadataForCompanion(Companion_23);
 initMetadataForObject($serializer_9, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(JwkSet, 'JwkSet', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_9});
-initMetadataForCompanion(Companion_22);
+initMetadataForCompanion(Companion_24);
 initMetadataForObject($serializer_10, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(JsonWebKey, 'JsonWebKey', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_10});
-initMetadataForCompanion(Companion_23);
+initMetadataForCompanion(Companion_25);
 initMetadataForObject($serializer_11, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(JwtHeader, 'JwtHeader', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_11});
 initMetadataForClass(JwtClaims, 'JwtClaims', JwtClaims);
 initMetadataForClass(LogoutTokenClaims, 'LogoutTokenClaims');
-initMetadataForCompanion(Companion_24);
+initMetadataForCompanion(Companion_26);
 initMetadataForObject($serializer_12, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(OAuthErrorResponse, 'OAuthErrorResponse', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_12});
-initMetadataForCompanion(Companion_25);
+initMetadataForCompanion(Companion_27);
 initMetadataForObject($serializer_13, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(OpenIdConfig, 'OpenIdConfig', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_13});
-initMetadataForCompanion(Companion_26);
+initMetadataForCompanion(Companion_28);
 initMetadataForObject($serializer_14, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(RefreshTokenMetadata, 'RefreshTokenMetadata', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_14});
-initMetadataForCompanion(Companion_27);
+initMetadataForClass(StructuredValue, 'StructuredValue', VOID, VOID, VOID, VOID, VOID, {0: StructuredValueSerializer_getInstance});
+initMetadataForObject(Null, 'Null', VOID, StructuredValue);
+initMetadataForClass(Text, 'Text', VOID, StructuredValue);
+initMetadataForClass(Integer, 'Integer', VOID, StructuredValue);
+initMetadataForClass(Decimal, 'Decimal', VOID, StructuredValue);
+initMetadataForClass(Bool, 'Bool', VOID, StructuredValue);
+initMetadataForClass(Array_0, 'Array', VOID, StructuredValue);
+initMetadataForClass(Object_0, 'Object', VOID, StructuredValue);
+initMetadataForCompanion(Companion_29);
+initMetadataForObject(StructuredValueSerializer, 'StructuredValueSerializer', VOID, VOID, [KSerializer]);
+initMetadataForCompanion(Companion_30);
 initMetadataForObject($serializer_15, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(TokenResponseDto, 'TokenResponseDto', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_15});
-initMetadataForCompanion(Companion_28);
+initMetadataForCompanion(Companion_31);
 initMetadataForClass(TokenSet, 'TokenSet');
-initMetadataForCompanion(Companion_29);
+initMetadataForCompanion(Companion_32);
 initMetadataForClass(UserInfo, 'UserInfo');
-initMetadataForCompanion(Companion_30);
+initMetadataForCompanion(Companion_33);
 initMetadataForObject($serializer_16, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(UserInfoDto, 'UserInfoDto', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_16});
-initMetadataForCompanion(Companion_31);
+initMetadataForCompanion(Companion_34);
 initMetadataForObject($serializer_17, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(AddressDto, 'AddressDto', AddressDto, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_17});
 initMetadataForClass(UserInfoResponseDto, 'UserInfoResponseDto');
@@ -556,25 +601,27 @@ initMetadataForClass(Success_1, 'Success', VOID, SdkResult);
 initMetadataForClass(Failure_1, 'Failure', VOID, SdkResult);
 initMetadataForInterface(TokenStorage, 'TokenStorage', VOID, VOID, VOID, [1, 0]);
 initMetadataForClass(TokenStorageConfig, 'TokenStorageConfig', TokenStorageConfig);
-initMetadataForCompanion(Companion_32);
+initMetadataForCompanion(Companion_35);
 initMetadataForObject($serializer_18, '$serializer', VOID, VOID, [GeneratedSerializer]);
 initMetadataForClass(StoredTransaction, 'StoredTransaction', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_18});
-initMetadataForCompanion(Companion_33);
+initMetadataForCompanion(Companion_36);
 initMetadataForClass(JsAuthorizationStateStore, 'JsAuthorizationStateStore', JsAuthorizationStateStore, VOID, [AuthorizationStateStore], [1]);
 initMetadataForInterface(PlatformAuthContext, 'PlatformAuthContext');
 initMetadataForClass(JsAuthContext, 'JsAuthContext', JsAuthContext, VOID, [PlatformAuthContext, WebAuthCapable]);
 initMetadataForClass(WebAuthenticatorImpl, 'WebAuthenticatorImpl', WebAuthenticatorImpl, BaseWebAuthenticator, VOID, [2, 0]);
-initMetadataForCompanion(Companion_34);
+initMetadataForCompanion(Companion_37);
 initMetadataForCoroutine($subtleVerifyCOROUTINE$, CoroutineImpl);
 initMetadataForClass(JsCryptoService, 'JsCryptoService', JsCryptoService, VOID, [CryptoService], [4, 5]);
 initMetadataForClass(createHttpClient$2$6$1);
 initMetadataForObject(PlatformInfo, 'PlatformInfo');
-initMetadataForLambda(SrgLoginWeb$login$slambda$slambda, CoroutineImpl, VOID, [1]);
+initMetadataForLambda(SrgLoginWeb$startLogin$slambda$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForLambda(SrgLoginWeb$observeTokenState$slambda$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForClass(sam$kotlinx_coroutines_flow_FlowCollector$0_0, 'sam$kotlinx_coroutines_flow_FlowCollector$0', VOID, VOID, [FlowCollector, FunctionAdapter], [1]);
 initMetadataForClass(sam$kotlinx_coroutines_flow_FlowCollector$0_1, 'sam$kotlinx_coroutines_flow_FlowCollector$0', VOID, VOID, [FlowCollector, FunctionAdapter], [1]);
-initMetadataForLambda(SrgLoginWeb$login$slambda, CoroutineImpl, VOID, [1]);
+initMetadataForLambda(SrgLoginWeb$startLogin$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForLambda(SrgLoginWeb$handleRedirect$slambda, CoroutineImpl, VOID, [1]);
+initMetadataForLambda(SrgLoginWeb$logoutThisDevice$slambda, CoroutineImpl, VOID, [1]);
+initMetadataForLambda(SrgLoginWeb$logoutLocally$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForLambda(SrgLoginWeb$logout$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForLambda(SrgLoginWeb$isAuthenticated$slambda, CoroutineImpl, VOID, [1]);
 initMetadataForLambda(SrgLoginWeb$accessToken$slambda, CoroutineImpl, VOID, [1]);
@@ -585,46 +632,46 @@ initMetadataForClass(SrgLoginWeb, 'SrgLoginWeb');
 initMetadataForClass(LoginResultJs, 'LoginResultJs');
 initMetadataForClass(UserInfoJs, 'UserInfoJs');
 initMetadataForClass(AppLifecycleObserver, 'AppLifecycleObserver');
-initMetadataForCompanion(Companion_35);
+initMetadataForCompanion(Companion_38);
 initMetadataForClass(JsWebTokenStorage, 'JsWebTokenStorage', JsWebTokenStorage, VOID, [TokenStorage], [1, 0]);
 //endregion
 function initializeSdkLogger($this, isDebugBuild) {
-  var telemetryContext = Companion_instance_19.d5a('ch.srg.login.sdk', 'SRG Login SDK', Companion_instance_19.z59_1, 'sdk', 'SDK', PlatformInfo_instance.a5a(), PlatformInfo_instance.b5a(), PlatformInfo_instance.c5a(), Companion_getInstance().bk().toString(), isDebugBuild ? 'DEBUG' : 'PROD');
-  var minSeverity = Companion_instance_7.e5a(isDebugBuild);
-  SdkLogger_getInstance().l5a(telemetryContext, minSeverity);
+  var telemetryContext = Companion_instance_22.h5a('ch.srg.login.sdk', 'SRG Login SDK', Companion_instance_22.d5a_1, 'sdk', 'SDK', PlatformInfo_instance.e5a(), PlatformInfo_instance.f5a(), PlatformInfo_instance.g5a(), Companion_getInstance().bk().toString(), isDebugBuild ? 'DEBUG' : 'PROD');
+  var minSeverity = Companion_instance_10.i5a(isDebugBuild);
+  SdkLogger_getInstance().p5a(telemetryContext, minSeverity);
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-  tmp.m5a(tmp_0, VOID, VOID, SdkCore$initializeSdkLogger$lambda(minSeverity, telemetryContext));
+  tmp.q5a(tmp_0, VOID, VOID, SdkCore$initializeSdkLogger$lambda(minSeverity, telemetryContext));
 }
 function initializeErrorTracking($this, koin, config) {
-  if (!config.v5a_1) {
+  if (!config.z5a_1) {
     var tmp = SdkLogger_getInstance();
     var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-    tmp.n5a(tmp_0, VOID, VOID, SdkCore$initializeErrorTracking$lambda);
+    tmp.r5a(tmp_0, VOID, VOID, SdkCore$initializeErrorTracking$lambda);
     return Unit_instance;
   }
-  var dsn = SdkSentryConfig_instance.z5a(config);
+  var dsn = SdkSentryConfig_instance.d5b(config);
   if (!(dsn == null)) {
     var tmp_1 = SdkLogger_getInstance();
     var tmp_2 = LogCategory_SDK_CREATION_getInstance();
-    tmp_1.n5a(tmp_2, VOID, VOID, SdkCore$initializeErrorTracking$lambda_0(config));
+    tmp_1.r5a(tmp_2, VOID, VOID, SdkCore$initializeErrorTracking$lambda_0(config));
     // Inline function 'org.koin.core.Koin.get' call
     // Inline function 'org.koin.core.scope.Scope.get' call
-    var httpClient = koin.v3v_1.j3w_1.r3z(getKClass(HttpClient), null, null);
+    var httpClient = koin.x3v_1.l3w_1.t3z(getKClass(HttpClient), null, null);
     // Inline function 'org.koin.core.Koin.get' call
     // Inline function 'org.koin.core.scope.Scope.get' call
-    var cryptoService = koin.v3v_1.j3w_1.r3z(getKClass(CryptoService), null, null);
-    var telemetryContext = Companion_instance_19.d5a(config.q5a_1.a5b_1, config.q5a_1.b5b_1, config.q5a_1.c5b_1, config.q5a_1.d5b_1, config.q5a_1.e5b_1, PlatformInfo_instance.a5a(), PlatformInfo_instance.b5a(), PlatformInfo_instance.c5a(), Companion_getInstance().bk().toString(), config.r5a_1.t2_1);
-    var salt = SdkSentryConfig_instance.f5b(config);
+    var cryptoService = koin.x3v_1.l3w_1.t3z(getKClass(CryptoService), null, null);
+    var telemetryContext = Companion_instance_22.h5a(config.u5a_1.e5b_1, config.u5a_1.f5b_1, config.u5a_1.g5b_1, config.u5a_1.h5b_1, config.u5a_1.i5b_1, PlatformInfo_instance.e5a(), PlatformInfo_instance.f5a(), PlatformInfo_instance.g5a(), Companion_getInstance().bk().toString(), config.v5a_1.t2_1);
+    var salt = SdkSentryConfig_instance.j5b(config);
     var errorReporter = new SdkErrorReporter(dsn, httpClient, telemetryContext, cryptoService, UserContextMode_HASHED_SUB_getInstance(), salt);
-    ErrorHandlerRegistry_instance.h5b(errorReporter);
+    ErrorHandlerRegistry_instance.l5b(errorReporter);
     var tmp_3 = SdkLogger_getInstance();
     var tmp_4 = LogCategory_SDK_CREATION_getInstance();
-    tmp_3.m5a(tmp_4, VOID, VOID, SdkCore$initializeErrorTracking$lambda_1(config));
+    tmp_3.q5a(tmp_4, VOID, VOID, SdkCore$initializeErrorTracking$lambda_1(config));
   } else {
     var tmp_5 = SdkLogger_getInstance();
     var tmp_6 = LogCategory_SDK_CREATION_getInstance();
-    tmp_5.n5a(tmp_6, VOID, VOID, SdkCore$initializeErrorTracking$lambda_2(config));
+    tmp_5.r5a(tmp_6, VOID, VOID, SdkCore$initializeErrorTracking$lambda_2(config));
   }
 }
 function SdkCore$initialize$lambda$lambda($instance) {
@@ -636,38 +683,38 @@ function SdkCore$initialize$lambda($enableKoinDebugLogging, $tokenStorageConfig,
   return function ($this$koinApplication) {
     var tmp;
     if ($enableKoinDebugLogging) {
-      $this$koinApplication.a3x();
+      $this$koinApplication.c3x();
       tmp = Unit_instance;
     }
-    var tmp0 = $this$koinApplication.q3w_1;
+    var tmp0 = $this$koinApplication.s3w_1;
     // Inline function 'org.koin.core.Koin.declare' call
     var instance = $tokenStorageConfig;
     var secondaryTypes = emptyList();
     // Inline function 'org.koin.core.registry.InstanceRegistry.declareRootInstance' call
-    var this_0 = tmp0.w3v_1;
-    var rootQualifier = this_0.c3w_1.v3v_1.j3w_1.h3z_1;
+    var this_0 = tmp0.y3v_1;
+    var rootQualifier = this_0.e3w_1.x3v_1.l3w_1.j3z_1;
     var tmp0_0 = Kind_Scoped_getInstance();
     // Inline function 'org.koin.core.definition._createDefinition' call
     var definition = SdkCore$initialize$lambda$lambda(instance);
     var def = new BeanDefinition(rootQualifier, getKClass(TokenStorageConfig), null, definition, tmp0_0, secondaryTypes);
     var factory = new SingleInstanceFactory(def);
-    var indexKey_0 = indexKey(def.c3x_1, def.d3x_1, def.b3x_1);
-    this_0.a3z(true, indexKey_0, factory);
+    var indexKey_0 = indexKey(def.e3x_1, def.f3x_1, def.d3x_1);
+    this_0.c3z(true, indexKey_0, factory);
     // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = def.g3x_1.t();
+    var _iterator__ex2g4s = def.i3x_1.t();
     while (_iterator__ex2g4s.u()) {
       var element = _iterator__ex2g4s.v();
-      var index = indexKey(element, def.d3x_1, def.b3x_1);
-      this_0.a3z(true, index, factory);
+      var index = indexKey(element, def.f3x_1, def.d3x_1);
+      this_0.c3z(true, index, factory);
     }
     var tmp0_safe_receiver = $platformContext;
     if (tmp0_safe_receiver == null)
       null;
     else {
       // Inline function 'kotlin.let' call
-      declarePlatformContext($this$koinApplication.q3w_1, tmp0_safe_receiver);
+      declarePlatformContext($this$koinApplication.s3w_1, tmp0_safe_receiver);
     }
-    $this$koinApplication.t3w(get_sdkModule());
+    $this$koinApplication.v3w(get_sdkModule());
     return Unit_instance;
   };
 }
@@ -743,7 +790,7 @@ function SdkCore$create$lambda_14($srgLogin) {
 }
 function SdkCore$initializeSdkLogger$lambda($minSeverity, $telemetryContext) {
   return function () {
-    return 'SdkLogger initialized ' + ('(minSeverity=' + $minSeverity.toString() + ', ') + ('platform=' + $telemetryContext.p5b_1 + ', ') + ('environment=' + $telemetryContext.t5b_1 + ')');
+    return 'SdkLogger initialized ' + ('(minSeverity=' + $minSeverity.toString() + ', ') + ('platform=' + $telemetryContext.t5b_1 + ', ') + ('environment=' + $telemetryContext.x5b_1 + ')');
   };
 }
 function SdkCore$initializeErrorTracking$lambda() {
@@ -751,37 +798,37 @@ function SdkCore$initializeErrorTracking$lambda() {
 }
 function SdkCore$initializeErrorTracking$lambda_0($config) {
   return function () {
-    return 'Initializing SDK error tracking for ' + $config.r5a_1.toString() + ' environment';
+    return 'Initializing SDK error tracking for ' + $config.v5a_1.toString() + ' environment';
   };
 }
 function SdkCore$initializeErrorTracking$lambda_1($config) {
   return function () {
-    return 'SDK error tracking initialized (environment=' + $config.r5a_1.toString() + ')';
+    return 'SDK error tracking initialized (environment=' + $config.v5a_1.toString() + ')';
   };
 }
 function SdkCore$initializeErrorTracking$lambda_2($config) {
   return function () {
-    return 'SDK error tracking disabled for ' + $config.r5a_1.toString() + ' environment';
+    return 'SDK error tracking disabled for ' + $config.v5a_1.toString() + ' environment';
   };
 }
 function SdkCore() {
-  this.v5b_1 = null;
+  this.z5b_1 = null;
 }
-protoOf(SdkCore).w5b = function (enableKoinDebugLogging, tokenStorageConfig, platformContext, isDebugBuild) {
-  if (!(this.v5b_1 == null)) {
+protoOf(SdkCore).a5c = function (enableKoinDebugLogging, tokenStorageConfig, platformContext, isDebugBuild) {
+  if (!(this.z5b_1 == null)) {
     return Unit_instance;
   }
   validatePlatformRequirements(platformContext);
   var tmp = this;
-  tmp.v5b_1 = koinApplication(VOID, SdkCore$initialize$lambda(enableKoinDebugLogging, tokenStorageConfig, platformContext));
+  tmp.z5b_1 = koinApplication(VOID, SdkCore$initialize$lambda(enableKoinDebugLogging, tokenStorageConfig, platformContext));
   initializeSdkLogger(this, isDebugBuild);
 };
-protoOf(SdkCore).x5b = function (config) {
+protoOf(SdkCore).b5c = function (config) {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-  tmp.m5a(tmp_0, VOID, VOID, SdkCore$create$lambda);
-  var tmp0_safe_receiver = this.v5b_1;
-  var tmp0 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.q3w_1;
+  tmp.q5a(tmp_0, VOID, VOID, SdkCore$create$lambda);
+  var tmp0_safe_receiver = this.z5b_1;
+  var tmp0 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.s3w_1;
   var tmp$ret$1;
   $l$block: {
     // Inline function 'kotlin.requireNotNull' call
@@ -796,64 +843,64 @@ protoOf(SdkCore).x5b = function (config) {
   var koin = tmp$ret$1;
   var tmp_1 = SdkLogger_getInstance();
   var tmp_2 = LogCategory_SDK_CREATION_getInstance();
-  tmp_1.n5a(tmp_2, VOID, VOID, SdkCore$create$lambda_0);
+  tmp_1.r5a(tmp_2, VOID, VOID, SdkCore$create$lambda_0);
   // Inline function 'org.koin.core.Koin.get' call
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var eventEmitter = koin.v3v_1.j3w_1.r3z(getKClass(EventEmitter), null, null);
+  var eventEmitter = koin.x3v_1.l3w_1.t3z(getKClass(EventEmitter), null, null);
   var tmp_3 = SdkLogger_getInstance();
   var tmp_4 = LogCategory_SDK_CREATION_getInstance();
-  tmp_3.n5a(tmp_4, VOID, VOID, SdkCore$create$lambda_1(eventEmitter));
+  tmp_3.r5a(tmp_4, VOID, VOID, SdkCore$create$lambda_1(eventEmitter));
   // Inline function 'org.koin.core.Koin.get' call
   var parameters = SdkCore$create$lambda_2(config);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var openIdConfigRepository = koin.v3v_1.j3w_1.r3z(getKClass(OpenIdConfigRepository), null, parameters);
+  var openIdConfigRepository = koin.x3v_1.l3w_1.t3z(getKClass(OpenIdConfigRepository), null, parameters);
   var tmp_5 = SdkLogger_getInstance();
   var tmp_6 = LogCategory_SDK_CREATION_getInstance();
-  tmp_5.n5a(tmp_6, VOID, VOID, SdkCore$create$lambda_3(openIdConfigRepository));
+  tmp_5.r5a(tmp_6, VOID, VOID, SdkCore$create$lambda_3(openIdConfigRepository));
   var tmp_7 = SdkLogger_getInstance();
   var tmp_8 = LogCategory_SDK_CREATION_getInstance();
-  tmp_7.n5a(tmp_8, VOID, VOID, SdkCore$create$lambda_4);
+  tmp_7.r5a(tmp_8, VOID, VOID, SdkCore$create$lambda_4);
   // Inline function 'org.koin.core.Koin.get' call
   var parameters_0 = SdkCore$create$lambda_5(config, openIdConfigRepository, eventEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var authManager = koin.v3v_1.j3w_1.r3z(getKClass(AuthenticationManager), null, parameters_0);
+  var authManager = koin.x3v_1.l3w_1.t3z(getKClass(AuthenticationManager), null, parameters_0);
   var tmp_9 = SdkLogger_getInstance();
   var tmp_10 = LogCategory_SDK_CREATION_getInstance();
-  tmp_9.n5a(tmp_10, VOID, VOID, SdkCore$create$lambda_6(authManager));
+  tmp_9.r5a(tmp_10, VOID, VOID, SdkCore$create$lambda_6(authManager));
   var tmp_11 = SdkLogger_getInstance();
   var tmp_12 = LogCategory_SDK_CREATION_getInstance();
-  tmp_11.n5a(tmp_12, VOID, VOID, SdkCore$create$lambda_7);
+  tmp_11.r5a(tmp_12, VOID, VOID, SdkCore$create$lambda_7);
   // Inline function 'org.koin.core.Koin.get' call
   var parameters_1 = SdkCore$create$lambda_8(config, openIdConfigRepository, eventEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tokenManager = koin.v3v_1.j3w_1.r3z(getKClass(TokenManager), null, parameters_1);
+  var tokenManager = koin.x3v_1.l3w_1.t3z(getKClass(TokenManager), null, parameters_1);
   var tmp_13 = SdkLogger_getInstance();
   var tmp_14 = LogCategory_SDK_CREATION_getInstance();
-  tmp_13.n5a(tmp_14, VOID, VOID, SdkCore$create$lambda_9(tokenManager));
+  tmp_13.r5a(tmp_14, VOID, VOID, SdkCore$create$lambda_9(tokenManager));
   // Inline function 'org.koin.core.Koin.get' call
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_15 = koin.v3v_1.j3w_1.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp_15 = koin.x3v_1.l3w_1.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.Koin.get' call
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$13 = koin.v3v_1.j3w_1.r3z(getKClass(TokenStorage), null, null);
+  var tmp$ret$13 = koin.x3v_1.l3w_1.t3z(getKClass(TokenStorage), null, null);
   var userInfoService = new UserInfoServiceImpl(tokenManager, tmp_15, tmp$ret$13, openIdConfigRepository);
   var tmp_16 = SdkLogger_getInstance();
   var tmp_17 = LogCategory_SDK_CREATION_getInstance();
-  tmp_16.n5a(tmp_17, VOID, VOID, SdkCore$create$lambda_10(userInfoService));
+  tmp_16.r5a(tmp_17, VOID, VOID, SdkCore$create$lambda_10(userInfoService));
   var tmp_18 = SdkLogger_getInstance();
   var tmp_19 = LogCategory_SDK_CREATION_getInstance();
-  tmp_18.n5a(tmp_19, VOID, VOID, SdkCore$create$lambda_11);
+  tmp_18.r5a(tmp_19, VOID, VOID, SdkCore$create$lambda_11);
   // Inline function 'org.koin.core.Koin.get' call
   var parameters_2 = SdkCore$create$lambda_12(tokenManager, eventEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var lifecycleObserver = koin.v3v_1.j3w_1.r3z(getKClass(AppLifecycleObserver), null, parameters_2);
+  var lifecycleObserver = koin.x3v_1.l3w_1.t3z(getKClass(AppLifecycleObserver), null, parameters_2);
   var tmp_20 = SdkLogger_getInstance();
   var tmp_21 = LogCategory_SDK_CREATION_getInstance();
-  tmp_20.n5a(tmp_21, VOID, VOID, SdkCore$create$lambda_13(lifecycleObserver));
+  tmp_20.r5a(tmp_21, VOID, VOID, SdkCore$create$lambda_13(lifecycleObserver));
   var srgLogin = new SrgLogin(config, authManager, tokenManager, userInfoService, lifecycleObserver);
   var tmp_22 = SdkLogger_getInstance();
   var tmp_23 = LogCategory_SDK_CREATION_getInstance();
-  tmp_22.m5a(tmp_23, VOID, VOID, SdkCore$create$lambda_14(srgLogin));
+  tmp_22.q5a(tmp_23, VOID, VOID, SdkCore$create$lambda_14(srgLogin));
   initializeErrorTracking(this, koin, config);
   return srgLogin;
 };
@@ -862,35 +909,35 @@ function SdkCore_getInstance() {
   return SdkCore_instance;
 }
 function SrgLogin(config, authManager, tokenManager, userInfoService, lifecycleObserver) {
-  this.y5b_1 = config;
-  this.z5b_1 = authManager;
-  this.a5c_1 = tokenManager;
-  this.b5c_1 = userInfoService;
-  this.c5c_1 = lifecycleObserver;
+  this.c5c_1 = config;
+  this.d5c_1 = authManager;
+  this.e5c_1 = tokenManager;
+  this.f5c_1 = userInfoService;
+  this.g5c_1 = lifecycleObserver;
 }
-protoOf(SrgLogin).d5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
-  return this.z5b_1.d5c(loginMethod, authContext, additionalScopes, additionalParameters);
+protoOf(SrgLogin).h5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
+  return this.d5c_1.h5c(loginMethod, authContext, additionalScopes, additionalParameters);
 };
-protoOf(SrgLogin).e5c = function (callbackUrl, $completion) {
-  return this.z5b_1.f5c(callbackUrl, $completion);
+protoOf(SrgLogin).i5c = function (callbackUrl, $completion) {
+  return this.d5c_1.j5c(callbackUrl, $completion);
 };
-protoOf(SrgLogin).g5c = function (logoutType, $completion) {
-  return this.z5b_1.g5c(logoutType, $completion);
+protoOf(SrgLogin).k5c = function (logoutType, $completion) {
+  return this.d5c_1.k5c(logoutType, $completion);
 };
-protoOf(SrgLogin).h5c = function (ssoClientUrl, authContext, $completion) {
-  return this.z5b_1.h5c(ssoClientUrl, authContext, $completion);
+protoOf(SrgLogin).l5c = function (ssoClientUrl, authContext, $completion) {
+  return this.d5c_1.l5c(ssoClientUrl, authContext, $completion);
 };
-protoOf(SrgLogin).i5c = function (forceRefresh, $completion) {
-  return this.a5c_1.i5c(forceRefresh, $completion);
+protoOf(SrgLogin).m5c = function (forceRefresh, $completion) {
+  return this.e5c_1.m5c(forceRefresh, $completion);
 };
-protoOf(SrgLogin).j5c = function (forceRefresh, $completion) {
-  return this.b5c_1.j5c(forceRefresh, $completion);
+protoOf(SrgLogin).n5c = function (forceRefresh, $completion) {
+  return this.f5c_1.n5c(forceRefresh, $completion);
 };
-protoOf(SrgLogin).k5c = function ($completion) {
-  return this.a5c_1.k5c($completion);
+protoOf(SrgLogin).o5c = function ($completion) {
+  return this.e5c_1.o5c($completion);
 };
-protoOf(SrgLogin).l5c = function () {
-  return this.a5c_1.l5c();
+protoOf(SrgLogin).p5c = function () {
+  return this.e5c_1.p5c();
 };
 function Automatic() {
   Automatic_instance = this;
@@ -924,48 +971,48 @@ function TokenRefreshConfig(mode, refreshThresholdSeconds, maxRetryAttempts, ini
   initialRetryDelayMs = initialRetryDelayMs === VOID ? new Long(1000, 0) : initialRetryDelayMs;
   maxRetryDelayMs = maxRetryDelayMs === VOID ? new Long(30000, 0) : maxRetryDelayMs;
   maxRefreshTokenUses = maxRefreshTokenUses === VOID ? 1000 : maxRefreshTokenUses;
-  this.m5c_1 = mode;
-  this.n5c_1 = refreshThresholdSeconds;
-  this.o5c_1 = maxRetryAttempts;
-  this.p5c_1 = initialRetryDelayMs;
-  this.q5c_1 = maxRetryDelayMs;
-  this.r5c_1 = maxRefreshTokenUses;
+  this.q5c_1 = mode;
+  this.r5c_1 = refreshThresholdSeconds;
+  this.s5c_1 = maxRetryAttempts;
+  this.t5c_1 = initialRetryDelayMs;
+  this.u5c_1 = maxRetryDelayMs;
+  this.v5c_1 = maxRefreshTokenUses;
   // Inline function 'kotlin.require' call
-  if (!(compare(this.n5c_1, new Long(0, 0)) >= 0)) {
-    var message = 'refreshThresholdSeconds must be non-negative, got: ' + this.n5c_1.toString();
+  if (!(compare(this.r5c_1, new Long(0, 0)) >= 0)) {
+    var message = 'refreshThresholdSeconds must be non-negative, got: ' + this.r5c_1.toString();
     throw IllegalArgumentException_init_$Create$(toString(message));
   }
   // Inline function 'kotlin.require' call
-  if (!(this.o5c_1 >= 0)) {
-    var message_0 = 'maxRetryAttempts must be non-negative, got: ' + this.o5c_1;
+  if (!(this.s5c_1 >= 0)) {
+    var message_0 = 'maxRetryAttempts must be non-negative, got: ' + this.s5c_1;
     throw IllegalArgumentException_init_$Create$(toString(message_0));
   }
   // Inline function 'kotlin.require' call
-  if (!(compare(this.p5c_1, new Long(0, 0)) >= 0)) {
-    var message_1 = 'initialRetryDelayMs must be non-negative, got: ' + this.p5c_1.toString();
+  if (!(compare(this.t5c_1, new Long(0, 0)) >= 0)) {
+    var message_1 = 'initialRetryDelayMs must be non-negative, got: ' + this.t5c_1.toString();
     throw IllegalArgumentException_init_$Create$(toString(message_1));
   }
   // Inline function 'kotlin.require' call
-  if (!(compare(this.q5c_1, this.p5c_1) >= 0)) {
-    var message_2 = 'maxRetryDelayMs (' + this.q5c_1.toString() + ') must be >= initialRetryDelayMs (' + this.p5c_1.toString() + ')';
+  if (!(compare(this.u5c_1, this.t5c_1) >= 0)) {
+    var message_2 = 'maxRetryDelayMs (' + this.u5c_1.toString() + ') must be >= initialRetryDelayMs (' + this.t5c_1.toString() + ')';
     throw IllegalArgumentException_init_$Create$(toString(message_2));
   }
   // Inline function 'kotlin.require' call
-  if (!(this.r5c_1 > 0)) {
-    var message_3 = 'maxRefreshTokenUses must be positive, got: ' + this.r5c_1;
+  if (!(this.v5c_1 > 0)) {
+    var message_3 = 'maxRefreshTokenUses must be positive, got: ' + this.v5c_1;
     throw IllegalArgumentException_init_$Create$(toString(message_3));
   }
 }
 protoOf(TokenRefreshConfig).toString = function () {
-  return 'TokenRefreshConfig(mode=' + toString(this.m5c_1) + ', refreshThresholdSeconds=' + this.n5c_1.toString() + ', maxRetryAttempts=' + this.o5c_1 + ', initialRetryDelayMs=' + this.p5c_1.toString() + ', maxRetryDelayMs=' + this.q5c_1.toString() + ', maxRefreshTokenUses=' + this.r5c_1 + ')';
+  return 'TokenRefreshConfig(mode=' + toString(this.q5c_1) + ', refreshThresholdSeconds=' + this.r5c_1.toString() + ', maxRetryAttempts=' + this.s5c_1 + ', initialRetryDelayMs=' + this.t5c_1.toString() + ', maxRetryDelayMs=' + this.u5c_1.toString() + ', maxRefreshTokenUses=' + this.v5c_1 + ')';
 };
 protoOf(TokenRefreshConfig).hashCode = function () {
-  var result = hashCode(this.m5c_1);
-  result = imul(result, 31) + this.n5c_1.hashCode() | 0;
-  result = imul(result, 31) + this.o5c_1 | 0;
-  result = imul(result, 31) + this.p5c_1.hashCode() | 0;
-  result = imul(result, 31) + this.q5c_1.hashCode() | 0;
-  result = imul(result, 31) + this.r5c_1 | 0;
+  var result = hashCode(this.q5c_1);
+  result = imul(result, 31) + this.r5c_1.hashCode() | 0;
+  result = imul(result, 31) + this.s5c_1 | 0;
+  result = imul(result, 31) + this.t5c_1.hashCode() | 0;
+  result = imul(result, 31) + this.u5c_1.hashCode() | 0;
+  result = imul(result, 31) + this.v5c_1 | 0;
   return result;
 };
 protoOf(TokenRefreshConfig).equals = function (other) {
@@ -973,56 +1020,56 @@ protoOf(TokenRefreshConfig).equals = function (other) {
     return true;
   if (!(other instanceof TokenRefreshConfig))
     return false;
-  if (!equals(this.m5c_1, other.m5c_1))
+  if (!equals(this.q5c_1, other.q5c_1))
     return false;
-  if (!equalsLong(this.n5c_1, other.n5c_1))
+  if (!equalsLong(this.r5c_1, other.r5c_1))
     return false;
-  if (!(this.o5c_1 === other.o5c_1))
+  if (!(this.s5c_1 === other.s5c_1))
     return false;
-  if (!equalsLong(this.p5c_1, other.p5c_1))
+  if (!equalsLong(this.t5c_1, other.t5c_1))
     return false;
-  if (!equalsLong(this.q5c_1, other.q5c_1))
+  if (!equalsLong(this.u5c_1, other.u5c_1))
     return false;
-  if (!(this.r5c_1 === other.r5c_1))
+  if (!(this.v5c_1 === other.v5c_1))
     return false;
   return true;
 };
 function AppIdentity(appId, appName, appVersion, businessUnit, businessUnitName) {
-  this.a5b_1 = appId;
-  this.b5b_1 = appName;
-  this.c5b_1 = appVersion;
-  this.d5b_1 = businessUnit;
-  this.e5b_1 = businessUnitName;
+  this.e5b_1 = appId;
+  this.f5b_1 = appName;
+  this.g5b_1 = appVersion;
+  this.h5b_1 = businessUnit;
+  this.i5b_1 = businessUnitName;
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_0 = this.a5b_1;
+  var this_0 = this.e5b_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_0)) {
     var message = 'appId cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message));
   }
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_1 = this.b5b_1;
+  var this_1 = this.f5b_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_1)) {
     var message_0 = 'appName cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message_0));
   }
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_2 = this.c5b_1;
+  var this_2 = this.g5b_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_2)) {
     var message_1 = 'appVersion cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message_1));
   }
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_3 = this.d5b_1;
+  var this_3 = this.h5b_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_3)) {
     var message_2 = 'businessUnit cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message_2));
   }
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_4 = this.e5b_1;
+  var this_4 = this.i5b_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_4)) {
     var message_3 = 'businessUnitName cannot be blank';
@@ -1030,14 +1077,14 @@ function AppIdentity(appId, appName, appVersion, businessUnit, businessUnitName)
   }
 }
 protoOf(AppIdentity).toString = function () {
-  return 'AppIdentity(appId=' + this.a5b_1 + ', appName=' + this.b5b_1 + ', appVersion=' + this.c5b_1 + ', businessUnit=' + this.d5b_1 + ', businessUnitName=' + this.e5b_1 + ')';
+  return 'AppIdentity(appId=' + this.e5b_1 + ', appName=' + this.f5b_1 + ', appVersion=' + this.g5b_1 + ', businessUnit=' + this.h5b_1 + ', businessUnitName=' + this.i5b_1 + ')';
 };
 protoOf(AppIdentity).hashCode = function () {
-  var result = getStringHashCode(this.a5b_1);
-  result = imul(result, 31) + getStringHashCode(this.b5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.c5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.d5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.e5b_1) | 0;
+  var result = getStringHashCode(this.e5b_1);
+  result = imul(result, 31) + getStringHashCode(this.f5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.g5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.h5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.i5b_1) | 0;
   return result;
 };
 protoOf(AppIdentity).equals = function (other) {
@@ -1045,27 +1092,27 @@ protoOf(AppIdentity).equals = function (other) {
     return true;
   if (!(other instanceof AppIdentity))
     return false;
-  if (!(this.a5b_1 === other.a5b_1))
-    return false;
-  if (!(this.b5b_1 === other.b5b_1))
-    return false;
-  if (!(this.c5b_1 === other.c5b_1))
-    return false;
-  if (!(this.d5b_1 === other.d5b_1))
-    return false;
   if (!(this.e5b_1 === other.e5b_1))
+    return false;
+  if (!(this.f5b_1 === other.f5b_1))
+    return false;
+  if (!(this.g5b_1 === other.g5b_1))
+    return false;
+  if (!(this.h5b_1 === other.h5b_1))
+    return false;
+  if (!(this.i5b_1 === other.i5b_1))
     return false;
   return true;
 };
 function Companion() {
 }
-var Companion_instance_0;
+var Companion_instance_1;
 function Companion_getInstance_7() {
-  return Companion_instance_0;
+  return Companion_instance_1;
 }
 function SrgLoginConfig$openIdConfigurationUrl$delegate$lambda(this$0) {
   return function () {
-    return this$0.r5a_1.u5c_1 + '/.well-known/openid-configuration';
+    return this$0.v5a_1.y5c_1 + '/.well-known/openid-configuration';
   };
 }
 function SrgLoginConfig(clientId, redirectUri, appIdentity, environment, postLogoutRedirectUri, enableLogging, tokenRefreshConfig, enableErrorTracking, enableRopcFlow, clientSecret) {
@@ -1075,36 +1122,36 @@ function SrgLoginConfig(clientId, redirectUri, appIdentity, environment, postLog
   enableErrorTracking = enableErrorTracking === VOID ? true : enableErrorTracking;
   enableRopcFlow = enableRopcFlow === VOID ? false : enableRopcFlow;
   clientSecret = clientSecret === VOID ? null : clientSecret;
-  this.o5a_1 = clientId;
-  this.p5a_1 = redirectUri;
-  this.q5a_1 = appIdentity;
-  this.r5a_1 = environment;
-  this.s5a_1 = postLogoutRedirectUri;
-  this.t5a_1 = enableLogging;
-  this.u5a_1 = tokenRefreshConfig;
-  this.v5a_1 = enableErrorTracking;
-  this.w5a_1 = enableRopcFlow;
-  this.x5a_1 = clientSecret;
+  this.s5a_1 = clientId;
+  this.t5a_1 = redirectUri;
+  this.u5a_1 = appIdentity;
+  this.v5a_1 = environment;
+  this.w5a_1 = postLogoutRedirectUri;
+  this.x5a_1 = enableLogging;
+  this.y5a_1 = tokenRefreshConfig;
+  this.z5a_1 = enableErrorTracking;
+  this.a5b_1 = enableRopcFlow;
+  this.b5b_1 = clientSecret;
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_0 = this.o5a_1;
+  var this_0 = this.s5a_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_0)) {
     var message = 'clientId cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message));
   }
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_1 = this.p5a_1;
+  var this_1 = this.t5a_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_1)) {
     var message_0 = 'redirectUri cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message_0));
   }
   // Inline function 'kotlin.require' call
-  if (!contains(this.p5a_1, '://')) {
+  if (!contains(this.t5a_1, '://')) {
     var message_1 = "redirectUri must be a valid URI with scheme (e.g., 'myapp://callback')";
     throw IllegalArgumentException_init_$Create$(toString(message_1));
   }
-  var tmp0_safe_receiver = this.s5a_1;
+  var tmp0_safe_receiver = this.w5a_1;
   if (tmp0_safe_receiver == null)
     null;
   else {
@@ -1122,22 +1169,22 @@ function SrgLoginConfig(clientId, redirectUri, appIdentity, environment, postLog
     }
   }
   var tmp = this;
-  tmp.y5a_1 = lazy(SrgLoginConfig$openIdConfigurationUrl$delegate$lambda(this));
+  tmp.c5b_1 = lazy(SrgLoginConfig$openIdConfigurationUrl$delegate$lambda(this));
 }
 protoOf(SrgLoginConfig).toString = function () {
-  return 'SrgLoginConfig(clientId=' + this.o5a_1 + ', redirectUri=' + this.p5a_1 + ', appIdentity=' + this.q5a_1.toString() + ', environment=' + this.r5a_1.toString() + ', postLogoutRedirectUri=' + this.s5a_1 + ', enableLogging=' + this.t5a_1 + ', tokenRefreshConfig=' + this.u5a_1.toString() + ', enableErrorTracking=' + this.v5a_1 + ', enableRopcFlow=' + this.w5a_1 + ', clientSecret=' + this.x5a_1 + ')';
+  return 'SrgLoginConfig(clientId=' + this.s5a_1 + ', redirectUri=' + this.t5a_1 + ', appIdentity=' + this.u5a_1.toString() + ', environment=' + this.v5a_1.toString() + ', postLogoutRedirectUri=' + this.w5a_1 + ', enableLogging=' + this.x5a_1 + ', tokenRefreshConfig=' + this.y5a_1.toString() + ', enableErrorTracking=' + this.z5a_1 + ', enableRopcFlow=' + this.a5b_1 + ', clientSecret=' + this.b5b_1 + ')';
 };
 protoOf(SrgLoginConfig).hashCode = function () {
-  var result = getStringHashCode(this.o5a_1);
-  result = imul(result, 31) + getStringHashCode(this.p5a_1) | 0;
-  result = imul(result, 31) + this.q5a_1.hashCode() | 0;
-  result = imul(result, 31) + this.r5a_1.hashCode() | 0;
-  result = imul(result, 31) + (this.s5a_1 == null ? 0 : getStringHashCode(this.s5a_1)) | 0;
-  result = imul(result, 31) + getBooleanHashCode(this.t5a_1) | 0;
+  var result = getStringHashCode(this.s5a_1);
+  result = imul(result, 31) + getStringHashCode(this.t5a_1) | 0;
   result = imul(result, 31) + this.u5a_1.hashCode() | 0;
-  result = imul(result, 31) + getBooleanHashCode(this.v5a_1) | 0;
-  result = imul(result, 31) + getBooleanHashCode(this.w5a_1) | 0;
-  result = imul(result, 31) + (this.x5a_1 == null ? 0 : getStringHashCode(this.x5a_1)) | 0;
+  result = imul(result, 31) + this.v5a_1.hashCode() | 0;
+  result = imul(result, 31) + (this.w5a_1 == null ? 0 : getStringHashCode(this.w5a_1)) | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.x5a_1) | 0;
+  result = imul(result, 31) + this.y5a_1.hashCode() | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.z5a_1) | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.a5b_1) | 0;
+  result = imul(result, 31) + (this.b5b_1 == null ? 0 : getStringHashCode(this.b5b_1)) | 0;
   return result;
 };
 protoOf(SrgLoginConfig).equals = function (other) {
@@ -1145,25 +1192,25 @@ protoOf(SrgLoginConfig).equals = function (other) {
     return true;
   if (!(other instanceof SrgLoginConfig))
     return false;
-  if (!(this.o5a_1 === other.o5a_1))
-    return false;
-  if (!(this.p5a_1 === other.p5a_1))
-    return false;
-  if (!this.q5a_1.equals(other.q5a_1))
-    return false;
-  if (!this.r5a_1.equals(other.r5a_1))
-    return false;
-  if (!(this.s5a_1 == other.s5a_1))
+  if (!(this.s5a_1 === other.s5a_1))
     return false;
   if (!(this.t5a_1 === other.t5a_1))
     return false;
   if (!this.u5a_1.equals(other.u5a_1))
     return false;
-  if (!(this.v5a_1 === other.v5a_1))
+  if (!this.v5a_1.equals(other.v5a_1))
     return false;
-  if (!(this.w5a_1 === other.w5a_1))
+  if (!(this.w5a_1 == other.w5a_1))
     return false;
-  if (!(this.x5a_1 == other.x5a_1))
+  if (!(this.x5a_1 === other.x5a_1))
+    return false;
+  if (!this.y5a_1.equals(other.y5a_1))
+    return false;
+  if (!(this.z5a_1 === other.z5a_1))
+    return false;
+  if (!(this.a5b_1 === other.a5b_1))
+    return false;
+  if (!(this.b5b_1 == other.b5b_1))
     return false;
   return true;
 };
@@ -1190,7 +1237,7 @@ function Environment_initEntries() {
 var $ENTRIES;
 function Environment(name, ordinal, baseUrl) {
   Enum.call(this, name, ordinal);
-  this.u5c_1 = baseUrl;
+  this.y5c_1 = baseUrl;
 }
 function Environment_DEV_getInstance() {
   Environment_initEntries();
@@ -1206,24 +1253,24 @@ function Environment_PROD_getInstance() {
 }
 function SrgLoginSdk() {
 }
-protoOf(SrgLoginSdk).v5c = function (tokenStorageConfig, platformContext, isDebugBuild) {
-  SdkCore_instance.w5b(false, tokenStorageConfig, platformContext, isDebugBuild);
+protoOf(SrgLoginSdk).z5c = function (tokenStorageConfig, platformContext, isDebugBuild) {
+  SdkCore_instance.a5c(false, tokenStorageConfig, platformContext, isDebugBuild);
 };
-protoOf(SrgLoginSdk).w5c = function (tokenStorageConfig, platformContext, isDebugBuild, $super) {
+protoOf(SrgLoginSdk).a5d = function (tokenStorageConfig, platformContext, isDebugBuild, $super) {
   tokenStorageConfig = tokenStorageConfig === VOID ? new TokenStorageConfig() : tokenStorageConfig;
   platformContext = platformContext === VOID ? null : platformContext;
   isDebugBuild = isDebugBuild === VOID ? false : isDebugBuild;
   var tmp;
   if ($super === VOID) {
-    this.v5c(tokenStorageConfig, platformContext, isDebugBuild);
+    this.z5c(tokenStorageConfig, platformContext, isDebugBuild);
     tmp = Unit_instance;
   } else {
-    tmp = $super.v5c.call(this, tokenStorageConfig, platformContext, isDebugBuild);
+    tmp = $super.z5c.call(this, tokenStorageConfig, platformContext, isDebugBuild);
   }
   return tmp;
 };
-protoOf(SrgLoginSdk).x5c = function (config) {
-  return SdkCore_instance.x5b(config);
+protoOf(SrgLoginSdk).b5d = function (config) {
+  return SdkCore_instance.b5c(config);
 };
 var SrgLoginSdk_instance;
 function SrgLoginSdk_getInstance() {
@@ -1258,39 +1305,39 @@ function LoginMethod() {
 }
 function Success(tokenSet) {
   LoginState.call(this);
-  this.y5c_1 = tokenSet;
+  this.c5d_1 = tokenSet;
 }
 protoOf(Success).toString = function () {
-  return 'Success(tokenSet=' + this.y5c_1.toString() + ')';
+  return 'Success(tokenSet=' + this.c5d_1.toString() + ')';
 };
 protoOf(Success).hashCode = function () {
-  return this.y5c_1.hashCode();
+  return this.c5d_1.hashCode();
 };
 protoOf(Success).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof Success))
     return false;
-  if (!this.y5c_1.equals(other.y5c_1))
+  if (!this.c5d_1.equals(other.c5d_1))
     return false;
   return true;
 };
 function Failure(error) {
   LoginState.call(this);
-  this.z5c_1 = error;
+  this.d5d_1 = error;
 }
 protoOf(Failure).toString = function () {
-  return 'Failure(error=' + toString(this.z5c_1) + ')';
+  return 'Failure(error=' + toString(this.d5d_1) + ')';
 };
 protoOf(Failure).hashCode = function () {
-  return hashCode(this.z5c_1);
+  return hashCode(this.d5d_1);
 };
 protoOf(Failure).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof Failure))
     return false;
-  if (!equals(this.z5c_1, other.z5c_1))
+  if (!equals(this.d5d_1, other.d5d_1))
     return false;
   return true;
 };
@@ -1305,9 +1352,9 @@ function AuthenticationManagerImpl$openSsoClient$lambda($message) {
 }
 function $openSsoClientCOROUTINE$(_this__u8e3s4, ssoClientUrl, authContext, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.i5d_1 = _this__u8e3s4;
-  this.j5d_1 = ssoClientUrl;
-  this.k5d_1 = authContext;
+  this.m5d_1 = _this__u8e3s4;
+  this.n5d_1 = ssoClientUrl;
+  this.o5d_1 = authContext;
 }
 protoOf($openSsoClientCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -1317,17 +1364,17 @@ protoOf($openSsoClientCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 4;
-          if (this.i5d_1.p5d_1 == null) {
+          if (this.m5d_1.t5d_1 == null) {
             var tmp_0 = this;
             var message = 'openSsoClient is not supported on this platform.';
             var tmp_1 = SdkLogger_getInstance();
             var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_1.s5d(tmp_2, VOID, VOID, AuthenticationManagerImpl$openSsoClient$lambda(message));
-            tmp_0.l5d_1 = new Failure_1(new InvalidConfiguration(message));
+            tmp_1.w5d(tmp_2, VOID, VOID, AuthenticationManagerImpl$openSsoClient$lambda(message));
+            tmp_0.p5d_1 = new Failure_1(new InvalidConfiguration(message));
             this.i8_1 = 3;
             continue $sm;
           } else {
-            var this_0 = validateSsoClientUrl(this.j5d_1);
+            var this_0 = validateSsoClientUrl(this.n5d_1);
             var tmp_3;
             if (this_0 instanceof Failure_1) {
               tmp_3 = this_0;
@@ -1337,28 +1384,28 @@ protoOf($openSsoClientCOROUTINE$).q8 = function () {
             var tmp1_elvis_lhs = tmp_3;
             if (tmp1_elvis_lhs == null) {
               this.i8_1 = 1;
-              suspendResult = this.i5d_1.p5d_1.h5c(this.j5d_1, this.k5d_1, this);
+              suspendResult = this.m5d_1.t5d_1.l5c(this.n5d_1, this.o5d_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
-              this.m5d_1 = tmp1_elvis_lhs;
+              this.q5d_1 = tmp1_elvis_lhs;
               this.i8_1 = 2;
               continue $sm;
             }
           }
 
         case 1:
-          this.m5d_1 = suspendResult;
+          this.q5d_1 = suspendResult;
           this.i8_1 = 2;
           continue $sm;
         case 2:
-          this.l5d_1 = this.m5d_1;
+          this.p5d_1 = this.q5d_1;
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          return this.l5d_1;
+          return this.p5d_1;
         case 4:
           throw this.l8_1;
       }
@@ -1375,57 +1422,57 @@ protoOf($openSsoClientCOROUTINE$).q8 = function () {
 };
 function AuthenticationManagerImpl(loginStrategy, logoutHandler, webAuthenticator, migrationFlow, loginFailureEmitter) {
   loginFailureEmitter = loginFailureEmitter === VOID ? null : loginFailureEmitter;
-  this.n5d_1 = loginStrategy;
-  this.o5d_1 = logoutHandler;
-  this.p5d_1 = webAuthenticator;
-  this.q5d_1 = migrationFlow;
-  this.r5d_1 = loginFailureEmitter;
+  this.r5d_1 = loginStrategy;
+  this.s5d_1 = logoutHandler;
+  this.t5d_1 = webAuthenticator;
+  this.u5d_1 = migrationFlow;
+  this.v5d_1 = loginFailureEmitter;
 }
-protoOf(AuthenticationManagerImpl).d5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
+protoOf(AuthenticationManagerImpl).h5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
   if (loginMethod instanceof Migration) {
-    return this.q5d_1.d5c(loginMethod, authContext, additionalScopes, additionalParameters);
+    return this.u5d_1.h5c(loginMethod, authContext, additionalScopes, additionalParameters);
   }
-  return this.n5d_1.d5c(loginMethod, authContext, additionalScopes, additionalParameters);
+  return this.r5d_1.h5c(loginMethod, authContext, additionalScopes, additionalParameters);
 };
-protoOf(AuthenticationManagerImpl).f5c = function (callbackUrl, $completion) {
-  var tmp = this.n5d_1;
+protoOf(AuthenticationManagerImpl).j5c = function (callbackUrl, $completion) {
+  var tmp = this.r5d_1;
   var tmp0_elvis_lhs = isInterface(tmp, RedirectAuthorizationCompleter) ? tmp : null;
   var tmp_0;
   if (tmp0_elvis_lhs == null) {
     // Inline function 'kotlin.run' call
     var error = new InvalidConfiguration('Redirect completion is not supported by the active login flow on this platform.');
-    var tmp0_safe_receiver = this.r5d_1;
-    var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.v5d(error);
+    var tmp0_safe_receiver = this.v5d_1;
+    var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.z5d(error);
     return tmp1_elvis_lhs == null ? new Failure(error) : tmp1_elvis_lhs;
   } else {
     tmp_0 = tmp0_elvis_lhs;
   }
   var completer = tmp_0;
-  return completer.f5c(callbackUrl, $completion);
+  return completer.j5c(callbackUrl, $completion);
 };
-protoOf(AuthenticationManagerImpl).g5c = function (logoutType, $completion) {
-  return this.o5d_1.g5c(logoutType, $completion);
+protoOf(AuthenticationManagerImpl).k5c = function (logoutType, $completion) {
+  return this.s5d_1.k5c(logoutType, $completion);
 };
-protoOf(AuthenticationManagerImpl).h5c = function (ssoClientUrl, authContext, $completion) {
+protoOf(AuthenticationManagerImpl).l5c = function (ssoClientUrl, authContext, $completion) {
   var tmp = new $openSsoClientCOROUTINE$(this, ssoClientUrl, authContext, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 function AuthorizationTransaction(state, codeVerifier, nonce, createdAt) {
-  this.z5d_1 = state;
-  this.a5e_1 = codeVerifier;
-  this.b5e_1 = nonce;
-  this.c5e_1 = createdAt;
+  this.d5e_1 = state;
+  this.e5e_1 = codeVerifier;
+  this.f5e_1 = nonce;
+  this.g5e_1 = createdAt;
 }
 protoOf(AuthorizationTransaction).toString = function () {
-  return 'AuthorizationTransaction(state=' + this.z5d_1 + ', codeVerifier=' + this.a5e_1 + ', nonce=' + this.b5e_1 + ', createdAt=' + this.c5e_1.toString() + ')';
+  return 'AuthorizationTransaction(state=' + this.d5e_1 + ', codeVerifier=' + this.e5e_1 + ', nonce=' + this.f5e_1 + ', createdAt=' + this.g5e_1.toString() + ')';
 };
 protoOf(AuthorizationTransaction).hashCode = function () {
-  var result = getStringHashCode(this.z5d_1);
-  result = imul(result, 31) + getStringHashCode(this.a5e_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.b5e_1) | 0;
-  result = imul(result, 31) + this.c5e_1.hashCode() | 0;
+  var result = getStringHashCode(this.d5e_1);
+  result = imul(result, 31) + getStringHashCode(this.e5e_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.f5e_1) | 0;
+  result = imul(result, 31) + this.g5e_1.hashCode() | 0;
   return result;
 };
 protoOf(AuthorizationTransaction).equals = function (other) {
@@ -1433,13 +1480,13 @@ protoOf(AuthorizationTransaction).equals = function (other) {
     return true;
   if (!(other instanceof AuthorizationTransaction))
     return false;
-  if (!(this.z5d_1 === other.z5d_1))
+  if (!(this.d5e_1 === other.d5e_1))
     return false;
-  if (!(this.a5e_1 === other.a5e_1))
+  if (!(this.e5e_1 === other.e5e_1))
     return false;
-  if (!(this.b5e_1 === other.b5e_1))
+  if (!(this.f5e_1 === other.f5e_1))
     return false;
-  if (!this.c5e_1.equals(other.c5e_1))
+  if (!this.g5e_1.equals(other.g5e_1))
     return false;
   return true;
 };
@@ -1447,18 +1494,18 @@ function AuthorizationStateStore() {
 }
 function BaseWebAuthenticator() {
 }
-protoOf(BaseWebAuthenticator).g5e = function (authUrl, authContext, $completion) {
-  return this.h5e(authUrl, authContext, $completion);
+protoOf(BaseWebAuthenticator).k5e = function (authUrl, authContext, $completion) {
+  return this.l5e(authUrl, authContext, $completion);
 };
-protoOf(BaseWebAuthenticator).i5e = function (logoutUrl, authContext, $completion) {
-  return this.j5e(logoutUrl, authContext, $completion);
+protoOf(BaseWebAuthenticator).m5e = function (logoutUrl, authContext, $completion) {
+  return this.n5e(logoutUrl, authContext, $completion);
 };
-protoOf(BaseWebAuthenticator).h5c = function (ssoClientUrl, authContext, $completion) {
+protoOf(BaseWebAuthenticator).l5c = function (ssoClientUrl, authContext, $completion) {
   var validationResult = validateSsoClientUrl(ssoClientUrl);
   if (validationResult instanceof Failure_1) {
     return validationResult;
   }
-  return this.k5e(ssoClientUrl, authContext, $completion);
+  return this.o5e(ssoClientUrl, authContext, $completion);
 };
 var EvaluatedTokenState_Valid_instance;
 var EvaluatedTokenState_ExpiringSoon_instance;
@@ -1515,18 +1562,18 @@ function EvaluatedTokenState_NoTokens_getInstance() {
   return EvaluatedTokenState_NoTokens_instance;
 }
 function validateIdTokenClaims($this, claims, expectedClientId, expectedIssuer, expectedNonce) {
-  if (!(claims.l5e_1 === expectedIssuer)) {
+  if (!(claims.p5e_1 === expectedIssuer)) {
     // Inline function 'kotlin.Companion.failure' call
-    var exception = Exception_init_$Create$("Invalid issuer: expected '" + expectedIssuer + "', got '" + claims.l5e_1 + "'");
+    var exception = Exception_init_$Create$("Invalid issuer: expected '" + expectedIssuer + "', got '" + claims.p5e_1 + "'");
     return _Result___init__impl__xyqfz8(createFailure(exception));
   }
-  if (!claims.n5e_1.e2(expectedClientId)) {
+  if (!claims.r5e_1.e2(expectedClientId)) {
     // Inline function 'kotlin.Companion.failure' call
-    var exception_0 = Exception_init_$Create$("Invalid audience: expected '" + expectedClientId + "' in audience list, got " + toString(claims.n5e_1));
+    var exception_0 = Exception_init_$Create$("Invalid audience: expected '" + expectedClientId + "' in audience list, got " + toString(claims.r5e_1));
     return _Result___init__impl__xyqfz8(createFailure(exception_0));
   }
-  if (claims.n5e_1.z() > 1) {
-    var azp = claims.t5e('azp');
+  if (claims.r5e_1.z() > 1) {
+    var azp = claims.x5e('azp');
     // Inline function 'kotlin.text.isNullOrBlank' call
     if (azp == null || isBlank(azp)) {
       // Inline function 'kotlin.Companion.failure' call
@@ -1540,18 +1587,18 @@ function validateIdTokenClaims($this, claims, expectedClientId, expectedIssuer, 
     }
   }
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = claims.m5e_1;
+  var this_0 = claims.q5e_1;
   if (this_0 == null || isBlank(this_0)) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_3 = Exception_init_$Create$("Missing required 'sub' (subject) claim in ID token");
     return _Result___init__impl__xyqfz8(createFailure(exception_3));
   }
-  if (claims.q5e_1 == null) {
+  if (claims.u5e_1 == null) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_4 = Exception_init_$Create$("Missing required 'iat' (issued at) claim in ID token");
     return _Result___init__impl__xyqfz8(createFailure(exception_4));
   }
-  if (claims.o5e_1 == null) {
+  if (claims.s5e_1 == null) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_5 = Exception_init_$Create$("Missing required 'exp' (expiration) claim in ID token");
     return _Result___init__impl__xyqfz8(createFailure(exception_5));
@@ -1560,7 +1607,7 @@ function validateIdTokenClaims($this, claims, expectedClientId, expectedIssuer, 
     null;
   else {
     // Inline function 'kotlin.let' call
-    var tokenNonce = claims.t5e('nonce');
+    var tokenNonce = claims.x5e('nonce');
     if (!(tokenNonce === expectedNonce)) {
       // Inline function 'kotlin.Companion.failure' call
       var exception_6 = Exception_init_$Create$("Nonce mismatch: expected '" + expectedNonce + "', got '" + tokenNonce + "'");
@@ -1571,29 +1618,29 @@ function validateIdTokenClaims($this, claims, expectedClientId, expectedIssuer, 
   return _Result___init__impl__xyqfz8(Unit_instance);
 }
 function validateAccessTokenClaims($this, claims, expectedClientId, expectedIssuer) {
-  if (!(claims.l5e_1 === expectedIssuer)) {
+  if (!(claims.p5e_1 === expectedIssuer)) {
     // Inline function 'kotlin.Companion.failure' call
-    var exception = Exception_init_$Create$("Invalid issuer: expected '" + expectedIssuer + "', got '" + claims.l5e_1 + "'");
+    var exception = Exception_init_$Create$("Invalid issuer: expected '" + expectedIssuer + "', got '" + claims.p5e_1 + "'");
     return _Result___init__impl__xyqfz8(createFailure(exception));
   }
-  if (!claims.n5e_1.e2(expectedClientId)) {
+  if (!claims.r5e_1.e2(expectedClientId)) {
     // Inline function 'kotlin.Companion.failure' call
-    var exception_0 = Exception_init_$Create$("Invalid audience: expected '" + expectedClientId + "' in audience list, got " + toString(claims.n5e_1));
+    var exception_0 = Exception_init_$Create$("Invalid audience: expected '" + expectedClientId + "' in audience list, got " + toString(claims.r5e_1));
     return _Result___init__impl__xyqfz8(createFailure(exception_0));
   }
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = claims.m5e_1;
+  var this_0 = claims.q5e_1;
   if (this_0 == null || isBlank(this_0)) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_1 = Exception_init_$Create$("Missing required 'sub' (subject) claim in access token");
     return _Result___init__impl__xyqfz8(createFailure(exception_1));
   }
-  if (claims.q5e_1 == null) {
+  if (claims.u5e_1 == null) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_2 = Exception_init_$Create$("Missing required 'iat' (issued at) claim in access token");
     return _Result___init__impl__xyqfz8(createFailure(exception_2));
   }
-  if (claims.o5e_1 == null) {
+  if (claims.s5e_1 == null) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_3 = Exception_init_$Create$("Missing required 'exp' (expiration) claim in access token");
     return _Result___init__impl__xyqfz8(createFailure(exception_3));
@@ -1626,12 +1673,12 @@ function parseJwt$extractString(claimsMap, key) {
     var tmp_0;
     var tmp_1;
     if (tmp0_safe_receiver instanceof JsonPrimitive) {
-      tmp_1 = tmp0_safe_receiver.a17();
+      tmp_1 = tmp0_safe_receiver.b17();
     } else {
       tmp_1 = false;
     }
     if (tmp_1) {
-      tmp_0 = tmp0_safe_receiver.b17();
+      tmp_0 = tmp0_safe_receiver.c17();
     } else {
       tmp_0 = null;
     }
@@ -1648,7 +1695,7 @@ function parseJwt$extractLong(claimsMap, key) {
     // Inline function 'kotlin.let' call
     var tmp_0;
     if (tmp0_safe_receiver instanceof JsonPrimitive) {
-      tmp_0 = toLongOrNull(tmp0_safe_receiver.b17());
+      tmp_0 = toLongOrNull(tmp0_safe_receiver.c17());
     } else {
       tmp_0 = null;
     }
@@ -1669,15 +1716,15 @@ function parseJwt$extractStringOrStringList(claimsMap, key) {
   if (element instanceof JsonPrimitive) {
     var tmp_1;
     var tmp_2;
-    if (element.a17()) {
+    if (element.b17()) {
       // Inline function 'kotlin.text.isNotBlank' call
-      var this_0 = element.b17();
+      var this_0 = element.c17();
       tmp_2 = !isBlank(this_0);
     } else {
       tmp_2 = false;
     }
     if (tmp_2) {
-      tmp_1 = listOf(element.b17());
+      tmp_1 = listOf(element.c17());
     } else {
       tmp_1 = emptyList();
     }
@@ -1698,7 +1745,7 @@ function parseJwt$extractStringOrStringList(claimsMap, key) {
         } else {
           // Inline function 'kotlin.takeIf' call
           var tmp_4;
-          if (tmp0_safe_receiver.a17()) {
+          if (tmp0_safe_receiver.b17()) {
             tmp_4 = tmp0_safe_receiver;
           } else {
             tmp_4 = null;
@@ -1706,7 +1753,7 @@ function parseJwt$extractStringOrStringList(claimsMap, key) {
           tmp_3 = tmp_4;
         }
         var tmp1_safe_receiver = tmp_3;
-        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.b17();
+        var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.c17();
         var tmp_5;
         if (tmp2_safe_receiver == null) {
           tmp_5 = null;
@@ -1738,8 +1785,8 @@ function parseJwt$extractStringOrStringList(claimsMap, key) {
 }
 function $getJwksCOROUTINE$(_this__u8e3s4, jwksUri, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.p5f_1 = _this__u8e3s4;
-  this.q5f_1 = jwksUri;
+  this.t5f_1 = _this__u8e3s4;
+  this.u5f_1 = jwksUri;
 }
 protoOf($getJwksCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -1749,15 +1796,15 @@ protoOf($getJwksCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          this.s5f_1 = System_instance.s3f().p3j();
-          if (!(this.p5f_1.w5f_1 == null) && compare(subtract(this.s5f_1, this.p5f_1.x5f_1), this.p5f_1.y5f_1) < 0) {
-            var value = ensureNotNull(this.p5f_1.w5f_1);
+          this.w5f_1 = System_instance.u3f().r3j();
+          if (!(this.t5f_1.a5g_1 == null) && compare(subtract(this.w5f_1, this.t5f_1.b5g_1), this.t5f_1.c5g_1) < 0) {
+            var value = ensureNotNull(this.t5f_1.a5g_1);
             return new Result(_Result___init__impl__xyqfz8(value));
           }
 
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.p5f_1.t5f_1.z5f(this.q5f_1, this);
+          suspendResult = this.t5f_1.x5f_1.d5g(this.u5f_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -1765,10 +1812,10 @@ protoOf($getJwksCOROUTINE$).q8 = function () {
           continue $sm;
         case 1:
           var jwks = suspendResult;
-          this.p5f_1.w5f_1 = jwks;
-          this.p5f_1.x5f_1 = this.s5f_1;
+          this.t5f_1.a5g_1 = jwks;
+          this.t5f_1.b5g_1 = this.w5f_1;
           var tmp_0 = this;
-          tmp_0.r5f_1 = _Result___init__impl__xyqfz8(jwks);
+          tmp_0.v5f_1 = _Result___init__impl__xyqfz8(jwks);
           this.j8_1 = 3;
           this.i8_1 = 4;
           continue $sm;
@@ -1778,9 +1825,9 @@ protoOf($getJwksCOROUTINE$).q8 = function () {
           if (tmp_1 instanceof Exception) {
             var e = this.l8_1;
             var tmp_2 = this;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'get_jwks'), to('jwks_uri', this.q5f_1), to('critical', true), to('impact', 'signature_verification_impossible')]), ErrorLevel_FATAL_getInstance());
-            var exception = Exception_init_$Create$('Failed to retrieve JWKS from ' + this.q5f_1 + ': ' + e.message);
-            tmp_2.r5f_1 = _Result___init__impl__xyqfz8(createFailure(exception));
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'get_jwks'), to('jwks_uri', this.u5f_1), to('critical', true), to('impact', 'signature_verification_impossible')]), ErrorLevel_FATAL_getInstance());
+            var exception = Exception_init_$Create$('Failed to retrieve JWKS from ' + this.u5f_1 + ': ' + e.message);
+            tmp_2.v5f_1 = _Result___init__impl__xyqfz8(createFailure(exception));
             this.i8_1 = 4;
             continue $sm;
           } else {
@@ -1791,7 +1838,7 @@ protoOf($getJwksCOROUTINE$).q8 = function () {
           throw this.l8_1;
         case 4:
           this.j8_1 = 3;
-          return new Result(this.r5f_1);
+          return new Result(this.v5f_1);
       }
     } catch ($p) {
       var e_0 = $p;
@@ -1806,13 +1853,13 @@ protoOf($getJwksCOROUTINE$).q8 = function () {
 };
 function $validateIdTokenCOROUTINE$(_this__u8e3s4, idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.j5g_1 = _this__u8e3s4;
-  this.k5g_1 = idToken;
-  this.l5g_1 = clientId;
-  this.m5g_1 = issuer;
-  this.n5g_1 = jwksUri;
-  this.o5g_1 = nonce;
-  this.p5g_1 = maxAgeSeconds;
+  this.n5g_1 = _this__u8e3s4;
+  this.o5g_1 = idToken;
+  this.p5g_1 = clientId;
+  this.q5g_1 = issuer;
+  this.r5g_1 = jwksUri;
+  this.s5g_1 = nonce;
+  this.t5g_1 = maxAgeSeconds;
 }
 protoOf($validateIdTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -1824,7 +1871,7 @@ protoOf($validateIdTokenCOROUTINE$).q8 = function () {
           this.j8_1 = 7;
           this.j8_1 = 6;
           this.i8_1 = 1;
-          suspendResult = this.j5g_1.s5g(this.k5g_1, this);
+          suspendResult = this.n5g_1.w5g(this.o5g_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -1846,22 +1893,22 @@ protoOf($validateIdTokenCOROUTINE$).q8 = function () {
           var tmp_0 = this;
           throwOnFailure(parseResult);
           var tmp_1 = _Result___get_value__impl__bjfvqg(parseResult);
-          tmp_0.r5g_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
-          this.q5g_1 = this.r5g_1.u5g_1;
-          var timingResult = this.j5g_1.w5g(this.q5g_1, this.p5g_1);
+          tmp_0.v5g_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
+          this.u5g_1 = this.v5g_1.y5g_1;
+          var timingResult = this.n5g_1.a5h(this.u5g_1, this.t5g_1);
           if (_Result___get_isFailure__impl__jpiriv(timingResult)) {
             var exception_0 = ensureNotNull(Result__exceptionOrNull_impl_p6xea9(timingResult));
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_0)));
           }
 
-          var idTokenClaimsResult = validateIdTokenClaims(this.j5g_1, this.q5g_1, this.l5g_1, this.m5g_1, this.o5g_1);
+          var idTokenClaimsResult = validateIdTokenClaims(this.n5g_1, this.u5g_1, this.p5g_1, this.q5g_1, this.s5g_1);
           if (_Result___get_isFailure__impl__jpiriv(idTokenClaimsResult)) {
             var exception_1 = ensureNotNull(Result__exceptionOrNull_impl_p6xea9(idTokenClaimsResult));
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_1)));
           }
 
           this.i8_1 = 3;
-          suspendResult = this.j5g_1.x5g(this.n5g_1, this);
+          suspendResult = this.n5g_1.b5h(this.r5g_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -1883,14 +1930,14 @@ protoOf($validateIdTokenCOROUTINE$).q8 = function () {
           throwOnFailure(jwksResult);
           var tmp_2 = _Result___get_value__impl__bjfvqg(jwksResult);
           var jwks = (tmp_2 == null ? true : !(tmp_2 == null)) ? tmp_2 : THROW_CCE();
-          var verificationKey = this.j5g_1.y5g(this.r5g_1.t5g_1, jwks);
+          var verificationKey = this.n5g_1.c5h(this.v5g_1.x5g_1, jwks);
           if (verificationKey == null) {
             var exception_3 = Exception_init_$Create$('No suitable verification key found for ID token');
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_3)));
           }
 
           this.i8_1 = 5;
-          suspendResult = verifyJwtSignature(this.j5g_1, this.k5g_1, this.r5g_1, verificationKey, this);
+          suspendResult = verifyJwtSignature(this.n5g_1, this.o5g_1, this.v5g_1, verificationKey, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -1903,14 +1950,14 @@ protoOf($validateIdTokenCOROUTINE$).q8 = function () {
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_4)));
           }
 
-          var value = this.q5g_1;
+          var value = this.u5g_1;
           return new Result(_Result___init__impl__xyqfz8(value));
         case 6:
           this.j8_1 = 7;
           var tmp_3 = this.l8_1;
           if (tmp_3 instanceof Exception) {
             var e = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'validate_id_token'), to('token_type', 'id_token'), to('security_critical', true), to('impact', 'user_identity_unverified')]), ErrorLevel_FATAL_getInstance());
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'validate_id_token'), to('token_type', 'id_token'), to('security_critical', true), to('impact', 'user_identity_unverified')]), ErrorLevel_FATAL_getInstance());
             var exception_5 = Exception_init_$Create$('ID token validation failed: ' + e.message);
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_5)));
           } else {
@@ -1933,12 +1980,12 @@ protoOf($validateIdTokenCOROUTINE$).q8 = function () {
 };
 function $validateAccessTokenCOROUTINE$(_this__u8e3s4, accessToken, clientId, issuer, jwksUri, maxAgeSeconds, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.h5h_1 = _this__u8e3s4;
-  this.i5h_1 = accessToken;
-  this.j5h_1 = clientId;
-  this.k5h_1 = issuer;
-  this.l5h_1 = jwksUri;
-  this.m5h_1 = maxAgeSeconds;
+  this.l5h_1 = _this__u8e3s4;
+  this.m5h_1 = accessToken;
+  this.n5h_1 = clientId;
+  this.o5h_1 = issuer;
+  this.p5h_1 = jwksUri;
+  this.q5h_1 = maxAgeSeconds;
 }
 protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -1950,7 +1997,7 @@ protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
           this.j8_1 = 7;
           this.j8_1 = 6;
           this.i8_1 = 1;
-          suspendResult = this.h5h_1.s5g(this.i5h_1, this);
+          suspendResult = this.l5h_1.w5g(this.m5h_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -1972,22 +2019,22 @@ protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
           var tmp_0 = this;
           throwOnFailure(parseResult);
           var tmp_1 = _Result___get_value__impl__bjfvqg(parseResult);
-          tmp_0.o5h_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
-          this.n5h_1 = this.o5h_1.u5g_1;
-          var timingResult = this.h5h_1.w5g(this.n5h_1, this.m5h_1);
+          tmp_0.s5h_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
+          this.r5h_1 = this.s5h_1.y5g_1;
+          var timingResult = this.l5h_1.a5h(this.r5h_1, this.q5h_1);
           if (_Result___get_isFailure__impl__jpiriv(timingResult)) {
             var exception_0 = ensureNotNull(Result__exceptionOrNull_impl_p6xea9(timingResult));
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_0)));
           }
 
-          var accessTokenClaimsResult = validateAccessTokenClaims(this.h5h_1, this.n5h_1, this.j5h_1, this.k5h_1);
+          var accessTokenClaimsResult = validateAccessTokenClaims(this.l5h_1, this.r5h_1, this.n5h_1, this.o5h_1);
           if (_Result___get_isFailure__impl__jpiriv(accessTokenClaimsResult)) {
             var exception_1 = ensureNotNull(Result__exceptionOrNull_impl_p6xea9(accessTokenClaimsResult));
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_1)));
           }
 
           this.i8_1 = 3;
-          suspendResult = this.h5h_1.x5g(this.l5h_1, this);
+          suspendResult = this.l5h_1.b5h(this.p5h_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2009,14 +2056,14 @@ protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
           throwOnFailure(jwksResult);
           var tmp_2 = _Result___get_value__impl__bjfvqg(jwksResult);
           var jwks = (tmp_2 == null ? true : !(tmp_2 == null)) ? tmp_2 : THROW_CCE();
-          var verificationKey = this.h5h_1.y5g(this.o5h_1.t5g_1, jwks);
+          var verificationKey = this.l5h_1.c5h(this.s5h_1.x5g_1, jwks);
           if (verificationKey == null) {
             var exception_3 = Exception_init_$Create$('No suitable verification key found for access token');
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_3)));
           }
 
           this.i8_1 = 5;
-          suspendResult = verifyJwtSignature(this.h5h_1, this.i5h_1, this.o5h_1, verificationKey, this);
+          suspendResult = verifyJwtSignature(this.l5h_1, this.m5h_1, this.s5h_1, verificationKey, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2029,14 +2076,14 @@ protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_4)));
           }
 
-          var value = this.n5h_1;
+          var value = this.r5h_1;
           return new Result(_Result___init__impl__xyqfz8(value));
         case 6:
           this.j8_1 = 7;
           var tmp_3 = this.l8_1;
           if (tmp_3 instanceof Exception) {
             var e = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'validate_access_token'), to('token_type', 'access_token'), to('security_critical', true), to('impact', 'api_access_unauthorized')]), ErrorLevel_FATAL_getInstance());
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'validate_access_token'), to('token_type', 'access_token'), to('security_critical', true), to('impact', 'api_access_unauthorized')]), ErrorLevel_FATAL_getInstance());
             var exception_5 = Exception_init_$Create$('Access token validation failed: ' + e.message);
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_5)));
           } else {
@@ -2059,10 +2106,10 @@ protoOf($validateAccessTokenCOROUTINE$).q8 = function () {
 };
 function $verifyJwtSignatureCOROUTINE$(_this__u8e3s4, token, parsedJwt, jwk, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.c5f_1 = _this__u8e3s4;
-  this.d5f_1 = token;
-  this.e5f_1 = parsedJwt;
-  this.f5f_1 = jwk;
+  this.g5f_1 = _this__u8e3s4;
+  this.h5f_1 = token;
+  this.i5f_1 = parsedJwt;
+  this.j5f_1 = jwk;
 }
 protoOf($verifyJwtSignatureCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -2073,7 +2120,7 @@ protoOf($verifyJwtSignatureCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 5;
           this.j8_1 = 4;
-          var parts = split(this.d5f_1, ['.']);
+          var parts = split(this.h5f_1, ['.']);
           if (!(parts.z() === 3)) {
             return false;
           }
@@ -2084,10 +2131,10 @@ protoOf($verifyJwtSignatureCOROUTINE$).q8 = function () {
           var signedData = encodeToByteArray(headerPart + '.' + payloadPart);
           var base64UrlDecoder = Default_getInstance().hg_1.kg(PaddingOption_ABSENT_OPTIONAL_getInstance());
           var signature = base64UrlDecoder.og(signaturePart);
-          var algorithm = this.e5f_1.t5g_1.p5h_1;
+          var algorithm = this.i5f_1.x5g_1.t5h_1;
           if (startsWith(algorithm, 'RS')) {
             this.i8_1 = 2;
-            suspendResult = this.c5f_1.u5f_1.t5h(signedData, signature, this.f5f_1, algorithm, this);
+            suspendResult = this.g5f_1.y5f_1.x5h(signedData, signature, this.j5f_1, algorithm, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -2095,35 +2142,35 @@ protoOf($verifyJwtSignatureCOROUTINE$).q8 = function () {
           } else {
             if (startsWith(algorithm, 'ES')) {
               this.i8_1 = 1;
-              suspendResult = this.c5f_1.u5f_1.s5h(signedData, signature, this.f5f_1, algorithm, this);
+              suspendResult = this.g5f_1.y5f_1.w5h(signedData, signature, this.j5f_1, algorithm, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
               var tmp_0 = this;
-              tmp_0.g5f_1 = false;
+              tmp_0.k5f_1 = false;
               this.i8_1 = 3;
               continue $sm;
             }
           }
 
         case 1:
-          this.g5f_1 = suspendResult;
+          this.k5f_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 2:
-          this.g5f_1 = suspendResult;
+          this.k5f_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          return this.g5f_1;
+          return this.k5f_1;
         case 4:
           this.j8_1 = 5;
           var tmp_1 = this.l8_1;
           if (tmp_1 instanceof Exception) {
             var e = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'verify_jwt_signature'), to('algorithm', this.e5f_1.t5g_1.p5h_1), to('security_critical', true), to('impact', 'potential_token_forgery'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'verify_jwt_signature'), to('algorithm', this.i5f_1.x5g_1.t5h_1), to('security_critical', true), to('impact', 'potential_token_forgery'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
             return false;
           } else {
             throw this.l8_1;
@@ -2145,8 +2192,8 @@ protoOf($verifyJwtSignatureCOROUTINE$).q8 = function () {
 };
 function $isAccessTokenExpiredCOROUTINE$(_this__u8e3s4, accessToken, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.c5i_1 = _this__u8e3s4;
-  this.d5i_1 = accessToken;
+  this.g5i_1 = _this__u8e3s4;
+  this.h5i_1 = accessToken;
 }
 protoOf($isAccessTokenExpiredCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -2157,7 +2204,7 @@ protoOf($isAccessTokenExpiredCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.c5i_1.s5g(this.d5i_1, this);
+          suspendResult = this.g5i_1.w5g(this.h5i_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2177,13 +2224,13 @@ protoOf($isAccessTokenExpiredCOROUTINE$).q8 = function () {
 
           throwOnFailure(parseResult);
           var tmp_0 = _Result___get_value__impl__bjfvqg(parseResult);
-          var claims = ((tmp_0 == null ? true : !(tmp_0 == null)) ? tmp_0 : THROW_CCE()).u5g_1;
-          var exp = claims.o5e_1;
+          var claims = ((tmp_0 == null ? true : !(tmp_0 == null)) ? tmp_0 : THROW_CCE()).y5g_1;
+          var exp = claims.s5e_1;
           if (exp == null) {
             return true;
           }
 
-          var now = System_instance.s3f().p3j();
+          var now = System_instance.u3f().r3j();
           return compare(now, exp) >= 0;
         case 3:
           throw this.l8_1;
@@ -2201,9 +2248,9 @@ protoOf($isAccessTokenExpiredCOROUTINE$).q8 = function () {
 };
 function $isAccessTokenExpiringSoonCOROUTINE$(_this__u8e3s4, accessToken, thresholdSeconds, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.m5i_1 = _this__u8e3s4;
-  this.n5i_1 = accessToken;
-  this.o5i_1 = thresholdSeconds;
+  this.q5i_1 = _this__u8e3s4;
+  this.r5i_1 = accessToken;
+  this.s5i_1 = thresholdSeconds;
 }
 protoOf($isAccessTokenExpiringSoonCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -2214,7 +2261,7 @@ protoOf($isAccessTokenExpiringSoonCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.m5i_1.s5g(this.n5i_1, this);
+          suspendResult = this.q5i_1.w5g(this.r5i_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2234,8 +2281,8 @@ protoOf($isAccessTokenExpiringSoonCOROUTINE$).q8 = function () {
 
           throwOnFailure(parseResult);
           var tmp_0 = _Result___get_value__impl__bjfvqg(parseResult);
-          var claims = ((tmp_0 == null ? true : !(tmp_0 == null)) ? tmp_0 : THROW_CCE()).u5g_1;
-          var tmp0_elvis_lhs = claims.o5e_1;
+          var claims = ((tmp_0 == null ? true : !(tmp_0 == null)) ? tmp_0 : THROW_CCE()).y5g_1;
+          var tmp0_elvis_lhs = claims.s5e_1;
           var tmp_1;
           if (tmp0_elvis_lhs == null) {
             return true;
@@ -2244,9 +2291,9 @@ protoOf($isAccessTokenExpiringSoonCOROUTINE$).q8 = function () {
           }
 
           var exp = tmp_1;
-          var now = System_instance.s3f().p3j();
+          var now = System_instance.u3f().r3j();
           var timeUntilExpiration = subtract(exp, now);
-          return compare(timeUntilExpiration, this.o5i_1) <= 0;
+          return compare(timeUntilExpiration, this.s5i_1) <= 0;
         case 3:
           throw this.l8_1;
       }
@@ -2269,17 +2316,17 @@ function JwtValidationService(apiService, cryptoService, json) {
     tmp = json;
   }
   json = tmp;
-  this.t5f_1 = apiService;
-  this.u5f_1 = cryptoService;
-  this.v5f_1 = json;
+  this.x5f_1 = apiService;
+  this.y5f_1 = cryptoService;
+  this.z5f_1 = json;
   var tmp_0 = SdkLogger_getInstance();
   var tmp_1 = LogCategory_SDK_CREATION_getInstance();
-  tmp_0.n5a(tmp_1, VOID, VOID, JwtValidationService$lambda(this));
-  this.w5f_1 = null;
-  this.x5f_1 = new Long(0, 0);
-  this.y5f_1 = new Long(3600, 0);
+  tmp_0.r5a(tmp_1, VOID, VOID, JwtValidationService$lambda(this));
+  this.a5g_1 = null;
+  this.b5g_1 = new Long(0, 0);
+  this.c5g_1 = new Long(3600, 0);
 }
-protoOf(JwtValidationService).s5g = function (token, $completion) {
+protoOf(JwtValidationService).w5g = function (token, $completion) {
   try {
     var parts = split(token, ['.']);
     if (!(parts.z() === 3)) {
@@ -2297,7 +2344,7 @@ protoOf(JwtValidationService).s5g = function (token, $completion) {
     var base64UrlDecoder = Default_getInstance().hg_1.kg(PaddingOption_ABSENT_OPTIONAL_getInstance());
     var headerJson = decodeToString(base64UrlDecoder.og(headerPart));
     // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-    var this_0 = this.v5f_1;
+    var this_0 = this.z5f_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_1 = this_0.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
@@ -2306,7 +2353,7 @@ protoOf(JwtValidationService).s5g = function (token, $completion) {
     var header = this_0.tm(tmp$ret$5, headerJson);
     var payloadJson = decodeToString(base64UrlDecoder.og(payloadPart));
     // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-    var this_3 = this.v5f_1;
+    var this_3 = this.z5f_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_4 = this_3.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
@@ -2340,7 +2387,7 @@ protoOf(JwtValidationService).s5g = function (token, $completion) {
   } catch ($p) {
     if ($p instanceof Exception) {
       var e = $p;
-      ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'parse_jwt'), to('stage', 'jwt_structure_parsing'), to('critical', true), to('impact', 'jwt_validation_impossible')]), ErrorLevel_FATAL_getInstance());
+      ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'parse_jwt'), to('stage', 'jwt_structure_parsing'), to('critical', true), to('impact', 'jwt_validation_impossible')]), ErrorLevel_FATAL_getInstance());
       // Inline function 'kotlin.Companion.failure' call
       var exception_0 = Exception_init_$Create$('Failed to parse JWT: ' + e.message);
       var tmp$ret$14 = _Result___init__impl__xyqfz8(createFailure(exception_0));
@@ -2350,7 +2397,7 @@ protoOf(JwtValidationService).s5g = function (token, $completion) {
     }
   }
 };
-protoOf(JwtValidationService).x5g = function (jwksUri, $completion) {
+protoOf(JwtValidationService).b5h = function (jwksUri, $completion) {
   var tmp = new $getJwksCOROUTINE$(this, jwksUri, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -2359,18 +2406,18 @@ protoOf(JwtValidationService).x5g = function (jwksUri, $completion) {
     return tmp_0;
   return tmp_0;
 };
-protoOf(JwtValidationService).y5g = function (header, jwks) {
+protoOf(JwtValidationService).c5h = function (header, jwks) {
   var tmp;
-  if (!(header.r5h_1 == null)) {
+  if (!(header.v5h_1 == null)) {
     // Inline function 'kotlin.collections.find' call
-    var tmp0 = jwks.p5i_1;
+    var tmp0 = jwks.t5i_1;
     var tmp$ret$1;
     $l$block: {
       // Inline function 'kotlin.collections.firstOrNull' call
       var _iterator__ex2g4s = tmp0.t();
       while (_iterator__ex2g4s.u()) {
         var element = _iterator__ex2g4s.v();
-        if (element.u5i_1 == header.r5h_1) {
+        if (element.y5i_1 == header.v5h_1) {
           tmp$ret$1 = element;
           break $l$block;
         }
@@ -2380,14 +2427,14 @@ protoOf(JwtValidationService).y5g = function (header, jwks) {
     tmp = tmp$ret$1;
   } else {
     // Inline function 'kotlin.collections.find' call
-    var tmp0_0 = jwks.p5i_1;
+    var tmp0_0 = jwks.t5i_1;
     var tmp$ret$4;
     $l$block_0: {
       // Inline function 'kotlin.collections.firstOrNull' call
       var _iterator__ex2g4s_0 = tmp0_0.t();
       while (_iterator__ex2g4s_0.u()) {
         var element_0 = _iterator__ex2g4s_0.v();
-        if (element_0.t5i_1 === header.p5h_1) {
+        if (element_0.x5i_1 === header.t5h_1) {
           tmp$ret$4 = element_0;
           break $l$block_0;
         }
@@ -2398,9 +2445,9 @@ protoOf(JwtValidationService).y5g = function (header, jwks) {
   }
   return tmp;
 };
-protoOf(JwtValidationService).w5g = function (claims, maxAgeSeconds) {
-  var now = System_instance.s3f().p3j();
-  var tmp0_safe_receiver = claims.q5e_1;
+protoOf(JwtValidationService).a5h = function (claims, maxAgeSeconds) {
+  var now = System_instance.u3f().r3j();
+  var tmp0_safe_receiver = claims.u5e_1;
   if (tmp0_safe_receiver == null)
     null;
   else {
@@ -2411,7 +2458,7 @@ protoOf(JwtValidationService).w5g = function (claims, maxAgeSeconds) {
       return _Result___init__impl__xyqfz8(createFailure(exception));
     }
   }
-  var tmp1_safe_receiver = claims.p5e_1;
+  var tmp1_safe_receiver = claims.t5e_1;
   if (tmp1_safe_receiver == null)
     null;
   else {
@@ -2422,7 +2469,7 @@ protoOf(JwtValidationService).w5g = function (claims, maxAgeSeconds) {
       return _Result___init__impl__xyqfz8(createFailure(exception_0));
     }
   }
-  var tmp2_safe_receiver = claims.o5e_1;
+  var tmp2_safe_receiver = claims.s5e_1;
   if (tmp2_safe_receiver == null)
     null;
   else {
@@ -2436,26 +2483,26 @@ protoOf(JwtValidationService).w5g = function (claims, maxAgeSeconds) {
   // Inline function 'kotlin.Companion.success' call
   return _Result___init__impl__xyqfz8(Unit_instance);
 };
-protoOf(JwtValidationService).d5j = function (claims) {
+protoOf(JwtValidationService).h5j = function (claims) {
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = claims.l5e_1;
+  var this_0 = claims.p5e_1;
   if (this_0 == null || isBlank(this_0)) {
     // Inline function 'kotlin.Companion.failure' call
     var exception = Exception_init_$Create$("Missing required 'iss' (issuer) claim");
     return _Result___init__impl__xyqfz8(createFailure(exception));
   }
-  if (claims.n5e_1.r()) {
+  if (claims.r5e_1.r()) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_0 = Exception_init_$Create$("Missing required 'aud' (audience) claim");
     return _Result___init__impl__xyqfz8(createFailure(exception_0));
   }
-  if (claims.q5e_1 == null) {
+  if (claims.u5e_1 == null) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_1 = Exception_init_$Create$("Missing required 'iat' (issued at) claim");
     return _Result___init__impl__xyqfz8(createFailure(exception_1));
   }
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_1 = claims.r5e_1;
+  var this_1 = claims.v5e_1;
   if (this_1 == null || isBlank(this_1)) {
     // Inline function 'kotlin.Companion.failure' call
     var exception_2 = Exception_init_$Create$("Missing required 'jti' (JWT ID) claim");
@@ -2464,7 +2511,7 @@ protoOf(JwtValidationService).d5j = function (claims) {
   // Inline function 'kotlin.Companion.success' call
   return _Result___init__impl__xyqfz8(Unit_instance);
 };
-protoOf(JwtValidationService).e5j = function (idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion) {
+protoOf(JwtValidationService).i5j = function (idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion) {
   var tmp = new $validateIdTokenCOROUTINE$(this, idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -2473,12 +2520,12 @@ protoOf(JwtValidationService).e5j = function (idToken, clientId, issuer, jwksUri
     return tmp_0;
   return tmp_0;
 };
-protoOf(JwtValidationService).f5j = function (idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion, $super) {
+protoOf(JwtValidationService).j5j = function (idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion, $super) {
   nonce = nonce === VOID ? null : nonce;
   maxAgeSeconds = maxAgeSeconds === VOID ? new Long(300, 0) : maxAgeSeconds;
-  return $super === VOID ? this.e5j(idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion) : $super.e5j.call(this, idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion);
+  return $super === VOID ? this.i5j(idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion) : $super.i5j.call(this, idToken, clientId, issuer, jwksUri, nonce, maxAgeSeconds, $completion);
 };
-protoOf(JwtValidationService).g5j = function (accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion) {
+protoOf(JwtValidationService).k5j = function (accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion) {
   var tmp = new $validateAccessTokenCOROUTINE$(this, accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -2487,34 +2534,34 @@ protoOf(JwtValidationService).g5j = function (accessToken, clientId, issuer, jwk
     return tmp_0;
   return tmp_0;
 };
-protoOf(JwtValidationService).h5j = function (accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion, $super) {
+protoOf(JwtValidationService).l5j = function (accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion, $super) {
   maxAgeSeconds = maxAgeSeconds === VOID ? new Long(3600, 0) : maxAgeSeconds;
-  return $super === VOID ? this.g5j(accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion) : $super.g5j.call(this, accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion);
+  return $super === VOID ? this.k5j(accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion) : $super.k5j.call(this, accessToken, clientId, issuer, jwksUri, maxAgeSeconds, $completion);
 };
-protoOf(JwtValidationService).i5j = function (accessToken, $completion) {
+protoOf(JwtValidationService).m5j = function (accessToken, $completion) {
   var tmp = new $isAccessTokenExpiredCOROUTINE$(this, accessToken, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(JwtValidationService).j5j = function (accessToken, thresholdSeconds, $completion) {
+protoOf(JwtValidationService).n5j = function (accessToken, thresholdSeconds, $completion) {
   var tmp = new $isAccessTokenExpiringSoonCOROUTINE$(this, accessToken, thresholdSeconds, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 function ParsedJwt(header, claims, signature) {
-  this.t5g_1 = header;
-  this.u5g_1 = claims;
-  this.v5g_1 = signature;
+  this.x5g_1 = header;
+  this.y5g_1 = claims;
+  this.z5g_1 = signature;
 }
 protoOf(ParsedJwt).toString = function () {
-  return 'ParsedJwt(header=' + this.t5g_1.toString() + ', claims=' + this.u5g_1.toString() + ', signature=' + this.v5g_1 + ')';
+  return 'ParsedJwt(header=' + this.x5g_1.toString() + ', claims=' + this.y5g_1.toString() + ', signature=' + this.z5g_1 + ')';
 };
 protoOf(ParsedJwt).hashCode = function () {
-  var result = this.t5g_1.hashCode();
-  result = imul(result, 31) + this.u5g_1.hashCode() | 0;
-  result = imul(result, 31) + getStringHashCode(this.v5g_1) | 0;
+  var result = this.x5g_1.hashCode();
+  result = imul(result, 31) + this.y5g_1.hashCode() | 0;
+  result = imul(result, 31) + getStringHashCode(this.z5g_1) | 0;
   return result;
 };
 protoOf(ParsedJwt).equals = function (other) {
@@ -2522,17 +2569,17 @@ protoOf(ParsedJwt).equals = function (other) {
     return true;
   if (!(other instanceof ParsedJwt))
     return false;
-  if (!this.t5g_1.equals(other.t5g_1))
+  if (!this.x5g_1.equals(other.x5g_1))
     return false;
-  if (!this.u5g_1.equals(other.u5g_1))
+  if (!this.y5g_1.equals(other.y5g_1))
     return false;
-  if (!(this.v5g_1 === other.v5g_1))
+  if (!(this.z5g_1 === other.z5g_1))
     return false;
   return true;
 };
 function extractLogoutClaims($this, claims) {
   try {
-    var tmp0_elvis_lhs = claims.k5j('events');
+    var tmp0_elvis_lhs = claims.o5j('events');
     var tmp;
     if (tmp0_elvis_lhs == null) {
       // Inline function 'kotlin.Companion.failure' call
@@ -2543,12 +2590,12 @@ function extractLogoutClaims($this, claims) {
     }
     var events = tmp;
     // Inline function 'kotlin.Companion.success' call
-    var value = new LogoutTokenClaims(ensureNotNull(claims.l5e_1), claims.n5e_1, claims.m5e_1, claims.t5e('sid'), events, ensureNotNull(claims.q5e_1), ensureNotNull(claims.r5e_1));
+    var value = new LogoutTokenClaims(ensureNotNull(claims.p5e_1), claims.r5e_1, claims.q5e_1, claims.x5e('sid'), events, ensureNotNull(claims.u5e_1), ensureNotNull(claims.v5e_1));
     return _Result___init__impl__xyqfz8(value);
   } catch ($p) {
     if ($p instanceof Exception) {
       var e = $p;
-      ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'extract_logout_claims'), to('stage', 'logout_token_parsing'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
+      ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'extract_logout_claims'), to('stage', 'logout_token_parsing'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
       // Inline function 'kotlin.Companion.failure' call
       var exception_0 = Exception_init_$Create$('Failed to extract logout claims: ' + e.message);
       return _Result___init__impl__xyqfz8(createFailure(exception_0));
@@ -2558,12 +2605,12 @@ function extractLogoutClaims($this, claims) {
   }
 }
 function validateSessionMatch($this, logoutClaims, currentSession) {
-  var tmp0_safe_receiver = logoutClaims.n5j_1;
+  var tmp0_safe_receiver = logoutClaims.r5j_1;
   if (tmp0_safe_receiver == null)
     null;
   else {
     // Inline function 'kotlin.let' call
-    var tmp0_safe_receiver_0 = currentSession.s5j_1;
+    var tmp0_safe_receiver_0 = currentSession.w5j_1;
     var tmp;
     if (tmp0_safe_receiver_0 == null) {
       tmp = null;
@@ -2574,12 +2621,12 @@ function validateSessionMatch($this, logoutClaims, currentSession) {
       tmp = Unit_instance;
     }
   }
-  var tmp1_safe_receiver = logoutClaims.o5j_1;
+  var tmp1_safe_receiver = logoutClaims.s5j_1;
   if (tmp1_safe_receiver == null)
     null;
   else {
     // Inline function 'kotlin.let' call
-    var tmp0_safe_receiver_1 = currentSession.t5j_1;
+    var tmp0_safe_receiver_1 = currentSession.x5j_1;
     var tmp_0;
     if (tmp0_safe_receiver_1 == null) {
       tmp_0 = null;
@@ -2591,7 +2638,7 @@ function validateSessionMatch($this, logoutClaims, currentSession) {
     }
   }
   var tmp_1;
-  if (!(logoutClaims.n5j_1 == null) && !(logoutClaims.o5j_1 == null)) {
+  if (!(logoutClaims.r5j_1 == null) && !(logoutClaims.s5j_1 == null)) {
     tmp_1 = false;
   } else {
     tmp_1 = false;
@@ -2607,9 +2654,9 @@ function LogoutTokenValidationService$_init_$lambda_2oz93y($this$Json) {
 }
 function $validateLogoutTokenCOROUTINE$(_this__u8e3s4, token, currentSession, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.c5k_1 = _this__u8e3s4;
-  this.d5k_1 = token;
-  this.e5k_1 = currentSession;
+  this.g5k_1 = _this__u8e3s4;
+  this.h5k_1 = token;
+  this.i5k_1 = currentSession;
 }
 protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -2621,7 +2668,7 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
           this.j8_1 = 7;
           this.j8_1 = 6;
           this.i8_1 = 1;
-          suspendResult = this.c5k_1.h5k_1.s5g(this.d5k_1, this);
+          suspendResult = this.g5k_1.l5k_1.w5g(this.h5k_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2645,8 +2692,8 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception)));
           }
 
-          tmp_0.f5k_1 = tmp_1;
-          var this_1 = this.c5k_1.h5k_1.d5j(this.f5k_1.u5g_1);
+          tmp_0.j5k_1 = tmp_1;
+          var this_1 = this.g5k_1.l5k_1.h5j(this.j5k_1.y5g_1);
           var exception_0 = Result__exceptionOrNull_impl_p6xea9(this_1);
           if (exception_0 == null) {
             var tmp_3 = _Result___get_value__impl__bjfvqg(this_1);
@@ -2656,7 +2703,7 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_0)));
           }
 
-          var this_2 = this.c5k_1.h5k_1.w5g(this.f5k_1.u5g_1, new Long(600, 0));
+          var this_2 = this.g5k_1.l5k_1.a5h(this.j5k_1.y5g_1, new Long(600, 0));
           var exception_1 = Result__exceptionOrNull_impl_p6xea9(this_2);
           if (exception_1 == null) {
             var tmp_4 = _Result___get_value__impl__bjfvqg(this_2);
@@ -2666,18 +2713,18 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_1)));
           }
 
-          if (!(this.f5k_1.u5g_1.l5e_1 === this.c5k_1.j5k_1)) {
-            var exception_2 = Exception_init_$Create$('Invalid issuer. Expected: ' + this.c5k_1.j5k_1 + ', Got: ' + this.f5k_1.u5g_1.l5e_1);
+          if (!(this.j5k_1.y5g_1.p5e_1 === this.g5k_1.n5k_1)) {
+            var exception_2 = Exception_init_$Create$('Invalid issuer. Expected: ' + this.g5k_1.n5k_1 + ', Got: ' + this.j5k_1.y5g_1.p5e_1);
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_2)));
           }
 
-          if (!this.f5k_1.u5g_1.n5e_1.e2(this.c5k_1.k5k_1)) {
-            var exception_3 = Exception_init_$Create$("Invalid audience. Expected '" + this.c5k_1.k5k_1 + "' in audience list, got " + toString(this.f5k_1.u5g_1.n5e_1));
+          if (!this.j5k_1.y5g_1.r5e_1.e2(this.g5k_1.o5k_1)) {
+            var exception_3 = Exception_init_$Create$("Invalid audience. Expected '" + this.g5k_1.o5k_1 + "' in audience list, got " + toString(this.j5k_1.y5g_1.r5e_1));
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_3)));
           }
 
           this.i8_1 = 3;
-          suspendResult = this.c5k_1.h5k_1.x5g(this.c5k_1.l5k_1, this);
+          suspendResult = this.g5k_1.l5k_1.b5h(this.g5k_1.p5k_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2701,25 +2748,25 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
           }
 
           var jwks = tmp_5;
-          var tmp0_elvis_lhs = this.c5k_1.h5k_1.y5g(this.f5k_1.t5g_1, jwks);
+          var tmp0_elvis_lhs = this.g5k_1.l5k_1.c5h(this.j5k_1.x5g_1, jwks);
           var tmp_7;
           if (tmp0_elvis_lhs == null) {
-            var exception_5 = Exception_init_$Create$('No matching public key found for kid: ' + this.f5k_1.t5g_1.r5h_1);
+            var exception_5 = Exception_init_$Create$('No matching public key found for kid: ' + this.j5k_1.x5g_1.v5h_1);
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_5)));
           } else {
             tmp_7 = tmp0_elvis_lhs;
           }
 
           var verificationKey = tmp_7;
-          var signatureValid = verifySignature(this.c5k_1, this.d5k_1, verificationKey);
+          var signatureValid = verifySignature(this.g5k_1, this.h5k_1, verificationKey);
           if (!signatureValid) {
             var exception_6 = Exception_init_$Create$('JWT signature verification failed');
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_6)));
           }
 
-          this.g5k_1 = ensureNotNull(this.f5k_1.u5g_1.r5e_1);
+          this.k5k_1 = ensureNotNull(this.j5k_1.y5g_1.v5e_1);
           this.i8_1 = 5;
-          suspendResult = this.c5k_1.i5k_1.n5k(this.g5k_1, this);
+          suspendResult = this.g5k_1.m5k_1.r5k(this.k5k_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2728,11 +2775,11 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
         case 5:
           var isFirstUsage = suspendResult;
           if (!isFirstUsage) {
-            var exception_7 = Exception_init_$Create$('Logout token has already been used (jti: ' + this.g5k_1 + ')');
+            var exception_7 = Exception_init_$Create$('Logout token has already been used (jti: ' + this.k5k_1 + ')');
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_7)));
           }
 
-          var this_4 = extractLogoutClaims(this.c5k_1, this.f5k_1.u5g_1);
+          var this_4 = extractLogoutClaims(this.g5k_1, this.j5k_1.y5g_1);
           var exception_8 = Result__exceptionOrNull_impl_p6xea9(this_4);
           var tmp_8;
           if (exception_8 == null) {
@@ -2743,21 +2790,21 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
           }
 
           var logoutClaims = tmp_8;
-          if (!logoutClaims.o5k()) {
+          if (!logoutClaims.s5k()) {
             var exception_9 = Exception_init_$Create$('Token does not contain valid back-channel logout event');
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_9)));
           }
 
-          if (!logoutClaims.p5k()) {
+          if (!logoutClaims.t5k()) {
             var exception_10 = Exception_init_$Create$("Token must contain either 'sub' or 'sid' claim");
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_10)));
           }
 
-          var tmp1_safe_receiver = this.e5k_1;
+          var tmp1_safe_receiver = this.i5k_1;
           if (tmp1_safe_receiver == null)
             null;
           else {
-            var sessionMatches = validateSessionMatch(this.c5k_1, logoutClaims, tmp1_safe_receiver);
+            var sessionMatches = validateSessionMatch(this.g5k_1, logoutClaims, tmp1_safe_receiver);
             if (!sessionMatches) {
               var exception_11 = Exception_init_$Create$('Logout token does not match current user session');
               return new Result(_Result___init__impl__xyqfz8(createFailure(exception_11)));
@@ -2770,7 +2817,7 @@ protoOf($validateLogoutTokenCOROUTINE$).q8 = function () {
           var tmp_10 = this.l8_1;
           if (tmp_10 instanceof Exception) {
             var e = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'validate_logout_token'), to('token_type', 'logout_token'), to('security_critical', true), to('fail_safe', true), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'validate_logout_token'), to('token_type', 'logout_token'), to('security_critical', true), to('fail_safe', true), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
             var exception_12 = Exception_init_$Create$_0('Logout token validation failed: ' + e.message, e);
             return new Result(_Result___init__impl__xyqfz8(createFailure(exception_12)));
           } else {
@@ -2799,14 +2846,14 @@ function LogoutTokenValidationService(jwtValidationService, replayCache, expecte
     tmp = json;
   }
   json = tmp;
-  this.h5k_1 = jwtValidationService;
-  this.i5k_1 = replayCache;
-  this.j5k_1 = expectedIssuer;
-  this.k5k_1 = clientId;
-  this.l5k_1 = jwksUri;
-  this.m5k_1 = json;
+  this.l5k_1 = jwtValidationService;
+  this.m5k_1 = replayCache;
+  this.n5k_1 = expectedIssuer;
+  this.o5k_1 = clientId;
+  this.p5k_1 = jwksUri;
+  this.q5k_1 = json;
 }
-protoOf(LogoutTokenValidationService).q5k = function (token, currentSession, $completion) {
+protoOf(LogoutTokenValidationService).u5k = function (token, currentSession, $completion) {
   var tmp = new $validateLogoutTokenCOROUTINE$(this, token, currentSession, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -2815,8 +2862,8 @@ protoOf(LogoutTokenValidationService).q5k = function (token, currentSession, $co
     return tmp_0;
   return tmp_0;
 };
-protoOf(LogoutTokenValidationService).r5k = function (token, $completion) {
-  var tmp = this.q5k(token, null, $completion);
+protoOf(LogoutTokenValidationService).v5k = function (token, $completion) {
+  var tmp = this.u5k(token, null, $completion);
   if (tmp === get_COROUTINE_SUSPENDED())
     return tmp;
   return tmp;
@@ -2848,17 +2895,17 @@ function FrontChannel(authContext, postLogoutRedirectUri, onReturn) {
   postLogoutRedirectUri = postLogoutRedirectUri === VOID ? null : postLogoutRedirectUri;
   onReturn = onReturn === VOID ? null : onReturn;
   LogoutType.call(this);
-  this.s5k_1 = authContext;
-  this.t5k_1 = postLogoutRedirectUri;
-  this.u5k_1 = onReturn;
+  this.w5k_1 = authContext;
+  this.x5k_1 = postLogoutRedirectUri;
+  this.y5k_1 = onReturn;
 }
 protoOf(FrontChannel).toString = function () {
-  return 'FrontChannel(authContext=' + toString(this.s5k_1) + ', postLogoutRedirectUri=' + this.t5k_1 + ', onReturn=' + toString_0(this.u5k_1) + ')';
+  return 'FrontChannel(authContext=' + toString(this.w5k_1) + ', postLogoutRedirectUri=' + this.x5k_1 + ', onReturn=' + toString_0(this.y5k_1) + ')';
 };
 protoOf(FrontChannel).hashCode = function () {
-  var result = hashCode(this.s5k_1);
-  result = imul(result, 31) + (this.t5k_1 == null ? 0 : getStringHashCode(this.t5k_1)) | 0;
-  result = imul(result, 31) + (this.u5k_1 == null ? 0 : hashCode(this.u5k_1)) | 0;
+  var result = hashCode(this.w5k_1);
+  result = imul(result, 31) + (this.x5k_1 == null ? 0 : getStringHashCode(this.x5k_1)) | 0;
+  result = imul(result, 31) + (this.y5k_1 == null ? 0 : hashCode(this.y5k_1)) | 0;
   return result;
 };
 protoOf(FrontChannel).equals = function (other) {
@@ -2866,29 +2913,54 @@ protoOf(FrontChannel).equals = function (other) {
     return true;
   if (!(other instanceof FrontChannel))
     return false;
-  if (!equals(this.s5k_1, other.s5k_1))
+  if (!equals(this.w5k_1, other.w5k_1))
     return false;
-  if (!(this.t5k_1 == other.t5k_1))
+  if (!(this.x5k_1 == other.x5k_1))
     return false;
-  if (!equals(this.u5k_1, other.u5k_1))
+  if (!equals(this.y5k_1, other.y5k_1))
     return false;
   return true;
 };
+function DeviceOnly() {
+  DeviceOnly_instance = this;
+  LogoutType.call(this);
+}
+protoOf(DeviceOnly).toString = function () {
+  return 'DeviceOnly';
+};
+protoOf(DeviceOnly).hashCode = function () {
+  return -1496741714;
+};
+protoOf(DeviceOnly).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof DeviceOnly))
+    return false;
+  return true;
+};
+var DeviceOnly_instance;
+function DeviceOnly_getInstance() {
+  if (DeviceOnly_instance == null)
+    new DeviceOnly();
+  return DeviceOnly_instance;
+}
+function Silent() {
+}
 function BackChannel() {
 }
 function LogoutType() {
 }
 function Success_0(clearedLocalSession, terminatedServerSession) {
   LogoutResult.call(this);
-  this.v5k_1 = clearedLocalSession;
-  this.w5k_1 = terminatedServerSession;
+  this.z5k_1 = clearedLocalSession;
+  this.a5l_1 = terminatedServerSession;
 }
 protoOf(Success_0).toString = function () {
-  return 'Success(clearedLocalSession=' + this.v5k_1 + ', terminatedServerSession=' + this.w5k_1 + ')';
+  return 'Success(clearedLocalSession=' + this.z5k_1 + ', terminatedServerSession=' + this.a5l_1 + ')';
 };
 protoOf(Success_0).hashCode = function () {
-  var result = getBooleanHashCode(this.v5k_1);
-  result = imul(result, 31) + getBooleanHashCode(this.w5k_1) | 0;
+  var result = getBooleanHashCode(this.z5k_1);
+  result = imul(result, 31) + getBooleanHashCode(this.a5l_1) | 0;
   return result;
 };
 protoOf(Success_0).equals = function (other) {
@@ -2896,25 +2968,25 @@ protoOf(Success_0).equals = function (other) {
     return true;
   if (!(other instanceof Success_0))
     return false;
-  if (!(this.v5k_1 === other.v5k_1))
+  if (!(this.z5k_1 === other.z5k_1))
     return false;
-  if (!(this.w5k_1 === other.w5k_1))
+  if (!(this.a5l_1 === other.a5l_1))
     return false;
   return true;
 };
 function Failure_0(clearedLocalSession, serverLogoutAttempted, error) {
   LogoutResult.call(this);
-  this.x5k_1 = clearedLocalSession;
-  this.y5k_1 = serverLogoutAttempted;
-  this.z5k_1 = error;
+  this.b5l_1 = clearedLocalSession;
+  this.c5l_1 = serverLogoutAttempted;
+  this.d5l_1 = error;
 }
 protoOf(Failure_0).toString = function () {
-  return 'Failure(clearedLocalSession=' + this.x5k_1 + ', serverLogoutAttempted=' + this.y5k_1 + ', error=' + toString(this.z5k_1) + ')';
+  return 'Failure(clearedLocalSession=' + this.b5l_1 + ', serverLogoutAttempted=' + this.c5l_1 + ', error=' + toString(this.d5l_1) + ')';
 };
 protoOf(Failure_0).hashCode = function () {
-  var result = getBooleanHashCode(this.x5k_1);
-  result = imul(result, 31) + getBooleanHashCode(this.y5k_1) | 0;
-  result = imul(result, 31) + hashCode(this.z5k_1) | 0;
+  var result = getBooleanHashCode(this.b5l_1);
+  result = imul(result, 31) + getBooleanHashCode(this.c5l_1) | 0;
+  result = imul(result, 31) + hashCode(this.d5l_1) | 0;
   return result;
 };
 protoOf(Failure_0).equals = function (other) {
@@ -2922,11 +2994,11 @@ protoOf(Failure_0).equals = function (other) {
     return true;
   if (!(other instanceof Failure_0))
     return false;
-  if (!(this.x5k_1 === other.x5k_1))
+  if (!(this.b5l_1 === other.b5l_1))
     return false;
-  if (!(this.y5k_1 === other.y5k_1))
+  if (!(this.c5l_1 === other.c5l_1))
     return false;
-  if (!equals(this.z5k_1, other.z5k_1))
+  if (!equals(this.d5l_1, other.d5l_1))
     return false;
   return true;
 };
@@ -2945,8 +3017,8 @@ function OAuthErrorMapper$json$lambda($this$Json) {
 }
 function $mapClientRequestExceptionCOROUTINE$(_this__u8e3s4, exception, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.t5l_1 = _this__u8e3s4;
-  this.u5l_1 = exception;
+  this.x5l_1 = _this__u8e3s4;
+  this.y5l_1 = exception;
 }
 protoOf($mapClientRequestExceptionCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -2957,7 +3029,7 @@ protoOf($mapClientRequestExceptionCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = tryParseOAuthError(this.t5l_1, this.u5l_1, this);
+          suspendResult = tryParseOAuthError(this.x5l_1, this.y5l_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -2968,16 +3040,16 @@ protoOf($mapClientRequestExceptionCOROUTINE$).q8 = function () {
           var tmp_0;
           if (!(oauthError == null)) {
             var tmp_1;
-            if (oauthError.v5l_1 === 'invalid_grant') {
-              tmp_1 = new InvalidGrant(oauthError.w5l_1, oauthError.v5l_1);
+            if (oauthError.z5l_1 === 'invalid_grant') {
+              tmp_1 = new InvalidGrant(oauthError.a5m_1, oauthError.z5l_1);
             } else {
-              var tmp_2 = this.u5l_1.l4d_1.o38().h36_1;
-              var tmp0_elvis_lhs = oauthError.w5l_1;
-              tmp_1 = new HttpError(tmp_2, oauthError.v5l_1 + ': ' + (tmp0_elvis_lhs == null ? this.u5l_1.l4d_1.o38().i36_1 : tmp0_elvis_lhs), this.u5l_1.l4d_1.v48().y47().a48().toString());
+              var tmp_2 = this.y5l_1.o4d_1.q38().i36_1;
+              var tmp0_elvis_lhs = oauthError.a5m_1;
+              tmp_1 = new HttpError(tmp_2, oauthError.z5l_1 + ': ' + (tmp0_elvis_lhs == null ? this.y5l_1.o4d_1.q38().j36_1 : tmp0_elvis_lhs), this.y5l_1.o4d_1.y48().b48().d48().toString());
             }
             tmp_0 = tmp_1;
           } else {
-            tmp_0 = new HttpError(this.u5l_1.l4d_1.o38().h36_1, this.u5l_1.l4d_1.o38().i36_1, this.u5l_1.l4d_1.v48().y47().a48().toString());
+            tmp_0 = new HttpError(this.y5l_1.o4d_1.q38().i36_1, this.y5l_1.o4d_1.q38().j36_1, this.y5l_1.o4d_1.y48().b48().d48().toString());
           }
 
           return tmp_0;
@@ -2997,8 +3069,8 @@ protoOf($mapClientRequestExceptionCOROUTINE$).q8 = function () {
 };
 function $tryParseOAuthErrorCOROUTINE$(_this__u8e3s4, exception, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.i5l_1 = _this__u8e3s4;
-  this.j5l_1 = exception;
+  this.m5l_1 = _this__u8e3s4;
+  this.n5l_1 = exception;
 }
 protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3010,7 +3082,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
           this.j8_1 = 3;
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = bodyAsText(this.j5l_1.l4d_1, VOID, this);
+          suspendResult = bodyAsText(this.n5l_1.o4d_1, VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3021,7 +3093,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
           var tmp_0 = this;
           var tmp_1;
           if (startsWith(toString(trim(isCharSequence(bodyText) ? bodyText : THROW_CCE())), '{')) {
-            var this_0 = this.i5l_1.y5l_1;
+            var this_0 = this.m5l_1.c5m_1;
             var this_1 = this_0.um();
             var this_2 = serializer(this_1, createKType(getKClass(OAuthErrorResponse), arrayOf([]), false));
             tmp_1 = this_0.tm(isInterface(this_2, KSerializer) ? this_2 : THROW_CCE(), bodyText);
@@ -3029,7 +3101,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
             tmp_1 = null;
           }
 
-          tmp_0.k5l_1 = tmp_1;
+          tmp_0.o5l_1 = tmp_1;
           this.j8_1 = 3;
           this.i8_1 = 4;
           continue $sm;
@@ -3039,7 +3111,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
           if (tmp_2 instanceof SerializationException) {
             var e = this.l8_1;
             var tmp_3 = this;
-            tmp_3.k5l_1 = null;
+            tmp_3.o5l_1 = null;
             this.i8_1 = 4;
             continue $sm;
           } else {
@@ -3047,7 +3119,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
             if (tmp_4 instanceof Exception) {
               var e_0 = this.l8_1;
               var tmp_5 = this;
-              tmp_5.k5l_1 = null;
+              tmp_5.o5l_1 = null;
               this.i8_1 = 4;
               continue $sm;
             } else {
@@ -3059,7 +3131,7 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
           throw this.l8_1;
         case 4:
           this.j8_1 = 3;
-          return this.k5l_1;
+          return this.o5l_1;
       }
     } catch ($p) {
       var e_1 = $p;
@@ -3075,16 +3147,16 @@ protoOf($tryParseOAuthErrorCOROUTINE$).q8 = function () {
 function OAuthErrorMapper() {
   OAuthErrorMapper_instance = this;
   var tmp = this;
-  tmp.y5l_1 = Json(VOID, OAuthErrorMapper$json$lambda);
+  tmp.c5m_1 = Json(VOID, OAuthErrorMapper$json$lambda);
 }
-protoOf(OAuthErrorMapper).z5l = function (exception, $completion) {
+protoOf(OAuthErrorMapper).d5m = function (exception, $completion) {
   var tmp = new $mapClientRequestExceptionCOROUTINE$(this, exception, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(OAuthErrorMapper).a5m = function (exception) {
-  return new HttpError(exception.l4d_1.o38().h36_1, exception.l4d_1.o38().i36_1, exception.l4d_1.v48().y47().a48().toString());
+protoOf(OAuthErrorMapper).e5m = function (exception) {
+  return new HttpError(exception.o4d_1.q38().i36_1, exception.o4d_1.q38().j36_1, exception.o4d_1.y48().b48().d48().toString());
 };
 var OAuthErrorMapper_instance;
 function OAuthErrorMapper_getInstance() {
@@ -3132,7 +3204,7 @@ function saveUsedTokens($this, tokens, $completion) {
   return tmp.q8();
 }
 function cleanupExpiredTokens($this, tokens, now) {
-  var cutoff = subtract(now, $this.v5m_1);
+  var cutoff = subtract(now, $this.z5m_1);
   // Inline function 'kotlin.collections.iterator' call
   var iterator = tokens.h1().t();
   while (iterator.u()) {
@@ -3144,10 +3216,10 @@ function cleanupExpiredTokens($this, tokens, now) {
 }
 function shouldCleanup($this, now) {
   var tmp;
-  if (compare(subtract(now, $this.y5m_1), new Long(3600, 0)) > 0) {
+  if (compare(subtract(now, $this.c5n_1), new Long(3600, 0)) > 0) {
     tmp = true;
   } else {
-    var tmp0_safe_receiver = $this.x5m_1;
+    var tmp0_safe_receiver = $this.b5n_1;
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.z();
     tmp = (tmp1_elvis_lhs == null ? 0 : tmp1_elvis_lhs) > 1000;
   }
@@ -3155,8 +3227,8 @@ function shouldCleanup($this, now) {
 }
 function $markAsUsedCOROUTINE$(_this__u8e3s4, jti, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.h5n_1 = _this__u8e3s4;
-  this.i5n_1 = jti;
+  this.l5n_1 = _this__u8e3s4;
+  this.m5n_1 = jti;
 }
 protoOf($markAsUsedCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3166,14 +3238,14 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 12;
-          this.o5n_1 = this.h5n_1.w5m_1;
+          this.s5n_1 = this.l5n_1.a5n_1;
           this.i8_1 = 1;
           continue $sm;
         case 1:
-          this.k5n_1 = this.o5n_1;
-          this.j5n_1 = null;
+          this.o5n_1 = this.s5n_1;
+          this.n5n_1 = null;
           this.i8_1 = 2;
-          suspendResult = this.k5n_1.t26(this.j5n_1, this);
+          suspendResult = this.o5n_1.u26(this.n5n_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3188,7 +3260,7 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
         case 4:
           this.j8_1 = 11;
           this.i8_1 = 5;
-          suspendResult = loadUsedTokens(this.h5n_1, this);
+          suspendResult = loadUsedTokens(this.l5n_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3197,16 +3269,16 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
         case 5:
           var ARGUMENT = suspendResult;
           var usedTokens = toMutableMap(ARGUMENT);
-          var now = System_instance.s3f().p3j();
-          this.n5n_1 = usedTokens.h2(this.i5n_1);
-          if (!this.n5n_1) {
-            var key = this.i5n_1;
+          var now = System_instance.u3f().r3j();
+          this.r5n_1 = usedTokens.h2(this.m5n_1);
+          if (!this.r5n_1) {
+            var key = this.m5n_1;
             usedTokens.m2(key, now);
-            if (shouldCleanup(this.h5n_1, now)) {
-              cleanupExpiredTokens(this.h5n_1, usedTokens, now);
+            if (shouldCleanup(this.l5n_1, now)) {
+              cleanupExpiredTokens(this.l5n_1, usedTokens, now);
             }
             this.i8_1 = 6;
-            suspendResult = saveUsedTokens(this.h5n_1, usedTokens, this);
+            suspendResult = saveUsedTokens(this.l5n_1, usedTokens, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -3220,20 +3292,20 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
           this.i8_1 = 7;
           continue $sm;
         case 7:
-          this.m5n_1 = !this.n5n_1;
+          this.q5n_1 = !this.r5n_1;
           this.j8_1 = 12;
           this.i8_1 = 8;
           continue $sm;
         case 8:
-          var tmp_0 = this.m5n_1;
+          var tmp_0 = this.q5n_1;
           this.j8_1 = 12;
-          this.k5n_1.d26(this.j5n_1);
-          this.l5n_1 = tmp_0;
+          this.o5n_1.e26(this.n5n_1);
+          this.p5n_1 = tmp_0;
           this.i8_1 = 10;
           continue $sm;
         case 9:
           this.j8_1 = 12;
-          this.k5n_1.d26(this.j5n_1);
+          this.o5n_1.e26(this.n5n_1);
           if (false) {
             this.i8_1 = 1;
             continue $sm;
@@ -3242,11 +3314,11 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
           this.i8_1 = 10;
           continue $sm;
         case 10:
-          return this.l5n_1;
+          return this.p5n_1;
         case 11:
           this.j8_1 = 12;
           var t = this.l8_1;
-          this.k5n_1.d26(this.j5n_1);
+          this.o5n_1.e26(this.n5n_1);
           throw t;
         case 12:
           throw this.l8_1;
@@ -3264,7 +3336,7 @@ protoOf($markAsUsedCOROUTINE$).q8 = function () {
 };
 function $loadUsedTokensCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.j5m_1 = _this__u8e3s4;
+  this.n5m_1 = _this__u8e3s4;
 }
 protoOf($loadUsedTokensCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3274,12 +3346,12 @@ protoOf($loadUsedTokensCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 2;
-          if (!(this.j5m_1.x5m_1 == null)) {
-            return ensureNotNull(this.j5m_1.x5m_1);
+          if (!(this.n5m_1.b5n_1 == null)) {
+            return ensureNotNull(this.n5m_1.b5n_1);
           }
 
           this.i8_1 = 1;
-          suspendResult = this.j5m_1.u5m_1.p5n(this);
+          suspendResult = this.n5m_1.y5m_1.t5n(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3288,7 +3360,7 @@ protoOf($loadUsedTokensCOROUTINE$).q8 = function () {
         case 1:
           var tmp0_elvis_lhs = suspendResult;
           var stored = tmp0_elvis_lhs == null ? emptyMap() : tmp0_elvis_lhs;
-          this.j5m_1.x5m_1 = toMutableMap(stored);
+          this.n5m_1.b5n_1 = toMutableMap(stored);
           return stored;
         case 2:
           throw this.l8_1;
@@ -3306,8 +3378,8 @@ protoOf($loadUsedTokensCOROUTINE$).q8 = function () {
 };
 function $saveUsedTokensCOROUTINE$(_this__u8e3s4, tokens, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.s5m_1 = _this__u8e3s4;
-  this.t5m_1 = tokens;
+  this.w5m_1 = _this__u8e3s4;
+  this.x5m_1 = tokens;
 }
 protoOf($saveUsedTokensCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3318,7 +3390,7 @@ protoOf($saveUsedTokensCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.s5m_1.u5m_1.q5n(this.t5m_1, this);
+          suspendResult = this.w5m_1.y5m_1.u5n(this.x5m_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3333,9 +3405,9 @@ protoOf($saveUsedTokensCOROUTINE$).q8 = function () {
         case 2:
           var result = suspendResult.sj_1;
           if (_Result___get_isSuccess__impl__sndoy8(result)) {
-            this.s5m_1.x5m_1 = toMutableMap(this.t5m_1);
+            this.w5m_1.b5n_1 = toMutableMap(this.x5m_1);
           } else {
-            this.s5m_1.x5m_1 = null;
+            this.w5m_1.b5n_1 = null;
           }
 
           return Unit_instance;
@@ -3355,13 +3427,13 @@ protoOf($saveUsedTokensCOROUTINE$).q8 = function () {
 };
 function PersistentReplayCache(tokenStorage, maxAgeSeconds) {
   maxAgeSeconds = maxAgeSeconds === VOID ? new Long(3600, 0) : maxAgeSeconds;
-  this.u5m_1 = tokenStorage;
-  this.v5m_1 = maxAgeSeconds;
-  this.w5m_1 = Mutex();
-  this.x5m_1 = null;
-  this.y5m_1 = new Long(0, 0);
+  this.y5m_1 = tokenStorage;
+  this.z5m_1 = maxAgeSeconds;
+  this.a5n_1 = Mutex();
+  this.b5n_1 = null;
+  this.c5n_1 = new Long(0, 0);
 }
-protoOf(PersistentReplayCache).n5k = function (jti, $completion) {
+protoOf(PersistentReplayCache).r5k = function (jti, $completion) {
   var tmp = new $markAsUsedCOROUTINE$(this, jti, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -3371,7 +3443,7 @@ function TokenManager() {
 }
 function TokenManagerImpl$slambda$lambda(this$0) {
   return function () {
-    return 'Initial state evaluation complete (' + toString(this$0.b5o_1.j1()) + ')';
+    return 'Initial state evaluation complete (' + toString(this$0.f5o_1.j1()) + ')';
   };
 }
 function TokenManagerImpl$slambda$slambda$lambda() {
@@ -3379,7 +3451,7 @@ function TokenManagerImpl$slambda$slambda$lambda() {
 }
 function TokenManagerImpl$slambda$slambda$lambda_0(this$0) {
   return function () {
-    return 'LoginSuccess received in Manual mode, emitted state (' + toString(this$0.b5o_1.j1()) + ')';
+    return 'LoginSuccess received in Manual mode, emitted state (' + toString(this$0.f5o_1.j1()) + ')';
   };
 }
 function TokenManagerImpl$slambda$slambda$lambda_1() {
@@ -3404,17 +3476,17 @@ function TokenManagerImpl$slambda$slambda$lambda_7() {
   return 'TokenRefreshFailure(InvalidGrant) received, restarting monitoring to emit NoTokens';
 }
 function TokenManagerImpl$slambda$slambda(this$0, resultContinuation) {
-  this.m5o_1 = this$0;
+  this.q5o_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(TokenManagerImpl$slambda$slambda).o5o = function (event, $completion) {
-  var tmp = this.p5o(event, $completion);
+protoOf(TokenManagerImpl$slambda$slambda).s5o = function (event, $completion) {
+  var tmp = this.t5o(event, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(TokenManagerImpl$slambda$slambda).z8 = function (p1, $completion) {
-  return this.o5o(p1 instanceof SdkLifecycleEvent ? p1 : THROW_CCE(), $completion);
+  return this.s5o(p1 instanceof SdkLifecycleEvent ? p1 : THROW_CCE(), $completion);
 };
 protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3424,22 +3496,22 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 14;
-          var tmp0_subject = this.n5o_1;
+          var tmp0_subject = this.r5o_1;
           if (tmp0_subject instanceof LoginSuccess) {
-            var tmp_0 = _get_refreshConfig__2cwwp8(this.m5o_1).m5c_1;
+            var tmp_0 = _get_refreshConfig__2cwwp8(this.q5o_1).q5c_1;
             if (tmp_0 instanceof Automatic) {
               var tmp_1 = SdkLogger_getInstance();
               var tmp_2 = LogCategory_TOKEN_MONITORING_getInstance();
-              tmp_1.m5a(tmp_2, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda);
+              tmp_1.q5a(tmp_2, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda);
               this.i8_1 = 11;
-              suspendResult = this.m5o_1.s5o(this);
+              suspendResult = this.q5o_1.w5o(this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
               this.i8_1 = 10;
-              suspendResult = emitCurrentStateFromStorage(this.m5o_1, this);
+              suspendResult = emitCurrentStateFromStorage(this.q5o_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -3449,23 +3521,23 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
             if (tmp0_subject instanceof LogoutSuccess) {
               var tmp_3 = SdkLogger_getInstance();
               var tmp_4 = LogCategory_TOKEN_MONITORING_getInstance();
-              tmp_3.m5a(tmp_4, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_1);
-              this.m5o_1.s5n();
+              tmp_3.q5a(tmp_4, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_1);
+              this.q5o_1.w5n();
               this.i8_1 = 9;
-              suspendResult = emitCurrentStateFromStorage(this.m5o_1, this);
+              suspendResult = emitCurrentStateFromStorage(this.q5o_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
               if (tmp0_subject instanceof AppForegrounded) {
-                var tmp_5 = _get_refreshConfig__2cwwp8(this.m5o_1).m5c_1;
+                var tmp_5 = _get_refreshConfig__2cwwp8(this.q5o_1).q5c_1;
                 if (tmp_5 instanceof Automatic) {
                   var tmp_6 = SdkLogger_getInstance();
                   var tmp_7 = LogCategory_TOKEN_MONITORING_getInstance();
-                  tmp_6.n5a(tmp_7, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_2);
+                  tmp_6.r5a(tmp_7, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_2);
                   this.i8_1 = 5;
-                  suspendResult = this.m5o_1.w5n_1.t5o(this);
+                  suspendResult = this.q5o_1.a5o_1.x5o(this);
                   if (suspendResult === get_COROUTINE_SUSPENDED()) {
                     return suspendResult;
                   }
@@ -3476,24 +3548,24 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
                 }
               } else {
                 if (tmp0_subject instanceof AppBackgrounded) {
-                  var tmp_8 = _get_refreshConfig__2cwwp8(this.m5o_1).m5c_1;
+                  var tmp_8 = _get_refreshConfig__2cwwp8(this.q5o_1).q5c_1;
                   if (tmp_8 instanceof Automatic) {
                     var tmp_9 = SdkLogger_getInstance();
                     var tmp_10 = LogCategory_TOKEN_MONITORING_getInstance();
-                    tmp_9.m5a(tmp_10, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_4);
-                    this.m5o_1.s5n();
+                    tmp_9.q5a(tmp_10, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_4);
+                    this.q5o_1.w5n();
                   }
                   this.i8_1 = 13;
                   continue $sm;
                 } else {
                   if (tmp0_subject instanceof TokenRefreshSuccess) {
-                    var tmp_11 = _get_refreshConfig__2cwwp8(this.m5o_1).m5c_1;
+                    var tmp_11 = _get_refreshConfig__2cwwp8(this.q5o_1).q5c_1;
                     if (tmp_11 instanceof Automatic) {
                       var tmp_12 = SdkLogger_getInstance();
                       var tmp_13 = LogCategory_TOKEN_MONITORING_getInstance();
-                      tmp_12.m5a(tmp_13, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_5);
+                      tmp_12.q5a(tmp_13, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_5);
                       this.i8_1 = 3;
-                      suspendResult = this.m5o_1.s5o(this);
+                      suspendResult = this.q5o_1.w5o(this);
                       if (suspendResult === get_COROUTINE_SUSPENDED()) {
                         return suspendResult;
                       }
@@ -3506,16 +3578,16 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
                     if (tmp0_subject instanceof SessionInvalidated) {
                       var tmp_14 = SdkLogger_getInstance();
                       var tmp_15 = LogCategory_TOKEN_MONITORING_getInstance();
-                      tmp_14.m5a(tmp_15, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_6);
-                      this.m5o_1.s5n();
+                      tmp_14.q5a(tmp_15, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_6);
+                      this.q5o_1.w5n();
                       this.i8_1 = 13;
                       continue $sm;
                     } else {
                       if (tmp0_subject instanceof TokenRefreshFailure) {
                         var tmp_16;
-                        var tmp_17 = this.n5o_1.q5o_1;
+                        var tmp_17 = this.r5o_1.u5o_1;
                         if (tmp_17 instanceof InvalidGrant) {
-                          var tmp_18 = _get_refreshConfig__2cwwp8(this.m5o_1).m5c_1;
+                          var tmp_18 = _get_refreshConfig__2cwwp8(this.q5o_1).q5c_1;
                           tmp_16 = tmp_18 instanceof Automatic;
                         } else {
                           tmp_16 = false;
@@ -3523,9 +3595,9 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
                         if (tmp_16) {
                           var tmp_19 = SdkLogger_getInstance();
                           var tmp_20 = LogCategory_TOKEN_MONITORING_getInstance();
-                          tmp_19.m5a(tmp_20, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_7);
+                          tmp_19.q5a(tmp_20, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_7);
                           this.i8_1 = 1;
-                          suspendResult = this.m5o_1.s5o(this);
+                          suspendResult = this.q5o_1.w5o(this);
                           if (suspendResult === get_COROUTINE_SUSPENDED()) {
                             return suspendResult;
                           }
@@ -3562,9 +3634,9 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
           if (!(tokens == null)) {
             var tmp_21 = SdkLogger_getInstance();
             var tmp_22 = LogCategory_TOKEN_MONITORING_getInstance();
-            tmp_21.m5a(tmp_22, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_3);
+            tmp_21.q5a(tmp_22, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_3);
             this.i8_1 = 6;
-            suspendResult = this.m5o_1.s5o(this);
+            suspendResult = this.q5o_1.w5o(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -3589,7 +3661,7 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
         case 10:
           var tmp_23 = SdkLogger_getInstance();
           var tmp_24 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_23.m5a(tmp_24, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_0(this.m5o_1));
+          tmp_23.q5a(tmp_24, VOID, VOID, TokenManagerImpl$slambda$slambda$lambda_0(this.q5o_1));
           this.i8_1 = 12;
           continue $sm;
         case 11:
@@ -3614,15 +3686,15 @@ protoOf(TokenManagerImpl$slambda$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(TokenManagerImpl$slambda$slambda).p5o = function (event, completion) {
-  var i = new TokenManagerImpl$slambda$slambda(this.m5o_1, completion);
-  i.n5o_1 = event;
+protoOf(TokenManagerImpl$slambda$slambda).t5o = function (event, completion) {
+  var i = new TokenManagerImpl$slambda$slambda(this.q5o_1, completion);
+  i.r5o_1 = event;
   return i;
 };
 function TokenManagerImpl$slambda$slambda_0(this$0, resultContinuation) {
   var i = new TokenManagerImpl$slambda$slambda(this$0, resultContinuation);
   var l = function (event, $completion) {
-    return i.o5o(event, $completion);
+    return i.s5o(event, $completion);
   };
   l.$arity = 1;
   return l;
@@ -3649,14 +3721,14 @@ function TokenManagerImpl$updateTokenState$slambda$lambda($currentState, $timeUn
   };
 }
 function Companion_0() {
-  this.u5o_1 = 'SDK-TokenMonitoring';
+  this.y5o_1 = 'SDK-TokenMonitoring';
 }
-var Companion_instance_1;
+var Companion_instance_2;
 function Companion_getInstance_8() {
-  return Companion_instance_1;
+  return Companion_instance_2;
 }
 function _get_refreshConfig__2cwwp8($this) {
-  return $this.t5n_1.u5a_1;
+  return $this.x5n_1.y5a_1;
 }
 function attemptRefreshWithRetry($this, tokenEndpoint, clientId, refreshToken, currentMetadata, $completion) {
   var tmp = new $attemptRefreshWithRetryCOROUTINE$($this, tokenEndpoint, clientId, refreshToken, currentMetadata, $completion);
@@ -3676,7 +3748,7 @@ function isRetryableError($this, error) {
     tmp = true;
   } else {
     if (error instanceof HttpError) {
-      var containsArg = error.z5p_1;
+      var containsArg = error.d5q_1;
       tmp = 500 <= containsArg ? containsArg <= 599 : false;
     } else {
       if (error instanceof InvalidGrant) {
@@ -3693,12 +3765,12 @@ function isRetryableError($this, error) {
   return tmp;
 }
 function calculateBackoffDelay($this, attemptNumber) {
-  var tmp = _get_refreshConfig__2cwwp8($this).p5c_1;
+  var tmp = _get_refreshConfig__2cwwp8($this).t5c_1;
   // Inline function 'kotlin.math.pow' call
   var tmp$ret$0 = Math.pow(2.0, attemptNumber);
   var exponentialDelay = multiply(tmp, numberToLong(tmp$ret$0));
   // Inline function 'kotlin.math.min' call
-  var b = _get_refreshConfig__2cwwp8($this).q5c_1;
+  var b = _get_refreshConfig__2cwwp8($this).u5c_1;
   return compare(exponentialDelay, b) <= 0 ? exponentialDelay : b;
 }
 function clearAllTokensAndMetadata($this, $completion) {
@@ -3770,17 +3842,17 @@ function calculateNextCheckInterval($this, currentState, timeUntilExpiration, th
 }
 function hashRefreshToken($this, refreshToken) {
   var tokenBytes = encodeToByteArray(refreshToken);
-  var hashBytes = $this.y5n_1.s5s(tokenBytes);
+  var hashBytes = $this.c5o_1.w5s(tokenBytes);
   return joinToString(hashBytes, '', VOID, VOID, VOID, VOID, TokenManagerImpl$hashRefreshToken$lambda);
 }
 function sam$kotlinx_coroutines_flow_FlowCollector$0(function_0) {
-  this.t5s_1 = function_0;
+  this.x5s_1 = function_0;
 }
-protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).j1x = function (value, $completion) {
-  return this.t5s_1(value, $completion);
+protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).k1x = function (value, $completion) {
+  return this.x5s_1(value, $completion);
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).d3 = function () {
-  return this.t5s_1;
+  return this.x5s_1;
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0).equals = function (other) {
   var tmp;
@@ -3809,17 +3881,17 @@ function TokenManagerImpl$lambda_0() {
   return 'Token monitoring will start via AppForegrounded event (no automatic start in init{})';
 }
 function TokenManagerImpl$slambda(this$0, resultContinuation) {
-  this.c5t_1 = this$0;
+  this.g5t_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(TokenManagerImpl$slambda).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(TokenManagerImpl$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(TokenManagerImpl$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(TokenManagerImpl$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3830,7 +3902,7 @@ protoOf(TokenManagerImpl$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = emitCurrentStateFromStorage(this.c5t_1, this);
+          suspendResult = emitCurrentStateFromStorage(this.g5t_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3839,7 +3911,7 @@ protoOf(TokenManagerImpl$slambda).q8 = function () {
         case 1:
           var tmp_0 = SdkLogger_getInstance();
           var tmp_1 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_0.m5a(tmp_1, VOID, VOID, TokenManagerImpl$slambda$lambda(this.c5t_1));
+          tmp_0.q5a(tmp_1, VOID, VOID, TokenManagerImpl$slambda$lambda(this.g5t_1));
           return Unit_instance;
         case 2:
           throw this.l8_1;
@@ -3855,31 +3927,31 @@ protoOf(TokenManagerImpl$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(TokenManagerImpl$slambda).k2i = function ($this$launch, completion) {
-  var i = new TokenManagerImpl$slambda(this.c5t_1, completion);
-  i.d5t_1 = $this$launch;
+protoOf(TokenManagerImpl$slambda).l2i = function ($this$launch, completion) {
+  var i = new TokenManagerImpl$slambda(this.g5t_1, completion);
+  i.h5t_1 = $this$launch;
   return i;
 };
 function TokenManagerImpl$slambda_0(this$0, resultContinuation) {
   var i = new TokenManagerImpl$slambda(this$0, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function TokenManagerImpl$slambda_1(this$0, resultContinuation) {
-  this.m5t_1 = this$0;
+  this.q5t_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(TokenManagerImpl$slambda_1).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(TokenManagerImpl$slambda_1).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(TokenManagerImpl$slambda_1).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(TokenManagerImpl$slambda_1).q8 = function () {
   var suspendResult = this.k8_1;
@@ -3890,9 +3962,9 @@ protoOf(TokenManagerImpl$slambda_1).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          var tmp_0 = this.m5t_1.z5n_1.o5t();
-          var tmp_1 = TokenManagerImpl$slambda$slambda_0(this.m5t_1, null);
-          suspendResult = tmp_0.q1z(new sam$kotlinx_coroutines_flow_FlowCollector$0(tmp_1), this);
+          var tmp_0 = this.q5t_1.d5o_1.s5t();
+          var tmp_1 = TokenManagerImpl$slambda$slambda_0(this.q5t_1, null);
+          suspendResult = tmp_0.r1z(new sam$kotlinx_coroutines_flow_FlowCollector$0(tmp_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -3915,15 +3987,15 @@ protoOf(TokenManagerImpl$slambda_1).q8 = function () {
     }
    while (true);
 };
-protoOf(TokenManagerImpl$slambda_1).k2i = function ($this$launch, completion) {
-  var i = new TokenManagerImpl$slambda_1(this.m5t_1, completion);
-  i.n5t_1 = $this$launch;
+protoOf(TokenManagerImpl$slambda_1).l2i = function ($this$launch, completion) {
+  var i = new TokenManagerImpl$slambda_1(this.q5t_1, completion);
+  i.r5t_1 = $this$launch;
   return i;
 };
 function TokenManagerImpl$slambda_2(this$0, resultContinuation) {
   var i = new TokenManagerImpl$slambda_1(this$0, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
@@ -3936,7 +4008,7 @@ function TokenManagerImpl$refreshTokens$lambda_0() {
 }
 function TokenManagerImpl$refreshTokens$lambda_1($newTokens) {
   return function () {
-    return 'Attempting to save refreshed tokens ' + ('(accessToken length: ' + $newTokens.p5t_1.length + ', ') + ('refreshToken present: ' + !($newTokens.q5t_1 == null) + ', ') + ('expiresIn: ' + $newTokens.t5t_1.toString() + 's)');
+    return 'Attempting to save refreshed tokens ' + ('(accessToken length: ' + $newTokens.t5t_1.length + ', ') + ('refreshToken present: ' + !($newTokens.u5t_1 == null) + ', ') + ('expiresIn: ' + $newTokens.x5t_1.toString() + 's)');
   };
 }
 function TokenManagerImpl$refreshTokens$lambda_2() {
@@ -3980,21 +4052,21 @@ function TokenManagerImpl$startTokenMonitoring$lambda_0() {
 }
 function TokenManagerImpl$startTokenMonitoring$lambda_1(this$0) {
   return function () {
-    return 'Launching automatic token monitoring ' + ('(mode: ' + toString(_get_refreshConfig__2cwwp8(this$0).m5c_1) + ', ') + ('refreshThresholdSeconds: ' + _get_refreshConfig__2cwwp8(this$0).n5c_1.toString() + 's, ') + ('maxRetryAttempts: ' + _get_refreshConfig__2cwwp8(this$0).o5c_1 + ')');
+    return 'Launching automatic token monitoring ' + ('(mode: ' + toString(_get_refreshConfig__2cwwp8(this$0).q5c_1) + ', ') + ('refreshThresholdSeconds: ' + _get_refreshConfig__2cwwp8(this$0).r5c_1.toString() + 's, ') + ('maxRetryAttempts: ' + _get_refreshConfig__2cwwp8(this$0).s5c_1 + ')');
   };
 }
 function TokenManagerImpl$startTokenMonitoring$slambda(this$0, resultContinuation) {
-  this.d5u_1 = this$0;
+  this.h5u_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(TokenManagerImpl$startTokenMonitoring$slambda).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(TokenManagerImpl$startTokenMonitoring$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(TokenManagerImpl$startTokenMonitoring$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(TokenManagerImpl$startTokenMonitoring$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -4004,23 +4076,23 @@ protoOf(TokenManagerImpl$startTokenMonitoring$slambda).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 8;
-          this.f5u_1 = {_v: 0};
+          this.j5u_1 = {_v: 0};
           this.i8_1 = 1;
           continue $sm;
         case 1:
-          if (!get_isActive(this.e5u_1)) {
+          if (!get_isActive(this.i5u_1)) {
             this.i8_1 = 7;
             continue $sm;
           }
 
           this.j8_1 = 4;
-          var _unary__edvuaz = this.f5u_1._v;
-          this.f5u_1._v = _unary__edvuaz + 1 | 0;
+          var _unary__edvuaz = this.j5u_1._v;
+          this.j5u_1._v = _unary__edvuaz + 1 | 0;
           var tmp_0 = SdkLogger_getInstance();
           var tmp_1 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_0.n5a(tmp_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda(this.f5u_1));
+          tmp_0.r5a(tmp_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda(this.j5u_1));
           this.i8_1 = 2;
-          suspendResult = updateTokenState(this.d5u_1, this);
+          suspendResult = updateTokenState(this.h5u_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4030,7 +4102,7 @@ protoOf(TokenManagerImpl$startTokenMonitoring$slambda).q8 = function () {
           var nextIntervalSeconds = suspendResult;
           var tmp_2 = SdkLogger_getInstance();
           var tmp_3 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_2.m5a(tmp_3, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda_0(nextIntervalSeconds));
+          tmp_2.q5a(tmp_3, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda_0(nextIntervalSeconds));
           this.i8_1 = 3;
           suspendResult = delay(multiply(nextIntervalSeconds, new Long(1000, 0)), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -4054,8 +4126,8 @@ protoOf(TokenManagerImpl$startTokenMonitoring$slambda).q8 = function () {
               var e_0 = this.l8_1;
               var tmp_6 = SdkLogger_getInstance();
               var tmp_7 = LogCategory_TOKEN_MONITORING_getInstance();
-              tmp_6.s5d(tmp_7, e_0, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda_1);
-              ErrorHandlerRegistry_instance.a5g(e_0, mapOf([to('operation', 'token_monitoring'), to('cycle', this.f5u_1._v), to('recovery_action', 'retry_after_60s')]), ErrorLevel_WARNING_getInstance());
+              tmp_6.w5d(tmp_7, e_0, VOID, TokenManagerImpl$startTokenMonitoring$slambda$lambda_1);
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'token_monitoring'), to('cycle', this.j5u_1._v), to('recovery_action', 'retry_after_60s')]), ErrorLevel_WARNING_getInstance());
               this.i8_1 = 5;
               suspendResult = delay(new Long(60000, 0), this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -4090,15 +4162,15 @@ protoOf(TokenManagerImpl$startTokenMonitoring$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(TokenManagerImpl$startTokenMonitoring$slambda).k2i = function ($this$launch, completion) {
-  var i = new TokenManagerImpl$startTokenMonitoring$slambda(this.d5u_1, completion);
-  i.e5u_1 = $this$launch;
+protoOf(TokenManagerImpl$startTokenMonitoring$slambda).l2i = function ($this$launch, completion) {
+  var i = new TokenManagerImpl$startTokenMonitoring$slambda(this.h5u_1, completion);
+  i.i5u_1 = $this$launch;
   return i;
 };
 function TokenManagerImpl$startTokenMonitoring$slambda_0(this$0, resultContinuation) {
   var i = new TokenManagerImpl$startTokenMonitoring$slambda(this$0, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
@@ -4107,19 +4179,19 @@ function TokenManagerImpl$stopTokenMonitoring$lambda() {
   return 'Stopping automatic token monitoring';
 }
 function TokenManagerImpl$updateTokenState$slambda(this$0, $currentState, $timeUntilExpiration, resultContinuation) {
-  this.o5u_1 = this$0;
-  this.p5u_1 = $currentState;
-  this.q5u_1 = $timeUntilExpiration;
+  this.s5u_1 = this$0;
+  this.t5u_1 = $currentState;
+  this.u5u_1 = $timeUntilExpiration;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(TokenManagerImpl$updateTokenState$slambda).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(TokenManagerImpl$updateTokenState$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(TokenManagerImpl$updateTokenState$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(TokenManagerImpl$updateTokenState$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -4131,9 +4203,9 @@ protoOf(TokenManagerImpl$updateTokenState$slambda).q8 = function () {
           this.j8_1 = 2;
           var tmp_0 = SdkLogger_getInstance();
           var tmp_1 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_0.m5a(tmp_1, VOID, VOID, TokenManagerImpl$updateTokenState$slambda$lambda(this.p5u_1, this.q5u_1));
+          tmp_0.q5a(tmp_1, VOID, VOID, TokenManagerImpl$updateTokenState$slambda$lambda(this.t5u_1, this.u5u_1));
           this.i8_1 = 1;
-          suspendResult = this.o5u_1.s5u(VOID, this);
+          suspendResult = this.s5u_1.w5u(VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4155,15 +4227,15 @@ protoOf(TokenManagerImpl$updateTokenState$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(TokenManagerImpl$updateTokenState$slambda).k2i = function ($this$launch, completion) {
-  var i = new TokenManagerImpl$updateTokenState$slambda(this.o5u_1, this.p5u_1, this.q5u_1, completion);
-  i.r5u_1 = $this$launch;
+protoOf(TokenManagerImpl$updateTokenState$slambda).l2i = function ($this$launch, completion) {
+  var i = new TokenManagerImpl$updateTokenState$slambda(this.s5u_1, this.t5u_1, this.u5u_1, completion);
+  i.v5u_1 = $this$launch;
   return i;
 };
 function TokenManagerImpl$updateTokenState$slambda_0(this$0, $currentState, $timeUntilExpiration, resultContinuation) {
   var i = new TokenManagerImpl$updateTokenState$slambda(this$0, $currentState, $timeUntilExpiration, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
@@ -4190,8 +4262,8 @@ function TokenManagerImpl$hashRefreshToken$lambda(byte) {
 }
 function $refreshTokensCOROUTINE$(_this__u8e3s4, skipFreshnessCheck, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.b5v_1 = _this__u8e3s4;
-  this.c5v_1 = skipFreshnessCheck;
+  this.f5v_1 = _this__u8e3s4;
+  this.g5v_1 = skipFreshnessCheck;
 }
 protoOf($refreshTokensCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -4201,14 +4273,14 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 74;
-          this.m5w_1 = this.b5v_1.a5o_1;
+          this.r5w_1 = this.f5v_1.e5o_1;
           this.i8_1 = 1;
           continue $sm;
         case 1:
-          this.f5v_1 = this.m5w_1;
-          this.e5v_1 = null;
+          this.j5v_1 = this.r5w_1;
+          this.i5v_1 = null;
           this.i8_1 = 2;
-          suspendResult = this.f5v_1.t26(this.e5v_1, this);
+          suspendResult = this.j5v_1.u26(this.i5v_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4225,14 +4297,15 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           continue $sm;
         case 5:
           this.j8_1 = 70;
-          this.h5v_1 = Unit_instance;
+          this.l5v_1 = Unit_instance;
           this.i8_1 = 6;
           continue $sm;
         case 6:
+          this.p5v_1 = null;
           this.j8_1 = 65;
-          if (!this.c5v_1) {
+          if (!this.g5v_1) {
             this.i8_1 = 7;
-            suspendResult = this.b5v_1.w5n_1.t5o(this);
+            suspendResult = this.f5v_1.a5o_1.x5o(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4243,10 +4316,10 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           }
 
         case 7:
-          this.o5v_1 = suspendResult;
-          if (!(this.o5v_1 == null)) {
+          this.t5v_1 = suspendResult;
+          if (!(this.t5v_1 == null)) {
             this.i8_1 = 8;
-            suspendResult = evaluateTokenState(this.b5v_1, this.o5v_1, _get_refreshConfig__2cwwp8(this.b5v_1), this);
+            suspendResult = evaluateTokenState(this.f5v_1, this.t5v_1, _get_refreshConfig__2cwwp8(this.f5v_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4260,7 +4333,7 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           var freshState = suspendResult;
           if (freshState.equals(EvaluatedTokenState_Valid_getInstance())) {
             this.i8_1 = 9;
-            suspendResult = this.b5v_1.x5n_1.s5g(this.o5v_1.p5t_1, this);
+            suspendResult = this.f5v_1.b5o_1.w5g(this.t5v_1.t5t_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4282,15 +4355,15 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
             var tmp_0 = this;
             throwOnFailure(freshAccessParseResult);
             var tmp_1 = _Result___get_value__impl__bjfvqg(freshAccessParseResult);
-            tmp_0.n5v_1 = ((tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE()).u5g_1;
-            var tmp0_safe_receiver = this.o5v_1.r5t_1;
+            tmp_0.s5v_1 = ((tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE()).y5g_1;
+            var tmp0_safe_receiver = this.t5v_1.v5t_1;
             if (tmp0_safe_receiver == null) {
-              this.p5v_1 = null;
+              this.u5v_1 = null;
               this.i8_1 = 61;
               continue $sm;
             } else {
               this.i8_1 = 59;
-              suspendResult = this.b5v_1.x5n_1.s5g(tmp0_safe_receiver, this);
+              suspendResult = this.f5v_1.b5o_1.w5g(tmp0_safe_receiver, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -4301,7 +4374,7 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
             var tmp_2 = SdkLogger_getInstance();
             var tmp_3 = LogCategory_TOKEN_MONITORING_getInstance();
             var tmp_4 = Result__exceptionOrNull_impl_p6xea9(freshAccessParseResult);
-            tmp_2.s5d(tmp_3, tmp_4, VOID, TokenManagerImpl$refreshTokens$lambda_0);
+            tmp_2.w5d(tmp_3, tmp_4, VOID, TokenManagerImpl$refreshTokens$lambda_0);
             this.i8_1 = 11;
             continue $sm;
           }
@@ -4316,17 +4389,18 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 14;
           continue $sm;
         case 14:
+          this.p5v_1 = this.f5v_1.f5o_1.j1();
           this.i8_1 = 15;
-          suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, Refreshing_getInstance(), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, Refreshing_getInstance(), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 15:
-          var timestamp = System_instance.s3f().f3v();
+          var timestamp = System_instance.u3f().h3v();
           this.i8_1 = 16;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshStarted(timestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshStarted(timestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4334,19 +4408,19 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           continue $sm;
         case 16:
           this.i8_1 = 17;
-          suspendResult = this.b5v_1.u5n_1.o5w(this);
+          suspendResult = this.f5v_1.y5n_1.t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 17:
-          this.r5v_1 = suspendResult;
-          var tmp_5 = this.r5v_1;
+          this.w5v_1 = suspendResult;
+          var tmp_5 = this.w5v_1;
           if (tmp_5 instanceof Failure_1) {
-            this.s5v_1 = this.r5v_1.p5w_1;
+            this.x5v_1 = this.w5v_1.u5w_1;
             this.i8_1 = 56;
-            suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, new RefreshFailed(this.s5v_1), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, new RefreshFailed(this.x5v_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4358,10 +4432,10 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
 
         case 18:
           var tmp_6 = this;
-          var tmp_7 = this.r5v_1;
-          tmp_6.d5w_1 = (tmp_7 instanceof Success_1 ? tmp_7 : THROW_CCE()).q5w_1;
+          var tmp_7 = this.w5v_1;
+          tmp_6.i5w_1 = (tmp_7 instanceof Success_1 ? tmp_7 : THROW_CCE()).v5w_1;
           this.i8_1 = 19;
-          suspendResult = this.b5v_1.w5n_1.t5o(this);
+          suspendResult = this.f5v_1.a5o_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4370,100 +4444,100 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
         case 19:
           var tmp4_elvis_lhs = suspendResult;
           if (tmp4_elvis_lhs == null) {
-            this.l5w_1 = this.b5v_1;
+            this.q5w_1 = this.f5v_1;
             this.i8_1 = 20;
-            suspendResult = updateTokenStateAndEmitEvent(this.l5w_1, new RefreshFailed(TokenExpired_getInstance()), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.q5w_1, new RefreshFailed(TokenExpired_getInstance()), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
-            this.k5w_1 = tmp4_elvis_lhs;
+            this.p5w_1 = tmp4_elvis_lhs;
             this.i8_1 = 22;
             continue $sm;
           }
 
         case 20:
-          var ts = System_instance.s3f().f3v();
+          var ts = System_instance.u3f().h3v();
           this.i8_1 = 21;
-          suspendResult = this.l5w_1.z5n_1.n5w(new TokenRefreshFailure(TokenExpired_getInstance(), ts), this);
+          suspendResult = this.q5w_1.d5o_1.s5w(new TokenRefreshFailure(TokenExpired_getInstance(), ts), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 21:
-          this.q5v_1 = new Failure_1(TokenExpired_getInstance());
+          this.v5v_1 = new Failure_1(TokenExpired_getInstance());
           this.j8_1 = 74;
           this.i8_1 = 58;
           var tmp_8 = this;
           continue $sm;
         case 22:
-          var currentTokens = this.k5w_1;
-          var tmp5_elvis_lhs = currentTokens.q5t_1;
+          var currentTokens = this.p5w_1;
+          var tmp5_elvis_lhs = currentTokens.u5t_1;
           if (tmp5_elvis_lhs == null) {
-            this.j5w_1 = this.b5v_1;
+            this.o5w_1 = this.f5v_1;
             this.i8_1 = 23;
-            suspendResult = updateTokenStateAndEmitEvent(this.j5w_1, new RefreshFailed(TokenExpired_getInstance()), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.o5w_1, new RefreshFailed(TokenExpired_getInstance()), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
-            this.i5w_1 = tmp5_elvis_lhs;
+            this.n5w_1 = tmp5_elvis_lhs;
             this.i8_1 = 25;
             continue $sm;
           }
 
         case 23:
-          var ts_0 = System_instance.s3f().f3v();
+          var ts_0 = System_instance.u3f().h3v();
           this.i8_1 = 24;
-          suspendResult = this.j5w_1.z5n_1.n5w(new TokenRefreshFailure(TokenExpired_getInstance(), ts_0), this);
+          suspendResult = this.o5w_1.d5o_1.s5w(new TokenRefreshFailure(TokenExpired_getInstance(), ts_0), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 24:
-          this.q5v_1 = new Failure_1(TokenExpired_getInstance());
+          this.v5v_1 = new Failure_1(TokenExpired_getInstance());
           this.j8_1 = 74;
           this.i8_1 = 58;
           var tmp_9 = this;
           continue $sm;
         case 25:
-          this.h5w_1 = this.i5w_1;
+          this.m5w_1 = this.n5w_1;
           this.i8_1 = 26;
-          suspendResult = this.b5v_1.w5n_1.r5w(this);
+          suspendResult = this.f5v_1.a5o_1.w5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 26:
-          this.g5w_1 = suspendResult;
-          this.f5w_1 = hashRefreshToken(this.b5v_1, this.h5w_1);
+          this.l5w_1 = suspendResult;
+          this.k5w_1 = hashRefreshToken(this.f5v_1, this.m5w_1);
           this.i8_1 = 27;
-          suspendResult = attemptRefreshWithRetry(this.b5v_1, this.d5w_1.y5w_1, this.b5v_1.t5n_1.o5a_1, this.h5w_1, this.g5w_1, this);
+          suspendResult = attemptRefreshWithRetry(this.f5v_1, this.i5w_1.d5x_1, this.f5v_1.x5n_1.s5a_1, this.m5w_1, this.l5w_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 27:
-          this.t5v_1 = suspendResult;
-          var tmp_10 = this.t5v_1;
+          this.y5v_1 = suspendResult;
+          var tmp_10 = this.y5v_1;
           if (tmp_10 instanceof Failure_1) {
-            this.u5v_1 = this.t5v_1.p5w_1;
-            var tmp_11 = this.u5v_1;
+            this.z5v_1 = this.y5v_1.u5w_1;
+            var tmp_11 = this.z5v_1;
             if (!(tmp_11 instanceof InvalidGrant)) {
               var tmp_12 = ErrorHandlerRegistry_instance;
-              var tmp6_subject = this.u5v_1;
+              var tmp6_subject = this.z5v_1;
               var tmp_13;
               if (tmp6_subject instanceof NetworkError) {
-                var tmp7_elvis_lhs = this.u5v_1.r5y_1;
+                var tmp7_elvis_lhs = this.z5v_1.w5y_1;
                 var tmp_14;
                 if (tmp7_elvis_lhs == null) {
-                  var tmp8_elvis_lhs = this.u5v_1.q5y_1;
+                  var tmp8_elvis_lhs = this.z5v_1.v5y_1;
                   tmp_14 = Exception_init_$Create$(tmp8_elvis_lhs == null ? 'Network error' : tmp8_elvis_lhs);
                 } else {
                   tmp_14 = tmp7_elvis_lhs;
@@ -4471,17 +4545,17 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
                 tmp_13 = tmp_14;
               } else {
                 if (tmp6_subject instanceof HttpError) {
-                  tmp_13 = Exception_init_$Create$('HTTP ' + this.u5v_1.z5p_1 + ': ' + this.u5v_1.a5q_1);
+                  tmp_13 = Exception_init_$Create$('HTTP ' + this.z5v_1.d5q_1 + ': ' + this.z5v_1.e5q_1);
                 } else {
-                  tmp_13 = Exception_init_$Create$(toString(this.u5v_1));
+                  tmp_13 = Exception_init_$Create$(toString(this.z5v_1));
                 }
               }
-              tmp_12.a5g(tmp_13, mapOf([to('operation', 'token_refresh'), to('error_type', getKClassFromExpression(this.u5v_1).o())]), ErrorLevel_ERROR_getInstance());
+              tmp_12.e5g(tmp_13, mapOf([to('operation', 'token_refresh'), to('error_type', getKClassFromExpression(this.z5v_1).o())]), ErrorLevel_ERROR_getInstance());
             }
-            var tmp_15 = this.u5v_1;
+            var tmp_15 = this.z5v_1;
             if (tmp_15 instanceof InvalidGrant) {
               this.i8_1 = 51;
-              suspendResult = clearAllTokensAndMetadata(this.b5v_1, this);
+              suspendResult = clearAllTokensAndMetadata(this.f5v_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -4497,25 +4571,25 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
 
         case 28:
           var tmp_16 = this;
-          var tmp_17 = this.t5v_1;
-          tmp_16.z5v_1 = (tmp_17 instanceof Success_1 ? tmp_17 : THROW_CCE()).q5w_1;
-          var now = System_instance.s3f();
-          var nowSeconds = now.p3j();
-          var nowMillis = now.f3v();
+          var tmp_17 = this.y5v_1;
+          tmp_16.e5w_1 = (tmp_17 instanceof Success_1 ? tmp_17 : THROW_CCE()).v5w_1;
+          var now = System_instance.u3f();
+          var nowSeconds = now.r3j();
+          var nowMillis = now.h3v();
           var tmp_18 = this;
           var tmp_19;
-          if (!(this.g5w_1 == null)) {
-            tmp_19 = this.g5w_1.z5y(nowSeconds, nowMillis, this.f5w_1);
+          if (!(this.l5w_1 == null)) {
+            tmp_19 = this.l5w_1.e5z(nowSeconds, nowMillis, this.k5w_1);
           } else {
-            tmp_19 = new RefreshTokenMetadata(nowMillis, nowSeconds, nowSeconds, nowMillis, 1, null, this.f5w_1);
+            tmp_19 = new RefreshTokenMetadata(nowMillis, nowSeconds, nowSeconds, nowMillis, 1, null, this.k5w_1);
           }
 
-          tmp_18.y5v_1 = tmp_19;
+          tmp_18.d5w_1 = tmp_19;
           var tmp_20 = SdkLogger_getInstance();
           var tmp_21 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_20.m5a(tmp_21, VOID, VOID, TokenManagerImpl$refreshTokens$lambda_1(this.z5v_1));
+          tmp_20.q5a(tmp_21, VOID, VOID, TokenManagerImpl$refreshTokens$lambda_1(this.e5w_1));
           this.i8_1 = 29;
-          suspendResult = this.b5v_1.w5n_1.a5z(this.z5v_1, this);
+          suspendResult = this.f5v_1.a5o_1.f5z(this.e5w_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4530,17 +4604,17 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
         case 30:
           var saveTokensResult = suspendResult.sj_1;
           if (_Result___get_isFailure__impl__jpiriv(saveTokensResult)) {
-            var storageErrorTimestamp = System_instance.s3f().f3v();
+            var storageErrorTimestamp = System_instance.u3f().h3v();
             var tmp9_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(saveTokensResult);
             var storageException = tmp9_elvis_lhs == null ? Exception_init_$Create$('Failed to save refreshed tokens') : tmp9_elvis_lhs;
-            this.v5v_1 = new TokenStorageError('Failed to save refreshed tokens', storageException);
+            this.a5w_1 = new TokenStorageError('Failed to save refreshed tokens', storageException);
             var tmp_22 = SdkLogger_getInstance();
             var tmp_23 = LogCategory_TOKEN_MONITORING_getInstance();
-            tmp_22.b5z(tmp_23, storageException, VOID, TokenManagerImpl$refreshTokens$lambda_2);
-            ErrorHandlerRegistry_instance.a5g(storageException, mapOf([to('operation', 'save_refreshed_tokens'), to('critical', true), to('action', 'clearing_all_tokens'), to('error_message', 'Token save failed - tokens will be cleared')]), ErrorLevel_FATAL_getInstance());
-            this.b5v_1.z5n_1.c5z(new StorageError(StorageOperation_SAVE_getInstance(), this.v5v_1, storageErrorTimestamp));
+            tmp_22.g5z(tmp_23, storageException, VOID, TokenManagerImpl$refreshTokens$lambda_2);
+            ErrorHandlerRegistry_instance.e5g(storageException, mapOf([to('operation', 'save_refreshed_tokens'), to('critical', true), to('action', 'clearing_all_tokens'), to('error_message', 'Token save failed - tokens will be cleared')]), ErrorLevel_FATAL_getInstance());
+            this.f5v_1.d5o_1.h5z(new StorageError(StorageOperation_SAVE_getInstance(), this.a5w_1, storageErrorTimestamp));
             this.i8_1 = 48;
-            suspendResult = clearAllTokensAndMetadata(this.b5v_1, this);
+            suspendResult = clearAllTokensAndMetadata(this.f5v_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4553,9 +4627,9 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
         case 31:
           var tmp_24 = SdkLogger_getInstance();
           var tmp_25 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_24.m5a(tmp_25, VOID, VOID, TokenManagerImpl$refreshTokens$lambda_3);
+          tmp_24.q5a(tmp_25, VOID, VOID, TokenManagerImpl$refreshTokens$lambda_3);
           this.i8_1 = 32;
-          suspendResult = this.b5v_1.x5n_1.s5g(this.z5v_1.p5t_1, this);
+          suspendResult = this.f5v_1.b5o_1.w5g(this.e5w_1.t5t_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4568,17 +4642,17 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 33;
           continue $sm;
         case 33:
-          this.e5w_1 = suspendResult.sj_1;
-          if (_Result___get_isFailure__impl__jpiriv(this.e5w_1)) {
-            var cause = Result__exceptionOrNull_impl_p6xea9(this.e5w_1);
+          this.j5w_1 = suspendResult.sj_1;
+          if (_Result___get_isFailure__impl__jpiriv(this.j5w_1)) {
+            var cause = Result__exceptionOrNull_impl_p6xea9(this.j5w_1);
             var tmp_26 = this;
             var tmp11_elvis_lhs = cause == null ? null : cause.message;
-            tmp_26.w5v_1 = new InvalidDataError('Malformed access token returned by IDP: ' + (tmp11_elvis_lhs == null ? 'JWT parse failed' : tmp11_elvis_lhs));
+            tmp_26.b5w_1 = new InvalidDataError('Malformed access token returned by IDP: ' + (tmp11_elvis_lhs == null ? 'JWT parse failed' : tmp11_elvis_lhs));
             var tmp_27 = SdkLogger_getInstance();
             var tmp_28 = LogCategory_TOKEN_MONITORING_getInstance();
-            tmp_27.b5z(tmp_28, cause, VOID, TokenManagerImpl$refreshTokens$lambda_4);
+            tmp_27.g5z(tmp_28, cause, VOID, TokenManagerImpl$refreshTokens$lambda_4);
             this.i8_1 = 45;
-            suspendResult = clearAllTokensAndMetadata(this.b5v_1, this);
+            suspendResult = clearAllTokensAndMetadata(this.f5v_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4590,18 +4664,18 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
 
         case 34:
           var tmp_29 = this;
-          var this_0 = this.e5w_1;
+          var this_0 = this.j5w_1;
           throwOnFailure(this_0);
           var tmp_30 = _Result___get_value__impl__bjfvqg(this_0);
-          tmp_29.b5w_1 = ((tmp_30 == null ? true : !(tmp_30 == null)) ? tmp_30 : THROW_CCE()).u5g_1;
-          var tmp12_safe_receiver = this.z5v_1.r5t_1;
+          tmp_29.g5w_1 = ((tmp_30 == null ? true : !(tmp_30 == null)) ? tmp_30 : THROW_CCE()).y5g_1;
+          var tmp12_safe_receiver = this.e5w_1.v5t_1;
           if (tmp12_safe_receiver == null) {
-            this.c5w_1 = null;
+            this.h5w_1 = null;
             this.i8_1 = 37;
             continue $sm;
           } else {
             this.i8_1 = 35;
-            suspendResult = this.b5v_1.x5n_1.f5j(tmp12_safe_receiver, this.b5v_1.t5n_1.o5a_1, this.d5w_1.s5w_1, this.d5w_1.u5w_1, null, VOID, this);
+            suspendResult = this.f5v_1.b5o_1.j5j(tmp12_safe_receiver, this.f5v_1.x5n_1.s5a_1, this.i5w_1.x5w_1, this.i5w_1.z5w_1, null, VOID, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4622,7 +4696,7 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
             var tmp_33 = SdkLogger_getInstance();
             var tmp_34 = LogCategory_TOKEN_MONITORING_getInstance();
             var tmp_35 = Result__exceptionOrNull_impl_p6xea9(result);
-            tmp_33.s5d(tmp_34, tmp_35, VOID, TokenManagerImpl$refreshTokens$lambda_5);
+            tmp_33.w5d(tmp_34, tmp_35, VOID, TokenManagerImpl$refreshTokens$lambda_5);
             tmp_32 = null;
           } else {
             throwOnFailure(result);
@@ -4630,16 +4704,16 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
             tmp_32 = (tmp_36 == null ? true : !(tmp_36 == null)) ? tmp_36 : THROW_CCE();
           }
 
-          tmp_31.c5w_1 = tmp_32;
+          tmp_31.h5w_1 = tmp_32;
           this.i8_1 = 37;
           continue $sm;
         case 37:
-          var refreshedIdJwtClaims = this.c5w_1;
+          var refreshedIdJwtClaims = this.h5w_1;
           var tmp_37;
           if (refreshedIdJwtClaims == null) {
             tmp_37 = null;
           } else {
-            tmp_37 = Companion_instance_21.d5z(refreshedIdJwtClaims);
+            tmp_37 = Companion_instance_24.i5z(refreshedIdJwtClaims);
           }
 
           var refreshedIdClaims = tmp_37;
@@ -4647,18 +4721,18 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           if (refreshedIdJwtClaims == null) {
             tmp_38 = null;
           } else {
-            tmp_38 = Companion_instance_30.d5z(refreshedIdJwtClaims);
+            tmp_38 = Companion_instance_34.i5z(refreshedIdJwtClaims);
           }
 
           var refreshedUserInfo = tmp_38;
-          this.x5v_1 = Companion_instance_29.e5z(this.z5v_1, this.b5w_1, refreshedIdClaims, refreshedUserInfo);
+          this.c5w_1 = Companion_instance_33.j5z(this.e5w_1, this.g5w_1, refreshedIdClaims, refreshedUserInfo);
           if (refreshedUserInfo == null) {
-            this.a5w_1 = null;
+            this.f5w_1 = null;
             this.i8_1 = 40;
             continue $sm;
           } else {
             this.i8_1 = 38;
-            suspendResult = this.b5v_1.w5n_1.f5z(refreshedUserInfo, this);
+            suspendResult = this.f5v_1.a5o_1.k5z(refreshedUserInfo, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4672,31 +4746,31 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 39;
           continue $sm;
         case 39:
-          this.a5w_1 = suspendResult;
+          this.f5w_1 = suspendResult;
           this.i8_1 = 40;
           continue $sm;
         case 40:
           this.i8_1 = 41;
-          suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, Refreshed_getInstance(), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, Refreshed_getInstance(), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 41:
-          var successTimestamp = System_instance.s3f().f3v();
+          var successTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 42;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshSuccess(this.x5v_1, successTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshSuccess(this.c5w_1, successTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 42:
-          var tokensSavedTimestamp = System_instance.s3f().f3v();
-          this.b5v_1.z5n_1.c5z(new TokensSaved(!(this.z5v_1.q5t_1 == null), tokensSavedTimestamp));
+          var tokensSavedTimestamp = System_instance.u3f().h3v();
+          this.f5v_1.d5o_1.h5z(new TokensSaved(!(this.e5w_1.u5t_1 == null), tokensSavedTimestamp));
           this.i8_1 = 43;
-          suspendResult = this.b5v_1.w5n_1.g5z(this.y5v_1, this);
+          suspendResult = this.f5v_1.a5o_1.l5z(this.d5w_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4714,60 +4788,60 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
             var tmp_39 = SdkLogger_getInstance();
             var tmp_40 = LogCategory_TOKEN_MONITORING_getInstance();
             var tmp_41 = Result__exceptionOrNull_impl_p6xea9(saveMetadataResult);
-            tmp_39.s5d(tmp_40, tmp_41, VOID, TokenManagerImpl$refreshTokens$lambda_6);
+            tmp_39.w5d(tmp_40, tmp_41, VOID, TokenManagerImpl$refreshTokens$lambda_6);
           }
 
-          this.i5v_1 = new Success_1(this.x5v_1);
+          this.m5v_1 = new Success_1(this.c5w_1);
           this.j8_1 = 70;
           this.i8_1 = 68;
           continue $sm;
         case 45:
           this.i8_1 = 46;
-          suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, new RefreshFailed(this.w5v_1), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, new RefreshFailed(this.b5w_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 46:
-          var parseFailureTimestamp = System_instance.s3f().f3v();
+          var parseFailureTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 47;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshFailure(this.w5v_1, parseFailureTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshFailure(this.b5w_1, parseFailureTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 47:
-          this.h5v_1 = new Failure_1(this.w5v_1);
+          this.l5v_1 = new Failure_1(this.b5w_1);
           this.i8_1 = 69;
           continue $sm;
         case 48:
           this.i8_1 = 49;
-          suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, new RefreshFailed(this.v5v_1), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, new RefreshFailed(this.a5w_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 49:
-          var saveFailureTimestamp = System_instance.s3f().f3v();
+          var saveFailureTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 50;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshFailure(this.v5v_1, saveFailureTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshFailure(this.a5w_1, saveFailureTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 50:
-          this.q5v_1 = new Failure_1(this.v5v_1);
+          this.v5v_1 = new Failure_1(this.a5w_1);
           this.j8_1 = 74;
           this.i8_1 = 58;
           continue $sm;
         case 51:
-          var invalidatedTimestamp = System_instance.s3f().f3v();
+          var invalidatedTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 52;
-          suspendResult = this.b5v_1.z5n_1.n5w(new SessionInvalidated(this.u5v_1, invalidatedTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new SessionInvalidated(this.z5v_1, invalidatedTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -4778,44 +4852,44 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           continue $sm;
         case 53:
           this.i8_1 = 54;
-          suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, new RefreshFailed(this.u5v_1), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, new RefreshFailed(this.z5v_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 54:
-          var failureTimestamp = System_instance.s3f().f3v();
+          var failureTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 55;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshFailure(this.u5v_1, failureTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshFailure(this.z5v_1, failureTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 55:
-          this.q5v_1 = this.t5v_1;
+          this.v5v_1 = this.y5v_1;
           this.j8_1 = 74;
           this.i8_1 = 58;
           continue $sm;
         case 56:
-          var configFailureTimestamp = System_instance.s3f().f3v();
+          var configFailureTimestamp = System_instance.u3f().h3v();
           this.i8_1 = 57;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshFailure(this.s5v_1, configFailureTimestamp), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshFailure(this.x5v_1, configFailureTimestamp), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 57:
-          this.q5v_1 = this.r5v_1;
+          this.v5v_1 = this.w5v_1;
           this.j8_1 = 74;
           this.i8_1 = 58;
           continue $sm;
         case 58:
-          var tmp_42 = this.q5v_1;
+          var tmp_42 = this.v5v_1;
           this.j8_1 = 74;
-          this.f5v_1.d26(this.e5v_1);
+          this.j5v_1.e26(this.i5v_1);
           var tmp_43 = this;
           return tmp_42;
         case 59:
@@ -4834,16 +4908,16 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           }
 
           var tmp0_safe_receiver_0 = tmp_44;
-          this.p5v_1 = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.u5g_1;
+          this.u5v_1 = tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.y5g_1;
           this.i8_1 = 61;
           continue $sm;
         case 61:
-          var freshIdJwtClaims = this.p5v_1;
+          var freshIdJwtClaims = this.u5v_1;
           var tmp_46;
           if (freshIdJwtClaims == null) {
             tmp_46 = null;
           } else {
-            tmp_46 = Companion_instance_21.d5z(freshIdJwtClaims);
+            tmp_46 = Companion_instance_24.i5z(freshIdJwtClaims);
           }
 
           var freshIdClaims = tmp_46;
@@ -4851,21 +4925,21 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           if (freshIdJwtClaims == null) {
             tmp_47 = null;
           } else {
-            tmp_47 = Companion_instance_30.d5z(freshIdJwtClaims);
+            tmp_47 = Companion_instance_34.i5z(freshIdJwtClaims);
           }
 
           var freshUserInfo = tmp_47;
-          this.l5v_1 = Companion_instance_29.e5z(this.o5v_1, this.n5v_1, freshIdClaims, freshUserInfo);
+          this.q5v_1 = Companion_instance_33.j5z(this.t5v_1, this.s5v_1, freshIdClaims, freshUserInfo);
           var tmp_48 = SdkLogger_getInstance();
           var tmp_49 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_48.n5a(tmp_49, VOID, VOID, TokenManagerImpl$refreshTokens$lambda);
+          tmp_48.r5a(tmp_49, VOID, VOID, TokenManagerImpl$refreshTokens$lambda);
           if (freshUserInfo == null) {
-            this.m5v_1 = null;
+            this.r5v_1 = null;
             this.i8_1 = 64;
             continue $sm;
           } else {
             this.i8_1 = 62;
-            suspendResult = this.b5v_1.w5n_1.f5z(freshUserInfo, this);
+            suspendResult = this.f5v_1.a5o_1.k5z(freshUserInfo, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4879,11 +4953,11 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 63;
           continue $sm;
         case 63:
-          this.m5v_1 = suspendResult;
+          this.r5v_1 = suspendResult;
           this.i8_1 = 64;
           continue $sm;
         case 64:
-          this.h5v_1 = new Success_1(this.l5v_1);
+          this.l5v_1 = new Success_1(this.q5v_1);
           this.i8_1 = 69;
           continue $sm;
         case 65:
@@ -4892,15 +4966,23 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           if (tmp_50 instanceof CancellationException) {
             var e = this.l8_1;
             var tmp_51 = this;
+            if (equals(this.f5v_1.f5o_1.j1(), Refreshing_getInstance())) {
+              var tmp16_safe_receiver = this.p5v_1;
+              if (tmp16_safe_receiver == null)
+                null;
+              else {
+                this.f5v_1.f5o_1.y20(tmp16_safe_receiver);
+              }
+            }
             throw e;
           } else {
             var tmp_52 = this.l8_1;
             if (tmp_52 instanceof Exception) {
               var e_0 = this.l8_1;
-              this.j5v_1 = new UnknownError(e_0, 'Unexpected error during token refresh');
-              this.k5v_1 = System_instance.s3f().f3v();
+              this.n5v_1 = new UnknownError(e_0, 'Unexpected error during token refresh');
+              this.o5v_1 = System_instance.u3f().h3v();
               this.i8_1 = 66;
-              suspendResult = updateTokenStateAndEmitEvent(this.b5v_1, new RefreshFailed(this.j5v_1), this);
+              suspendResult = updateTokenStateAndEmitEvent(this.f5v_1, new RefreshFailed(this.n5v_1), this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -4912,19 +4994,19 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
 
         case 66:
           this.i8_1 = 67;
-          suspendResult = this.b5v_1.z5n_1.n5w(new TokenRefreshFailure(this.j5v_1, this.k5v_1), this);
+          suspendResult = this.f5v_1.d5o_1.s5w(new TokenRefreshFailure(this.n5v_1, this.o5v_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 67:
-          this.i5v_1 = new Failure_1(this.j5v_1);
+          this.m5v_1 = new Failure_1(this.n5v_1);
           this.i8_1 = 68;
           continue $sm;
         case 68:
           this.j8_1 = 70;
-          this.h5v_1 = this.i5v_1;
+          this.l5v_1 = this.m5v_1;
           if (false) {
             this.i8_1 = 6;
             continue $sm;
@@ -4933,25 +5015,25 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 69;
           continue $sm;
         case 69:
-          this.g5v_1 = this.h5v_1;
+          this.k5v_1 = this.l5v_1;
           this.j8_1 = 74;
           this.i8_1 = 71;
           continue $sm;
         case 70:
           this.j8_1 = 74;
           var t = this.l8_1;
-          this.f5v_1.d26(this.e5v_1);
+          this.j5v_1.e26(this.i5v_1);
           throw t;
         case 71:
-          var tmp_53 = this.g5v_1;
+          var tmp_53 = this.k5v_1;
           this.j8_1 = 74;
-          this.f5v_1.d26(this.e5v_1);
-          this.d5v_1 = tmp_53;
+          this.j5v_1.e26(this.i5v_1);
+          this.h5v_1 = tmp_53;
           this.i8_1 = 73;
           continue $sm;
         case 72:
           this.j8_1 = 74;
-          this.f5v_1.d26(this.e5v_1);
+          this.j5v_1.e26(this.i5v_1);
           if (false) {
             this.i8_1 = 1;
             continue $sm;
@@ -4960,7 +5042,7 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
           this.i8_1 = 73;
           continue $sm;
         case 73:
-          return this.d5v_1;
+          return this.h5v_1;
         case 74:
           throw this.l8_1;
       }
@@ -4977,11 +5059,11 @@ protoOf($refreshTokensCOROUTINE$).q8 = function () {
 };
 function $attemptRefreshWithRetryCOROUTINE$(_this__u8e3s4, tokenEndpoint, clientId, refreshToken, currentMetadata, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.d5p_1 = _this__u8e3s4;
-  this.e5p_1 = tokenEndpoint;
-  this.f5p_1 = clientId;
-  this.g5p_1 = refreshToken;
-  this.h5p_1 = currentMetadata;
+  this.h5p_1 = _this__u8e3s4;
+  this.i5p_1 = tokenEndpoint;
+  this.j5p_1 = clientId;
+  this.k5p_1 = refreshToken;
+  this.l5p_1 = currentMetadata;
 }
 protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -4991,19 +5073,19 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 11;
-          this.i5p_1 = null;
-          this.k5p_1 = {_v: 0};
+          this.m5p_1 = null;
+          this.o5p_1 = {_v: 0};
           this.i8_1 = 1;
           continue $sm;
         case 1:
-          if (!(this.k5p_1._v <= _get_refreshConfig__2cwwp8(this.d5p_1).o5c_1)) {
+          if (!(this.o5p_1._v <= _get_refreshConfig__2cwwp8(this.h5p_1).s5c_1)) {
             this.i8_1 = 10;
             continue $sm;
           }
 
           this.j8_1 = 3;
           this.i8_1 = 2;
-          suspendResult = this.d5p_1.v5n_1.h5z(this.e5p_1, this.g5p_1, this.f5p_1, this);
+          suspendResult = this.h5p_1.z5n_1.m5z(this.i5p_1, this.k5p_1, this.j5p_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5023,9 +5105,9 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
           } else {
             var tmp_3 = this.l8_1;
             if (tmp_3 instanceof Exception) {
-              this.n5p_1 = this.l8_1;
+              this.r5p_1 = this.l8_1;
               this.i8_1 = 4;
-              suspendResult = classifyRefreshError(this.d5p_1, this.n5p_1, this);
+              suspendResult = classifyRefreshError(this.h5p_1, this.r5p_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -5036,26 +5118,26 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
           }
 
         case 4:
-          this.l5p_1 = suspendResult;
-          this.i5p_1 = this.l5p_1;
-          ErrorHandlerRegistry_instance.a5g(this.n5p_1, mapOf([to('operation', 'token_refresh_attempt'), to('attempt_number', this.k5p_1._v + 1 | 0), to('max_attempts', _get_refreshConfig__2cwwp8(this.d5p_1).o5c_1), to('error_type', getKClassFromExpression(this.l5p_1).o()), to('is_retryable', isRetryableError(this.d5p_1, this.l5p_1))]), ErrorLevel_ERROR_getInstance());
-          var tmp0_safe_receiver = this.h5p_1;
+          this.p5p_1 = suspendResult;
+          this.m5p_1 = this.p5p_1;
+          ErrorHandlerRegistry_instance.e5g(this.r5p_1, mapOf([to('operation', 'token_refresh_attempt'), to('attempt_number', this.o5p_1._v + 1 | 0), to('max_attempts', _get_refreshConfig__2cwwp8(this.h5p_1).s5c_1), to('error_type', getKClassFromExpression(this.p5p_1).o()), to('is_retryable', isRetryableError(this.h5p_1, this.p5p_1))]), ErrorLevel_ERROR_getInstance());
+          var tmp0_safe_receiver = this.l5p_1;
           if (tmp0_safe_receiver == null) {
-            this.m5p_1 = null;
+            this.q5p_1 = null;
             this.i8_1 = 7;
             continue $sm;
           } else {
-            var tmp0_subject = this.l5p_1;
+            var tmp0_subject = this.p5p_1;
             var tmp_4;
             if (tmp0_subject instanceof InvalidGrant) {
-              var tmp1_elvis_lhs = this.l5p_1.i5z_1;
+              var tmp1_elvis_lhs = this.p5p_1.n5z_1;
               tmp_4 = 'invalid_grant: ' + (tmp1_elvis_lhs == null ? 'Refresh token invalid/expired/revoked' : tmp1_elvis_lhs);
             } else {
               if (tmp0_subject instanceof NetworkError) {
-                var tmp2_elvis_lhs = this.l5p_1.q5y_1;
+                var tmp2_elvis_lhs = this.p5p_1.v5y_1;
                 var tmp_5;
                 if (tmp2_elvis_lhs == null) {
-                  var tmp3_safe_receiver = this.l5p_1.r5y_1;
+                  var tmp3_safe_receiver = this.p5p_1.w5y_1;
                   tmp_5 = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.message;
                 } else {
                   tmp_5 = tmp2_elvis_lhs;
@@ -5064,16 +5146,16 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
                 tmp_4 = 'Network error: ' + (tmp4_elvis_lhs == null ? 'Unknown' : tmp4_elvis_lhs);
               } else {
                 if (tmp0_subject instanceof HttpError) {
-                  var tmp5_elvis_lhs = this.l5p_1.a5q_1;
-                  tmp_4 = 'Server error: HTTP ' + this.l5p_1.z5p_1 + ' - ' + (tmp5_elvis_lhs == null ? 'Unknown' : tmp5_elvis_lhs);
+                  var tmp5_elvis_lhs = this.p5p_1.e5q_1;
+                  tmp_4 = 'Server error: HTTP ' + this.p5p_1.d5q_1 + ' - ' + (tmp5_elvis_lhs == null ? 'Unknown' : tmp5_elvis_lhs);
                 } else {
-                  tmp_4 = toString(this.l5p_1);
+                  tmp_4 = toString(this.p5p_1);
                 }
               }
             }
-            var updatedMetadata = tmp0_safe_receiver.k5z(tmp_4);
+            var updatedMetadata = tmp0_safe_receiver.p5z(tmp_4);
             this.i8_1 = 5;
-            suspendResult = this.d5p_1.w5n_1.g5z(updatedMetadata, this);
+            suspendResult = this.h5p_1.a5o_1.l5z(updatedMetadata, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5087,18 +5169,18 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
           this.i8_1 = 6;
           continue $sm;
         case 6:
-          this.m5p_1 = suspendResult;
+          this.q5p_1 = suspendResult;
           this.i8_1 = 7;
           continue $sm;
         case 7:
-          if (!isRetryableError(this.d5p_1, this.l5p_1) || this.k5p_1._v >= _get_refreshConfig__2cwwp8(this.d5p_1).o5c_1) {
-            return new Failure_1(this.l5p_1);
+          if (!isRetryableError(this.h5p_1, this.p5p_1) || this.o5p_1._v >= _get_refreshConfig__2cwwp8(this.h5p_1).s5c_1) {
+            return new Failure_1(this.p5p_1);
           }
 
-          var delayMs = calculateBackoffDelay(this.d5p_1, this.k5p_1._v);
+          var delayMs = calculateBackoffDelay(this.h5p_1, this.o5p_1._v);
           var tmp_6 = SdkLogger_getInstance();
           var tmp_7 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_6.b5z(tmp_7, VOID, VOID, TokenManagerImpl$attemptRefreshWithRetry$lambda(this.k5p_1, delayMs, this.l5p_1));
+          tmp_6.g5z(tmp_7, VOID, VOID, TokenManagerImpl$attemptRefreshWithRetry$lambda(this.o5p_1, delayMs, this.p5p_1));
           this.i8_1 = 8;
           suspendResult = delay(delayMs, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
@@ -5108,9 +5190,9 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
           continue $sm;
         case 8:
           var tmp_8 = this;
-          var _unary__edvuaz = this.k5p_1._v;
-          this.k5p_1._v = _unary__edvuaz + 1 | 0;
-          tmp_8.j5p_1 = _unary__edvuaz;
+          var _unary__edvuaz = this.o5p_1._v;
+          this.o5p_1._v = _unary__edvuaz + 1 | 0;
+          tmp_8.n5p_1 = _unary__edvuaz;
           this.i8_1 = 9;
           continue $sm;
         case 9:
@@ -5118,7 +5200,7 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
           this.i8_1 = 1;
           continue $sm;
         case 10:
-          var tmp1_elvis_lhs_0 = this.i5p_1;
+          var tmp1_elvis_lhs_0 = this.m5p_1;
           return new Failure_1(tmp1_elvis_lhs_0 == null ? new UnknownError(Exception_init_$Create$('Token refresh failed after all retries'), 'Exhausted all retry attempts') : tmp1_elvis_lhs_0);
         case 11:
           throw this.l8_1;
@@ -5136,8 +5218,8 @@ protoOf($attemptRefreshWithRetryCOROUTINE$).q8 = function () {
 };
 function $classifyRefreshErrorCOROUTINE$(_this__u8e3s4, exception, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.w5p_1 = _this__u8e3s4;
-  this.x5p_1 = exception;
+  this.a5q_1 = _this__u8e3s4;
+  this.b5q_1 = exception;
 }
 protoOf($classifyRefreshErrorCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5147,17 +5229,17 @@ protoOf($classifyRefreshErrorCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          var tmp0_safe_receiver = mapPlatformException(this.x5p_1);
+          var tmp0_safe_receiver = mapPlatformException(this.b5q_1);
           if (tmp0_safe_receiver == null)
             null;
           else {
             return tmp0_safe_receiver;
           }
 
-          var tmp1_subject = this.x5p_1;
+          var tmp1_subject = this.b5q_1;
           if (tmp1_subject instanceof ClientRequestException) {
             this.i8_1 = 1;
-            suspendResult = OAuthErrorMapper_getInstance().z5l(this.x5p_1, this);
+            suspendResult = OAuthErrorMapper_getInstance().d5m(this.b5q_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5165,33 +5247,33 @@ protoOf($classifyRefreshErrorCOROUTINE$).q8 = function () {
           } else {
             if (tmp1_subject instanceof ServerResponseException) {
               var tmp_0 = this;
-              tmp_0.y5p_1 = OAuthErrorMapper_getInstance().a5m(this.x5p_1);
+              tmp_0.c5q_1 = OAuthErrorMapper_getInstance().e5m(this.b5q_1);
               this.i8_1 = 2;
               continue $sm;
             } else {
               var tmp_1 = this;
-              var tmp2_elvis_lhs = this.x5p_1.message;
+              var tmp2_elvis_lhs = this.b5q_1.message;
               var errorMessage = tmp2_elvis_lhs == null ? '' : tmp2_elvis_lhs;
               var tmp_2;
               if (contains(errorMessage, 'invalid_grant', true)) {
                 tmp_2 = new InvalidGrant(errorMessage, 'invalid_grant');
               } else if (contains(errorMessage, 'network', true) || contains(errorMessage, 'connection', true) || contains(errorMessage, 'timeout', true) || contains(errorMessage, 'unreachable', true)) {
-                tmp_2 = new NetworkError(errorMessage, this.x5p_1);
+                tmp_2 = new NetworkError(errorMessage, this.b5q_1);
               } else {
-                tmp_2 = new UnknownError(this.x5p_1, 'Token refresh failed with unexpected exception');
+                tmp_2 = new UnknownError(this.b5q_1, 'Token refresh failed with unexpected exception');
               }
-              tmp_1.y5p_1 = tmp_2;
+              tmp_1.c5q_1 = tmp_2;
               this.i8_1 = 2;
               continue $sm;
             }
           }
 
         case 1:
-          this.y5p_1 = suspendResult;
+          this.c5q_1 = suspendResult;
           this.i8_1 = 2;
           continue $sm;
         case 2:
-          return this.y5p_1;
+          return this.c5q_1;
         case 3:
           throw this.l8_1;
       }
@@ -5208,7 +5290,7 @@ protoOf($classifyRefreshErrorCOROUTINE$).q8 = function () {
 };
 function $clearAllTokensAndMetadataCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.k5q_1 = _this__u8e3s4;
+  this.o5q_1 = _this__u8e3s4;
 }
 protoOf($clearAllTokensAndMetadataCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5219,7 +5301,7 @@ protoOf($clearAllTokensAndMetadataCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 5;
           this.i8_1 = 1;
-          suspendResult = this.k5q_1.w5n_1.l5z(this);
+          suspendResult = this.o5q_1.a5o_1.q5z(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5233,7 +5315,7 @@ protoOf($clearAllTokensAndMetadataCOROUTINE$).q8 = function () {
           continue $sm;
         case 2:
           this.i8_1 = 3;
-          suspendResult = this.k5q_1.w5n_1.m5z(this);
+          suspendResult = this.o5q_1.a5o_1.r5z(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5263,9 +5345,9 @@ protoOf($clearAllTokensAndMetadataCOROUTINE$).q8 = function () {
 };
 function $evaluateTokenStateCOROUTINE$(_this__u8e3s4, tokenResponse, refreshConfig, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.t5q_1 = _this__u8e3s4;
-  this.u5q_1 = tokenResponse;
-  this.v5q_1 = refreshConfig;
+  this.x5q_1 = _this__u8e3s4;
+  this.y5q_1 = tokenResponse;
+  this.z5q_1 = refreshConfig;
 }
 protoOf($evaluateTokenStateCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5275,12 +5357,12 @@ protoOf($evaluateTokenStateCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 5;
-          if (this.u5q_1 == null) {
+          if (this.y5q_1 == null) {
             return EvaluatedTokenState_NoTokens_getInstance();
           }
 
           this.i8_1 = 1;
-          suspendResult = this.t5q_1.x5n_1.i5j(this.u5q_1.p5t_1, this);
+          suspendResult = this.x5q_1.b5o_1.m5j(this.y5q_1.t5t_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5295,9 +5377,9 @@ protoOf($evaluateTokenStateCOROUTINE$).q8 = function () {
           }
 
         case 2:
-          var threshold = calculateAdaptiveThreshold(this.t5q_1, this.u5q_1.t5t_1, this.v5q_1.n5c_1);
+          var threshold = calculateAdaptiveThreshold(this.x5q_1, this.y5q_1.x5t_1, this.z5q_1.r5c_1);
           this.i8_1 = 3;
-          suspendResult = this.t5q_1.x5n_1.j5j(this.u5q_1.p5t_1, threshold, this);
+          suspendResult = this.x5q_1.b5o_1.n5j(this.y5q_1.t5t_1, threshold, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5329,8 +5411,8 @@ protoOf($evaluateTokenStateCOROUTINE$).q8 = function () {
 };
 function $getAccessTokenCOROUTINE$(_this__u8e3s4, forceRefresh, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.v5z_1 = _this__u8e3s4;
-  this.w5z_1 = forceRefresh;
+  this.a60_1 = _this__u8e3s4;
+  this.b60_1 = forceRefresh;
 }
 protoOf($getAccessTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5341,17 +5423,17 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 11;
           this.i8_1 = 1;
-          suspendResult = this.v5z_1.w5n_1.t5o(this);
+          suspendResult = this.a60_1.a5o_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.a60_1 = suspendResult;
-          if (this.a60_1 == null) {
+          this.f60_1 = suspendResult;
+          if (this.f60_1 == null) {
             this.i8_1 = 10;
-            suspendResult = updateTokenStateAndEmitEvent(this.v5z_1, NoTokens_getInstance(), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.a60_1, NoTokens_getInstance(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5362,10 +5444,10 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
           }
 
         case 2:
-          this.y5z_1 = this.a60_1.p5t_1;
-          if (this.w5z_1) {
+          this.d60_1 = this.f60_1.t5t_1;
+          if (this.b60_1) {
             this.i8_1 = 9;
-            suspendResult = this.v5z_1.b60(true, this);
+            suspendResult = this.a60_1.g60(true, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5377,28 +5459,28 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
 
         case 3:
           this.i8_1 = 4;
-          suspendResult = evaluateTokenState(this.v5z_1, this.a60_1, _get_refreshConfig__2cwwp8(this.v5z_1), this);
+          suspendResult = evaluateTokenState(this.a60_1, this.f60_1, _get_refreshConfig__2cwwp8(this.a60_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 4:
-          this.z5z_1 = suspendResult;
+          this.e60_1 = suspendResult;
           this.i8_1 = 5;
-          suspendResult = updateTokenStateAndEmitEvent(this.v5z_1, toTokenState(this.z5z_1), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.a60_1, toTokenState(this.e60_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 5:
-          var tmp0 = this.z5z_1.u2_1;
+          var tmp0 = this.e60_1.u2_1;
           switch (tmp0) {
             case 0:
             case 1:
               this.i8_1 = 7;
-              suspendResult = parseAndReturnAccessToken(this.v5z_1, this.y5z_1, this);
+              suspendResult = parseAndReturnAccessToken(this.a60_1, this.d60_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -5407,7 +5489,7 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
             default:
               if (tmp0 === 2) {
                 this.i8_1 = 6;
-                suspendResult = this.v5z_1.s5u(VOID, this);
+                suspendResult = this.a60_1.w5u(VOID, this);
                 if (suspendResult === get_COROUTINE_SUSPENDED()) {
                   return suspendResult;
                 }
@@ -5415,7 +5497,7 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
               } else {
                 if (tmp0 === 3) {
                   var tmp_0 = this;
-                  tmp_0.x5z_1 = new Failure_1(NotAuthenticated_getInstance());
+                  tmp_0.c60_1 = new Failure_1(NotAuthenticated_getInstance());
                   this.i8_1 = 8;
                   continue $sm;
                 } else {
@@ -5433,7 +5515,7 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
           var tmp_2 = this;
           var tmp_3;
           if (refreshResult instanceof Success_1) {
-            tmp_3 = new Success_1(refreshResult.q5w_1.c60_1);
+            tmp_3 = new Success_1(refreshResult.v5w_1.h60_1);
           } else {
             if (refreshResult instanceof Failure_1) {
               tmp_3 = refreshResult;
@@ -5442,20 +5524,20 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
             }
           }
 
-          tmp_2.x5z_1 = tmp_3;
+          tmp_2.c60_1 = tmp_3;
           this.i8_1 = 8;
           continue $sm;
         case 7:
-          this.x5z_1 = suspendResult;
+          this.c60_1 = suspendResult;
           this.i8_1 = 8;
           continue $sm;
         case 8:
-          return this.x5z_1;
+          return this.c60_1;
         case 9:
           var refreshResult_0 = suspendResult;
           var tmp_4;
           if (refreshResult_0 instanceof Success_1) {
-            tmp_4 = new Success_1(refreshResult_0.q5w_1.c60_1);
+            tmp_4 = new Success_1(refreshResult_0.v5w_1.h60_1);
           } else {
             if (refreshResult_0 instanceof Failure_1) {
               tmp_4 = refreshResult_0;
@@ -5483,8 +5565,8 @@ protoOf($getAccessTokenCOROUTINE$).q8 = function () {
 };
 function $parseAndReturnAccessTokenCOROUTINE$(_this__u8e3s4, tokenString, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.e5r_1 = _this__u8e3s4;
-  this.f5r_1 = tokenString;
+  this.i5r_1 = _this__u8e3s4;
+  this.j5r_1 = tokenString;
 }
 protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5496,7 +5578,7 @@ protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
           this.j8_1 = 4;
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.e5r_1.x5n_1.s5g(this.f5r_1, this);
+          suspendResult = this.i5r_1.b5o_1.w5g(this.j5r_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5516,18 +5598,18 @@ protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
             throwOnFailure(parseResult);
             var tmp_2 = _Result___get_value__impl__bjfvqg(parseResult);
             var parsedJwt = (tmp_2 == null ? true : !(tmp_2 == null)) ? tmp_2 : THROW_CCE();
-            var accessToken = Companion_instance_20.j60(this.f5r_1, parsedJwt.u5g_1);
+            var accessToken = Companion_instance_23.o60(this.j5r_1, parsedJwt.y5g_1);
             tmp_1 = new Success_1(accessToken);
           } else {
             var tmp0_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(parseResult);
             var error = new UnknownError(tmp0_elvis_lhs == null ? Exception_init_$Create$('Failed to parse JWT') : tmp0_elvis_lhs, 'Failed to parse access token JWT');
             var tmp_3 = ErrorHandlerRegistry_instance;
             var tmp1_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(parseResult);
-            tmp_3.a5g(tmp1_elvis_lhs == null ? Exception_init_$Create$('JWT parsing failed') : tmp1_elvis_lhs, mapOf([to('operation', 'parse_access_token'), to('stage', 'jwt_parsing')]), ErrorLevel_ERROR_getInstance());
+            tmp_3.e5g(tmp1_elvis_lhs == null ? Exception_init_$Create$('JWT parsing failed') : tmp1_elvis_lhs, mapOf([to('operation', 'parse_access_token'), to('stage', 'jwt_parsing')]), ErrorLevel_ERROR_getInstance());
             tmp_1 = new Failure_1(error);
           }
 
-          tmp_0.g5r_1 = tmp_1;
+          tmp_0.k5r_1 = tmp_1;
           this.j8_1 = 4;
           this.i8_1 = 5;
           continue $sm;
@@ -5538,8 +5620,8 @@ protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
             var e = this.l8_1;
             var tmp_5 = this;
             var error_0 = new UnknownError(e, 'Error parsing access token JWT');
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'parse_access_token'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
-            tmp_5.g5r_1 = new Failure_1(error_0);
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'parse_access_token'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
+            tmp_5.k5r_1 = new Failure_1(error_0);
             this.i8_1 = 5;
             continue $sm;
           } else {
@@ -5550,7 +5632,7 @@ protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
           throw this.l8_1;
         case 5:
           this.j8_1 = 4;
-          return this.g5r_1;
+          return this.k5r_1;
       }
     } catch ($p) {
       var e_0 = $p;
@@ -5565,7 +5647,7 @@ protoOf($parseAndReturnAccessTokenCOROUTINE$).q8 = function () {
 };
 function $isAuthenticatedCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.s60_1 = _this__u8e3s4;
+  this.x60_1 = _this__u8e3s4;
 }
 protoOf($isAuthenticatedCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5577,30 +5659,30 @@ protoOf($isAuthenticatedCOROUTINE$).q8 = function () {
           this.j8_1 = 4;
           var tmp_0 = SdkLogger_getInstance();
           var tmp_1 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_0.n5a(tmp_1, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda);
-          var currentStateFlowValue = this.s60_1.b5o_1.j1();
+          tmp_0.r5a(tmp_1, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda);
+          var currentStateFlowValue = this.x60_1.f5o_1.j1();
           var tmp_2 = this;
           var tmp_3;
           if (currentStateFlowValue instanceof RefreshFailed) {
-            var tmp_4 = currentStateFlowValue.x60_1;
+            var tmp_4 = currentStateFlowValue.c61_1;
             tmp_3 = tmp_4 instanceof InvalidGrant;
           } else {
             tmp_3 = false;
           }
 
-          tmp_2.t60_1 = tmp_3;
+          tmp_2.y60_1 = tmp_3;
           this.i8_1 = 1;
-          suspendResult = this.s60_1.w5n_1.t5o(this);
+          suspendResult = this.x60_1.a5o_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.v60_1 = suspendResult;
+          this.a61_1 = suspendResult;
           var tmp_5 = this;
-          var tmp0_safe_receiver = this.v60_1;
-          var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.p5t_1;
+          var tmp0_safe_receiver = this.a61_1;
+          var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.t5t_1;
           var tmp_6;
           if (tmp1_safe_receiver == null) {
             tmp_6 = null;
@@ -5609,15 +5691,15 @@ protoOf($isAuthenticatedCOROUTINE$).q8 = function () {
           }
 
           var tmp2_elvis_lhs = tmp_6;
-          tmp_5.u60_1 = tmp2_elvis_lhs == null ? false : tmp2_elvis_lhs;
-          var tmp3_safe_receiver = this.v60_1;
+          tmp_5.z60_1 = tmp2_elvis_lhs == null ? false : tmp2_elvis_lhs;
+          var tmp3_safe_receiver = this.a61_1;
           if (tmp3_safe_receiver == null) {
-            this.w60_1 = null;
+            this.b61_1 = null;
             this.i8_1 = 3;
             continue $sm;
           } else {
             this.i8_1 = 2;
-            suspendResult = this.s60_1.x5n_1.i5j(tmp3_safe_receiver.p5t_1, this);
+            suspendResult = this.x60_1.b5o_1.m5j(tmp3_safe_receiver.t5t_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5625,22 +5707,22 @@ protoOf($isAuthenticatedCOROUTINE$).q8 = function () {
           }
 
         case 2:
-          this.w60_1 = suspendResult;
+          this.b61_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          var tmp4_elvis_lhs = this.w60_1;
+          var tmp4_elvis_lhs = this.b61_1;
           var accessTokenExpired = tmp4_elvis_lhs == null ? true : tmp4_elvis_lhs;
-          var hasValidAccessToken = this.u60_1 && !accessTokenExpired;
-          var tmp5_safe_receiver = this.v60_1;
-          var hasRefreshToken = !((tmp5_safe_receiver == null ? null : tmp5_safe_receiver.q5t_1) == null);
+          var hasValidAccessToken = this.z60_1 && !accessTokenExpired;
+          var tmp5_safe_receiver = this.a61_1;
+          var hasRefreshToken = !((tmp5_safe_receiver == null ? null : tmp5_safe_receiver.u5t_1) == null);
           var tmp_7 = SdkLogger_getInstance();
           var tmp_8 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_7.n5a(tmp_8, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda_0(this.u60_1, accessTokenExpired, hasValidAccessToken, hasRefreshToken, this.t60_1));
-          var isAuthenticated = !this.t60_1 && hasValidAccessToken;
+          tmp_7.r5a(tmp_8, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda_0(this.z60_1, accessTokenExpired, hasValidAccessToken, hasRefreshToken, this.y60_1));
+          var isAuthenticated = !this.y60_1 && hasValidAccessToken;
           var tmp_9 = SdkLogger_getInstance();
           var tmp_10 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_9.m5a(tmp_10, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda_1(isAuthenticated));
+          tmp_9.q5a(tmp_10, VOID, VOID, TokenManagerImpl$isAuthenticated$lambda_1(isAuthenticated));
           return isAuthenticated;
         case 4:
           throw this.l8_1;
@@ -5658,7 +5740,7 @@ protoOf($isAuthenticatedCOROUTINE$).q8 = function () {
 };
 function $emitCurrentStateFromStorageCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.p5r_1 = _this__u8e3s4;
+  this.t5r_1 = _this__u8e3s4;
 }
 protoOf($emitCurrentStateFromStorageCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5669,7 +5751,7 @@ protoOf($emitCurrentStateFromStorageCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 5;
           this.i8_1 = 1;
-          suspendResult = this.p5r_1.w5n_1.t5o(this);
+          suspendResult = this.t5r_1.a5o_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5679,12 +5761,12 @@ protoOf($emitCurrentStateFromStorageCOROUTINE$).q8 = function () {
           var tokens = suspendResult;
           if (tokens == null) {
             var tmp_0 = this;
-            tmp_0.q5r_1 = EvaluatedTokenState_NoTokens_getInstance();
+            tmp_0.u5r_1 = EvaluatedTokenState_NoTokens_getInstance();
             this.i8_1 = 3;
             continue $sm;
           } else {
             this.i8_1 = 2;
-            suspendResult = evaluateTokenState(this.p5r_1, tokens, _get_refreshConfig__2cwwp8(this.p5r_1), this);
+            suspendResult = evaluateTokenState(this.t5r_1, tokens, _get_refreshConfig__2cwwp8(this.t5r_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5692,13 +5774,13 @@ protoOf($emitCurrentStateFromStorageCOROUTINE$).q8 = function () {
           }
 
         case 2:
-          this.q5r_1 = suspendResult;
+          this.u5r_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          var state = this.q5r_1;
+          var state = this.u5r_1;
           this.i8_1 = 4;
-          suspendResult = updateTokenStateAndEmitEvent(this.p5r_1, toTokenState(state), this);
+          suspendResult = updateTokenStateAndEmitEvent(this.t5r_1, toTokenState(state), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5722,8 +5804,8 @@ protoOf($emitCurrentStateFromStorageCOROUTINE$).q8 = function () {
 };
 function $updateTokenStateAndEmitEventCOROUTINE$(_this__u8e3s4, newState, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.z5r_1 = _this__u8e3s4;
-  this.a5s_1 = newState;
+  this.d5s_1 = _this__u8e3s4;
+  this.e5s_1 = newState;
 }
 protoOf($updateTokenStateAndEmitEventCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5733,12 +5815,12 @@ protoOf($updateTokenStateAndEmitEventCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          var previousState = this.z5r_1.b5o_1.j1();
-          this.z5r_1.b5o_1.x20(this.a5s_1);
-          if (!equals(previousState, this.a5s_1)) {
-            var timestamp = System_instance.s3f().f3v();
+          var previousState = this.d5s_1.f5o_1.j1();
+          this.d5s_1.f5o_1.y20(this.e5s_1);
+          if (!equals(previousState, this.e5s_1)) {
+            var timestamp = System_instance.u3f().h3v();
             this.i8_1 = 1;
-            suspendResult = this.z5r_1.z5n_1.n5w(new TokenStateChanged(this.a5s_1, timestamp), this);
+            suspendResult = this.d5s_1.d5o_1.s5w(new TokenStateChanged(this.e5s_1, timestamp), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5769,7 +5851,7 @@ protoOf($updateTokenStateAndEmitEventCOROUTINE$).q8 = function () {
 };
 function $updateTokenStateCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.j5s_1 = _this__u8e3s4;
+  this.n5s_1 = _this__u8e3s4;
 }
 protoOf($updateTokenStateCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -5780,17 +5862,17 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 12;
           this.i8_1 = 1;
-          suspendResult = this.j5s_1.w5n_1.t5o(this);
+          suspendResult = this.n5s_1.a5o_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.r5s_1 = suspendResult;
-          if (this.r5s_1 == null) {
+          this.v5s_1 = suspendResult;
+          if (this.v5s_1 == null) {
             this.i8_1 = 11;
-            suspendResult = updateTokenStateAndEmitEvent(this.j5s_1, NoTokens_getInstance(), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.n5s_1, NoTokens_getInstance(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5801,20 +5883,20 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
           }
 
         case 2:
-          this.p5s_1 = this.r5s_1.t5t_1;
-          this.k5s_1 = calculateAdaptiveThreshold(this.j5s_1, this.p5s_1, _get_refreshConfig__2cwwp8(this.j5s_1).n5c_1);
+          this.t5s_1 = this.v5s_1.x5t_1;
+          this.o5s_1 = calculateAdaptiveThreshold(this.n5s_1, this.t5s_1, _get_refreshConfig__2cwwp8(this.n5s_1).r5c_1);
           this.i8_1 = 3;
-          suspendResult = evaluateTokenState(this.j5s_1, this.r5s_1, _get_refreshConfig__2cwwp8(this.j5s_1), this);
+          suspendResult = evaluateTokenState(this.n5s_1, this.v5s_1, _get_refreshConfig__2cwwp8(this.n5s_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 3:
-          this.l5s_1 = suspendResult;
-          this.q5s_1 = System_instance.s3f().p3j();
+          this.p5s_1 = suspendResult;
+          this.u5s_1 = System_instance.u3f().r3j();
           this.i8_1 = 4;
-          suspendResult = this.j5s_1.x5n_1.s5g(this.r5s_1.p5t_1, this);
+          suspendResult = this.n5s_1.b5o_1.w5g(this.v5s_1.t5t_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -5837,24 +5919,24 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
           }
 
           var tmp0_safe_receiver = tmp_0;
-          var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.u5g_1;
-          var expFromJwt = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.o5e_1;
+          var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.y5g_1;
+          var expFromJwt = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.s5e_1;
           var tmp_2 = this;
           var tmp_3;
           if (!(expFromJwt == null)) {
-            tmp_3 = coerceAtLeast(subtract(expFromJwt, this.q5s_1), new Long(0, 0));
+            tmp_3 = coerceAtLeast(subtract(expFromJwt, this.u5s_1), new Long(0, 0));
           } else {
-            tmp_3 = this.p5s_1;
+            tmp_3 = this.t5s_1;
           }
 
-          tmp_2.m5s_1 = tmp_3;
-          var tmp_4 = _get_refreshConfig__2cwwp8(this.j5s_1).m5c_1;
+          tmp_2.q5s_1 = tmp_3;
+          var tmp_4 = _get_refreshConfig__2cwwp8(this.n5s_1).q5c_1;
           if (tmp_4 instanceof Automatic) {
-            switch (this.l5s_1.u2_1) {
+            switch (this.p5s_1.u2_1) {
               case 1:
               case 2:
                 this.i8_1 = 8;
-                suspendResult = updateTokenStateAndEmitEvent(this.j5s_1, toTokenState(this.l5s_1), this);
+                suspendResult = updateTokenStateAndEmitEvent(this.n5s_1, toTokenState(this.p5s_1), this);
                 if (suspendResult === get_COROUTINE_SUSPENDED()) {
                   return suspendResult;
                 }
@@ -5862,7 +5944,7 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
                 continue $sm;
               default:
                 this.i8_1 = 7;
-                suspendResult = updateTokenStateAndEmitEvent(this.j5s_1, toTokenState(this.l5s_1), this);
+                suspendResult = updateTokenStateAndEmitEvent(this.n5s_1, toTokenState(this.p5s_1), this);
                 if (suspendResult === get_COROUTINE_SUSPENDED()) {
                   return suspendResult;
                 }
@@ -5871,7 +5953,7 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
             }
           } else {
             this.i8_1 = 6;
-            suspendResult = updateTokenStateAndEmitEvent(this.j5s_1, toTokenState(this.l5s_1), this);
+            suspendResult = updateTokenStateAndEmitEvent(this.n5s_1, toTokenState(this.p5s_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5881,28 +5963,28 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
           break;
         case 6:
           var tmp_5 = this;
-          tmp_5.n5s_1 = Unit_instance;
+          tmp_5.r5s_1 = Unit_instance;
           this.i8_1 = 10;
           continue $sm;
         case 7:
           var tmp_6 = this;
-          tmp_6.o5s_1 = Unit_instance;
+          tmp_6.s5s_1 = Unit_instance;
           this.i8_1 = 9;
           continue $sm;
         case 8:
           var tmp_7 = this;
-          tmp_7.o5s_1 = launch(this.j5s_1.c5o_1, VOID, VOID, TokenManagerImpl$updateTokenState$slambda_0(this.j5s_1, this.l5s_1, this.m5s_1, null));
+          tmp_7.s5s_1 = launch(this.n5s_1.g5o_1, VOID, VOID, TokenManagerImpl$updateTokenState$slambda_0(this.n5s_1, this.p5s_1, this.q5s_1, null));
           this.i8_1 = 9;
           continue $sm;
         case 9:
-          this.n5s_1 = this.o5s_1;
+          this.r5s_1 = this.s5s_1;
           this.i8_1 = 10;
           continue $sm;
         case 10:
-          var nextInterval = calculateNextCheckInterval(this.j5s_1, this.l5s_1, this.m5s_1, this.k5s_1);
+          var nextInterval = calculateNextCheckInterval(this.n5s_1, this.p5s_1, this.q5s_1, this.o5s_1);
           var tmp_8 = SdkLogger_getInstance();
           var tmp_9 = LogCategory_TOKEN_MONITORING_getInstance();
-          tmp_8.n5a(tmp_9, VOID, VOID, TokenManagerImpl$updateTokenState$lambda(this.l5s_1, nextInterval, this.k5s_1));
+          tmp_8.r5a(tmp_9, VOID, VOID, TokenManagerImpl$updateTokenState$lambda(this.p5s_1, nextInterval, this.o5s_1));
           return nextInterval;
         case 11:
           return new Long(300, 0);
@@ -5921,101 +6003,101 @@ protoOf($updateTokenStateCOROUTINE$).q8 = function () {
    while (true);
 };
 function TokenManagerImpl(config, openIdConfigRepository, apiService, tokenStorage, jwtValidationService, cryptoService, eventEmitter, monitoringDispatcher) {
-  monitoringDispatcher = monitoringDispatcher === VOID ? Dispatchers_getInstance().r1r_1 : monitoringDispatcher;
-  this.t5n_1 = config;
-  this.u5n_1 = openIdConfigRepository;
-  this.v5n_1 = apiService;
-  this.w5n_1 = tokenStorage;
-  this.x5n_1 = jwtValidationService;
-  this.y5n_1 = cryptoService;
-  this.z5n_1 = eventEmitter;
-  this.a5o_1 = Mutex();
-  this.b5o_1 = MutableStateFlow(Uninitialized_getInstance());
-  this.c5o_1 = CoroutineScope_0(monitoringDispatcher.hf(SupervisorJob()));
-  this.d5o_1 = null;
+  monitoringDispatcher = monitoringDispatcher === VOID ? Dispatchers_getInstance().s1r_1 : monitoringDispatcher;
+  this.x5n_1 = config;
+  this.y5n_1 = openIdConfigRepository;
+  this.z5n_1 = apiService;
+  this.a5o_1 = tokenStorage;
+  this.b5o_1 = jwtValidationService;
+  this.c5o_1 = cryptoService;
+  this.d5o_1 = eventEmitter;
+  this.e5o_1 = Mutex();
+  this.f5o_1 = MutableStateFlow(Uninitialized_getInstance());
+  this.g5o_1 = CoroutineScope_0(monitoringDispatcher.hf(SupervisorJob()));
+  this.h5o_1 = null;
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, TokenManagerImpl$lambda(this));
+  tmp.r5a(tmp_0, VOID, VOID, TokenManagerImpl$lambda(this));
   var tmp_1 = SdkLogger_getInstance();
   var tmp_2 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp_1.m5a(tmp_2, VOID, VOID, TokenManagerImpl$lambda_0);
-  launch(this.c5o_1, VOID, VOID, TokenManagerImpl$slambda_0(this, null));
-  launch(this.c5o_1, VOID, VOID, TokenManagerImpl$slambda_2(this, null));
+  tmp_1.q5a(tmp_2, VOID, VOID, TokenManagerImpl$lambda_0);
+  launch(this.g5o_1, VOID, VOID, TokenManagerImpl$slambda_0(this, null));
+  launch(this.g5o_1, VOID, VOID, TokenManagerImpl$slambda_2(this, null));
 }
-protoOf(TokenManagerImpl).b60 = function (skipFreshnessCheck, $completion) {
+protoOf(TokenManagerImpl).g60 = function (skipFreshnessCheck, $completion) {
   var tmp = new $refreshTokensCOROUTINE$(this, skipFreshnessCheck, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(TokenManagerImpl).s5u = function (skipFreshnessCheck, $completion, $super) {
+protoOf(TokenManagerImpl).w5u = function (skipFreshnessCheck, $completion, $super) {
   skipFreshnessCheck = skipFreshnessCheck === VOID ? false : skipFreshnessCheck;
-  return $super === VOID ? this.b60(skipFreshnessCheck, $completion) : $super.b60.call(this, skipFreshnessCheck, $completion);
+  return $super === VOID ? this.g60(skipFreshnessCheck, $completion) : $super.g60.call(this, skipFreshnessCheck, $completion);
 };
-protoOf(TokenManagerImpl).i5c = function (forceRefresh, $completion) {
+protoOf(TokenManagerImpl).m5c = function (forceRefresh, $completion) {
   var tmp = new $getAccessTokenCOROUTINE$(this, forceRefresh, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(TokenManagerImpl).k5c = function ($completion) {
+protoOf(TokenManagerImpl).o5c = function ($completion) {
   var tmp = new $isAuthenticatedCOROUTINE$(this, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(TokenManagerImpl).l5c = function () {
-  return asStateFlow(this.b5o_1);
+protoOf(TokenManagerImpl).p5c = function () {
+  return asStateFlow(this.f5o_1);
 };
-protoOf(TokenManagerImpl).s5o = function ($completion) {
-  var tmp = _get_refreshConfig__2cwwp8(this).m5c_1;
+protoOf(TokenManagerImpl).w5o = function ($completion) {
+  var tmp = _get_refreshConfig__2cwwp8(this).q5c_1;
   if (!(tmp instanceof Automatic)) {
     var tmp_0 = SdkLogger_getInstance();
     var tmp_1 = LogCategory_TOKEN_MONITORING_getInstance();
-    tmp_0.s5d(tmp_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda);
+    tmp_0.w5d(tmp_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda);
     return Unit_instance;
   }
-  var tmp1_safe_receiver = this.d5o_1;
-  if ((tmp1_safe_receiver == null ? null : tmp1_safe_receiver.h1g()) === true) {
+  var tmp1_safe_receiver = this.h5o_1;
+  if ((tmp1_safe_receiver == null ? null : tmp1_safe_receiver.i1g()) === true) {
     var tmp_2 = SdkLogger_getInstance();
     var tmp_3 = LogCategory_TOKEN_MONITORING_getInstance();
-    tmp_2.n5a(tmp_3, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda_0);
-    var tmp0_safe_receiver = this.d5o_1;
+    tmp_2.r5a(tmp_3, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda_0);
+    var tmp0_safe_receiver = this.h5o_1;
     if (tmp0_safe_receiver == null)
       null;
     else {
-      tmp0_safe_receiver.q1h();
+      tmp0_safe_receiver.r1h();
     }
-    this.d5o_1 = null;
+    this.h5o_1 = null;
   }
   var tmp_4 = SdkLogger_getInstance();
   var tmp_5 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp_4.m5a(tmp_5, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda_1(this));
+  tmp_4.q5a(tmp_5, VOID, VOID, TokenManagerImpl$startTokenMonitoring$lambda_1(this));
   var tmp_6 = this;
-  tmp_6.d5o_1 = launch(this.c5o_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda_0(this, null));
+  tmp_6.h5o_1 = launch(this.g5o_1, VOID, VOID, TokenManagerImpl$startTokenMonitoring$slambda_0(this, null));
   return Unit_instance;
 };
-protoOf(TokenManagerImpl).s5n = function () {
+protoOf(TokenManagerImpl).w5n = function () {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp.m5a(tmp_0, VOID, VOID, TokenManagerImpl$stopTokenMonitoring$lambda);
-  var tmp0_safe_receiver = this.d5o_1;
+  tmp.q5a(tmp_0, VOID, VOID, TokenManagerImpl$stopTokenMonitoring$lambda);
+  var tmp0_safe_receiver = this.h5o_1;
   if (tmp0_safe_receiver == null)
     null;
   else {
-    tmp0_safe_receiver.q1h();
+    tmp0_safe_receiver.r1h();
   }
-  this.d5o_1 = null;
+  this.h5o_1 = null;
 };
-protoOf(TokenManagerImpl).b1j = function () {
+protoOf(TokenManagerImpl).c1j = function () {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp.m5a(tmp_0, VOID, VOID, TokenManagerImpl$dispose$lambda);
-  this.s5n();
-  cancel(this.c5o_1);
+  tmp.q5a(tmp_0, VOID, VOID, TokenManagerImpl$dispose$lambda);
+  this.w5n();
+  cancel(this.g5o_1);
   var tmp_1 = SdkLogger_getInstance();
   var tmp_2 = LogCategory_TOKEN_MONITORING_getInstance();
-  tmp_1.m5a(tmp_2, VOID, VOID, TokenManagerImpl$dispose$lambda_0);
+  tmp_1.q5a(tmp_2, VOID, VOID, TokenManagerImpl$dispose$lambda_0);
 };
 function Uninitialized() {
   Uninitialized_instance = this;
@@ -6157,20 +6239,20 @@ function Expired_getInstance() {
 }
 function RefreshFailed(error) {
   TokenState.call(this);
-  this.x60_1 = error;
+  this.c61_1 = error;
 }
 protoOf(RefreshFailed).toString = function () {
-  return 'RefreshFailed(error=' + toString(this.x60_1) + ')';
+  return 'RefreshFailed(error=' + toString(this.c61_1) + ')';
 };
 protoOf(RefreshFailed).hashCode = function () {
-  return hashCode(this.x60_1);
+  return hashCode(this.c61_1);
 };
 protoOf(RefreshFailed).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof RefreshFailed))
     return false;
-  if (!equals(this.x60_1, other.x60_1))
+  if (!equals(this.c61_1, other.c61_1))
     return false;
   return true;
 };
@@ -6238,19 +6320,19 @@ function fetchFromNetwork($this, $completion) {
   return tmp.q8();
 }
 function Companion_1() {
-  this.s61_1 = 'OIDC \xA75.3.2: userinfo sub mismatch';
+  this.x61_1 = 'OIDC \xA75.3.2: userinfo sub mismatch';
 }
-var Companion_instance_2;
+var Companion_instance_3;
 function Companion_getInstance_9() {
-  return Companion_instance_2;
+  return Companion_instance_3;
 }
 function UserInfoServiceImpl$fetchFromNetwork$lambda() {
   return 'OIDC \xA75.3.2: userinfo sub mismatch \u2014 response rejected, cache not updated';
 }
 function $getUserInfoCOROUTINE$(_this__u8e3s4, forceRefresh, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.b62_1 = _this__u8e3s4;
-  this.c62_1 = forceRefresh;
+  this.g62_1 = _this__u8e3s4;
+  this.h62_1 = forceRefresh;
 }
 protoOf($getUserInfoCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -6260,13 +6342,13 @@ protoOf($getUserInfoCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 12;
-          if (this.c62_1) {
-            this.i62_1 = this.b62_1.n62_1;
+          if (this.h62_1) {
+            this.n62_1 = this.g62_1.s62_1;
             this.i8_1 = 2;
             continue $sm;
           } else {
             this.i8_1 = 1;
-            suspendResult = readFromCache(this.b62_1, this);
+            suspendResult = readFromCache(this.g62_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -6274,14 +6356,14 @@ protoOf($getUserInfoCOROUTINE$).q8 = function () {
           }
 
         case 1:
-          this.f62_1 = suspendResult;
+          this.k62_1 = suspendResult;
           this.i8_1 = 10;
           continue $sm;
         case 2:
-          this.e62_1 = this.i62_1;
-          this.d62_1 = null;
+          this.j62_1 = this.n62_1;
+          this.i62_1 = null;
           this.i8_1 = 3;
-          suspendResult = this.e62_1.t26(this.d62_1, this);
+          suspendResult = this.j62_1.u26(this.i62_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6296,27 +6378,27 @@ protoOf($getUserInfoCOROUTINE$).q8 = function () {
         case 5:
           this.j8_1 = 11;
           this.i8_1 = 6;
-          suspendResult = fetchFromNetwork(this.b62_1, this);
+          suspendResult = fetchFromNetwork(this.g62_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 6:
-          this.h62_1 = suspendResult;
+          this.m62_1 = suspendResult;
           this.j8_1 = 12;
           this.i8_1 = 7;
           continue $sm;
         case 7:
-          var tmp_0 = this.h62_1;
+          var tmp_0 = this.m62_1;
           this.j8_1 = 12;
-          this.e62_1.d26(this.d62_1);
-          this.g62_1 = tmp_0;
+          this.j62_1.e26(this.i62_1);
+          this.l62_1 = tmp_0;
           this.i8_1 = 9;
           continue $sm;
         case 8:
           this.j8_1 = 12;
-          this.e62_1.d26(this.d62_1);
+          this.j62_1.e26(this.i62_1);
           if (false) {
             this.i8_1 = 2;
             continue $sm;
@@ -6325,15 +6407,15 @@ protoOf($getUserInfoCOROUTINE$).q8 = function () {
           this.i8_1 = 9;
           continue $sm;
         case 9:
-          this.f62_1 = this.g62_1;
+          this.k62_1 = this.l62_1;
           this.i8_1 = 10;
           continue $sm;
         case 10:
-          return this.f62_1;
+          return this.k62_1;
         case 11:
           this.j8_1 = 12;
           var t = this.l8_1;
-          this.e62_1.d26(this.d62_1);
+          this.j62_1.e26(this.i62_1);
           throw t;
         case 12:
           throw this.l8_1;
@@ -6351,7 +6433,7 @@ protoOf($getUserInfoCOROUTINE$).q8 = function () {
 };
 function $readFromCacheCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.g61_1 = _this__u8e3s4;
+  this.l61_1 = _this__u8e3s4;
 }
 protoOf($readFromCacheCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -6362,7 +6444,7 @@ protoOf($readFromCacheCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.g61_1.l62_1.o62(this);
+          suspendResult = this.l61_1.q62_1.t62(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6394,7 +6476,7 @@ protoOf($readFromCacheCOROUTINE$).q8 = function () {
 };
 function $fetchFromNetworkCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.p61_1 = _this__u8e3s4;
+  this.u61_1 = _this__u8e3s4;
 }
 protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -6405,7 +6487,7 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 6;
           this.i8_1 = 1;
-          suspendResult = this.p61_1.j62_1.r5n(VOID, this);
+          suspendResult = this.u61_1.o62_1.v5n(VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6416,9 +6498,9 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
           if (tokenResult instanceof Failure_1)
             return tokenResult;
           var tmp_0 = this;
-          tmp_0.r61_1 = (tokenResult instanceof Success_1 ? tokenResult : THROW_CCE()).q5w_1;
+          tmp_0.w61_1 = (tokenResult instanceof Success_1 ? tokenResult : THROW_CCE()).v5w_1;
           this.i8_1 = 2;
-          suspendResult = this.p61_1.m62_1.o5w(this);
+          suspendResult = this.u61_1.r62_1.t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6428,13 +6510,13 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
           var configResult = suspendResult;
           if (configResult instanceof Failure_1)
             return configResult;
-          var endpoint = (configResult instanceof Success_1 ? configResult : THROW_CCE()).q5w_1.z5w_1;
+          var endpoint = (configResult instanceof Success_1 ? configResult : THROW_CCE()).v5w_1.e5x_1;
           if (endpoint == null || isBlank(endpoint)) {
             return new Failure_1(new InvalidConfiguration('OpenID configuration does not advertise a userinfo_endpoint'));
           }
 
           this.i8_1 = 3;
-          suspendResult = this.p61_1.k62_1.u62(endpoint, this.r61_1.p62_1, this);
+          suspendResult = this.u61_1.p62_1.z62(endpoint, this.w61_1.u62_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6444,11 +6526,11 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
           var apiResult = suspendResult;
           if (apiResult instanceof Failure_1)
             return apiResult;
-          var dto = (apiResult instanceof Success_1 ? apiResult : THROW_CCE()).q5w_1;
+          var dto = (apiResult instanceof Success_1 ? apiResult : THROW_CCE()).v5w_1;
           var tmp_1 = this;
           var tmp_2;
           try {
-            tmp_2 = Companion_instance_30.v62(dto);
+            tmp_2 = Companion_instance_34.a63(dto);
           } catch ($p) {
             var tmp_3;
             if ($p instanceof IllegalArgumentException) {
@@ -6460,18 +6542,18 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
             }
           }
 
-          tmp_1.q61_1 = tmp_2;
-          var expectedSub = this.r61_1.s62_1;
-          if (!(expectedSub == null) && !(this.q61_1.w62_1 === expectedSub)) {
+          tmp_1.v61_1 = tmp_2;
+          var expectedSub = this.w61_1.x62_1;
+          if (!(expectedSub == null) && !(this.v61_1.b63_1 === expectedSub)) {
             var tmp_4 = SdkLogger_getInstance();
             var tmp_5 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_4.b5z(tmp_5, VOID, VOID, UserInfoServiceImpl$fetchFromNetwork$lambda);
-            ErrorHandlerRegistry_instance.a5g(IllegalStateException_init_$Create$('OIDC \xA75.3.2: userinfo sub mismatch'), mapOf([to('operation', 'get_userinfo'), to('violation', 'sub_mismatch'), to('expected_sub_hash', getStringHashCode(expectedSub).toString()), to('received_sub_hash', getStringHashCode(this.q61_1.w62_1).toString())]), ErrorLevel_ERROR_getInstance());
+            tmp_4.g5z(tmp_5, VOID, VOID, UserInfoServiceImpl$fetchFromNetwork$lambda);
+            ErrorHandlerRegistry_instance.e5g(IllegalStateException_init_$Create$('OIDC \xA75.3.2: userinfo sub mismatch'), mapOf([to('operation', 'get_userinfo'), to('violation', 'sub_mismatch'), to('expected_sub_hash', getStringHashCode(expectedSub).toString()), to('received_sub_hash', getStringHashCode(this.v61_1.b63_1).toString())]), ErrorLevel_ERROR_getInstance());
             return new Failure_1(new InvalidDataError('OIDC \xA75.3.2: userinfo sub mismatch'));
           }
 
           this.i8_1 = 4;
-          suspendResult = this.p61_1.l62_1.f5z(this.q61_1, this);
+          suspendResult = this.u61_1.q62_1.k5z(this.v61_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6484,7 +6566,7 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
           this.i8_1 = 5;
           continue $sm;
         case 5:
-          return new Success_1(this.q61_1);
+          return new Success_1(this.v61_1);
         case 6:
           throw this.l8_1;
       }
@@ -6500,13 +6582,13 @@ protoOf($fetchFromNetworkCOROUTINE$).q8 = function () {
    while (true);
 };
 function UserInfoServiceImpl(tokenManager, apiService, tokenStorage, openIdConfigRepository) {
-  this.j62_1 = tokenManager;
-  this.k62_1 = apiService;
-  this.l62_1 = tokenStorage;
-  this.m62_1 = openIdConfigRepository;
-  this.n62_1 = Mutex();
+  this.o62_1 = tokenManager;
+  this.p62_1 = apiService;
+  this.q62_1 = tokenStorage;
+  this.r62_1 = openIdConfigRepository;
+  this.s62_1 = Mutex();
 }
-protoOf(UserInfoServiceImpl).j5c = function (forceRefresh, $completion) {
+protoOf(UserInfoServiceImpl).n5c = function (forceRefresh, $completion) {
   var tmp = new $getUserInfoCOROUTINE$(this, forceRefresh, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
@@ -6515,15 +6597,15 @@ protoOf(UserInfoServiceImpl).j5c = function (forceRefresh, $completion) {
 function WebAuthenticator() {
 }
 function Started(authUrl, state) {
-  this.k63_1 = authUrl;
-  this.l63_1 = state;
+  this.p63_1 = authUrl;
+  this.q63_1 = state;
 }
 protoOf(Started).toString = function () {
-  return 'Started(authUrl=' + this.k63_1 + ', state=' + this.l63_1 + ')';
+  return 'Started(authUrl=' + this.p63_1 + ', state=' + this.q63_1 + ')';
 };
 protoOf(Started).hashCode = function () {
-  var result = getStringHashCode(this.k63_1);
-  result = imul(result, 31) + getStringHashCode(this.l63_1) | 0;
+  var result = getStringHashCode(this.p63_1);
+  result = imul(result, 31) + getStringHashCode(this.q63_1) | 0;
   return result;
 };
 protoOf(Started).equals = function (other) {
@@ -6531,27 +6613,27 @@ protoOf(Started).equals = function (other) {
     return true;
   if (!(other instanceof Started))
     return false;
-  if (!(this.k63_1 === other.k63_1))
+  if (!(this.p63_1 === other.p63_1))
     return false;
-  if (!(this.l63_1 === other.l63_1))
+  if (!(this.q63_1 === other.q63_1))
     return false;
   return true;
 };
 function Failed(state) {
-  this.m63_1 = state;
+  this.r63_1 = state;
 }
 protoOf(Failed).toString = function () {
-  return 'Failed(state=' + toString(this.m63_1) + ')';
+  return 'Failed(state=' + toString(this.r63_1) + ')';
 };
 protoOf(Failed).hashCode = function () {
-  return hashCode(this.m63_1);
+  return hashCode(this.r63_1);
 };
 protoOf(Failed).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof Failed))
     return false;
-  if (!equals(this.m63_1, other.m63_1))
+  if (!equals(this.r63_1, other.r63_1))
     return false;
   return true;
 };
@@ -6581,14 +6663,18 @@ function AuthorizationCodeFlow$login$slambda$lambda_3($flowId) {
   };
 }
 function Companion_2() {
-  this.n63_1 = 6;
+  Companion_instance_4 = this;
+  this.s63_1 = 6;
+  this.t63_1 = setOf(['login_required', 'interaction_required', 'consent_required', 'account_selection_required']);
 }
-var Companion_instance_3;
+var Companion_instance_4;
 function Companion_getInstance_10() {
-  return Companion_instance_3;
+  if (Companion_instance_4 == null)
+    new Companion_2();
+  return Companion_instance_4;
 }
 function newFlowId($this) {
-  return takeLast(System_instance.s3f().f3v().toString(), 6);
+  return takeLast(System_instance.u3f().h3v().toString(), 6);
 }
 function beginAuthorization($this, additionalScopes, additionalParameters, flowId, $completion) {
   var tmp = new $beginAuthorizationCOROUTINE$($this, additionalScopes, additionalParameters, flowId, $completion);
@@ -6607,9 +6693,9 @@ function buildAuthorizationUrl($this, openIdConfig, state, nonce, codeChallenge,
   // Inline function 'kotlin.text.buildString' call
   // Inline function 'kotlin.apply' call
   var this_0 = StringBuilder_init_$Create$();
-  this_0.q(openIdConfig.t5w_1);
-  this_0.q('?client_id=' + $this.v64_1.o5a_1);
-  this_0.q('&redirect_uri=' + encodeURLParameter($this.v64_1.p5a_1));
+  this_0.q(openIdConfig.y5w_1);
+  this_0.q('?client_id=' + $this.b65_1.s5a_1);
+  this_0.q('&redirect_uri=' + encodeURLParameter($this.b65_1.t5a_1));
   this_0.q('&response_type=code');
   this_0.q('&scope=' + encodeURLParameter(joinToString_0(allScopes, ' ')));
   this_0.q('&state=' + state);
@@ -6631,7 +6717,7 @@ function buildAuthorizationUrl($this, openIdConfig, state, nonce, codeChallenge,
     if (isReserved) {
       var tmp = SdkLogger_getInstance();
       var tmp_0 = LogCategory_AUTHENTICATION_getInstance();
-      tmp.n5a(tmp_0, VOID, VOID, AuthorizationCodeFlow$buildAuthorizationUrl$lambda(key, flowId));
+      tmp.r5a(tmp_0, VOID, VOID, AuthorizationCodeFlow$buildAuthorizationUrl$lambda(key, flowId));
     }
     if (!isReserved) {
       result.m2(entry.i1(), entry.j1());
@@ -6651,7 +6737,7 @@ function buildAuthorizationUrl($this, openIdConfig, state, nonce, codeChallenge,
     if (charSequenceLength(value) === 0) {
       var tmp_1 = SdkLogger_getInstance();
       var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
-      tmp_1.n5a(tmp_2, VOID, VOID, AuthorizationCodeFlow$buildAuthorizationUrl$lambda_0(key_0, flowId));
+      tmp_1.r5a(tmp_2, VOID, VOID, AuthorizationCodeFlow$buildAuthorizationUrl$lambda_0(key_0, flowId));
     } else {
       this_0.q('&' + encodeURLParameter(key_0) + '=' + encodeURLParameter(value));
     }
@@ -6662,10 +6748,10 @@ function captureOpenIdConfigError($this, error) {
   var tmp = ErrorHandlerRegistry_instance;
   var tmp_0;
   if (error instanceof NetworkError) {
-    var tmp1_elvis_lhs = error.r5y_1;
+    var tmp1_elvis_lhs = error.w5y_1;
     var tmp_1;
     if (tmp1_elvis_lhs == null) {
-      var tmp2_elvis_lhs = error.q5y_1;
+      var tmp2_elvis_lhs = error.v5y_1;
       tmp_1 = Exception_init_$Create$(tmp2_elvis_lhs == null ? 'Network error' : tmp2_elvis_lhs);
     } else {
       tmp_1 = tmp1_elvis_lhs;
@@ -6673,12 +6759,12 @@ function captureOpenIdConfigError($this, error) {
     tmp_0 = tmp_1;
   } else {
     if (error instanceof HttpError) {
-      tmp_0 = Exception_init_$Create$('HTTP ' + error.z5p_1 + ': ' + error.a5q_1);
+      tmp_0 = Exception_init_$Create$('HTTP ' + error.d5q_1 + ': ' + error.e5q_1);
     } else {
       tmp_0 = Exception_init_$Create$(toString(error));
     }
   }
-  tmp.a5g(tmp_0, mapOf([to('operation', 'fetch_openid_config'), to('stage', 'login_init'), to('error_type', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
+  tmp.e5g(tmp_0, mapOf([to('operation', 'fetch_openid_config'), to('stage', 'login_init'), to('error_type', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
 }
 function captureBrowserError($this, error) {
   var tmp = ErrorHandlerRegistry_instance;
@@ -6687,10 +6773,10 @@ function captureBrowserError($this, error) {
     tmp_0 = Exception_init_$Create$('User cancelled authentication');
   } else {
     if (error instanceof NetworkError) {
-      var tmp1_elvis_lhs = error.r5y_1;
+      var tmp1_elvis_lhs = error.w5y_1;
       var tmp_1;
       if (tmp1_elvis_lhs == null) {
-        var tmp2_elvis_lhs = error.q5y_1;
+        var tmp2_elvis_lhs = error.v5y_1;
         tmp_1 = Exception_init_$Create$(tmp2_elvis_lhs == null ? 'Network error' : tmp2_elvis_lhs);
       } else {
         tmp_1 = tmp1_elvis_lhs;
@@ -6708,7 +6794,7 @@ function captureBrowserError($this, error) {
   } else {
     tmp_4 = ErrorLevel_ERROR_getInstance();
   }
-  tmp.a5g(tmp_2, tmp_3, tmp_4);
+  tmp.e5g(tmp_2, tmp_3, tmp_4);
 }
 function getQueryParameter($this, url, name) {
   var query = substringAfter_0(substringBefore_0(url, _Char___init__impl__6a9atx(35)), _Char___init__impl__6a9atx(63), '');
@@ -6723,7 +6809,7 @@ function getQueryParameter($this, url, name) {
     var parts = split_0(element, charArrayOf([_Char___init__impl__6a9atx(61)]), VOID, 2);
     var tmp;
     if (parts.z() === 2 && parts.a1(0) === name) {
-      tmp = decodeURLQueryComponent(parts.a1(1));
+      tmp = decodeURLQueryComponent(parts.a1(1), VOID, VOID, true);
     } else {
       tmp = null;
     }
@@ -6738,21 +6824,21 @@ function getQueryParameter($this, url, name) {
   return firstOrNull(destination);
 }
 function AuthorizationCodeFlow$login$slambda(this$0, $loginMethod, $authContext, $additionalScopes, $additionalParameters, resultContinuation) {
-  this.m65_1 = this$0;
-  this.n65_1 = $loginMethod;
-  this.o65_1 = $authContext;
-  this.p65_1 = $additionalScopes;
-  this.q65_1 = $additionalParameters;
+  this.s65_1 = this$0;
+  this.t65_1 = $loginMethod;
+  this.u65_1 = $authContext;
+  this.v65_1 = $additionalScopes;
+  this.w65_1 = $additionalParameters;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(AuthorizationCodeFlow$login$slambda).w65 = function ($this$flow, $completion) {
-  var tmp = this.x65($this$flow, $completion);
+protoOf(AuthorizationCodeFlow$login$slambda).c66 = function ($this$flow, $completion) {
+  var tmp = this.d66($this$flow, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(AuthorizationCodeFlow$login$slambda).z8 = function (p1, $completion) {
-  return this.w65((!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE(), $completion);
+  return this.c66((!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -6762,19 +6848,19 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 14;
-          this.t65_1 = newFlowId(this.m65_1);
+          this.z65_1 = newFlowId(this.s65_1);
           var tmp_0 = SdkLogger_getInstance();
           var tmp_1 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_0.n5a(tmp_1, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda(this.t65_1, this.p65_1, this.q65_1));
-          var loginStartedTimestamp = System_instance.s3f().f3v();
-          this.m65_1.d65_1.c5z(new LoginStarted(loginStartedTimestamp));
-          var tmp_2 = this.n65_1;
+          tmp_0.r5a(tmp_1, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda(this.z65_1, this.v65_1, this.w65_1));
+          var loginStartedTimestamp = System_instance.u3f().h3v();
+          this.s65_1.j65_1.h5z(new LoginStarted(loginStartedTimestamp));
+          var tmp_2 = this.t65_1;
           if (!(tmp_2 instanceof Web)) {
             var tmp_3 = SdkLogger_getInstance();
             var tmp_4 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_3.n5a(tmp_4, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_0(this.t65_1));
+            tmp_3.r5a(tmp_4, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_0(this.z65_1));
             this.i8_1 = 13;
-            suspendResult = this.r65_1.j1x(this.m65_1.c65_1.v5d(new InvalidConfiguration('AuthorizationCodeFlow only supports the Web login method.')), this);
+            suspendResult = this.x65_1.k1x(this.s65_1.i65_1.z5d(new InvalidConfiguration('AuthorizationCodeFlow only supports the Web login method.')), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -6785,13 +6871,13 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
           }
 
         case 1:
-          var tmp_5 = this.o65_1;
+          var tmp_5 = this.u65_1;
           if (!isInterface(tmp_5, WebAuthCapable)) {
             var tmp_6 = SdkLogger_getInstance();
             var tmp_7 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_6.n5a(tmp_7, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_1(this.t65_1));
+            tmp_6.r5a(tmp_7, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_1(this.z65_1));
             this.i8_1 = 12;
-            suspendResult = this.r65_1.j1x(this.m65_1.c65_1.v5d(new InvalidConfiguration('Web authentication requires a WebAuthCapable context. TV platforms should use LoginMethod.Device instead of LoginMethod.Web.')), this);
+            suspendResult = this.x65_1.k1x(this.s65_1.i65_1.z5d(new InvalidConfiguration('Web authentication requires a WebAuthCapable context. TV platforms should use LoginMethod.Device instead of LoginMethod.Web.')), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -6804,20 +6890,20 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
         case 2:
           var tmp_8 = SdkLogger_getInstance();
           var tmp_9 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_8.n5a(tmp_9, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_2(this.t65_1));
+          tmp_8.r5a(tmp_9, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_2(this.z65_1));
           this.i8_1 = 3;
-          suspendResult = beginAuthorization(this.m65_1, this.p65_1, this.q65_1, this.t65_1, this);
+          suspendResult = beginAuthorization(this.s65_1, this.v65_1, this.w65_1, this.z65_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 3:
-          this.v65_1 = suspendResult;
-          var tmp_10 = this.v65_1;
+          this.b66_1 = suspendResult;
+          var tmp_10 = this.b66_1;
           if (tmp_10 instanceof Failed) {
             this.i8_1 = 11;
-            suspendResult = this.r65_1.j1x(this.v65_1.m63_1, this);
+            suspendResult = this.x65_1.k1x(this.b66_1.r63_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -6829,34 +6915,34 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
 
         case 4:
           var tmp_11 = this;
-          var tmp_12 = this.v65_1;
-          tmp_11.u65_1 = tmp_12 instanceof Started ? tmp_12 : THROW_CCE();
-          var authUrl = this.u65_1.k63_1;
+          var tmp_12 = this.b66_1;
+          tmp_11.a66_1 = tmp_12 instanceof Started ? tmp_12 : THROW_CCE();
+          var authUrl = this.a66_1.p63_1;
           var tmp_13 = SdkLogger_getInstance();
           var tmp_14 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_13.n5a(tmp_14, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_3(this.t65_1));
+          tmp_13.r5a(tmp_14, VOID, VOID, AuthorizationCodeFlow$login$slambda$lambda_3(this.z65_1));
           this.i8_1 = 5;
-          suspendResult = this.m65_1.y64_1.g5e(authUrl, this.o65_1, this);
+          suspendResult = this.s65_1.e65_1.k5e(authUrl, this.u65_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 5:
-          this.s65_1 = suspendResult;
-          var tmp_15 = this.s65_1;
+          this.y65_1 = suspendResult;
+          var tmp_15 = this.y65_1;
           if (tmp_15 instanceof Failure_1) {
             this.i8_1 = 8;
-            suspendResult = this.m65_1.a65_1.f5e(this.u65_1.l63_1, this);
+            suspendResult = this.s65_1.g65_1.j5e(this.a66_1.q63_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
-            var tmp_16 = this.s65_1;
+            var tmp_16 = this.y65_1;
             if (tmp_16 instanceof Success_1) {
               this.i8_1 = 6;
-              suspendResult = completeAuthorization(this.m65_1, this.s65_1.q5w_1, this.t65_1, this);
+              suspendResult = completeAuthorization(this.s65_1, this.y65_1.v5w_1, this.z65_1, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -6870,7 +6956,7 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
         case 6:
           var ARGUMENT = suspendResult;
           this.i8_1 = 7;
-          suspendResult = this.r65_1.j1x(ARGUMENT, this);
+          suspendResult = this.x65_1.k1x(ARGUMENT, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6880,9 +6966,9 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
           this.i8_1 = 10;
           continue $sm;
         case 8:
-          captureBrowserError(this.m65_1, this.s65_1.p5w_1);
+          captureBrowserError(this.s65_1, this.y65_1.u5w_1);
           this.i8_1 = 9;
-          suspendResult = this.r65_1.j1x(this.m65_1.c65_1.v5d(this.s65_1.p5w_1), this);
+          suspendResult = this.x65_1.k1x(this.s65_1.i65_1.z5d(this.y65_1.u5w_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6913,32 +6999,32 @@ protoOf(AuthorizationCodeFlow$login$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(AuthorizationCodeFlow$login$slambda).x65 = function ($this$flow, completion) {
-  var i = new AuthorizationCodeFlow$login$slambda(this.m65_1, this.n65_1, this.o65_1, this.p65_1, this.q65_1, completion);
-  i.r65_1 = $this$flow;
+protoOf(AuthorizationCodeFlow$login$slambda).d66 = function ($this$flow, completion) {
+  var i = new AuthorizationCodeFlow$login$slambda(this.s65_1, this.t65_1, this.u65_1, this.v65_1, this.w65_1, completion);
+  i.x65_1 = $this$flow;
   return i;
 };
 function AuthorizationCodeFlow$login$slambda_0(this$0, $loginMethod, $authContext, $additionalScopes, $additionalParameters, resultContinuation) {
   var i = new AuthorizationCodeFlow$login$slambda(this$0, $loginMethod, $authContext, $additionalScopes, $additionalParameters, resultContinuation);
   var l = function ($this$flow, $completion) {
-    return i.w65($this$flow, $completion);
+    return i.c66($this$flow, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function AuthorizationCodeFlow$login$slambda_1(this$0, resultContinuation) {
-  this.g66_1 = this$0;
+  this.m66_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(AuthorizationCodeFlow$login$slambda_1).j66 = function ($this$catch, e, $completion) {
-  var tmp = this.k66($this$catch, e, $completion);
+protoOf(AuthorizationCodeFlow$login$slambda_1).p66 = function ($this$catch, e, $completion) {
+  var tmp = this.q66($this$catch, e, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(AuthorizationCodeFlow$login$slambda_1).y8 = function (p1, p2, $completion) {
   var tmp = (!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE();
-  return this.j66(tmp, p2 instanceof Error ? p2 : THROW_CCE(), $completion);
+  return this.p66(tmp, p2 instanceof Error ? p2 : THROW_CCE(), $completion);
 };
 protoOf(AuthorizationCodeFlow$login$slambda_1).q8 = function () {
   var suspendResult = this.k8_1;
@@ -6948,23 +7034,23 @@ protoOf(AuthorizationCodeFlow$login$slambda_1).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 2;
-          var tmp_0 = this.i66_1;
+          var tmp_0 = this.o66_1;
           if (tmp_0 instanceof CancellationException)
-            throw this.i66_1;
-          var tmp_1 = this.i66_1;
+            throw this.o66_1;
+          var tmp_1 = this.o66_1;
           var tmp0_elvis_lhs = tmp_1 instanceof Exception ? tmp_1 : null;
           var tmp_2;
           if (tmp0_elvis_lhs == null) {
-            throw this.i66_1;
+            throw this.o66_1;
           } else {
             tmp_2 = tmp0_elvis_lhs;
           }
 
           var exception = tmp_2;
-          var error = this.g66_1.w64_1.l66(exception);
-          ErrorHandlerRegistry_instance.a5g(exception, mapOf([to('operation', 'login_flow'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(exception).o()), to('error_mapped_to', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
+          var error = this.m66_1.c65_1.r66(exception);
+          ErrorHandlerRegistry_instance.e5g(exception, mapOf([to('operation', 'login_flow'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(exception).o()), to('error_mapped_to', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
           this.i8_1 = 1;
-          suspendResult = this.h66_1.j1x(this.g66_1.c65_1.v5d(error), this);
+          suspendResult = this.n66_1.k1x(this.m66_1.i65_1.z5d(error), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -6986,16 +7072,16 @@ protoOf(AuthorizationCodeFlow$login$slambda_1).q8 = function () {
     }
    while (true);
 };
-protoOf(AuthorizationCodeFlow$login$slambda_1).k66 = function ($this$catch, e, completion) {
-  var i = new AuthorizationCodeFlow$login$slambda_1(this.g66_1, completion);
-  i.h66_1 = $this$catch;
-  i.i66_1 = e;
+protoOf(AuthorizationCodeFlow$login$slambda_1).q66 = function ($this$catch, e, completion) {
+  var i = new AuthorizationCodeFlow$login$slambda_1(this.m66_1, completion);
+  i.n66_1 = $this$catch;
+  i.o66_1 = e;
   return i;
 };
 function AuthorizationCodeFlow$login$slambda_2(this$0, resultContinuation) {
   var i = new AuthorizationCodeFlow$login$slambda_1(this$0, resultContinuation);
   var l = function ($this$catch, e, $completion) {
-    return i.j66($this$catch, e, $completion);
+    return i.p66($this$catch, e, $completion);
   };
   l.$arity = 2;
   return l;
@@ -7012,7 +7098,7 @@ function AuthorizationCodeFlow$beginAuthorization$lambda_0($sanitizedUrl, $flowI
 }
 function AuthorizationCodeFlow$completeAuthorization$lambda($flowId, $callbackUrl, $receivedState, $oauthError) {
   return function () {
-    return 'Callback received (Flow-' + $flowId + '): ' + ('URL=' + Companion_instance_6.r66($callbackUrl) + ', code=[REDACTED], ') + ('receivedStateIsNull=' + ($receivedState == null)) + (!($oauthError == null) ? ', oauthError=' + $oauthError : '');
+    return 'Callback received (Flow-' + $flowId + '): ' + ('URL=' + Companion_instance_9.x66($callbackUrl) + ', code=[REDACTED], ') + ('receivedStateIsNull=' + ($receivedState == null)) + (!($oauthError == null) ? ', oauthError=' + $oauthError : '');
   };
 }
 function AuthorizationCodeFlow$completeAuthorization$lambda_0($oauthError, $flowId) {
@@ -7042,8 +7128,8 @@ function AuthorizationCodeFlow$buildAuthorizationUrl$lambda_0($key, $flowId) {
 }
 function $completeAuthorizationCOROUTINE$(_this__u8e3s4, callbackUrl, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.a67_1 = _this__u8e3s4;
-  this.b67_1 = callbackUrl;
+  this.g67_1 = _this__u8e3s4;
+  this.h67_1 = callbackUrl;
 }
 protoOf($completeAuthorizationCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7053,17 +7139,17 @@ protoOf($completeAuthorizationCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          var flowId = newFlowId(this.a67_1);
+          var flowId = newFlowId(this.g67_1);
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = completeAuthorization(this.a67_1, this.b67_1, flowId, this);
+          suspendResult = completeAuthorization(this.g67_1, this.h67_1, flowId, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.c67_1 = suspendResult;
+          this.i67_1 = suspendResult;
           this.j8_1 = 3;
           this.i8_1 = 4;
           continue $sm;
@@ -7079,15 +7165,15 @@ protoOf($completeAuthorizationCOROUTINE$).q8 = function () {
             if (tmp_2 instanceof Exception) {
               var e_0 = this.l8_1;
               var tmp_3 = this;
-              var error = this.a67_1.w64_1.l66(e_0);
+              var error = this.g67_1.c65_1.r66(e_0);
               var tmp_4 = ErrorHandlerRegistry_instance;
               var tmp_5 = to('operation', 'complete_authorization');
               var tmp_6 = to('stage', 'unhandled_exception');
               var tmp0_elvis_lhs = getKClassFromExpression(e_0).o();
               var tmp_7 = to('error_type', tmp0_elvis_lhs == null ? 'Unknown' : tmp0_elvis_lhs);
               var tmp1_elvis_lhs = getKClassFromExpression(error).o();
-              tmp_4.a5g(e_0, mapOf([tmp_5, tmp_6, tmp_7, to('error_mapped_to', tmp1_elvis_lhs == null ? 'Unknown' : tmp1_elvis_lhs)]), ErrorLevel_ERROR_getInstance());
-              tmp_3.c67_1 = this.a67_1.c65_1.v5d(error);
+              tmp_4.e5g(e_0, mapOf([tmp_5, tmp_6, tmp_7, to('error_mapped_to', tmp1_elvis_lhs == null ? 'Unknown' : tmp1_elvis_lhs)]), ErrorLevel_ERROR_getInstance());
+              tmp_3.i67_1 = this.g67_1.i65_1.z5d(error);
               this.i8_1 = 4;
               continue $sm;
             } else {
@@ -7099,7 +7185,7 @@ protoOf($completeAuthorizationCOROUTINE$).q8 = function () {
           throw this.l8_1;
         case 4:
           this.j8_1 = 3;
-          return this.c67_1;
+          return this.i67_1;
       }
     } catch ($p) {
       var e_1 = $p;
@@ -7114,10 +7200,10 @@ protoOf($completeAuthorizationCOROUTINE$).q8 = function () {
 };
 function $beginAuthorizationCOROUTINE$(_this__u8e3s4, additionalScopes, additionalParameters, flowId, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.w63_1 = _this__u8e3s4;
-  this.x63_1 = additionalScopes;
-  this.y63_1 = additionalParameters;
-  this.z63_1 = flowId;
+  this.c64_1 = _this__u8e3s4;
+  this.d64_1 = additionalScopes;
+  this.e64_1 = additionalParameters;
+  this.f64_1 = flowId;
 }
 protoOf($beginAuthorizationCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7128,7 +7214,7 @@ protoOf($beginAuthorizationCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.w63_1.w64_1.o5w(this);
+          suspendResult = this.c64_1.c65_1.t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7138,37 +7224,37 @@ protoOf($beginAuthorizationCOROUTINE$).q8 = function () {
           var openIdConfigResult = suspendResult;
           var tmp_0;
           if (openIdConfigResult instanceof Success_1) {
-            tmp_0 = openIdConfigResult.q5w_1;
+            tmp_0 = openIdConfigResult.v5w_1;
           } else {
             if (openIdConfigResult instanceof Failure_1) {
-              captureOpenIdConfigError(this.w63_1, openIdConfigResult.p5w_1);
-              return new Failed(this.w63_1.c65_1.v5d(openIdConfigResult.p5w_1));
+              captureOpenIdConfigError(this.c64_1, openIdConfigResult.u5w_1);
+              return new Failed(this.c64_1.i65_1.z5d(openIdConfigResult.u5w_1));
             } else {
               noWhenBranchMatchedException();
             }
           }
 
           var openIdConfig = tmp_0;
-          var pkce = this.w63_1.z64_1.e67();
-          this.a64_1 = this.w63_1.z64_1.f67();
-          var nonce = this.w63_1.z64_1.f67();
+          var pkce = this.c64_1.f65_1.k67();
+          this.g64_1 = this.c64_1.f65_1.l67();
+          var nonce = this.c64_1.f65_1.l67();
           var tmp_1 = SdkLogger_getInstance();
           var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_1.n5a(tmp_2, VOID, VOID, AuthorizationCodeFlow$beginAuthorization$lambda(this.z63_1));
-          this.b64_1 = buildAuthorizationUrl(this.w63_1, openIdConfig, this.a64_1, nonce, pkce.h67_1, this.x63_1, this.y63_1, this.z63_1);
-          var sanitizedUrl = Companion_instance_6.r66(this.b64_1);
+          tmp_1.r5a(tmp_2, VOID, VOID, AuthorizationCodeFlow$beginAuthorization$lambda(this.f64_1));
+          this.h64_1 = buildAuthorizationUrl(this.c64_1, openIdConfig, this.g64_1, nonce, pkce.n67_1, this.d64_1, this.e64_1, this.f64_1);
+          var sanitizedUrl = Companion_instance_9.x66(this.h64_1);
           var tmp_3 = SdkLogger_getInstance();
           var tmp_4 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_3.n5a(tmp_4, VOID, VOID, AuthorizationCodeFlow$beginAuthorization$lambda_0(sanitizedUrl, this.z63_1));
+          tmp_3.r5a(tmp_4, VOID, VOID, AuthorizationCodeFlow$beginAuthorization$lambda_0(sanitizedUrl, this.f64_1));
           this.i8_1 = 2;
-          suspendResult = this.w63_1.a65_1.d5e(new AuthorizationTransaction(this.a64_1, pkce.g67_1, nonce, System_instance.s3f()), this);
+          suspendResult = this.c64_1.g65_1.h5e(new AuthorizationTransaction(this.g64_1, pkce.m67_1, nonce, System_instance.u3f()), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 2:
-          return new Started(this.b64_1, this.a64_1);
+          return new Started(this.h64_1, this.g64_1);
         case 3:
           throw this.l8_1;
       }
@@ -7185,9 +7271,9 @@ protoOf($beginAuthorizationCOROUTINE$).q8 = function () {
 };
 function $completeAuthorizationCOROUTINE$_0(_this__u8e3s4, callbackUrl, flowId, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.k64_1 = _this__u8e3s4;
-  this.l64_1 = callbackUrl;
-  this.m64_1 = flowId;
+  this.q64_1 = _this__u8e3s4;
+  this.r64_1 = callbackUrl;
+  this.s64_1 = flowId;
 }
 protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7198,7 +7284,7 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
         case 0:
           this.j8_1 = 9;
           this.i8_1 = 1;
-          suspendResult = this.k64_1.w64_1.o5w(this);
+          suspendResult = this.q64_1.c65_1.t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7209,36 +7295,36 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
           var tmp_0 = this;
           var tmp_1;
           if (openIdConfigResult instanceof Success_1) {
-            tmp_1 = openIdConfigResult.q5w_1;
+            tmp_1 = openIdConfigResult.v5w_1;
           } else {
             if (openIdConfigResult instanceof Failure_1) {
-              captureOpenIdConfigError(this.k64_1, openIdConfigResult.p5w_1);
-              return this.k64_1.c65_1.v5d(openIdConfigResult.p5w_1);
+              captureOpenIdConfigError(this.q64_1, openIdConfigResult.u5w_1);
+              return this.q64_1.i65_1.z5d(openIdConfigResult.u5w_1);
             } else {
               noWhenBranchMatchedException();
             }
           }
 
-          tmp_0.r64_1 = tmp_1;
-          this.s64_1 = getQueryParameter(this.k64_1, this.l64_1, 'code');
-          this.u64_1 = getQueryParameter(this.k64_1, this.l64_1, 'state');
-          this.n64_1 = getQueryParameter(this.k64_1, this.l64_1, 'error');
+          tmp_0.x64_1 = tmp_1;
+          this.y64_1 = getQueryParameter(this.q64_1, this.r64_1, 'code');
+          this.a65_1 = getQueryParameter(this.q64_1, this.r64_1, 'state');
+          this.t64_1 = getQueryParameter(this.q64_1, this.r64_1, 'error');
           var tmp_2 = SdkLogger_getInstance();
           var tmp_3 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_2.n5a(tmp_3, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda(this.m64_1, this.l64_1, this.u64_1, this.n64_1));
-          if (!(this.n64_1 == null)) {
-            this.o64_1 = getQueryParameter(this.k64_1, this.l64_1, 'error_description');
+          tmp_2.r5a(tmp_3, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda(this.s64_1, this.r64_1, this.a65_1, this.t64_1));
+          if (!(this.t64_1 == null)) {
+            this.u64_1 = getQueryParameter(this.q64_1, this.r64_1, 'error_description');
             var tmp_4 = SdkLogger_getInstance();
             var tmp_5 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_4.n5a(tmp_5, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_0(this.n64_1, this.m64_1));
-            var tmp0_safe_receiver = this.u64_1;
+            tmp_4.r5a(tmp_5, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_0(this.t64_1, this.s64_1));
+            var tmp0_safe_receiver = this.a65_1;
             if (tmp0_safe_receiver == null) {
-              this.p64_1 = null;
+              this.v64_1 = null;
               this.i8_1 = 8;
               continue $sm;
             } else {
               this.i8_1 = 7;
-              suspendResult = this.k64_1.a65_1.f5e(tmp0_safe_receiver, this);
+              suspendResult = this.q64_1.g65_1.j5e(tmp0_safe_receiver, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -7250,14 +7336,14 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
           }
 
         case 2:
-          var tmp2_safe_receiver = this.u64_1;
+          var tmp2_safe_receiver = this.a65_1;
           if (tmp2_safe_receiver == null) {
-            this.t64_1 = null;
+            this.z64_1 = null;
             this.i8_1 = 4;
             continue $sm;
           } else {
             this.i8_1 = 3;
-            suspendResult = this.k64_1.a65_1.e5e(tmp2_safe_receiver, this);
+            suspendResult = this.q64_1.g65_1.i5e(tmp2_safe_receiver, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7265,27 +7351,27 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
           }
 
         case 3:
-          this.t64_1 = suspendResult;
+          this.z64_1 = suspendResult;
           this.i8_1 = 4;
           continue $sm;
         case 4:
-          this.q64_1 = this.t64_1;
-          if (this.q64_1 == null) {
+          this.w64_1 = this.z64_1;
+          if (this.w64_1 == null) {
             var tmp_6 = SdkLogger_getInstance();
             var tmp_7 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_6.n5a(tmp_7, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_1(this.m64_1));
-            return this.k64_1.c65_1.v5d(new InvalidDataError('Invalid state received from callback. Possible CSRF attack.'));
+            tmp_6.r5a(tmp_7, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_1(this.s64_1));
+            return this.q64_1.i65_1.z5d(new InvalidDataError('Invalid state received from callback. Possible CSRF attack.'));
           }
 
           var tmp_8 = SdkLogger_getInstance();
           var tmp_9 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_8.n5a(tmp_9, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_2(this.m64_1));
-          if (this.s64_1 == null) {
-            return this.k64_1.c65_1.v5d(new InvalidDataError('Authorization code not found in callback URL.'));
+          tmp_8.r5a(tmp_9, VOID, VOID, AuthorizationCodeFlow$completeAuthorization$lambda_2(this.s64_1));
+          if (this.y64_1 == null) {
+            return this.q64_1.i65_1.z5d(new InvalidDataError('Authorization code not found in callback URL.'));
           }
 
           this.i8_1 = 5;
-          suspendResult = this.k64_1.x64_1.i67(this.r64_1.y5w_1, this.s64_1, this.k64_1.v64_1.p5a_1, this.k64_1.v64_1.o5a_1, this.q64_1.a5e_1, this);
+          suspendResult = this.q64_1.d65_1.o67(this.x64_1.d5x_1, this.y64_1, this.q64_1.b65_1.t5a_1, this.q64_1.b65_1.s5a_1, this.w64_1.e5e_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7294,7 +7380,7 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
         case 5:
           var tokenResponse = suspendResult;
           this.i8_1 = 6;
-          suspendResult = this.k64_1.b65_1.o67(tokenResponse, this.k64_1.v64_1.o5a_1, this.r64_1.s5w_1, this.r64_1.u5w_1, this.q64_1.b5e_1, this);
+          suspendResult = this.q64_1.h65_1.u67(tokenResponse, this.q64_1.b65_1.s5a_1, this.x64_1.x5w_1, this.x64_1.z5w_1, this.w64_1.f5e_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7304,12 +7390,19 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
           return suspendResult;
         case 7:
           var tmp_10 = this;
-          tmp_10.p64_1 = Unit_instance;
+          tmp_10.v64_1 = Unit_instance;
           this.i8_1 = 8;
           continue $sm;
         case 8:
-          var tmp1_elvis_lhs = this.o64_1;
-          return this.k64_1.c65_1.v5d(new InvalidDataError(tmp1_elvis_lhs == null ? 'Authorization failed: ' + this.n64_1 : tmp1_elvis_lhs));
+          var tmp_11;
+          if (Companion_getInstance_10().t63_1.e2(this.t64_1)) {
+            tmp_11 = new InteractionRequired(this.t64_1, this.u64_1);
+          } else {
+            var tmp1_elvis_lhs = this.u64_1;
+            tmp_11 = new InvalidDataError(tmp1_elvis_lhs == null ? 'Authorization failed: ' + this.t64_1 : tmp1_elvis_lhs);
+          }
+
+          return this.q64_1.i65_1.z5d(tmp_11);
         case 9:
           throw this.l8_1;
       }
@@ -7325,23 +7418,24 @@ protoOf($completeAuthorizationCOROUTINE$_0).q8 = function () {
    while (true);
 };
 function AuthorizationCodeFlow(config, openIdConfigRepository, authApiService, webAuthenticator, securityUtils, authorizationStateStore, tokenSuccessHandler, loginFailureEmitter, eventEmitter) {
-  this.v64_1 = config;
-  this.w64_1 = openIdConfigRepository;
-  this.x64_1 = authApiService;
-  this.y64_1 = webAuthenticator;
-  this.z64_1 = securityUtils;
-  this.a65_1 = authorizationStateStore;
-  this.b65_1 = tokenSuccessHandler;
-  this.c65_1 = loginFailureEmitter;
-  this.d65_1 = eventEmitter;
+  Companion_getInstance_10();
+  this.b65_1 = config;
+  this.c65_1 = openIdConfigRepository;
+  this.d65_1 = authApiService;
+  this.e65_1 = webAuthenticator;
+  this.f65_1 = securityUtils;
+  this.g65_1 = authorizationStateStore;
+  this.h65_1 = tokenSuccessHandler;
+  this.i65_1 = loginFailureEmitter;
+  this.j65_1 = eventEmitter;
 }
-protoOf(AuthorizationCodeFlow).f5c = function (callbackUrl, $completion) {
+protoOf(AuthorizationCodeFlow).j5c = function (callbackUrl, $completion) {
   var tmp = new $completeAuthorizationCOROUTINE$(this, callbackUrl, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(AuthorizationCodeFlow).d5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
+protoOf(AuthorizationCodeFlow).h5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
   var tmp = flow(AuthorizationCodeFlow$login$slambda_0(this, loginMethod, authContext, additionalScopes, additionalParameters, null));
   return catch_0(tmp, AuthorizationCodeFlow$login$slambda_2(this, null));
 };
@@ -7355,18 +7449,18 @@ function MigrationFlow$login$slambda$lambda_1() {
   return 'Migration: calling refresh endpoint';
 }
 function MigrationFlow$login$slambda(this$0, $loginMethod, resultContinuation) {
-  this.x67_1 = this$0;
-  this.y67_1 = $loginMethod;
+  this.d68_1 = this$0;
+  this.e68_1 = $loginMethod;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(MigrationFlow$login$slambda).w65 = function ($this$flow, $completion) {
-  var tmp = this.x65($this$flow, $completion);
+protoOf(MigrationFlow$login$slambda).c66 = function ($this$flow, $completion) {
+  var tmp = this.d66($this$flow, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(MigrationFlow$login$slambda).z8 = function (p1, $completion) {
-  return this.w65((!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE(), $completion);
+  return this.c66((!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(MigrationFlow$login$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7376,15 +7470,15 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 14;
-          var loginStartedTimestamp = this.x67_1.j68_1.s3f().f3v();
-          this.x67_1.i68_1.c5z(new LoginStarted(loginStartedTimestamp));
-          var tmp_0 = this.y67_1;
+          var loginStartedTimestamp = this.d68_1.p68_1.u3f().h3v();
+          this.d68_1.o68_1.h5z(new LoginStarted(loginStartedTimestamp));
+          var tmp_0 = this.e68_1;
           if (!(tmp_0 instanceof Migration)) {
             var tmp_1 = SdkLogger_getInstance();
             var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
-            tmp_1.n5a(tmp_2, VOID, VOID, MigrationFlow$login$slambda$lambda);
+            tmp_1.r5a(tmp_2, VOID, VOID, MigrationFlow$login$slambda$lambda);
             this.i8_1 = 13;
-            suspendResult = this.z67_1.j1x(this.x67_1.h68_1.v5d(new InvalidConfiguration('MigrationFlow only supports the Migration login method.')), this);
+            suspendResult = this.f68_1.k1x(this.d68_1.n68_1.z5d(new InvalidConfiguration('MigrationFlow only supports the Migration login method.')), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7397,10 +7491,10 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
         case 1:
           var tmp_3 = SdkLogger_getInstance();
           var tmp_4 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_3.n5a(tmp_4, VOID, VOID, MigrationFlow$login$slambda$lambda_0);
-          if (isBlank(this.y67_1.k68_1)) {
+          tmp_3.r5a(tmp_4, VOID, VOID, MigrationFlow$login$slambda$lambda_0);
+          if (isBlank(this.e68_1.q68_1)) {
             this.i8_1 = 12;
-            suspendResult = this.z67_1.j1x(this.x67_1.h68_1.v5d(new InvalidConfiguration('Migration: refreshToken must not be blank.')), this);
+            suspendResult = this.f68_1.k1x(this.d68_1.n68_1.z5d(new InvalidConfiguration('Migration: refreshToken must not be blank.')), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7412,7 +7506,7 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
 
         case 2:
           this.i8_1 = 3;
-          suspendResult = this.x67_1.g68_1.t5o(this);
+          suspendResult = this.d68_1.m68_1.x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7421,7 +7515,7 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
         case 3:
           if (!(suspendResult == null)) {
             this.i8_1 = 11;
-            suspendResult = this.z67_1.j1x(this.x67_1.h68_1.v5d(new InvalidConfiguration("Migration: tokens are already present in SDK storage. Call localLogout() to clear the SDK's storage before migrating.")), this);
+            suspendResult = this.f68_1.k1x(this.d68_1.n68_1.z5d(new InvalidConfiguration("Migration: tokens are already present in SDK storage. Call localLogout() to clear the SDK's storage before migrating.")), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7433,7 +7527,7 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
 
         case 4:
           this.i8_1 = 5;
-          suspendResult = this.x67_1.d68_1.o5w(this);
+          suspendResult = this.d68_1.j68_1.t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7443,18 +7537,18 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
           var result = suspendResult;
           if (result instanceof Success_1) {
             var tmp_5 = this;
-            tmp_5.b68_1 = result.q5w_1;
+            tmp_5.h68_1 = result.v5w_1;
             this.i8_1 = 7;
             continue $sm;
           } else {
             if (result instanceof Failure_1) {
-              var error = result.p5w_1;
+              var error = result.u5w_1;
               var tmp_6;
               if (error instanceof NetworkError) {
-                var tmp0_elvis_lhs = error.r5y_1;
+                var tmp0_elvis_lhs = error.w5y_1;
                 var tmp_7;
                 if (tmp0_elvis_lhs == null) {
-                  var tmp1_elvis_lhs = error.q5y_1;
+                  var tmp1_elvis_lhs = error.v5y_1;
                   tmp_7 = Exception_init_$Create$(tmp1_elvis_lhs == null ? 'Network error' : tmp1_elvis_lhs);
                 } else {
                   tmp_7 = tmp0_elvis_lhs;
@@ -7462,15 +7556,15 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
                 tmp_6 = tmp_7;
               } else {
                 if (error instanceof HttpError) {
-                  tmp_6 = Exception_init_$Create$('HTTP ' + error.z5p_1 + ': ' + error.a5q_1);
+                  tmp_6 = Exception_init_$Create$('HTTP ' + error.d5q_1 + ': ' + error.e5q_1);
                 } else {
                   tmp_6 = Exception_init_$Create$(toString(error));
                 }
               }
               var throwable = tmp_6;
-              ErrorHandlerRegistry_instance.a5g(throwable, mapOf([to('operation', 'fetch_openid_config'), to('stage', 'migration_flow')]), ErrorLevel_ERROR_getInstance());
+              ErrorHandlerRegistry_instance.e5g(throwable, mapOf([to('operation', 'fetch_openid_config'), to('stage', 'migration_flow')]), ErrorLevel_ERROR_getInstance());
               this.i8_1 = 6;
-              suspendResult = this.z67_1.j1x(this.x67_1.h68_1.v5d(result.p5w_1), this);
+              suspendResult = this.f68_1.k1x(this.d68_1.n68_1.z5d(result.u5w_1), this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
@@ -7486,12 +7580,12 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
           var tmp_9 = this;
           return Unit_instance;
         case 7:
-          this.a68_1 = this.b68_1;
+          this.g68_1 = this.h68_1;
           var tmp_10 = SdkLogger_getInstance();
           var tmp_11 = LogCategory_AUTHENTICATION_getInstance();
-          tmp_10.n5a(tmp_11, VOID, VOID, MigrationFlow$login$slambda$lambda_1);
+          tmp_10.r5a(tmp_11, VOID, VOID, MigrationFlow$login$slambda$lambda_1);
           this.i8_1 = 8;
-          suspendResult = this.x67_1.e68_1.h5z(this.a68_1.y5w_1, this.y67_1.k68_1, this.x67_1.c68_1.o5a_1, this);
+          suspendResult = this.d68_1.k68_1.m5z(this.g68_1.d5x_1, this.e68_1.q68_1, this.d68_1.i68_1.s5a_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7500,7 +7594,7 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
         case 8:
           var tokenResponse = suspendResult;
           this.i8_1 = 9;
-          suspendResult = this.x67_1.f68_1.l68(tokenResponse, this.x67_1.c68_1.o5a_1, this.a68_1.s5w_1, this.a68_1.u5w_1, VOID, this);
+          suspendResult = this.d68_1.l68_1.r68(tokenResponse, this.d68_1.i68_1.s5a_1, this.g68_1.x5w_1, this.g68_1.z5w_1, VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7509,7 +7603,7 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
         case 9:
           var ARGUMENT = suspendResult;
           this.i8_1 = 10;
-          suspendResult = this.z67_1.j1x(ARGUMENT, this);
+          suspendResult = this.f68_1.k1x(ARGUMENT, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7537,32 +7631,32 @@ protoOf(MigrationFlow$login$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(MigrationFlow$login$slambda).x65 = function ($this$flow, completion) {
-  var i = new MigrationFlow$login$slambda(this.x67_1, this.y67_1, completion);
-  i.z67_1 = $this$flow;
+protoOf(MigrationFlow$login$slambda).d66 = function ($this$flow, completion) {
+  var i = new MigrationFlow$login$slambda(this.d68_1, this.e68_1, completion);
+  i.f68_1 = $this$flow;
   return i;
 };
 function MigrationFlow$login$slambda_0(this$0, $loginMethod, resultContinuation) {
   var i = new MigrationFlow$login$slambda(this$0, $loginMethod, resultContinuation);
   var l = function ($this$flow, $completion) {
-    return i.w65($this$flow, $completion);
+    return i.c66($this$flow, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function MigrationFlow$login$slambda_1(this$0, resultContinuation) {
-  this.u68_1 = this$0;
+  this.a69_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(MigrationFlow$login$slambda_1).j66 = function ($this$catch, e, $completion) {
-  var tmp = this.k66($this$catch, e, $completion);
+protoOf(MigrationFlow$login$slambda_1).p66 = function ($this$catch, e, $completion) {
+  var tmp = this.q66($this$catch, e, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(MigrationFlow$login$slambda_1).y8 = function (p1, p2, $completion) {
   var tmp = (!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE();
-  return this.j66(tmp, p2 instanceof Error ? p2 : THROW_CCE(), $completion);
+  return this.p66(tmp, p2 instanceof Error ? p2 : THROW_CCE(), $completion);
 };
 protoOf(MigrationFlow$login$slambda_1).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7572,49 +7666,49 @@ protoOf(MigrationFlow$login$slambda_1).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 4;
-          var tmp_0 = this.w68_1;
+          var tmp_0 = this.c69_1;
           if (tmp_0 instanceof CancellationException)
-            throw this.w68_1;
+            throw this.c69_1;
           var tmp_1 = this;
-          var tmp_2 = this.w68_1;
+          var tmp_2 = this.c69_1;
           var tmp0_elvis_lhs = tmp_2 instanceof Exception ? tmp_2 : null;
           var tmp_3;
           if (tmp0_elvis_lhs == null) {
-            throw this.w68_1;
+            throw this.c69_1;
           } else {
             tmp_3 = tmp0_elvis_lhs;
           }
 
-          tmp_1.x68_1 = tmp_3;
-          var tmp1_subject = this.x68_1;
+          tmp_1.d69_1 = tmp_3;
+          var tmp1_subject = this.d69_1;
           if (tmp1_subject instanceof ClientRequestException) {
             this.i8_1 = 1;
-            suspendResult = OAuthErrorMapper_getInstance().z5l(this.x68_1, this);
+            suspendResult = OAuthErrorMapper_getInstance().d5m(this.d69_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
             if (tmp1_subject instanceof ServerResponseException) {
-              this.y68_1 = OAuthErrorMapper_getInstance().a5m(this.x68_1);
+              this.e69_1 = OAuthErrorMapper_getInstance().e5m(this.d69_1);
               this.i8_1 = 2;
               continue $sm;
             } else {
-              this.y68_1 = this.u68_1.d68_1.l66(this.x68_1);
+              this.e69_1 = this.a69_1.j68_1.r66(this.d69_1);
               this.i8_1 = 2;
               continue $sm;
             }
           }
 
         case 1:
-          this.y68_1 = suspendResult;
+          this.e69_1 = suspendResult;
           this.i8_1 = 2;
           continue $sm;
         case 2:
-          var error = this.y68_1;
-          ErrorHandlerRegistry_instance.a5g(this.x68_1, mapOf([to('operation', 'migration_flow'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(this.w68_1).o()), to('error_mapped_to', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
+          var error = this.e69_1;
+          ErrorHandlerRegistry_instance.e5g(this.d69_1, mapOf([to('operation', 'migration_flow'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(this.c69_1).o()), to('error_mapped_to', getKClassFromExpression(error).o())]), ErrorLevel_ERROR_getInstance());
           this.i8_1 = 3;
-          suspendResult = this.v68_1.j1x(this.u68_1.h68_1.v5d(error), this);
+          suspendResult = this.b69_1.k1x(this.a69_1.n68_1.z5d(error), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7636,32 +7730,32 @@ protoOf(MigrationFlow$login$slambda_1).q8 = function () {
     }
    while (true);
 };
-protoOf(MigrationFlow$login$slambda_1).k66 = function ($this$catch, e, completion) {
-  var i = new MigrationFlow$login$slambda_1(this.u68_1, completion);
-  i.v68_1 = $this$catch;
-  i.w68_1 = e;
+protoOf(MigrationFlow$login$slambda_1).q66 = function ($this$catch, e, completion) {
+  var i = new MigrationFlow$login$slambda_1(this.a69_1, completion);
+  i.b69_1 = $this$catch;
+  i.c69_1 = e;
   return i;
 };
 function MigrationFlow$login$slambda_2(this$0, resultContinuation) {
   var i = new MigrationFlow$login$slambda_1(this$0, resultContinuation);
   var l = function ($this$catch, e, $completion) {
-    return i.j66($this$catch, e, $completion);
+    return i.p66($this$catch, e, $completion);
   };
   l.$arity = 2;
   return l;
 }
 function MigrationFlow(config, openIdConfigRepository, authApiService, tokenSuccessHandler, tokenStorage, loginFailureEmitter, eventEmitter, clock) {
   clock = clock === VOID ? System_instance : clock;
-  this.c68_1 = config;
-  this.d68_1 = openIdConfigRepository;
-  this.e68_1 = authApiService;
-  this.f68_1 = tokenSuccessHandler;
-  this.g68_1 = tokenStorage;
-  this.h68_1 = loginFailureEmitter;
-  this.i68_1 = eventEmitter;
-  this.j68_1 = clock;
+  this.i68_1 = config;
+  this.j68_1 = openIdConfigRepository;
+  this.k68_1 = authApiService;
+  this.l68_1 = tokenSuccessHandler;
+  this.m68_1 = tokenStorage;
+  this.n68_1 = loginFailureEmitter;
+  this.o68_1 = eventEmitter;
+  this.p68_1 = clock;
 }
-protoOf(MigrationFlow).d5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
+protoOf(MigrationFlow).h5c = function (loginMethod, authContext, additionalScopes, additionalParameters) {
   var tmp = flow(MigrationFlow$login$slambda_0(this, loginMethod, null));
   return catch_0(tmp, MigrationFlow$login$slambda_2(this, null));
 };
@@ -7669,12 +7763,12 @@ function RedirectAuthorizationCompleter() {
 }
 function LoginFailureEmitter(eventEmitter, clock) {
   clock = clock === VOID ? System_instance : clock;
-  this.t5d_1 = eventEmitter;
-  this.u5d_1 = clock;
+  this.x5d_1 = eventEmitter;
+  this.y5d_1 = clock;
 }
-protoOf(LoginFailureEmitter).v5d = function (error) {
-  var timestamp = this.u5d_1.s3f().f3v();
-  this.t5d_1.c5z(new LoginFailure(error, timestamp));
+protoOf(LoginFailureEmitter).z5d = function (error) {
+  var timestamp = this.y5d_1.u3f().h3v();
+  this.x5d_1.h5z(new LoginFailure(error, timestamp));
   return new Failure(error);
 };
 function saveTokensOrCapture($this, tokenResponse, $completion) {
@@ -7685,12 +7779,12 @@ function saveTokensOrCapture($this, tokenResponse, $completion) {
 }
 function $handleCOROUTINE$(_this__u8e3s4, tokenResponse, clientId, issuer, jwksUri, nonce, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.r69_1 = _this__u8e3s4;
-  this.s69_1 = tokenResponse;
-  this.t69_1 = clientId;
-  this.u69_1 = issuer;
-  this.v69_1 = jwksUri;
-  this.w69_1 = nonce;
+  this.x69_1 = _this__u8e3s4;
+  this.y69_1 = tokenResponse;
+  this.z69_1 = clientId;
+  this.a6a_1 = issuer;
+  this.b6a_1 = jwksUri;
+  this.c6a_1 = nonce;
 }
 protoOf($handleCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7700,14 +7794,14 @@ protoOf($handleCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 10;
-          var tmp0_safe_receiver = this.s69_1.r5t_1;
+          var tmp0_safe_receiver = this.y69_1.v5t_1;
           if (tmp0_safe_receiver == null) {
-            this.b6a_1 = null;
+            this.h6a_1 = null;
             this.i8_1 = 3;
             continue $sm;
           } else {
             this.i8_1 = 1;
-            suspendResult = this.r69_1.k67_1.f5j(tmp0_safe_receiver, this.t69_1, this.u69_1, this.v69_1, this.w69_1, VOID, this);
+            suspendResult = this.x69_1.q67_1.j5j(tmp0_safe_receiver, this.z69_1, this.a6a_1, this.b6a_1, this.c6a_1, VOID, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7724,37 +7818,37 @@ protoOf($handleCOROUTINE$).q8 = function () {
           var idResult = suspendResult.sj_1;
           if (_Result___get_isFailure__impl__jpiriv(idResult)) {
             var tmp0_safe_receiver_0 = Result__exceptionOrNull_impl_p6xea9(idResult);
-            return this.r69_1.m67_1.v5d(new InvalidDataError('ID token validation failed: ' + (tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.message)));
+            return this.x69_1.s67_1.z5d(new InvalidDataError('ID token validation failed: ' + (tmp0_safe_receiver_0 == null ? null : tmp0_safe_receiver_0.message)));
           }
 
           var tmp_0 = this;
           throwOnFailure(idResult);
           var tmp_1 = _Result___get_value__impl__bjfvqg(idResult);
-          tmp_0.b6a_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
+          tmp_0.h6a_1 = (tmp_1 == null ? true : !(tmp_1 == null)) ? tmp_1 : THROW_CCE();
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          var validatedIdJwtClaims = this.b6a_1;
+          var validatedIdJwtClaims = this.h6a_1;
           var tmp_2 = this;
           var tmp_3;
           if (validatedIdJwtClaims == null) {
             tmp_3 = null;
           } else {
-            tmp_3 = Companion_instance_21.d5z(validatedIdJwtClaims);
+            tmp_3 = Companion_instance_24.i5z(validatedIdJwtClaims);
           }
 
-          tmp_2.y69_1 = tmp_3;
+          tmp_2.e6a_1 = tmp_3;
           var tmp_4 = this;
           var tmp_5;
           if (validatedIdJwtClaims == null) {
             tmp_5 = null;
           } else {
-            tmp_5 = Companion_instance_30.d5z(validatedIdJwtClaims);
+            tmp_5 = Companion_instance_34.i5z(validatedIdJwtClaims);
           }
 
-          tmp_4.x69_1 = tmp_5;
+          tmp_4.d6a_1 = tmp_5;
           this.i8_1 = 4;
-          suspendResult = this.r69_1.k67_1.h5j(this.s69_1.p5t_1, this.t69_1, this.u69_1, this.v69_1, VOID, this);
+          suspendResult = this.x69_1.q67_1.l5j(this.y69_1.t5t_1, this.z69_1, this.a6a_1, this.b6a_1, VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7770,15 +7864,15 @@ protoOf($handleCOROUTINE$).q8 = function () {
           var accessResult = suspendResult.sj_1;
           if (_Result___get_isFailure__impl__jpiriv(accessResult)) {
             var tmp3_safe_receiver = Result__exceptionOrNull_impl_p6xea9(accessResult);
-            return this.r69_1.m67_1.v5d(new InvalidDataError('Access token validation failed: ' + (tmp3_safe_receiver == null ? null : tmp3_safe_receiver.message)));
+            return this.x69_1.s67_1.z5d(new InvalidDataError('Access token validation failed: ' + (tmp3_safe_receiver == null ? null : tmp3_safe_receiver.message)));
           }
 
           var tmp_6 = this;
           throwOnFailure(accessResult);
           var tmp_7 = _Result___get_value__impl__bjfvqg(accessResult);
-          tmp_6.z69_1 = (tmp_7 == null ? true : !(tmp_7 == null)) ? tmp_7 : THROW_CCE();
+          tmp_6.f6a_1 = (tmp_7 == null ? true : !(tmp_7 == null)) ? tmp_7 : THROW_CCE();
           this.i8_1 = 6;
-          suspendResult = saveTokensOrCapture(this.r69_1, this.s69_1, this);
+          suspendResult = saveTokensOrCapture(this.x69_1, this.y69_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7787,17 +7881,17 @@ protoOf($handleCOROUTINE$).q8 = function () {
         case 6:
           var storageError = suspendResult;
           if (!(storageError == null)) {
-            return this.r69_1.m67_1.v5d(storageError);
+            return this.x69_1.s67_1.z5d(storageError);
           }
 
-          var tmp4_safe_receiver = this.x69_1;
+          var tmp4_safe_receiver = this.d6a_1;
           if (tmp4_safe_receiver == null) {
-            this.a6a_1 = null;
+            this.g6a_1 = null;
             this.i8_1 = 9;
             continue $sm;
           } else {
             this.i8_1 = 7;
-            suspendResult = this.r69_1.j67_1.f5z(tmp4_safe_receiver, this);
+            suspendResult = this.x69_1.p67_1.k5z(tmp4_safe_receiver, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -7811,14 +7905,14 @@ protoOf($handleCOROUTINE$).q8 = function () {
           this.i8_1 = 8;
           continue $sm;
         case 8:
-          this.a6a_1 = suspendResult;
+          this.g6a_1 = suspendResult;
           this.i8_1 = 9;
           continue $sm;
         case 9:
-          var tokenSet = Companion_instance_29.e5z(this.s69_1, this.z69_1, this.y69_1, this.x69_1);
-          var loginSuccessTimestamp = this.r69_1.n67_1.s3f().f3v();
-          this.r69_1.l67_1.c5z(new LoginSuccess(tokenSet, loginSuccessTimestamp));
-          this.r69_1.l67_1.c5z(new TokensSaved(!(this.s69_1.q5t_1 == null), this.r69_1.n67_1.s3f().f3v()));
+          var tokenSet = Companion_instance_33.j5z(this.y69_1, this.f6a_1, this.e6a_1, this.d6a_1);
+          var loginSuccessTimestamp = this.x69_1.t67_1.u3f().h3v();
+          this.x69_1.r67_1.h5z(new LoginSuccess(tokenSet, loginSuccessTimestamp));
+          this.x69_1.r67_1.h5z(new TokensSaved(!(this.y69_1.u5t_1 == null), this.x69_1.t67_1.u3f().h3v()));
           return new Success(tokenSet);
         case 10:
           throw this.l8_1;
@@ -7836,8 +7930,8 @@ protoOf($handleCOROUTINE$).q8 = function () {
 };
 function $saveTokensOrCaptureCOROUTINE$(_this__u8e3s4, tokenResponse, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.h69_1 = _this__u8e3s4;
-  this.i69_1 = tokenResponse;
+  this.n69_1 = _this__u8e3s4;
+  this.o69_1 = tokenResponse;
 }
 protoOf($saveTokensOrCaptureCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7848,7 +7942,7 @@ protoOf($saveTokensOrCaptureCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.h69_1.j67_1.a5z(this.i69_1, this);
+          suspendResult = this.n69_1.p67_1.f5z(this.o69_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7867,8 +7961,8 @@ protoOf($saveTokensOrCaptureCOROUTINE$).q8 = function () {
           var tmp0_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(saveResult);
           var storageException = tmp0_elvis_lhs == null ? Exception_init_$Create$('Failed to save tokens') : tmp0_elvis_lhs;
           var storageError = new UnknownError(storageException);
-          this.h69_1.l67_1.c5z(new StorageError(StorageOperation_SAVE_getInstance(), storageError, this.h69_1.n67_1.s3f().f3v()));
-          ErrorHandlerRegistry_instance.a5g(storageException, mapOf([to('operation', 'save_tokens_after_login'), to('stage', 'login_storage'), to('critical', true), to('impact', 'user_authenticated_but_tokens_not_persisted')]), ErrorLevel_FATAL_getInstance());
+          this.n69_1.r67_1.h5z(new StorageError(StorageOperation_SAVE_getInstance(), storageError, this.n69_1.t67_1.u3f().h3v()));
+          ErrorHandlerRegistry_instance.e5g(storageException, mapOf([to('operation', 'save_tokens_after_login'), to('stage', 'login_storage'), to('critical', true), to('impact', 'user_authenticated_but_tokens_not_persisted')]), ErrorLevel_FATAL_getInstance());
           return storageError;
         case 3:
           throw this.l8_1;
@@ -7886,26 +7980,26 @@ protoOf($saveTokensOrCaptureCOROUTINE$).q8 = function () {
 };
 function TokenSuccessHandler(tokenStorage, jwtValidationService, eventEmitter, loginFailureEmitter, clock) {
   clock = clock === VOID ? System_instance : clock;
-  this.j67_1 = tokenStorage;
-  this.k67_1 = jwtValidationService;
-  this.l67_1 = eventEmitter;
-  this.m67_1 = loginFailureEmitter;
-  this.n67_1 = clock;
+  this.p67_1 = tokenStorage;
+  this.q67_1 = jwtValidationService;
+  this.r67_1 = eventEmitter;
+  this.s67_1 = loginFailureEmitter;
+  this.t67_1 = clock;
 }
-protoOf(TokenSuccessHandler).o67 = function (tokenResponse, clientId, issuer, jwksUri, nonce, $completion) {
+protoOf(TokenSuccessHandler).u67 = function (tokenResponse, clientId, issuer, jwksUri, nonce, $completion) {
   var tmp = new $handleCOROUTINE$(this, tokenResponse, clientId, issuer, jwksUri, nonce, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(TokenSuccessHandler).l68 = function (tokenResponse, clientId, issuer, jwksUri, nonce, $completion, $super) {
+protoOf(TokenSuccessHandler).r68 = function (tokenResponse, clientId, issuer, jwksUri, nonce, $completion, $super) {
   nonce = nonce === VOID ? null : nonce;
-  return $super === VOID ? this.o67(tokenResponse, clientId, issuer, jwksUri, nonce, $completion) : $super.o67.call(this, tokenResponse, clientId, issuer, jwksUri, nonce, $completion);
+  return $super === VOID ? this.u67(tokenResponse, clientId, issuer, jwksUri, nonce, $completion) : $super.u67.call(this, tokenResponse, clientId, issuer, jwksUri, nonce, $completion);
 };
 function $performBackChannelLogoutCOROUTINE$(_this__u8e3s4, type, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.k6a_1 = _this__u8e3s4;
-  this.l6a_1 = type;
+  this.q6a_1 = _this__u8e3s4;
+  this.r6a_1 = type;
 }
 protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -7917,7 +8011,7 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
           this.j8_1 = 11;
           this.j8_1 = 10;
           this.i8_1 = 1;
-          suspendResult = this.k6a_1.q6a().o5w(this);
+          suspendResult = this.q6a_1.w6a().t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7927,19 +8021,19 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
           var openIdConfigResult = suspendResult;
           var tmp_0;
           if (openIdConfigResult instanceof Success_1) {
-            tmp_0 = openIdConfigResult.q5w_1;
+            tmp_0 = openIdConfigResult.v5w_1;
           } else {
             if (openIdConfigResult instanceof Failure_1) {
-              return new Failure_0(false, false, openIdConfigResult.p5w_1);
+              return new Failure_0(false, false, openIdConfigResult.u5w_1);
             } else {
               noWhenBranchMatchedException();
             }
           }
 
           var openIdConfig = tmp_0;
-          var logoutValidator = new LogoutTokenValidationService(this.k6a_1.r6a(), this.k6a_1.s6a(), openIdConfig.s5w_1, this.k6a_1.x3z().o5a_1, openIdConfig.u5w_1);
+          var logoutValidator = new LogoutTokenValidationService(this.q6a_1.x6a(), this.q6a_1.y6a(), openIdConfig.x5w_1, this.q6a_1.z3z().s5a_1, openIdConfig.z5w_1);
           this.i8_1 = 2;
-          suspendResult = logoutValidator.r5k(this.l6a_1.t6a_1, this);
+          suspendResult = logoutValidator.v5k(this.r6a_1.z6a_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7965,7 +8059,7 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
           }
 
           this.i8_1 = 4;
-          suspendResult = this.k6a_1.u6a(this);
+          suspendResult = this.q6a_1.a6b(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -7977,22 +8071,22 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
             return localLogoutResult;
           }
 
-          var listeners = toList(this.k6a_1.v6a());
-          this.n6a_1 = false;
-          this.m6a_1 = null;
-          this.p6a_1 = listeners.t();
+          var listeners = toList(this.q6a_1.b6b());
+          this.t6a_1 = false;
+          this.s6a_1 = null;
+          this.v6a_1 = listeners.t();
           this.i8_1 = 5;
           continue $sm;
         case 5:
-          if (!this.p6a_1.u()) {
+          if (!this.v6a_1.u()) {
             this.i8_1 = 9;
             continue $sm;
           }
 
-          this.o6a_1 = this.p6a_1.v();
+          this.u6a_1 = this.v6a_1.v();
           this.j8_1 = 7;
           this.i8_1 = 6;
-          suspendResult = this.o6a_1.w6a(this.l6a_1.t6a_1, this);
+          suspendResult = this.u6a_1.c6b(this.r6a_1.z6a_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8001,9 +8095,9 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
         case 6:
           var listenerResult = suspendResult;
           if (listenerResult instanceof Failure_1) {
-            this.n6a_1 = true;
-            this.m6a_1 = listenerResult.p5w_1;
-            ErrorHandlerRegistry_instance.a5g(Exception_init_$Create$(toString(listenerResult.p5w_1)), mapOf([to('operation', 'back_channel_logout_listener'), to('listener', getKClassFromExpression(this.o6a_1).o()), to('error_type', getKClassFromExpression(listenerResult.p5w_1).o())]), ErrorLevel_WARNING_getInstance());
+            this.t6a_1 = true;
+            this.s6a_1 = listenerResult.u5w_1;
+            ErrorHandlerRegistry_instance.e5g(Exception_init_$Create$(toString(listenerResult.u5w_1)), mapOf([to('operation', 'back_channel_logout_listener'), to('listener', getKClassFromExpression(this.u6a_1).o()), to('error_type', getKClassFromExpression(listenerResult.u5w_1).o())]), ErrorLevel_WARNING_getInstance());
           }
 
           this.j8_1 = 10;
@@ -8012,15 +8106,26 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
         case 7:
           this.j8_1 = 10;
           var tmp_3 = this.l8_1;
-          if (tmp_3 instanceof Exception) {
+          if (tmp_3 instanceof CancellationException) {
             var e = this.l8_1;
-            this.n6a_1 = true;
-            this.m6a_1 = new UnknownError(e);
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'back_channel_logout_listener'), to('listener', getKClassFromExpression(this.o6a_1).o()), to('error_type', 'exception')]), ErrorLevel_ERROR_getInstance());
+            ensureActive(this.o8());
+            this.t6a_1 = true;
+            this.s6a_1 = new UnknownError(e);
+            ErrorHandlerRegistry_instance.e5g(e, mapOf([to('operation', 'back_channel_logout_listener'), to('listener', getKClassFromExpression(this.u6a_1).o()), to('error_type', 'listener_leaked_cancellation')]), ErrorLevel_WARNING_getInstance());
             this.i8_1 = 8;
             continue $sm;
           } else {
-            throw this.l8_1;
+            var tmp_4 = this.l8_1;
+            if (tmp_4 instanceof Exception) {
+              var e_0 = this.l8_1;
+              this.t6a_1 = true;
+              this.s6a_1 = new UnknownError(e_0);
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'back_channel_logout_listener'), to('listener', getKClassFromExpression(this.u6a_1).o()), to('error_type', 'exception')]), ErrorLevel_ERROR_getInstance());
+              this.i8_1 = 8;
+              continue $sm;
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 8:
@@ -8028,35 +8133,41 @@ protoOf($performBackChannelLogoutCOROUTINE$).q8 = function () {
           this.i8_1 = 5;
           continue $sm;
         case 9:
-          var tmp_4;
-          if (this.n6a_1 && !(this.m6a_1 == null)) {
-            tmp_4 = new Failure_0(true, false, this.m6a_1);
+          var tmp_5;
+          if (this.t6a_1 && !(this.s6a_1 == null)) {
+            tmp_5 = new Failure_0(true, false, this.s6a_1);
           } else {
-            tmp_4 = new Success_0(true, false);
+            tmp_5 = new Success_0(true, false);
           }
 
-          return tmp_4;
+          return tmp_5;
         case 10:
           this.j8_1 = 11;
-          var tmp_5 = this.l8_1;
-          if (tmp_5 instanceof Exception) {
-            var e_0 = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e_0, mapOf([to('operation', 'back_channel_logout_validation'), to('stage', 'logout_validation'), to('security_concern', true), to('error_type', getKClassFromExpression(e_0).o())]), ErrorLevel_FATAL_getInstance());
-            return new Failure_0(false, false, new UnknownError(e_0, 'Back-channel logout validation failed'));
+          var tmp_6 = this.l8_1;
+          if (tmp_6 instanceof CancellationException) {
+            var e_1 = this.l8_1;
+            throw e_1;
           } else {
-            throw this.l8_1;
+            var tmp_7 = this.l8_1;
+            if (tmp_7 instanceof Exception) {
+              var e_2 = this.l8_1;
+              ErrorHandlerRegistry_instance.e5g(e_2, mapOf([to('operation', 'back_channel_logout_validation'), to('stage', 'logout_validation'), to('security_concern', true), to('error_type', getKClassFromExpression(e_2).o())]), ErrorLevel_FATAL_getInstance());
+              return new Failure_0(false, false, new UnknownError(e_2, 'Back-channel logout validation failed'));
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 11:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e_1 = $p;
+      var e_3 = $p;
       if (this.j8_1 === 11) {
-        throw e_1;
+        throw e_3;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e_1;
+        this.l8_1 = e_3;
       }
     }
    while (true);
@@ -8068,8 +8179,8 @@ function urlEncode($this, _this__u8e3s4) {
 }
 function $performFrontChannelLogoutCOROUTINE$(_this__u8e3s4, type, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.g6b_1 = _this__u8e3s4;
-  this.h6b_1 = type;
+  this.m6b_1 = _this__u8e3s4;
+  this.n6b_1 = type;
 }
 protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8079,16 +8190,16 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 8;
-          this.m6b_1 = this.h6b_1.s5k_1;
-          var tmp_0 = this.m6b_1;
+          this.s6b_1 = this.n6b_1.w5k_1;
+          var tmp_0 = this.s6b_1;
           if (!isInterface(tmp_0, WebAuthCapable)) {
             return new Failure_0(false, false, new InvalidConfiguration('Front-channel logout requires a WebAuthCapable authentication context.'));
           }
 
-          this.k6b_1 = null;
+          this.q6b_1 = null;
           this.j8_1 = 5;
           this.i8_1 = 1;
-          suspendResult = this.g6b_1.q6a().o5w(this);
+          suspendResult = this.m6b_1.w6a().t5w(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8099,25 +8210,25 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
           var tmp_1 = this;
           var tmp_2;
           if (openIdConfigResult instanceof Success_1) {
-            tmp_2 = openIdConfigResult.q5w_1;
+            tmp_2 = openIdConfigResult.v5w_1;
           } else {
             if (openIdConfigResult instanceof Failure_1) {
-              return new Failure_0(false, false, openIdConfigResult.p5w_1);
+              return new Failure_0(false, false, openIdConfigResult.u5w_1);
             } else {
               noWhenBranchMatchedException();
             }
           }
 
-          tmp_1.p6b_1 = tmp_2;
+          tmp_1.v6b_1 = tmp_2;
           var tmp_3 = this;
-          var tmp1_elvis_lhs = this.h6b_1.t5k_1;
-          tmp_3.o6b_1 = tmp1_elvis_lhs == null ? this.g6b_1.x3z().s5a_1 : tmp1_elvis_lhs;
-          if (this.o6b_1 == null) {
+          var tmp1_elvis_lhs = this.n6b_1.x5k_1;
+          tmp_3.u6b_1 = tmp1_elvis_lhs == null ? this.m6b_1.z3z().w5a_1 : tmp1_elvis_lhs;
+          if (this.u6b_1 == null) {
             return new Failure_0(false, false, new InvalidConfiguration('Front-channel logout requires a postLogoutRedirectUri to be provided either in SrgLoginConfig or in the logout() call.'));
           }
 
           this.i8_1 = 2;
-          suspendResult = this.g6b_1.q6b().t5o(this);
+          suspendResult = this.m6b_1.w6b().x5o(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8125,34 +8236,34 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
           continue $sm;
         case 2:
           var storedTokens = suspendResult;
-          var idTokenHint = storedTokens == null ? null : storedTokens.r5t_1;
+          var idTokenHint = storedTokens == null ? null : storedTokens.v5t_1;
           var tmp_4 = this;
           var this_0 = StringBuilder_init_$Create$();
-          var tmp0_elvis_lhs = this.p6b_1.c5y_1;
-          this_0.q(tmp0_elvis_lhs == null ? this.g6b_1.x3z().r5a_1.u5c_1 + '/logout' : tmp0_elvis_lhs);
-          this_0.q('?client_id=' + this.g6b_1.x3z().o5a_1);
-          this_0.q('&post_logout_redirect_uri=' + urlEncode(this.g6b_1, this.o6b_1));
+          var tmp0_elvis_lhs = this.v6b_1.h5y_1;
+          this_0.q(tmp0_elvis_lhs == null ? this.m6b_1.z3z().v5a_1.y5c_1 + '/logout' : tmp0_elvis_lhs);
+          this_0.q('?client_id=' + this.m6b_1.z3z().s5a_1);
+          this_0.q('&post_logout_redirect_uri=' + urlEncode(this.m6b_1, this.u6b_1));
           if (idTokenHint == null)
             null;
           else {
-            this_0.q('&id_token_hint=' + urlEncode(this.g6b_1, idTokenHint));
+            this_0.q('&id_token_hint=' + urlEncode(this.m6b_1, idTokenHint));
           }
 
-          tmp_4.n6b_1 = this_0.toString();
+          tmp_4.t6b_1 = this_0.toString();
           this.i8_1 = 3;
-          suspendResult = this.g6b_1.u6a(this);
+          suspendResult = this.m6b_1.a6b(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 3:
-          this.k6b_1 = suspendResult;
+          this.q6b_1 = suspendResult;
           var tmp_5 = this;
-          var tmp_6 = this.k6b_1;
-          tmp_5.l6b_1 = tmp_6 instanceof Success_0;
+          var tmp_6 = this.q6b_1;
+          tmp_5.r6b_1 = tmp_6 instanceof Success_0;
           this.i8_1 = 4;
-          suspendResult = this.g6b_1.r6b().i5e(this.n6b_1, this.m6b_1, this);
+          suspendResult = this.m6b_1.x6b().m5e(this.t6b_1, this.s6b_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8162,10 +8273,10 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
           var logoutResult = suspendResult;
           var tmp_7;
           if (logoutResult instanceof Success_1) {
-            tmp_7 = new Success_0(this.l6b_1, true);
+            tmp_7 = new Success_0(this.r6b_1, true);
           } else {
             if (logoutResult instanceof Failure_1) {
-              tmp_7 = new Failure_0(this.l6b_1, true, logoutResult.p5w_1);
+              tmp_7 = new Failure_0(this.r6b_1, true, logoutResult.u5w_1);
             } else {
               noWhenBranchMatchedException();
             }
@@ -8175,51 +8286,57 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
         case 5:
           this.j8_1 = 8;
           var tmp_8 = this.l8_1;
-          if (tmp_8 instanceof Exception) {
-            this.i6b_1 = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(this.i6b_1, mapOf([to('operation', 'front_channel_logout'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(this.i6b_1).o())]), ErrorLevel_ERROR_getInstance());
-            var tmp4_safe_receiver = this.k6b_1;
-            var tmp_9;
-            if (tmp4_safe_receiver == null) {
-              tmp_9 = null;
-            } else {
-              tmp_9 = tmp4_safe_receiver instanceof Success_0;
-            }
-            var tmp5_elvis_lhs = tmp_9;
-            if (tmp5_elvis_lhs == null) {
-              this.i8_1 = 6;
-              suspendResult = this.g6b_1.u6a(this);
-              if (suspendResult === get_COROUTINE_SUSPENDED()) {
-                return suspendResult;
-              }
-              continue $sm;
-            } else {
-              this.j6b_1 = tmp5_elvis_lhs;
-              this.i8_1 = 7;
-              continue $sm;
-            }
+          if (tmp_8 instanceof CancellationException) {
+            var e = this.l8_1;
+            throw e;
           } else {
-            throw this.l8_1;
+            var tmp_9 = this.l8_1;
+            if (tmp_9 instanceof Exception) {
+              this.o6b_1 = this.l8_1;
+              ErrorHandlerRegistry_instance.e5g(this.o6b_1, mapOf([to('operation', 'front_channel_logout'), to('stage', 'unhandled_exception'), to('error_type', getKClassFromExpression(this.o6b_1).o())]), ErrorLevel_ERROR_getInstance());
+              var tmp4_safe_receiver = this.q6b_1;
+              var tmp_10;
+              if (tmp4_safe_receiver == null) {
+                tmp_10 = null;
+              } else {
+                tmp_10 = tmp4_safe_receiver instanceof Success_0;
+              }
+              var tmp5_elvis_lhs = tmp_10;
+              if (tmp5_elvis_lhs == null) {
+                this.i8_1 = 6;
+                suspendResult = this.m6b_1.a6b(this);
+                if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                  return suspendResult;
+                }
+                continue $sm;
+              } else {
+                this.p6b_1 = tmp5_elvis_lhs;
+                this.i8_1 = 7;
+                continue $sm;
+              }
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 6:
-          var tmp_10 = this;
-          tmp_10.j6b_1 = suspendResult instanceof Success_0;
+          var tmp_11 = this;
+          tmp_11.p6b_1 = suspendResult instanceof Success_0;
           this.i8_1 = 7;
           continue $sm;
         case 7:
-          var localCleared = this.j6b_1;
-          return new Failure_0(localCleared, true, new UnknownError(this.i6b_1));
+          var localCleared = this.p6b_1;
+          return new Failure_0(localCleared, true, new UnknownError(this.o6b_1));
         case 8:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e = $p;
+      var e_0 = $p;
       if (this.j8_1 === 8) {
-        throw e;
+        throw e_0;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e;
+        this.l8_1 = e_0;
       }
     }
    while (true);
@@ -8227,16 +8344,16 @@ protoOf($performFrontChannelLogoutCOROUTINE$).q8 = function () {
 function FrontChannelLogoutCapable() {
 }
 function emitLogoutStarted($this, logoutType) {
-  var timestamp = $this.y5d_1.s3f().f3v();
-  $this.x5d_1.c5z(new LogoutStarted(logoutType, timestamp));
+  var timestamp = $this.c5e_1.u3f().h3v();
+  $this.b5e_1.h5z(new LogoutStarted(logoutType, timestamp));
 }
 function emitLogoutResult($this, logoutType, result) {
-  var timestamp = $this.y5d_1.s3f().f3v();
+  var timestamp = $this.c5e_1.u3f().h3v();
   if (result instanceof Success_0) {
-    $this.x5d_1.c5z(new LogoutSuccess(logoutType, timestamp));
+    $this.b5e_1.h5z(new LogoutSuccess(logoutType, timestamp));
   } else {
     if (result instanceof Failure_0) {
-      $this.x5d_1.c5z(new LogoutFailure(result.z5k_1, timestamp));
+      $this.b5e_1.h5z(new LogoutFailure(result.d5l_1, timestamp));
     } else {
       noWhenBranchMatchedException();
     }
@@ -8252,11 +8369,11 @@ function notSupported($this, type) {
   return new Failure_0(false, false, new InvalidConfiguration(type + ' logout is not supported on this platform.'));
 }
 function LogoutHandler$performLocalLogout$slambda(this$0, resultContinuation) {
-  this.l6c_1 = this$0;
+  this.r6c_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(LogoutHandler$performLocalLogout$slambda).m6c = function ($completion) {
-  var tmp = this.n6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda).s6c = function ($completion) {
+  var tmp = this.t6c($completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   var tmp_0 = tmp.q8();
@@ -8264,8 +8381,8 @@ protoOf(LogoutHandler$performLocalLogout$slambda).m6c = function ($completion) {
     return tmp_0;
   return tmp_0;
 };
-protoOf(LogoutHandler$performLocalLogout$slambda).o6c = function ($completion) {
-  return this.m6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda).u6c = function ($completion) {
+  return this.s6c($completion);
 };
 protoOf(LogoutHandler$performLocalLogout$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8276,7 +8393,7 @@ protoOf(LogoutHandler$performLocalLogout$slambda).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.l6c_1.q6b().p6c(this);
+          suspendResult = this.r6c_1.w6b().v6c(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8304,23 +8421,23 @@ protoOf(LogoutHandler$performLocalLogout$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(LogoutHandler$performLocalLogout$slambda).n6c = function (completion) {
-  return new LogoutHandler$performLocalLogout$slambda(this.l6c_1, completion);
+protoOf(LogoutHandler$performLocalLogout$slambda).t6c = function (completion) {
+  return new LogoutHandler$performLocalLogout$slambda(this.r6c_1, completion);
 };
 function LogoutHandler$performLocalLogout$slambda_0(this$0, resultContinuation) {
   var i = new LogoutHandler$performLocalLogout$slambda(this$0, resultContinuation);
   var l = function ($completion) {
-    return i.m6c($completion);
+    return i.s6c($completion);
   };
   l.$arity = 0;
   return l;
 }
 function LogoutHandler$performLocalLogout$slambda_1(this$0, resultContinuation) {
-  this.y6c_1 = this$0;
+  this.e6d_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(LogoutHandler$performLocalLogout$slambda_1).m6c = function ($completion) {
-  var tmp = this.n6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_1).s6c = function ($completion) {
+  var tmp = this.t6c($completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   var tmp_0 = tmp.q8();
@@ -8328,8 +8445,8 @@ protoOf(LogoutHandler$performLocalLogout$slambda_1).m6c = function ($completion)
     return tmp_0;
   return tmp_0;
 };
-protoOf(LogoutHandler$performLocalLogout$slambda_1).o6c = function ($completion) {
-  return this.m6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_1).u6c = function ($completion) {
+  return this.s6c($completion);
 };
 protoOf(LogoutHandler$performLocalLogout$slambda_1).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8340,7 +8457,7 @@ protoOf(LogoutHandler$performLocalLogout$slambda_1).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.y6c_1.q6b().z6c(this);
+          suspendResult = this.e6d_1.w6b().f6d(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8368,23 +8485,23 @@ protoOf(LogoutHandler$performLocalLogout$slambda_1).q8 = function () {
     }
    while (true);
 };
-protoOf(LogoutHandler$performLocalLogout$slambda_1).n6c = function (completion) {
-  return new LogoutHandler$performLocalLogout$slambda_1(this.y6c_1, completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_1).t6c = function (completion) {
+  return new LogoutHandler$performLocalLogout$slambda_1(this.e6d_1, completion);
 };
 function LogoutHandler$performLocalLogout$slambda_2(this$0, resultContinuation) {
   var i = new LogoutHandler$performLocalLogout$slambda_1(this$0, resultContinuation);
   var l = function ($completion) {
-    return i.m6c($completion);
+    return i.s6c($completion);
   };
   l.$arity = 0;
   return l;
 }
 function LogoutHandler$performLocalLogout$slambda_3(this$0, resultContinuation) {
-  this.i6d_1 = this$0;
+  this.o6d_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(LogoutHandler$performLocalLogout$slambda_3).m6c = function ($completion) {
-  var tmp = this.n6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_3).s6c = function ($completion) {
+  var tmp = this.t6c($completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   var tmp_0 = tmp.q8();
@@ -8392,8 +8509,8 @@ protoOf(LogoutHandler$performLocalLogout$slambda_3).m6c = function ($completion)
     return tmp_0;
   return tmp_0;
 };
-protoOf(LogoutHandler$performLocalLogout$slambda_3).o6c = function ($completion) {
-  return this.m6c($completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_3).u6c = function ($completion) {
+  return this.s6c($completion);
 };
 protoOf(LogoutHandler$performLocalLogout$slambda_3).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8404,7 +8521,7 @@ protoOf(LogoutHandler$performLocalLogout$slambda_3).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.i8_1 = 1;
-          suspendResult = this.i6d_1.q6b().m5z(this);
+          suspendResult = this.o6d_1.w6b().r5z(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8432,21 +8549,21 @@ protoOf(LogoutHandler$performLocalLogout$slambda_3).q8 = function () {
     }
    while (true);
 };
-protoOf(LogoutHandler$performLocalLogout$slambda_3).n6c = function (completion) {
-  return new LogoutHandler$performLocalLogout$slambda_3(this.i6d_1, completion);
+protoOf(LogoutHandler$performLocalLogout$slambda_3).t6c = function (completion) {
+  return new LogoutHandler$performLocalLogout$slambda_3(this.o6d_1, completion);
 };
 function LogoutHandler$performLocalLogout$slambda_4(this$0, resultContinuation) {
   var i = new LogoutHandler$performLocalLogout$slambda_3(this$0, resultContinuation);
   var l = function ($completion) {
-    return i.m6c($completion);
+    return i.s6c($completion);
   };
   l.$arity = 0;
   return l;
 }
 function $logoutCOROUTINE$(_this__u8e3s4, logoutType, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.r6d_1 = _this__u8e3s4;
-  this.s6d_1 = logoutType;
+  this.x6d_1 = _this__u8e3s4;
+  this.y6d_1 = logoutType;
 }
 protoOf($logoutCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8455,88 +8572,140 @@ protoOf($logoutCOROUTINE$).q8 = function () {
       var tmp = this.i8_1;
       switch (tmp) {
         case 0:
-          this.j8_1 = 7;
-          emitLogoutStarted(this.r6d_1, this.s6d_1);
-          var tmp0_subject = this.s6d_1;
+          this.j8_1 = 11;
+          emitLogoutStarted(this.x6d_1, this.y6d_1);
+          var tmp0_subject = this.y6d_1;
           if (tmp0_subject instanceof LocalOnly) {
-            this.i8_1 = 5;
-            suspendResult = this.r6d_1.u6a(this);
+            this.i8_1 = 9;
+            suspendResult = this.x6d_1.a6b(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
             if (tmp0_subject instanceof FrontChannel) {
-              var tmp_0 = this.r6d_1;
+              var tmp_0 = this.x6d_1;
               var tmp1_safe_receiver = isInterface(tmp_0, FrontChannelLogoutCapable) ? tmp_0 : null;
               if (tmp1_safe_receiver == null) {
-                this.u6d_1 = null;
-                this.i8_1 = 4;
+                this.a6e_1 = null;
+                this.i8_1 = 8;
                 continue $sm;
               } else {
-                this.i8_1 = 3;
-                suspendResult = tmp1_safe_receiver.s6b(this.s6d_1, this);
+                this.i8_1 = 7;
+                suspendResult = tmp1_safe_receiver.y6b(this.y6d_1, this);
                 if (suspendResult === get_COROUTINE_SUSPENDED()) {
                   return suspendResult;
                 }
                 continue $sm;
               }
             } else {
-              if (tmp0_subject instanceof BackChannel) {
-                var tmp_1 = this.r6d_1;
-                var tmp3_safe_receiver = isInterface(tmp_1, BackChannelLogoutCapable) ? tmp_1 : null;
+              if (tmp0_subject instanceof DeviceOnly) {
+                var tmp_1 = this.x6d_1;
+                var tmp3_safe_receiver = isInterface(tmp_1, SilentLogoutCapable) ? tmp_1 : null;
                 if (tmp3_safe_receiver == null) {
-                  this.v6d_1 = null;
-                  this.i8_1 = 2;
+                  this.b6e_1 = null;
+                  this.i8_1 = 6;
                   continue $sm;
                 } else {
-                  this.i8_1 = 1;
-                  suspendResult = tmp3_safe_receiver.x6a(this.s6d_1, this);
+                  this.i8_1 = 5;
+                  suspendResult = tmp3_safe_receiver.f6e(this);
                   if (suspendResult === get_COROUTINE_SUSPENDED()) {
                     return suspendResult;
                   }
                   continue $sm;
                 }
               } else {
-                var tmp_2 = this;
-                noWhenBranchMatchedException();
+                if (tmp0_subject instanceof Silent) {
+                  var tmp_2 = this.x6d_1;
+                  var tmp5_safe_receiver = isInterface(tmp_2, SilentLogoutCapable) ? tmp_2 : null;
+                  if (tmp5_safe_receiver == null) {
+                    this.c6e_1 = null;
+                    this.i8_1 = 4;
+                    continue $sm;
+                  } else {
+                    this.i8_1 = 3;
+                    suspendResult = tmp5_safe_receiver.e6e(this.y6d_1, this);
+                    if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                      return suspendResult;
+                    }
+                    continue $sm;
+                  }
+                } else {
+                  if (tmp0_subject instanceof BackChannel) {
+                    var tmp_3 = this.x6d_1;
+                    var tmp7_safe_receiver = isInterface(tmp_3, BackChannelLogoutCapable) ? tmp_3 : null;
+                    if (tmp7_safe_receiver == null) {
+                      this.d6e_1 = null;
+                      this.i8_1 = 2;
+                      continue $sm;
+                    } else {
+                      this.i8_1 = 1;
+                      suspendResult = tmp7_safe_receiver.d6b(this.y6d_1, this);
+                      if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                        return suspendResult;
+                      }
+                      continue $sm;
+                    }
+                  } else {
+                    var tmp_4 = this;
+                    noWhenBranchMatchedException();
+                  }
+                }
               }
             }
           }
 
           break;
         case 1:
-          this.v6d_1 = suspendResult;
+          this.d6e_1 = suspendResult;
           this.i8_1 = 2;
           continue $sm;
         case 2:
-          var tmp4_elvis_lhs = this.v6d_1;
-          this.t6d_1 = tmp4_elvis_lhs == null ? notSupported(this.r6d_1, 'BackChannel') : tmp4_elvis_lhs;
-          this.i8_1 = 6;
+          var tmp8_elvis_lhs = this.d6e_1;
+          this.z6d_1 = tmp8_elvis_lhs == null ? notSupported(this.x6d_1, 'BackChannel') : tmp8_elvis_lhs;
+          this.i8_1 = 10;
           continue $sm;
         case 3:
-          this.u6d_1 = suspendResult;
+          this.c6e_1 = suspendResult;
           this.i8_1 = 4;
           continue $sm;
         case 4:
-          var tmp2_elvis_lhs = this.u6d_1;
-          this.t6d_1 = tmp2_elvis_lhs == null ? notSupported(this.r6d_1, 'FrontChannel') : tmp2_elvis_lhs;
-          this.i8_1 = 6;
+          var tmp6_elvis_lhs = this.c6e_1;
+          this.z6d_1 = tmp6_elvis_lhs == null ? notSupported(this.x6d_1, 'Silent') : tmp6_elvis_lhs;
+          this.i8_1 = 10;
           continue $sm;
         case 5:
-          this.t6d_1 = suspendResult;
+          this.b6e_1 = suspendResult;
           this.i8_1 = 6;
           continue $sm;
         case 6:
-          var result = this.t6d_1;
-          emitLogoutResult(this.r6d_1, this.s6d_1, result);
-          return result;
+          var tmp4_elvis_lhs = this.b6e_1;
+          this.z6d_1 = tmp4_elvis_lhs == null ? notSupported(this.x6d_1, 'DeviceOnly') : tmp4_elvis_lhs;
+          this.i8_1 = 10;
+          continue $sm;
         case 7:
+          this.a6e_1 = suspendResult;
+          this.i8_1 = 8;
+          continue $sm;
+        case 8:
+          var tmp2_elvis_lhs = this.a6e_1;
+          this.z6d_1 = tmp2_elvis_lhs == null ? notSupported(this.x6d_1, 'FrontChannel') : tmp2_elvis_lhs;
+          this.i8_1 = 10;
+          continue $sm;
+        case 9:
+          this.z6d_1 = suspendResult;
+          this.i8_1 = 10;
+          continue $sm;
+        case 10:
+          var result = this.z6d_1;
+          emitLogoutResult(this.x6d_1, this.y6d_1, result);
+          return result;
+        case 11:
           throw this.l8_1;
       }
     } catch ($p) {
       var e = $p;
-      if (this.j8_1 === 7) {
+      if (this.j8_1 === 11) {
         throw e;
       } else {
         this.i8_1 = this.j8_1;
@@ -8547,7 +8716,7 @@ protoOf($logoutCOROUTINE$).q8 = function () {
 };
 function $performLocalLogoutCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.e6e_1 = _this__u8e3s4;
+  this.o6e_1 = _this__u8e3s4;
 }
 protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8558,7 +8727,7 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 6;
           this.i8_1 = 1;
-          suspendResult = this.e6e_1.q6b().l5z(this);
+          suspendResult = this.o6e_1.w6b().q5z(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8571,9 +8740,9 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
           this.i8_1 = 2;
           continue $sm;
         case 2:
-          this.f6e_1 = suspendResult.sj_1;
+          this.p6e_1 = suspendResult.sj_1;
           this.i8_1 = 3;
-          suspendResult = bestEffortClear(this.e6e_1, LogoutHandler$performLocalLogout$slambda_0(this.e6e_1, null), this);
+          suspendResult = bestEffortClear(this.o6e_1, LogoutHandler$performLocalLogout$slambda_0(this.o6e_1, null), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8581,7 +8750,7 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
           continue $sm;
         case 3:
           this.i8_1 = 4;
-          suspendResult = bestEffortClear(this.e6e_1, LogoutHandler$performLocalLogout$slambda_2(this.e6e_1, null), this);
+          suspendResult = bestEffortClear(this.o6e_1, LogoutHandler$performLocalLogout$slambda_2(this.o6e_1, null), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8589,7 +8758,7 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
           continue $sm;
         case 4:
           this.i8_1 = 5;
-          suspendResult = bestEffortClear(this.e6e_1, LogoutHandler$performLocalLogout$slambda_4(this.e6e_1, null), this);
+          suspendResult = bestEffortClear(this.o6e_1, LogoutHandler$performLocalLogout$slambda_4(this.o6e_1, null), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8597,15 +8766,15 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
           continue $sm;
         case 5:
           var tmp_0;
-          if (_Result___get_isSuccess__impl__sndoy8(this.f6e_1)) {
-            var timestamp = this.e6e_1.y5d_1.s3f().f3v();
-            this.e6e_1.x5d_1.c5z(new TokensCleared('logout', timestamp));
+          if (_Result___get_isSuccess__impl__sndoy8(this.p6e_1)) {
+            var timestamp = this.o6e_1.c5e_1.u3f().h3v();
+            this.o6e_1.b5e_1.h5z(new TokensCleared('logout', timestamp));
             tmp_0 = new Success_0(true, false);
           } else {
-            var tmp0_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(this.f6e_1);
+            var tmp0_elvis_lhs = Result__exceptionOrNull_impl_p6xea9(this.p6e_1);
             var storageException = tmp0_elvis_lhs == null ? Exception_init_$Create$('Failed to clear local tokens') : tmp0_elvis_lhs;
             var storageError = new UnknownError(storageException);
-            this.e6e_1.x5d_1.c5z(new StorageError(StorageOperation_CLEAR_getInstance(), storageError, this.e6e_1.y5d_1.s3f().f3v()));
+            this.o6e_1.b5e_1.h5z(new StorageError(StorageOperation_CLEAR_getInstance(), storageError, this.o6e_1.c5e_1.u3f().h3v()));
             tmp_0 = new Failure_0(false, false, storageError);
           }
 
@@ -8626,8 +8795,8 @@ protoOf($performLocalLogoutCOROUTINE$).q8 = function () {
 };
 function $bestEffortClearCOROUTINE$(_this__u8e3s4, clear, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.b6c_1 = _this__u8e3s4;
-  this.c6c_1 = clear;
+  this.h6c_1 = _this__u8e3s4;
+  this.i6c_1 = clear;
 }
 protoOf($bestEffortClearCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8639,7 +8808,7 @@ protoOf($bestEffortClearCOROUTINE$).q8 = function () {
           this.j8_1 = 3;
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.c6c_1(this);
+          suspendResult = this.i6c_1(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8690,67 +8859,1002 @@ protoOf($bestEffortClearCOROUTINE$).q8 = function () {
 };
 function LogoutHandler(tokenStorage, eventEmitter, clock) {
   clock = clock === VOID ? System_instance : clock;
-  this.w5d_1 = tokenStorage;
-  this.x5d_1 = eventEmitter;
-  this.y5d_1 = clock;
+  this.a5e_1 = tokenStorage;
+  this.b5e_1 = eventEmitter;
+  this.c5e_1 = clock;
 }
-protoOf(LogoutHandler).q6b = function () {
-  return this.w5d_1;
+protoOf(LogoutHandler).w6b = function () {
+  return this.a5e_1;
 };
-protoOf(LogoutHandler).g5c = function (logoutType, $completion) {
+protoOf(LogoutHandler).k5c = function (logoutType, $completion) {
   var tmp = new $logoutCOROUTINE$(this, logoutType, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(LogoutHandler).u6a = function ($completion) {
+protoOf(LogoutHandler).a6b = function ($completion) {
   var tmp = new $performLocalLogoutCOROUTINE$(this, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
+function SilentServerLogoutOutcome(attempted, terminated, error) {
+  this.q6e_1 = attempted;
+  this.r6e_1 = terminated;
+  this.s6e_1 = error;
+}
+protoOf(SilentServerLogoutOutcome).t6e = function (attempted, terminated, error) {
+  return new SilentServerLogoutOutcome(attempted, terminated, error);
+};
+protoOf(SilentServerLogoutOutcome).u6e = function (attempted, terminated, error, $super) {
+  attempted = attempted === VOID ? this.q6e_1 : attempted;
+  terminated = terminated === VOID ? this.r6e_1 : terminated;
+  error = error === VOID ? this.s6e_1 : error;
+  return $super === VOID ? this.t6e(attempted, terminated, error) : $super.t6e.call(this, attempted, terminated, error);
+};
+protoOf(SilentServerLogoutOutcome).toString = function () {
+  return 'SilentServerLogoutOutcome(attempted=' + this.q6e_1 + ', terminated=' + this.r6e_1 + ', error=' + toString_0(this.s6e_1) + ')';
+};
+protoOf(SilentServerLogoutOutcome).hashCode = function () {
+  var result = getBooleanHashCode(this.q6e_1);
+  result = imul(result, 31) + getBooleanHashCode(this.r6e_1) | 0;
+  result = imul(result, 31) + (this.s6e_1 == null ? 0 : hashCode(this.s6e_1)) | 0;
+  return result;
+};
+protoOf(SilentServerLogoutOutcome).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof SilentServerLogoutOutcome))
+    return false;
+  if (!(this.q6e_1 === other.q6e_1))
+    return false;
+  if (!(this.r6e_1 === other.r6e_1))
+    return false;
+  if (!equals(this.s6e_1, other.s6e_1))
+    return false;
+  return true;
+};
+function clearLocallyAndCombine($this, server, $completion) {
+  var tmp = new $clearLocallyAndCombineCOROUTINE$($this, server, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function runCatchingServerLogout($this, operation, serverHalf, $completion) {
+  var tmp = new $runCatchingServerLogoutCOROUTINE$($this, operation, serverHalf, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function silentServerLogout($this, type, $completion) {
+  var tmp = new $silentServerLogoutCOROUTINE$($this, type, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function endSession($this, openIdConfig, idTokenHint, accessTokenHint, $completion) {
+  var tmp = new $endSessionCOROUTINE$($this, openIdConfig, idTokenHint, accessTokenHint, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function deviceServerLogout($this, $completion) {
+  var tmp = new $deviceServerLogoutCOROUTINE$($this, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function revokeBestEffort($this, openIdConfig, target, $completion) {
+  var tmp = new $revokeBestEffortCOROUTINE$($this, openIdConfig, target, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+}
+function isExpectedRevocationRejection($this, _this__u8e3s4) {
+  var tmp;
+  if (_this__u8e3s4 instanceof HttpError) {
+    tmp = Companion_getInstance_11().s6h_1.e2(_this__u8e3s4.d5q_1);
+  } else {
+    tmp = false;
+  }
+  return tmp;
+}
+function Companion_3() {
+  Companion_instance_5 = this;
+  this.s6h_1 = setOf([400, 401, 403]);
+}
+var Companion_instance_5;
+function Companion_getInstance_11() {
+  if (Companion_instance_5 == null)
+    new Companion_3();
+  return Companion_instance_5;
+}
+function SilentLogoutCapable$performSilentLogout$slambda(this$0, $type, resultContinuation) {
+  this.b6i_1 = this$0;
+  this.c6i_1 = $type;
+  CoroutineImpl.call(this, resultContinuation);
+}
+protoOf(SilentLogoutCapable$performSilentLogout$slambda).d6i = function ($completion) {
+  var tmp = this.t6c($completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SilentLogoutCapable$performSilentLogout$slambda).u6c = function ($completion) {
+  return this.d6i($completion);
+};
+protoOf(SilentLogoutCapable$performSilentLogout$slambda).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = silentServerLogout(this.b6i_1, this.c6i_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          return suspendResult;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+protoOf(SilentLogoutCapable$performSilentLogout$slambda).t6c = function (completion) {
+  return new SilentLogoutCapable$performSilentLogout$slambda(this.b6i_1, this.c6i_1, completion);
+};
+function SilentLogoutCapable$performSilentLogout$slambda_0(this$0, $type, resultContinuation) {
+  var i = new SilentLogoutCapable$performSilentLogout$slambda(this$0, $type, resultContinuation);
+  var l = function ($completion) {
+    return i.d6i($completion);
+  };
+  l.$arity = 0;
+  return l;
+}
+function SilentLogoutCapable$performDeviceOnlyLogout$slambda(this$0, resultContinuation) {
+  this.m6i_1 = this$0;
+  CoroutineImpl.call(this, resultContinuation);
+}
+protoOf(SilentLogoutCapable$performDeviceOnlyLogout$slambda).d6i = function ($completion) {
+  var tmp = this.t6c($completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SilentLogoutCapable$performDeviceOnlyLogout$slambda).u6c = function ($completion) {
+  return this.d6i($completion);
+};
+protoOf(SilentLogoutCapable$performDeviceOnlyLogout$slambda).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = deviceServerLogout(this.m6i_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          return suspendResult;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+protoOf(SilentLogoutCapable$performDeviceOnlyLogout$slambda).t6c = function (completion) {
+  return new SilentLogoutCapable$performDeviceOnlyLogout$slambda(this.m6i_1, completion);
+};
+function SilentLogoutCapable$performDeviceOnlyLogout$slambda_0(this$0, resultContinuation) {
+  var i = new SilentLogoutCapable$performDeviceOnlyLogout$slambda(this$0, resultContinuation);
+  var l = function ($completion) {
+    return i.d6i($completion);
+  };
+  l.$arity = 0;
+  return l;
+}
+function SilentLogoutCapable$silentServerLogout$lambda() {
+  return 'Silent logout: no stored tokens, skipping discovery and the server calls';
+}
+function SilentLogoutCapable$silentServerLogout$lambda_0() {
+  return 'Silent logout: no stored token hint, skipping end_session';
+}
+function SilentLogoutCapable$deviceServerLogout$lambda() {
+  return 'Device-only logout: no stored token, nothing to revoke';
+}
+function SilentLogoutCapable$revokeBestEffort$lambda() {
+  return 'Silent logout: skipping revocation (no revocation_endpoint or no revocable token)';
+}
+function SilentLogoutCapable$revokeBestEffort$lambda_0() {
+  return 'Silent logout: token revocation failed (best effort, logout continues)';
+}
+function $performSilentLogoutCOROUTINE$(_this__u8e3s4, type, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.v6i_1 = _this__u8e3s4;
+  this.w6i_1 = type;
+}
+protoOf($performSilentLogoutCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 3;
+          this.i8_1 = 1;
+          suspendResult = runCatchingServerLogout(this.v6i_1, 'silent_logout', SilentLogoutCapable$performSilentLogout$slambda_0(this.v6i_1, this.w6i_1, null), this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var ARGUMENT = suspendResult;
+          this.i8_1 = 2;
+          suspendResult = clearLocallyAndCombine(this.v6i_1, ARGUMENT, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 2:
+          return suspendResult;
+        case 3:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 3) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $performDeviceOnlyLogoutCOROUTINE$(_this__u8e3s4, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.f6j_1 = _this__u8e3s4;
+}
+protoOf($performDeviceOnlyLogoutCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 3;
+          this.i8_1 = 1;
+          suspendResult = runCatchingServerLogout(this.f6j_1, 'device_only_logout', SilentLogoutCapable$performDeviceOnlyLogout$slambda_0(this.f6j_1, null), this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var ARGUMENT = suspendResult;
+          this.i8_1 = 2;
+          suspendResult = clearLocallyAndCombine(this.f6j_1, ARGUMENT, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 2:
+          return suspendResult;
+        case 3:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 3) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $clearLocallyAndCombineCOROUTINE$(_this__u8e3s4, server, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.d6f_1 = _this__u8e3s4;
+  this.e6f_1 = server;
+}
+protoOf($clearLocallyAndCombineCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = this.d6f_1.a6b(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var local = suspendResult;
+          var cleared = local instanceof Success_0;
+          var tmp_0;
+          if (!(this.e6f_1.s6e_1 == null)) {
+            tmp_0 = new Failure_0(cleared, this.e6f_1.q6e_1, this.e6f_1.s6e_1);
+          } else {
+            if (local instanceof Failure_0) {
+              tmp_0 = new Failure_0(false, this.e6f_1.q6e_1, local.d5l_1);
+            } else {
+              tmp_0 = new Success_0(cleared, this.e6f_1.r6e_1);
+            }
+          }
+
+          return tmp_0;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $runCatchingServerLogoutCOROUTINE$(_this__u8e3s4, operation, serverHalf, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.n6f_1 = _this__u8e3s4;
+  this.o6f_1 = operation;
+  this.p6f_1 = serverHalf;
+}
+protoOf($runCatchingServerLogoutCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 3;
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = this.p6f_1(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          this.q6f_1 = suspendResult;
+          this.j8_1 = 3;
+          this.i8_1 = 4;
+          continue $sm;
+        case 2:
+          this.j8_1 = 3;
+          var tmp_0 = this.l8_1;
+          if (tmp_0 instanceof CancellationException) {
+            var e = this.l8_1;
+            var tmp_1 = this;
+            throw e;
+          } else {
+            var tmp_2 = this.l8_1;
+            if (tmp_2 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_3 = this;
+              var tmp_4 = ErrorHandlerRegistry_instance;
+              var tmp_5 = to('operation', this.o6f_1);
+              var tmp_6 = to('stage', 'unhandled_exception');
+              var tmp0_elvis_lhs = getKClassFromExpression(e_0).o();
+              tmp_4.e5g(e_0, mapOf([tmp_5, tmp_6, to('error_type', tmp0_elvis_lhs == null ? 'Unknown' : tmp0_elvis_lhs)]), ErrorLevel_ERROR_getInstance());
+              tmp_3.q6f_1 = new SilentServerLogoutOutcome(true, false, new UnknownError(e_0));
+              this.i8_1 = 4;
+              continue $sm;
+            } else {
+              throw this.l8_1;
+            }
+          }
+
+        case 3:
+          throw this.l8_1;
+        case 4:
+          this.j8_1 = 3;
+          return this.q6f_1;
+      }
+    } catch ($p) {
+      var e_1 = $p;
+      if (this.j8_1 === 3) {
+        throw e_1;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e_1;
+      }
+    }
+   while (true);
+};
+function $silentServerLogoutCOROUTINE$(_this__u8e3s4, type, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.z6f_1 = _this__u8e3s4;
+  this.a6g_1 = type;
+}
+protoOf($silentServerLogoutCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 11;
+          this.i8_1 = 1;
+          suspendResult = this.z6f_1.w6b().x5o(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          this.j6g_1 = suspendResult;
+          if (!hasServerWorkFor(this.j6g_1, this.a6g_1)) {
+            var tmp_0 = SdkLogger_getInstance();
+            var tmp_1 = LogCategory_AUTHENTICATION_getInstance();
+            tmp_0.r5a(tmp_1, VOID, VOID, SilentLogoutCapable$silentServerLogout$lambda);
+            return new SilentServerLogoutOutcome(false, false, null);
+          }
+
+          this.i8_1 = 2;
+          suspendResult = this.z6f_1.w6a().t5w(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 2:
+          var configResult = suspendResult;
+          if (configResult instanceof Failure_1) {
+            return new SilentServerLogoutOutcome(false, false, configResult.u5w_1);
+          }
+
+          var tmp_2 = this;
+          tmp_2.e6g_1 = (configResult instanceof Success_1 ? configResult : THROW_CCE()).v5w_1;
+          var tmp_3 = this;
+          var tmp0_safe_receiver = this.j6g_1;
+          var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.v5t_1;
+          var tmp_4;
+          if (tmp1_safe_receiver == null) {
+            tmp_4 = null;
+          } else {
+            var tmp_5;
+            if (!isBlank(tmp1_safe_receiver)) {
+              tmp_5 = tmp1_safe_receiver;
+            } else {
+              tmp_5 = null;
+            }
+            tmp_4 = tmp_5;
+          }
+
+          tmp_3.h6g_1 = tmp_4;
+          var tmp_6 = this;
+          var tmp2_safe_receiver = this.j6g_1;
+          var tmp3_safe_receiver = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.t5t_1;
+          var tmp_7;
+          if (tmp3_safe_receiver == null) {
+            tmp_7 = null;
+          } else {
+            var tmp_8;
+            if (!isBlank(tmp3_safe_receiver)) {
+              tmp_8 = tmp3_safe_receiver;
+            } else {
+              tmp_8 = null;
+            }
+            tmp_7 = tmp_8;
+          }
+
+          tmp_6.g6g_1 = tmp_7;
+          this.d6g_1 = this.a6g_1.g6j_1 ? revocationTargetForSilent(this.j6g_1) : null;
+          this.f6g_1 = this.h6g_1 == null;
+          if (!(this.d6g_1 == null) && !this.f6g_1) {
+            this.i8_1 = 3;
+            suspendResult = revokeBestEffort(this.z6f_1, this.e6g_1, this.d6g_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+            continue $sm;
+          } else {
+            var tmp_9 = this;
+            tmp_9.i6g_1 = false;
+            this.i8_1 = 4;
+            continue $sm;
+          }
+
+        case 3:
+          this.i6g_1 = suspendResult;
+          this.i8_1 = 4;
+          continue $sm;
+        case 4:
+          this.b6g_1 = this.i6g_1;
+          if (this.h6g_1 == null && this.g6g_1 == null) {
+            var tmp_10 = SdkLogger_getInstance();
+            var tmp_11 = LogCategory_AUTHENTICATION_getInstance();
+            tmp_10.r5a(tmp_11, VOID, VOID, SilentLogoutCapable$silentServerLogout$lambda_0);
+            if (!(this.d6g_1 == null) && this.f6g_1) {
+              this.i8_1 = 9;
+              suspendResult = revokeBestEffort(this.z6f_1, this.e6g_1, this.d6g_1, this);
+              if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                return suspendResult;
+              }
+              continue $sm;
+            } else {
+              this.i8_1 = 10;
+              continue $sm;
+            }
+          } else {
+            this.i8_1 = 5;
+            continue $sm;
+          }
+
+        case 5:
+          this.i8_1 = 6;
+          suspendResult = endSession(this.z6f_1, this.e6g_1, this.h6g_1, this.g6g_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 6:
+          this.c6g_1 = suspendResult;
+          if (!(this.d6g_1 == null) && this.f6g_1) {
+            this.i8_1 = 7;
+            suspendResult = revokeBestEffort(this.z6f_1, this.e6g_1, this.d6g_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+            continue $sm;
+          } else {
+            this.i8_1 = 8;
+            continue $sm;
+          }
+
+        case 7:
+          this.b6g_1 = suspendResult;
+          this.i8_1 = 8;
+          continue $sm;
+        case 8:
+          return this.c6g_1.u6e(this.c6g_1.q6e_1 || this.b6g_1);
+        case 9:
+          this.b6g_1 = suspendResult;
+          this.i8_1 = 10;
+          continue $sm;
+        case 10:
+          return new SilentServerLogoutOutcome(this.b6g_1, false, null);
+        case 11:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 11) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $endSessionCOROUTINE$(_this__u8e3s4, openIdConfig, idTokenHint, accessTokenHint, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.s6g_1 = _this__u8e3s4;
+  this.t6g_1 = openIdConfig;
+  this.u6g_1 = idTokenHint;
+  this.v6g_1 = accessTokenHint;
+}
+protoOf($endSessionCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          var endSessionEndpoint = this.t6g_1.h5y_1;
+          if (endSessionEndpoint == null || isBlank(endSessionEndpoint)) {
+            return new SilentServerLogoutOutcome(false, false, new InvalidConfiguration('Silent logout requires the provider to advertise an end_session_endpoint.'));
+          }
+
+          this.i8_1 = 1;
+          suspendResult = this.s6g_1.h6j().i6j(endSessionEndpoint, this.u6g_1, this.v6g_1, this.s6g_1.z3z().s5a_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var result = suspendResult;
+          var tmp_0;
+          if (result instanceof Success_1) {
+            tmp_0 = new SilentServerLogoutOutcome(true, true, null);
+          } else {
+            if (result instanceof Failure_1) {
+              tmp_0 = new SilentServerLogoutOutcome(true, false, result.u5w_1);
+            } else {
+              noWhenBranchMatchedException();
+            }
+          }
+
+          return tmp_0;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $deviceServerLogoutCOROUTINE$(_this__u8e3s4, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.e6h_1 = _this__u8e3s4;
+}
+protoOf($deviceServerLogoutCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 4;
+          this.i8_1 = 1;
+          suspendResult = this.e6h_1.w6b().x5o(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var tokens = suspendResult;
+          var tmp1_safe_receiver = tokens == null ? null : tokens.u5t_1;
+          var tmp_0;
+          if (tmp1_safe_receiver == null) {
+            tmp_0 = null;
+          } else {
+            var tmp_1;
+            if (!isBlank(tmp1_safe_receiver)) {
+              tmp_1 = tmp1_safe_receiver;
+            } else {
+              tmp_1 = null;
+            }
+            tmp_0 = tmp_1;
+          }
+
+          var tmp2_safe_receiver = tmp_0;
+          var tmp_2;
+          if (tmp2_safe_receiver == null) {
+            tmp_2 = null;
+          } else {
+            tmp_2 = to(tmp2_safe_receiver, 'refresh_token');
+          }
+
+          var tmp3_elvis_lhs = tmp_2;
+          var tmp_3;
+          if (tmp3_elvis_lhs == null) {
+            var tmp5_safe_receiver = tokens == null ? null : tokens.t5t_1;
+            var tmp_4;
+            if (tmp5_safe_receiver == null) {
+              tmp_4 = null;
+            } else {
+              var tmp_5;
+              if (!isBlank(tmp5_safe_receiver)) {
+                tmp_5 = tmp5_safe_receiver;
+              } else {
+                tmp_5 = null;
+              }
+              tmp_4 = tmp_5;
+            }
+            var tmp6_safe_receiver = tmp_4;
+            var tmp_6;
+            if (tmp6_safe_receiver == null) {
+              tmp_6 = null;
+            } else {
+              tmp_6 = to(tmp6_safe_receiver, 'access_token');
+            }
+            tmp_3 = tmp_6;
+          } else {
+            tmp_3 = tmp3_elvis_lhs;
+          }
+
+          var revocable = tmp_3;
+          if (revocable == null) {
+            var tmp_7 = SdkLogger_getInstance();
+            var tmp_8 = LogCategory_AUTHENTICATION_getInstance();
+            tmp_7.r5a(tmp_8, VOID, VOID, SilentLogoutCapable$deviceServerLogout$lambda);
+            return new SilentServerLogoutOutcome(false, false, null);
+          }
+
+          this.g6h_1 = revocable.re();
+          this.f6h_1 = revocable.se();
+          this.i8_1 = 2;
+          suspendResult = this.e6h_1.w6a().t5w(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 2:
+          var configResult = suspendResult;
+          if (configResult instanceof Failure_1) {
+            return new SilentServerLogoutOutcome(false, false, configResult.u5w_1);
+          }
+
+          var openIdConfig = (configResult instanceof Success_1 ? configResult : THROW_CCE()).v5w_1;
+          var revocationEndpoint = openIdConfig.i5y_1;
+          if (revocationEndpoint == null || isBlank(revocationEndpoint)) {
+            return new SilentServerLogoutOutcome(false, false, new InvalidConfiguration('Device-only logout requires the provider to advertise a revocation_endpoint.'));
+          }
+
+          this.i8_1 = 3;
+          suspendResult = this.e6h_1.h6j().j6j(revocationEndpoint, this.g6h_1, this.f6h_1, this.e6h_1.z3z().s5a_1, this.e6h_1.z3z().b5b_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 3:
+          var result = suspendResult;
+          var tmp_9;
+          if (result instanceof Success_1) {
+            tmp_9 = new SilentServerLogoutOutcome(true, true, null);
+          } else {
+            if (result instanceof Failure_1) {
+              tmp_9 = new SilentServerLogoutOutcome(true, false, result.u5w_1);
+            } else {
+              noWhenBranchMatchedException();
+            }
+          }
+
+          return tmp_9;
+        case 4:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 4) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function $revokeBestEffortCOROUTINE$(_this__u8e3s4, openIdConfig, target, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.p6h_1 = _this__u8e3s4;
+  this.q6h_1 = openIdConfig;
+  this.r6h_1 = target;
+}
+protoOf($revokeBestEffortCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          var revocationEndpoint = this.q6h_1.i5y_1;
+          var tmp_0;
+          if (revocationEndpoint == null || isBlank(revocationEndpoint)) {
+            tmp_0 = true;
+          } else {
+            tmp_0 = this.r6h_1 == null;
+          }
+
+          if (tmp_0) {
+            var tmp_1 = SdkLogger_getInstance();
+            var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
+            tmp_1.r5a(tmp_2, VOID, VOID, SilentLogoutCapable$revokeBestEffort$lambda);
+            return false;
+          }
+
+          var _destruct__k2r9zo = this.r6h_1;
+          var token = _destruct__k2r9zo.re();
+          var tokenTypeHint = _destruct__k2r9zo.se();
+          this.i8_1 = 1;
+          suspendResult = this.p6h_1.h6j().j6j(revocationEndpoint, token, tokenTypeHint, this.p6h_1.z3z().s5a_1, this.p6h_1.z3z().b5b_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var result = suspendResult;
+          if (result instanceof Failure_1) {
+            var tmp_3 = SdkLogger_getInstance();
+            var tmp_4 = LogCategory_AUTHENTICATION_getInstance();
+            tmp_3.w5d(tmp_4, VOID, VOID, SilentLogoutCapable$revokeBestEffort$lambda_0);
+            if (!isExpectedRevocationRejection(this.p6h_1, result.u5w_1)) {
+              var tmp_5 = ErrorHandlerRegistry_instance;
+              var tmp_6 = to('operation', 'revoke_token');
+              var tmp0_elvis_lhs = getKClassFromExpression(result.u5w_1).o();
+              tmp_5.k6j('Silent logout: RFC 7009 revocation failed', mapOf([tmp_6, to('error_type', tmp0_elvis_lhs == null ? 'Unknown' : tmp0_elvis_lhs)]), ErrorLevel_WARNING_getInstance());
+            }
+          }
+
+          return true;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+function SilentLogoutCapable() {
+}
+function revocationTargetForSilent(_this__u8e3s4) {
+  var tmp1_safe_receiver = _this__u8e3s4 == null ? null : _this__u8e3s4.u5t_1;
+  var tmp;
+  if (tmp1_safe_receiver == null) {
+    tmp = null;
+  } else {
+    // Inline function 'kotlin.takeIf' call
+    var tmp_0;
+    // Inline function 'kotlin.text.isNotBlank' call
+    if (!isBlank(tmp1_safe_receiver)) {
+      tmp_0 = tmp1_safe_receiver;
+    } else {
+      tmp_0 = null;
+    }
+    tmp = tmp_0;
+  }
+  var tmp2_safe_receiver = tmp;
+  if (tmp2_safe_receiver == null)
+    null;
+  else {
+    // Inline function 'kotlin.let' call
+    return to(tmp2_safe_receiver, 'refresh_token');
+  }
+  // Inline function 'kotlin.text.isNullOrBlank' call
+  var this_0 = _this__u8e3s4 == null ? null : _this__u8e3s4.v5t_1;
+  var hasIdTokenHint = !(this_0 == null || isBlank(this_0));
+  var tmp5_safe_receiver = _this__u8e3s4 == null ? null : _this__u8e3s4.t5t_1;
+  var tmp_1;
+  if (tmp5_safe_receiver == null) {
+    tmp_1 = null;
+  } else {
+    // Inline function 'kotlin.takeIf' call
+    var tmp_2;
+    var tmp_3;
+    if (hasIdTokenHint) {
+      // Inline function 'kotlin.text.isNotBlank' call
+      tmp_3 = !isBlank(tmp5_safe_receiver);
+    } else {
+      tmp_3 = false;
+    }
+    if (tmp_3) {
+      tmp_2 = tmp5_safe_receiver;
+    } else {
+      tmp_2 = null;
+    }
+    tmp_1 = tmp_2;
+  }
+  var tmp6_safe_receiver = tmp_1;
+  var tmp_4;
+  if (tmp6_safe_receiver == null) {
+    tmp_4 = null;
+  } else {
+    // Inline function 'kotlin.let' call
+    tmp_4 = to(tmp6_safe_receiver, 'access_token');
+  }
+  return tmp_4;
+}
+function hasServerWorkFor(_this__u8e3s4, type) {
+  var tmp;
+  // Inline function 'kotlin.text.isNullOrBlank' call
+  var this_0 = _this__u8e3s4 == null ? null : _this__u8e3s4.v5t_1;
+  if (!(this_0 == null || isBlank(this_0))) {
+    tmp = true;
+  } else {
+    // Inline function 'kotlin.text.isNullOrBlank' call
+    var this_1 = _this__u8e3s4 == null ? null : _this__u8e3s4.t5t_1;
+    tmp = !(this_1 == null || isBlank(this_1));
+  }
+  var hasHint = tmp;
+  var tmp_0;
+  if (type.g6j_1) {
+    // Inline function 'kotlin.text.isNullOrBlank' call
+    var this_2 = _this__u8e3s4 == null ? null : _this__u8e3s4.u5t_1;
+    tmp_0 = !(this_2 == null || isBlank(this_2));
+  } else {
+    tmp_0 = false;
+  }
+  var hasRevocableToken = tmp_0;
+  return hasHint || hasRevocableToken;
+}
 function WebLogoutHandler(tokenStorage, eventEmitter, config, openIdConfigRepository, jwtValidationService, authApiService, webAuthenticator, replayCache, clock) {
   replayCache = replayCache === VOID ? new PersistentReplayCache(tokenStorage, new Long(3600, 0)) : replayCache;
   clock = clock === VOID ? System_instance : clock;
   LogoutHandler.call(this, tokenStorage, eventEmitter, clock);
-  this.j6e_1 = tokenStorage;
-  this.k6e_1 = config;
-  this.l6e_1 = openIdConfigRepository;
-  this.m6e_1 = jwtValidationService;
-  this.n6e_1 = authApiService;
-  this.o6e_1 = webAuthenticator;
-  this.p6e_1 = replayCache;
-  this.q6e_1 = emptyList();
+  this.o6j_1 = tokenStorage;
+  this.p6j_1 = config;
+  this.q6j_1 = openIdConfigRepository;
+  this.r6j_1 = jwtValidationService;
+  this.s6j_1 = authApiService;
+  this.t6j_1 = webAuthenticator;
+  this.u6j_1 = replayCache;
+  this.v6j_1 = emptyList();
 }
-protoOf(WebLogoutHandler).q6b = function () {
-  return this.j6e_1;
+protoOf(WebLogoutHandler).w6b = function () {
+  return this.o6j_1;
 };
-protoOf(WebLogoutHandler).x3z = function () {
-  return this.k6e_1;
+protoOf(WebLogoutHandler).z3z = function () {
+  return this.p6j_1;
 };
-protoOf(WebLogoutHandler).q6a = function () {
-  return this.l6e_1;
+protoOf(WebLogoutHandler).w6a = function () {
+  return this.q6j_1;
 };
-protoOf(WebLogoutHandler).r6a = function () {
-  return this.m6e_1;
+protoOf(WebLogoutHandler).x6a = function () {
+  return this.r6j_1;
 };
-protoOf(WebLogoutHandler).r6b = function () {
-  return this.o6e_1;
+protoOf(WebLogoutHandler).h6j = function () {
+  return this.s6j_1;
 };
-protoOf(WebLogoutHandler).s6a = function () {
-  return this.p6e_1;
+protoOf(WebLogoutHandler).x6b = function () {
+  return this.t6j_1;
 };
-protoOf(WebLogoutHandler).v6a = function () {
-  return this.q6e_1;
+protoOf(WebLogoutHandler).y6a = function () {
+  return this.u6j_1;
+};
+protoOf(WebLogoutHandler).b6b = function () {
+  return this.v6j_1;
 };
 function getCurrentYear($this) {
-  return toLocalDateTime(System_instance.s3f(), Companion_getInstance_2().u3u_1).p3g();
+  return toLocalDateTime(System_instance.u3f(), Companion_getInstance_2().w3u_1).r3g();
 }
 function SdkSentryConfig() {
 }
-protoOf(SdkSentryConfig).z5a = function (config) {
+protoOf(SdkSentryConfig).d5b = function (config) {
   var tmp;
-  switch (config.r5a_1.u2_1) {
+  switch (config.v5a_1.u2_1) {
     case 0:
       tmp = 'https://869f4ab96f28dff1a193e4b616642c2c@o166386.ingest.us.sentry.io/4510742725066752';
       break;
@@ -8766,11 +9870,11 @@ protoOf(SdkSentryConfig).z5a = function (config) {
   }
   return tmp;
 };
-protoOf(SdkSentryConfig).f5b = function (config) {
-  var clientIdHash = toString_2(getStringHashCode(config.o5a_1), 16);
+protoOf(SdkSentryConfig).j5b = function (config) {
+  var clientIdHash = toString_2(getStringHashCode(config.s5a_1), 16);
   var year = getCurrentYear(this);
   var tmp;
-  switch (config.r5a_1.u2_1) {
+  switch (config.v5a_1.u2_1) {
     case 0:
       tmp = 'sdk-dev-salt-' + year + '-' + clientIdHash;
       break;
@@ -8794,35 +9898,35 @@ function CryptoService() {
 }
 function OpenIdConfigRepository() {
 }
-function Companion_3() {
-  Companion_instance_4 = this;
+function Companion_4() {
+  Companion_instance_6 = this;
   var tmp = this;
   // Inline function 'kotlin.time.Companion.hours' call
   Companion_getInstance_0();
   var tmp$ret$0 = toDuration(1, DurationUnit_HOURS_getInstance());
-  tmp.r6e_1 = _Duration___get_inWholeMilliseconds__impl__msfiry(tmp$ret$0);
+  tmp.w6j_1 = _Duration___get_inWholeMilliseconds__impl__msfiry(tmp$ret$0);
 }
-var Companion_instance_4;
-function Companion_getInstance_11() {
-  if (Companion_instance_4 == null)
-    new Companion_3();
-  return Companion_instance_4;
+var Companion_instance_6;
+function Companion_getInstance_12() {
+  if (Companion_instance_6 == null)
+    new Companion_4();
+  return Companion_instance_6;
 }
 function CachedConfig(config, timestamp, environment) {
-  this.s6e_1 = config;
-  this.t6e_1 = timestamp;
-  this.u6e_1 = environment;
+  this.x6j_1 = config;
+  this.y6j_1 = timestamp;
+  this.z6j_1 = environment;
 }
-protoOf(CachedConfig).v6e = function () {
-  return compare(subtract(System_instance.s3f().f3v(), this.t6e_1), Companion_getInstance_11().r6e_1) > 0;
+protoOf(CachedConfig).a6k = function () {
+  return compare(subtract(System_instance.u3f().h3v(), this.y6j_1), Companion_getInstance_12().w6j_1) > 0;
 };
 protoOf(CachedConfig).toString = function () {
-  return 'CachedConfig(config=' + this.s6e_1.toString() + ', timestamp=' + this.t6e_1.toString() + ', environment=' + this.u6e_1.toString() + ')';
+  return 'CachedConfig(config=' + this.x6j_1.toString() + ', timestamp=' + this.y6j_1.toString() + ', environment=' + this.z6j_1.toString() + ')';
 };
 protoOf(CachedConfig).hashCode = function () {
-  var result = this.s6e_1.hashCode();
-  result = imul(result, 31) + this.t6e_1.hashCode() | 0;
-  result = imul(result, 31) + this.u6e_1.hashCode() | 0;
+  var result = this.x6j_1.hashCode();
+  result = imul(result, 31) + this.y6j_1.hashCode() | 0;
+  result = imul(result, 31) + this.z6j_1.hashCode() | 0;
   return result;
 };
 protoOf(CachedConfig).equals = function (other) {
@@ -8830,11 +9934,11 @@ protoOf(CachedConfig).equals = function (other) {
     return true;
   if (!(other instanceof CachedConfig))
     return false;
-  if (!this.s6e_1.equals(other.s6e_1))
+  if (!this.x6j_1.equals(other.x6j_1))
     return false;
-  if (!equalsLong(this.t6e_1, other.t6e_1))
+  if (!equalsLong(this.y6j_1, other.y6j_1))
     return false;
-  if (!this.u6e_1.equals(other.u6e_1))
+  if (!this.z6j_1.equals(other.z6j_1))
     return false;
   return true;
 };
@@ -8845,12 +9949,12 @@ function OpenIdConfigRepositoryImpl$lambda(this$0) {
 }
 function OpenIdConfigRepositoryImpl$getConfiguration$lambda(this$0) {
   return function () {
-    return 'Using cached OpenID config for environment=' + this$0.x6e_1.r5a_1.toString();
+    return 'Using cached OpenID config for environment=' + this$0.c6k_1.v5a_1.toString();
   };
 }
 function OpenIdConfigRepositoryImpl$getConfiguration$lambda_0(this$0) {
   return function () {
-    return 'Fetching OpenID configuration (environment=' + this$0.x6e_1.r5a_1.toString() + ", baseUrl='" + this$0.x6e_1.r5a_1.u5c_1 + "')";
+    return 'Fetching OpenID configuration (environment=' + this$0.c6k_1.v5a_1.toString() + ", baseUrl='" + this$0.c6k_1.v5a_1.y5c_1 + "')";
   };
 }
 function OpenIdConfigRepositoryImpl$getConfiguration$lambda_1() {
@@ -8863,7 +9967,7 @@ function OpenIdConfigRepositoryImpl$getConfiguration$lambda_2($e) {
 }
 function $getConfigurationCOROUTINE$(_this__u8e3s4, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.h6f_1 = _this__u8e3s4;
+  this.m6k_1 = _this__u8e3s4;
 }
 protoOf($getConfigurationCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -8873,24 +9977,24 @@ protoOf($getConfigurationCOROUTINE$).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 4;
-          var tmp0_safe_receiver = this.h6f_1.y6e_1;
+          var tmp0_safe_receiver = this.m6k_1.d6k_1;
           if (tmp0_safe_receiver == null)
             null;
           else {
-            if (tmp0_safe_receiver.u6e_1.equals(this.h6f_1.x6e_1.r5a_1) && !tmp0_safe_receiver.v6e()) {
+            if (tmp0_safe_receiver.z6j_1.equals(this.m6k_1.c6k_1.v5a_1) && !tmp0_safe_receiver.a6k()) {
               var tmp_0 = SdkLogger_getInstance();
               var tmp_1 = LogCategory_NETWORK_getInstance();
-              tmp_0.n5a(tmp_1, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda(this.h6f_1));
-              return new Success_1(tmp0_safe_receiver.s6e_1);
+              tmp_0.r5a(tmp_1, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda(this.m6k_1));
+              return new Success_1(tmp0_safe_receiver.x6j_1);
             }
           }
 
           var tmp_2 = SdkLogger_getInstance();
           var tmp_3 = LogCategory_NETWORK_getInstance();
-          tmp_2.m5a(tmp_3, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_0(this.h6f_1));
+          tmp_2.q5a(tmp_3, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_0(this.m6k_1));
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.h6f_1.w6e_1.j6f(this.h6f_1.x6e_1.r5a_1.u5c_1, this);
+          suspendResult = this.m6k_1.b6k_1.o6k(this.m6k_1.c6k_1.v5a_1.y5c_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -8898,65 +10002,72 @@ protoOf($getConfigurationCOROUTINE$).q8 = function () {
           continue $sm;
         case 1:
           var openIdConfig = suspendResult;
-          this.h6f_1.y6e_1 = new CachedConfig(openIdConfig, System_instance.s3f().f3v(), this.h6f_1.x6e_1.r5a_1);
+          this.m6k_1.d6k_1 = new CachedConfig(openIdConfig, System_instance.u3f().h3v(), this.m6k_1.c6k_1.v5a_1);
           var tmp_4 = SdkLogger_getInstance();
           var tmp_5 = LogCategory_NETWORK_getInstance();
-          tmp_4.m5a(tmp_5, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_1);
-          this.i6f_1 = new Success_1(openIdConfig);
+          tmp_4.q5a(tmp_5, VOID, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_1);
+          this.n6k_1 = new Success_1(openIdConfig);
           this.j8_1 = 4;
           this.i8_1 = 3;
           continue $sm;
         case 2:
           this.j8_1 = 4;
           var tmp_6 = this.l8_1;
-          if (tmp_6 instanceof Exception) {
+          if (tmp_6 instanceof CancellationException) {
             var e = this.l8_1;
             var tmp_7 = this;
-            var tmp_8 = SdkLogger_getInstance();
-            var tmp_9 = LogCategory_NETWORK_getInstance();
-            tmp_8.b5z(tmp_9, e, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_2(e));
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'get_openid_configuration'), to('environment', this.h6f_1.x6e_1.r5a_1.toString()), to('base_url', this.h6f_1.x6e_1.r5a_1.u5c_1), to('critical', true), to('impact', 'sdk_initialization_blocked'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
-            var error = this.h6f_1.l66(e);
-            tmp_7.i6f_1 = new Failure_1(error);
-            this.i8_1 = 3;
-            continue $sm;
+            throw e;
           } else {
-            throw this.l8_1;
+            var tmp_8 = this.l8_1;
+            if (tmp_8 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_9 = this;
+              var tmp_10 = SdkLogger_getInstance();
+              var tmp_11 = LogCategory_NETWORK_getInstance();
+              tmp_10.g5z(tmp_11, e_0, VOID, OpenIdConfigRepositoryImpl$getConfiguration$lambda_2(e_0));
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'get_openid_configuration'), to('environment', this.m6k_1.c6k_1.v5a_1.toString()), to('base_url', this.m6k_1.c6k_1.v5a_1.y5c_1), to('critical', true), to('impact', 'sdk_initialization_blocked'), to('exception_type', getKClassFromExpression(e_0).o())]), ErrorLevel_FATAL_getInstance());
+              var error = this.m6k_1.r66(e_0);
+              tmp_9.n6k_1 = new Failure_1(error);
+              this.i8_1 = 3;
+              continue $sm;
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 3:
           this.j8_1 = 4;
-          return this.i6f_1;
+          return this.n6k_1;
         case 4:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e_0 = $p;
+      var e_1 = $p;
       if (this.j8_1 === 4) {
-        throw e_0;
+        throw e_1;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e_0;
+        this.l8_1 = e_1;
       }
     }
    while (true);
 };
 function OpenIdConfigRepositoryImpl(authApiService, config) {
-  Companion_getInstance_11();
-  this.w6e_1 = authApiService;
-  this.x6e_1 = config;
+  Companion_getInstance_12();
+  this.b6k_1 = authApiService;
+  this.c6k_1 = config;
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, OpenIdConfigRepositoryImpl$lambda(this));
-  this.y6e_1 = null;
+  tmp.r5a(tmp_0, VOID, VOID, OpenIdConfigRepositoryImpl$lambda(this));
+  this.d6k_1 = null;
 }
-protoOf(OpenIdConfigRepositoryImpl).o5w = function ($completion) {
+protoOf(OpenIdConfigRepositoryImpl).t5w = function ($completion) {
   var tmp = new $getConfigurationCOROUTINE$(this, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(OpenIdConfigRepositoryImpl).l66 = function (e) {
+protoOf(OpenIdConfigRepositoryImpl).r66 = function (e) {
   var tmp0_safe_receiver = mapPlatformException(e);
   if (tmp0_safe_receiver == null)
     null;
@@ -8972,7 +10083,7 @@ protoOf(OpenIdConfigRepositoryImpl).l66 = function (e) {
       tmp_0 = null;
     } else {
       // Inline function 'kotlin.let' call
-      tmp_0 = Companion_instance_6.k6f(tmp2_safe_receiver);
+      tmp_0 = Companion_instance_9.p6k(tmp2_safe_receiver);
     }
     var tmp_1 = tmp_0;
     var tmp3_safe_receiver = e.message;
@@ -8981,7 +10092,7 @@ protoOf(OpenIdConfigRepositoryImpl).l66 = function (e) {
       tmp_2 = null;
     } else {
       // Inline function 'kotlin.let' call
-      tmp_2 = Companion_instance_6.k6f(tmp3_safe_receiver);
+      tmp_2 = Companion_instance_9.p6k(tmp3_safe_receiver);
     }
     tmp = new SerializationError(tmp_1, tmp_2);
   } else {
@@ -8990,10 +10101,10 @@ protoOf(OpenIdConfigRepositoryImpl).l66 = function (e) {
       tmp = new InvalidConfiguration(tmp4_elvis_lhs == null ? 'Invalid URL configuration' : tmp4_elvis_lhs, 'Check base URL format and HTTPS requirement');
     } else {
       if (e instanceof ClientRequestException) {
-        tmp = new HttpError(e.l4d_1.o38().h36_1, e.l4d_1.o38().i36_1, e.l4d_1.v48().y47().a48().toString());
+        tmp = new HttpError(e.o4d_1.q38().i36_1, e.o4d_1.q38().j36_1, e.o4d_1.y48().b48().d48().toString());
       } else {
         if (e instanceof ServerResponseException) {
-          tmp = new HttpError(e.l4d_1.o38().h36_1, e.l4d_1.o38().i36_1, e.l4d_1.v48().y47().a48().toString());
+          tmp = new HttpError(e.o4d_1.q38().i36_1, e.o4d_1.q38().j36_1, e.o4d_1.y48().b48().d48().toString());
         } else {
           tmp = new UnknownError(e, 'OpenID configuration fetch');
         }
@@ -9002,12 +10113,498 @@ protoOf(OpenIdConfigRepositoryImpl).l66 = function (e) {
   }
   return tmp;
 };
+function interpretEndSessionResponse($this, response) {
+  var status = response.q38().i36_1;
+  var tmp;
+  if (isSuccess(response.q38())) {
+    tmp = new Success_1(Unit_instance);
+  } else if (300 <= status ? status <= 399 : false) {
+    var error = classifyEndSessionRedirect($this, response.n33().gc(HttpHeaders_getInstance().y30_1));
+    var tmp_0;
+    if (error == null) {
+      tmp_0 = new Success_1(Unit_instance);
+    } else {
+      var tmp_1 = SdkLogger_getInstance();
+      var tmp_2 = LogCategory_AUTHENTICATION_getInstance();
+      tmp_1.w5d(tmp_2, VOID, VOID, SessionTerminationClient$interpretEndSessionResponse$lambda);
+      tmp_0 = new Failure_1(error);
+    }
+    tmp = tmp_0;
+  } else {
+    var tmp_3 = SdkLogger_getInstance();
+    var tmp_4 = LogCategory_NETWORK_getInstance();
+    tmp_3.w5d(tmp_4, VOID, VOID, SessionTerminationClient$interpretEndSessionResponse$lambda_0(status));
+    tmp = new Failure_1(new HttpError(status, response.q38().j36_1, sanitizedRequestUrl($this, response)));
+  }
+  return tmp;
+}
+function classifyEndSessionRedirect($this, location) {
+  // Inline function 'kotlin.text.isNullOrBlank' call
+  if (location == null || isBlank(location))
+    return null;
+  var withoutFragment = substringBefore_0(location, _Char___init__impl__6a9atx(35));
+  var path = substringBefore_0(withoutFragment, _Char___init__impl__6a9atx(63));
+  var params = parseQueryString(substringAfter_0(withoutFragment, _Char___init__impl__6a9atx(63), ''));
+  var tmp0_elvis_lhs = params.gc('error');
+  var tmp1_elvis_lhs = tmp0_elvis_lhs == null ? params.gc('error_code') : tmp0_elvis_lhs;
+  var errorCode = tmp1_elvis_lhs == null ? params.gc('errorCode') : tmp1_elvis_lhs;
+  var tmp2_elvis_lhs = params.gc('error_description');
+  var description = tmp2_elvis_lhs == null ? params.gc('error_summary') : tmp2_elvis_lhs;
+  var isErrorPath = hasErrorPathSegment($this, path);
+  if (errorCode == null && description == null && !isErrorPath)
+    return null;
+  // Inline function 'kotlin.text.buildString' call
+  // Inline function 'kotlin.apply' call
+  var this_0 = StringBuilder_init_$Create$();
+  this_0.q('Authorization server rejected end_session');
+  if (errorCode == null)
+    null;
+  else {
+    // Inline function 'kotlin.let' call
+    this_0.q(' (error=').q(errorCode).s(_Char___init__impl__6a9atx(41));
+  }
+  if (description == null)
+    null;
+  else {
+    // Inline function 'kotlin.let' call
+    this_0.q(': ').q(description);
+  }
+  if (errorCode == null && description == null) {
+    this_0.q(' (redirected to ').q(path).s(_Char___init__impl__6a9atx(41));
+  }
+  var reason = this_0.toString();
+  return new InvalidDataError(Companion_instance_9.p6k(reason));
+}
+function hasErrorPathSegment($this, _this__u8e3s4) {
+  var tmp0 = split_0(_this__u8e3s4, charArrayOf([_Char___init__impl__6a9atx(47)]));
+  var tmp$ret$0;
+  $l$block_0: {
+    // Inline function 'kotlin.collections.any' call
+    var tmp;
+    if (isInterface(tmp0, Collection)) {
+      tmp = tmp0.r();
+    } else {
+      tmp = false;
+    }
+    if (tmp) {
+      tmp$ret$0 = false;
+      break $l$block_0;
+    }
+    var _iterator__ex2g4s = tmp0.t();
+    while (_iterator__ex2g4s.u()) {
+      var element = _iterator__ex2g4s.v();
+      var tmp_0 = Companion_getInstance_13().s6k_1;
+      // Inline function 'kotlin.text.lowercase' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp$ret$2 = element.toLowerCase();
+      if (tmp_0.e2(tmp$ret$2)) {
+        tmp$ret$0 = true;
+        break $l$block_0;
+      }
+    }
+    tmp$ret$0 = false;
+  }
+  return tmp$ret$0;
+}
+function validateEndpoint($this, endpoint, name) {
+  var tmp;
+  if (isBlank(endpoint) || !startsWith(endpoint, 'https://')) {
+    tmp = new Failure_1(new InvalidConfiguration('The ' + name + ' endpoint must be a non-blank HTTPS URL'));
+  } else {
+    tmp = null;
+  }
+  return tmp;
+}
+function failNetwork($this, e, operation, endpointName) {
+  var tmp = Companion_instance_9;
+  var tmp0_elvis_lhs = e.message;
+  var sanitized = tmp.p6k(tmp0_elvis_lhs == null ? 'Network error' : tmp0_elvis_lhs);
+  var tmp1_elvis_lhs = getKClassFromExpression(e).o();
+  var exceptionType = tmp1_elvis_lhs == null ? 'Unknown' : tmp1_elvis_lhs;
+  var tmp_0 = SdkLogger_getInstance();
+  var tmp_1 = LogCategory_NETWORK_getInstance();
+  tmp_0.g5z(tmp_1, VOID, VOID, SessionTerminationClient$failNetwork$lambda(operation, exceptionType, sanitized));
+  ErrorHandlerRegistry_instance.k6j(operation + ' network failure', mapOf([to('operation', operation), to('endpoint', endpointName), to('exception_type', exceptionType), to('sanitized_message', sanitized)]), ErrorLevel_WARNING_getInstance());
+  return new Failure_1(new NetworkError(sanitized, null));
+}
+function sanitizedRequestUrl($this, _this__u8e3s4) {
+  var url = _this__u8e3s4.y48().b48().d48();
+  return url.a37_1.y36_1 + '://' + url.b37_1 + url.g38();
+}
+function Companion_5() {
+  Companion_instance_7 = this;
+  this.q6k_1 = 300;
+  this.r6k_1 = 399;
+  this.s6k_1 = setOf(['error', 'internal_error']);
+}
+var Companion_instance_7;
+function Companion_getInstance_13() {
+  if (Companion_instance_7 == null)
+    new Companion_5();
+  return Companion_instance_7;
+}
+function SessionTerminationClient$rawResponseClient$lambda($this$config) {
+  $this$config.e46_1 = false;
+  $this$config.g46_1 = false;
+  return Unit_instance;
+}
+function SessionTerminationClient$endSession$lambda($clientId, $idHint, $accessHint) {
+  return function ($this$url, it) {
+    var tmp0_safe_receiver = $clientId;
+    var tmp;
+    if (tmp0_safe_receiver == null) {
+      tmp = null;
+    } else {
+      // Inline function 'kotlin.takeIf' call
+      var tmp_0;
+      // Inline function 'kotlin.text.isNotBlank' call
+      if (!isBlank(tmp0_safe_receiver)) {
+        tmp_0 = tmp0_safe_receiver;
+      } else {
+        tmp_0 = null;
+      }
+      tmp = tmp_0;
+    }
+    var tmp1_safe_receiver = tmp;
+    if (tmp1_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlin.let' call
+      $this$url.x36_1.x2t('client_id', tmp1_safe_receiver);
+    }
+    var tmp_1;
+    if (!($idHint == null)) {
+      $this$url.x36_1.x2t('id_token_hint', $idHint);
+      tmp_1 = Unit_instance;
+    } else {
+      $this$url.x36_1.x2t('access_token_hint', ensureNotNull($accessHint));
+      tmp_1 = Unit_instance;
+    }
+    return Unit_instance;
+  };
+}
+function SessionTerminationClient$revokeToken$lambda($this$headers) {
+  $this$headers.x2t('Content-Type', 'application/x-www-form-urlencoded');
+  $this$headers.x2t('Accept', 'application/json');
+  return Unit_instance;
+}
+function SessionTerminationClient$revokeToken$lambda_0($response) {
+  return function () {
+    return 'Token revocation rejected: HTTP ' + $response.q38().i36_1;
+  };
+}
+function SessionTerminationClient$interpretEndSessionResponse$lambda() {
+  return 'End-session rejected by provider';
+}
+function SessionTerminationClient$interpretEndSessionResponse$lambda_0($status) {
+  return function () {
+    return 'End-session failed: HTTP ' + $status;
+  };
+}
+function SessionTerminationClient$failNetwork$lambda($operation, $exceptionType, $sanitized) {
+  return function () {
+    return $operation + ' network failure (' + $exceptionType + '): ' + $sanitized;
+  };
+}
+function $endSessionCOROUTINE$_0(_this__u8e3s4, endSessionEndpoint, idTokenHint, accessTokenHint, clientId, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.b6l_1 = _this__u8e3s4;
+  this.c6l_1 = endSessionEndpoint;
+  this.d6l_1 = idTokenHint;
+  this.e6l_1 = accessTokenHint;
+  this.f6l_1 = clientId;
+}
+protoOf($endSessionCOROUTINE$_0).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 3;
+          var tmp0_safe_receiver = validateEndpoint(this.b6l_1, this.c6l_1, 'end_session');
+          if (tmp0_safe_receiver == null)
+            null;
+          else {
+            return tmp0_safe_receiver;
+          }
+
+          var tmp1_safe_receiver = this.d6l_1;
+          var tmp_0;
+          if (tmp1_safe_receiver == null) {
+            tmp_0 = null;
+          } else {
+            var tmp_1;
+            if (!isBlank(tmp1_safe_receiver)) {
+              tmp_1 = tmp1_safe_receiver;
+            } else {
+              tmp_1 = null;
+            }
+            tmp_0 = tmp_1;
+          }
+
+          var idHint = tmp_0;
+          var tmp2_safe_receiver = this.e6l_1;
+          var tmp_2;
+          if (tmp2_safe_receiver == null) {
+            tmp_2 = null;
+          } else {
+            var tmp_3;
+            if (!isBlank(tmp2_safe_receiver)) {
+              tmp_3 = tmp2_safe_receiver;
+            } else {
+              tmp_3 = null;
+            }
+            tmp_2 = tmp_3;
+          }
+
+          var accessHint = tmp_2;
+          if (idHint == null && accessHint == null) {
+            return new Failure_1(new InvalidConfiguration('End-session requires an id_token_hint or access_token_hint'));
+          }
+
+          this.j8_1 = 2;
+          var tmp0 = this.b6l_1.h6l_1;
+          var urlString = this.c6l_1;
+          var this_0 = new HttpRequestBuilder();
+          url(this_0, urlString);
+          this_0.r4r(SessionTerminationClient$endSession$lambda(this.f6l_1, idHint, accessHint));
+          this_0.v45_1 = Companion_getInstance_4().o33_1;
+          this.i8_1 = 1;
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var response = suspendResult;
+          this.g6l_1 = interpretEndSessionResponse(this.b6l_1, response);
+          this.j8_1 = 3;
+          this.i8_1 = 4;
+          continue $sm;
+        case 2:
+          this.j8_1 = 3;
+          var tmp_4 = this.l8_1;
+          if (tmp_4 instanceof CancellationException) {
+            var e = this.l8_1;
+            var tmp_5 = this;
+            throw e;
+          } else {
+            var tmp_6 = this.l8_1;
+            if (tmp_6 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_7 = this;
+              tmp_7.g6l_1 = failNetwork(this.b6l_1, e_0, 'end_session', 'end_session_endpoint');
+              this.i8_1 = 4;
+              continue $sm;
+            } else {
+              throw this.l8_1;
+            }
+          }
+
+        case 3:
+          throw this.l8_1;
+        case 4:
+          this.j8_1 = 3;
+          return this.g6l_1;
+      }
+    } catch ($p) {
+      var e_1 = $p;
+      if (this.j8_1 === 3) {
+        throw e_1;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e_1;
+      }
+    }
+   while (true);
+};
+function $revokeTokenCOROUTINE$(_this__u8e3s4, revocationEndpoint, token, tokenTypeHint, clientId, clientSecret, resultContinuation) {
+  CoroutineImpl.call(this, resultContinuation);
+  this.q6l_1 = _this__u8e3s4;
+  this.r6l_1 = revocationEndpoint;
+  this.s6l_1 = token;
+  this.t6l_1 = tokenTypeHint;
+  this.u6l_1 = clientId;
+  this.v6l_1 = clientSecret;
+}
+protoOf($revokeTokenCOROUTINE$).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 3;
+          var tmp0_safe_receiver = validateEndpoint(this.q6l_1, this.r6l_1, 'revocation');
+          if (tmp0_safe_receiver == null)
+            null;
+          else {
+            return tmp0_safe_receiver;
+          }
+
+          this.j8_1 = 2;
+          var tmp0 = this.q6l_1.h6l_1;
+          var urlString = this.r6l_1;
+          var this_0 = new HttpRequestBuilder();
+          url(this_0, urlString);
+          headers(this_0, SessionTerminationClient$revokeToken$lambda);
+          Companion_getInstance_5();
+          var this_1 = ParametersBuilder();
+          this_1.x2t('token', this.s6l_1);
+          this_1.x2t('token_type_hint', this.t6l_1);
+          this_1.x2t('client_id', this.u6l_1);
+          var tmp0_safe_receiver_0 = this.v6l_1;
+          var tmp_0;
+          if (tmp0_safe_receiver_0 == null) {
+            tmp_0 = null;
+          } else {
+            var tmp_1;
+            if (!isBlank(tmp0_safe_receiver_0)) {
+              tmp_1 = tmp0_safe_receiver_0;
+            } else {
+              tmp_1 = null;
+            }
+            tmp_0 = tmp_1;
+          }
+
+          var tmp1_safe_receiver = tmp_0;
+          if (tmp1_safe_receiver == null)
+            null;
+          else {
+            this_1.x2t('client_secret', tmp1_safe_receiver);
+          }
+
+          var body = new FormDataContent(this_1.u2e());
+          if (body == null) {
+            this_0.x45_1 = NullBody_instance;
+            var tmp_2 = JsType_instance;
+            var tmp_3 = getKClass(FormDataContent);
+            var tmp_4;
+            try {
+              tmp_4 = createKType(getKClass(FormDataContent), arrayOf([]), false);
+            } catch ($p) {
+              var tmp_5;
+              if ($p instanceof Error) {
+                var cause = $p;
+                tmp_5 = null;
+              } else {
+                throw $p;
+              }
+              tmp_4 = tmp_5;
+            }
+            this_0.j4b(typeInfoImpl(tmp_2, tmp_3, tmp_4));
+          } else {
+            if (body instanceof OutgoingContent) {
+              this_0.x45_1 = body;
+              this_0.j4b(null);
+            } else {
+              this_0.x45_1 = body;
+              var tmp_6 = JsType_instance;
+              var tmp_7 = getKClass(FormDataContent);
+              var tmp_8;
+              try {
+                tmp_8 = createKType(getKClass(FormDataContent), arrayOf([]), false);
+              } catch ($p) {
+                var tmp_9;
+                if ($p instanceof Error) {
+                  var cause_0 = $p;
+                  tmp_9 = null;
+                } else {
+                  throw $p;
+                }
+                tmp_8 = tmp_9;
+              }
+              this_0.j4b(typeInfoImpl(tmp_6, tmp_7, tmp_8));
+            }
+          }
+
+          this_0.v45_1 = Companion_getInstance_4().p33_1;
+          this.i8_1 = 1;
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var response = suspendResult;
+          var tmp_10 = this;
+          var tmp_11;
+          if (isSuccess(response.q38())) {
+            tmp_11 = new Success_1(Unit_instance);
+          } else {
+            var tmp_12 = SdkLogger_getInstance();
+            var tmp_13 = LogCategory_NETWORK_getInstance();
+            tmp_12.w5d(tmp_13, VOID, VOID, SessionTerminationClient$revokeToken$lambda_0(response));
+            tmp_11 = new Failure_1(new HttpError(response.q38().i36_1, response.q38().j36_1, sanitizedRequestUrl(this.q6l_1, response)));
+          }
+
+          tmp_10.w6l_1 = tmp_11;
+          this.j8_1 = 3;
+          this.i8_1 = 4;
+          continue $sm;
+        case 2:
+          this.j8_1 = 3;
+          var tmp_14 = this.l8_1;
+          if (tmp_14 instanceof CancellationException) {
+            var e = this.l8_1;
+            var tmp_15 = this;
+            throw e;
+          } else {
+            var tmp_16 = this.l8_1;
+            if (tmp_16 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_17 = this;
+              tmp_17.w6l_1 = failNetwork(this.q6l_1, e_0, 'revoke_token', 'revocation_endpoint');
+              this.i8_1 = 4;
+              continue $sm;
+            } else {
+              throw this.l8_1;
+            }
+          }
+
+        case 3:
+          throw this.l8_1;
+        case 4:
+          this.j8_1 = 3;
+          return this.w6l_1;
+      }
+    } catch ($p) {
+      var e_1 = $p;
+      if (this.j8_1 === 3) {
+        throw e_1;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e_1;
+      }
+    }
+   while (true);
+};
+function SessionTerminationClient(httpClient) {
+  Companion_getInstance_13();
+  var tmp = this;
+  tmp.h6l_1 = httpClient.x46(SessionTerminationClient$rawResponseClient$lambda);
+}
+protoOf(SessionTerminationClient).i6j = function (endSessionEndpoint, idTokenHint, accessTokenHint, clientId, $completion) {
+  var tmp = new $endSessionCOROUTINE$_0(this, endSessionEndpoint, idTokenHint, accessTokenHint, clientId, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SessionTerminationClient).j6j = function (revocationEndpoint, token, tokenTypeHint, clientId, clientSecret, $completion) {
+  var tmp = new $revokeTokenCOROUTINE$(this, revocationEndpoint, token, tokenTypeHint, clientId, clientSecret, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
 function SrgAuthApiService() {
 }
 function validateUrl($this, baseUrl) {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_NETWORK_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, SrgAuthApiServiceImpl$validateUrl$lambda(baseUrl));
+  tmp.r5a(tmp_0, VOID, VOID, SrgAuthApiServiceImpl$validateUrl$lambda(baseUrl));
   // Inline function 'kotlin.text.isNotBlank' call
   // Inline function 'kotlin.require' call
   if (!!isBlank(baseUrl)) {
@@ -9026,7 +10623,7 @@ function validateUrl($this, baseUrl) {
   }
   var tmp_1 = SdkLogger_getInstance();
   var tmp_2 = LogCategory_NETWORK_getInstance();
-  tmp_1.n5a(tmp_2, VOID, VOID, SrgAuthApiServiceImpl$validateUrl$lambda_0(baseUrl));
+  tmp_1.r5a(tmp_2, VOID, VOID, SrgAuthApiServiceImpl$validateUrl$lambda_0(baseUrl));
 }
 function validateJwksUri($this, jwksUri) {
   // Inline function 'kotlin.text.isNotBlank' call
@@ -9058,24 +10655,24 @@ function captureUserInfoException($this, e, level, httpStatus, responseBodyExcer
     this_0.m2('response_body_excerpt', responseBodyExcerpt);
   }
   var tmp$ret$3 = this_0.y4();
-  tmp.a5g(e, tmp$ret$3, level);
+  tmp.e5g(e, tmp$ret$3, level);
 }
 function captureUserInfoException$default($this, e, level, httpStatus, responseBodyExcerpt, $super) {
   responseBodyExcerpt = responseBodyExcerpt === VOID ? null : responseBodyExcerpt;
   return captureUserInfoException($this, e, level, httpStatus, responseBodyExcerpt);
 }
-function Companion_4() {
-  this.l6f_1 = 401;
-  this.m6f_1 = 200;
-  this.n6f_1 = 500;
+function Companion_6() {
+  this.x6l_1 = 401;
+  this.y6l_1 = 200;
+  this.z6l_1 = 500;
 }
-var Companion_instance_5;
-function Companion_getInstance_12() {
-  return Companion_instance_5;
+var Companion_instance_8;
+function Companion_getInstance_14() {
+  return Companion_instance_8;
 }
 function SrgAuthApiServiceImpl$exchangeCodeForToken$lambda($this$headers) {
-  $this$headers.w2t('Content-Type', 'application/x-www-form-urlencoded');
-  $this$headers.w2t('Accept', 'application/json');
+  $this$headers.x2t('Content-Type', 'application/x-www-form-urlencoded');
+  $this$headers.x2t('Accept', 'application/json');
   return Unit_instance;
 }
 function SrgAuthApiServiceImpl$exchangeCodeForToken$lambda_0($sanitizedMessage) {
@@ -9084,8 +10681,8 @@ function SrgAuthApiServiceImpl$exchangeCodeForToken$lambda_0($sanitizedMessage) 
   };
 }
 function SrgAuthApiServiceImpl$refreshAccessToken$lambda($this$headers) {
-  $this$headers.w2t('Content-Type', 'application/x-www-form-urlencoded');
-  $this$headers.w2t('Accept', 'application/json');
+  $this$headers.x2t('Content-Type', 'application/x-www-form-urlencoded');
+  $this$headers.x2t('Accept', 'application/json');
   return Unit_instance;
 }
 function SrgAuthApiServiceImpl$refreshAccessToken$lambda_0($sanitizedMessage) {
@@ -9095,14 +10692,14 @@ function SrgAuthApiServiceImpl$refreshAccessToken$lambda_0($sanitizedMessage) {
 }
 function SrgAuthApiServiceImpl$getUserInfo$lambda($accessToken) {
   return function ($this$headers) {
-    $this$headers.w2t('Authorization', 'Bearer ' + $accessToken);
-    $this$headers.w2t('Accept', 'application/json');
+    $this$headers.x2t('Authorization', 'Bearer ' + $accessToken);
+    $this$headers.x2t('Accept', 'application/json');
     return Unit_instance;
   };
 }
 function SrgAuthApiServiceImpl$getUserInfo$lambda_0($response) {
   return function () {
-    return 'UserInfo response JSON parse failed (HTTP ' + $response.o38().h36_1 + ')';
+    return 'UserInfo response JSON parse failed (HTTP ' + $response.q38().i36_1 + ')';
   };
 }
 function SrgAuthApiServiceImpl$getUserInfo$lambda_1($status) {
@@ -9137,8 +10734,8 @@ function SrgAuthApiServiceImpl$validateUrl$lambda_0($baseUrl) {
 }
 function $getOpenIdConfigurationCOROUTINE$(_this__u8e3s4, baseUrl, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.w6f_1 = _this__u8e3s4;
-  this.x6f_1 = baseUrl;
+  this.i6m_1 = _this__u8e3s4;
+  this.j6m_1 = baseUrl;
 }
 protoOf($getOpenIdConfigurationCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -9149,14 +10746,14 @@ protoOf($getOpenIdConfigurationCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 4;
           this.j8_1 = 3;
-          validateUrl(this.w6f_1, this.x6f_1);
-          var url_0 = this.x6f_1 + '/.well-known/openid-configuration';
-          var tmp0 = this.w6f_1.y6f_1;
+          validateUrl(this.i6m_1, this.j6m_1);
+          var url_0 = this.j6m_1 + '/.well-known/openid-configuration';
+          var tmp0 = this.i6m_1.k6m_1;
           var this_0 = new HttpRequestBuilder();
           url(this_0, url_0);
-          this_0.t45_1 = Companion_getInstance_4().n33_1;
+          this_0.v45_1 = Companion_getInstance_4().o33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_0, tmp0)).t4v(this);
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9165,7 +10762,7 @@ protoOf($getOpenIdConfigurationCOROUTINE$).q8 = function () {
         case 1:
           var this_1 = suspendResult;
           this.i8_1 = 2;
-          var tmp_0 = this_1.v48();
+          var tmp_0 = this_1.y48();
           var tmp_1 = JsType_instance;
           var tmp_2 = getKClass(OpenIdConfig);
           var tmp_3;
@@ -9182,7 +10779,7 @@ protoOf($getOpenIdConfigurationCOROUTINE$).q8 = function () {
             tmp_3 = tmp_4;
           }
 
-          suspendResult = tmp_0.z47(typeInfoImpl(tmp_1, tmp_2, tmp_3), this);
+          suspendResult = tmp_0.c48(typeInfoImpl(tmp_1, tmp_2, tmp_3), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9193,36 +10790,42 @@ protoOf($getOpenIdConfigurationCOROUTINE$).q8 = function () {
         case 3:
           this.j8_1 = 4;
           var tmp_5 = this.l8_1;
-          if (tmp_5 instanceof Exception) {
+          if (tmp_5 instanceof CancellationException) {
             var e = this.l8_1;
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'get_openid_configuration'), to('endpoint', 'well_known_openid_configuration'), to('base_url', this.x6f_1), to('critical', true), to('impact', 'sdk_initialization_failure'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_FATAL_getInstance());
             throw e;
           } else {
-            throw this.l8_1;
+            var tmp_6 = this.l8_1;
+            if (tmp_6 instanceof Exception) {
+              var e_0 = this.l8_1;
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'get_openid_configuration'), to('endpoint', 'well_known_openid_configuration'), to('base_url', this.j6m_1), to('critical', true), to('impact', 'sdk_initialization_failure'), to('exception_type', getKClassFromExpression(e_0).o())]), ErrorLevel_FATAL_getInstance());
+              throw e_0;
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 4:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e_0 = $p;
+      var e_1 = $p;
       if (this.j8_1 === 4) {
-        throw e_0;
+        throw e_1;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e_0;
+        this.l8_1 = e_1;
       }
     }
    while (true);
 };
 function $exchangeCodeForTokenCOROUTINE$(_this__u8e3s4, tokenEndpoint, code, redirectUri, clientId, codeVerifier, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.i6g_1 = _this__u8e3s4;
-  this.j6g_1 = tokenEndpoint;
-  this.k6g_1 = code;
-  this.l6g_1 = redirectUri;
-  this.m6g_1 = clientId;
-  this.n6g_1 = codeVerifier;
+  this.v6m_1 = _this__u8e3s4;
+  this.w6m_1 = tokenEndpoint;
+  this.x6m_1 = code;
+  this.y6m_1 = redirectUri;
+  this.z6m_1 = clientId;
+  this.a6n_1 = codeVerifier;
 }
 protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -9233,9 +10836,9 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 4;
           var tmp_0;
-          var this_0 = this.j6g_1;
+          var this_0 = this.w6m_1;
           if (!isBlank(this_0)) {
-            tmp_0 = startsWith(this.j6g_1, 'https://');
+            tmp_0 = startsWith(this.w6m_1, 'https://');
           } else {
             tmp_0 = false;
           }
@@ -9246,21 +10849,21 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
           }
 
           this.j8_1 = 3;
-          var tmp0 = this.i6g_1.y6f_1;
-          var urlString = this.j6g_1;
+          var tmp0 = this.v6m_1.k6m_1;
+          var urlString = this.w6m_1;
           var this_1 = new HttpRequestBuilder();
           url(this_1, urlString);
           headers(this_1, SrgAuthApiServiceImpl$exchangeCodeForToken$lambda);
           Companion_getInstance_5();
           var this_2 = ParametersBuilder();
-          this_2.w2t('grant_type', 'authorization_code');
-          this_2.w2t('code', this.k6g_1);
-          this_2.w2t('redirect_uri', this.l6g_1);
-          this_2.w2t('client_id', this.m6g_1);
-          this_2.w2t('code_verifier', this.n6g_1);
-          var body = new FormDataContent(this_2.t2e());
+          this_2.x2t('grant_type', 'authorization_code');
+          this_2.x2t('code', this.x6m_1);
+          this_2.x2t('redirect_uri', this.y6m_1);
+          this_2.x2t('client_id', this.z6m_1);
+          this_2.x2t('code_verifier', this.a6n_1);
+          var body = new FormDataContent(this_2.u2e());
           if (body == null) {
-            this_1.v45_1 = NullBody_instance;
+            this_1.x45_1 = NullBody_instance;
             var tmp_1 = JsType_instance;
             var tmp_2 = getKClass(FormDataContent);
             var tmp_3;
@@ -9276,13 +10879,13 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
               }
               tmp_3 = tmp_4;
             }
-            this_1.g4b(typeInfoImpl(tmp_1, tmp_2, tmp_3));
+            this_1.j4b(typeInfoImpl(tmp_1, tmp_2, tmp_3));
           } else {
             if (body instanceof OutgoingContent) {
-              this_1.v45_1 = body;
-              this_1.g4b(null);
+              this_1.x45_1 = body;
+              this_1.j4b(null);
             } else {
-              this_1.v45_1 = body;
+              this_1.x45_1 = body;
               var tmp_5 = JsType_instance;
               var tmp_6 = getKClass(FormDataContent);
               var tmp_7;
@@ -9298,13 +10901,13 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
                 }
                 tmp_7 = tmp_8;
               }
-              this_1.g4b(typeInfoImpl(tmp_5, tmp_6, tmp_7));
+              this_1.j4b(typeInfoImpl(tmp_5, tmp_6, tmp_7));
             }
           }
 
-          this_1.t45_1 = Companion_getInstance_4().o33_1;
+          this_1.v45_1 = Companion_getInstance_4().p33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_1, tmp0)).t4v(this);
+          suspendResult = (new HttpStatement(this_1, tmp0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9313,7 +10916,7 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
         case 1:
           var response = suspendResult;
           this.i8_1 = 2;
-          var tmp_9 = response.v48();
+          var tmp_9 = response.y48();
           var tmp_10 = JsType_instance;
           var tmp_11 = getKClass(TokenResponseDto);
           var tmp_12;
@@ -9330,7 +10933,7 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
             tmp_12 = tmp_13;
           }
 
-          suspendResult = tmp_9.z47(typeInfoImpl(tmp_10, tmp_11, tmp_12), this);
+          suspendResult = tmp_9.c48(typeInfoImpl(tmp_10, tmp_11, tmp_12), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9341,38 +10944,44 @@ protoOf($exchangeCodeForTokenCOROUTINE$).q8 = function () {
         case 3:
           this.j8_1 = 4;
           var tmp_14 = this.l8_1;
-          if (tmp_14 instanceof Exception) {
+          if (tmp_14 instanceof CancellationException) {
             var e = this.l8_1;
-            var tmp_15 = Companion_instance_6;
-            var tmp0_elvis_lhs = e.message;
-            var sanitizedMessage = tmp_15.k6f(tmp0_elvis_lhs == null ? 'Unknown error' : tmp0_elvis_lhs);
-            var tmp_16 = SdkLogger_getInstance();
-            var tmp_17 = LogCategory_NETWORK_getInstance();
-            tmp_16.b5z(tmp_17, e, VOID, SrgAuthApiServiceImpl$exchangeCodeForToken$lambda_0(sanitizedMessage));
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'exchange_code_for_token'), to('endpoint', 'token_endpoint'), to('grant_type', 'authorization_code'), to('stage', 'post_authentication'), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
             throw e;
           } else {
-            throw this.l8_1;
+            var tmp_15 = this.l8_1;
+            if (tmp_15 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_16 = Companion_instance_9;
+              var tmp0_elvis_lhs = e_0.message;
+              var sanitizedMessage = tmp_16.p6k(tmp0_elvis_lhs == null ? 'Unknown error' : tmp0_elvis_lhs);
+              var tmp_17 = SdkLogger_getInstance();
+              var tmp_18 = LogCategory_NETWORK_getInstance();
+              tmp_17.g5z(tmp_18, e_0, VOID, SrgAuthApiServiceImpl$exchangeCodeForToken$lambda_0(sanitizedMessage));
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'exchange_code_for_token'), to('endpoint', 'token_endpoint'), to('grant_type', 'authorization_code'), to('stage', 'post_authentication'), to('exception_type', getKClassFromExpression(e_0).o())]), ErrorLevel_ERROR_getInstance());
+              throw e_0;
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 4:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e_0 = $p;
+      var e_1 = $p;
       if (this.j8_1 === 4) {
-        throw e_0;
+        throw e_1;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e_0;
+        this.l8_1 = e_1;
       }
     }
    while (true);
 };
 function $getJwksCOROUTINE$_0(_this__u8e3s4, jwksUri, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.w6g_1 = _this__u8e3s4;
-  this.x6g_1 = jwksUri;
+  this.j6n_1 = _this__u8e3s4;
+  this.k6n_1 = jwksUri;
 }
 protoOf($getJwksCOROUTINE$_0).q8 = function () {
   var suspendResult = this.k8_1;
@@ -9382,14 +10991,14 @@ protoOf($getJwksCOROUTINE$_0).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 3;
-          validateJwksUri(this.w6g_1, this.x6g_1);
-          var tmp0 = this.w6g_1.y6f_1;
-          var urlString = this.x6g_1;
+          validateJwksUri(this.j6n_1, this.k6n_1);
+          var tmp0 = this.j6n_1.k6m_1;
+          var urlString = this.k6n_1;
           var this_0 = new HttpRequestBuilder();
           url(this_0, urlString);
-          this_0.t45_1 = Companion_getInstance_4().n33_1;
+          this_0.v45_1 = Companion_getInstance_4().o33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_0, tmp0)).t4v(this);
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9398,7 +11007,7 @@ protoOf($getJwksCOROUTINE$_0).q8 = function () {
         case 1:
           var this_1 = suspendResult;
           this.i8_1 = 2;
-          var tmp_0 = this_1.v48();
+          var tmp_0 = this_1.y48();
           var tmp_1 = JsType_instance;
           var tmp_2 = getKClass(JwkSet);
           var tmp_3;
@@ -9415,7 +11024,7 @@ protoOf($getJwksCOROUTINE$_0).q8 = function () {
             tmp_3 = tmp_4;
           }
 
-          suspendResult = tmp_0.z47(typeInfoImpl(tmp_1, tmp_2, tmp_3), this);
+          suspendResult = tmp_0.c48(typeInfoImpl(tmp_1, tmp_2, tmp_3), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9439,10 +11048,10 @@ protoOf($getJwksCOROUTINE$_0).q8 = function () {
 };
 function $refreshAccessTokenCOROUTINE$(_this__u8e3s4, tokenEndpoint, refreshToken, clientId, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.g6h_1 = _this__u8e3s4;
-  this.h6h_1 = tokenEndpoint;
-  this.i6h_1 = refreshToken;
-  this.j6h_1 = clientId;
+  this.t6n_1 = _this__u8e3s4;
+  this.u6n_1 = tokenEndpoint;
+  this.v6n_1 = refreshToken;
+  this.w6n_1 = clientId;
 }
 protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -9453,19 +11062,19 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 4;
           this.j8_1 = 3;
-          var tmp0 = this.g6h_1.y6f_1;
-          var urlString = this.h6h_1;
+          var tmp0 = this.t6n_1.k6m_1;
+          var urlString = this.u6n_1;
           var this_0 = new HttpRequestBuilder();
           url(this_0, urlString);
           headers(this_0, SrgAuthApiServiceImpl$refreshAccessToken$lambda);
           Companion_getInstance_5();
           var this_1 = ParametersBuilder();
-          this_1.w2t('grant_type', 'refresh_token');
-          this_1.w2t('refresh_token', this.i6h_1);
-          this_1.w2t('client_id', this.j6h_1);
-          var body = new FormDataContent(this_1.t2e());
+          this_1.x2t('grant_type', 'refresh_token');
+          this_1.x2t('refresh_token', this.v6n_1);
+          this_1.x2t('client_id', this.w6n_1);
+          var body = new FormDataContent(this_1.u2e());
           if (body == null) {
-            this_0.v45_1 = NullBody_instance;
+            this_0.x45_1 = NullBody_instance;
             var tmp_0 = JsType_instance;
             var tmp_1 = getKClass(FormDataContent);
             var tmp_2;
@@ -9481,13 +11090,13 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
               }
               tmp_2 = tmp_3;
             }
-            this_0.g4b(typeInfoImpl(tmp_0, tmp_1, tmp_2));
+            this_0.j4b(typeInfoImpl(tmp_0, tmp_1, tmp_2));
           } else {
             if (body instanceof OutgoingContent) {
-              this_0.v45_1 = body;
-              this_0.g4b(null);
+              this_0.x45_1 = body;
+              this_0.j4b(null);
             } else {
-              this_0.v45_1 = body;
+              this_0.x45_1 = body;
               var tmp_4 = JsType_instance;
               var tmp_5 = getKClass(FormDataContent);
               var tmp_6;
@@ -9503,13 +11112,13 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
                 }
                 tmp_6 = tmp_7;
               }
-              this_0.g4b(typeInfoImpl(tmp_4, tmp_5, tmp_6));
+              this_0.j4b(typeInfoImpl(tmp_4, tmp_5, tmp_6));
             }
           }
 
-          this_0.t45_1 = Companion_getInstance_4().o33_1;
+          this_0.v45_1 = Companion_getInstance_4().p33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_0, tmp0)).t4v(this);
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9518,7 +11127,7 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
         case 1:
           var response = suspendResult;
           this.i8_1 = 2;
-          var tmp_8 = response.v48();
+          var tmp_8 = response.y48();
           var tmp_9 = JsType_instance;
           var tmp_10 = getKClass(TokenResponseDto);
           var tmp_11;
@@ -9535,7 +11144,7 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
             tmp_11 = tmp_12;
           }
 
-          suspendResult = tmp_8.z47(typeInfoImpl(tmp_9, tmp_10, tmp_11), this);
+          suspendResult = tmp_8.c48(typeInfoImpl(tmp_9, tmp_10, tmp_11), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9546,39 +11155,45 @@ protoOf($refreshAccessTokenCOROUTINE$).q8 = function () {
         case 3:
           this.j8_1 = 4;
           var tmp_13 = this.l8_1;
-          if (tmp_13 instanceof Exception) {
+          if (tmp_13 instanceof CancellationException) {
             var e = this.l8_1;
-            var tmp_14 = Companion_instance_6;
-            var tmp0_elvis_lhs = e.message;
-            var sanitizedMessage = tmp_14.k6f(tmp0_elvis_lhs == null ? 'Unknown error' : tmp0_elvis_lhs);
-            var tmp_15 = SdkLogger_getInstance();
-            var tmp_16 = LogCategory_NETWORK_getInstance();
-            tmp_15.b5z(tmp_16, e, VOID, SrgAuthApiServiceImpl$refreshAccessToken$lambda_0(sanitizedMessage));
-            ErrorHandlerRegistry_instance.a5g(e, mapOf([to('operation', 'refresh_access_token'), to('endpoint', 'token_endpoint'), to('grant_type', 'refresh_token'), to('critical', true), to('exception_type', getKClassFromExpression(e).o())]), ErrorLevel_ERROR_getInstance());
             throw e;
           } else {
-            throw this.l8_1;
+            var tmp_14 = this.l8_1;
+            if (tmp_14 instanceof Exception) {
+              var e_0 = this.l8_1;
+              var tmp_15 = Companion_instance_9;
+              var tmp0_elvis_lhs = e_0.message;
+              var sanitizedMessage = tmp_15.p6k(tmp0_elvis_lhs == null ? 'Unknown error' : tmp0_elvis_lhs);
+              var tmp_16 = SdkLogger_getInstance();
+              var tmp_17 = LogCategory_NETWORK_getInstance();
+              tmp_16.g5z(tmp_17, e_0, VOID, SrgAuthApiServiceImpl$refreshAccessToken$lambda_0(sanitizedMessage));
+              ErrorHandlerRegistry_instance.e5g(e_0, mapOf([to('operation', 'refresh_access_token'), to('endpoint', 'token_endpoint'), to('grant_type', 'refresh_token'), to('critical', true), to('exception_type', getKClassFromExpression(e_0).o())]), ErrorLevel_ERROR_getInstance());
+              throw e_0;
+            } else {
+              throw this.l8_1;
+            }
           }
 
         case 4:
           throw this.l8_1;
       }
     } catch ($p) {
-      var e_0 = $p;
+      var e_1 = $p;
       if (this.j8_1 === 4) {
-        throw e_0;
+        throw e_1;
       } else {
         this.i8_1 = this.j8_1;
-        this.l8_1 = e_0;
+        this.l8_1 = e_1;
       }
     }
    while (true);
 };
 function $getUserInfoCOROUTINE$_0(_this__u8e3s4, endpoint, accessToken, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.s6h_1 = _this__u8e3s4;
-  this.t6h_1 = endpoint;
-  this.u6h_1 = accessToken;
+  this.f6o_1 = _this__u8e3s4;
+  this.g6o_1 = endpoint;
+  this.h6o_1 = accessToken;
 }
 protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
   var suspendResult = this.k8_1;
@@ -9588,28 +11203,28 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 4;
-          if (isBlank(this.t6h_1) || !startsWith(this.t6h_1, 'https://')) {
+          if (isBlank(this.g6o_1) || !startsWith(this.g6o_1, 'https://')) {
             return new Failure_1(new InvalidConfiguration('UserInfo endpoint must be a non-blank HTTPS URL'));
           }
 
           this.j8_1 = 3;
-          var tmp0 = this.s6h_1.y6f_1;
-          var urlString = this.t6h_1;
+          var tmp0 = this.f6o_1.k6m_1;
+          var urlString = this.g6o_1;
           var this_0 = new HttpRequestBuilder();
           url(this_0, urlString);
-          headers(this_0, SrgAuthApiServiceImpl$getUserInfo$lambda(this.u6h_1));
-          this_0.t45_1 = Companion_getInstance_4().n33_1;
+          headers(this_0, SrgAuthApiServiceImpl$getUserInfo$lambda(this.h6o_1));
+          this_0.v45_1 = Companion_getInstance_4().o33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_0, tmp0)).t4v(this);
+          suspendResult = (new HttpStatement(this_0, tmp0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.w6h_1 = suspendResult;
+          this.j6o_1 = suspendResult;
           this.i8_1 = 2;
-          suspendResult = bodyAsText(this.w6h_1, VOID, this);
+          suspendResult = bodyAsText(this.j6o_1, VOID, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -9627,21 +11242,21 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
             var tmp_1;
             if ($p instanceof SerializationException) {
               var e = $p;
-              var sanitizedBody = Companion_instance_6.k6f(rawBody);
+              var sanitizedBody = Companion_instance_9.p6k(rawBody);
               var tmp_2 = SdkLogger_getInstance();
               var tmp_3 = LogCategory_NETWORK_getInstance();
-              tmp_2.b5z(tmp_3, e, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_0(this.w6h_1));
-              captureUserInfoException(this.s6h_1, e, ErrorLevel_ERROR_getInstance(), this.w6h_1.o38().h36_1, take(sanitizedBody, 200));
-              var tmp_4 = Companion_instance_6;
+              tmp_2.g5z(tmp_3, e, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_0(this.j6o_1));
+              captureUserInfoException(this.f6o_1, e, ErrorLevel_ERROR_getInstance(), this.j6o_1.q38().i36_1, take(sanitizedBody, 200));
+              var tmp_4 = Companion_instance_9;
               var tmp0_elvis_lhs = e.message;
-              return new Failure_1(new SerializationError(tmp_4.k6f(tmp0_elvis_lhs == null ? 'JSON parse error' : tmp0_elvis_lhs), take(sanitizedBody, 500)));
+              return new Failure_1(new SerializationError(tmp_4.p6k(tmp0_elvis_lhs == null ? 'JSON parse error' : tmp0_elvis_lhs), take(sanitizedBody, 500)));
             } else {
               throw $p;
             }
           }
 
           var claims = tmp_0;
-          this.v6h_1 = new Success_1(new UserInfoResponseDto(claims));
+          this.i6o_1 = new Success_1(new UserInfoResponseDto(claims));
           this.j8_1 = 4;
           this.i8_1 = 5;
           continue $sm;
@@ -9657,7 +11272,7 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
             if (tmp_7 instanceof ClientRequestException) {
               var e_1 = this.l8_1;
               var tmp_8 = this;
-              var status = e_1.l4d_1.o38().h36_1;
+              var status = e_1.o4d_1.q38().i36_1;
               var tmp_9;
               if (status === 401) {
                 tmp_9 = ErrorLevel_WARNING_getInstance();
@@ -9667,9 +11282,9 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
               var level = tmp_9;
               var tmp_10 = SdkLogger_getInstance();
               var tmp_11 = LogCategory_NETWORK_getInstance();
-              tmp_10.b5z(tmp_11, e_1, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_1(status));
-              captureUserInfoException$default(this.s6h_1, e_1, level, status);
-              tmp_8.v6h_1 = new Failure_1(new HttpError(status, e_1.l4d_1.o38().i36_1, e_1.l4d_1.v48().y47().a48().toString()));
+              tmp_10.g5z(tmp_11, e_1, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_1(status));
+              captureUserInfoException$default(this.f6o_1, e_1, level, status);
+              tmp_8.i6o_1 = new Failure_1(new HttpError(status, e_1.o4d_1.q38().j36_1, e_1.o4d_1.y48().b48().d48().toString()));
               this.i8_1 = 5;
               continue $sm;
             } else {
@@ -9677,12 +11292,12 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
               if (tmp_12 instanceof ServerResponseException) {
                 var e_2 = this.l8_1;
                 var tmp_13 = this;
-                var status_0 = e_2.l4d_1.o38().h36_1;
+                var status_0 = e_2.o4d_1.q38().i36_1;
                 var tmp_14 = SdkLogger_getInstance();
                 var tmp_15 = LogCategory_NETWORK_getInstance();
-                tmp_14.b5z(tmp_15, e_2, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_2(status_0));
-                captureUserInfoException$default(this.s6h_1, e_2, ErrorLevel_ERROR_getInstance(), status_0);
-                tmp_13.v6h_1 = new Failure_1(new HttpError(status_0, e_2.l4d_1.o38().i36_1, e_2.l4d_1.v48().y47().a48().toString()));
+                tmp_14.g5z(tmp_15, e_2, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_2(status_0));
+                captureUserInfoException$default(this.f6o_1, e_2, ErrorLevel_ERROR_getInstance(), status_0);
+                tmp_13.i6o_1 = new Failure_1(new HttpError(status_0, e_2.o4d_1.q38().j36_1, e_2.o4d_1.y48().b48().d48().toString()));
                 this.i8_1 = 5;
                 continue $sm;
               } else {
@@ -9690,14 +11305,14 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
                 if (tmp_16 instanceof Exception) {
                   var e_3 = this.l8_1;
                   var tmp_17 = this;
-                  var tmp_18 = Companion_instance_6;
+                  var tmp_18 = Companion_instance_9;
                   var tmp1_elvis_lhs = e_3.message;
-                  var sanitized = tmp_18.k6f(tmp1_elvis_lhs == null ? 'Network error' : tmp1_elvis_lhs);
+                  var sanitized = tmp_18.p6k(tmp1_elvis_lhs == null ? 'Network error' : tmp1_elvis_lhs);
                   var tmp_19 = SdkLogger_getInstance();
                   var tmp_20 = LogCategory_NETWORK_getInstance();
-                  tmp_19.b5z(tmp_20, e_3, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_3(sanitized));
-                  captureUserInfoException$default(this.s6h_1, e_3, ErrorLevel_WARNING_getInstance(), null);
-                  tmp_17.v6h_1 = new Failure_1(new NetworkError(sanitized, e_3));
+                  tmp_19.g5z(tmp_20, e_3, VOID, SrgAuthApiServiceImpl$getUserInfo$lambda_3(sanitized));
+                  captureUserInfoException$default(this.f6o_1, e_3, ErrorLevel_WARNING_getInstance(), null);
+                  tmp_17.i6o_1 = new Failure_1(new NetworkError(sanitized, e_3));
                   this.i8_1 = 5;
                   continue $sm;
                 } else {
@@ -9711,7 +11326,7 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
           throw this.l8_1;
         case 5:
           this.j8_1 = 4;
-          return this.v6h_1;
+          return this.i6o_1;
       }
     } catch ($p) {
       var e_4 = $p;
@@ -9724,40 +11339,48 @@ protoOf($getUserInfoCOROUTINE$_0).q8 = function () {
     }
    while (true);
 };
-function SrgAuthApiServiceImpl(httpClient) {
-  this.y6f_1 = httpClient;
+function SrgAuthApiServiceImpl(httpClient, sessionTermination) {
+  sessionTermination = sessionTermination === VOID ? new SessionTerminationClient(httpClient) : sessionTermination;
+  this.k6m_1 = httpClient;
+  this.l6m_1 = sessionTermination;
   var tmp = this;
-  tmp.z6f_1 = Json(VOID, SrgAuthApiServiceImpl$deviceFlowJson$lambda);
+  tmp.m6m_1 = Json(VOID, SrgAuthApiServiceImpl$deviceFlowJson$lambda);
 }
-protoOf(SrgAuthApiServiceImpl).j6f = function (baseUrl, $completion) {
+protoOf(SrgAuthApiServiceImpl).o6k = function (baseUrl, $completion) {
   var tmp = new $getOpenIdConfigurationCOROUTINE$(this, baseUrl, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgAuthApiServiceImpl).i67 = function (tokenEndpoint, code, redirectUri, clientId, codeVerifier, $completion) {
+protoOf(SrgAuthApiServiceImpl).o67 = function (tokenEndpoint, code, redirectUri, clientId, codeVerifier, $completion) {
   var tmp = new $exchangeCodeForTokenCOROUTINE$(this, tokenEndpoint, code, redirectUri, clientId, codeVerifier, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgAuthApiServiceImpl).z5f = function (jwksUri, $completion) {
+protoOf(SrgAuthApiServiceImpl).d5g = function (jwksUri, $completion) {
   var tmp = new $getJwksCOROUTINE$_0(this, jwksUri, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgAuthApiServiceImpl).h5z = function (tokenEndpoint, refreshToken, clientId, $completion) {
+protoOf(SrgAuthApiServiceImpl).m5z = function (tokenEndpoint, refreshToken, clientId, $completion) {
   var tmp = new $refreshAccessTokenCOROUTINE$(this, tokenEndpoint, refreshToken, clientId, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgAuthApiServiceImpl).u62 = function (endpoint, accessToken, $completion) {
+protoOf(SrgAuthApiServiceImpl).z62 = function (endpoint, accessToken, $completion) {
   var tmp = new $getUserInfoCOROUTINE$_0(this, endpoint, accessToken, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
+};
+protoOf(SrgAuthApiServiceImpl).i6j = function (endSessionEndpoint, idTokenHint, accessTokenHint, clientId, $completion) {
+  return this.l6m_1.i6j(endSessionEndpoint, idTokenHint, accessTokenHint, clientId, $completion);
+};
+protoOf(SrgAuthApiServiceImpl).j6j = function (revocationEndpoint, token, tokenTypeHint, clientId, clientSecret, $completion) {
+  return this.l6m_1.j6j(revocationEndpoint, token, tokenTypeHint, clientId, clientSecret, $completion);
 };
 function get_sdkModule() {
   _init_properties_SdkModule_kt__97dkd0();
@@ -9769,102 +11392,102 @@ function sdkModule$lambda($this$module) {
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition = sdkModule$lambda$lambda;
-  var scopeQualifier = Companion_getInstance_1().k3x_1;
+  var scopeQualifier = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind = Kind_Singleton_getInstance();
   var secondaryTypes = emptyList();
   var def = new BeanDefinition(scopeQualifier, getKClass(SecurityUtils), null, definition, kind, secondaryTypes);
   var factory = new SingleInstanceFactory(def);
-  $this$module.q3y(factory);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory);
+  $this$module.s3y(factory);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory);
   }
   new KoinDefinition($this$module, factory);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4 = sdkModule$lambda$lambda_0;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_0 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_0 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_0 = Kind_Factory_getInstance();
   var secondaryTypes_0 = emptyList();
   var def_0 = new BeanDefinition(scopeQualifier_0, getKClass(EventEmitter), null, tmp4, kind_0, secondaryTypes_0);
   var factory_0 = new FactoryInstanceFactory(def_0);
-  $this$module.q3y(factory_0);
+  $this$module.s3y(factory_0);
   new KoinDefinition($this$module, factory_0);
-  $this$module.p3y([get_platformModule()]);
+  $this$module.r3y([get_platformModule()]);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_0 = sdkModule$lambda$lambda_1;
-  var scopeQualifier_1 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_1 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_1 = Kind_Singleton_getInstance();
   var secondaryTypes_1 = emptyList();
   var def_1 = new BeanDefinition(scopeQualifier_1, getKClass(HttpClient), null, definition_0, kind_1, secondaryTypes_1);
   var factory_1 = new SingleInstanceFactory(def_1);
-  $this$module.q3y(factory_1);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_1);
+  $this$module.s3y(factory_1);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_1);
   }
   new KoinDefinition($this$module, factory_1);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_1 = sdkModule$lambda$lambda_2;
-  var scopeQualifier_2 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_2 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_2 = Kind_Singleton_getInstance();
   var secondaryTypes_2 = emptyList();
   var def_2 = new BeanDefinition(scopeQualifier_2, getKClass(SrgAuthApiService), null, definition_1, kind_2, secondaryTypes_2);
   var factory_2 = new SingleInstanceFactory(def_2);
-  $this$module.q3y(factory_2);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_2);
+  $this$module.s3y(factory_2);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_2);
   }
   new KoinDefinition($this$module, factory_2);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_2 = sdkModule$lambda$lambda_3;
-  var scopeQualifier_3 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_3 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_3 = Kind_Singleton_getInstance();
   var secondaryTypes_3 = emptyList();
   var def_3 = new BeanDefinition(scopeQualifier_3, getKClass(JwtValidationService), null, definition_2, kind_3, secondaryTypes_3);
   var factory_3 = new SingleInstanceFactory(def_3);
-  $this$module.q3y(factory_3);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_3);
+  $this$module.s3y(factory_3);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_3);
   }
   new KoinDefinition($this$module, factory_3);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4_0 = sdkModule$lambda$lambda_4;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_4 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_4 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_4 = Kind_Factory_getInstance();
   var secondaryTypes_4 = emptyList();
   var def_4 = new BeanDefinition(scopeQualifier_4, getKClass(TokenManager), null, tmp4_0, kind_4, secondaryTypes_4);
   var factory_4 = new FactoryInstanceFactory(def_4);
-  $this$module.q3y(factory_4);
+  $this$module.s3y(factory_4);
   new KoinDefinition($this$module, factory_4);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4_1 = sdkModule$lambda$lambda_5;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_5 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_5 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_5 = Kind_Factory_getInstance();
   var secondaryTypes_5 = emptyList();
   var def_5 = new BeanDefinition(scopeQualifier_5, getKClass(OpenIdConfigRepository), null, tmp4_1, kind_5, secondaryTypes_5);
   var factory_5 = new FactoryInstanceFactory(def_5);
-  $this$module.q3y(factory_5);
+  $this$module.s3y(factory_5);
   new KoinDefinition($this$module, factory_5);
   return Unit_instance;
 }
 function sdkModule$lambda$lambda($this$single, it) {
   _init_properties_SdkModule_kt__97dkd0();
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$0 = $this$single.r3z(getKClass(CryptoService), null, null);
+  var tmp$ret$0 = $this$single.t3z(getKClass(CryptoService), null, null);
   return new SecurityUtils(tmp$ret$0);
 }
 function sdkModule$lambda$lambda_0($this$factory, it) {
@@ -9878,41 +11501,41 @@ function sdkModule$lambda$lambda_1($this$single, it) {
 function sdkModule$lambda$lambda_2($this$single, it) {
   _init_properties_SdkModule_kt__97dkd0();
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$0 = $this$single.r3z(getKClass(HttpClient), null, null);
+  var tmp$ret$0 = $this$single.t3z(getKClass(HttpClient), null, null);
   return new SrgAuthApiServiceImpl(tmp$ret$0);
 }
 function sdkModule$lambda$lambda_3($this$single, it) {
   _init_properties_SdkModule_kt__97dkd0();
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp = $this$single.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp = $this$single.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$1 = $this$single.r3z(getKClass(CryptoService), null, null);
+  var tmp$ret$1 = $this$single.t3z(getKClass(CryptoService), null, null);
   return new JwtValidationService(tmp, tmp$ret$1);
 }
 function sdkModule$lambda$lambda_4($this$factory, _destruct__k2r9zo) {
   _init_properties_SdkModule_kt__97dkd0();
   // Inline function 'org.koin.core.parameter.ParametersHolder.component1' call
-  var config = _destruct__k2r9zo.x3y(0, getKClass(SrgLoginConfig));
+  var config = _destruct__k2r9zo.z3y(0, getKClass(SrgLoginConfig));
   // Inline function 'org.koin.core.parameter.ParametersHolder.component2' call
-  var openIdConfigRepository = _destruct__k2r9zo.x3y(1, getKClass(OpenIdConfigRepository));
+  var openIdConfigRepository = _destruct__k2r9zo.z3y(1, getKClass(OpenIdConfigRepository));
   // Inline function 'org.koin.core.parameter.ParametersHolder.component3' call
-  var eventEmitter = _destruct__k2r9zo.x3y(2, getKClass(EventEmitter));
+  var eventEmitter = _destruct__k2r9zo.z3y(2, getKClass(EventEmitter));
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp = $this$factory.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp = $this$factory.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_0 = $this$factory.r3z(getKClass(TokenStorage), null, null);
+  var tmp_0 = $this$factory.t3z(getKClass(TokenStorage), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_1 = $this$factory.r3z(getKClass(JwtValidationService), null, null);
+  var tmp_1 = $this$factory.t3z(getKClass(JwtValidationService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$6 = $this$factory.r3z(getKClass(CryptoService), null, null);
+  var tmp$ret$6 = $this$factory.t3z(getKClass(CryptoService), null, null);
   return new TokenManagerImpl(config, openIdConfigRepository, tmp, tmp_0, tmp_1, tmp$ret$6, eventEmitter);
 }
 function sdkModule$lambda$lambda_5($this$factory, _destruct__k2r9zo) {
   _init_properties_SdkModule_kt__97dkd0();
   // Inline function 'org.koin.core.parameter.ParametersHolder.component1' call
-  var config = _destruct__k2r9zo.x3y(0, getKClass(SrgLoginConfig));
+  var config = _destruct__k2r9zo.z3y(0, getKClass(SrgLoginConfig));
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$1 = $this$factory.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp$ret$1 = $this$factory.t3z(getKClass(SrgAuthApiService), null, null);
   return new OpenIdConfigRepositoryImpl(tmp$ret$1, config);
 }
 var properties_initialized_SdkModule_kt_lbpc96;
@@ -9925,15 +11548,15 @@ function _init_properties_SdkModule_kt__97dkd0() {
 function InvalidConfiguration(reason, details) {
   details = details === VOID ? null : details;
   SrgLoginError.call(this);
-  this.x6h_1 = reason;
-  this.y6h_1 = details;
+  this.k6o_1 = reason;
+  this.l6o_1 = details;
 }
 protoOf(InvalidConfiguration).toString = function () {
-  return 'InvalidConfiguration(reason=' + this.x6h_1 + ', details=' + this.y6h_1 + ')';
+  return 'InvalidConfiguration(reason=' + this.k6o_1 + ', details=' + this.l6o_1 + ')';
 };
 protoOf(InvalidConfiguration).hashCode = function () {
-  var result = getStringHashCode(this.x6h_1);
-  result = imul(result, 31) + (this.y6h_1 == null ? 0 : getStringHashCode(this.y6h_1)) | 0;
+  var result = getStringHashCode(this.k6o_1);
+  result = imul(result, 31) + (this.l6o_1 == null ? 0 : getStringHashCode(this.l6o_1)) | 0;
   return result;
 };
 protoOf(InvalidConfiguration).equals = function (other) {
@@ -9941,9 +11564,9 @@ protoOf(InvalidConfiguration).equals = function (other) {
     return true;
   if (!(other instanceof InvalidConfiguration))
     return false;
-  if (!(this.x6h_1 === other.x6h_1))
+  if (!(this.k6o_1 === other.k6o_1))
     return false;
-  if (!(this.y6h_1 == other.y6h_1))
+  if (!(this.l6o_1 == other.l6o_1))
     return false;
   return true;
 };
@@ -9951,15 +11574,15 @@ function NetworkError(details, cause) {
   details = details === VOID ? null : details;
   cause = cause === VOID ? null : cause;
   SrgLoginError.call(this);
-  this.q5y_1 = details;
-  this.r5y_1 = cause;
+  this.v5y_1 = details;
+  this.w5y_1 = cause;
 }
 protoOf(NetworkError).toString = function () {
-  return 'NetworkError(details=' + this.q5y_1 + ', cause=' + toString_0(this.r5y_1) + ')';
+  return 'NetworkError(details=' + this.v5y_1 + ', cause=' + toString_0(this.w5y_1) + ')';
 };
 protoOf(NetworkError).hashCode = function () {
-  var result = this.q5y_1 == null ? 0 : getStringHashCode(this.q5y_1);
-  result = imul(result, 31) + (this.r5y_1 == null ? 0 : hashCode(this.r5y_1)) | 0;
+  var result = this.v5y_1 == null ? 0 : getStringHashCode(this.v5y_1);
+  result = imul(result, 31) + (this.w5y_1 == null ? 0 : hashCode(this.w5y_1)) | 0;
   return result;
 };
 protoOf(NetworkError).equals = function (other) {
@@ -9967,9 +11590,9 @@ protoOf(NetworkError).equals = function (other) {
     return true;
   if (!(other instanceof NetworkError))
     return false;
-  if (!(this.q5y_1 == other.q5y_1))
+  if (!(this.v5y_1 == other.v5y_1))
     return false;
-  if (!equals(this.r5y_1, other.r5y_1))
+  if (!equals(this.w5y_1, other.w5y_1))
     return false;
   return true;
 };
@@ -9977,17 +11600,17 @@ function HttpError(code, message, url) {
   message = message === VOID ? null : message;
   url = url === VOID ? null : url;
   SrgLoginError.call(this);
-  this.z5p_1 = code;
-  this.a5q_1 = message;
-  this.b5q_1 = url;
+  this.d5q_1 = code;
+  this.e5q_1 = message;
+  this.f5q_1 = url;
 }
 protoOf(HttpError).toString = function () {
-  return 'HttpError(code=' + this.z5p_1 + ', message=' + this.a5q_1 + ', url=' + this.b5q_1 + ')';
+  return 'HttpError(code=' + this.d5q_1 + ', message=' + this.e5q_1 + ', url=' + this.f5q_1 + ')';
 };
 protoOf(HttpError).hashCode = function () {
-  var result = this.z5p_1;
-  result = imul(result, 31) + (this.a5q_1 == null ? 0 : getStringHashCode(this.a5q_1)) | 0;
-  result = imul(result, 31) + (this.b5q_1 == null ? 0 : getStringHashCode(this.b5q_1)) | 0;
+  var result = this.d5q_1;
+  result = imul(result, 31) + (this.e5q_1 == null ? 0 : getStringHashCode(this.e5q_1)) | 0;
+  result = imul(result, 31) + (this.f5q_1 == null ? 0 : getStringHashCode(this.f5q_1)) | 0;
   return result;
 };
 protoOf(HttpError).equals = function (other) {
@@ -9995,26 +11618,26 @@ protoOf(HttpError).equals = function (other) {
     return true;
   if (!(other instanceof HttpError))
     return false;
-  if (!(this.z5p_1 === other.z5p_1))
+  if (!(this.d5q_1 === other.d5q_1))
     return false;
-  if (!(this.a5q_1 == other.a5q_1))
+  if (!(this.e5q_1 == other.e5q_1))
     return false;
-  if (!(this.b5q_1 == other.b5q_1))
+  if (!(this.f5q_1 == other.f5q_1))
     return false;
   return true;
 };
 function SerializationError(originalMessage, responseBody) {
   responseBody = responseBody === VOID ? null : responseBody;
   SrgLoginError.call(this);
-  this.z6h_1 = originalMessage;
-  this.a6i_1 = responseBody;
+  this.m6o_1 = originalMessage;
+  this.n6o_1 = responseBody;
 }
 protoOf(SerializationError).toString = function () {
-  return 'SerializationError(originalMessage=' + this.z6h_1 + ', responseBody=' + this.a6i_1 + ')';
+  return 'SerializationError(originalMessage=' + this.m6o_1 + ', responseBody=' + this.n6o_1 + ')';
 };
 protoOf(SerializationError).hashCode = function () {
-  var result = this.z6h_1 == null ? 0 : getStringHashCode(this.z6h_1);
-  result = imul(result, 31) + (this.a6i_1 == null ? 0 : getStringHashCode(this.a6i_1)) | 0;
+  var result = this.m6o_1 == null ? 0 : getStringHashCode(this.m6o_1);
+  result = imul(result, 31) + (this.n6o_1 == null ? 0 : getStringHashCode(this.n6o_1)) | 0;
   return result;
 };
 protoOf(SerializationError).equals = function (other) {
@@ -10022,28 +11645,28 @@ protoOf(SerializationError).equals = function (other) {
     return true;
   if (!(other instanceof SerializationError))
     return false;
-  if (!(this.z6h_1 == other.z6h_1))
+  if (!(this.m6o_1 == other.m6o_1))
     return false;
-  if (!(this.a6i_1 == other.a6i_1))
+  if (!(this.n6o_1 == other.n6o_1))
     return false;
   return true;
 };
 function InvalidDataError(reason) {
   SrgLoginError.call(this);
-  this.b6i_1 = reason;
+  this.o6o_1 = reason;
 }
 protoOf(InvalidDataError).toString = function () {
-  return 'InvalidDataError(reason=' + this.b6i_1 + ')';
+  return 'InvalidDataError(reason=' + this.o6o_1 + ')';
 };
 protoOf(InvalidDataError).hashCode = function () {
-  return getStringHashCode(this.b6i_1);
+  return getStringHashCode(this.o6o_1);
 };
 protoOf(InvalidDataError).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof InvalidDataError))
     return false;
-  if (!(this.b6i_1 === other.b6i_1))
+  if (!(this.o6o_1 === other.o6o_1))
     return false;
   return true;
 };
@@ -10097,15 +11720,15 @@ function InvalidGrant(errorDescription, errorCode) {
   errorDescription = errorDescription === VOID ? null : errorDescription;
   errorCode = errorCode === VOID ? 'invalid_grant' : errorCode;
   SrgLoginError.call(this);
-  this.i5z_1 = errorDescription;
-  this.j5z_1 = errorCode;
+  this.n5z_1 = errorDescription;
+  this.o5z_1 = errorCode;
 }
 protoOf(InvalidGrant).toString = function () {
-  return 'InvalidGrant(errorDescription=' + this.i5z_1 + ', errorCode=' + this.j5z_1 + ')';
+  return 'InvalidGrant(errorDescription=' + this.n5z_1 + ', errorCode=' + this.o5z_1 + ')';
 };
 protoOf(InvalidGrant).hashCode = function () {
-  var result = this.i5z_1 == null ? 0 : getStringHashCode(this.i5z_1);
-  result = imul(result, 31) + getStringHashCode(this.j5z_1) | 0;
+  var result = this.n5z_1 == null ? 0 : getStringHashCode(this.n5z_1);
+  result = imul(result, 31) + getStringHashCode(this.o5z_1) | 0;
   return result;
 };
 protoOf(InvalidGrant).equals = function (other) {
@@ -10113,24 +11736,24 @@ protoOf(InvalidGrant).equals = function (other) {
     return true;
   if (!(other instanceof InvalidGrant))
     return false;
-  if (!(this.i5z_1 == other.i5z_1))
+  if (!(this.n5z_1 == other.n5z_1))
     return false;
-  if (!(this.j5z_1 === other.j5z_1))
+  if (!(this.o5z_1 === other.o5z_1))
     return false;
   return true;
 };
 function TokenStorageError(message, cause) {
   cause = cause === VOID ? null : cause;
   SrgLoginError.call(this);
-  this.c6i_1 = message;
-  this.d6i_1 = cause;
+  this.p6o_1 = message;
+  this.q6o_1 = cause;
 }
 protoOf(TokenStorageError).toString = function () {
-  return 'TokenStorageError(message=' + this.c6i_1 + ', cause=' + toString_0(this.d6i_1) + ')';
+  return 'TokenStorageError(message=' + this.p6o_1 + ', cause=' + toString_0(this.q6o_1) + ')';
 };
 protoOf(TokenStorageError).hashCode = function () {
-  var result = getStringHashCode(this.c6i_1);
-  result = imul(result, 31) + (this.d6i_1 == null ? 0 : hashCode(this.d6i_1)) | 0;
+  var result = getStringHashCode(this.p6o_1);
+  result = imul(result, 31) + (this.q6o_1 == null ? 0 : hashCode(this.q6o_1)) | 0;
   return result;
 };
 protoOf(TokenStorageError).equals = function (other) {
@@ -10138,9 +11761,9 @@ protoOf(TokenStorageError).equals = function (other) {
     return true;
   if (!(other instanceof TokenStorageError))
     return false;
-  if (!(this.c6i_1 === other.c6i_1))
+  if (!(this.p6o_1 === other.p6o_1))
     return false;
-  if (!equals(this.d6i_1, other.d6i_1))
+  if (!equals(this.q6o_1, other.q6o_1))
     return false;
   return true;
 };
@@ -10155,15 +11778,15 @@ function PlatformError() {
 function InvalidLogoutToken(message, reason) {
   reason = reason === VOID ? null : reason;
   SrgLoginError.call(this);
-  this.e6i_1 = message;
-  this.f6i_1 = reason;
+  this.r6o_1 = message;
+  this.s6o_1 = reason;
 }
 protoOf(InvalidLogoutToken).toString = function () {
-  return 'InvalidLogoutToken(message=' + this.e6i_1 + ', reason=' + toString_0(this.f6i_1) + ')';
+  return 'InvalidLogoutToken(message=' + this.r6o_1 + ', reason=' + toString_0(this.s6o_1) + ')';
 };
 protoOf(InvalidLogoutToken).hashCode = function () {
-  var result = getStringHashCode(this.e6i_1);
-  result = imul(result, 31) + (this.f6i_1 == null ? 0 : this.f6i_1.hashCode()) | 0;
+  var result = getStringHashCode(this.r6o_1);
+  result = imul(result, 31) + (this.s6o_1 == null ? 0 : this.s6o_1.hashCode()) | 0;
   return result;
 };
 protoOf(InvalidLogoutToken).equals = function (other) {
@@ -10171,24 +11794,49 @@ protoOf(InvalidLogoutToken).equals = function (other) {
     return true;
   if (!(other instanceof InvalidLogoutToken))
     return false;
-  if (!(this.e6i_1 === other.e6i_1))
+  if (!(this.r6o_1 === other.r6o_1))
     return false;
-  if (!equals(this.f6i_1, other.f6i_1))
+  if (!equals(this.s6o_1, other.s6o_1))
+    return false;
+  return true;
+};
+function InteractionRequired(oauthError, errorDescription) {
+  errorDescription = errorDescription === VOID ? null : errorDescription;
+  SrgLoginError.call(this);
+  this.t6o_1 = oauthError;
+  this.u6o_1 = errorDescription;
+}
+protoOf(InteractionRequired).toString = function () {
+  return 'InteractionRequired(oauthError=' + this.t6o_1 + ', errorDescription=' + this.u6o_1 + ')';
+};
+protoOf(InteractionRequired).hashCode = function () {
+  var result = getStringHashCode(this.t6o_1);
+  result = imul(result, 31) + (this.u6o_1 == null ? 0 : getStringHashCode(this.u6o_1)) | 0;
+  return result;
+};
+protoOf(InteractionRequired).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof InteractionRequired))
+    return false;
+  if (!(this.t6o_1 === other.t6o_1))
+    return false;
+  if (!(this.u6o_1 == other.u6o_1))
     return false;
   return true;
 };
 function UnknownError(cause, context) {
   context = context === VOID ? null : context;
   SrgLoginError.call(this);
-  this.g6i_1 = cause;
-  this.h6i_1 = context;
+  this.v6o_1 = cause;
+  this.w6o_1 = context;
 }
 protoOf(UnknownError).toString = function () {
-  return 'UnknownError(cause=' + this.g6i_1.toString() + ', context=' + this.h6i_1 + ')';
+  return 'UnknownError(cause=' + this.v6o_1.toString() + ', context=' + this.w6o_1 + ')';
 };
 protoOf(UnknownError).hashCode = function () {
-  var result = hashCode(this.g6i_1);
-  result = imul(result, 31) + (this.h6i_1 == null ? 0 : getStringHashCode(this.h6i_1)) | 0;
+  var result = hashCode(this.v6o_1);
+  result = imul(result, 31) + (this.w6o_1 == null ? 0 : getStringHashCode(this.w6o_1)) | 0;
   return result;
 };
 protoOf(UnknownError).equals = function (other) {
@@ -10196,9 +11844,9 @@ protoOf(UnknownError).equals = function (other) {
     return true;
   if (!(other instanceof UnknownError))
     return false;
-  if (!equals(this.g6i_1, other.g6i_1))
+  if (!equals(this.v6o_1, other.v6o_1))
     return false;
-  if (!(this.h6i_1 == other.h6i_1))
+  if (!(this.w6o_1 == other.w6o_1))
     return false;
   return true;
 };
@@ -10248,10 +11896,14 @@ function toPublicErrorCode(_this__u8e3s4) {
                             if (_this__u8e3s4 instanceof InvalidLogoutToken) {
                               tmp = 'InvalidLogoutToken';
                             } else {
-                              if (_this__u8e3s4 instanceof UnknownError) {
-                                tmp = 'UnknownError';
+                              if (_this__u8e3s4 instanceof InteractionRequired) {
+                                tmp = 'InteractionRequired';
                               } else {
-                                noWhenBranchMatchedException();
+                                if (_this__u8e3s4 instanceof UnknownError) {
+                                  tmp = 'UnknownError';
+                                } else {
+                                  noWhenBranchMatchedException();
+                                }
                               }
                             }
                           }
@@ -10272,20 +11924,20 @@ function toPublicErrorCode(_this__u8e3s4) {
 function toSanitizedPublicMessage(_this__u8e3s4) {
   var tmp;
   if (_this__u8e3s4 instanceof InvalidConfiguration) {
-    tmp = _this__u8e3s4.x6h_1;
+    tmp = _this__u8e3s4.k6o_1;
   } else {
     if (_this__u8e3s4 instanceof NetworkError) {
-      var tmp1_elvis_lhs = _this__u8e3s4.q5y_1;
+      var tmp1_elvis_lhs = _this__u8e3s4.v5y_1;
       tmp = tmp1_elvis_lhs == null ? 'Network request failed' : tmp1_elvis_lhs;
     } else {
       if (_this__u8e3s4 instanceof HttpError) {
-        tmp = 'HTTP ' + _this__u8e3s4.z5p_1;
+        tmp = 'HTTP ' + _this__u8e3s4.d5q_1;
       } else {
         if (_this__u8e3s4 instanceof SerializationError) {
           tmp = 'Malformed server response';
         } else {
           if (_this__u8e3s4 instanceof InvalidDataError) {
-            tmp = _this__u8e3s4.b6i_1;
+            tmp = _this__u8e3s4.o6o_1;
           } else {
             if (equals(_this__u8e3s4, TokenExpired_getInstance())) {
               tmp = 'Session expired, please sign in again';
@@ -10294,31 +11946,36 @@ function toSanitizedPublicMessage(_this__u8e3s4) {
                 tmp = 'Not authenticated';
               } else {
                 if (_this__u8e3s4 instanceof InvalidGrant) {
-                  var tmp2_elvis_lhs = _this__u8e3s4.i5z_1;
+                  var tmp2_elvis_lhs = _this__u8e3s4.n5z_1;
                   tmp = tmp2_elvis_lhs == null ? 'Authorization was revoked or expired' : tmp2_elvis_lhs;
                 } else {
                   if (_this__u8e3s4 instanceof TokenStorageError) {
-                    tmp = _this__u8e3s4.c6i_1;
+                    tmp = _this__u8e3s4.p6o_1;
                   } else {
                     if (_this__u8e3s4 instanceof UserCancelled) {
-                      tmp = _this__u8e3s4.l6i_1;
+                      tmp = _this__u8e3s4.a6p_1;
                     } else {
                       if (_this__u8e3s4 instanceof AuthenticationTimeout) {
-                        tmp = _this__u8e3s4.k6i_1;
+                        tmp = _this__u8e3s4.z6o_1;
                       } else {
                         if (_this__u8e3s4 instanceof UnsupportedPlatform) {
-                          tmp = _this__u8e3s4.j6i_1;
+                          tmp = _this__u8e3s4.y6o_1;
                         } else {
                           if (_this__u8e3s4 instanceof PlatformError) {
-                            tmp = _this__u8e3s4.i6i_1;
+                            tmp = _this__u8e3s4.x6o_1;
                           } else {
                             if (_this__u8e3s4 instanceof InvalidLogoutToken) {
-                              tmp = _this__u8e3s4.e6i_1;
+                              tmp = _this__u8e3s4.r6o_1;
                             } else {
-                              if (_this__u8e3s4 instanceof UnknownError) {
-                                tmp = 'Unexpected error';
+                              if (_this__u8e3s4 instanceof InteractionRequired) {
+                                var tmp3_elvis_lhs = _this__u8e3s4.u6o_1;
+                                tmp = tmp3_elvis_lhs == null ? 'Interactive sign-in required (' + _this__u8e3s4.t6o_1 + ')' : tmp3_elvis_lhs;
                               } else {
-                                noWhenBranchMatchedException();
+                                if (_this__u8e3s4 instanceof UnknownError) {
+                                  tmp = 'Unexpected error';
+                                } else {
+                                  noWhenBranchMatchedException();
+                                }
                               }
                             }
                           }
@@ -10335,7 +11992,7 @@ function toSanitizedPublicMessage(_this__u8e3s4) {
     }
   }
   var raw = tmp;
-  return Companion_instance_6.k6f(raw);
+  return Companion_instance_9.p6k(raw);
 }
 function EventEmitter() {
 }
@@ -10347,49 +12004,49 @@ function SdkEventEmitter$lambda(this$0) {
 function SdkEventEmitter() {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, SdkEventEmitter$lambda(this));
-  this.m6i_1 = MutableSharedFlow(0, 64, BufferOverflow_DROP_OLDEST_getInstance());
-  this.n6i_1 = asSharedFlow(this.m6i_1);
+  tmp.r5a(tmp_0, VOID, VOID, SdkEventEmitter$lambda(this));
+  this.b6p_1 = MutableSharedFlow(0, 64, BufferOverflow_DROP_OLDEST_getInstance());
+  this.c6p_1 = asSharedFlow(this.b6p_1);
 }
-protoOf(SdkEventEmitter).o5t = function () {
-  return this.n6i_1;
+protoOf(SdkEventEmitter).s5t = function () {
+  return this.c6p_1;
 };
-protoOf(SdkEventEmitter).n5w = function (event, $completion) {
-  return this.m6i_1.j1x(event, $completion);
+protoOf(SdkEventEmitter).s5w = function (event, $completion) {
+  return this.b6p_1.k1x(event, $completion);
 };
-protoOf(SdkEventEmitter).c5z = function (event) {
-  return this.m6i_1.r1z(event);
+protoOf(SdkEventEmitter).h5z = function (event) {
+  return this.b6p_1.s1z(event);
 };
 function LoginStarted(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.o6i_1 = timestamp;
+  this.d6p_1 = timestamp;
 }
 protoOf(LoginStarted).toString = function () {
-  return 'LoginStarted(timestamp=' + this.o6i_1.toString() + ')';
+  return 'LoginStarted(timestamp=' + this.d6p_1.toString() + ')';
 };
 protoOf(LoginStarted).hashCode = function () {
-  return this.o6i_1.hashCode();
+  return this.d6p_1.hashCode();
 };
 protoOf(LoginStarted).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof LoginStarted))
     return false;
-  if (!equalsLong(this.o6i_1, other.o6i_1))
+  if (!equalsLong(this.d6p_1, other.d6p_1))
     return false;
   return true;
 };
 function LoginSuccess(tokenSet, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.p6i_1 = tokenSet;
-  this.q6i_1 = timestamp;
+  this.e6p_1 = tokenSet;
+  this.f6p_1 = timestamp;
 }
 protoOf(LoginSuccess).toString = function () {
-  return 'LoginSuccess(tokenSet=' + this.p6i_1.toString() + ', timestamp=' + this.q6i_1.toString() + ')';
+  return 'LoginSuccess(tokenSet=' + this.e6p_1.toString() + ', timestamp=' + this.f6p_1.toString() + ')';
 };
 protoOf(LoginSuccess).hashCode = function () {
-  var result = this.p6i_1.hashCode();
-  result = imul(result, 31) + this.q6i_1.hashCode() | 0;
+  var result = this.e6p_1.hashCode();
+  result = imul(result, 31) + this.f6p_1.hashCode() | 0;
   return result;
 };
 protoOf(LoginSuccess).equals = function (other) {
@@ -10397,23 +12054,23 @@ protoOf(LoginSuccess).equals = function (other) {
     return true;
   if (!(other instanceof LoginSuccess))
     return false;
-  if (!this.p6i_1.equals(other.p6i_1))
+  if (!this.e6p_1.equals(other.e6p_1))
     return false;
-  if (!equalsLong(this.q6i_1, other.q6i_1))
+  if (!equalsLong(this.f6p_1, other.f6p_1))
     return false;
   return true;
 };
 function LoginFailure(error, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.r6i_1 = error;
-  this.s6i_1 = timestamp;
+  this.g6p_1 = error;
+  this.h6p_1 = timestamp;
 }
 protoOf(LoginFailure).toString = function () {
-  return 'LoginFailure(error=' + toString(this.r6i_1) + ', timestamp=' + this.s6i_1.toString() + ')';
+  return 'LoginFailure(error=' + toString(this.g6p_1) + ', timestamp=' + this.h6p_1.toString() + ')';
 };
 protoOf(LoginFailure).hashCode = function () {
-  var result = hashCode(this.r6i_1);
-  result = imul(result, 31) + this.s6i_1.hashCode() | 0;
+  var result = hashCode(this.g6p_1);
+  result = imul(result, 31) + this.h6p_1.hashCode() | 0;
   return result;
 };
 protoOf(LoginFailure).equals = function (other) {
@@ -10421,23 +12078,23 @@ protoOf(LoginFailure).equals = function (other) {
     return true;
   if (!(other instanceof LoginFailure))
     return false;
-  if (!equals(this.r6i_1, other.r6i_1))
+  if (!equals(this.g6p_1, other.g6p_1))
     return false;
-  if (!equalsLong(this.s6i_1, other.s6i_1))
+  if (!equalsLong(this.h6p_1, other.h6p_1))
     return false;
   return true;
 };
 function LogoutStarted(logoutType, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.t6i_1 = logoutType;
-  this.u6i_1 = timestamp;
+  this.i6p_1 = logoutType;
+  this.j6p_1 = timestamp;
 }
 protoOf(LogoutStarted).toString = function () {
-  return 'LogoutStarted(logoutType=' + toString(this.t6i_1) + ', timestamp=' + this.u6i_1.toString() + ')';
+  return 'LogoutStarted(logoutType=' + toString(this.i6p_1) + ', timestamp=' + this.j6p_1.toString() + ')';
 };
 protoOf(LogoutStarted).hashCode = function () {
-  var result = hashCode(this.t6i_1);
-  result = imul(result, 31) + this.u6i_1.hashCode() | 0;
+  var result = hashCode(this.i6p_1);
+  result = imul(result, 31) + this.j6p_1.hashCode() | 0;
   return result;
 };
 protoOf(LogoutStarted).equals = function (other) {
@@ -10445,23 +12102,23 @@ protoOf(LogoutStarted).equals = function (other) {
     return true;
   if (!(other instanceof LogoutStarted))
     return false;
-  if (!equals(this.t6i_1, other.t6i_1))
+  if (!equals(this.i6p_1, other.i6p_1))
     return false;
-  if (!equalsLong(this.u6i_1, other.u6i_1))
+  if (!equalsLong(this.j6p_1, other.j6p_1))
     return false;
   return true;
 };
 function LogoutSuccess(logoutType, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.v6i_1 = logoutType;
-  this.w6i_1 = timestamp;
+  this.k6p_1 = logoutType;
+  this.l6p_1 = timestamp;
 }
 protoOf(LogoutSuccess).toString = function () {
-  return 'LogoutSuccess(logoutType=' + toString(this.v6i_1) + ', timestamp=' + this.w6i_1.toString() + ')';
+  return 'LogoutSuccess(logoutType=' + toString(this.k6p_1) + ', timestamp=' + this.l6p_1.toString() + ')';
 };
 protoOf(LogoutSuccess).hashCode = function () {
-  var result = hashCode(this.v6i_1);
-  result = imul(result, 31) + this.w6i_1.hashCode() | 0;
+  var result = hashCode(this.k6p_1);
+  result = imul(result, 31) + this.l6p_1.hashCode() | 0;
   return result;
 };
 protoOf(LogoutSuccess).equals = function (other) {
@@ -10469,23 +12126,23 @@ protoOf(LogoutSuccess).equals = function (other) {
     return true;
   if (!(other instanceof LogoutSuccess))
     return false;
-  if (!equals(this.v6i_1, other.v6i_1))
+  if (!equals(this.k6p_1, other.k6p_1))
     return false;
-  if (!equalsLong(this.w6i_1, other.w6i_1))
+  if (!equalsLong(this.l6p_1, other.l6p_1))
     return false;
   return true;
 };
 function LogoutFailure(error, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.x6i_1 = error;
-  this.y6i_1 = timestamp;
+  this.m6p_1 = error;
+  this.n6p_1 = timestamp;
 }
 protoOf(LogoutFailure).toString = function () {
-  return 'LogoutFailure(error=' + toString(this.x6i_1) + ', timestamp=' + this.y6i_1.toString() + ')';
+  return 'LogoutFailure(error=' + toString(this.m6p_1) + ', timestamp=' + this.n6p_1.toString() + ')';
 };
 protoOf(LogoutFailure).hashCode = function () {
-  var result = hashCode(this.x6i_1);
-  result = imul(result, 31) + this.y6i_1.hashCode() | 0;
+  var result = hashCode(this.m6p_1);
+  result = imul(result, 31) + this.n6p_1.hashCode() | 0;
   return result;
 };
 protoOf(LogoutFailure).equals = function (other) {
@@ -10493,42 +12150,42 @@ protoOf(LogoutFailure).equals = function (other) {
     return true;
   if (!(other instanceof LogoutFailure))
     return false;
-  if (!equals(this.x6i_1, other.x6i_1))
+  if (!equals(this.m6p_1, other.m6p_1))
     return false;
-  if (!equalsLong(this.y6i_1, other.y6i_1))
+  if (!equalsLong(this.n6p_1, other.n6p_1))
     return false;
   return true;
 };
 function TokenRefreshStarted(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.z6i_1 = timestamp;
+  this.o6p_1 = timestamp;
 }
 protoOf(TokenRefreshStarted).toString = function () {
-  return 'TokenRefreshStarted(timestamp=' + this.z6i_1.toString() + ')';
+  return 'TokenRefreshStarted(timestamp=' + this.o6p_1.toString() + ')';
 };
 protoOf(TokenRefreshStarted).hashCode = function () {
-  return this.z6i_1.hashCode();
+  return this.o6p_1.hashCode();
 };
 protoOf(TokenRefreshStarted).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof TokenRefreshStarted))
     return false;
-  if (!equalsLong(this.z6i_1, other.z6i_1))
+  if (!equalsLong(this.o6p_1, other.o6p_1))
     return false;
   return true;
 };
 function TokenRefreshSuccess(tokenSet, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.a6j_1 = tokenSet;
-  this.b6j_1 = timestamp;
+  this.p6p_1 = tokenSet;
+  this.q6p_1 = timestamp;
 }
 protoOf(TokenRefreshSuccess).toString = function () {
-  return 'TokenRefreshSuccess(tokenSet=' + this.a6j_1.toString() + ', timestamp=' + this.b6j_1.toString() + ')';
+  return 'TokenRefreshSuccess(tokenSet=' + this.p6p_1.toString() + ', timestamp=' + this.q6p_1.toString() + ')';
 };
 protoOf(TokenRefreshSuccess).hashCode = function () {
-  var result = this.a6j_1.hashCode();
-  result = imul(result, 31) + this.b6j_1.hashCode() | 0;
+  var result = this.p6p_1.hashCode();
+  result = imul(result, 31) + this.q6p_1.hashCode() | 0;
   return result;
 };
 protoOf(TokenRefreshSuccess).equals = function (other) {
@@ -10536,23 +12193,23 @@ protoOf(TokenRefreshSuccess).equals = function (other) {
     return true;
   if (!(other instanceof TokenRefreshSuccess))
     return false;
-  if (!this.a6j_1.equals(other.a6j_1))
+  if (!this.p6p_1.equals(other.p6p_1))
     return false;
-  if (!equalsLong(this.b6j_1, other.b6j_1))
+  if (!equalsLong(this.q6p_1, other.q6p_1))
     return false;
   return true;
 };
 function TokenRefreshFailure(error, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.q5o_1 = error;
-  this.r5o_1 = timestamp;
+  this.u5o_1 = error;
+  this.v5o_1 = timestamp;
 }
 protoOf(TokenRefreshFailure).toString = function () {
-  return 'TokenRefreshFailure(error=' + toString(this.q5o_1) + ', timestamp=' + this.r5o_1.toString() + ')';
+  return 'TokenRefreshFailure(error=' + toString(this.u5o_1) + ', timestamp=' + this.v5o_1.toString() + ')';
 };
 protoOf(TokenRefreshFailure).hashCode = function () {
-  var result = hashCode(this.q5o_1);
-  result = imul(result, 31) + this.r5o_1.hashCode() | 0;
+  var result = hashCode(this.u5o_1);
+  result = imul(result, 31) + this.v5o_1.hashCode() | 0;
   return result;
 };
 protoOf(TokenRefreshFailure).equals = function (other) {
@@ -10560,23 +12217,23 @@ protoOf(TokenRefreshFailure).equals = function (other) {
     return true;
   if (!(other instanceof TokenRefreshFailure))
     return false;
-  if (!equals(this.q5o_1, other.q5o_1))
+  if (!equals(this.u5o_1, other.u5o_1))
     return false;
-  if (!equalsLong(this.r5o_1, other.r5o_1))
+  if (!equalsLong(this.v5o_1, other.v5o_1))
     return false;
   return true;
 };
 function SessionInvalidated(reason, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.c6j_1 = reason;
-  this.d6j_1 = timestamp;
+  this.r6p_1 = reason;
+  this.s6p_1 = timestamp;
 }
 protoOf(SessionInvalidated).toString = function () {
-  return 'SessionInvalidated(reason=' + toString(this.c6j_1) + ', timestamp=' + this.d6j_1.toString() + ')';
+  return 'SessionInvalidated(reason=' + toString(this.r6p_1) + ', timestamp=' + this.s6p_1.toString() + ')';
 };
 protoOf(SessionInvalidated).hashCode = function () {
-  var result = hashCode(this.c6j_1);
-  result = imul(result, 31) + this.d6j_1.hashCode() | 0;
+  var result = hashCode(this.r6p_1);
+  result = imul(result, 31) + this.s6p_1.hashCode() | 0;
   return result;
 };
 protoOf(SessionInvalidated).equals = function (other) {
@@ -10584,99 +12241,99 @@ protoOf(SessionInvalidated).equals = function (other) {
     return true;
   if (!(other instanceof SessionInvalidated))
     return false;
-  if (!equals(this.c6j_1, other.c6j_1))
+  if (!equals(this.r6p_1, other.r6p_1))
     return false;
-  if (!equalsLong(this.d6j_1, other.d6j_1))
+  if (!equalsLong(this.s6p_1, other.s6p_1))
     return false;
   return true;
 };
 function AppStarted(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.e6j_1 = timestamp;
+  this.t6p_1 = timestamp;
 }
 protoOf(AppStarted).toString = function () {
-  return 'AppStarted(timestamp=' + this.e6j_1.toString() + ')';
+  return 'AppStarted(timestamp=' + this.t6p_1.toString() + ')';
 };
 protoOf(AppStarted).hashCode = function () {
-  return this.e6j_1.hashCode();
+  return this.t6p_1.hashCode();
 };
 protoOf(AppStarted).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof AppStarted))
     return false;
-  if (!equalsLong(this.e6j_1, other.e6j_1))
+  if (!equalsLong(this.t6p_1, other.t6p_1))
     return false;
   return true;
 };
 function AppForegrounded(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.f6j_1 = timestamp;
+  this.u6p_1 = timestamp;
 }
 protoOf(AppForegrounded).toString = function () {
-  return 'AppForegrounded(timestamp=' + this.f6j_1.toString() + ')';
+  return 'AppForegrounded(timestamp=' + this.u6p_1.toString() + ')';
 };
 protoOf(AppForegrounded).hashCode = function () {
-  return this.f6j_1.hashCode();
+  return this.u6p_1.hashCode();
 };
 protoOf(AppForegrounded).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof AppForegrounded))
     return false;
-  if (!equalsLong(this.f6j_1, other.f6j_1))
+  if (!equalsLong(this.u6p_1, other.u6p_1))
     return false;
   return true;
 };
 function AppBackgrounded(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.g6j_1 = timestamp;
+  this.v6p_1 = timestamp;
 }
 protoOf(AppBackgrounded).toString = function () {
-  return 'AppBackgrounded(timestamp=' + this.g6j_1.toString() + ')';
+  return 'AppBackgrounded(timestamp=' + this.v6p_1.toString() + ')';
 };
 protoOf(AppBackgrounded).hashCode = function () {
-  return this.g6j_1.hashCode();
+  return this.v6p_1.hashCode();
 };
 protoOf(AppBackgrounded).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof AppBackgrounded))
     return false;
-  if (!equalsLong(this.g6j_1, other.g6j_1))
+  if (!equalsLong(this.v6p_1, other.v6p_1))
     return false;
   return true;
 };
 function AppTerminated(timestamp) {
   SdkLifecycleEvent.call(this);
-  this.h6j_1 = timestamp;
+  this.w6p_1 = timestamp;
 }
 protoOf(AppTerminated).toString = function () {
-  return 'AppTerminated(timestamp=' + this.h6j_1.toString() + ')';
+  return 'AppTerminated(timestamp=' + this.w6p_1.toString() + ')';
 };
 protoOf(AppTerminated).hashCode = function () {
-  return this.h6j_1.hashCode();
+  return this.w6p_1.hashCode();
 };
 protoOf(AppTerminated).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof AppTerminated))
     return false;
-  if (!equalsLong(this.h6j_1, other.h6j_1))
+  if (!equalsLong(this.w6p_1, other.w6p_1))
     return false;
   return true;
 };
 function TokensSaved(hasRefreshToken, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.i6j_1 = hasRefreshToken;
-  this.j6j_1 = timestamp;
+  this.x6p_1 = hasRefreshToken;
+  this.y6p_1 = timestamp;
 }
 protoOf(TokensSaved).toString = function () {
-  return 'TokensSaved(hasRefreshToken=' + this.i6j_1 + ', timestamp=' + this.j6j_1.toString() + ')';
+  return 'TokensSaved(hasRefreshToken=' + this.x6p_1 + ', timestamp=' + this.y6p_1.toString() + ')';
 };
 protoOf(TokensSaved).hashCode = function () {
-  var result = getBooleanHashCode(this.i6j_1);
-  result = imul(result, 31) + this.j6j_1.hashCode() | 0;
+  var result = getBooleanHashCode(this.x6p_1);
+  result = imul(result, 31) + this.y6p_1.hashCode() | 0;
   return result;
 };
 protoOf(TokensSaved).equals = function (other) {
@@ -10684,23 +12341,23 @@ protoOf(TokensSaved).equals = function (other) {
     return true;
   if (!(other instanceof TokensSaved))
     return false;
-  if (!(this.i6j_1 === other.i6j_1))
+  if (!(this.x6p_1 === other.x6p_1))
     return false;
-  if (!equalsLong(this.j6j_1, other.j6j_1))
+  if (!equalsLong(this.y6p_1, other.y6p_1))
     return false;
   return true;
 };
 function TokensCleared(reason, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.k6j_1 = reason;
-  this.l6j_1 = timestamp;
+  this.z6p_1 = reason;
+  this.a6q_1 = timestamp;
 }
 protoOf(TokensCleared).toString = function () {
-  return 'TokensCleared(reason=' + this.k6j_1 + ', timestamp=' + this.l6j_1.toString() + ')';
+  return 'TokensCleared(reason=' + this.z6p_1 + ', timestamp=' + this.a6q_1.toString() + ')';
 };
 protoOf(TokensCleared).hashCode = function () {
-  var result = getStringHashCode(this.k6j_1);
-  result = imul(result, 31) + this.l6j_1.hashCode() | 0;
+  var result = getStringHashCode(this.z6p_1);
+  result = imul(result, 31) + this.a6q_1.hashCode() | 0;
   return result;
 };
 protoOf(TokensCleared).equals = function (other) {
@@ -10708,25 +12365,25 @@ protoOf(TokensCleared).equals = function (other) {
     return true;
   if (!(other instanceof TokensCleared))
     return false;
-  if (!(this.k6j_1 === other.k6j_1))
+  if (!(this.z6p_1 === other.z6p_1))
     return false;
-  if (!equalsLong(this.l6j_1, other.l6j_1))
+  if (!equalsLong(this.a6q_1, other.a6q_1))
     return false;
   return true;
 };
 function StorageError(operation, error, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.m6j_1 = operation;
-  this.n6j_1 = error;
-  this.o6j_1 = timestamp;
+  this.b6q_1 = operation;
+  this.c6q_1 = error;
+  this.d6q_1 = timestamp;
 }
 protoOf(StorageError).toString = function () {
-  return 'StorageError(operation=' + this.m6j_1.toString() + ', error=' + toString(this.n6j_1) + ', timestamp=' + this.o6j_1.toString() + ')';
+  return 'StorageError(operation=' + this.b6q_1.toString() + ', error=' + toString(this.c6q_1) + ', timestamp=' + this.d6q_1.toString() + ')';
 };
 protoOf(StorageError).hashCode = function () {
-  var result = this.m6j_1.hashCode();
-  result = imul(result, 31) + hashCode(this.n6j_1) | 0;
-  result = imul(result, 31) + this.o6j_1.hashCode() | 0;
+  var result = this.b6q_1.hashCode();
+  result = imul(result, 31) + hashCode(this.c6q_1) | 0;
+  result = imul(result, 31) + this.d6q_1.hashCode() | 0;
   return result;
 };
 protoOf(StorageError).equals = function (other) {
@@ -10734,25 +12391,25 @@ protoOf(StorageError).equals = function (other) {
     return true;
   if (!(other instanceof StorageError))
     return false;
-  if (!this.m6j_1.equals(other.m6j_1))
+  if (!this.b6q_1.equals(other.b6q_1))
     return false;
-  if (!equals(this.n6j_1, other.n6j_1))
+  if (!equals(this.c6q_1, other.c6q_1))
     return false;
-  if (!equalsLong(this.o6j_1, other.o6j_1))
+  if (!equalsLong(this.d6q_1, other.d6q_1))
     return false;
   return true;
 };
 function TokenStateChanged(newState, timestamp) {
   SdkLifecycleEvent.call(this);
-  this.p6j_1 = newState;
-  this.q6j_1 = timestamp;
+  this.e6q_1 = newState;
+  this.f6q_1 = timestamp;
 }
 protoOf(TokenStateChanged).toString = function () {
-  return 'TokenStateChanged(newState=' + toString(this.p6j_1) + ', timestamp=' + this.q6j_1.toString() + ')';
+  return 'TokenStateChanged(newState=' + toString(this.e6q_1) + ', timestamp=' + this.f6q_1.toString() + ')';
 };
 protoOf(TokenStateChanged).hashCode = function () {
-  var result = hashCode(this.p6j_1);
-  result = imul(result, 31) + this.q6j_1.hashCode() | 0;
+  var result = hashCode(this.e6q_1);
+  result = imul(result, 31) + this.f6q_1.hashCode() | 0;
   return result;
 };
 protoOf(TokenStateChanged).equals = function (other) {
@@ -10760,9 +12417,9 @@ protoOf(TokenStateChanged).equals = function (other) {
     return true;
   if (!(other instanceof TokenStateChanged))
     return false;
-  if (!equals(this.p6j_1, other.p6j_1))
+  if (!equals(this.e6q_1, other.e6q_1))
     return false;
-  if (!equalsLong(this.q6j_1, other.q6j_1))
+  if (!equalsLong(this.f6q_1, other.f6q_1))
     return false;
   return true;
 };
@@ -10796,15 +12453,15 @@ function StorageOperation_CLEAR_getInstance() {
   return StorageOperation_CLEAR_instance;
 }
 function Pkce(codeVerifier, codeChallenge) {
-  this.g67_1 = codeVerifier;
-  this.h67_1 = codeChallenge;
+  this.m67_1 = codeVerifier;
+  this.n67_1 = codeChallenge;
 }
 protoOf(Pkce).toString = function () {
-  return 'Pkce(codeVerifier=' + this.g67_1 + ', codeChallenge=' + this.h67_1 + ')';
+  return 'Pkce(codeVerifier=' + this.m67_1 + ', codeChallenge=' + this.n67_1 + ')';
 };
 protoOf(Pkce).hashCode = function () {
-  var result = getStringHashCode(this.g67_1);
-  result = imul(result, 31) + getStringHashCode(this.h67_1) | 0;
+  var result = getStringHashCode(this.m67_1);
+  result = imul(result, 31) + getStringHashCode(this.n67_1) | 0;
   return result;
 };
 protoOf(Pkce).equals = function (other) {
@@ -10812,9 +12469,9 @@ protoOf(Pkce).equals = function (other) {
     return true;
   if (!(other instanceof Pkce))
     return false;
-  if (!(this.g67_1 === other.g67_1))
+  if (!(this.m67_1 === other.m67_1))
     return false;
-  if (!(this.h67_1 === other.h67_1))
+  if (!(this.n67_1 === other.n67_1))
     return false;
   return true;
 };
@@ -10824,16 +12481,16 @@ function SecurityUtils$Companion$sanitizeErrorMessage$lambda(match) {
 function SecurityUtils$Companion$sanitizeUrl$lambda(match) {
   return match.rc().a1(1) + match.rc().a1(2) + '=[REDACTED]';
 }
-function Companion_5() {
-  this.m66_1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
-  this.n66_1 = 64;
-  this.o66_1 = 16;
-  this.p66_1 = 500;
-  this.q66_1 = 20;
+function Companion_7() {
+  this.s66_1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
+  this.t66_1 = 64;
+  this.u66_1 = 16;
+  this.v66_1 = 500;
+  this.w66_1 = 20;
 }
-protoOf(Companion_5).k6f = function (errorMessage) {
+protoOf(Companion_7).p6k = function (errorMessage) {
   var tmp0 = take(errorMessage, 500);
-  var tmp2 = Regex_init_$Create$('([?&])(code|access_token|refresh_token|id_token|client_secret|code_verifier|code_challenge|token|state|nonce)=([^&\\s]+)');
+  var tmp2 = Regex_init_$Create$('([?&])(id_token_hint|access_token_hint|logout_hint|code|access_token|refresh_token|id_token|client_secret|code_verifier|code_challenge|token|state|nonce)=([^&\\s]+)');
   // Inline function 'kotlin.text.replace' call
   var transform = SecurityUtils$Companion$sanitizeErrorMessage$lambda;
   var tmp0_0 = tmp2.ub(tmp0, transform);
@@ -10860,7 +12517,7 @@ protoOf(Companion_5).k6f = function (errorMessage) {
   var replacement_2 = '[SESSION_ID]';
   return tmp2_3.tb(tmp0_6, replacement_2);
 };
-protoOf(Companion_5).r6j = function (token, placeholder) {
+protoOf(Companion_7).g6q = function (token, placeholder) {
   var tmp;
   if (startsWith(token, 'eyJ') && token.length > 20) {
     tmp = placeholder;
@@ -10874,19 +12531,19 @@ protoOf(Companion_5).r6j = function (token, placeholder) {
   }
   return tmp;
 };
-protoOf(Companion_5).s6j = function (token, placeholder, $super) {
+protoOf(Companion_7).h6q = function (token, placeholder, $super) {
   placeholder = placeholder === VOID ? '[TOKEN]' : placeholder;
-  return $super === VOID ? this.r6j(token, placeholder) : $super.r6j.call(this, token, placeholder);
+  return $super === VOID ? this.g6q(token, placeholder) : $super.g6q.call(this, token, placeholder);
 };
-protoOf(Companion_5).r66 = function (url) {
+protoOf(Companion_7).x66 = function (url) {
   var tmp2 = Regex_init_$Create$('([?&])(code|access_token|refresh_token|id_token|client_secret|code_verifier|code_challenge|state|nonce)=([^&\\s]+)');
   // Inline function 'kotlin.text.replace' call
   var transform = SecurityUtils$Companion$sanitizeUrl$lambda;
   return tmp2.ub(url, transform);
 };
-var Companion_instance_6;
-function Companion_getInstance_13() {
-  return Companion_instance_6;
+var Companion_instance_9;
+function Companion_getInstance_15() {
+  return Companion_instance_9;
 }
 function SecurityUtils$lambda(this$0) {
   return function () {
@@ -10894,12 +12551,12 @@ function SecurityUtils$lambda(this$0) {
   };
 }
 function SecurityUtils(cryptoService) {
-  this.d67_1 = cryptoService;
+  this.j67_1 = cryptoService;
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_SDK_CREATION_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, SecurityUtils$lambda(this));
+  tmp.r5a(tmp_0, VOID, VOID, SecurityUtils$lambda(this));
 }
-protoOf(SecurityUtils).f67 = function () {
+protoOf(SecurityUtils).l67 = function () {
   // Inline function 'kotlin.collections.map' call
   var this_0 = numberRangeToNumber(1, 16);
   // Inline function 'kotlin.collections.mapTo' call
@@ -10919,7 +12576,7 @@ protoOf(SecurityUtils).f67 = function () {
      while (!(item === last));
   return joinToString_0(destination, '');
 };
-protoOf(SecurityUtils).e67 = function () {
+protoOf(SecurityUtils).k67 = function () {
   // Inline function 'kotlin.collections.map' call
   var this_0 = numberRangeToNumber(1, 64);
   // Inline function 'kotlin.collections.mapTo' call
@@ -10938,7 +12595,7 @@ protoOf(SecurityUtils).e67 = function () {
     }
      while (!(item === last));
   var codeVerifier = joinToString_0(destination, '');
-  var sha256Hash = this.d67_1.s5s(encodeToByteArray(codeVerifier));
+  var sha256Hash = this.j67_1.w5s(encodeToByteArray(codeVerifier));
   var codeChallenge = replace(replace(replace(encodeBase64(sha256Hash), '+', '-'), '/', '_'), '=', '');
   return new Pkce(codeVerifier, codeChallenge);
 };
@@ -10978,18 +12635,34 @@ function ErrorLevel_FATAL_getInstance() {
   return ErrorLevel_FATAL_instance;
 }
 function ErrorHandlerRegistry() {
-  this.g5b_1 = null;
+  this.k5b_1 = null;
 }
-protoOf(ErrorHandlerRegistry).h5b = function (errorHandler) {
-  this.g5b_1 = errorHandler;
+protoOf(ErrorHandlerRegistry).l5b = function (errorHandler) {
+  this.k5b_1 = errorHandler;
 };
-protoOf(ErrorHandlerRegistry).a5g = function (throwable, context, level) {
+protoOf(ErrorHandlerRegistry).e5g = function (throwable, context, level) {
   try {
-    var tmp0_safe_receiver = this.g5b_1;
+    var tmp0_safe_receiver = this.k5b_1;
     if (tmp0_safe_receiver == null)
       null;
     else {
-      tmp0_safe_receiver.a5g(throwable, context, level);
+      tmp0_safe_receiver.e5g(throwable, context, level);
+    }
+  } catch ($p) {
+    if ($p instanceof Exception) {
+      var e = $p;
+    } else {
+      throw $p;
+    }
+  }
+};
+protoOf(ErrorHandlerRegistry).k6j = function (message, context, level) {
+  try {
+    var tmp0_safe_receiver = this.k5b_1;
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      tmp0_safe_receiver.k6j(message, context, level);
     }
   } catch ($p) {
     if ($p instanceof Exception) {
@@ -11033,10 +12706,10 @@ function LogCategory_initEntries() {
 }
 function LogCategory(name, ordinal, tag) {
   Enum.call(this, name, ordinal);
-  this.v6j_1 = tag;
+  this.k6q_1 = tag;
 }
 protoOf(LogCategory).toString = function () {
-  return this.v6j_1;
+  return this.k6q_1;
 };
 function LogCategory_TOKEN_MONITORING_getInstance() {
   LogCategory_initEntries();
@@ -11073,25 +12746,25 @@ function LogCategory_ERROR_TRACKING_getInstance() {
 function LogEntry(timestamp, severity, category, message, throwable, context, metadata) {
   throwable = throwable === VOID ? null : throwable;
   metadata = metadata === VOID ? emptyMap() : metadata;
-  this.w6j_1 = timestamp;
-  this.x6j_1 = severity;
-  this.y6j_1 = category;
-  this.z6j_1 = message;
-  this.a6k_1 = throwable;
-  this.b6k_1 = context;
-  this.c6k_1 = metadata;
+  this.l6q_1 = timestamp;
+  this.m6q_1 = severity;
+  this.n6q_1 = category;
+  this.o6q_1 = message;
+  this.p6q_1 = throwable;
+  this.q6q_1 = context;
+  this.r6q_1 = metadata;
 }
 protoOf(LogEntry).toString = function () {
-  return 'LogEntry(timestamp=' + this.w6j_1.toString() + ', severity=' + this.x6j_1.toString() + ', category=' + this.y6j_1.toString() + ', message=' + this.z6j_1 + ', throwable=' + toString_0(this.a6k_1) + ', context=' + this.b6k_1.toString() + ', metadata=' + toString(this.c6k_1) + ')';
+  return 'LogEntry(timestamp=' + this.l6q_1.toString() + ', severity=' + this.m6q_1.toString() + ', category=' + this.n6q_1.toString() + ', message=' + this.o6q_1 + ', throwable=' + toString_0(this.p6q_1) + ', context=' + this.q6q_1.toString() + ', metadata=' + toString(this.r6q_1) + ')';
 };
 protoOf(LogEntry).hashCode = function () {
-  var result = this.w6j_1.hashCode();
-  result = imul(result, 31) + this.x6j_1.hashCode() | 0;
-  result = imul(result, 31) + this.y6j_1.hashCode() | 0;
-  result = imul(result, 31) + getStringHashCode(this.z6j_1) | 0;
-  result = imul(result, 31) + (this.a6k_1 == null ? 0 : hashCode(this.a6k_1)) | 0;
-  result = imul(result, 31) + this.b6k_1.hashCode() | 0;
-  result = imul(result, 31) + hashCode(this.c6k_1) | 0;
+  var result = this.l6q_1.hashCode();
+  result = imul(result, 31) + this.m6q_1.hashCode() | 0;
+  result = imul(result, 31) + this.n6q_1.hashCode() | 0;
+  result = imul(result, 31) + getStringHashCode(this.o6q_1) | 0;
+  result = imul(result, 31) + (this.p6q_1 == null ? 0 : hashCode(this.p6q_1)) | 0;
+  result = imul(result, 31) + this.q6q_1.hashCode() | 0;
+  result = imul(result, 31) + hashCode(this.r6q_1) | 0;
   return result;
 };
 protoOf(LogEntry).equals = function (other) {
@@ -11099,19 +12772,19 @@ protoOf(LogEntry).equals = function (other) {
     return true;
   if (!(other instanceof LogEntry))
     return false;
-  if (!equalsLong(this.w6j_1, other.w6j_1))
+  if (!equalsLong(this.l6q_1, other.l6q_1))
     return false;
-  if (!this.x6j_1.equals(other.x6j_1))
+  if (!this.m6q_1.equals(other.m6q_1))
     return false;
-  if (!this.y6j_1.equals(other.y6j_1))
+  if (!this.n6q_1.equals(other.n6q_1))
     return false;
-  if (!(this.z6j_1 === other.z6j_1))
+  if (!(this.o6q_1 === other.o6q_1))
     return false;
-  if (!equals(this.a6k_1, other.a6k_1))
+  if (!equals(this.p6q_1, other.p6q_1))
     return false;
-  if (!this.b6k_1.equals(other.b6k_1))
+  if (!this.q6q_1.equals(other.q6q_1))
     return false;
-  if (!equals(this.c6k_1, other.c6k_1))
+  if (!equals(this.r6q_1, other.r6q_1))
     return false;
   return true;
 };
@@ -11121,14 +12794,14 @@ var LogSeverity_INFO_instance;
 var LogSeverity_WARNING_instance;
 var LogSeverity_ERROR_instance;
 var LogSeverity_ASSERT_instance;
-function Companion_6() {
+function Companion_8() {
 }
-protoOf(Companion_6).e5a = function (isDebugBuild) {
+protoOf(Companion_8).i5a = function (isDebugBuild) {
   return isDebugBuild ? LogSeverity_DEBUG_getInstance() : LogSeverity_INFO_getInstance();
 };
-var Companion_instance_7;
-function Companion_getInstance_14() {
-  return Companion_instance_7;
+var Companion_instance_10;
+function Companion_getInstance_16() {
+  return Companion_instance_10;
 }
 var LogSeverity_entriesInitialized;
 function LogSeverity_initEntries() {
@@ -11144,12 +12817,12 @@ function LogSeverity_initEntries() {
 }
 function LogSeverity(name, ordinal, priority) {
   Enum.call(this, name, ordinal);
-  this.f6k_1 = priority;
+  this.u6q_1 = priority;
 }
-protoOf(LogSeverity).g6k = function (minSeverity) {
-  return this.f6k_1 >= minSeverity.f6k_1;
+protoOf(LogSeverity).v6q = function (minSeverity) {
+  return this.u6q_1 >= minSeverity.u6q_1;
 };
-protoOf(LogSeverity).h6k = function () {
+protoOf(LogSeverity).w6q = function () {
   var tmp;
   switch (this.u2_1) {
     case 0:
@@ -11193,7 +12866,7 @@ function LogSeverity_ERROR_getInstance() {
   return LogSeverity_ERROR_instance;
 }
 function buildSentryEvent($this, message, level, exception, context) {
-  var timestamp = System_instance.s3f();
+  var timestamp = System_instance.u3f();
   var tmp = generateEventId($this);
   var tmp_0 = timestamp.toString();
   var tmp_1 = toSentryLevel($this, level);
@@ -11238,8 +12911,16 @@ function buildSentryException($this, throwable) {
   while (!(current == null)) {
     var tmp0_elvis_lhs = getKClassFromExpression(current).o();
     var tmp = tmp0_elvis_lhs == null ? 'UnknownException' : tmp0_elvis_lhs;
-    var tmp1_elvis_lhs = current.message;
-    values.x(new SentryException(tmp, tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs, buildStacktrace($this, current)));
+    var tmp1_safe_receiver = current.message;
+    var tmp_0;
+    if (tmp1_safe_receiver == null) {
+      tmp_0 = null;
+    } else {
+      // Inline function 'kotlin.let' call
+      tmp_0 = Companion_instance_9.p6k(tmp1_safe_receiver);
+    }
+    var tmp2_elvis_lhs = tmp_0;
+    values.x(new SentryException(tmp, tmp2_elvis_lhs == null ? '' : tmp2_elvis_lhs, buildStacktrace($this, current)));
     current = current.cause;
   }
   return new SentryExceptionData(values);
@@ -11276,10 +12957,10 @@ function buildStacktrace($this, throwable) {
   return new SentryStacktrace(frames);
 }
 function buildContexts($this) {
-  return new SentryContexts(new SentryAppContext($this.k6k_1.j5b_1, $this.k6k_1.k5b_1, $this.k6k_1.i5b_1), new SentryDeviceContext($this.k6k_1.r5b_1, $this.k6k_1.p5b_1), new SentryOsContext($this.k6k_1.p5b_1, $this.k6k_1.q5b_1));
+  return new SentryContexts(new SentryAppContext($this.z6q_1.n5b_1, $this.z6q_1.o5b_1, $this.z6q_1.m5b_1), new SentryDeviceContext($this.z6q_1.v5b_1, $this.z6q_1.t5b_1), new SentryOsContext($this.z6q_1.t5b_1, $this.z6q_1.u5b_1));
 }
 function buildUser($this) {
-  var tmp0_elvis_lhs = $this.r6k_1;
+  var tmp0_elvis_lhs = $this.g6r_1;
   var tmp;
   if (tmp0_elvis_lhs == null) {
     return null;
@@ -11288,15 +12969,15 @@ function buildUser($this) {
   }
   var userId = tmp;
   var tmp_0;
-  switch ($this.m6k_1.u2_1) {
+  switch ($this.b6r_1.u2_1) {
     case 0:
-      tmp_0 = hashUserId($this, userId, ensureNotNull($this.n6k_1), $this.k6k_1.l5b_1, $this.l6k_1);
+      tmp_0 = hashUserId($this, userId, ensureNotNull($this.c6r_1), $this.z6q_1.p5b_1, $this.a6r_1);
       break;
     case 1:
       tmp_0 = userId;
       break;
     case 2:
-      tmp_0 = $this.k6k_1.s5b_1;
+      tmp_0 = $this.z6q_1.w5b_1;
       break;
     case 3:
       return null;
@@ -11316,28 +12997,28 @@ function buildTags($this, context) {
   allTags.m2(tmp2, value);
   var tmp2_0 = 'sdk.version';
   // Inline function 'kotlin.collections.set' call
-  var value_0 = Companion_instance_19.z59_1;
+  var value_0 = Companion_instance_22.d5a_1;
   allTags.m2(tmp2_0, value_0);
   // Inline function 'kotlin.collections.set' call
-  var value_1 = $this.k6k_1.i5b_1;
+  var value_1 = $this.z6q_1.m5b_1;
   allTags.m2('app.id', value_1);
   var tmp2_1 = 'app.name';
   // Inline function 'kotlin.collections.set' call
-  var value_2 = $this.k6k_1.j5b_1;
+  var value_2 = $this.z6q_1.n5b_1;
   allTags.m2(tmp2_1, value_2);
   var tmp2_2 = 'app.version';
   // Inline function 'kotlin.collections.set' call
-  var value_3 = $this.k6k_1.k5b_1;
+  var value_3 = $this.z6q_1.o5b_1;
   allTags.m2(tmp2_2, value_3);
   var tmp2_3 = 'environment';
   // Inline function 'kotlin.collections.set' call
-  var value_4 = $this.k6k_1.t5b_1;
+  var value_4 = $this.z6q_1.x5b_1;
   allTags.m2(tmp2_3, value_4);
   var tmp2_4 = 'business_unit';
   // Inline function 'kotlin.collections.set' call
-  var value_5 = $this.k6k_1.l5b_1;
+  var value_5 = $this.z6q_1.p5b_1;
   allTags.m2(tmp2_4, value_5);
-  allTags.o2($this.s6k_1);
+  allTags.o2($this.h6r_1);
   // Inline function 'kotlin.collections.forEach' call
   // Inline function 'kotlin.collections.iterator' call
   var _iterator__ex2g4s = context.h1().t();
@@ -11362,8 +13043,8 @@ function sendEvent($this, event, $completion) {
   return tmp.q8();
 }
 function buildAuthHeader($this) {
-  var timestamp = System_instance.s3f().p3j();
-  return 'Sentry sentry_version=7, ' + ('sentry_key=' + $this.o6k_1.g6l_1 + ', ') + 'sentry_client=srg-login-sdk/1.0.0, ' + ('sentry_timestamp=' + timestamp.toString());
+  var timestamp = System_instance.u3f().r3j();
+  return 'Sentry sentry_version=7, ' + ('sentry_key=' + $this.d6r_1.v6r_1 + ', ') + 'sentry_client=srg-login-sdk/1.0.0, ' + ('sentry_timestamp=' + timestamp.toString());
 }
 function generateEventId($this) {
   return Companion_getInstance().bk().toString();
@@ -11413,7 +13094,7 @@ function toSentryLevel($this, _this__u8e3s4) {
 }
 function hashUserId($this, userId, salt, businessUnit, cryptoService) {
   var input = encodeToByteArray(userId + salt + businessUnit);
-  var hashBytes = cryptoService.s5s(input);
+  var hashBytes = cryptoService.w5s(input);
   var hexString = joinToString(hashBytes, '', VOID, VOID, VOID, VOID, SdkErrorReporter$hashUserId$lambda);
   return take(hexString, 16);
 }
@@ -11423,18 +13104,18 @@ function SdkErrorReporter$json$lambda($this$Json) {
   return Unit_instance;
 }
 function SdkErrorReporter$captureException$slambda(this$0, $event, resultContinuation) {
-  this.s6l_1 = this$0;
-  this.t6l_1 = $event;
+  this.h6s_1 = this$0;
+  this.i6s_1 = $event;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SdkErrorReporter$captureException$slambda).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(SdkErrorReporter$captureException$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SdkErrorReporter$captureException$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SdkErrorReporter$captureException$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -11445,7 +13126,7 @@ protoOf(SdkErrorReporter$captureException$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = sendEvent(this.s6l_1, this.t6l_1, this);
+          suspendResult = sendEvent(this.h6s_1, this.i6s_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -11467,21 +13148,82 @@ protoOf(SdkErrorReporter$captureException$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SdkErrorReporter$captureException$slambda).k2i = function ($this$launch, completion) {
-  var i = new SdkErrorReporter$captureException$slambda(this.s6l_1, this.t6l_1, completion);
-  i.u6l_1 = $this$launch;
+protoOf(SdkErrorReporter$captureException$slambda).l2i = function ($this$launch, completion) {
+  var i = new SdkErrorReporter$captureException$slambda(this.h6s_1, this.i6s_1, completion);
+  i.j6s_1 = $this$launch;
   return i;
 };
 function SdkErrorReporter$captureException$slambda_0(this$0, $event, resultContinuation) {
   var i = new SdkErrorReporter$captureException$slambda(this$0, $event, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SdkErrorReporter$captureException$lambda() {
   return 'Failed to capture exception in SdkErrorReporter';
+}
+function SdkErrorReporter$captureMessage$slambda(this$0, $event, resultContinuation) {
+  this.s6s_1 = this$0;
+  this.t6s_1 = $event;
+  CoroutineImpl.call(this, resultContinuation);
+}
+protoOf(SdkErrorReporter$captureMessage$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SdkErrorReporter$captureMessage$slambda).z8 = function (p1, $completion) {
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+};
+protoOf(SdkErrorReporter$captureMessage$slambda).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = sendEvent(this.s6s_1, this.t6s_1, this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          return Unit_instance;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+protoOf(SdkErrorReporter$captureMessage$slambda).l2i = function ($this$launch, completion) {
+  var i = new SdkErrorReporter$captureMessage$slambda(this.s6s_1, this.t6s_1, completion);
+  i.u6s_1 = $this$launch;
+  return i;
+};
+function SdkErrorReporter$captureMessage$slambda_0(this$0, $event, resultContinuation) {
+  var i = new SdkErrorReporter$captureMessage$slambda(this$0, $event, resultContinuation);
+  var l = function ($this$launch, $completion) {
+    return i.k2i($this$launch, $completion);
+  };
+  l.$arity = 1;
+  return l;
+}
+function SdkErrorReporter$captureMessage$lambda() {
+  return 'Failed to capture message in SdkErrorReporter';
 }
 function SdkErrorReporter$sendEvent$lambda() {
   return 'Failed to send event to Sentry';
@@ -11492,8 +13234,8 @@ function SdkErrorReporter$hashUserId$lambda(byte) {
 }
 function $sendEventCOROUTINE$(_this__u8e3s4, event, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.d6l_1 = _this__u8e3s4;
-  this.e6l_1 = event;
+  this.s6r_1 = _this__u8e3s4;
+  this.t6r_1 = event;
 }
 protoOf($sendEventCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -11504,19 +13246,19 @@ protoOf($sendEventCOROUTINE$).q8 = function () {
         case 0:
           this.j8_1 = 3;
           this.j8_1 = 2;
-          var tmp0 = this.d6l_1.u6k_1;
-          var value = this.e6l_1;
+          var tmp0 = this.s6r_1.j6r_1;
+          var value = this.t6r_1;
           var this_0 = tmp0.um();
           var this_1 = serializer(this_0, createKType(getKClass(SentryEvent), arrayOf([]), false));
           var eventJson = tmp0.sm(isInterface(this_1, KSerializer) ? this_1 : THROW_CCE(), value);
-          var tmp0_0 = this.d6l_1.j6k_1;
-          var urlString = this.d6l_1.p6k_1;
+          var tmp0_0 = this.s6r_1.y6q_1;
+          var urlString = this.s6r_1.e6r_1;
           var this_2 = new HttpRequestBuilder();
           url(this_2, urlString);
-          header(this_2, 'X-Sentry-Auth', this.d6l_1.q6k_1);
-          contentType(this_2, Application_getInstance().x2x_1);
+          header(this_2, 'X-Sentry-Auth', this.s6r_1.f6r_1);
+          contentType(this_2, Application_getInstance().y2x_1);
           if (eventJson == null) {
-            this_2.v45_1 = NullBody_instance;
+            this_2.x45_1 = NullBody_instance;
             var tmp_0 = JsType_instance;
             var tmp_1 = PrimitiveClasses_getInstance().oa();
             var tmp_2;
@@ -11532,13 +13274,13 @@ protoOf($sendEventCOROUTINE$).q8 = function () {
               }
               tmp_2 = tmp_3;
             }
-            this_2.g4b(typeInfoImpl(tmp_0, tmp_1, tmp_2));
+            this_2.j4b(typeInfoImpl(tmp_0, tmp_1, tmp_2));
           } else {
             if (eventJson instanceof OutgoingContent) {
-              this_2.v45_1 = eventJson;
-              this_2.g4b(null);
+              this_2.x45_1 = eventJson;
+              this_2.j4b(null);
             } else {
-              this_2.v45_1 = eventJson;
+              this_2.x45_1 = eventJson;
               var tmp_4 = JsType_instance;
               var tmp_5 = PrimitiveClasses_getInstance().oa();
               var tmp_6;
@@ -11554,20 +13296,20 @@ protoOf($sendEventCOROUTINE$).q8 = function () {
                 }
                 tmp_6 = tmp_7;
               }
-              this_2.g4b(typeInfoImpl(tmp_4, tmp_5, tmp_6));
+              this_2.j4b(typeInfoImpl(tmp_4, tmp_5, tmp_6));
             }
           }
 
-          this_2.t45_1 = Companion_getInstance_4().o33_1;
+          this_2.v45_1 = Companion_getInstance_4().p33_1;
           this.i8_1 = 1;
-          suspendResult = (new HttpStatement(this_2, tmp0_0)).t4v(this);
+          suspendResult = (new HttpStatement(this_2, tmp0_0)).x4v(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
 
           continue $sm;
         case 1:
-          this.f6l_1 = suspendResult;
+          this.u6r_1 = suspendResult;
           this.j8_1 = 3;
           this.i8_1 = 4;
           continue $sm;
@@ -11579,8 +13321,8 @@ protoOf($sendEventCOROUTINE$).q8 = function () {
             var tmp_9 = this;
             var tmp_10 = SdkLogger_getInstance();
             var tmp_11 = LogCategory_ERROR_TRACKING_getInstance();
-            tmp_10.b5z(tmp_11, e, VOID, SdkErrorReporter$sendEvent$lambda);
-            tmp_9.f6l_1 = Unit_instance;
+            tmp_10.g5z(tmp_11, e, VOID, SdkErrorReporter$sendEvent$lambda);
+            tmp_9.u6r_1 = Unit_instance;
             this.i8_1 = 4;
             continue $sm;
           } else {
@@ -11606,61 +13348,77 @@ protoOf($sendEventCOROUTINE$).q8 = function () {
 };
 function SdkErrorReporter(dsn, httpClient, telemetryContext, cryptoService, userContextMode, salt) {
   salt = salt === VOID ? null : salt;
-  this.i6k_1 = dsn;
-  this.j6k_1 = httpClient;
-  this.k6k_1 = telemetryContext;
-  this.l6k_1 = cryptoService;
-  this.m6k_1 = userContextMode;
-  this.n6k_1 = salt;
-  this.r6k_1 = null;
+  this.x6q_1 = dsn;
+  this.y6q_1 = httpClient;
+  this.z6q_1 = telemetryContext;
+  this.a6r_1 = cryptoService;
+  this.b6r_1 = userContextMode;
+  this.c6r_1 = salt;
+  this.g6r_1 = null;
   var tmp = this;
   // Inline function 'kotlin.collections.mutableMapOf' call
-  tmp.s6k_1 = LinkedHashMap_init_$Create$();
-  this.t6k_1 = CoroutineScope_0(SupervisorJob().hf(Dispatchers_getInstance().r1r_1));
+  tmp.h6r_1 = LinkedHashMap_init_$Create$();
+  this.i6r_1 = CoroutineScope_0(SupervisorJob().hf(Dispatchers_getInstance().s1r_1));
   var tmp_0 = this;
-  tmp_0.u6k_1 = Json(VOID, SdkErrorReporter$json$lambda);
+  tmp_0.j6r_1 = Json(VOID, SdkErrorReporter$json$lambda);
   // Inline function 'kotlin.text.isNotBlank' call
-  var this_0 = this.i6k_1;
+  var this_0 = this.x6q_1;
   // Inline function 'kotlin.require' call
   if (!!isBlank(this_0)) {
     var message = 'DSN cannot be blank';
     throw IllegalArgumentException_init_$Create$(toString(message));
   }
-  if (this.m6k_1.equals(UserContextMode_HASHED_SUB_getInstance())) {
+  if (this.b6r_1.equals(UserContextMode_HASHED_SUB_getInstance())) {
     // Inline function 'kotlin.text.isNullOrBlank' call
-    var this_1 = this.n6k_1;
+    var this_1 = this.c6r_1;
     // Inline function 'kotlin.require' call
     if (!!(this_1 == null || isBlank(this_1))) {
       var message_0 = 'Salt is required for HASHED_SUB mode';
       throw IllegalArgumentException_init_$Create$(toString(message_0));
     }
   }
-  this.o6k_1 = Companion_instance_8.q2x(this.i6k_1);
-  this.p6k_1 = 'https://o' + this.o6k_1.h6l_1 + '.ingest.' + this.o6k_1.j6l_1 + '.sentry.io/api/' + this.o6k_1.i6l_1 + '/store/';
-  this.q6k_1 = buildAuthHeader(this);
+  this.d6r_1 = Companion_instance_11.r2x(this.x6q_1);
+  this.e6r_1 = 'https://o' + this.d6r_1.w6r_1 + '.ingest.' + this.d6r_1.y6r_1 + '.sentry.io/api/' + this.d6r_1.x6r_1 + '/store/';
+  this.f6r_1 = buildAuthHeader(this);
 }
-protoOf(SdkErrorReporter).a5g = function (throwable, context, level) {
+protoOf(SdkErrorReporter).e5g = function (throwable, context, level) {
   try {
     var tmp0_elvis_lhs = throwable.message;
     var tmp1_elvis_lhs = tmp0_elvis_lhs == null ? getKClassFromExpression(throwable).o() : tmp0_elvis_lhs;
     var rawMessage = tmp1_elvis_lhs == null ? 'Unknown error' : tmp1_elvis_lhs;
-    var sanitizedMessage = Companion_instance_6.k6f(rawMessage);
+    var sanitizedMessage = Companion_instance_9.p6k(rawMessage);
     var event = buildSentryEvent(this, sanitizedMessage, level, throwable, context);
-    launch(this.t6k_1, VOID, VOID, SdkErrorReporter$captureException$slambda_0(this, event, null));
+    launch(this.i6r_1, VOID, VOID, SdkErrorReporter$captureException$slambda_0(this, event, null));
   } catch ($p) {
     if ($p instanceof Exception) {
       var e = $p;
       var tmp = SdkLogger_getInstance();
       var tmp_0 = LogCategory_ERROR_TRACKING_getInstance();
-      tmp.b5z(tmp_0, e, VOID, SdkErrorReporter$captureException$lambda);
+      tmp.g5z(tmp_0, e, VOID, SdkErrorReporter$captureException$lambda);
     } else {
       throw $p;
     }
   }
 };
-function Companion_7() {
+protoOf(SdkErrorReporter).k6j = function (message, context, level) {
+  try {
+    var sanitizedMessage = Companion_instance_9.p6k(message);
+    var event = buildSentryEvent(this, sanitizedMessage, level, null, context);
+    launch(this.i6r_1, VOID, VOID, SdkErrorReporter$captureMessage$slambda_0(this, event, null));
+  } catch ($p) {
+    if ($p instanceof Exception) {
+      var e = $p;
+      var tmp = SdkLogger_getInstance();
+      var tmp_0 = LogCategory_ERROR_TRACKING_getInstance();
+      tmp.g5z(tmp_0, e, VOID, SdkErrorReporter$captureMessage$lambda);
+    } else {
+      throw $p;
+    }
+  }
+};
+function Companion_9() {
 }
-protoOf(Companion_7).q2x = function (dsn) {
+protoOf(Companion_9).r2x = function (dsn) {
   // Inline function 'kotlin.require' call
   if (!startsWith(dsn, 'https://')) {
     var message = 'DSN must start with https://';
@@ -11693,24 +13451,24 @@ protoOf(Companion_7).q2x = function (dsn) {
   var region = hostParts.a1(2);
   return new SentryDsn(publicKey, orgId, projectId, region);
 };
-var Companion_instance_8;
-function Companion_getInstance_15() {
-  return Companion_instance_8;
+var Companion_instance_11;
+function Companion_getInstance_17() {
+  return Companion_instance_11;
 }
 function SentryDsn(publicKey, organizationId, projectId, region) {
-  this.g6l_1 = publicKey;
-  this.h6l_1 = organizationId;
-  this.i6l_1 = projectId;
-  this.j6l_1 = region;
+  this.v6r_1 = publicKey;
+  this.w6r_1 = organizationId;
+  this.x6r_1 = projectId;
+  this.y6r_1 = region;
 }
 protoOf(SentryDsn).toString = function () {
-  return 'SentryDsn(publicKey=' + this.g6l_1 + ', organizationId=' + this.h6l_1 + ', projectId=' + this.i6l_1 + ', region=' + this.j6l_1 + ')';
+  return 'SentryDsn(publicKey=' + this.v6r_1 + ', organizationId=' + this.w6r_1 + ', projectId=' + this.x6r_1 + ', region=' + this.y6r_1 + ')';
 };
 protoOf(SentryDsn).hashCode = function () {
-  var result = getStringHashCode(this.g6l_1);
-  result = imul(result, 31) + getStringHashCode(this.h6l_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.i6l_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.j6l_1) | 0;
+  var result = getStringHashCode(this.v6r_1);
+  result = imul(result, 31) + getStringHashCode(this.w6r_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.x6r_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.y6r_1) | 0;
   return result;
 };
 protoOf(SentryDsn).equals = function (other) {
@@ -11718,13 +13476,13 @@ protoOf(SentryDsn).equals = function (other) {
     return true;
   if (!(other instanceof SentryDsn))
     return false;
-  if (!(this.g6l_1 === other.g6l_1))
+  if (!(this.v6r_1 === other.v6r_1))
     return false;
-  if (!(this.h6l_1 === other.h6l_1))
+  if (!(this.w6r_1 === other.w6r_1))
     return false;
-  if (!(this.i6l_1 === other.i6l_1))
+  if (!(this.x6r_1 === other.x6r_1))
     return false;
-  if (!(this.j6l_1 === other.j6l_1))
+  if (!(this.y6r_1 === other.y6r_1))
     return false;
   return true;
 };
@@ -11734,8 +13492,8 @@ function SentryEvent$Companion$$childSerializers$_anonymous__ilrjhr() {
 function SentryEvent$Companion$$childSerializers$_anonymous__ilrjhr_0() {
   return new LinkedHashMapSerializer(StringSerializer_getInstance(), StringSerializer_getInstance());
 }
-function Companion_8() {
-  Companion_instance_9 = this;
+function Companion_10() {
+  Companion_instance_12 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   var tmp_1 = lazy_0(tmp_0, SentryEvent$Companion$$childSerializers$_anonymous__ilrjhr);
@@ -11743,13 +13501,13 @@ function Companion_8() {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.v6l_1 = [null, null, null, null, null, null, null, null, null, tmp_1, lazy_0(tmp_2, SentryEvent$Companion$$childSerializers$_anonymous__ilrjhr_0)];
+  tmp.v6s_1 = [null, null, null, null, null, null, null, null, null, tmp_1, lazy_0(tmp_2, SentryEvent$Companion$$childSerializers$_anonymous__ilrjhr_0)];
 }
-var Companion_instance_9;
-function Companion_getInstance_16() {
-  if (Companion_instance_9 == null)
-    new Companion_8();
-  return Companion_instance_9;
+var Companion_instance_12;
+function Companion_getInstance_18() {
+  if (Companion_instance_12 == null)
+    new Companion_10();
+  return Companion_instance_12;
 }
 function $serializer() {
   $serializer_instance = this;
@@ -11765,36 +13523,36 @@ function $serializer() {
   tmp0_serialDesc.dw('user', true);
   tmp0_serialDesc.dw('tags', false);
   tmp0_serialDesc.dw('extra', true);
-  this.w6l_1 = tmp0_serialDesc;
+  this.w6s_1 = tmp0_serialDesc;
 }
-protoOf($serializer).x6l = function (encoder, value) {
-  var tmp0_desc = this.w6l_1;
+protoOf($serializer).x6s = function (encoder, value) {
+  var tmp0_desc = this.w6s_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_16().v6l_1;
-  tmp1_output.mq(tmp0_desc, 0, value.y6l_1);
-  tmp1_output.mq(tmp0_desc, 1, value.z6l_1);
-  tmp1_output.mq(tmp0_desc, 2, value.a6m_1);
-  tmp1_output.mq(tmp0_desc, 3, value.b6m_1);
-  tmp1_output.mq(tmp0_desc, 4, value.c6m_1);
-  tmp1_output.mq(tmp0_desc, 5, value.d6m_1);
-  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.e6m_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 6, $serializer_getInstance_0(), value.e6m_1);
+  var tmp2_cached = Companion_getInstance_18().v6s_1;
+  tmp1_output.mq(tmp0_desc, 0, value.y6s_1);
+  tmp1_output.mq(tmp0_desc, 1, value.z6s_1);
+  tmp1_output.mq(tmp0_desc, 2, value.a6t_1);
+  tmp1_output.mq(tmp0_desc, 3, value.b6t_1);
+  tmp1_output.mq(tmp0_desc, 4, value.c6t_1);
+  tmp1_output.mq(tmp0_desc, 5, value.d6t_1);
+  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.e6t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 6, $serializer_getInstance_0(), value.e6t_1);
   }
-  tmp1_output.oq(tmp0_desc, 7, $serializer_getInstance_4(), value.f6m_1);
-  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.g6m_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 8, $serializer_getInstance_8(), value.g6m_1);
+  tmp1_output.oq(tmp0_desc, 7, $serializer_getInstance_4(), value.f6t_1);
+  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.g6t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 8, $serializer_getInstance_8(), value.g6t_1);
   }
-  tmp1_output.oq(tmp0_desc, 9, tmp2_cached[9].j1(), value.h6m_1);
-  if (tmp1_output.uq(tmp0_desc, 10) ? true : !equals(value.i6m_1, emptyMap())) {
-    tmp1_output.oq(tmp0_desc, 10, tmp2_cached[10].j1(), value.i6m_1);
+  tmp1_output.oq(tmp0_desc, 9, tmp2_cached[9].j1(), value.h6t_1);
+  if (tmp1_output.uq(tmp0_desc, 10) ? true : !equals(value.i6t_1, emptyMap())) {
+    tmp1_output.oq(tmp0_desc, 10, tmp2_cached[10].j1(), value.i6t_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer).am = function (encoder, value) {
-  return this.x6l(encoder, value instanceof SentryEvent ? value : THROW_CCE());
+  return this.x6s(encoder, value instanceof SentryEvent ? value : THROW_CCE());
 };
 protoOf($serializer).bm = function (decoder) {
-  var tmp0_desc = this.w6l_1;
+  var tmp0_desc = this.w6s_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -11810,7 +13568,7 @@ protoOf($serializer).bm = function (decoder) {
   var tmp13_local9 = null;
   var tmp14_local10 = null;
   var tmp15_input = decoder.zo(tmp0_desc);
-  var tmp16_cached = Companion_getInstance_16().v6l_1;
+  var tmp16_cached = Companion_getInstance_18().v6s_1;
   if (tmp15_input.op()) {
     tmp4_local0 = tmp15_input.jp(tmp0_desc, 0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -11893,10 +13651,10 @@ protoOf($serializer).bm = function (decoder) {
   return SentryEvent_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, null);
 };
 protoOf($serializer).zl = function () {
-  return this.w6l_1;
+  return this.w6s_1;
 };
 protoOf($serializer).fw = function () {
-  var tmp0_cached = Companion_getInstance_16().v6l_1;
+  var tmp0_cached = Companion_getInstance_18().v6s_1;
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
@@ -11910,65 +13668,65 @@ function $serializer_getInstance() {
 }
 function SentryEvent_init_$Init$(seen0, eventId, timestamp, platform, level, logger, message, exception, contexts, user, tags, extra, serializationConstructorMarker, $this) {
   if (!(703 === (703 & seen0))) {
-    throwMissingFieldException(seen0, 703, $serializer_getInstance().w6l_1);
+    throwMissingFieldException(seen0, 703, $serializer_getInstance().w6s_1);
   }
-  $this.y6l_1 = eventId;
-  $this.z6l_1 = timestamp;
-  $this.a6m_1 = platform;
-  $this.b6m_1 = level;
-  $this.c6m_1 = logger;
-  $this.d6m_1 = message;
+  $this.y6s_1 = eventId;
+  $this.z6s_1 = timestamp;
+  $this.a6t_1 = platform;
+  $this.b6t_1 = level;
+  $this.c6t_1 = logger;
+  $this.d6t_1 = message;
   if (0 === (seen0 & 64))
-    $this.e6m_1 = null;
+    $this.e6t_1 = null;
   else
-    $this.e6m_1 = exception;
-  $this.f6m_1 = contexts;
+    $this.e6t_1 = exception;
+  $this.f6t_1 = contexts;
   if (0 === (seen0 & 256))
-    $this.g6m_1 = null;
+    $this.g6t_1 = null;
   else
-    $this.g6m_1 = user;
-  $this.h6m_1 = tags;
+    $this.g6t_1 = user;
+  $this.h6t_1 = tags;
   if (0 === (seen0 & 1024))
-    $this.i6m_1 = emptyMap();
+    $this.i6t_1 = emptyMap();
   else
-    $this.i6m_1 = extra;
+    $this.i6t_1 = extra;
   return $this;
 }
 function SentryEvent_init_$Create$(seen0, eventId, timestamp, platform, level, logger, message, exception, contexts, user, tags, extra, serializationConstructorMarker) {
   return SentryEvent_init_$Init$(seen0, eventId, timestamp, platform, level, logger, message, exception, contexts, user, tags, extra, serializationConstructorMarker, objectCreate(protoOf(SentryEvent)));
 }
 function SentryEvent(eventId, timestamp, platform, level, logger, message, exception, contexts, user, tags, extra) {
-  Companion_getInstance_16();
+  Companion_getInstance_18();
   exception = exception === VOID ? null : exception;
   user = user === VOID ? null : user;
   extra = extra === VOID ? emptyMap() : extra;
-  this.y6l_1 = eventId;
-  this.z6l_1 = timestamp;
-  this.a6m_1 = platform;
-  this.b6m_1 = level;
-  this.c6m_1 = logger;
-  this.d6m_1 = message;
-  this.e6m_1 = exception;
-  this.f6m_1 = contexts;
-  this.g6m_1 = user;
-  this.h6m_1 = tags;
-  this.i6m_1 = extra;
+  this.y6s_1 = eventId;
+  this.z6s_1 = timestamp;
+  this.a6t_1 = platform;
+  this.b6t_1 = level;
+  this.c6t_1 = logger;
+  this.d6t_1 = message;
+  this.e6t_1 = exception;
+  this.f6t_1 = contexts;
+  this.g6t_1 = user;
+  this.h6t_1 = tags;
+  this.i6t_1 = extra;
 }
 protoOf(SentryEvent).toString = function () {
-  return 'SentryEvent(eventId=' + this.y6l_1 + ', timestamp=' + this.z6l_1 + ', platform=' + this.a6m_1 + ', level=' + this.b6m_1 + ', logger=' + this.c6m_1 + ', message=' + this.d6m_1 + ', exception=' + toString_0(this.e6m_1) + ', contexts=' + this.f6m_1.toString() + ', user=' + toString_0(this.g6m_1) + ', tags=' + toString(this.h6m_1) + ', extra=' + toString(this.i6m_1) + ')';
+  return 'SentryEvent(eventId=' + this.y6s_1 + ', timestamp=' + this.z6s_1 + ', platform=' + this.a6t_1 + ', level=' + this.b6t_1 + ', logger=' + this.c6t_1 + ', message=' + this.d6t_1 + ', exception=' + toString_0(this.e6t_1) + ', contexts=' + this.f6t_1.toString() + ', user=' + toString_0(this.g6t_1) + ', tags=' + toString(this.h6t_1) + ', extra=' + toString(this.i6t_1) + ')';
 };
 protoOf(SentryEvent).hashCode = function () {
-  var result = getStringHashCode(this.y6l_1);
-  result = imul(result, 31) + getStringHashCode(this.z6l_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.a6m_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.b6m_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.c6m_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.d6m_1) | 0;
-  result = imul(result, 31) + (this.e6m_1 == null ? 0 : this.e6m_1.hashCode()) | 0;
-  result = imul(result, 31) + this.f6m_1.hashCode() | 0;
-  result = imul(result, 31) + (this.g6m_1 == null ? 0 : this.g6m_1.hashCode()) | 0;
-  result = imul(result, 31) + hashCode(this.h6m_1) | 0;
-  result = imul(result, 31) + hashCode(this.i6m_1) | 0;
+  var result = getStringHashCode(this.y6s_1);
+  result = imul(result, 31) + getStringHashCode(this.z6s_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.a6t_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.b6t_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.c6t_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.d6t_1) | 0;
+  result = imul(result, 31) + (this.e6t_1 == null ? 0 : this.e6t_1.hashCode()) | 0;
+  result = imul(result, 31) + this.f6t_1.hashCode() | 0;
+  result = imul(result, 31) + (this.g6t_1 == null ? 0 : this.g6t_1.hashCode()) | 0;
+  result = imul(result, 31) + hashCode(this.h6t_1) | 0;
+  result = imul(result, 31) + hashCode(this.i6t_1) | 0;
   return result;
 };
 protoOf(SentryEvent).equals = function (other) {
@@ -11976,72 +13734,72 @@ protoOf(SentryEvent).equals = function (other) {
     return true;
   if (!(other instanceof SentryEvent))
     return false;
-  if (!(this.y6l_1 === other.y6l_1))
+  if (!(this.y6s_1 === other.y6s_1))
     return false;
-  if (!(this.z6l_1 === other.z6l_1))
+  if (!(this.z6s_1 === other.z6s_1))
     return false;
-  if (!(this.a6m_1 === other.a6m_1))
+  if (!(this.a6t_1 === other.a6t_1))
     return false;
-  if (!(this.b6m_1 === other.b6m_1))
+  if (!(this.b6t_1 === other.b6t_1))
     return false;
-  if (!(this.c6m_1 === other.c6m_1))
+  if (!(this.c6t_1 === other.c6t_1))
     return false;
-  if (!(this.d6m_1 === other.d6m_1))
+  if (!(this.d6t_1 === other.d6t_1))
     return false;
-  if (!equals(this.e6m_1, other.e6m_1))
+  if (!equals(this.e6t_1, other.e6t_1))
     return false;
-  if (!this.f6m_1.equals(other.f6m_1))
+  if (!this.f6t_1.equals(other.f6t_1))
     return false;
-  if (!equals(this.g6m_1, other.g6m_1))
+  if (!equals(this.g6t_1, other.g6t_1))
     return false;
-  if (!equals(this.h6m_1, other.h6m_1))
+  if (!equals(this.h6t_1, other.h6t_1))
     return false;
-  if (!equals(this.i6m_1, other.i6m_1))
+  if (!equals(this.i6t_1, other.i6t_1))
     return false;
   return true;
 };
 function SentryExceptionData$Companion$$childSerializers$_anonymous__vgoxw0() {
   return new ArrayListSerializer($serializer_getInstance_1());
 }
-function Companion_9() {
-  Companion_instance_10 = this;
+function Companion_11() {
+  Companion_instance_13 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.j6m_1 = [lazy_0(tmp_0, SentryExceptionData$Companion$$childSerializers$_anonymous__vgoxw0)];
+  tmp.j6t_1 = [lazy_0(tmp_0, SentryExceptionData$Companion$$childSerializers$_anonymous__vgoxw0)];
 }
-var Companion_instance_10;
-function Companion_getInstance_17() {
-  if (Companion_instance_10 == null)
-    new Companion_9();
-  return Companion_instance_10;
+var Companion_instance_13;
+function Companion_getInstance_19() {
+  if (Companion_instance_13 == null)
+    new Companion_11();
+  return Companion_instance_13;
 }
 function $serializer_0() {
   $serializer_instance_0 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.logging.SentryExceptionData', this, 1);
   tmp0_serialDesc.dw('values', false);
-  this.k6m_1 = tmp0_serialDesc;
+  this.k6t_1 = tmp0_serialDesc;
 }
-protoOf($serializer_0).l6m = function (encoder, value) {
-  var tmp0_desc = this.k6m_1;
+protoOf($serializer_0).l6t = function (encoder, value) {
+  var tmp0_desc = this.k6t_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_17().j6m_1;
-  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.m6m_1);
+  var tmp2_cached = Companion_getInstance_19().j6t_1;
+  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.m6t_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_0).am = function (encoder, value) {
-  return this.l6m(encoder, value instanceof SentryExceptionData ? value : THROW_CCE());
+  return this.l6t(encoder, value instanceof SentryExceptionData ? value : THROW_CCE());
 };
 protoOf($serializer_0).bm = function (decoder) {
-  var tmp0_desc = this.k6m_1;
+  var tmp0_desc = this.k6t_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
   var tmp4_local0 = null;
   var tmp5_input = decoder.zo(tmp0_desc);
-  var tmp6_cached = Companion_getInstance_17().j6m_1;
+  var tmp6_cached = Companion_getInstance_19().j6t_1;
   if (tmp5_input.op()) {
     tmp4_local0 = tmp5_input.lp(tmp0_desc, 0, tmp6_cached[0].j1(), tmp4_local0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -12064,13 +13822,13 @@ protoOf($serializer_0).bm = function (decoder) {
   return SentryExceptionData_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
 };
 protoOf($serializer_0).zl = function () {
-  return this.k6m_1;
+  return this.k6t_1;
 };
 protoOf($serializer_0).fw = function () {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  return [Companion_getInstance_17().j6m_1[0].j1()];
+  return [Companion_getInstance_19().j6t_1[0].j1()];
 };
 var $serializer_instance_0;
 function $serializer_getInstance_0() {
@@ -12080,38 +13838,38 @@ function $serializer_getInstance_0() {
 }
 function SentryExceptionData_init_$Init$(seen0, values, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_0().k6m_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_0().k6t_1);
   }
-  $this.m6m_1 = values;
+  $this.m6t_1 = values;
   return $this;
 }
 function SentryExceptionData_init_$Create$(seen0, values, serializationConstructorMarker) {
   return SentryExceptionData_init_$Init$(seen0, values, serializationConstructorMarker, objectCreate(protoOf(SentryExceptionData)));
 }
 function SentryExceptionData(values) {
-  Companion_getInstance_17();
-  this.m6m_1 = values;
+  Companion_getInstance_19();
+  this.m6t_1 = values;
 }
 protoOf(SentryExceptionData).toString = function () {
-  return 'SentryExceptionData(values=' + toString(this.m6m_1) + ')';
+  return 'SentryExceptionData(values=' + toString(this.m6t_1) + ')';
 };
 protoOf(SentryExceptionData).hashCode = function () {
-  return hashCode(this.m6m_1);
+  return hashCode(this.m6t_1);
 };
 protoOf(SentryExceptionData).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof SentryExceptionData))
     return false;
-  if (!equals(this.m6m_1, other.m6m_1))
+  if (!equals(this.m6t_1, other.m6t_1))
     return false;
   return true;
 };
-function Companion_10() {
+function Companion_12() {
 }
-var Companion_instance_11;
-function Companion_getInstance_18() {
-  return Companion_instance_11;
+var Companion_instance_14;
+function Companion_getInstance_20() {
+  return Companion_instance_14;
 }
 function $serializer_1() {
   $serializer_instance_1 = this;
@@ -12119,23 +13877,23 @@ function $serializer_1() {
   tmp0_serialDesc.dw('type', false);
   tmp0_serialDesc.dw('value', false);
   tmp0_serialDesc.dw('stacktrace', true);
-  this.n6m_1 = tmp0_serialDesc;
+  this.n6t_1 = tmp0_serialDesc;
 }
-protoOf($serializer_1).o6m = function (encoder, value) {
-  var tmp0_desc = this.n6m_1;
+protoOf($serializer_1).o6t = function (encoder, value) {
+  var tmp0_desc = this.n6t_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.p6m_1);
-  tmp1_output.mq(tmp0_desc, 1, value.q6m_1);
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.r6m_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, $serializer_getInstance_2(), value.r6m_1);
+  tmp1_output.mq(tmp0_desc, 0, value.p6t_1);
+  tmp1_output.mq(tmp0_desc, 1, value.q6t_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.r6t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, $serializer_getInstance_2(), value.r6t_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_1).am = function (encoder, value) {
-  return this.o6m(encoder, value instanceof SentryException ? value : THROW_CCE());
+  return this.o6t(encoder, value instanceof SentryException ? value : THROW_CCE());
 };
 protoOf($serializer_1).bm = function (decoder) {
-  var tmp0_desc = this.n6m_1;
+  var tmp0_desc = this.n6t_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12177,7 +13935,7 @@ protoOf($serializer_1).bm = function (decoder) {
   return SentryException_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
 };
 protoOf($serializer_1).zl = function () {
-  return this.n6m_1;
+  return this.n6t_1;
 };
 protoOf($serializer_1).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12193,14 +13951,14 @@ function $serializer_getInstance_1() {
 }
 function SentryException_init_$Init$(seen0, type, value, stacktrace, serializationConstructorMarker, $this) {
   if (!(3 === (3 & seen0))) {
-    throwMissingFieldException(seen0, 3, $serializer_getInstance_1().n6m_1);
+    throwMissingFieldException(seen0, 3, $serializer_getInstance_1().n6t_1);
   }
-  $this.p6m_1 = type;
-  $this.q6m_1 = value;
+  $this.p6t_1 = type;
+  $this.q6t_1 = value;
   if (0 === (seen0 & 4))
-    $this.r6m_1 = null;
+    $this.r6t_1 = null;
   else
-    $this.r6m_1 = stacktrace;
+    $this.r6t_1 = stacktrace;
   return $this;
 }
 function SentryException_init_$Create$(seen0, type, value, stacktrace, serializationConstructorMarker) {
@@ -12208,17 +13966,17 @@ function SentryException_init_$Create$(seen0, type, value, stacktrace, serializa
 }
 function SentryException(type, value, stacktrace) {
   stacktrace = stacktrace === VOID ? null : stacktrace;
-  this.p6m_1 = type;
-  this.q6m_1 = value;
-  this.r6m_1 = stacktrace;
+  this.p6t_1 = type;
+  this.q6t_1 = value;
+  this.r6t_1 = stacktrace;
 }
 protoOf(SentryException).toString = function () {
-  return 'SentryException(type=' + this.p6m_1 + ', value=' + this.q6m_1 + ', stacktrace=' + toString_0(this.r6m_1) + ')';
+  return 'SentryException(type=' + this.p6t_1 + ', value=' + this.q6t_1 + ', stacktrace=' + toString_0(this.r6t_1) + ')';
 };
 protoOf(SentryException).hashCode = function () {
-  var result = getStringHashCode(this.p6m_1);
-  result = imul(result, 31) + getStringHashCode(this.q6m_1) | 0;
-  result = imul(result, 31) + (this.r6m_1 == null ? 0 : this.r6m_1.hashCode()) | 0;
+  var result = getStringHashCode(this.p6t_1);
+  result = imul(result, 31) + getStringHashCode(this.q6t_1) | 0;
+  result = imul(result, 31) + (this.r6t_1 == null ? 0 : this.r6t_1.hashCode()) | 0;
   return result;
 };
 protoOf(SentryException).equals = function (other) {
@@ -12226,56 +13984,56 @@ protoOf(SentryException).equals = function (other) {
     return true;
   if (!(other instanceof SentryException))
     return false;
-  if (!(this.p6m_1 === other.p6m_1))
+  if (!(this.p6t_1 === other.p6t_1))
     return false;
-  if (!(this.q6m_1 === other.q6m_1))
+  if (!(this.q6t_1 === other.q6t_1))
     return false;
-  if (!equals(this.r6m_1, other.r6m_1))
+  if (!equals(this.r6t_1, other.r6t_1))
     return false;
   return true;
 };
 function SentryStacktrace$Companion$$childSerializers$_anonymous__1o6j3i() {
   return new ArrayListSerializer($serializer_getInstance_3());
 }
-function Companion_11() {
-  Companion_instance_12 = this;
+function Companion_13() {
+  Companion_instance_15 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.s6m_1 = [lazy_0(tmp_0, SentryStacktrace$Companion$$childSerializers$_anonymous__1o6j3i)];
+  tmp.s6t_1 = [lazy_0(tmp_0, SentryStacktrace$Companion$$childSerializers$_anonymous__1o6j3i)];
 }
-var Companion_instance_12;
-function Companion_getInstance_19() {
-  if (Companion_instance_12 == null)
-    new Companion_11();
-  return Companion_instance_12;
+var Companion_instance_15;
+function Companion_getInstance_21() {
+  if (Companion_instance_15 == null)
+    new Companion_13();
+  return Companion_instance_15;
 }
 function $serializer_2() {
   $serializer_instance_2 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.logging.SentryStacktrace', this, 1);
   tmp0_serialDesc.dw('frames', false);
-  this.t6m_1 = tmp0_serialDesc;
+  this.t6t_1 = tmp0_serialDesc;
 }
-protoOf($serializer_2).u6m = function (encoder, value) {
-  var tmp0_desc = this.t6m_1;
+protoOf($serializer_2).u6t = function (encoder, value) {
+  var tmp0_desc = this.t6t_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_19().s6m_1;
-  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.v6m_1);
+  var tmp2_cached = Companion_getInstance_21().s6t_1;
+  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.v6t_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_2).am = function (encoder, value) {
-  return this.u6m(encoder, value instanceof SentryStacktrace ? value : THROW_CCE());
+  return this.u6t(encoder, value instanceof SentryStacktrace ? value : THROW_CCE());
 };
 protoOf($serializer_2).bm = function (decoder) {
-  var tmp0_desc = this.t6m_1;
+  var tmp0_desc = this.t6t_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
   var tmp4_local0 = null;
   var tmp5_input = decoder.zo(tmp0_desc);
-  var tmp6_cached = Companion_getInstance_19().s6m_1;
+  var tmp6_cached = Companion_getInstance_21().s6t_1;
   if (tmp5_input.op()) {
     tmp4_local0 = tmp5_input.lp(tmp0_desc, 0, tmp6_cached[0].j1(), tmp4_local0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -12298,13 +14056,13 @@ protoOf($serializer_2).bm = function (decoder) {
   return SentryStacktrace_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
 };
 protoOf($serializer_2).zl = function () {
-  return this.t6m_1;
+  return this.t6t_1;
 };
 protoOf($serializer_2).fw = function () {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  return [Companion_getInstance_19().s6m_1[0].j1()];
+  return [Companion_getInstance_21().s6t_1[0].j1()];
 };
 var $serializer_instance_2;
 function $serializer_getInstance_2() {
@@ -12314,38 +14072,38 @@ function $serializer_getInstance_2() {
 }
 function SentryStacktrace_init_$Init$(seen0, frames, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_2().t6m_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_2().t6t_1);
   }
-  $this.v6m_1 = frames;
+  $this.v6t_1 = frames;
   return $this;
 }
 function SentryStacktrace_init_$Create$(seen0, frames, serializationConstructorMarker) {
   return SentryStacktrace_init_$Init$(seen0, frames, serializationConstructorMarker, objectCreate(protoOf(SentryStacktrace)));
 }
 function SentryStacktrace(frames) {
-  Companion_getInstance_19();
-  this.v6m_1 = frames;
+  Companion_getInstance_21();
+  this.v6t_1 = frames;
 }
 protoOf(SentryStacktrace).toString = function () {
-  return 'SentryStacktrace(frames=' + toString(this.v6m_1) + ')';
+  return 'SentryStacktrace(frames=' + toString(this.v6t_1) + ')';
 };
 protoOf(SentryStacktrace).hashCode = function () {
-  return hashCode(this.v6m_1);
+  return hashCode(this.v6t_1);
 };
 protoOf(SentryStacktrace).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof SentryStacktrace))
     return false;
-  if (!equals(this.v6m_1, other.v6m_1))
+  if (!equals(this.v6t_1, other.v6t_1))
     return false;
   return true;
 };
-function Companion_12() {
+function Companion_14() {
 }
-var Companion_instance_13;
-function Companion_getInstance_20() {
-  return Companion_instance_13;
+var Companion_instance_16;
+function Companion_getInstance_22() {
+  return Companion_instance_16;
 }
 function $serializer_3() {
   $serializer_instance_3 = this;
@@ -12354,30 +14112,30 @@ function $serializer_3() {
   tmp0_serialDesc.dw('function', true);
   tmp0_serialDesc.dw('lineno', true);
   tmp0_serialDesc.dw('in_app', true);
-  this.w6m_1 = tmp0_serialDesc;
+  this.w6t_1 = tmp0_serialDesc;
 }
-protoOf($serializer_3).x6m = function (encoder, value) {
-  var tmp0_desc = this.w6m_1;
+protoOf($serializer_3).x6t = function (encoder, value) {
+  var tmp0_desc = this.w6t_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  if (tmp1_output.uq(tmp0_desc, 0) ? true : !(value.y6m_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 0, StringSerializer_getInstance(), value.y6m_1);
+  if (tmp1_output.uq(tmp0_desc, 0) ? true : !(value.y6t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 0, StringSerializer_getInstance(), value.y6t_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.z6m_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.z6m_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.z6t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.z6t_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.a6n_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, IntSerializer_getInstance(), value.a6n_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.a6u_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, IntSerializer_getInstance(), value.a6u_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.b6n_1 === false)) {
-    tmp1_output.eq(tmp0_desc, 3, value.b6n_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.b6u_1 === false)) {
+    tmp1_output.eq(tmp0_desc, 3, value.b6u_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_3).am = function (encoder, value) {
-  return this.x6m(encoder, value instanceof SentryStackFrame ? value : THROW_CCE());
+  return this.x6t(encoder, value instanceof SentryStackFrame ? value : THROW_CCE());
 };
 protoOf($serializer_3).bm = function (decoder) {
-  var tmp0_desc = this.w6m_1;
+  var tmp0_desc = this.w6t_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12426,7 +14184,7 @@ protoOf($serializer_3).bm = function (decoder) {
   return SentryStackFrame_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
 };
 protoOf($serializer_3).zl = function () {
-  return this.w6m_1;
+  return this.w6t_1;
 };
 protoOf($serializer_3).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12442,24 +14200,24 @@ function $serializer_getInstance_3() {
 }
 function SentryStackFrame_init_$Init$(seen0, filename, function_0, lineno, inApp, serializationConstructorMarker, $this) {
   if (!(0 === (0 & seen0))) {
-    throwMissingFieldException(seen0, 0, $serializer_getInstance_3().w6m_1);
+    throwMissingFieldException(seen0, 0, $serializer_getInstance_3().w6t_1);
   }
   if (0 === (seen0 & 1))
-    $this.y6m_1 = null;
+    $this.y6t_1 = null;
   else
-    $this.y6m_1 = filename;
+    $this.y6t_1 = filename;
   if (0 === (seen0 & 2))
-    $this.z6m_1 = null;
+    $this.z6t_1 = null;
   else
-    $this.z6m_1 = function_0;
+    $this.z6t_1 = function_0;
   if (0 === (seen0 & 4))
-    $this.a6n_1 = null;
+    $this.a6u_1 = null;
   else
-    $this.a6n_1 = lineno;
+    $this.a6u_1 = lineno;
   if (0 === (seen0 & 8))
-    $this.b6n_1 = false;
+    $this.b6u_1 = false;
   else
-    $this.b6n_1 = inApp;
+    $this.b6u_1 = inApp;
   return $this;
 }
 function SentryStackFrame_init_$Create$(seen0, filename, function_0, lineno, inApp, serializationConstructorMarker) {
@@ -12470,19 +14228,19 @@ function SentryStackFrame(filename, function_0, lineno, inApp) {
   function_0 = function_0 === VOID ? null : function_0;
   lineno = lineno === VOID ? null : lineno;
   inApp = inApp === VOID ? false : inApp;
-  this.y6m_1 = filename;
-  this.z6m_1 = function_0;
-  this.a6n_1 = lineno;
-  this.b6n_1 = inApp;
+  this.y6t_1 = filename;
+  this.z6t_1 = function_0;
+  this.a6u_1 = lineno;
+  this.b6u_1 = inApp;
 }
 protoOf(SentryStackFrame).toString = function () {
-  return 'SentryStackFrame(filename=' + this.y6m_1 + ', function=' + this.z6m_1 + ', lineno=' + this.a6n_1 + ', inApp=' + this.b6n_1 + ')';
+  return 'SentryStackFrame(filename=' + this.y6t_1 + ', function=' + this.z6t_1 + ', lineno=' + this.a6u_1 + ', inApp=' + this.b6u_1 + ')';
 };
 protoOf(SentryStackFrame).hashCode = function () {
-  var result = this.y6m_1 == null ? 0 : getStringHashCode(this.y6m_1);
-  result = imul(result, 31) + (this.z6m_1 == null ? 0 : getStringHashCode(this.z6m_1)) | 0;
-  result = imul(result, 31) + (this.a6n_1 == null ? 0 : this.a6n_1) | 0;
-  result = imul(result, 31) + getBooleanHashCode(this.b6n_1) | 0;
+  var result = this.y6t_1 == null ? 0 : getStringHashCode(this.y6t_1);
+  result = imul(result, 31) + (this.z6t_1 == null ? 0 : getStringHashCode(this.z6t_1)) | 0;
+  result = imul(result, 31) + (this.a6u_1 == null ? 0 : this.a6u_1) | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.b6u_1) | 0;
   return result;
 };
 protoOf(SentryStackFrame).equals = function (other) {
@@ -12490,21 +14248,21 @@ protoOf(SentryStackFrame).equals = function (other) {
     return true;
   if (!(other instanceof SentryStackFrame))
     return false;
-  if (!(this.y6m_1 == other.y6m_1))
+  if (!(this.y6t_1 == other.y6t_1))
     return false;
-  if (!(this.z6m_1 == other.z6m_1))
+  if (!(this.z6t_1 == other.z6t_1))
     return false;
-  if (!(this.a6n_1 == other.a6n_1))
+  if (!(this.a6u_1 == other.a6u_1))
     return false;
-  if (!(this.b6n_1 === other.b6n_1))
+  if (!(this.b6u_1 === other.b6u_1))
     return false;
   return true;
 };
-function Companion_13() {
+function Companion_15() {
 }
-var Companion_instance_14;
-function Companion_getInstance_21() {
-  return Companion_instance_14;
+var Companion_instance_17;
+function Companion_getInstance_23() {
+  return Companion_instance_17;
 }
 function $serializer_4() {
   $serializer_instance_4 = this;
@@ -12512,21 +14270,21 @@ function $serializer_4() {
   tmp0_serialDesc.dw('app', false);
   tmp0_serialDesc.dw('device', false);
   tmp0_serialDesc.dw('os', false);
-  this.c6n_1 = tmp0_serialDesc;
+  this.c6u_1 = tmp0_serialDesc;
 }
-protoOf($serializer_4).d6n = function (encoder, value) {
-  var tmp0_desc = this.c6n_1;
+protoOf($serializer_4).d6u = function (encoder, value) {
+  var tmp0_desc = this.c6u_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.oq(tmp0_desc, 0, $serializer_getInstance_5(), value.e6n_1);
-  tmp1_output.oq(tmp0_desc, 1, $serializer_getInstance_6(), value.f6n_1);
-  tmp1_output.oq(tmp0_desc, 2, $serializer_getInstance_7(), value.g6n_1);
+  tmp1_output.oq(tmp0_desc, 0, $serializer_getInstance_5(), value.e6u_1);
+  tmp1_output.oq(tmp0_desc, 1, $serializer_getInstance_6(), value.f6u_1);
+  tmp1_output.oq(tmp0_desc, 2, $serializer_getInstance_7(), value.g6u_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_4).am = function (encoder, value) {
-  return this.d6n(encoder, value instanceof SentryContexts ? value : THROW_CCE());
+  return this.d6u(encoder, value instanceof SentryContexts ? value : THROW_CCE());
 };
 protoOf($serializer_4).bm = function (decoder) {
-  var tmp0_desc = this.c6n_1;
+  var tmp0_desc = this.c6u_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12568,7 +14326,7 @@ protoOf($serializer_4).bm = function (decoder) {
   return SentryContexts_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
 };
 protoOf($serializer_4).zl = function () {
-  return this.c6n_1;
+  return this.c6u_1;
 };
 protoOf($serializer_4).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12584,28 +14342,28 @@ function $serializer_getInstance_4() {
 }
 function SentryContexts_init_$Init$(seen0, app, device, os, serializationConstructorMarker, $this) {
   if (!(7 === (7 & seen0))) {
-    throwMissingFieldException(seen0, 7, $serializer_getInstance_4().c6n_1);
+    throwMissingFieldException(seen0, 7, $serializer_getInstance_4().c6u_1);
   }
-  $this.e6n_1 = app;
-  $this.f6n_1 = device;
-  $this.g6n_1 = os;
+  $this.e6u_1 = app;
+  $this.f6u_1 = device;
+  $this.g6u_1 = os;
   return $this;
 }
 function SentryContexts_init_$Create$(seen0, app, device, os, serializationConstructorMarker) {
   return SentryContexts_init_$Init$(seen0, app, device, os, serializationConstructorMarker, objectCreate(protoOf(SentryContexts)));
 }
 function SentryContexts(app, device, os) {
-  this.e6n_1 = app;
-  this.f6n_1 = device;
-  this.g6n_1 = os;
+  this.e6u_1 = app;
+  this.f6u_1 = device;
+  this.g6u_1 = os;
 }
 protoOf(SentryContexts).toString = function () {
-  return 'SentryContexts(app=' + this.e6n_1.toString() + ', device=' + this.f6n_1.toString() + ', os=' + this.g6n_1.toString() + ')';
+  return 'SentryContexts(app=' + this.e6u_1.toString() + ', device=' + this.f6u_1.toString() + ', os=' + this.g6u_1.toString() + ')';
 };
 protoOf(SentryContexts).hashCode = function () {
-  var result = this.e6n_1.hashCode();
-  result = imul(result, 31) + this.f6n_1.hashCode() | 0;
-  result = imul(result, 31) + this.g6n_1.hashCode() | 0;
+  var result = this.e6u_1.hashCode();
+  result = imul(result, 31) + this.f6u_1.hashCode() | 0;
+  result = imul(result, 31) + this.g6u_1.hashCode() | 0;
   return result;
 };
 protoOf(SentryContexts).equals = function (other) {
@@ -12613,19 +14371,19 @@ protoOf(SentryContexts).equals = function (other) {
     return true;
   if (!(other instanceof SentryContexts))
     return false;
-  if (!this.e6n_1.equals(other.e6n_1))
+  if (!this.e6u_1.equals(other.e6u_1))
     return false;
-  if (!this.f6n_1.equals(other.f6n_1))
+  if (!this.f6u_1.equals(other.f6u_1))
     return false;
-  if (!this.g6n_1.equals(other.g6n_1))
+  if (!this.g6u_1.equals(other.g6u_1))
     return false;
   return true;
 };
-function Companion_14() {
+function Companion_16() {
 }
-var Companion_instance_15;
-function Companion_getInstance_22() {
-  return Companion_instance_15;
+var Companion_instance_18;
+function Companion_getInstance_24() {
+  return Companion_instance_18;
 }
 function $serializer_5() {
   $serializer_instance_5 = this;
@@ -12633,21 +14391,21 @@ function $serializer_5() {
   tmp0_serialDesc.dw('app_name', false);
   tmp0_serialDesc.dw('app_version', false);
   tmp0_serialDesc.dw('app_identifier', false);
-  this.h6n_1 = tmp0_serialDesc;
+  this.h6u_1 = tmp0_serialDesc;
 }
-protoOf($serializer_5).i6n = function (encoder, value) {
-  var tmp0_desc = this.h6n_1;
+protoOf($serializer_5).i6u = function (encoder, value) {
+  var tmp0_desc = this.h6u_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.j6n_1);
-  tmp1_output.mq(tmp0_desc, 1, value.k6n_1);
-  tmp1_output.mq(tmp0_desc, 2, value.l6n_1);
+  tmp1_output.mq(tmp0_desc, 0, value.j6u_1);
+  tmp1_output.mq(tmp0_desc, 1, value.k6u_1);
+  tmp1_output.mq(tmp0_desc, 2, value.l6u_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_5).am = function (encoder, value) {
-  return this.i6n(encoder, value instanceof SentryAppContext ? value : THROW_CCE());
+  return this.i6u(encoder, value instanceof SentryAppContext ? value : THROW_CCE());
 };
 protoOf($serializer_5).bm = function (decoder) {
-  var tmp0_desc = this.h6n_1;
+  var tmp0_desc = this.h6u_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12689,7 +14447,7 @@ protoOf($serializer_5).bm = function (decoder) {
   return SentryAppContext_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
 };
 protoOf($serializer_5).zl = function () {
-  return this.h6n_1;
+  return this.h6u_1;
 };
 protoOf($serializer_5).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12705,28 +14463,28 @@ function $serializer_getInstance_5() {
 }
 function SentryAppContext_init_$Init$(seen0, appName, appVersion, appIdentifier, serializationConstructorMarker, $this) {
   if (!(7 === (7 & seen0))) {
-    throwMissingFieldException(seen0, 7, $serializer_getInstance_5().h6n_1);
+    throwMissingFieldException(seen0, 7, $serializer_getInstance_5().h6u_1);
   }
-  $this.j6n_1 = appName;
-  $this.k6n_1 = appVersion;
-  $this.l6n_1 = appIdentifier;
+  $this.j6u_1 = appName;
+  $this.k6u_1 = appVersion;
+  $this.l6u_1 = appIdentifier;
   return $this;
 }
 function SentryAppContext_init_$Create$(seen0, appName, appVersion, appIdentifier, serializationConstructorMarker) {
   return SentryAppContext_init_$Init$(seen0, appName, appVersion, appIdentifier, serializationConstructorMarker, objectCreate(protoOf(SentryAppContext)));
 }
 function SentryAppContext(appName, appVersion, appIdentifier) {
-  this.j6n_1 = appName;
-  this.k6n_1 = appVersion;
-  this.l6n_1 = appIdentifier;
+  this.j6u_1 = appName;
+  this.k6u_1 = appVersion;
+  this.l6u_1 = appIdentifier;
 }
 protoOf(SentryAppContext).toString = function () {
-  return 'SentryAppContext(appName=' + this.j6n_1 + ', appVersion=' + this.k6n_1 + ', appIdentifier=' + this.l6n_1 + ')';
+  return 'SentryAppContext(appName=' + this.j6u_1 + ', appVersion=' + this.k6u_1 + ', appIdentifier=' + this.l6u_1 + ')';
 };
 protoOf(SentryAppContext).hashCode = function () {
-  var result = getStringHashCode(this.j6n_1);
-  result = imul(result, 31) + getStringHashCode(this.k6n_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.l6n_1) | 0;
+  var result = getStringHashCode(this.j6u_1);
+  result = imul(result, 31) + getStringHashCode(this.k6u_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.l6u_1) | 0;
   return result;
 };
 protoOf(SentryAppContext).equals = function (other) {
@@ -12734,39 +14492,39 @@ protoOf(SentryAppContext).equals = function (other) {
     return true;
   if (!(other instanceof SentryAppContext))
     return false;
-  if (!(this.j6n_1 === other.j6n_1))
+  if (!(this.j6u_1 === other.j6u_1))
     return false;
-  if (!(this.k6n_1 === other.k6n_1))
+  if (!(this.k6u_1 === other.k6u_1))
     return false;
-  if (!(this.l6n_1 === other.l6n_1))
+  if (!(this.l6u_1 === other.l6u_1))
     return false;
   return true;
 };
-function Companion_15() {
+function Companion_17() {
 }
-var Companion_instance_16;
-function Companion_getInstance_23() {
-  return Companion_instance_16;
+var Companion_instance_19;
+function Companion_getInstance_25() {
+  return Companion_instance_19;
 }
 function $serializer_6() {
   $serializer_instance_6 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.logging.SentryDeviceContext', this, 2);
   tmp0_serialDesc.dw('model', false);
   tmp0_serialDesc.dw('type', false);
-  this.m6n_1 = tmp0_serialDesc;
+  this.m6u_1 = tmp0_serialDesc;
 }
-protoOf($serializer_6).n6n = function (encoder, value) {
-  var tmp0_desc = this.m6n_1;
+protoOf($serializer_6).n6u = function (encoder, value) {
+  var tmp0_desc = this.m6u_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.o6n_1);
-  tmp1_output.mq(tmp0_desc, 1, value.p6n_1);
+  tmp1_output.mq(tmp0_desc, 0, value.o6u_1);
+  tmp1_output.mq(tmp0_desc, 1, value.p6u_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_6).am = function (encoder, value) {
-  return this.n6n(encoder, value instanceof SentryDeviceContext ? value : THROW_CCE());
+  return this.n6u(encoder, value instanceof SentryDeviceContext ? value : THROW_CCE());
 };
 protoOf($serializer_6).bm = function (decoder) {
-  var tmp0_desc = this.m6n_1;
+  var tmp0_desc = this.m6u_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12801,7 +14559,7 @@ protoOf($serializer_6).bm = function (decoder) {
   return SentryDeviceContext_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
 };
 protoOf($serializer_6).zl = function () {
-  return this.m6n_1;
+  return this.m6u_1;
 };
 protoOf($serializer_6).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12817,25 +14575,25 @@ function $serializer_getInstance_6() {
 }
 function SentryDeviceContext_init_$Init$(seen0, model, type, serializationConstructorMarker, $this) {
   if (!(3 === (3 & seen0))) {
-    throwMissingFieldException(seen0, 3, $serializer_getInstance_6().m6n_1);
+    throwMissingFieldException(seen0, 3, $serializer_getInstance_6().m6u_1);
   }
-  $this.o6n_1 = model;
-  $this.p6n_1 = type;
+  $this.o6u_1 = model;
+  $this.p6u_1 = type;
   return $this;
 }
 function SentryDeviceContext_init_$Create$(seen0, model, type, serializationConstructorMarker) {
   return SentryDeviceContext_init_$Init$(seen0, model, type, serializationConstructorMarker, objectCreate(protoOf(SentryDeviceContext)));
 }
 function SentryDeviceContext(model, type) {
-  this.o6n_1 = model;
-  this.p6n_1 = type;
+  this.o6u_1 = model;
+  this.p6u_1 = type;
 }
 protoOf(SentryDeviceContext).toString = function () {
-  return 'SentryDeviceContext(model=' + this.o6n_1 + ', type=' + this.p6n_1 + ')';
+  return 'SentryDeviceContext(model=' + this.o6u_1 + ', type=' + this.p6u_1 + ')';
 };
 protoOf(SentryDeviceContext).hashCode = function () {
-  var result = getStringHashCode(this.o6n_1);
-  result = imul(result, 31) + getStringHashCode(this.p6n_1) | 0;
+  var result = getStringHashCode(this.o6u_1);
+  result = imul(result, 31) + getStringHashCode(this.p6u_1) | 0;
   return result;
 };
 protoOf(SentryDeviceContext).equals = function (other) {
@@ -12843,37 +14601,37 @@ protoOf(SentryDeviceContext).equals = function (other) {
     return true;
   if (!(other instanceof SentryDeviceContext))
     return false;
-  if (!(this.o6n_1 === other.o6n_1))
+  if (!(this.o6u_1 === other.o6u_1))
     return false;
-  if (!(this.p6n_1 === other.p6n_1))
+  if (!(this.p6u_1 === other.p6u_1))
     return false;
   return true;
 };
-function Companion_16() {
+function Companion_18() {
 }
-var Companion_instance_17;
-function Companion_getInstance_24() {
-  return Companion_instance_17;
+var Companion_instance_20;
+function Companion_getInstance_26() {
+  return Companion_instance_20;
 }
 function $serializer_7() {
   $serializer_instance_7 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.logging.SentryOsContext', this, 2);
   tmp0_serialDesc.dw('name', false);
   tmp0_serialDesc.dw('version', false);
-  this.q6n_1 = tmp0_serialDesc;
+  this.q6u_1 = tmp0_serialDesc;
 }
-protoOf($serializer_7).r6n = function (encoder, value) {
-  var tmp0_desc = this.q6n_1;
+protoOf($serializer_7).r6u = function (encoder, value) {
+  var tmp0_desc = this.q6u_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.s6n_1);
-  tmp1_output.mq(tmp0_desc, 1, value.t6n_1);
+  tmp1_output.mq(tmp0_desc, 0, value.s6u_1);
+  tmp1_output.mq(tmp0_desc, 1, value.t6u_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_7).am = function (encoder, value) {
-  return this.r6n(encoder, value instanceof SentryOsContext ? value : THROW_CCE());
+  return this.r6u(encoder, value instanceof SentryOsContext ? value : THROW_CCE());
 };
 protoOf($serializer_7).bm = function (decoder) {
-  var tmp0_desc = this.q6n_1;
+  var tmp0_desc = this.q6u_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -12908,7 +14666,7 @@ protoOf($serializer_7).bm = function (decoder) {
   return SentryOsContext_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
 };
 protoOf($serializer_7).zl = function () {
-  return this.q6n_1;
+  return this.q6u_1;
 };
 protoOf($serializer_7).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -12924,25 +14682,25 @@ function $serializer_getInstance_7() {
 }
 function SentryOsContext_init_$Init$(seen0, name, version, serializationConstructorMarker, $this) {
   if (!(3 === (3 & seen0))) {
-    throwMissingFieldException(seen0, 3, $serializer_getInstance_7().q6n_1);
+    throwMissingFieldException(seen0, 3, $serializer_getInstance_7().q6u_1);
   }
-  $this.s6n_1 = name;
-  $this.t6n_1 = version;
+  $this.s6u_1 = name;
+  $this.t6u_1 = version;
   return $this;
 }
 function SentryOsContext_init_$Create$(seen0, name, version, serializationConstructorMarker) {
   return SentryOsContext_init_$Init$(seen0, name, version, serializationConstructorMarker, objectCreate(protoOf(SentryOsContext)));
 }
 function SentryOsContext(name, version) {
-  this.s6n_1 = name;
-  this.t6n_1 = version;
+  this.s6u_1 = name;
+  this.t6u_1 = version;
 }
 protoOf(SentryOsContext).toString = function () {
-  return 'SentryOsContext(name=' + this.s6n_1 + ', version=' + this.t6n_1 + ')';
+  return 'SentryOsContext(name=' + this.s6u_1 + ', version=' + this.t6u_1 + ')';
 };
 protoOf(SentryOsContext).hashCode = function () {
-  var result = getStringHashCode(this.s6n_1);
-  result = imul(result, 31) + getStringHashCode(this.t6n_1) | 0;
+  var result = getStringHashCode(this.s6u_1);
+  result = imul(result, 31) + getStringHashCode(this.t6u_1) | 0;
   return result;
 };
 protoOf(SentryOsContext).equals = function (other) {
@@ -12950,35 +14708,35 @@ protoOf(SentryOsContext).equals = function (other) {
     return true;
   if (!(other instanceof SentryOsContext))
     return false;
-  if (!(this.s6n_1 === other.s6n_1))
+  if (!(this.s6u_1 === other.s6u_1))
     return false;
-  if (!(this.t6n_1 === other.t6n_1))
+  if (!(this.t6u_1 === other.t6u_1))
     return false;
   return true;
 };
-function Companion_17() {
+function Companion_19() {
 }
-var Companion_instance_18;
-function Companion_getInstance_25() {
-  return Companion_instance_18;
+var Companion_instance_21;
+function Companion_getInstance_27() {
+  return Companion_instance_21;
 }
 function $serializer_8() {
   $serializer_instance_8 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.logging.SentryUser', this, 1);
   tmp0_serialDesc.dw('id', false);
-  this.u6n_1 = tmp0_serialDesc;
+  this.u6u_1 = tmp0_serialDesc;
 }
-protoOf($serializer_8).v6n = function (encoder, value) {
-  var tmp0_desc = this.u6n_1;
+protoOf($serializer_8).v6u = function (encoder, value) {
+  var tmp0_desc = this.u6u_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.w6n_1);
+  tmp1_output.mq(tmp0_desc, 0, value.w6u_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_8).am = function (encoder, value) {
-  return this.v6n(encoder, value instanceof SentryUser ? value : THROW_CCE());
+  return this.v6u(encoder, value instanceof SentryUser ? value : THROW_CCE());
 };
 protoOf($serializer_8).bm = function (decoder) {
-  var tmp0_desc = this.u6n_1;
+  var tmp0_desc = this.u6u_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -13006,7 +14764,7 @@ protoOf($serializer_8).bm = function (decoder) {
   return SentryUser_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
 };
 protoOf($serializer_8).zl = function () {
-  return this.u6n_1;
+  return this.u6u_1;
 };
 protoOf($serializer_8).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -13022,34 +14780,34 @@ function $serializer_getInstance_8() {
 }
 function SentryUser_init_$Init$(seen0, id, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_8().u6n_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_8().u6u_1);
   }
-  $this.w6n_1 = id;
+  $this.w6u_1 = id;
   return $this;
 }
 function SentryUser_init_$Create$(seen0, id, serializationConstructorMarker) {
   return SentryUser_init_$Init$(seen0, id, serializationConstructorMarker, objectCreate(protoOf(SentryUser)));
 }
 function SentryUser(id) {
-  this.w6n_1 = id;
+  this.w6u_1 = id;
 }
 protoOf(SentryUser).toString = function () {
-  return 'SentryUser(id=' + this.w6n_1 + ')';
+  return 'SentryUser(id=' + this.w6u_1 + ')';
 };
 protoOf(SentryUser).hashCode = function () {
-  return getStringHashCode(this.w6n_1);
+  return getStringHashCode(this.w6u_1);
 };
 protoOf(SentryUser).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof SentryUser))
     return false;
-  if (!(this.w6n_1 === other.w6n_1))
+  if (!(this.w6u_1 === other.w6u_1))
     return false;
   return true;
 };
 function _get_context__ps0bpe($this) {
-  var tmp = $this.f5a_1;
+  var tmp = $this.j5a_1;
   if (!(tmp == null))
     return tmp;
   else {
@@ -13057,7 +14815,7 @@ function _get_context__ps0bpe($this) {
   }
 }
 function _get_kermit__o7q2h7($this) {
-  var tmp = $this.g5a_1;
+  var tmp = $this.k5a_1;
   if (!(tmp == null))
     return tmp;
   else {
@@ -13065,111 +14823,111 @@ function _get_kermit__o7q2h7($this) {
   }
 }
 function log($this, severity, category, throwable, metadata, message) {
-  if (!$this.i5a_1) {
-    if (!$this.j5a_1) {
-      $this.j5a_1 = true;
+  if (!$this.m5a_1) {
+    if (!$this.n5a_1) {
+      $this.n5a_1 = true;
       println('[SdkLogger] WARNING: SdkLogger not initialized, call initialize() first. Subsequent logs will be silently dropped.');
     }
     return Unit_instance;
   }
-  if (!severity.g6k($this.h5a_1)) {
+  if (!severity.v6q($this.l5a_1)) {
     return Unit_instance;
   }
   var rawMessage = message();
-  var sanitizedMessage = Companion_instance_6.k6f(rawMessage);
-  var kermitSeverity = severity.h6k();
+  var sanitizedMessage = Companion_instance_9.p6k(rawMessage);
+  var kermitSeverity = severity.w6q();
   var tmp0 = _get_kermit__o7q2h7($this);
   // Inline function 'co.touchlab.kermit.BaseLogger.log' call
-  var tag = category.v6j_1;
-  if (tmp0.x3z().g40().v2(kermitSeverity) <= 0) {
-    tmp0.y3z(kermitSeverity, tag, throwable, sanitizedMessage);
+  var tag = category.k6q_1;
+  if (tmp0.z3z().i40().v2(kermitSeverity) <= 0) {
+    tmp0.a40(kermitSeverity, tag, throwable, sanitizedMessage);
   }
   // Inline function 'kotlin.collections.isNotEmpty' call
-  if (!$this.k5a_1.r()) {
-    var entry = new LogEntry(System_instance.s3f().f3v(), severity, category, sanitizedMessage, throwable, _get_context__ps0bpe($this), metadata);
+  if (!$this.o5a_1.r()) {
+    var entry = new LogEntry(System_instance.u3f().h3v(), severity, category, sanitizedMessage, throwable, _get_context__ps0bpe($this), metadata);
     // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = $this.k5a_1.t();
+    var _iterator__ex2g4s = $this.o5a_1.t();
     while (_iterator__ex2g4s.u()) {
       var element = _iterator__ex2g4s.v();
-      element.x6n(entry);
+      element.x6u(entry);
     }
   }
 }
 function SdkLogger() {
   SdkLogger_instance = this;
-  this.h5a_1 = LogSeverity_INFO_getInstance();
-  this.i5a_1 = false;
-  this.j5a_1 = false;
-  this.k5a_1 = emptyList();
+  this.l5a_1 = LogSeverity_INFO_getInstance();
+  this.m5a_1 = false;
+  this.n5a_1 = false;
+  this.o5a_1 = emptyList();
 }
-protoOf(SdkLogger).l5a = function (context, minSeverity) {
-  this.f5a_1 = context;
-  this.h5a_1 = minSeverity;
+protoOf(SdkLogger).p5a = function (context, minSeverity) {
+  this.j5a_1 = context;
+  this.l5a_1 = minSeverity;
   var tmp = this;
   var tmp0_logWriterList = listOf(platformLogWriter());
-  var tmp1_minSeverity = minSeverity.h6k();
-  tmp.g5a_1 = new Logger(new StaticConfig(tmp1_minSeverity, tmp0_logWriterList));
-  this.k5a_1 = emptyList();
-  this.i5a_1 = true;
-  this.j5a_1 = false;
+  var tmp1_minSeverity = minSeverity.w6q();
+  tmp.k5a_1 = new Logger(new StaticConfig(tmp1_minSeverity, tmp0_logWriterList));
+  this.o5a_1 = emptyList();
+  this.m5a_1 = true;
+  this.n5a_1 = false;
 };
-protoOf(SdkLogger).y6n = function (category, throwable, metadata, message) {
+protoOf(SdkLogger).y6u = function (category, throwable, metadata, message) {
   log(this, LogSeverity_DEBUG_getInstance(), category, throwable, metadata, message);
 };
-protoOf(SdkLogger).n5a = function (category, throwable, metadata, message, $super) {
+protoOf(SdkLogger).r5a = function (category, throwable, metadata, message, $super) {
   throwable = throwable === VOID ? null : throwable;
   metadata = metadata === VOID ? emptyMap() : metadata;
   var tmp;
   if ($super === VOID) {
-    this.y6n(category, throwable, metadata, message);
+    this.y6u(category, throwable, metadata, message);
     tmp = Unit_instance;
   } else {
-    tmp = $super.y6n.call(this, category, throwable, metadata, message);
+    tmp = $super.y6u.call(this, category, throwable, metadata, message);
   }
   return tmp;
 };
-protoOf(SdkLogger).z6n = function (category, throwable, metadata, message) {
+protoOf(SdkLogger).z6u = function (category, throwable, metadata, message) {
   log(this, LogSeverity_INFO_getInstance(), category, throwable, metadata, message);
 };
-protoOf(SdkLogger).m5a = function (category, throwable, metadata, message, $super) {
+protoOf(SdkLogger).q5a = function (category, throwable, metadata, message, $super) {
   throwable = throwable === VOID ? null : throwable;
   metadata = metadata === VOID ? emptyMap() : metadata;
   var tmp;
   if ($super === VOID) {
-    this.z6n(category, throwable, metadata, message);
+    this.z6u(category, throwable, metadata, message);
     tmp = Unit_instance;
   } else {
-    tmp = $super.z6n.call(this, category, throwable, metadata, message);
+    tmp = $super.z6u.call(this, category, throwable, metadata, message);
   }
   return tmp;
 };
-protoOf(SdkLogger).a6o = function (category, throwable, metadata, message) {
+protoOf(SdkLogger).a6v = function (category, throwable, metadata, message) {
   log(this, LogSeverity_WARNING_getInstance(), category, throwable, metadata, message);
 };
-protoOf(SdkLogger).s5d = function (category, throwable, metadata, message, $super) {
+protoOf(SdkLogger).w5d = function (category, throwable, metadata, message, $super) {
   throwable = throwable === VOID ? null : throwable;
   metadata = metadata === VOID ? emptyMap() : metadata;
   var tmp;
   if ($super === VOID) {
-    this.a6o(category, throwable, metadata, message);
+    this.a6v(category, throwable, metadata, message);
     tmp = Unit_instance;
   } else {
-    tmp = $super.a6o.call(this, category, throwable, metadata, message);
+    tmp = $super.a6v.call(this, category, throwable, metadata, message);
   }
   return tmp;
 };
-protoOf(SdkLogger).b6o = function (category, throwable, metadata, message) {
+protoOf(SdkLogger).b6v = function (category, throwable, metadata, message) {
   log(this, LogSeverity_ERROR_getInstance(), category, throwable, metadata, message);
 };
-protoOf(SdkLogger).b5z = function (category, throwable, metadata, message, $super) {
+protoOf(SdkLogger).g5z = function (category, throwable, metadata, message, $super) {
   throwable = throwable === VOID ? null : throwable;
   metadata = metadata === VOID ? emptyMap() : metadata;
   var tmp;
   if ($super === VOID) {
-    this.b6o(category, throwable, metadata, message);
+    this.b6v(category, throwable, metadata, message);
     tmp = Unit_instance;
   } else {
-    tmp = $super.b6o.call(this, category, throwable, metadata, message);
+    tmp = $super.b6v.call(this, category, throwable, metadata, message);
   }
   return tmp;
 };
@@ -13179,50 +14937,50 @@ function SdkLogger_getInstance() {
     new SdkLogger();
   return SdkLogger_instance;
 }
-function Companion_18() {
-  this.z59_1 = '1.0.0-rc.2';
+function Companion_20() {
+  this.d5a_1 = '1.0.0-rc.3';
 }
-protoOf(Companion_18).d5a = function (appId, appName, appVersion, businessUnit, businessUnitName, platform, osVersion, deviceModel, sessionId, environment) {
-  return new TelemetryContext(appId, appName, appVersion, businessUnit, businessUnitName, null, this.z59_1, platform, osVersion, deviceModel, sessionId, environment, null);
+protoOf(Companion_20).h5a = function (appId, appName, appVersion, businessUnit, businessUnitName, platform, osVersion, deviceModel, sessionId, environment) {
+  return new TelemetryContext(appId, appName, appVersion, businessUnit, businessUnitName, null, this.d5a_1, platform, osVersion, deviceModel, sessionId, environment, null);
 };
-var Companion_instance_19;
-function Companion_getInstance_26() {
-  return Companion_instance_19;
+var Companion_instance_22;
+function Companion_getInstance_28() {
+  return Companion_instance_22;
 }
 function TelemetryContext(appId, appName, appVersion, businessUnit, businessUnitName, region, sdkVersion, platform, osVersion, deviceModel, sessionId, environment, buildType) {
   region = region === VOID ? null : region;
   buildType = buildType === VOID ? null : buildType;
-  this.i5b_1 = appId;
-  this.j5b_1 = appName;
-  this.k5b_1 = appVersion;
-  this.l5b_1 = businessUnit;
-  this.m5b_1 = businessUnitName;
-  this.n5b_1 = region;
-  this.o5b_1 = sdkVersion;
-  this.p5b_1 = platform;
-  this.q5b_1 = osVersion;
-  this.r5b_1 = deviceModel;
-  this.s5b_1 = sessionId;
-  this.t5b_1 = environment;
-  this.u5b_1 = buildType;
+  this.m5b_1 = appId;
+  this.n5b_1 = appName;
+  this.o5b_1 = appVersion;
+  this.p5b_1 = businessUnit;
+  this.q5b_1 = businessUnitName;
+  this.r5b_1 = region;
+  this.s5b_1 = sdkVersion;
+  this.t5b_1 = platform;
+  this.u5b_1 = osVersion;
+  this.v5b_1 = deviceModel;
+  this.w5b_1 = sessionId;
+  this.x5b_1 = environment;
+  this.y5b_1 = buildType;
 }
 protoOf(TelemetryContext).toString = function () {
-  return 'TelemetryContext(appId=' + this.i5b_1 + ', appName=' + this.j5b_1 + ', appVersion=' + this.k5b_1 + ', businessUnit=' + this.l5b_1 + ', businessUnitName=' + this.m5b_1 + ', region=' + this.n5b_1 + ', sdkVersion=' + this.o5b_1 + ', platform=' + this.p5b_1 + ', osVersion=' + this.q5b_1 + ', deviceModel=' + this.r5b_1 + ', sessionId=' + this.s5b_1 + ', environment=' + this.t5b_1 + ', buildType=' + this.u5b_1 + ')';
+  return 'TelemetryContext(appId=' + this.m5b_1 + ', appName=' + this.n5b_1 + ', appVersion=' + this.o5b_1 + ', businessUnit=' + this.p5b_1 + ', businessUnitName=' + this.q5b_1 + ', region=' + this.r5b_1 + ', sdkVersion=' + this.s5b_1 + ', platform=' + this.t5b_1 + ', osVersion=' + this.u5b_1 + ', deviceModel=' + this.v5b_1 + ', sessionId=' + this.w5b_1 + ', environment=' + this.x5b_1 + ', buildType=' + this.y5b_1 + ')';
 };
 protoOf(TelemetryContext).hashCode = function () {
-  var result = getStringHashCode(this.i5b_1);
-  result = imul(result, 31) + getStringHashCode(this.j5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.k5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.l5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.m5b_1) | 0;
-  result = imul(result, 31) + (this.n5b_1 == null ? 0 : getStringHashCode(this.n5b_1)) | 0;
+  var result = getStringHashCode(this.m5b_1);
+  result = imul(result, 31) + getStringHashCode(this.n5b_1) | 0;
   result = imul(result, 31) + getStringHashCode(this.o5b_1) | 0;
   result = imul(result, 31) + getStringHashCode(this.p5b_1) | 0;
   result = imul(result, 31) + getStringHashCode(this.q5b_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.r5b_1) | 0;
+  result = imul(result, 31) + (this.r5b_1 == null ? 0 : getStringHashCode(this.r5b_1)) | 0;
   result = imul(result, 31) + getStringHashCode(this.s5b_1) | 0;
   result = imul(result, 31) + getStringHashCode(this.t5b_1) | 0;
-  result = imul(result, 31) + (this.u5b_1 == null ? 0 : getStringHashCode(this.u5b_1)) | 0;
+  result = imul(result, 31) + getStringHashCode(this.u5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.v5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.w5b_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.x5b_1) | 0;
+  result = imul(result, 31) + (this.y5b_1 == null ? 0 : getStringHashCode(this.y5b_1)) | 0;
   return result;
 };
 protoOf(TelemetryContext).equals = function (other) {
@@ -13230,17 +14988,9 @@ protoOf(TelemetryContext).equals = function (other) {
     return true;
   if (!(other instanceof TelemetryContext))
     return false;
-  if (!(this.i5b_1 === other.i5b_1))
-    return false;
-  if (!(this.j5b_1 === other.j5b_1))
-    return false;
-  if (!(this.k5b_1 === other.k5b_1))
-    return false;
-  if (!(this.l5b_1 === other.l5b_1))
-    return false;
   if (!(this.m5b_1 === other.m5b_1))
     return false;
-  if (!(this.n5b_1 == other.n5b_1))
+  if (!(this.n5b_1 === other.n5b_1))
     return false;
   if (!(this.o5b_1 === other.o5b_1))
     return false;
@@ -13248,13 +14998,21 @@ protoOf(TelemetryContext).equals = function (other) {
     return false;
   if (!(this.q5b_1 === other.q5b_1))
     return false;
-  if (!(this.r5b_1 === other.r5b_1))
+  if (!(this.r5b_1 == other.r5b_1))
     return false;
   if (!(this.s5b_1 === other.s5b_1))
     return false;
   if (!(this.t5b_1 === other.t5b_1))
     return false;
-  if (!(this.u5b_1 == other.u5b_1))
+  if (!(this.u5b_1 === other.u5b_1))
+    return false;
+  if (!(this.v5b_1 === other.v5b_1))
+    return false;
+  if (!(this.w5b_1 === other.w5b_1))
+    return false;
+  if (!(this.x5b_1 === other.x5b_1))
+    return false;
+  if (!(this.y5b_1 == other.y5b_1))
     return false;
   return true;
 };
@@ -13279,33 +15037,33 @@ function UserContextMode_HASHED_SUB_getInstance() {
   UserContextMode_initEntries();
   return UserContextMode_HASHED_SUB_instance;
 }
-function Companion_19() {
+function Companion_21() {
 }
-protoOf(Companion_19).j60 = function (tokenString, jwtClaims) {
-  var tmp0_elvis_lhs = jwtClaims.o5e_1;
-  return new AccessToken(tokenString, tmp0_elvis_lhs == null ? new Long(0, 0) : tmp0_elvis_lhs, jwtClaims.l5e_1, jwtClaims.m5e_1, jwtClaims.q5e_1);
+protoOf(Companion_21).o60 = function (tokenString, jwtClaims) {
+  var tmp0_elvis_lhs = jwtClaims.s5e_1;
+  return new AccessToken(tokenString, tmp0_elvis_lhs == null ? new Long(0, 0) : tmp0_elvis_lhs, jwtClaims.p5e_1, jwtClaims.q5e_1, jwtClaims.u5e_1);
 };
-var Companion_instance_20;
-function Companion_getInstance_27() {
-  return Companion_instance_20;
+var Companion_instance_23;
+function Companion_getInstance_29() {
+  return Companion_instance_23;
 }
 function AccessToken(value, expiresAt, issuer, subject, issuedAt) {
-  this.p62_1 = value;
-  this.q62_1 = expiresAt;
-  this.r62_1 = issuer;
-  this.s62_1 = subject;
-  this.t62_1 = issuedAt;
+  this.u62_1 = value;
+  this.v62_1 = expiresAt;
+  this.w62_1 = issuer;
+  this.x62_1 = subject;
+  this.y62_1 = issuedAt;
 }
 protoOf(AccessToken).toString = function () {
-  var redacted = Companion_instance_6.s6j(this.p62_1);
-  return 'AccessToken(value=' + redacted + ', subject=' + this.s62_1 + ', expiresAt=' + this.q62_1.toString() + ')';
+  var redacted = Companion_instance_9.h6q(this.u62_1);
+  return 'AccessToken(value=' + redacted + ', subject=' + this.x62_1 + ', expiresAt=' + this.v62_1.toString() + ')';
 };
 protoOf(AccessToken).hashCode = function () {
-  var result = getStringHashCode(this.p62_1);
-  result = imul(result, 31) + this.q62_1.hashCode() | 0;
-  result = imul(result, 31) + (this.r62_1 == null ? 0 : getStringHashCode(this.r62_1)) | 0;
-  result = imul(result, 31) + (this.s62_1 == null ? 0 : getStringHashCode(this.s62_1)) | 0;
-  result = imul(result, 31) + (this.t62_1 == null ? 0 : this.t62_1.hashCode()) | 0;
+  var result = getStringHashCode(this.u62_1);
+  result = imul(result, 31) + this.v62_1.hashCode() | 0;
+  result = imul(result, 31) + (this.w62_1 == null ? 0 : getStringHashCode(this.w62_1)) | 0;
+  result = imul(result, 31) + (this.x62_1 == null ? 0 : getStringHashCode(this.x62_1)) | 0;
+  result = imul(result, 31) + (this.y62_1 == null ? 0 : this.y62_1.hashCode()) | 0;
   return result;
 };
 protoOf(AccessToken).equals = function (other) {
@@ -13313,15 +15071,15 @@ protoOf(AccessToken).equals = function (other) {
     return true;
   if (!(other instanceof AccessToken))
     return false;
-  if (!(this.p62_1 === other.p62_1))
+  if (!(this.u62_1 === other.u62_1))
     return false;
-  if (!equalsLong(this.q62_1, other.q62_1))
+  if (!equalsLong(this.v62_1, other.v62_1))
     return false;
-  if (!(this.r62_1 == other.r62_1))
+  if (!(this.w62_1 == other.w62_1))
     return false;
-  if (!(this.s62_1 == other.s62_1))
+  if (!(this.x62_1 == other.x62_1))
     return false;
-  if (!equals(this.t62_1, other.t62_1))
+  if (!equals(this.y62_1, other.y62_1))
     return false;
   return true;
 };
@@ -13332,23 +15090,23 @@ function Address(formatted, streetAddress, locality, region, postalCode, country
   region = region === VOID ? null : region;
   postalCode = postalCode === VOID ? null : postalCode;
   country = country === VOID ? null : country;
-  this.c6o_1 = formatted;
-  this.d6o_1 = streetAddress;
-  this.e6o_1 = locality;
-  this.f6o_1 = region;
-  this.g6o_1 = postalCode;
-  this.h6o_1 = country;
+  this.c6v_1 = formatted;
+  this.d6v_1 = streetAddress;
+  this.e6v_1 = locality;
+  this.f6v_1 = region;
+  this.g6v_1 = postalCode;
+  this.h6v_1 = country;
 }
 protoOf(Address).toString = function () {
-  return 'Address(formatted=' + this.c6o_1 + ', streetAddress=' + this.d6o_1 + ', locality=' + this.e6o_1 + ', region=' + this.f6o_1 + ', postalCode=' + this.g6o_1 + ', country=' + this.h6o_1 + ')';
+  return 'Address(formatted=' + this.c6v_1 + ', streetAddress=' + this.d6v_1 + ', locality=' + this.e6v_1 + ', region=' + this.f6v_1 + ', postalCode=' + this.g6v_1 + ', country=' + this.h6v_1 + ')';
 };
 protoOf(Address).hashCode = function () {
-  var result = this.c6o_1 == null ? 0 : getStringHashCode(this.c6o_1);
-  result = imul(result, 31) + (this.d6o_1 == null ? 0 : getStringHashCode(this.d6o_1)) | 0;
-  result = imul(result, 31) + (this.e6o_1 == null ? 0 : getStringHashCode(this.e6o_1)) | 0;
-  result = imul(result, 31) + (this.f6o_1 == null ? 0 : getStringHashCode(this.f6o_1)) | 0;
-  result = imul(result, 31) + (this.g6o_1 == null ? 0 : getStringHashCode(this.g6o_1)) | 0;
-  result = imul(result, 31) + (this.h6o_1 == null ? 0 : getStringHashCode(this.h6o_1)) | 0;
+  var result = this.c6v_1 == null ? 0 : getStringHashCode(this.c6v_1);
+  result = imul(result, 31) + (this.d6v_1 == null ? 0 : getStringHashCode(this.d6v_1)) | 0;
+  result = imul(result, 31) + (this.e6v_1 == null ? 0 : getStringHashCode(this.e6v_1)) | 0;
+  result = imul(result, 31) + (this.f6v_1 == null ? 0 : getStringHashCode(this.f6v_1)) | 0;
+  result = imul(result, 31) + (this.g6v_1 == null ? 0 : getStringHashCode(this.g6v_1)) | 0;
+  result = imul(result, 31) + (this.h6v_1 == null ? 0 : getStringHashCode(this.h6v_1)) | 0;
   return result;
 };
 protoOf(Address).equals = function (other) {
@@ -13356,214 +15114,20 @@ protoOf(Address).equals = function (other) {
     return true;
   if (!(other instanceof Address))
     return false;
-  if (!(this.c6o_1 == other.c6o_1))
+  if (!(this.c6v_1 == other.c6v_1))
     return false;
-  if (!(this.d6o_1 == other.d6o_1))
+  if (!(this.d6v_1 == other.d6v_1))
     return false;
-  if (!(this.e6o_1 == other.e6o_1))
+  if (!(this.e6v_1 == other.e6v_1))
     return false;
-  if (!(this.f6o_1 == other.f6o_1))
+  if (!(this.f6v_1 == other.f6v_1))
     return false;
-  if (!(this.g6o_1 == other.g6o_1))
+  if (!(this.g6v_1 == other.g6v_1))
     return false;
-  if (!(this.h6o_1 == other.h6o_1))
-    return false;
-  return true;
-};
-function Null() {
-  Null_instance = this;
-  ClaimValue.call(this);
-}
-protoOf(Null).toString = function () {
-  return 'Null';
-};
-protoOf(Null).hashCode = function () {
-  return 1784732275;
-};
-protoOf(Null).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Null))
+  if (!(this.h6v_1 == other.h6v_1))
     return false;
   return true;
 };
-var Null_instance;
-function Null_getInstance() {
-  if (Null_instance == null)
-    new Null();
-  return Null_instance;
-}
-function Text(value) {
-  ClaimValue.call(this);
-  this.i6o_1 = value;
-}
-protoOf(Text).toString = function () {
-  return 'Text(value=' + this.i6o_1 + ')';
-};
-protoOf(Text).hashCode = function () {
-  return getStringHashCode(this.i6o_1);
-};
-protoOf(Text).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Text))
-    return false;
-  if (!(this.i6o_1 === other.i6o_1))
-    return false;
-  return true;
-};
-function Integer(value) {
-  ClaimValue.call(this);
-  this.j6o_1 = value;
-}
-protoOf(Integer).toString = function () {
-  return 'Integer(value=' + this.j6o_1.toString() + ')';
-};
-protoOf(Integer).hashCode = function () {
-  return this.j6o_1.hashCode();
-};
-protoOf(Integer).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Integer))
-    return false;
-  if (!equalsLong(this.j6o_1, other.j6o_1))
-    return false;
-  return true;
-};
-function Decimal(value) {
-  ClaimValue.call(this);
-  this.k6o_1 = value;
-}
-protoOf(Decimal).toString = function () {
-  return 'Decimal(value=' + this.k6o_1 + ')';
-};
-protoOf(Decimal).hashCode = function () {
-  return getNumberHashCode(this.k6o_1);
-};
-protoOf(Decimal).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Decimal))
-    return false;
-  if (!equals(this.k6o_1, other.k6o_1))
-    return false;
-  return true;
-};
-function Bool(value) {
-  ClaimValue.call(this);
-  this.l6o_1 = value;
-}
-protoOf(Bool).toString = function () {
-  return 'Bool(value=' + this.l6o_1 + ')';
-};
-protoOf(Bool).hashCode = function () {
-  return getBooleanHashCode(this.l6o_1);
-};
-protoOf(Bool).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Bool))
-    return false;
-  if (!(this.l6o_1 === other.l6o_1))
-    return false;
-  return true;
-};
-function Array_0(value) {
-  ClaimValue.call(this);
-  this.m6o_1 = value;
-}
-protoOf(Array_0).toString = function () {
-  return 'Array(value=' + toString(this.m6o_1) + ')';
-};
-protoOf(Array_0).hashCode = function () {
-  return hashCode(this.m6o_1);
-};
-protoOf(Array_0).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Array_0))
-    return false;
-  if (!equals(this.m6o_1, other.m6o_1))
-    return false;
-  return true;
-};
-function Object_0(value) {
-  ClaimValue.call(this);
-  this.n6o_1 = value;
-}
-protoOf(Object_0).toString = function () {
-  return 'Object(value=' + toString(this.n6o_1) + ')';
-};
-protoOf(Object_0).hashCode = function () {
-  return hashCode(this.n6o_1);
-};
-protoOf(Object_0).equals = function (other) {
-  if (this === other)
-    return true;
-  if (!(other instanceof Object_0))
-    return false;
-  if (!equals(this.n6o_1, other.n6o_1))
-    return false;
-  return true;
-};
-function ClaimValue() {
-}
-function toJsonElement(_this__u8e3s4) {
-  var tmp;
-  if (_this__u8e3s4 instanceof Null) {
-    tmp = JsonNull_getInstance();
-  } else {
-    if (_this__u8e3s4 instanceof Text) {
-      tmp = JsonPrimitive_2(_this__u8e3s4.i6o_1);
-    } else {
-      if (_this__u8e3s4 instanceof Integer) {
-        tmp = JsonPrimitive_1(_this__u8e3s4.j6o_1);
-      } else {
-        if (_this__u8e3s4 instanceof Decimal) {
-          tmp = JsonPrimitive_1(_this__u8e3s4.k6o_1);
-        } else {
-          if (_this__u8e3s4 instanceof Bool) {
-            tmp = JsonPrimitive_0(_this__u8e3s4.l6o_1);
-          } else {
-            if (_this__u8e3s4 instanceof Array_0) {
-              // Inline function 'kotlin.collections.map' call
-              var this_0 = _this__u8e3s4.m6o_1;
-              // Inline function 'kotlin.collections.mapTo' call
-              var destination = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_0, 10));
-              var _iterator__ex2g4s = this_0.t();
-              while (_iterator__ex2g4s.u()) {
-                var item = _iterator__ex2g4s.v();
-                var tmp$ret$0 = toJsonElement(item);
-                destination.x(tmp$ret$0);
-              }
-              tmp = new JsonArray(destination);
-            } else {
-              if (_this__u8e3s4 instanceof Object_0) {
-                // Inline function 'kotlin.collections.mapValues' call
-                var this_1 = _this__u8e3s4.n6o_1;
-                // Inline function 'kotlin.collections.mapValuesTo' call
-                var destination_0 = LinkedHashMap_init_$Create$_0(mapCapacity(this_1.z()));
-                // Inline function 'kotlin.collections.associateByTo' call
-                var _iterator__ex2g4s_0 = this_1.h1().t();
-                while (_iterator__ex2g4s_0.u()) {
-                  var element = _iterator__ex2g4s_0.v();
-                  var tmp_0 = element.i1();
-                  var tmp$ret$4 = toJsonElement(element.j1());
-                  destination_0.m2(tmp_0, tmp$ret$4);
-                }
-                tmp = new JsonObject(destination_0);
-              } else {
-                noWhenBranchMatchedException();
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  return tmp;
-}
 function extractStringList($this, element) {
   var tmp0_safe_receiver = element instanceof JsonArray ? element : null;
   var tmp;
@@ -13584,7 +15148,7 @@ function extractStringList($this, element) {
       } else {
         // Inline function 'kotlin.takeIf' call
         var tmp_1;
-        if (tmp0_safe_receiver_0.a17()) {
+        if (tmp0_safe_receiver_0.b17()) {
           tmp_1 = tmp0_safe_receiver_0;
         } else {
           tmp_1 = null;
@@ -13592,7 +15156,7 @@ function extractStringList($this, element) {
         tmp_0 = tmp_1;
       }
       var tmp1_safe_receiver = tmp_0;
-      var tmp0_safe_receiver_1 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.b17();
+      var tmp0_safe_receiver_1 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.c17();
       if (tmp0_safe_receiver_1 == null)
         null;
       else {
@@ -13604,16 +15168,16 @@ function extractStringList($this, element) {
   }
   return tmp;
 }
-function Companion_20() {
+function Companion_22() {
 }
-protoOf(Companion_20).d5z = function (jwtClaims) {
-  var raw = jwtClaims.s5e_1;
-  var tmp = ensureNotNull(jwtClaims.l5e_1);
-  var tmp_0 = ensureNotNull(jwtClaims.m5e_1);
-  var tmp_1 = ensureNotNull(jwtClaims.o5e_1);
-  var tmp_2 = ensureNotNull(jwtClaims.q5e_1);
-  var tmp_3 = jwtClaims.t5e('azp');
-  var tmp_4 = jwtClaims.t5e('nonce');
+protoOf(Companion_22).i5z = function (jwtClaims) {
+  var raw = jwtClaims.w5e_1;
+  var tmp = ensureNotNull(jwtClaims.p5e_1);
+  var tmp_0 = ensureNotNull(jwtClaims.q5e_1);
+  var tmp_1 = ensureNotNull(jwtClaims.s5e_1);
+  var tmp_2 = ensureNotNull(jwtClaims.u5e_1);
+  var tmp_3 = jwtClaims.x5e('azp');
+  var tmp_4 = jwtClaims.x5e('nonce');
   var tmp_5 = raw.j2('auth_time');
   var tmp0_safe_receiver = tmp_5 instanceof JsonPrimitive ? tmp_5 : null;
   var tmp_6;
@@ -13622,7 +15186,7 @@ protoOf(Companion_20).d5z = function (jwtClaims) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_7;
-    if (!tmp0_safe_receiver.a17()) {
+    if (!tmp0_safe_receiver.b17()) {
       tmp_7 = tmp0_safe_receiver;
     } else {
       tmp_7 = null;
@@ -13631,8 +15195,8 @@ protoOf(Companion_20).d5z = function (jwtClaims) {
   }
   var tmp1_safe_receiver = tmp_6;
   var tmp_8 = tmp1_safe_receiver == null ? null : get_longOrNull(tmp1_safe_receiver);
-  var tmp_9 = jwtClaims.t5e('sid');
-  var tmp_10 = jwtClaims.t5e('acr');
+  var tmp_9 = jwtClaims.x5e('sid');
+  var tmp_10 = jwtClaims.x5e('acr');
   var tmp_11 = extractStringList(this, raw.j2('amr'));
   // Inline function 'kotlin.collections.filterKeys' call
   var result = LinkedHashMap_init_$Create$();
@@ -13655,14 +15219,14 @@ protoOf(Companion_20).d5z = function (jwtClaims) {
     var tmp_12 = element.i1();
     // Inline function 'kotlin.collections.component2' call
     var value = element.j1();
-    var tmp$ret$7 = toClaimValue(value);
+    var tmp$ret$7 = toStructuredValue(value);
     destination.m2(tmp_12, tmp$ret$7);
   }
-  return new IdTokenClaims(tmp, tmp_0, jwtClaims.n5e_1, tmp_1, tmp_2, tmp_3, tmp_4, tmp_8, tmp_9, tmp_10, tmp_11, destination);
+  return new IdTokenClaims(tmp, tmp_0, jwtClaims.r5e_1, tmp_1, tmp_2, tmp_3, tmp_4, tmp_8, tmp_9, tmp_10, tmp_11, destination);
 };
-var Companion_instance_21;
-function Companion_getInstance_28() {
-  return Companion_instance_21;
+var Companion_instance_24;
+function Companion_getInstance_30() {
+  return Companion_instance_24;
 }
 function IdTokenClaims(issuer, subject, audience, expiresAt, issuedAt, authorizedParty, nonce, authTime, sessionId, acr, amr, rawClaims) {
   authorizedParty = authorizedParty === VOID ? null : authorizedParty;
@@ -13672,35 +15236,35 @@ function IdTokenClaims(issuer, subject, audience, expiresAt, issuedAt, authorize
   acr = acr === VOID ? null : acr;
   amr = amr === VOID ? null : amr;
   rawClaims = rawClaims === VOID ? emptyMap() : rawClaims;
-  this.o6o_1 = issuer;
-  this.p6o_1 = subject;
-  this.q6o_1 = audience;
-  this.r6o_1 = expiresAt;
-  this.s6o_1 = issuedAt;
-  this.t6o_1 = authorizedParty;
-  this.u6o_1 = nonce;
-  this.v6o_1 = authTime;
-  this.w6o_1 = sessionId;
-  this.x6o_1 = acr;
-  this.y6o_1 = amr;
-  this.z6o_1 = rawClaims;
+  this.i6v_1 = issuer;
+  this.j6v_1 = subject;
+  this.k6v_1 = audience;
+  this.l6v_1 = expiresAt;
+  this.m6v_1 = issuedAt;
+  this.n6v_1 = authorizedParty;
+  this.o6v_1 = nonce;
+  this.p6v_1 = authTime;
+  this.q6v_1 = sessionId;
+  this.r6v_1 = acr;
+  this.s6v_1 = amr;
+  this.t6v_1 = rawClaims;
 }
 protoOf(IdTokenClaims).toString = function () {
-  return 'IdTokenClaims(issuer=' + this.o6o_1 + ', subject=' + this.p6o_1 + ', audience=' + toString(this.q6o_1) + ', expiresAt=' + this.r6o_1.toString() + ', issuedAt=' + this.s6o_1.toString() + ', authorizedParty=' + this.t6o_1 + ', nonce=' + this.u6o_1 + ', authTime=' + toString_0(this.v6o_1) + ', sessionId=' + this.w6o_1 + ', acr=' + this.x6o_1 + ', amr=' + toString_0(this.y6o_1) + ', rawClaims=' + toString(this.z6o_1) + ')';
+  return 'IdTokenClaims(issuer=' + this.i6v_1 + ', subject=' + this.j6v_1 + ', audience=' + toString(this.k6v_1) + ', expiresAt=' + this.l6v_1.toString() + ', issuedAt=' + this.m6v_1.toString() + ', authorizedParty=' + this.n6v_1 + ', nonce=' + this.o6v_1 + ', authTime=' + toString_0(this.p6v_1) + ', sessionId=' + this.q6v_1 + ', acr=' + this.r6v_1 + ', amr=' + toString_0(this.s6v_1) + ', rawClaims=' + toString(this.t6v_1) + ')';
 };
 protoOf(IdTokenClaims).hashCode = function () {
-  var result = getStringHashCode(this.o6o_1);
-  result = imul(result, 31) + getStringHashCode(this.p6o_1) | 0;
-  result = imul(result, 31) + hashCode(this.q6o_1) | 0;
-  result = imul(result, 31) + this.r6o_1.hashCode() | 0;
-  result = imul(result, 31) + this.s6o_1.hashCode() | 0;
-  result = imul(result, 31) + (this.t6o_1 == null ? 0 : getStringHashCode(this.t6o_1)) | 0;
-  result = imul(result, 31) + (this.u6o_1 == null ? 0 : getStringHashCode(this.u6o_1)) | 0;
-  result = imul(result, 31) + (this.v6o_1 == null ? 0 : this.v6o_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.w6o_1 == null ? 0 : getStringHashCode(this.w6o_1)) | 0;
-  result = imul(result, 31) + (this.x6o_1 == null ? 0 : getStringHashCode(this.x6o_1)) | 0;
-  result = imul(result, 31) + (this.y6o_1 == null ? 0 : hashCode(this.y6o_1)) | 0;
-  result = imul(result, 31) + hashCode(this.z6o_1) | 0;
+  var result = getStringHashCode(this.i6v_1);
+  result = imul(result, 31) + getStringHashCode(this.j6v_1) | 0;
+  result = imul(result, 31) + hashCode(this.k6v_1) | 0;
+  result = imul(result, 31) + this.l6v_1.hashCode() | 0;
+  result = imul(result, 31) + this.m6v_1.hashCode() | 0;
+  result = imul(result, 31) + (this.n6v_1 == null ? 0 : getStringHashCode(this.n6v_1)) | 0;
+  result = imul(result, 31) + (this.o6v_1 == null ? 0 : getStringHashCode(this.o6v_1)) | 0;
+  result = imul(result, 31) + (this.p6v_1 == null ? 0 : this.p6v_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.q6v_1 == null ? 0 : getStringHashCode(this.q6v_1)) | 0;
+  result = imul(result, 31) + (this.r6v_1 == null ? 0 : getStringHashCode(this.r6v_1)) | 0;
+  result = imul(result, 31) + (this.s6v_1 == null ? 0 : hashCode(this.s6v_1)) | 0;
+  result = imul(result, 31) + hashCode(this.t6v_1) | 0;
   return result;
 };
 protoOf(IdTokenClaims).equals = function (other) {
@@ -13708,39 +15272,39 @@ protoOf(IdTokenClaims).equals = function (other) {
     return true;
   if (!(other instanceof IdTokenClaims))
     return false;
-  if (!(this.o6o_1 === other.o6o_1))
+  if (!(this.i6v_1 === other.i6v_1))
     return false;
-  if (!(this.p6o_1 === other.p6o_1))
+  if (!(this.j6v_1 === other.j6v_1))
     return false;
-  if (!equals(this.q6o_1, other.q6o_1))
+  if (!equals(this.k6v_1, other.k6v_1))
     return false;
-  if (!equalsLong(this.r6o_1, other.r6o_1))
+  if (!equalsLong(this.l6v_1, other.l6v_1))
     return false;
-  if (!equalsLong(this.s6o_1, other.s6o_1))
+  if (!equalsLong(this.m6v_1, other.m6v_1))
     return false;
-  if (!(this.t6o_1 == other.t6o_1))
+  if (!(this.n6v_1 == other.n6v_1))
     return false;
-  if (!(this.u6o_1 == other.u6o_1))
+  if (!(this.o6v_1 == other.o6v_1))
     return false;
-  if (!equals(this.v6o_1, other.v6o_1))
+  if (!equals(this.p6v_1, other.p6v_1))
     return false;
-  if (!(this.w6o_1 == other.w6o_1))
+  if (!(this.q6v_1 == other.q6v_1))
     return false;
-  if (!(this.x6o_1 == other.x6o_1))
+  if (!(this.r6v_1 == other.r6v_1))
     return false;
-  if (!equals(this.y6o_1, other.y6o_1))
+  if (!equals(this.s6v_1, other.s6v_1))
     return false;
-  if (!equals(this.z6o_1, other.z6o_1))
+  if (!equals(this.t6v_1, other.t6v_1))
     return false;
   return true;
 };
-function toClaimValue(_this__u8e3s4) {
+function toStructuredValue(_this__u8e3s4) {
   var tmp;
   if (_this__u8e3s4 instanceof JsonNull) {
     tmp = Null_getInstance();
   } else {
     if (_this__u8e3s4 instanceof JsonPrimitive) {
-      tmp = _this__u8e3s4.a17() ? new Text(_this__u8e3s4.b17()) : _this__u8e3s4.b17() === 'true' ? new Bool(true) : _this__u8e3s4.b17() === 'false' ? new Bool(false) : !(get_longOrNull(_this__u8e3s4) == null) ? new Integer(ensureNotNull(get_longOrNull(_this__u8e3s4))) : !(get_doubleOrNull(_this__u8e3s4) == null) ? new Decimal(ensureNotNull(get_doubleOrNull(_this__u8e3s4))) : new Text(_this__u8e3s4.b17());
+      tmp = _this__u8e3s4.b17() ? new Text(_this__u8e3s4.c17()) : _this__u8e3s4.c17() === 'true' ? new Bool(true) : _this__u8e3s4.c17() === 'false' ? new Bool(false) : !(get_longOrNull(_this__u8e3s4) == null) ? new Integer(ensureNotNull(get_longOrNull(_this__u8e3s4))) : !(get_doubleOrNull(_this__u8e3s4) == null) ? new Decimal(ensureNotNull(get_doubleOrNull(_this__u8e3s4))) : new Text(_this__u8e3s4.c17());
     } else {
       if (_this__u8e3s4 instanceof JsonArray) {
         // Inline function 'kotlin.collections.map' call
@@ -13749,7 +15313,7 @@ function toClaimValue(_this__u8e3s4) {
         var _iterator__ex2g4s = _this__u8e3s4.t();
         while (_iterator__ex2g4s.u()) {
           var item = _iterator__ex2g4s.v();
-          var tmp$ret$0 = toClaimValue(item);
+          var tmp$ret$0 = toStructuredValue(item);
           destination.x(tmp$ret$0);
         }
         tmp = new Array_0(destination);
@@ -13765,7 +15329,7 @@ function toClaimValue(_this__u8e3s4) {
             var tmp_0 = element.i1();
             // Inline function 'kotlin.collections.component2' call
             var v = element.j1();
-            var tmp$ret$5 = toClaimValue(v);
+            var tmp$ret$5 = toStructuredValue(v);
             destination_0.m2(tmp_0, tmp$ret$5);
           }
           tmp = new Object_0(destination_0);
@@ -13780,45 +15344,45 @@ function toClaimValue(_this__u8e3s4) {
 function JwkSet$Companion$$childSerializers$_anonymous__t7r42u() {
   return new ArrayListSerializer($serializer_getInstance_10());
 }
-function Companion_21() {
-  Companion_instance_22 = this;
+function Companion_23() {
+  Companion_instance_25 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.a6p_1 = [lazy_0(tmp_0, JwkSet$Companion$$childSerializers$_anonymous__t7r42u)];
+  tmp.u6v_1 = [lazy_0(tmp_0, JwkSet$Companion$$childSerializers$_anonymous__t7r42u)];
 }
-var Companion_instance_22;
-function Companion_getInstance_29() {
-  if (Companion_instance_22 == null)
-    new Companion_21();
-  return Companion_instance_22;
+var Companion_instance_25;
+function Companion_getInstance_31() {
+  if (Companion_instance_25 == null)
+    new Companion_23();
+  return Companion_instance_25;
 }
 function $serializer_9() {
   $serializer_instance_9 = this;
   var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('ch.srg.login.sdk.model.JwkSet', this, 1);
   tmp0_serialDesc.dw('keys', false);
-  this.b6p_1 = tmp0_serialDesc;
+  this.v6v_1 = tmp0_serialDesc;
 }
-protoOf($serializer_9).c6p = function (encoder, value) {
-  var tmp0_desc = this.b6p_1;
+protoOf($serializer_9).w6v = function (encoder, value) {
+  var tmp0_desc = this.v6v_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_29().a6p_1;
-  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.p5i_1);
+  var tmp2_cached = Companion_getInstance_31().u6v_1;
+  tmp1_output.oq(tmp0_desc, 0, tmp2_cached[0].j1(), value.t5i_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_9).am = function (encoder, value) {
-  return this.c6p(encoder, value instanceof JwkSet ? value : THROW_CCE());
+  return this.w6v(encoder, value instanceof JwkSet ? value : THROW_CCE());
 };
 protoOf($serializer_9).bm = function (decoder) {
-  var tmp0_desc = this.b6p_1;
+  var tmp0_desc = this.v6v_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
   var tmp4_local0 = null;
   var tmp5_input = decoder.zo(tmp0_desc);
-  var tmp6_cached = Companion_getInstance_29().a6p_1;
+  var tmp6_cached = Companion_getInstance_31().u6v_1;
   if (tmp5_input.op()) {
     tmp4_local0 = tmp5_input.lp(tmp0_desc, 0, tmp6_cached[0].j1(), tmp4_local0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -13841,13 +15405,13 @@ protoOf($serializer_9).bm = function (decoder) {
   return JwkSet_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
 };
 protoOf($serializer_9).zl = function () {
-  return this.b6p_1;
+  return this.v6v_1;
 };
 protoOf($serializer_9).fw = function () {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  return [Companion_getInstance_29().a6p_1[0].j1()];
+  return [Companion_getInstance_31().u6v_1[0].j1()];
 };
 var $serializer_instance_9;
 function $serializer_getInstance_9() {
@@ -13857,30 +15421,30 @@ function $serializer_getInstance_9() {
 }
 function JwkSet_init_$Init$(seen0, keys, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_9().b6p_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_9().v6v_1);
   }
-  $this.p5i_1 = keys;
+  $this.t5i_1 = keys;
   return $this;
 }
 function JwkSet_init_$Create$(seen0, keys, serializationConstructorMarker) {
   return JwkSet_init_$Init$(seen0, keys, serializationConstructorMarker, objectCreate(protoOf(JwkSet)));
 }
 function JwkSet(keys) {
-  Companion_getInstance_29();
-  this.p5i_1 = keys;
+  Companion_getInstance_31();
+  this.t5i_1 = keys;
 }
 protoOf(JwkSet).toString = function () {
-  return 'JwkSet(keys=' + toString(this.p5i_1) + ')';
+  return 'JwkSet(keys=' + toString(this.t5i_1) + ')';
 };
 protoOf(JwkSet).hashCode = function () {
-  return hashCode(this.p5i_1);
+  return hashCode(this.t5i_1);
 };
 protoOf(JwkSet).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof JwkSet))
     return false;
-  if (!equals(this.p5i_1, other.p5i_1))
+  if (!equals(this.t5i_1, other.t5i_1))
     return false;
   return true;
 };
@@ -13890,8 +15454,8 @@ function JsonWebKey$Companion$$childSerializers$_anonymous__3gavrd() {
 function JsonWebKey$Companion$$childSerializers$_anonymous__3gavrd_0() {
   return new ArrayListSerializer(StringSerializer_getInstance());
 }
-function Companion_22() {
-  Companion_instance_23 = this;
+function Companion_24() {
+  Companion_instance_26 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   var tmp_1 = lazy_0(tmp_0, JsonWebKey$Companion$$childSerializers$_anonymous__3gavrd);
@@ -13899,13 +15463,13 @@ function Companion_22() {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.d6p_1 = [null, null, tmp_1, null, null, lazy_0(tmp_2, JsonWebKey$Companion$$childSerializers$_anonymous__3gavrd_0), null, null, null, null, null, null, null];
+  tmp.x6v_1 = [null, null, tmp_1, null, null, lazy_0(tmp_2, JsonWebKey$Companion$$childSerializers$_anonymous__3gavrd_0), null, null, null, null, null, null, null];
 }
-var Companion_instance_23;
-function Companion_getInstance_30() {
-  if (Companion_instance_23 == null)
-    new Companion_22();
-  return Companion_instance_23;
+var Companion_instance_26;
+function Companion_getInstance_32() {
+  if (Companion_instance_26 == null)
+    new Companion_24();
+  return Companion_instance_26;
 }
 function $serializer_10() {
   $serializer_instance_10 = this;
@@ -13923,56 +15487,56 @@ function $serializer_10() {
   tmp0_serialDesc.dw('crv', true);
   tmp0_serialDesc.dw('x', true);
   tmp0_serialDesc.dw('y', true);
-  this.e6p_1 = tmp0_serialDesc;
+  this.y6v_1 = tmp0_serialDesc;
 }
-protoOf($serializer_10).f6p = function (encoder, value) {
-  var tmp0_desc = this.e6p_1;
+protoOf($serializer_10).z6v = function (encoder, value) {
+  var tmp0_desc = this.y6v_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_30().d6p_1;
-  tmp1_output.mq(tmp0_desc, 0, value.q5i_1);
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.r5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.r5i_1);
+  var tmp2_cached = Companion_getInstance_32().x6v_1;
+  tmp1_output.mq(tmp0_desc, 0, value.u5i_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.v5i_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.v5i_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.s5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, tmp2_cached[2].j1(), value.s5i_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.w5i_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, tmp2_cached[2].j1(), value.w5i_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.t5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.t5i_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.x5i_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.x5i_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.u5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.u5i_1);
+  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.y5i_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.y5i_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.v5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 5, tmp2_cached[5].j1(), value.v5i_1);
+  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.z5i_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 5, tmp2_cached[5].j1(), value.z5i_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.w5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.w5i_1);
+  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.a5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.a5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.x5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 7, StringSerializer_getInstance(), value.x5i_1);
+  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.b5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 7, StringSerializer_getInstance(), value.b5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.y5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.y5i_1);
+  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.c5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.c5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.z5i_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 9, StringSerializer_getInstance(), value.z5i_1);
+  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.d5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 9, StringSerializer_getInstance(), value.d5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.a5j_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 10, StringSerializer_getInstance(), value.a5j_1);
+  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.e5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 10, StringSerializer_getInstance(), value.e5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.b5j_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 11, StringSerializer_getInstance(), value.b5j_1);
+  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.f5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 11, StringSerializer_getInstance(), value.f5j_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.c5j_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 12, StringSerializer_getInstance(), value.c5j_1);
+  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.g5j_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 12, StringSerializer_getInstance(), value.g5j_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_10).am = function (encoder, value) {
-  return this.f6p(encoder, value instanceof JsonWebKey ? value : THROW_CCE());
+  return this.z6v(encoder, value instanceof JsonWebKey ? value : THROW_CCE());
 };
 protoOf($serializer_10).bm = function (decoder) {
-  var tmp0_desc = this.e6p_1;
+  var tmp0_desc = this.y6v_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -13990,7 +15554,7 @@ protoOf($serializer_10).bm = function (decoder) {
   var tmp15_local11 = null;
   var tmp16_local12 = null;
   var tmp17_input = decoder.zo(tmp0_desc);
-  var tmp18_cached = Companion_getInstance_30().d6p_1;
+  var tmp18_cached = Companion_getInstance_32().x6v_1;
   if (tmp17_input.op()) {
     tmp4_local0 = tmp17_input.jp(tmp0_desc, 0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -14085,10 +15649,10 @@ protoOf($serializer_10).bm = function (decoder) {
   return JsonWebKey_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, tmp15_local11, tmp16_local12, null);
 };
 protoOf($serializer_10).zl = function () {
-  return this.e6p_1;
+  return this.y6v_1;
 };
 protoOf($serializer_10).fw = function () {
-  var tmp0_cached = Companion_getInstance_30().d6p_1;
+  var tmp0_cached = Companion_getInstance_32().x6v_1;
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
@@ -14102,57 +15666,57 @@ function $serializer_getInstance_10() {
 }
 function JsonWebKey_init_$Init$(seen0, keyType, publicKeyUse, keyOperations, algorithm, keyId, x509CertificateChain, x509CertificateThumbprint, x509CertificateThumbprintSha256, rsaModulus, rsaExponent, ellipticCurve, ecXCoordinate, ecYCoordinate, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_10().e6p_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_10().y6v_1);
   }
-  $this.q5i_1 = keyType;
+  $this.u5i_1 = keyType;
   if (0 === (seen0 & 2))
-    $this.r5i_1 = null;
-  else
-    $this.r5i_1 = publicKeyUse;
-  if (0 === (seen0 & 4))
-    $this.s5i_1 = null;
-  else
-    $this.s5i_1 = keyOperations;
-  if (0 === (seen0 & 8))
-    $this.t5i_1 = null;
-  else
-    $this.t5i_1 = algorithm;
-  if (0 === (seen0 & 16))
-    $this.u5i_1 = null;
-  else
-    $this.u5i_1 = keyId;
-  if (0 === (seen0 & 32))
     $this.v5i_1 = null;
   else
-    $this.v5i_1 = x509CertificateChain;
-  if (0 === (seen0 & 64))
+    $this.v5i_1 = publicKeyUse;
+  if (0 === (seen0 & 4))
     $this.w5i_1 = null;
   else
-    $this.w5i_1 = x509CertificateThumbprint;
-  if (0 === (seen0 & 128))
+    $this.w5i_1 = keyOperations;
+  if (0 === (seen0 & 8))
     $this.x5i_1 = null;
   else
-    $this.x5i_1 = x509CertificateThumbprintSha256;
-  if (0 === (seen0 & 256))
+    $this.x5i_1 = algorithm;
+  if (0 === (seen0 & 16))
     $this.y5i_1 = null;
   else
-    $this.y5i_1 = rsaModulus;
-  if (0 === (seen0 & 512))
+    $this.y5i_1 = keyId;
+  if (0 === (seen0 & 32))
     $this.z5i_1 = null;
   else
-    $this.z5i_1 = rsaExponent;
-  if (0 === (seen0 & 1024))
+    $this.z5i_1 = x509CertificateChain;
+  if (0 === (seen0 & 64))
     $this.a5j_1 = null;
   else
-    $this.a5j_1 = ellipticCurve;
-  if (0 === (seen0 & 2048))
+    $this.a5j_1 = x509CertificateThumbprint;
+  if (0 === (seen0 & 128))
     $this.b5j_1 = null;
   else
-    $this.b5j_1 = ecXCoordinate;
-  if (0 === (seen0 & 4096))
+    $this.b5j_1 = x509CertificateThumbprintSha256;
+  if (0 === (seen0 & 256))
     $this.c5j_1 = null;
   else
-    $this.c5j_1 = ecYCoordinate;
+    $this.c5j_1 = rsaModulus;
+  if (0 === (seen0 & 512))
+    $this.d5j_1 = null;
+  else
+    $this.d5j_1 = rsaExponent;
+  if (0 === (seen0 & 1024))
+    $this.e5j_1 = null;
+  else
+    $this.e5j_1 = ellipticCurve;
+  if (0 === (seen0 & 2048))
+    $this.f5j_1 = null;
+  else
+    $this.f5j_1 = ecXCoordinate;
+  if (0 === (seen0 & 4096))
+    $this.g5j_1 = null;
+  else
+    $this.g5j_1 = ecYCoordinate;
   return $this;
 }
 function JsonWebKey_init_$Create$(seen0, keyType, publicKeyUse, keyOperations, algorithm, keyId, x509CertificateChain, x509CertificateThumbprint, x509CertificateThumbprintSha256, rsaModulus, rsaExponent, ellipticCurve, ecXCoordinate, ecYCoordinate, serializationConstructorMarker) {
@@ -14161,22 +15725,22 @@ function JsonWebKey_init_$Create$(seen0, keyType, publicKeyUse, keyOperations, a
 function JsonWebKey() {
 }
 protoOf(JsonWebKey).toString = function () {
-  return 'JsonWebKey(keyType=' + this.q5i_1 + ', publicKeyUse=' + this.r5i_1 + ', keyOperations=' + toString_0(this.s5i_1) + ', algorithm=' + this.t5i_1 + ', keyId=' + this.u5i_1 + ', x509CertificateChain=' + toString_0(this.v5i_1) + ', x509CertificateThumbprint=' + this.w5i_1 + ', x509CertificateThumbprintSha256=' + this.x5i_1 + ', rsaModulus=' + this.y5i_1 + ', rsaExponent=' + this.z5i_1 + ', ellipticCurve=' + this.a5j_1 + ', ecXCoordinate=' + this.b5j_1 + ', ecYCoordinate=' + this.c5j_1 + ')';
+  return 'JsonWebKey(keyType=' + this.u5i_1 + ', publicKeyUse=' + this.v5i_1 + ', keyOperations=' + toString_0(this.w5i_1) + ', algorithm=' + this.x5i_1 + ', keyId=' + this.y5i_1 + ', x509CertificateChain=' + toString_0(this.z5i_1) + ', x509CertificateThumbprint=' + this.a5j_1 + ', x509CertificateThumbprintSha256=' + this.b5j_1 + ', rsaModulus=' + this.c5j_1 + ', rsaExponent=' + this.d5j_1 + ', ellipticCurve=' + this.e5j_1 + ', ecXCoordinate=' + this.f5j_1 + ', ecYCoordinate=' + this.g5j_1 + ')';
 };
 protoOf(JsonWebKey).hashCode = function () {
-  var result = getStringHashCode(this.q5i_1);
-  result = imul(result, 31) + (this.r5i_1 == null ? 0 : getStringHashCode(this.r5i_1)) | 0;
-  result = imul(result, 31) + (this.s5i_1 == null ? 0 : hashCode(this.s5i_1)) | 0;
-  result = imul(result, 31) + (this.t5i_1 == null ? 0 : getStringHashCode(this.t5i_1)) | 0;
-  result = imul(result, 31) + (this.u5i_1 == null ? 0 : getStringHashCode(this.u5i_1)) | 0;
-  result = imul(result, 31) + (this.v5i_1 == null ? 0 : hashCode(this.v5i_1)) | 0;
-  result = imul(result, 31) + (this.w5i_1 == null ? 0 : getStringHashCode(this.w5i_1)) | 0;
+  var result = getStringHashCode(this.u5i_1);
+  result = imul(result, 31) + (this.v5i_1 == null ? 0 : getStringHashCode(this.v5i_1)) | 0;
+  result = imul(result, 31) + (this.w5i_1 == null ? 0 : hashCode(this.w5i_1)) | 0;
   result = imul(result, 31) + (this.x5i_1 == null ? 0 : getStringHashCode(this.x5i_1)) | 0;
   result = imul(result, 31) + (this.y5i_1 == null ? 0 : getStringHashCode(this.y5i_1)) | 0;
-  result = imul(result, 31) + (this.z5i_1 == null ? 0 : getStringHashCode(this.z5i_1)) | 0;
+  result = imul(result, 31) + (this.z5i_1 == null ? 0 : hashCode(this.z5i_1)) | 0;
   result = imul(result, 31) + (this.a5j_1 == null ? 0 : getStringHashCode(this.a5j_1)) | 0;
   result = imul(result, 31) + (this.b5j_1 == null ? 0 : getStringHashCode(this.b5j_1)) | 0;
   result = imul(result, 31) + (this.c5j_1 == null ? 0 : getStringHashCode(this.c5j_1)) | 0;
+  result = imul(result, 31) + (this.d5j_1 == null ? 0 : getStringHashCode(this.d5j_1)) | 0;
+  result = imul(result, 31) + (this.e5j_1 == null ? 0 : getStringHashCode(this.e5j_1)) | 0;
+  result = imul(result, 31) + (this.f5j_1 == null ? 0 : getStringHashCode(this.f5j_1)) | 0;
+  result = imul(result, 31) + (this.g5j_1 == null ? 0 : getStringHashCode(this.g5j_1)) | 0;
   return result;
 };
 protoOf(JsonWebKey).equals = function (other) {
@@ -14184,25 +15748,17 @@ protoOf(JsonWebKey).equals = function (other) {
     return true;
   if (!(other instanceof JsonWebKey))
     return false;
-  if (!(this.q5i_1 === other.q5i_1))
+  if (!(this.u5i_1 === other.u5i_1))
     return false;
-  if (!(this.r5i_1 == other.r5i_1))
+  if (!(this.v5i_1 == other.v5i_1))
     return false;
-  if (!equals(this.s5i_1, other.s5i_1))
-    return false;
-  if (!(this.t5i_1 == other.t5i_1))
-    return false;
-  if (!(this.u5i_1 == other.u5i_1))
-    return false;
-  if (!equals(this.v5i_1, other.v5i_1))
-    return false;
-  if (!(this.w5i_1 == other.w5i_1))
+  if (!equals(this.w5i_1, other.w5i_1))
     return false;
   if (!(this.x5i_1 == other.x5i_1))
     return false;
   if (!(this.y5i_1 == other.y5i_1))
     return false;
-  if (!(this.z5i_1 == other.z5i_1))
+  if (!equals(this.z5i_1, other.z5i_1))
     return false;
   if (!(this.a5j_1 == other.a5j_1))
     return false;
@@ -14210,13 +15766,21 @@ protoOf(JsonWebKey).equals = function (other) {
     return false;
   if (!(this.c5j_1 == other.c5j_1))
     return false;
+  if (!(this.d5j_1 == other.d5j_1))
+    return false;
+  if (!(this.e5j_1 == other.e5j_1))
+    return false;
+  if (!(this.f5j_1 == other.f5j_1))
+    return false;
+  if (!(this.g5j_1 == other.g5j_1))
+    return false;
   return true;
 };
-function Companion_23() {
+function Companion_25() {
 }
-var Companion_instance_24;
-function Companion_getInstance_31() {
-  return Companion_instance_24;
+var Companion_instance_27;
+function Companion_getInstance_33() {
+  return Companion_instance_27;
 }
 function $serializer_11() {
   $serializer_instance_11 = this;
@@ -14224,25 +15788,25 @@ function $serializer_11() {
   tmp0_serialDesc.dw('alg', false);
   tmp0_serialDesc.dw('typ', true);
   tmp0_serialDesc.dw('kid', true);
-  this.g6p_1 = tmp0_serialDesc;
+  this.a6w_1 = tmp0_serialDesc;
 }
-protoOf($serializer_11).h6p = function (encoder, value) {
-  var tmp0_desc = this.g6p_1;
+protoOf($serializer_11).b6w = function (encoder, value) {
+  var tmp0_desc = this.a6w_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.p5h_1);
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.q5h_1 === 'JWT')) {
-    tmp1_output.mq(tmp0_desc, 1, value.q5h_1);
+  tmp1_output.mq(tmp0_desc, 0, value.t5h_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.u5h_1 === 'JWT')) {
+    tmp1_output.mq(tmp0_desc, 1, value.u5h_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.r5h_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.r5h_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.v5h_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.v5h_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_11).am = function (encoder, value) {
-  return this.h6p(encoder, value instanceof JwtHeader ? value : THROW_CCE());
+  return this.b6w(encoder, value instanceof JwtHeader ? value : THROW_CCE());
 };
 protoOf($serializer_11).bm = function (decoder) {
-  var tmp0_desc = this.g6p_1;
+  var tmp0_desc = this.a6w_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -14284,7 +15848,7 @@ protoOf($serializer_11).bm = function (decoder) {
   return JwtHeader_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
 };
 protoOf($serializer_11).zl = function () {
-  return this.g6p_1;
+  return this.a6w_1;
 };
 protoOf($serializer_11).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -14300,17 +15864,17 @@ function $serializer_getInstance_11() {
 }
 function JwtHeader_init_$Init$(seen0, alg, typ, kid, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_11().g6p_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_11().a6w_1);
   }
-  $this.p5h_1 = alg;
+  $this.t5h_1 = alg;
   if (0 === (seen0 & 2))
-    $this.q5h_1 = 'JWT';
+    $this.u5h_1 = 'JWT';
   else
-    $this.q5h_1 = typ;
+    $this.u5h_1 = typ;
   if (0 === (seen0 & 4))
-    $this.r5h_1 = null;
+    $this.v5h_1 = null;
   else
-    $this.r5h_1 = kid;
+    $this.v5h_1 = kid;
   return $this;
 }
 function JwtHeader_init_$Create$(seen0, alg, typ, kid, serializationConstructorMarker) {
@@ -14319,17 +15883,17 @@ function JwtHeader_init_$Create$(seen0, alg, typ, kid, serializationConstructorM
 function JwtHeader(alg, typ, kid) {
   typ = typ === VOID ? 'JWT' : typ;
   kid = kid === VOID ? null : kid;
-  this.p5h_1 = alg;
-  this.q5h_1 = typ;
-  this.r5h_1 = kid;
+  this.t5h_1 = alg;
+  this.u5h_1 = typ;
+  this.v5h_1 = kid;
 }
 protoOf(JwtHeader).toString = function () {
-  return 'JwtHeader(alg=' + this.p5h_1 + ', typ=' + this.q5h_1 + ', kid=' + this.r5h_1 + ')';
+  return 'JwtHeader(alg=' + this.t5h_1 + ', typ=' + this.u5h_1 + ', kid=' + this.v5h_1 + ')';
 };
 protoOf(JwtHeader).hashCode = function () {
-  var result = getStringHashCode(this.p5h_1);
-  result = imul(result, 31) + getStringHashCode(this.q5h_1) | 0;
-  result = imul(result, 31) + (this.r5h_1 == null ? 0 : getStringHashCode(this.r5h_1)) | 0;
+  var result = getStringHashCode(this.t5h_1);
+  result = imul(result, 31) + getStringHashCode(this.u5h_1) | 0;
+  result = imul(result, 31) + (this.v5h_1 == null ? 0 : getStringHashCode(this.v5h_1)) | 0;
   return result;
 };
 protoOf(JwtHeader).equals = function (other) {
@@ -14337,11 +15901,11 @@ protoOf(JwtHeader).equals = function (other) {
     return true;
   if (!(other instanceof JwtHeader))
     return false;
-  if (!(this.p5h_1 === other.p5h_1))
+  if (!(this.t5h_1 === other.t5h_1))
     return false;
-  if (!(this.q5h_1 === other.q5h_1))
+  if (!(this.u5h_1 === other.u5h_1))
     return false;
-  if (!(this.r5h_1 == other.r5h_1))
+  if (!(this.v5h_1 == other.v5h_1))
     return false;
   return true;
 };
@@ -14354,17 +15918,17 @@ function JwtClaims(iss, sub, aud, exp, nbf, iat, jti, rawClaims) {
   iat = iat === VOID ? null : iat;
   jti = jti === VOID ? null : jti;
   rawClaims = rawClaims === VOID ? emptyMap() : rawClaims;
-  this.l5e_1 = iss;
-  this.m5e_1 = sub;
-  this.n5e_1 = aud;
-  this.o5e_1 = exp;
-  this.p5e_1 = nbf;
-  this.q5e_1 = iat;
-  this.r5e_1 = jti;
-  this.s5e_1 = rawClaims;
+  this.p5e_1 = iss;
+  this.q5e_1 = sub;
+  this.r5e_1 = aud;
+  this.s5e_1 = exp;
+  this.t5e_1 = nbf;
+  this.u5e_1 = iat;
+  this.v5e_1 = jti;
+  this.w5e_1 = rawClaims;
 }
-protoOf(JwtClaims).t5e = function (name) {
-  var tmp = this.s5e_1.j2(name);
+protoOf(JwtClaims).x5e = function (name) {
+  var tmp = this.w5e_1.j2(name);
   var tmp0_safe_receiver = tmp instanceof JsonPrimitive ? tmp : null;
   var tmp_0;
   if (tmp0_safe_receiver == null) {
@@ -14372,7 +15936,7 @@ protoOf(JwtClaims).t5e = function (name) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_1;
-    if (tmp0_safe_receiver.a17()) {
+    if (tmp0_safe_receiver.b17()) {
       tmp_1 = tmp0_safe_receiver;
     } else {
       tmp_1 = null;
@@ -14380,24 +15944,24 @@ protoOf(JwtClaims).t5e = function (name) {
     tmp_0 = tmp_1;
   }
   var tmp1_safe_receiver = tmp_0;
-  return tmp1_safe_receiver == null ? null : tmp1_safe_receiver.b17();
+  return tmp1_safe_receiver == null ? null : tmp1_safe_receiver.c17();
 };
-protoOf(JwtClaims).k5j = function (name) {
-  var tmp = this.s5e_1.j2(name);
+protoOf(JwtClaims).o5j = function (name) {
+  var tmp = this.w5e_1.j2(name);
   return tmp instanceof JsonObject ? tmp : null;
 };
 protoOf(JwtClaims).toString = function () {
-  return 'JwtClaims(iss=' + this.l5e_1 + ', sub=' + this.m5e_1 + ', aud=' + toString(this.n5e_1) + ', exp=' + toString_0(this.o5e_1) + ', nbf=' + toString_0(this.p5e_1) + ', iat=' + toString_0(this.q5e_1) + ', jti=' + this.r5e_1 + ', rawClaims=' + toString(this.s5e_1) + ')';
+  return 'JwtClaims(iss=' + this.p5e_1 + ', sub=' + this.q5e_1 + ', aud=' + toString(this.r5e_1) + ', exp=' + toString_0(this.s5e_1) + ', nbf=' + toString_0(this.t5e_1) + ', iat=' + toString_0(this.u5e_1) + ', jti=' + this.v5e_1 + ', rawClaims=' + toString(this.w5e_1) + ')';
 };
 protoOf(JwtClaims).hashCode = function () {
-  var result = this.l5e_1 == null ? 0 : getStringHashCode(this.l5e_1);
-  result = imul(result, 31) + (this.m5e_1 == null ? 0 : getStringHashCode(this.m5e_1)) | 0;
-  result = imul(result, 31) + hashCode(this.n5e_1) | 0;
-  result = imul(result, 31) + (this.o5e_1 == null ? 0 : this.o5e_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.p5e_1 == null ? 0 : this.p5e_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.q5e_1 == null ? 0 : this.q5e_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.r5e_1 == null ? 0 : getStringHashCode(this.r5e_1)) | 0;
-  result = imul(result, 31) + hashCode(this.s5e_1) | 0;
+  var result = this.p5e_1 == null ? 0 : getStringHashCode(this.p5e_1);
+  result = imul(result, 31) + (this.q5e_1 == null ? 0 : getStringHashCode(this.q5e_1)) | 0;
+  result = imul(result, 31) + hashCode(this.r5e_1) | 0;
+  result = imul(result, 31) + (this.s5e_1 == null ? 0 : this.s5e_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.t5e_1 == null ? 0 : this.t5e_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.u5e_1 == null ? 0 : this.u5e_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.v5e_1 == null ? 0 : getStringHashCode(this.v5e_1)) | 0;
+  result = imul(result, 31) + hashCode(this.w5e_1) | 0;
   return result;
 };
 protoOf(JwtClaims).equals = function (other) {
@@ -14405,62 +15969,62 @@ protoOf(JwtClaims).equals = function (other) {
     return true;
   if (!(other instanceof JwtClaims))
     return false;
-  if (!(this.l5e_1 == other.l5e_1))
+  if (!(this.p5e_1 == other.p5e_1))
     return false;
-  if (!(this.m5e_1 == other.m5e_1))
+  if (!(this.q5e_1 == other.q5e_1))
     return false;
-  if (!equals(this.n5e_1, other.n5e_1))
-    return false;
-  if (!equals(this.o5e_1, other.o5e_1))
-    return false;
-  if (!equals(this.p5e_1, other.p5e_1))
-    return false;
-  if (!equals(this.q5e_1, other.q5e_1))
-    return false;
-  if (!(this.r5e_1 == other.r5e_1))
+  if (!equals(this.r5e_1, other.r5e_1))
     return false;
   if (!equals(this.s5e_1, other.s5e_1))
+    return false;
+  if (!equals(this.t5e_1, other.t5e_1))
+    return false;
+  if (!equals(this.u5e_1, other.u5e_1))
+    return false;
+  if (!(this.v5e_1 == other.v5e_1))
+    return false;
+  if (!equals(this.w5e_1, other.w5e_1))
     return false;
   return true;
 };
 function LogoutTokenClaims(iss, aud, sub, sid, events, iat, jti) {
   sub = sub === VOID ? null : sub;
   sid = sid === VOID ? null : sid;
-  this.l5j_1 = iss;
-  this.m5j_1 = aud;
-  this.n5j_1 = sub;
-  this.o5j_1 = sid;
-  this.p5j_1 = events;
-  this.q5j_1 = iat;
-  this.r5j_1 = jti;
+  this.p5j_1 = iss;
+  this.q5j_1 = aud;
+  this.r5j_1 = sub;
+  this.s5j_1 = sid;
+  this.t5j_1 = events;
+  this.u5j_1 = iat;
+  this.v5j_1 = jti;
 }
-protoOf(LogoutTokenClaims).o5k = function () {
-  return this.p5j_1.d17('http://schemas.openid.net/event/backchannel-logout');
+protoOf(LogoutTokenClaims).s5k = function () {
+  return this.t5j_1.e17('http://schemas.openid.net/event/backchannel-logout');
 };
-protoOf(LogoutTokenClaims).p5k = function () {
+protoOf(LogoutTokenClaims).t5k = function () {
   var tmp;
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = this.n5j_1;
+  var this_0 = this.r5j_1;
   if (!(this_0 == null || isBlank(this_0))) {
     tmp = true;
   } else {
     // Inline function 'kotlin.text.isNullOrBlank' call
-    var this_1 = this.o5j_1;
+    var this_1 = this.s5j_1;
     tmp = !(this_1 == null || isBlank(this_1));
   }
   return tmp;
 };
 protoOf(LogoutTokenClaims).toString = function () {
-  return 'LogoutTokenClaims(iss=' + this.l5j_1 + ', aud=' + toString(this.m5j_1) + ', sub=' + this.n5j_1 + ', sid=' + this.o5j_1 + ', events=' + this.p5j_1.toString() + ', iat=' + this.q5j_1.toString() + ', jti=' + this.r5j_1 + ')';
+  return 'LogoutTokenClaims(iss=' + this.p5j_1 + ', aud=' + toString(this.q5j_1) + ', sub=' + this.r5j_1 + ', sid=' + this.s5j_1 + ', events=' + this.t5j_1.toString() + ', iat=' + this.u5j_1.toString() + ', jti=' + this.v5j_1 + ')';
 };
 protoOf(LogoutTokenClaims).hashCode = function () {
-  var result = getStringHashCode(this.l5j_1);
-  result = imul(result, 31) + hashCode(this.m5j_1) | 0;
-  result = imul(result, 31) + (this.n5j_1 == null ? 0 : getStringHashCode(this.n5j_1)) | 0;
-  result = imul(result, 31) + (this.o5j_1 == null ? 0 : getStringHashCode(this.o5j_1)) | 0;
-  result = imul(result, 31) + this.p5j_1.hashCode() | 0;
-  result = imul(result, 31) + this.q5j_1.hashCode() | 0;
-  result = imul(result, 31) + getStringHashCode(this.r5j_1) | 0;
+  var result = getStringHashCode(this.p5j_1);
+  result = imul(result, 31) + hashCode(this.q5j_1) | 0;
+  result = imul(result, 31) + (this.r5j_1 == null ? 0 : getStringHashCode(this.r5j_1)) | 0;
+  result = imul(result, 31) + (this.s5j_1 == null ? 0 : getStringHashCode(this.s5j_1)) | 0;
+  result = imul(result, 31) + this.t5j_1.hashCode() | 0;
+  result = imul(result, 31) + this.u5j_1.hashCode() | 0;
+  result = imul(result, 31) + getStringHashCode(this.v5j_1) | 0;
   return result;
 };
 protoOf(LogoutTokenClaims).equals = function (other) {
@@ -14468,27 +16032,27 @@ protoOf(LogoutTokenClaims).equals = function (other) {
     return true;
   if (!(other instanceof LogoutTokenClaims))
     return false;
-  if (!(this.l5j_1 === other.l5j_1))
+  if (!(this.p5j_1 === other.p5j_1))
     return false;
-  if (!equals(this.m5j_1, other.m5j_1))
+  if (!equals(this.q5j_1, other.q5j_1))
     return false;
-  if (!(this.n5j_1 == other.n5j_1))
+  if (!(this.r5j_1 == other.r5j_1))
     return false;
-  if (!(this.o5j_1 == other.o5j_1))
+  if (!(this.s5j_1 == other.s5j_1))
     return false;
-  if (!this.p5j_1.equals(other.p5j_1))
+  if (!this.t5j_1.equals(other.t5j_1))
     return false;
-  if (!equalsLong(this.q5j_1, other.q5j_1))
+  if (!equalsLong(this.u5j_1, other.u5j_1))
     return false;
-  if (!(this.r5j_1 === other.r5j_1))
+  if (!(this.v5j_1 === other.v5j_1))
     return false;
   return true;
 };
-function Companion_24() {
+function Companion_26() {
 }
-var Companion_instance_25;
-function Companion_getInstance_32() {
-  return Companion_instance_25;
+var Companion_instance_28;
+function Companion_getInstance_34() {
+  return Companion_instance_28;
 }
 function $serializer_12() {
   $serializer_instance_12 = this;
@@ -14496,25 +16060,25 @@ function $serializer_12() {
   tmp0_serialDesc.dw('error', false);
   tmp0_serialDesc.dw('error_description', true);
   tmp0_serialDesc.dw('error_uri', true);
-  this.i6p_1 = tmp0_serialDesc;
+  this.c6w_1 = tmp0_serialDesc;
 }
-protoOf($serializer_12).j6p = function (encoder, value) {
-  var tmp0_desc = this.i6p_1;
+protoOf($serializer_12).d6w = function (encoder, value) {
+  var tmp0_desc = this.c6w_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.v5l_1);
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.w5l_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.w5l_1);
+  tmp1_output.mq(tmp0_desc, 0, value.z5l_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.a5m_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.a5m_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.x5l_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.x5l_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.b5m_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.b5m_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_12).am = function (encoder, value) {
-  return this.j6p(encoder, value instanceof OAuthErrorResponse ? value : THROW_CCE());
+  return this.d6w(encoder, value instanceof OAuthErrorResponse ? value : THROW_CCE());
 };
 protoOf($serializer_12).bm = function (decoder) {
-  var tmp0_desc = this.i6p_1;
+  var tmp0_desc = this.c6w_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -14556,7 +16120,7 @@ protoOf($serializer_12).bm = function (decoder) {
   return OAuthErrorResponse_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
 };
 protoOf($serializer_12).zl = function () {
-  return this.i6p_1;
+  return this.c6w_1;
 };
 protoOf($serializer_12).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -14572,17 +16136,17 @@ function $serializer_getInstance_12() {
 }
 function OAuthErrorResponse_init_$Init$(seen0, error, errorDescription, errorUri, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_12().i6p_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_12().c6w_1);
   }
-  $this.v5l_1 = error;
+  $this.z5l_1 = error;
   if (0 === (seen0 & 2))
-    $this.w5l_1 = null;
+    $this.a5m_1 = null;
   else
-    $this.w5l_1 = errorDescription;
+    $this.a5m_1 = errorDescription;
   if (0 === (seen0 & 4))
-    $this.x5l_1 = null;
+    $this.b5m_1 = null;
   else
-    $this.x5l_1 = errorUri;
+    $this.b5m_1 = errorUri;
   return $this;
 }
 function OAuthErrorResponse_init_$Create$(seen0, error, errorDescription, errorUri, serializationConstructorMarker) {
@@ -14591,17 +16155,17 @@ function OAuthErrorResponse_init_$Create$(seen0, error, errorDescription, errorU
 function OAuthErrorResponse(error, errorDescription, errorUri) {
   errorDescription = errorDescription === VOID ? null : errorDescription;
   errorUri = errorUri === VOID ? null : errorUri;
-  this.v5l_1 = error;
-  this.w5l_1 = errorDescription;
-  this.x5l_1 = errorUri;
+  this.z5l_1 = error;
+  this.a5m_1 = errorDescription;
+  this.b5m_1 = errorUri;
 }
 protoOf(OAuthErrorResponse).toString = function () {
-  return 'OAuthErrorResponse(error=' + this.v5l_1 + ', errorDescription=' + this.w5l_1 + ', errorUri=' + this.x5l_1 + ')';
+  return 'OAuthErrorResponse(error=' + this.z5l_1 + ', errorDescription=' + this.a5m_1 + ', errorUri=' + this.b5m_1 + ')';
 };
 protoOf(OAuthErrorResponse).hashCode = function () {
-  var result = getStringHashCode(this.v5l_1);
-  result = imul(result, 31) + (this.w5l_1 == null ? 0 : getStringHashCode(this.w5l_1)) | 0;
-  result = imul(result, 31) + (this.x5l_1 == null ? 0 : getStringHashCode(this.x5l_1)) | 0;
+  var result = getStringHashCode(this.z5l_1);
+  result = imul(result, 31) + (this.a5m_1 == null ? 0 : getStringHashCode(this.a5m_1)) | 0;
+  result = imul(result, 31) + (this.b5m_1 == null ? 0 : getStringHashCode(this.b5m_1)) | 0;
   return result;
 };
 protoOf(OAuthErrorResponse).equals = function (other) {
@@ -14609,11 +16173,11 @@ protoOf(OAuthErrorResponse).equals = function (other) {
     return true;
   if (!(other instanceof OAuthErrorResponse))
     return false;
-  if (!(this.v5l_1 === other.v5l_1))
+  if (!(this.z5l_1 === other.z5l_1))
     return false;
-  if (!(this.w5l_1 == other.w5l_1))
+  if (!(this.a5m_1 == other.a5m_1))
     return false;
-  if (!(this.x5l_1 == other.x5l_1))
+  if (!(this.b5m_1 == other.b5m_1))
     return false;
   return true;
 };
@@ -14698,8 +16262,8 @@ function OpenIdConfig$Companion$$childSerializers$_anonymous__c4zb0d_24() {
 function OpenIdConfig$Companion$$childSerializers$_anonymous__c4zb0d_25() {
   return new ArrayListSerializer(StringSerializer_getInstance());
 }
-function Companion_25() {
-  Companion_instance_26 = this;
+function Companion_27() {
+  Companion_instance_29 = this;
   var tmp = this;
   var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
   var tmp_1 = lazy_0(tmp_0, OpenIdConfig$Companion$$childSerializers$_anonymous__c4zb0d);
@@ -14757,13 +16321,13 @@ function Companion_25() {
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
-  tmp.k6p_1 = [null, null, null, tmp_1, tmp_3, tmp_5, null, null, null, tmp_7, tmp_9, tmp_11, tmp_13, tmp_15, tmp_17, tmp_19, tmp_21, tmp_23, tmp_25, tmp_27, tmp_29, tmp_31, tmp_33, tmp_35, tmp_37, tmp_39, tmp_41, tmp_43, null, null, null, null, null, null, null, null, null, null, tmp_45, tmp_47, null, tmp_49, tmp_51, lazy_0(tmp_52, OpenIdConfig$Companion$$childSerializers$_anonymous__c4zb0d_25), null, null, null, null, null, null];
+  tmp.e6w_1 = [null, null, null, tmp_1, tmp_3, tmp_5, null, null, null, tmp_7, tmp_9, tmp_11, tmp_13, tmp_15, tmp_17, tmp_19, tmp_21, tmp_23, tmp_25, tmp_27, tmp_29, tmp_31, tmp_33, tmp_35, tmp_37, tmp_39, tmp_41, tmp_43, null, null, null, null, null, null, null, null, null, null, tmp_45, tmp_47, null, tmp_49, tmp_51, lazy_0(tmp_52, OpenIdConfig$Companion$$childSerializers$_anonymous__c4zb0d_25), null, null, null, null, null, null];
 }
-var Companion_instance_26;
-function Companion_getInstance_33() {
-  if (Companion_instance_26 == null)
-    new Companion_25();
-  return Companion_instance_26;
+var Companion_instance_29;
+function Companion_getInstance_35() {
+  if (Companion_instance_29 == null)
+    new Companion_27();
+  return Companion_instance_29;
 }
 function $serializer_13() {
   $serializer_instance_13 = this;
@@ -14818,155 +16382,155 @@ function $serializer_13() {
   tmp0_serialDesc.dw('social_provider_token_resolver_endpoint', true);
   tmp0_serialDesc.dw('introspection_async_update_endpoint', true);
   tmp0_serialDesc.dw('scim_endpoint', true);
-  this.l6p_1 = tmp0_serialDesc;
+  this.f6w_1 = tmp0_serialDesc;
 }
-protoOf($serializer_13).m6p = function (encoder, value) {
-  var tmp0_desc = this.l6p_1;
+protoOf($serializer_13).g6w = function (encoder, value) {
+  var tmp0_desc = this.f6w_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  var tmp2_cached = Companion_getInstance_33().k6p_1;
-  tmp1_output.mq(tmp0_desc, 0, value.s5w_1);
-  tmp1_output.mq(tmp0_desc, 1, value.t5w_1);
-  tmp1_output.mq(tmp0_desc, 2, value.u5w_1);
-  tmp1_output.oq(tmp0_desc, 3, tmp2_cached[3].j1(), value.v5w_1);
-  tmp1_output.oq(tmp0_desc, 4, tmp2_cached[4].j1(), value.w5w_1);
-  tmp1_output.oq(tmp0_desc, 5, tmp2_cached[5].j1(), value.x5w_1);
-  tmp1_output.mq(tmp0_desc, 6, value.y5w_1);
-  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.z5w_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 7, StringSerializer_getInstance(), value.z5w_1);
+  var tmp2_cached = Companion_getInstance_35().e6w_1;
+  tmp1_output.mq(tmp0_desc, 0, value.x5w_1);
+  tmp1_output.mq(tmp0_desc, 1, value.y5w_1);
+  tmp1_output.mq(tmp0_desc, 2, value.z5w_1);
+  tmp1_output.oq(tmp0_desc, 3, tmp2_cached[3].j1(), value.a5x_1);
+  tmp1_output.oq(tmp0_desc, 4, tmp2_cached[4].j1(), value.b5x_1);
+  tmp1_output.oq(tmp0_desc, 5, tmp2_cached[5].j1(), value.c5x_1);
+  tmp1_output.mq(tmp0_desc, 6, value.d5x_1);
+  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.e5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 7, StringSerializer_getInstance(), value.e5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.a5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.a5x_1);
+  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.f5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.f5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.b5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 9, tmp2_cached[9].j1(), value.b5x_1);
+  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.g5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 9, tmp2_cached[9].j1(), value.g5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.c5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 10, tmp2_cached[10].j1(), value.c5x_1);
+  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.h5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 10, tmp2_cached[10].j1(), value.h5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.d5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 11, tmp2_cached[11].j1(), value.d5x_1);
+  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.i5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 11, tmp2_cached[11].j1(), value.i5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.e5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 12, tmp2_cached[12].j1(), value.e5x_1);
+  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.j5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 12, tmp2_cached[12].j1(), value.j5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 13) ? true : !(value.f5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 13, tmp2_cached[13].j1(), value.f5x_1);
+  if (tmp1_output.uq(tmp0_desc, 13) ? true : !(value.k5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 13, tmp2_cached[13].j1(), value.k5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 14) ? true : !(value.g5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 14, tmp2_cached[14].j1(), value.g5x_1);
+  if (tmp1_output.uq(tmp0_desc, 14) ? true : !(value.l5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 14, tmp2_cached[14].j1(), value.l5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 15) ? true : !(value.h5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 15, tmp2_cached[15].j1(), value.h5x_1);
+  if (tmp1_output.uq(tmp0_desc, 15) ? true : !(value.m5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 15, tmp2_cached[15].j1(), value.m5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 16) ? true : !(value.i5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 16, tmp2_cached[16].j1(), value.i5x_1);
+  if (tmp1_output.uq(tmp0_desc, 16) ? true : !(value.n5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 16, tmp2_cached[16].j1(), value.n5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 17) ? true : !(value.j5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 17, tmp2_cached[17].j1(), value.j5x_1);
+  if (tmp1_output.uq(tmp0_desc, 17) ? true : !(value.o5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 17, tmp2_cached[17].j1(), value.o5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 18) ? true : !(value.k5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 18, tmp2_cached[18].j1(), value.k5x_1);
+  if (tmp1_output.uq(tmp0_desc, 18) ? true : !(value.p5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 18, tmp2_cached[18].j1(), value.p5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 19) ? true : !(value.l5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 19, tmp2_cached[19].j1(), value.l5x_1);
+  if (tmp1_output.uq(tmp0_desc, 19) ? true : !(value.q5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 19, tmp2_cached[19].j1(), value.q5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 20) ? true : !(value.m5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 20, tmp2_cached[20].j1(), value.m5x_1);
+  if (tmp1_output.uq(tmp0_desc, 20) ? true : !(value.r5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 20, tmp2_cached[20].j1(), value.r5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 21) ? true : !(value.n5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 21, tmp2_cached[21].j1(), value.n5x_1);
+  if (tmp1_output.uq(tmp0_desc, 21) ? true : !(value.s5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 21, tmp2_cached[21].j1(), value.s5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 22) ? true : !(value.o5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 22, tmp2_cached[22].j1(), value.o5x_1);
+  if (tmp1_output.uq(tmp0_desc, 22) ? true : !(value.t5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 22, tmp2_cached[22].j1(), value.t5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 23) ? true : !(value.p5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 23, tmp2_cached[23].j1(), value.p5x_1);
+  if (tmp1_output.uq(tmp0_desc, 23) ? true : !(value.u5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 23, tmp2_cached[23].j1(), value.u5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 24) ? true : !(value.q5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 24, tmp2_cached[24].j1(), value.q5x_1);
+  if (tmp1_output.uq(tmp0_desc, 24) ? true : !(value.v5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 24, tmp2_cached[24].j1(), value.v5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 25) ? true : !(value.r5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 25, tmp2_cached[25].j1(), value.r5x_1);
+  if (tmp1_output.uq(tmp0_desc, 25) ? true : !(value.w5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 25, tmp2_cached[25].j1(), value.w5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 26) ? true : !(value.s5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 26, tmp2_cached[26].j1(), value.s5x_1);
+  if (tmp1_output.uq(tmp0_desc, 26) ? true : !(value.x5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 26, tmp2_cached[26].j1(), value.x5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 27) ? true : !(value.t5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 27, tmp2_cached[27].j1(), value.t5x_1);
+  if (tmp1_output.uq(tmp0_desc, 27) ? true : !(value.y5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 27, tmp2_cached[27].j1(), value.y5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 28) ? true : !(value.u5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 28, BooleanSerializer_getInstance(), value.u5x_1);
+  if (tmp1_output.uq(tmp0_desc, 28) ? true : !(value.z5x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 28, BooleanSerializer_getInstance(), value.z5x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 29) ? true : !(value.v5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 29, BooleanSerializer_getInstance(), value.v5x_1);
+  if (tmp1_output.uq(tmp0_desc, 29) ? true : !(value.a5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 29, BooleanSerializer_getInstance(), value.a5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 30) ? true : !(value.w5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 30, BooleanSerializer_getInstance(), value.w5x_1);
+  if (tmp1_output.uq(tmp0_desc, 30) ? true : !(value.b5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 30, BooleanSerializer_getInstance(), value.b5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 31) ? true : !(value.x5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 31, BooleanSerializer_getInstance(), value.x5x_1);
+  if (tmp1_output.uq(tmp0_desc, 31) ? true : !(value.c5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 31, BooleanSerializer_getInstance(), value.c5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 32) ? true : !(value.y5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 32, StringSerializer_getInstance(), value.y5x_1);
+  if (tmp1_output.uq(tmp0_desc, 32) ? true : !(value.d5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 32, StringSerializer_getInstance(), value.d5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 33) ? true : !(value.z5x_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 33, StringSerializer_getInstance(), value.z5x_1);
+  if (tmp1_output.uq(tmp0_desc, 33) ? true : !(value.e5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 33, StringSerializer_getInstance(), value.e5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 34) ? true : !(value.a5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 34, StringSerializer_getInstance(), value.a5y_1);
+  if (tmp1_output.uq(tmp0_desc, 34) ? true : !(value.f5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 34, StringSerializer_getInstance(), value.f5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 35) ? true : !(value.b5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 35, StringSerializer_getInstance(), value.b5y_1);
+  if (tmp1_output.uq(tmp0_desc, 35) ? true : !(value.g5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 35, StringSerializer_getInstance(), value.g5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 36) ? true : !(value.c5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 36, StringSerializer_getInstance(), value.c5y_1);
+  if (tmp1_output.uq(tmp0_desc, 36) ? true : !(value.h5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 36, StringSerializer_getInstance(), value.h5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 37) ? true : !(value.d5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 37, StringSerializer_getInstance(), value.d5y_1);
+  if (tmp1_output.uq(tmp0_desc, 37) ? true : !(value.i5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 37, StringSerializer_getInstance(), value.i5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 38) ? true : !(value.e5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 38, tmp2_cached[38].j1(), value.e5y_1);
+  if (tmp1_output.uq(tmp0_desc, 38) ? true : !(value.j5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 38, tmp2_cached[38].j1(), value.j5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 39) ? true : !(value.f5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 39, tmp2_cached[39].j1(), value.f5y_1);
+  if (tmp1_output.uq(tmp0_desc, 39) ? true : !(value.k5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 39, tmp2_cached[39].j1(), value.k5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 40) ? true : !(value.g5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 40, StringSerializer_getInstance(), value.g5y_1);
+  if (tmp1_output.uq(tmp0_desc, 40) ? true : !(value.l5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 40, StringSerializer_getInstance(), value.l5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 41) ? true : !(value.h5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 41, tmp2_cached[41].j1(), value.h5y_1);
+  if (tmp1_output.uq(tmp0_desc, 41) ? true : !(value.m5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 41, tmp2_cached[41].j1(), value.m5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 42) ? true : !(value.i5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 42, tmp2_cached[42].j1(), value.i5y_1);
+  if (tmp1_output.uq(tmp0_desc, 42) ? true : !(value.n5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 42, tmp2_cached[42].j1(), value.n5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 43) ? true : !(value.j5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 43, tmp2_cached[43].j1(), value.j5y_1);
+  if (tmp1_output.uq(tmp0_desc, 43) ? true : !(value.o5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 43, tmp2_cached[43].j1(), value.o5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 44) ? true : !(value.k5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 44, StringSerializer_getInstance(), value.k5y_1);
+  if (tmp1_output.uq(tmp0_desc, 44) ? true : !(value.p5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 44, StringSerializer_getInstance(), value.p5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 45) ? true : !(value.l5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 45, BooleanSerializer_getInstance(), value.l5y_1);
+  if (tmp1_output.uq(tmp0_desc, 45) ? true : !(value.q5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 45, BooleanSerializer_getInstance(), value.q5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 46) ? true : !(value.m5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 46, StringSerializer_getInstance(), value.m5y_1);
+  if (tmp1_output.uq(tmp0_desc, 46) ? true : !(value.r5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 46, StringSerializer_getInstance(), value.r5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 47) ? true : !(value.n5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 47, StringSerializer_getInstance(), value.n5y_1);
+  if (tmp1_output.uq(tmp0_desc, 47) ? true : !(value.s5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 47, StringSerializer_getInstance(), value.s5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 48) ? true : !(value.o5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 48, StringSerializer_getInstance(), value.o5y_1);
+  if (tmp1_output.uq(tmp0_desc, 48) ? true : !(value.t5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 48, StringSerializer_getInstance(), value.t5y_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 49) ? true : !(value.p5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 49, StringSerializer_getInstance(), value.p5y_1);
+  if (tmp1_output.uq(tmp0_desc, 49) ? true : !(value.u5y_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 49, StringSerializer_getInstance(), value.u5y_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_13).am = function (encoder, value) {
-  return this.m6p(encoder, value instanceof OpenIdConfig ? value : THROW_CCE());
+  return this.g6w(encoder, value instanceof OpenIdConfig ? value : THROW_CCE());
 };
 protoOf($serializer_13).bm = function (decoder) {
-  var tmp0_desc = this.l6p_1;
+  var tmp0_desc = this.f6w_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -15022,7 +16586,7 @@ protoOf($serializer_13).bm = function (decoder) {
   var tmp53_local48 = null;
   var tmp54_local49 = null;
   var tmp55_input = decoder.zo(tmp0_desc);
-  var tmp56_cached = Companion_getInstance_33().k6p_1;
+  var tmp56_cached = Companion_getInstance_35().e6w_1;
   if (tmp55_input.op()) {
     tmp5_local0 = tmp55_input.jp(tmp0_desc, 0);
     tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -15339,10 +16903,10 @@ protoOf($serializer_13).bm = function (decoder) {
   return OpenIdConfig_init_$Create$(tmp3_bitMask0, tmp4_bitMask1, tmp5_local0, tmp6_local1, tmp7_local2, tmp8_local3, tmp9_local4, tmp10_local5, tmp11_local6, tmp12_local7, tmp13_local8, tmp14_local9, tmp15_local10, tmp16_local11, tmp17_local12, tmp18_local13, tmp19_local14, tmp20_local15, tmp21_local16, tmp22_local17, tmp23_local18, tmp24_local19, tmp25_local20, tmp26_local21, tmp27_local22, tmp28_local23, tmp29_local24, tmp30_local25, tmp31_local26, tmp32_local27, tmp33_local28, tmp34_local29, tmp35_local30, tmp36_local31, tmp37_local32, tmp38_local33, tmp39_local34, tmp40_local35, tmp41_local36, tmp42_local37, tmp43_local38, tmp44_local39, tmp45_local40, tmp46_local41, tmp47_local42, tmp48_local43, tmp49_local44, tmp50_local45, tmp51_local46, tmp52_local47, tmp53_local48, tmp54_local49, null);
 };
 protoOf($serializer_13).zl = function () {
-  return this.l6p_1;
+  return this.f6w_1;
 };
 protoOf($serializer_13).fw = function () {
-  var tmp0_cached = Companion_getInstance_33().k6p_1;
+  var tmp0_cached = Companion_getInstance_35().e6w_1;
   // Inline function 'kotlin.arrayOf' call
   // Inline function 'kotlin.js.unsafeCast' call
   // Inline function 'kotlin.js.asDynamic' call
@@ -15360,194 +16924,194 @@ function OpenIdConfig_init_$Init$(seen0, seen1, issuer, authorizationEndpoint, j
     var tmp = new Int32Array([seen0, seen1]);
     // Inline function 'kotlin.intArrayOf' call
     var tmp$ret$1 = new Int32Array([127, 0]);
-    throwArrayMissingFieldException(tmp, tmp$ret$1, $serializer_getInstance_13().l6p_1);
+    throwArrayMissingFieldException(tmp, tmp$ret$1, $serializer_getInstance_13().f6w_1);
   }
-  $this.s5w_1 = issuer;
-  $this.t5w_1 = authorizationEndpoint;
-  $this.u5w_1 = jwksUri;
-  $this.v5w_1 = responseTypesSupported;
-  $this.w5w_1 = subjectTypesSupported;
-  $this.x5w_1 = idTokenSigningAlgValuesSupported;
-  $this.y5w_1 = tokenEndpoint;
+  $this.x5w_1 = issuer;
+  $this.y5w_1 = authorizationEndpoint;
+  $this.z5w_1 = jwksUri;
+  $this.a5x_1 = responseTypesSupported;
+  $this.b5x_1 = subjectTypesSupported;
+  $this.c5x_1 = idTokenSigningAlgValuesSupported;
+  $this.d5x_1 = tokenEndpoint;
   if (0 === (seen0 & 128))
-    $this.z5w_1 = null;
-  else
-    $this.z5w_1 = userInfoEndpoint;
-  if (0 === (seen0 & 256))
-    $this.a5x_1 = null;
-  else
-    $this.a5x_1 = registrationEndpoint;
-  if (0 === (seen0 & 512))
-    $this.b5x_1 = null;
-  else
-    $this.b5x_1 = scopesSupported;
-  if (0 === (seen0 & 1024))
-    $this.c5x_1 = null;
-  else
-    $this.c5x_1 = claimsSupported;
-  if (0 === (seen0 & 2048))
-    $this.d5x_1 = null;
-  else
-    $this.d5x_1 = responseModesSupported;
-  if (0 === (seen0 & 4096))
     $this.e5x_1 = null;
   else
-    $this.e5x_1 = grantTypesSupported;
-  if (0 === (seen0 & 8192))
+    $this.e5x_1 = userInfoEndpoint;
+  if (0 === (seen0 & 256))
     $this.f5x_1 = null;
   else
-    $this.f5x_1 = acrValuesSupported;
-  if (0 === (seen0 & 16384))
+    $this.f5x_1 = registrationEndpoint;
+  if (0 === (seen0 & 512))
     $this.g5x_1 = null;
   else
-    $this.g5x_1 = tokenEndpointAuthMethodsSupported;
-  if (0 === (seen0 & 32768))
+    $this.g5x_1 = scopesSupported;
+  if (0 === (seen0 & 1024))
     $this.h5x_1 = null;
   else
-    $this.h5x_1 = tokenEndpointAuthSigningAlgValuesSupported;
-  if (0 === (seen0 & 65536))
+    $this.h5x_1 = claimsSupported;
+  if (0 === (seen0 & 2048))
     $this.i5x_1 = null;
   else
-    $this.i5x_1 = idTokenEncryptionAlgValuesSupported;
-  if (0 === (seen0 & 131072))
+    $this.i5x_1 = responseModesSupported;
+  if (0 === (seen0 & 4096))
     $this.j5x_1 = null;
   else
-    $this.j5x_1 = idTokenEncryptionEncValuesSupported;
-  if (0 === (seen0 & 262144))
+    $this.j5x_1 = grantTypesSupported;
+  if (0 === (seen0 & 8192))
     $this.k5x_1 = null;
   else
-    $this.k5x_1 = userInfoSigningAlgValuesSupported;
-  if (0 === (seen0 & 524288))
+    $this.k5x_1 = acrValuesSupported;
+  if (0 === (seen0 & 16384))
     $this.l5x_1 = null;
   else
-    $this.l5x_1 = userInfoEncryptionAlgValuesSupported;
-  if (0 === (seen0 & 1048576))
+    $this.l5x_1 = tokenEndpointAuthMethodsSupported;
+  if (0 === (seen0 & 32768))
     $this.m5x_1 = null;
   else
-    $this.m5x_1 = userInfoEncryptionEncValuesSupported;
-  if (0 === (seen0 & 2097152))
+    $this.m5x_1 = tokenEndpointAuthSigningAlgValuesSupported;
+  if (0 === (seen0 & 65536))
     $this.n5x_1 = null;
   else
-    $this.n5x_1 = requestObjectSigningAlgValuesSupported;
-  if (0 === (seen0 & 4194304))
+    $this.n5x_1 = idTokenEncryptionAlgValuesSupported;
+  if (0 === (seen0 & 131072))
     $this.o5x_1 = null;
   else
-    $this.o5x_1 = requestObjectEncryptionAlgValuesSupported;
-  if (0 === (seen0 & 8388608))
+    $this.o5x_1 = idTokenEncryptionEncValuesSupported;
+  if (0 === (seen0 & 262144))
     $this.p5x_1 = null;
   else
-    $this.p5x_1 = requestObjectEncryptionEncValuesSupported;
-  if (0 === (seen0 & 16777216))
+    $this.p5x_1 = userInfoSigningAlgValuesSupported;
+  if (0 === (seen0 & 524288))
     $this.q5x_1 = null;
   else
-    $this.q5x_1 = displayValuesSupported;
-  if (0 === (seen0 & 33554432))
+    $this.q5x_1 = userInfoEncryptionAlgValuesSupported;
+  if (0 === (seen0 & 1048576))
     $this.r5x_1 = null;
   else
-    $this.r5x_1 = claimTypesSupported;
-  if (0 === (seen0 & 67108864))
+    $this.r5x_1 = userInfoEncryptionEncValuesSupported;
+  if (0 === (seen0 & 2097152))
     $this.s5x_1 = null;
   else
-    $this.s5x_1 = claimsLocalesSupported;
-  if (0 === (seen0 & 134217728))
+    $this.s5x_1 = requestObjectSigningAlgValuesSupported;
+  if (0 === (seen0 & 4194304))
     $this.t5x_1 = null;
   else
-    $this.t5x_1 = uiLocalesSupported;
-  if (0 === (seen0 & 268435456))
+    $this.t5x_1 = requestObjectEncryptionAlgValuesSupported;
+  if (0 === (seen0 & 8388608))
     $this.u5x_1 = null;
   else
-    $this.u5x_1 = claimsParameterSupported;
-  if (0 === (seen0 & 536870912))
+    $this.u5x_1 = requestObjectEncryptionEncValuesSupported;
+  if (0 === (seen0 & 16777216))
     $this.v5x_1 = null;
   else
-    $this.v5x_1 = requestParameterSupported;
-  if (0 === (seen0 & 1073741824))
+    $this.v5x_1 = displayValuesSupported;
+  if (0 === (seen0 & 33554432))
     $this.w5x_1 = null;
   else
-    $this.w5x_1 = requestUriParameterSupported;
-  if (0 === (seen0 & -2147483648))
+    $this.w5x_1 = claimTypesSupported;
+  if (0 === (seen0 & 67108864))
     $this.x5x_1 = null;
   else
-    $this.x5x_1 = requireRequestUriRegistration;
-  if (0 === (seen1 & 1))
+    $this.x5x_1 = claimsLocalesSupported;
+  if (0 === (seen0 & 134217728))
     $this.y5x_1 = null;
   else
-    $this.y5x_1 = serviceDocumentation;
-  if (0 === (seen1 & 2))
+    $this.y5x_1 = uiLocalesSupported;
+  if (0 === (seen0 & 268435456))
     $this.z5x_1 = null;
   else
-    $this.z5x_1 = opPolicyUri;
-  if (0 === (seen1 & 4))
+    $this.z5x_1 = claimsParameterSupported;
+  if (0 === (seen0 & 536870912))
     $this.a5y_1 = null;
   else
-    $this.a5y_1 = opTosUri;
-  if (0 === (seen1 & 8))
+    $this.a5y_1 = requestParameterSupported;
+  if (0 === (seen0 & 1073741824))
     $this.b5y_1 = null;
   else
-    $this.b5y_1 = checkSessionIframe;
-  if (0 === (seen1 & 16))
+    $this.b5y_1 = requestUriParameterSupported;
+  if (0 === (seen0 & -2147483648))
     $this.c5y_1 = null;
   else
-    $this.c5y_1 = endSessionEndpoint;
-  if (0 === (seen1 & 32))
+    $this.c5y_1 = requireRequestUriRegistration;
+  if (0 === (seen1 & 1))
     $this.d5y_1 = null;
   else
-    $this.d5y_1 = revocationEndpoint;
-  if (0 === (seen1 & 64))
+    $this.d5y_1 = serviceDocumentation;
+  if (0 === (seen1 & 2))
     $this.e5y_1 = null;
   else
-    $this.e5y_1 = revocationEndpointAuthMethodsSupported;
-  if (0 === (seen1 & 128))
+    $this.e5y_1 = opPolicyUri;
+  if (0 === (seen1 & 4))
     $this.f5y_1 = null;
   else
-    $this.f5y_1 = revocationEndpointAuthSigningAlgValuesSupported;
-  if (0 === (seen1 & 256))
+    $this.f5y_1 = opTosUri;
+  if (0 === (seen1 & 8))
     $this.g5y_1 = null;
   else
-    $this.g5y_1 = introspectionEndpoint;
-  if (0 === (seen1 & 512))
+    $this.g5y_1 = checkSessionIframe;
+  if (0 === (seen1 & 16))
     $this.h5y_1 = null;
   else
-    $this.h5y_1 = introspectionEndpointAuthMethodsSupported;
-  if (0 === (seen1 & 1024))
+    $this.h5y_1 = endSessionEndpoint;
+  if (0 === (seen1 & 32))
     $this.i5y_1 = null;
   else
-    $this.i5y_1 = introspectionEndpointAuthSigningAlgValuesSupported;
-  if (0 === (seen1 & 2048))
+    $this.i5y_1 = revocationEndpoint;
+  if (0 === (seen1 & 64))
     $this.j5y_1 = null;
   else
-    $this.j5y_1 = codeChallengeMethodsSupported;
-  if (0 === (seen1 & 4096))
+    $this.j5y_1 = revocationEndpointAuthMethodsSupported;
+  if (0 === (seen1 & 128))
     $this.k5y_1 = null;
   else
-    $this.k5y_1 = deviceAuthorizationEndpoint;
-  if (0 === (seen1 & 8192))
+    $this.k5y_1 = revocationEndpointAuthSigningAlgValuesSupported;
+  if (0 === (seen1 & 256))
     $this.l5y_1 = null;
   else
-    $this.l5y_1 = backchannelLogoutSupported;
-  if (0 === (seen1 & 16384))
+    $this.l5y_1 = introspectionEndpoint;
+  if (0 === (seen1 & 512))
     $this.m5y_1 = null;
   else
-    $this.m5y_1 = statusEndpoint;
-  if (0 === (seen1 & 32768))
+    $this.m5y_1 = introspectionEndpointAuthMethodsSupported;
+  if (0 === (seen1 & 1024))
     $this.n5y_1 = null;
   else
-    $this.n5y_1 = socialProviderTokenResolverEndpoint;
-  if (0 === (seen1 & 65536))
+    $this.n5y_1 = introspectionEndpointAuthSigningAlgValuesSupported;
+  if (0 === (seen1 & 2048))
     $this.o5y_1 = null;
   else
-    $this.o5y_1 = introspectionAsyncUpdateEndpoint;
-  if (0 === (seen1 & 131072))
+    $this.o5y_1 = codeChallengeMethodsSupported;
+  if (0 === (seen1 & 4096))
     $this.p5y_1 = null;
   else
-    $this.p5y_1 = scimEndpoint;
+    $this.p5y_1 = deviceAuthorizationEndpoint;
+  if (0 === (seen1 & 8192))
+    $this.q5y_1 = null;
+  else
+    $this.q5y_1 = backchannelLogoutSupported;
+  if (0 === (seen1 & 16384))
+    $this.r5y_1 = null;
+  else
+    $this.r5y_1 = statusEndpoint;
+  if (0 === (seen1 & 32768))
+    $this.s5y_1 = null;
+  else
+    $this.s5y_1 = socialProviderTokenResolverEndpoint;
+  if (0 === (seen1 & 65536))
+    $this.t5y_1 = null;
+  else
+    $this.t5y_1 = introspectionAsyncUpdateEndpoint;
+  if (0 === (seen1 & 131072))
+    $this.u5y_1 = null;
+  else
+    $this.u5y_1 = scimEndpoint;
   return $this;
 }
 function OpenIdConfig_init_$Create$(seen0, seen1, issuer, authorizationEndpoint, jwksUri, responseTypesSupported, subjectTypesSupported, idTokenSigningAlgValuesSupported, tokenEndpoint, userInfoEndpoint, registrationEndpoint, scopesSupported, claimsSupported, responseModesSupported, grantTypesSupported, acrValuesSupported, tokenEndpointAuthMethodsSupported, tokenEndpointAuthSigningAlgValuesSupported, idTokenEncryptionAlgValuesSupported, idTokenEncryptionEncValuesSupported, userInfoSigningAlgValuesSupported, userInfoEncryptionAlgValuesSupported, userInfoEncryptionEncValuesSupported, requestObjectSigningAlgValuesSupported, requestObjectEncryptionAlgValuesSupported, requestObjectEncryptionEncValuesSupported, displayValuesSupported, claimTypesSupported, claimsLocalesSupported, uiLocalesSupported, claimsParameterSupported, requestParameterSupported, requestUriParameterSupported, requireRequestUriRegistration, serviceDocumentation, opPolicyUri, opTosUri, checkSessionIframe, endSessionEndpoint, revocationEndpoint, revocationEndpointAuthMethodsSupported, revocationEndpointAuthSigningAlgValuesSupported, introspectionEndpoint, introspectionEndpointAuthMethodsSupported, introspectionEndpointAuthSigningAlgValuesSupported, codeChallengeMethodsSupported, deviceAuthorizationEndpoint, backchannelLogoutSupported, statusEndpoint, socialProviderTokenResolverEndpoint, introspectionAsyncUpdateEndpoint, scimEndpoint, serializationConstructorMarker) {
   return OpenIdConfig_init_$Init$(seen0, seen1, issuer, authorizationEndpoint, jwksUri, responseTypesSupported, subjectTypesSupported, idTokenSigningAlgValuesSupported, tokenEndpoint, userInfoEndpoint, registrationEndpoint, scopesSupported, claimsSupported, responseModesSupported, grantTypesSupported, acrValuesSupported, tokenEndpointAuthMethodsSupported, tokenEndpointAuthSigningAlgValuesSupported, idTokenEncryptionAlgValuesSupported, idTokenEncryptionEncValuesSupported, userInfoSigningAlgValuesSupported, userInfoEncryptionAlgValuesSupported, userInfoEncryptionEncValuesSupported, requestObjectSigningAlgValuesSupported, requestObjectEncryptionAlgValuesSupported, requestObjectEncryptionEncValuesSupported, displayValuesSupported, claimTypesSupported, claimsLocalesSupported, uiLocalesSupported, claimsParameterSupported, requestParameterSupported, requestUriParameterSupported, requireRequestUriRegistration, serviceDocumentation, opPolicyUri, opTosUri, checkSessionIframe, endSessionEndpoint, revocationEndpoint, revocationEndpointAuthMethodsSupported, revocationEndpointAuthSigningAlgValuesSupported, introspectionEndpoint, introspectionEndpointAuthMethodsSupported, introspectionEndpointAuthSigningAlgValuesSupported, codeChallengeMethodsSupported, deviceAuthorizationEndpoint, backchannelLogoutSupported, statusEndpoint, socialProviderTokenResolverEndpoint, introspectionAsyncUpdateEndpoint, scimEndpoint, serializationConstructorMarker, objectCreate(protoOf(OpenIdConfig)));
 }
 function OpenIdConfig(issuer, authorizationEndpoint, jwksUri, responseTypesSupported, subjectTypesSupported, idTokenSigningAlgValuesSupported, tokenEndpoint, userInfoEndpoint, registrationEndpoint, scopesSupported, claimsSupported, responseModesSupported, grantTypesSupported, acrValuesSupported, tokenEndpointAuthMethodsSupported, tokenEndpointAuthSigningAlgValuesSupported, idTokenEncryptionAlgValuesSupported, idTokenEncryptionEncValuesSupported, userInfoSigningAlgValuesSupported, userInfoEncryptionAlgValuesSupported, userInfoEncryptionEncValuesSupported, requestObjectSigningAlgValuesSupported, requestObjectEncryptionAlgValuesSupported, requestObjectEncryptionEncValuesSupported, displayValuesSupported, claimTypesSupported, claimsLocalesSupported, uiLocalesSupported, claimsParameterSupported, requestParameterSupported, requestUriParameterSupported, requireRequestUriRegistration, serviceDocumentation, opPolicyUri, opTosUri, checkSessionIframe, endSessionEndpoint, revocationEndpoint, revocationEndpointAuthMethodsSupported, revocationEndpointAuthSigningAlgValuesSupported, introspectionEndpoint, introspectionEndpointAuthMethodsSupported, introspectionEndpointAuthSigningAlgValuesSupported, codeChallengeMethodsSupported, deviceAuthorizationEndpoint, backchannelLogoutSupported, statusEndpoint, socialProviderTokenResolverEndpoint, introspectionAsyncUpdateEndpoint, scimEndpoint) {
-  Companion_getInstance_33();
+  Companion_getInstance_35();
   userInfoEndpoint = userInfoEndpoint === VOID ? null : userInfoEndpoint;
   registrationEndpoint = registrationEndpoint === VOID ? null : registrationEndpoint;
   scopesSupported = scopesSupported === VOID ? null : scopesSupported;
@@ -15591,75 +17155,70 @@ function OpenIdConfig(issuer, authorizationEndpoint, jwksUri, responseTypesSuppo
   socialProviderTokenResolverEndpoint = socialProviderTokenResolverEndpoint === VOID ? null : socialProviderTokenResolverEndpoint;
   introspectionAsyncUpdateEndpoint = introspectionAsyncUpdateEndpoint === VOID ? null : introspectionAsyncUpdateEndpoint;
   scimEndpoint = scimEndpoint === VOID ? null : scimEndpoint;
-  this.s5w_1 = issuer;
-  this.t5w_1 = authorizationEndpoint;
-  this.u5w_1 = jwksUri;
-  this.v5w_1 = responseTypesSupported;
-  this.w5w_1 = subjectTypesSupported;
-  this.x5w_1 = idTokenSigningAlgValuesSupported;
-  this.y5w_1 = tokenEndpoint;
-  this.z5w_1 = userInfoEndpoint;
-  this.a5x_1 = registrationEndpoint;
-  this.b5x_1 = scopesSupported;
-  this.c5x_1 = claimsSupported;
-  this.d5x_1 = responseModesSupported;
-  this.e5x_1 = grantTypesSupported;
-  this.f5x_1 = acrValuesSupported;
-  this.g5x_1 = tokenEndpointAuthMethodsSupported;
-  this.h5x_1 = tokenEndpointAuthSigningAlgValuesSupported;
-  this.i5x_1 = idTokenEncryptionAlgValuesSupported;
-  this.j5x_1 = idTokenEncryptionEncValuesSupported;
-  this.k5x_1 = userInfoSigningAlgValuesSupported;
-  this.l5x_1 = userInfoEncryptionAlgValuesSupported;
-  this.m5x_1 = userInfoEncryptionEncValuesSupported;
-  this.n5x_1 = requestObjectSigningAlgValuesSupported;
-  this.o5x_1 = requestObjectEncryptionAlgValuesSupported;
-  this.p5x_1 = requestObjectEncryptionEncValuesSupported;
-  this.q5x_1 = displayValuesSupported;
-  this.r5x_1 = claimTypesSupported;
-  this.s5x_1 = claimsLocalesSupported;
-  this.t5x_1 = uiLocalesSupported;
-  this.u5x_1 = claimsParameterSupported;
-  this.v5x_1 = requestParameterSupported;
-  this.w5x_1 = requestUriParameterSupported;
-  this.x5x_1 = requireRequestUriRegistration;
-  this.y5x_1 = serviceDocumentation;
-  this.z5x_1 = opPolicyUri;
-  this.a5y_1 = opTosUri;
-  this.b5y_1 = checkSessionIframe;
-  this.c5y_1 = endSessionEndpoint;
-  this.d5y_1 = revocationEndpoint;
-  this.e5y_1 = revocationEndpointAuthMethodsSupported;
-  this.f5y_1 = revocationEndpointAuthSigningAlgValuesSupported;
-  this.g5y_1 = introspectionEndpoint;
-  this.h5y_1 = introspectionEndpointAuthMethodsSupported;
-  this.i5y_1 = introspectionEndpointAuthSigningAlgValuesSupported;
-  this.j5y_1 = codeChallengeMethodsSupported;
-  this.k5y_1 = deviceAuthorizationEndpoint;
-  this.l5y_1 = backchannelLogoutSupported;
-  this.m5y_1 = statusEndpoint;
-  this.n5y_1 = socialProviderTokenResolverEndpoint;
-  this.o5y_1 = introspectionAsyncUpdateEndpoint;
-  this.p5y_1 = scimEndpoint;
+  this.x5w_1 = issuer;
+  this.y5w_1 = authorizationEndpoint;
+  this.z5w_1 = jwksUri;
+  this.a5x_1 = responseTypesSupported;
+  this.b5x_1 = subjectTypesSupported;
+  this.c5x_1 = idTokenSigningAlgValuesSupported;
+  this.d5x_1 = tokenEndpoint;
+  this.e5x_1 = userInfoEndpoint;
+  this.f5x_1 = registrationEndpoint;
+  this.g5x_1 = scopesSupported;
+  this.h5x_1 = claimsSupported;
+  this.i5x_1 = responseModesSupported;
+  this.j5x_1 = grantTypesSupported;
+  this.k5x_1 = acrValuesSupported;
+  this.l5x_1 = tokenEndpointAuthMethodsSupported;
+  this.m5x_1 = tokenEndpointAuthSigningAlgValuesSupported;
+  this.n5x_1 = idTokenEncryptionAlgValuesSupported;
+  this.o5x_1 = idTokenEncryptionEncValuesSupported;
+  this.p5x_1 = userInfoSigningAlgValuesSupported;
+  this.q5x_1 = userInfoEncryptionAlgValuesSupported;
+  this.r5x_1 = userInfoEncryptionEncValuesSupported;
+  this.s5x_1 = requestObjectSigningAlgValuesSupported;
+  this.t5x_1 = requestObjectEncryptionAlgValuesSupported;
+  this.u5x_1 = requestObjectEncryptionEncValuesSupported;
+  this.v5x_1 = displayValuesSupported;
+  this.w5x_1 = claimTypesSupported;
+  this.x5x_1 = claimsLocalesSupported;
+  this.y5x_1 = uiLocalesSupported;
+  this.z5x_1 = claimsParameterSupported;
+  this.a5y_1 = requestParameterSupported;
+  this.b5y_1 = requestUriParameterSupported;
+  this.c5y_1 = requireRequestUriRegistration;
+  this.d5y_1 = serviceDocumentation;
+  this.e5y_1 = opPolicyUri;
+  this.f5y_1 = opTosUri;
+  this.g5y_1 = checkSessionIframe;
+  this.h5y_1 = endSessionEndpoint;
+  this.i5y_1 = revocationEndpoint;
+  this.j5y_1 = revocationEndpointAuthMethodsSupported;
+  this.k5y_1 = revocationEndpointAuthSigningAlgValuesSupported;
+  this.l5y_1 = introspectionEndpoint;
+  this.m5y_1 = introspectionEndpointAuthMethodsSupported;
+  this.n5y_1 = introspectionEndpointAuthSigningAlgValuesSupported;
+  this.o5y_1 = codeChallengeMethodsSupported;
+  this.p5y_1 = deviceAuthorizationEndpoint;
+  this.q5y_1 = backchannelLogoutSupported;
+  this.r5y_1 = statusEndpoint;
+  this.s5y_1 = socialProviderTokenResolverEndpoint;
+  this.t5y_1 = introspectionAsyncUpdateEndpoint;
+  this.u5y_1 = scimEndpoint;
 }
 protoOf(OpenIdConfig).toString = function () {
-  return 'OpenIdConfig(issuer=' + this.s5w_1 + ', authorizationEndpoint=' + this.t5w_1 + ', jwksUri=' + this.u5w_1 + ', responseTypesSupported=' + toString(this.v5w_1) + ', subjectTypesSupported=' + toString(this.w5w_1) + ', idTokenSigningAlgValuesSupported=' + toString(this.x5w_1) + ', tokenEndpoint=' + this.y5w_1 + ', userInfoEndpoint=' + this.z5w_1 + ', registrationEndpoint=' + this.a5x_1 + ', scopesSupported=' + toString_0(this.b5x_1) + ', claimsSupported=' + toString_0(this.c5x_1) + ', responseModesSupported=' + toString_0(this.d5x_1) + ', grantTypesSupported=' + toString_0(this.e5x_1) + ', acrValuesSupported=' + toString_0(this.f5x_1) + ', tokenEndpointAuthMethodsSupported=' + toString_0(this.g5x_1) + ', tokenEndpointAuthSigningAlgValuesSupported=' + toString_0(this.h5x_1) + ', idTokenEncryptionAlgValuesSupported=' + toString_0(this.i5x_1) + ', idTokenEncryptionEncValuesSupported=' + toString_0(this.j5x_1) + ', userInfoSigningAlgValuesSupported=' + toString_0(this.k5x_1) + ', userInfoEncryptionAlgValuesSupported=' + toString_0(this.l5x_1) + ', userInfoEncryptionEncValuesSupported=' + toString_0(this.m5x_1) + ', requestObjectSigningAlgValuesSupported=' + toString_0(this.n5x_1) + ', requestObjectEncryptionAlgValuesSupported=' + toString_0(this.o5x_1) + ', requestObjectEncryptionEncValuesSupported=' + toString_0(this.p5x_1) + ', displayValuesSupported=' + toString_0(this.q5x_1) + ', claimTypesSupported=' + toString_0(this.r5x_1) + ', claimsLocalesSupported=' + toString_0(this.s5x_1) + ', uiLocalesSupported=' + toString_0(this.t5x_1) + ', claimsParameterSupported=' + this.u5x_1 + ', requestParameterSupported=' + this.v5x_1 + ', requestUriParameterSupported=' + this.w5x_1 + ', requireRequestUriRegistration=' + this.x5x_1 + ', serviceDocumentation=' + this.y5x_1 + ', opPolicyUri=' + this.z5x_1 + ', opTosUri=' + this.a5y_1 + ', checkSessionIframe=' + this.b5y_1 + ', endSessionEndpoint=' + this.c5y_1 + ', revocationEndpoint=' + this.d5y_1 + ', revocationEndpointAuthMethodsSupported=' + toString_0(this.e5y_1) + ', revocationEndpointAuthSigningAlgValuesSupported=' + toString_0(this.f5y_1) + ', introspectionEndpoint=' + this.g5y_1 + ', introspectionEndpointAuthMethodsSupported=' + toString_0(this.h5y_1) + ', introspectionEndpointAuthSigningAlgValuesSupported=' + toString_0(this.i5y_1) + ', codeChallengeMethodsSupported=' + toString_0(this.j5y_1) + ', deviceAuthorizationEndpoint=' + this.k5y_1 + ', backchannelLogoutSupported=' + this.l5y_1 + ', statusEndpoint=' + this.m5y_1 + ', socialProviderTokenResolverEndpoint=' + this.n5y_1 + ', introspectionAsyncUpdateEndpoint=' + this.o5y_1 + ', scimEndpoint=' + this.p5y_1 + ')';
+  return 'OpenIdConfig(issuer=' + this.x5w_1 + ', authorizationEndpoint=' + this.y5w_1 + ', jwksUri=' + this.z5w_1 + ', responseTypesSupported=' + toString(this.a5x_1) + ', subjectTypesSupported=' + toString(this.b5x_1) + ', idTokenSigningAlgValuesSupported=' + toString(this.c5x_1) + ', tokenEndpoint=' + this.d5x_1 + ', userInfoEndpoint=' + this.e5x_1 + ', registrationEndpoint=' + this.f5x_1 + ', scopesSupported=' + toString_0(this.g5x_1) + ', claimsSupported=' + toString_0(this.h5x_1) + ', responseModesSupported=' + toString_0(this.i5x_1) + ', grantTypesSupported=' + toString_0(this.j5x_1) + ', acrValuesSupported=' + toString_0(this.k5x_1) + ', tokenEndpointAuthMethodsSupported=' + toString_0(this.l5x_1) + ', tokenEndpointAuthSigningAlgValuesSupported=' + toString_0(this.m5x_1) + ', idTokenEncryptionAlgValuesSupported=' + toString_0(this.n5x_1) + ', idTokenEncryptionEncValuesSupported=' + toString_0(this.o5x_1) + ', userInfoSigningAlgValuesSupported=' + toString_0(this.p5x_1) + ', userInfoEncryptionAlgValuesSupported=' + toString_0(this.q5x_1) + ', userInfoEncryptionEncValuesSupported=' + toString_0(this.r5x_1) + ', requestObjectSigningAlgValuesSupported=' + toString_0(this.s5x_1) + ', requestObjectEncryptionAlgValuesSupported=' + toString_0(this.t5x_1) + ', requestObjectEncryptionEncValuesSupported=' + toString_0(this.u5x_1) + ', displayValuesSupported=' + toString_0(this.v5x_1) + ', claimTypesSupported=' + toString_0(this.w5x_1) + ', claimsLocalesSupported=' + toString_0(this.x5x_1) + ', uiLocalesSupported=' + toString_0(this.y5x_1) + ', claimsParameterSupported=' + this.z5x_1 + ', requestParameterSupported=' + this.a5y_1 + ', requestUriParameterSupported=' + this.b5y_1 + ', requireRequestUriRegistration=' + this.c5y_1 + ', serviceDocumentation=' + this.d5y_1 + ', opPolicyUri=' + this.e5y_1 + ', opTosUri=' + this.f5y_1 + ', checkSessionIframe=' + this.g5y_1 + ', endSessionEndpoint=' + this.h5y_1 + ', revocationEndpoint=' + this.i5y_1 + ', revocationEndpointAuthMethodsSupported=' + toString_0(this.j5y_1) + ', revocationEndpointAuthSigningAlgValuesSupported=' + toString_0(this.k5y_1) + ', introspectionEndpoint=' + this.l5y_1 + ', introspectionEndpointAuthMethodsSupported=' + toString_0(this.m5y_1) + ', introspectionEndpointAuthSigningAlgValuesSupported=' + toString_0(this.n5y_1) + ', codeChallengeMethodsSupported=' + toString_0(this.o5y_1) + ', deviceAuthorizationEndpoint=' + this.p5y_1 + ', backchannelLogoutSupported=' + this.q5y_1 + ', statusEndpoint=' + this.r5y_1 + ', socialProviderTokenResolverEndpoint=' + this.s5y_1 + ', introspectionAsyncUpdateEndpoint=' + this.t5y_1 + ', scimEndpoint=' + this.u5y_1 + ')';
 };
 protoOf(OpenIdConfig).hashCode = function () {
-  var result = getStringHashCode(this.s5w_1);
-  result = imul(result, 31) + getStringHashCode(this.t5w_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.u5w_1) | 0;
-  result = imul(result, 31) + hashCode(this.v5w_1) | 0;
-  result = imul(result, 31) + hashCode(this.w5w_1) | 0;
-  result = imul(result, 31) + hashCode(this.x5w_1) | 0;
+  var result = getStringHashCode(this.x5w_1);
   result = imul(result, 31) + getStringHashCode(this.y5w_1) | 0;
-  result = imul(result, 31) + (this.z5w_1 == null ? 0 : getStringHashCode(this.z5w_1)) | 0;
-  result = imul(result, 31) + (this.a5x_1 == null ? 0 : getStringHashCode(this.a5x_1)) | 0;
-  result = imul(result, 31) + (this.b5x_1 == null ? 0 : hashCode(this.b5x_1)) | 0;
-  result = imul(result, 31) + (this.c5x_1 == null ? 0 : hashCode(this.c5x_1)) | 0;
-  result = imul(result, 31) + (this.d5x_1 == null ? 0 : hashCode(this.d5x_1)) | 0;
-  result = imul(result, 31) + (this.e5x_1 == null ? 0 : hashCode(this.e5x_1)) | 0;
-  result = imul(result, 31) + (this.f5x_1 == null ? 0 : hashCode(this.f5x_1)) | 0;
+  result = imul(result, 31) + getStringHashCode(this.z5w_1) | 0;
+  result = imul(result, 31) + hashCode(this.a5x_1) | 0;
+  result = imul(result, 31) + hashCode(this.b5x_1) | 0;
+  result = imul(result, 31) + hashCode(this.c5x_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.d5x_1) | 0;
+  result = imul(result, 31) + (this.e5x_1 == null ? 0 : getStringHashCode(this.e5x_1)) | 0;
+  result = imul(result, 31) + (this.f5x_1 == null ? 0 : getStringHashCode(this.f5x_1)) | 0;
   result = imul(result, 31) + (this.g5x_1 == null ? 0 : hashCode(this.g5x_1)) | 0;
   result = imul(result, 31) + (this.h5x_1 == null ? 0 : hashCode(this.h5x_1)) | 0;
   result = imul(result, 31) + (this.i5x_1 == null ? 0 : hashCode(this.i5x_1)) | 0;
@@ -15674,28 +17233,33 @@ protoOf(OpenIdConfig).hashCode = function () {
   result = imul(result, 31) + (this.r5x_1 == null ? 0 : hashCode(this.r5x_1)) | 0;
   result = imul(result, 31) + (this.s5x_1 == null ? 0 : hashCode(this.s5x_1)) | 0;
   result = imul(result, 31) + (this.t5x_1 == null ? 0 : hashCode(this.t5x_1)) | 0;
-  result = imul(result, 31) + (this.u5x_1 == null ? 0 : getBooleanHashCode(this.u5x_1)) | 0;
-  result = imul(result, 31) + (this.v5x_1 == null ? 0 : getBooleanHashCode(this.v5x_1)) | 0;
-  result = imul(result, 31) + (this.w5x_1 == null ? 0 : getBooleanHashCode(this.w5x_1)) | 0;
-  result = imul(result, 31) + (this.x5x_1 == null ? 0 : getBooleanHashCode(this.x5x_1)) | 0;
-  result = imul(result, 31) + (this.y5x_1 == null ? 0 : getStringHashCode(this.y5x_1)) | 0;
-  result = imul(result, 31) + (this.z5x_1 == null ? 0 : getStringHashCode(this.z5x_1)) | 0;
-  result = imul(result, 31) + (this.a5y_1 == null ? 0 : getStringHashCode(this.a5y_1)) | 0;
-  result = imul(result, 31) + (this.b5y_1 == null ? 0 : getStringHashCode(this.b5y_1)) | 0;
-  result = imul(result, 31) + (this.c5y_1 == null ? 0 : getStringHashCode(this.c5y_1)) | 0;
+  result = imul(result, 31) + (this.u5x_1 == null ? 0 : hashCode(this.u5x_1)) | 0;
+  result = imul(result, 31) + (this.v5x_1 == null ? 0 : hashCode(this.v5x_1)) | 0;
+  result = imul(result, 31) + (this.w5x_1 == null ? 0 : hashCode(this.w5x_1)) | 0;
+  result = imul(result, 31) + (this.x5x_1 == null ? 0 : hashCode(this.x5x_1)) | 0;
+  result = imul(result, 31) + (this.y5x_1 == null ? 0 : hashCode(this.y5x_1)) | 0;
+  result = imul(result, 31) + (this.z5x_1 == null ? 0 : getBooleanHashCode(this.z5x_1)) | 0;
+  result = imul(result, 31) + (this.a5y_1 == null ? 0 : getBooleanHashCode(this.a5y_1)) | 0;
+  result = imul(result, 31) + (this.b5y_1 == null ? 0 : getBooleanHashCode(this.b5y_1)) | 0;
+  result = imul(result, 31) + (this.c5y_1 == null ? 0 : getBooleanHashCode(this.c5y_1)) | 0;
   result = imul(result, 31) + (this.d5y_1 == null ? 0 : getStringHashCode(this.d5y_1)) | 0;
-  result = imul(result, 31) + (this.e5y_1 == null ? 0 : hashCode(this.e5y_1)) | 0;
-  result = imul(result, 31) + (this.f5y_1 == null ? 0 : hashCode(this.f5y_1)) | 0;
+  result = imul(result, 31) + (this.e5y_1 == null ? 0 : getStringHashCode(this.e5y_1)) | 0;
+  result = imul(result, 31) + (this.f5y_1 == null ? 0 : getStringHashCode(this.f5y_1)) | 0;
   result = imul(result, 31) + (this.g5y_1 == null ? 0 : getStringHashCode(this.g5y_1)) | 0;
-  result = imul(result, 31) + (this.h5y_1 == null ? 0 : hashCode(this.h5y_1)) | 0;
-  result = imul(result, 31) + (this.i5y_1 == null ? 0 : hashCode(this.i5y_1)) | 0;
+  result = imul(result, 31) + (this.h5y_1 == null ? 0 : getStringHashCode(this.h5y_1)) | 0;
+  result = imul(result, 31) + (this.i5y_1 == null ? 0 : getStringHashCode(this.i5y_1)) | 0;
   result = imul(result, 31) + (this.j5y_1 == null ? 0 : hashCode(this.j5y_1)) | 0;
-  result = imul(result, 31) + (this.k5y_1 == null ? 0 : getStringHashCode(this.k5y_1)) | 0;
-  result = imul(result, 31) + (this.l5y_1 == null ? 0 : getBooleanHashCode(this.l5y_1)) | 0;
-  result = imul(result, 31) + (this.m5y_1 == null ? 0 : getStringHashCode(this.m5y_1)) | 0;
-  result = imul(result, 31) + (this.n5y_1 == null ? 0 : getStringHashCode(this.n5y_1)) | 0;
-  result = imul(result, 31) + (this.o5y_1 == null ? 0 : getStringHashCode(this.o5y_1)) | 0;
+  result = imul(result, 31) + (this.k5y_1 == null ? 0 : hashCode(this.k5y_1)) | 0;
+  result = imul(result, 31) + (this.l5y_1 == null ? 0 : getStringHashCode(this.l5y_1)) | 0;
+  result = imul(result, 31) + (this.m5y_1 == null ? 0 : hashCode(this.m5y_1)) | 0;
+  result = imul(result, 31) + (this.n5y_1 == null ? 0 : hashCode(this.n5y_1)) | 0;
+  result = imul(result, 31) + (this.o5y_1 == null ? 0 : hashCode(this.o5y_1)) | 0;
   result = imul(result, 31) + (this.p5y_1 == null ? 0 : getStringHashCode(this.p5y_1)) | 0;
+  result = imul(result, 31) + (this.q5y_1 == null ? 0 : getBooleanHashCode(this.q5y_1)) | 0;
+  result = imul(result, 31) + (this.r5y_1 == null ? 0 : getStringHashCode(this.r5y_1)) | 0;
+  result = imul(result, 31) + (this.s5y_1 == null ? 0 : getStringHashCode(this.s5y_1)) | 0;
+  result = imul(result, 31) + (this.t5y_1 == null ? 0 : getStringHashCode(this.t5y_1)) | 0;
+  result = imul(result, 31) + (this.u5y_1 == null ? 0 : getStringHashCode(this.u5y_1)) | 0;
   return result;
 };
 protoOf(OpenIdConfig).equals = function (other) {
@@ -15703,33 +17267,23 @@ protoOf(OpenIdConfig).equals = function (other) {
     return true;
   if (!(other instanceof OpenIdConfig))
     return false;
-  if (!(this.s5w_1 === other.s5w_1))
-    return false;
-  if (!(this.t5w_1 === other.t5w_1))
-    return false;
-  if (!(this.u5w_1 === other.u5w_1))
-    return false;
-  if (!equals(this.v5w_1, other.v5w_1))
-    return false;
-  if (!equals(this.w5w_1, other.w5w_1))
-    return false;
-  if (!equals(this.x5w_1, other.x5w_1))
+  if (!(this.x5w_1 === other.x5w_1))
     return false;
   if (!(this.y5w_1 === other.y5w_1))
     return false;
-  if (!(this.z5w_1 == other.z5w_1))
+  if (!(this.z5w_1 === other.z5w_1))
     return false;
-  if (!(this.a5x_1 == other.a5x_1))
+  if (!equals(this.a5x_1, other.a5x_1))
     return false;
   if (!equals(this.b5x_1, other.b5x_1))
     return false;
   if (!equals(this.c5x_1, other.c5x_1))
     return false;
-  if (!equals(this.d5x_1, other.d5x_1))
+  if (!(this.d5x_1 === other.d5x_1))
     return false;
-  if (!equals(this.e5x_1, other.e5x_1))
+  if (!(this.e5x_1 == other.e5x_1))
     return false;
-  if (!equals(this.f5x_1, other.f5x_1))
+  if (!(this.f5x_1 == other.f5x_1))
     return false;
   if (!equals(this.g5x_1, other.g5x_1))
     return false;
@@ -15759,15 +17313,15 @@ protoOf(OpenIdConfig).equals = function (other) {
     return false;
   if (!equals(this.t5x_1, other.t5x_1))
     return false;
-  if (!(this.u5x_1 == other.u5x_1))
+  if (!equals(this.u5x_1, other.u5x_1))
     return false;
-  if (!(this.v5x_1 == other.v5x_1))
+  if (!equals(this.v5x_1, other.v5x_1))
     return false;
-  if (!(this.w5x_1 == other.w5x_1))
+  if (!equals(this.w5x_1, other.w5x_1))
     return false;
-  if (!(this.x5x_1 == other.x5x_1))
+  if (!equals(this.x5x_1, other.x5x_1))
     return false;
-  if (!(this.y5x_1 == other.y5x_1))
+  if (!equals(this.y5x_1, other.y5x_1))
     return false;
   if (!(this.z5x_1 == other.z5x_1))
     return false;
@@ -15779,37 +17333,47 @@ protoOf(OpenIdConfig).equals = function (other) {
     return false;
   if (!(this.d5y_1 == other.d5y_1))
     return false;
-  if (!equals(this.e5y_1, other.e5y_1))
+  if (!(this.e5y_1 == other.e5y_1))
     return false;
-  if (!equals(this.f5y_1, other.f5y_1))
+  if (!(this.f5y_1 == other.f5y_1))
     return false;
   if (!(this.g5y_1 == other.g5y_1))
     return false;
-  if (!equals(this.h5y_1, other.h5y_1))
+  if (!(this.h5y_1 == other.h5y_1))
     return false;
-  if (!equals(this.i5y_1, other.i5y_1))
+  if (!(this.i5y_1 == other.i5y_1))
     return false;
   if (!equals(this.j5y_1, other.j5y_1))
     return false;
-  if (!(this.k5y_1 == other.k5y_1))
+  if (!equals(this.k5y_1, other.k5y_1))
     return false;
   if (!(this.l5y_1 == other.l5y_1))
     return false;
-  if (!(this.m5y_1 == other.m5y_1))
+  if (!equals(this.m5y_1, other.m5y_1))
     return false;
-  if (!(this.n5y_1 == other.n5y_1))
+  if (!equals(this.n5y_1, other.n5y_1))
     return false;
-  if (!(this.o5y_1 == other.o5y_1))
+  if (!equals(this.o5y_1, other.o5y_1))
     return false;
   if (!(this.p5y_1 == other.p5y_1))
     return false;
+  if (!(this.q5y_1 == other.q5y_1))
+    return false;
+  if (!(this.r5y_1 == other.r5y_1))
+    return false;
+  if (!(this.s5y_1 == other.s5y_1))
+    return false;
+  if (!(this.t5y_1 == other.t5y_1))
+    return false;
+  if (!(this.u5y_1 == other.u5y_1))
+    return false;
   return true;
 };
-function Companion_26() {
+function Companion_28() {
 }
-var Companion_instance_27;
-function Companion_getInstance_34() {
-  return Companion_instance_27;
+var Companion_instance_30;
+function Companion_getInstance_36() {
+  return Companion_instance_30;
 }
 function $serializer_14() {
   $serializer_instance_14 = this;
@@ -15821,33 +17385,33 @@ function $serializer_14() {
   tmp0_serialDesc.dw('sessionRefreshCount', true);
   tmp0_serialDesc.dw('lastRefreshError', true);
   tmp0_serialDesc.dw('previousTokenHash', true);
-  this.n6p_1 = tmp0_serialDesc;
+  this.h6w_1 = tmp0_serialDesc;
 }
-protoOf($serializer_14).o6p = function (encoder, value) {
-  var tmp0_desc = this.n6p_1;
+protoOf($serializer_14).i6w = function (encoder, value) {
+  var tmp0_desc = this.h6w_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.iq(tmp0_desc, 0, value.s5y_1);
-  tmp1_output.iq(tmp0_desc, 1, value.t5y_1);
-  tmp1_output.iq(tmp0_desc, 2, value.u5y_1);
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.v5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 3, LongSerializer_getInstance(), value.v5y_1);
+  tmp1_output.iq(tmp0_desc, 0, value.x5y_1);
+  tmp1_output.iq(tmp0_desc, 1, value.y5y_1);
+  tmp1_output.iq(tmp0_desc, 2, value.z5y_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.a5z_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 3, LongSerializer_getInstance(), value.a5z_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.w5y_1 === 0)) {
-    tmp1_output.hq(tmp0_desc, 4, value.w5y_1);
+  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.b5z_1 === 0)) {
+    tmp1_output.hq(tmp0_desc, 4, value.b5z_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.x5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.x5y_1);
+  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.c5z_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.c5z_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.y5y_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.y5y_1);
+  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.d5z_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.d5z_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_14).am = function (encoder, value) {
-  return this.o6p(encoder, value instanceof RefreshTokenMetadata ? value : THROW_CCE());
+  return this.i6w(encoder, value instanceof RefreshTokenMetadata ? value : THROW_CCE());
 };
 protoOf($serializer_14).bm = function (decoder) {
-  var tmp0_desc = this.n6p_1;
+  var tmp0_desc = this.h6w_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -15917,7 +17481,7 @@ protoOf($serializer_14).bm = function (decoder) {
   return RefreshTokenMetadata_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
 };
 protoOf($serializer_14).zl = function () {
-  return this.n6p_1;
+  return this.h6w_1;
 };
 protoOf($serializer_14).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -15933,27 +17497,27 @@ function $serializer_getInstance_14() {
 }
 function RefreshTokenMetadata_init_$Init$(seen0, sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash, serializationConstructorMarker, $this) {
   if (!(7 === (7 & seen0))) {
-    throwMissingFieldException(seen0, 7, $serializer_getInstance_14().n6p_1);
+    throwMissingFieldException(seen0, 7, $serializer_getInstance_14().h6w_1);
   }
-  $this.s5y_1 = sessionCreatedAt;
-  $this.t5y_1 = issuedAt;
-  $this.u5y_1 = lastUsedAt;
+  $this.x5y_1 = sessionCreatedAt;
+  $this.y5y_1 = issuedAt;
+  $this.z5y_1 = lastUsedAt;
   if (0 === (seen0 & 8))
-    $this.v5y_1 = null;
+    $this.a5z_1 = null;
   else
-    $this.v5y_1 = lastRefreshAt;
+    $this.a5z_1 = lastRefreshAt;
   if (0 === (seen0 & 16))
-    $this.w5y_1 = 0;
+    $this.b5z_1 = 0;
   else
-    $this.w5y_1 = sessionRefreshCount;
+    $this.b5z_1 = sessionRefreshCount;
   if (0 === (seen0 & 32))
-    $this.x5y_1 = null;
+    $this.c5z_1 = null;
   else
-    $this.x5y_1 = lastRefreshError;
+    $this.c5z_1 = lastRefreshError;
   if (0 === (seen0 & 64))
-    $this.y5y_1 = null;
+    $this.d5z_1 = null;
   else
-    $this.y5y_1 = previousTokenHash;
+    $this.d5z_1 = previousTokenHash;
   return $this;
 }
 function RefreshTokenMetadata_init_$Create$(seen0, sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash, serializationConstructorMarker) {
@@ -15964,44 +17528,44 @@ function RefreshTokenMetadata(sessionCreatedAt, issuedAt, lastUsedAt, lastRefres
   sessionRefreshCount = sessionRefreshCount === VOID ? 0 : sessionRefreshCount;
   lastRefreshError = lastRefreshError === VOID ? null : lastRefreshError;
   previousTokenHash = previousTokenHash === VOID ? null : previousTokenHash;
-  this.s5y_1 = sessionCreatedAt;
-  this.t5y_1 = issuedAt;
-  this.u5y_1 = lastUsedAt;
-  this.v5y_1 = lastRefreshAt;
-  this.w5y_1 = sessionRefreshCount;
-  this.x5y_1 = lastRefreshError;
-  this.y5y_1 = previousTokenHash;
+  this.x5y_1 = sessionCreatedAt;
+  this.y5y_1 = issuedAt;
+  this.z5y_1 = lastUsedAt;
+  this.a5z_1 = lastRefreshAt;
+  this.b5z_1 = sessionRefreshCount;
+  this.c5z_1 = lastRefreshError;
+  this.d5z_1 = previousTokenHash;
 }
-protoOf(RefreshTokenMetadata).z5y = function (newLastUsedAt, newLastRefreshAt, newPreviousTokenHash) {
-  return this.p6p(VOID, VOID, newLastUsedAt, newLastRefreshAt, this.w5y_1 + 1 | 0, null, newPreviousTokenHash);
+protoOf(RefreshTokenMetadata).e5z = function (newLastUsedAt, newLastRefreshAt, newPreviousTokenHash) {
+  return this.j6w(VOID, VOID, newLastUsedAt, newLastRefreshAt, this.b5z_1 + 1 | 0, null, newPreviousTokenHash);
 };
-protoOf(RefreshTokenMetadata).k5z = function (errorMessage) {
-  return this.p6p(VOID, VOID, VOID, VOID, VOID, errorMessage);
+protoOf(RefreshTokenMetadata).p5z = function (errorMessage) {
+  return this.j6w(VOID, VOID, VOID, VOID, VOID, errorMessage);
 };
-protoOf(RefreshTokenMetadata).q6p = function (sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash) {
+protoOf(RefreshTokenMetadata).k6w = function (sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash) {
   return new RefreshTokenMetadata(sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash);
 };
-protoOf(RefreshTokenMetadata).p6p = function (sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash, $super) {
-  sessionCreatedAt = sessionCreatedAt === VOID ? this.s5y_1 : sessionCreatedAt;
-  issuedAt = issuedAt === VOID ? this.t5y_1 : issuedAt;
-  lastUsedAt = lastUsedAt === VOID ? this.u5y_1 : lastUsedAt;
-  lastRefreshAt = lastRefreshAt === VOID ? this.v5y_1 : lastRefreshAt;
-  sessionRefreshCount = sessionRefreshCount === VOID ? this.w5y_1 : sessionRefreshCount;
-  lastRefreshError = lastRefreshError === VOID ? this.x5y_1 : lastRefreshError;
-  previousTokenHash = previousTokenHash === VOID ? this.y5y_1 : previousTokenHash;
-  return $super === VOID ? this.q6p(sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash) : $super.q6p.call(this, sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash);
+protoOf(RefreshTokenMetadata).j6w = function (sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash, $super) {
+  sessionCreatedAt = sessionCreatedAt === VOID ? this.x5y_1 : sessionCreatedAt;
+  issuedAt = issuedAt === VOID ? this.y5y_1 : issuedAt;
+  lastUsedAt = lastUsedAt === VOID ? this.z5y_1 : lastUsedAt;
+  lastRefreshAt = lastRefreshAt === VOID ? this.a5z_1 : lastRefreshAt;
+  sessionRefreshCount = sessionRefreshCount === VOID ? this.b5z_1 : sessionRefreshCount;
+  lastRefreshError = lastRefreshError === VOID ? this.c5z_1 : lastRefreshError;
+  previousTokenHash = previousTokenHash === VOID ? this.d5z_1 : previousTokenHash;
+  return $super === VOID ? this.k6w(sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash) : $super.k6w.call(this, sessionCreatedAt, issuedAt, lastUsedAt, lastRefreshAt, sessionRefreshCount, lastRefreshError, previousTokenHash);
 };
 protoOf(RefreshTokenMetadata).toString = function () {
-  return 'RefreshTokenMetadata(sessionCreatedAt=' + this.s5y_1.toString() + ', issuedAt=' + this.t5y_1.toString() + ', lastUsedAt=' + this.u5y_1.toString() + ', lastRefreshAt=' + toString_0(this.v5y_1) + ', sessionRefreshCount=' + this.w5y_1 + ', lastRefreshError=' + this.x5y_1 + ', previousTokenHash=' + this.y5y_1 + ')';
+  return 'RefreshTokenMetadata(sessionCreatedAt=' + this.x5y_1.toString() + ', issuedAt=' + this.y5y_1.toString() + ', lastUsedAt=' + this.z5y_1.toString() + ', lastRefreshAt=' + toString_0(this.a5z_1) + ', sessionRefreshCount=' + this.b5z_1 + ', lastRefreshError=' + this.c5z_1 + ', previousTokenHash=' + this.d5z_1 + ')';
 };
 protoOf(RefreshTokenMetadata).hashCode = function () {
-  var result = this.s5y_1.hashCode();
-  result = imul(result, 31) + this.t5y_1.hashCode() | 0;
-  result = imul(result, 31) + this.u5y_1.hashCode() | 0;
-  result = imul(result, 31) + (this.v5y_1 == null ? 0 : this.v5y_1.hashCode()) | 0;
-  result = imul(result, 31) + this.w5y_1 | 0;
-  result = imul(result, 31) + (this.x5y_1 == null ? 0 : getStringHashCode(this.x5y_1)) | 0;
-  result = imul(result, 31) + (this.y5y_1 == null ? 0 : getStringHashCode(this.y5y_1)) | 0;
+  var result = this.x5y_1.hashCode();
+  result = imul(result, 31) + this.y5y_1.hashCode() | 0;
+  result = imul(result, 31) + this.z5y_1.hashCode() | 0;
+  result = imul(result, 31) + (this.a5z_1 == null ? 0 : this.a5z_1.hashCode()) | 0;
+  result = imul(result, 31) + this.b5z_1 | 0;
+  result = imul(result, 31) + (this.c5z_1 == null ? 0 : getStringHashCode(this.c5z_1)) | 0;
+  result = imul(result, 31) + (this.d5z_1 == null ? 0 : getStringHashCode(this.d5z_1)) | 0;
   return result;
 };
 protoOf(RefreshTokenMetadata).equals = function (other) {
@@ -16009,27 +17573,265 @@ protoOf(RefreshTokenMetadata).equals = function (other) {
     return true;
   if (!(other instanceof RefreshTokenMetadata))
     return false;
-  if (!equalsLong(this.s5y_1, other.s5y_1))
+  if (!equalsLong(this.x5y_1, other.x5y_1))
     return false;
-  if (!equalsLong(this.t5y_1, other.t5y_1))
+  if (!equalsLong(this.y5y_1, other.y5y_1))
     return false;
-  if (!equalsLong(this.u5y_1, other.u5y_1))
+  if (!equalsLong(this.z5y_1, other.z5y_1))
     return false;
-  if (!equals(this.v5y_1, other.v5y_1))
+  if (!equals(this.a5z_1, other.a5z_1))
     return false;
-  if (!(this.w5y_1 === other.w5y_1))
+  if (!(this.b5z_1 === other.b5z_1))
     return false;
-  if (!(this.x5y_1 == other.x5y_1))
+  if (!(this.c5z_1 == other.c5z_1))
     return false;
-  if (!(this.y5y_1 == other.y5y_1))
+  if (!(this.d5z_1 == other.d5z_1))
     return false;
   return true;
 };
-function Companion_27() {
+function Null() {
+  Null_instance = this;
+  StructuredValue.call(this);
 }
-var Companion_instance_28;
-function Companion_getInstance_35() {
-  return Companion_instance_28;
+protoOf(Null).toString = function () {
+  return 'Null';
+};
+protoOf(Null).hashCode = function () {
+  return -800248062;
+};
+protoOf(Null).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Null))
+    return false;
+  return true;
+};
+var Null_instance;
+function Null_getInstance() {
+  if (Null_instance == null)
+    new Null();
+  return Null_instance;
+}
+function Text(value) {
+  StructuredValue.call(this);
+  this.l6w_1 = value;
+}
+protoOf(Text).toString = function () {
+  return 'Text(value=' + this.l6w_1 + ')';
+};
+protoOf(Text).hashCode = function () {
+  return getStringHashCode(this.l6w_1);
+};
+protoOf(Text).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Text))
+    return false;
+  if (!(this.l6w_1 === other.l6w_1))
+    return false;
+  return true;
+};
+function Integer(value) {
+  StructuredValue.call(this);
+  this.m6w_1 = value;
+}
+protoOf(Integer).toString = function () {
+  return 'Integer(value=' + this.m6w_1.toString() + ')';
+};
+protoOf(Integer).hashCode = function () {
+  return this.m6w_1.hashCode();
+};
+protoOf(Integer).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Integer))
+    return false;
+  if (!equalsLong(this.m6w_1, other.m6w_1))
+    return false;
+  return true;
+};
+function Decimal(value) {
+  StructuredValue.call(this);
+  this.n6w_1 = value;
+}
+protoOf(Decimal).toString = function () {
+  return 'Decimal(value=' + this.n6w_1 + ')';
+};
+protoOf(Decimal).hashCode = function () {
+  return getNumberHashCode(this.n6w_1);
+};
+protoOf(Decimal).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Decimal))
+    return false;
+  if (!equals(this.n6w_1, other.n6w_1))
+    return false;
+  return true;
+};
+function Bool(value) {
+  StructuredValue.call(this);
+  this.o6w_1 = value;
+}
+protoOf(Bool).toString = function () {
+  return 'Bool(value=' + this.o6w_1 + ')';
+};
+protoOf(Bool).hashCode = function () {
+  return getBooleanHashCode(this.o6w_1);
+};
+protoOf(Bool).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Bool))
+    return false;
+  if (!(this.o6w_1 === other.o6w_1))
+    return false;
+  return true;
+};
+function Array_0(value) {
+  StructuredValue.call(this);
+  this.p6w_1 = value;
+}
+protoOf(Array_0).toString = function () {
+  return 'Array(value=' + toString(this.p6w_1) + ')';
+};
+protoOf(Array_0).hashCode = function () {
+  return hashCode(this.p6w_1);
+};
+protoOf(Array_0).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Array_0))
+    return false;
+  if (!equals(this.p6w_1, other.p6w_1))
+    return false;
+  return true;
+};
+function Object_0(value) {
+  StructuredValue.call(this);
+  this.q6w_1 = value;
+}
+protoOf(Object_0).toString = function () {
+  return 'Object(value=' + toString(this.q6w_1) + ')';
+};
+protoOf(Object_0).hashCode = function () {
+  return hashCode(this.q6w_1);
+};
+protoOf(Object_0).equals = function (other) {
+  if (this === other)
+    return true;
+  if (!(other instanceof Object_0))
+    return false;
+  if (!equals(this.q6w_1, other.q6w_1))
+    return false;
+  return true;
+};
+function Companion_29() {
+}
+var Companion_instance_31;
+function Companion_getInstance_37() {
+  return Companion_instance_31;
+}
+function StructuredValue() {
+}
+function toJsonElement(_this__u8e3s4) {
+  var tmp;
+  if (_this__u8e3s4 instanceof Null) {
+    tmp = JsonNull_getInstance();
+  } else {
+    if (_this__u8e3s4 instanceof Text) {
+      tmp = JsonPrimitive_2(_this__u8e3s4.l6w_1);
+    } else {
+      if (_this__u8e3s4 instanceof Integer) {
+        tmp = JsonPrimitive_1(_this__u8e3s4.m6w_1);
+      } else {
+        if (_this__u8e3s4 instanceof Decimal) {
+          tmp = JsonPrimitive_1(_this__u8e3s4.n6w_1);
+        } else {
+          if (_this__u8e3s4 instanceof Bool) {
+            tmp = JsonPrimitive_0(_this__u8e3s4.o6w_1);
+          } else {
+            if (_this__u8e3s4 instanceof Array_0) {
+              // Inline function 'kotlin.collections.map' call
+              var this_0 = _this__u8e3s4.p6w_1;
+              // Inline function 'kotlin.collections.mapTo' call
+              var destination = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_0, 10));
+              var _iterator__ex2g4s = this_0.t();
+              while (_iterator__ex2g4s.u()) {
+                var item = _iterator__ex2g4s.v();
+                var tmp$ret$0 = toJsonElement(item);
+                destination.x(tmp$ret$0);
+              }
+              tmp = new JsonArray(destination);
+            } else {
+              if (_this__u8e3s4 instanceof Object_0) {
+                // Inline function 'kotlin.collections.mapValues' call
+                var this_1 = _this__u8e3s4.q6w_1;
+                // Inline function 'kotlin.collections.mapValuesTo' call
+                var destination_0 = LinkedHashMap_init_$Create$_0(mapCapacity(this_1.z()));
+                // Inline function 'kotlin.collections.associateByTo' call
+                var _iterator__ex2g4s_0 = this_1.h1().t();
+                while (_iterator__ex2g4s_0.u()) {
+                  var element = _iterator__ex2g4s_0.v();
+                  var tmp_0 = element.i1();
+                  var tmp$ret$4 = toJsonElement(element.j1());
+                  destination_0.m2(tmp_0, tmp$ret$4);
+                }
+                tmp = new JsonObject(destination_0);
+              } else {
+                noWhenBranchMatchedException();
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return tmp;
+}
+function StructuredValueSerializer() {
+  StructuredValueSerializer_instance = this;
+  this.r6w_1 = Companion_instance_0.a17().zl();
+}
+protoOf(StructuredValueSerializer).zl = function () {
+  return this.r6w_1;
+};
+protoOf(StructuredValueSerializer).s6w = function (encoder, value) {
+  var tmp0_elvis_lhs = isInterface(encoder, JsonEncoder) ? encoder : null;
+  var tmp;
+  if (tmp0_elvis_lhs == null) {
+    throw SerializationException_init_$Create$('StructuredValue can only be serialized with kotlinx Json');
+  } else {
+    tmp = tmp0_elvis_lhs;
+  }
+  var jsonEncoder = tmp;
+  jsonEncoder.g18(toJsonElement(value));
+};
+protoOf(StructuredValueSerializer).am = function (encoder, value) {
+  return this.s6w(encoder, value instanceof StructuredValue ? value : THROW_CCE());
+};
+protoOf(StructuredValueSerializer).bm = function (decoder) {
+  var tmp0_elvis_lhs = isInterface(decoder, JsonDecoder) ? decoder : null;
+  var tmp;
+  if (tmp0_elvis_lhs == null) {
+    throw SerializationException_init_$Create$('StructuredValue can only be deserialized with kotlinx Json');
+  } else {
+    tmp = tmp0_elvis_lhs;
+  }
+  var jsonDecoder = tmp;
+  return toStructuredValue(jsonDecoder.z16());
+};
+var StructuredValueSerializer_instance;
+function StructuredValueSerializer_getInstance() {
+  if (StructuredValueSerializer_instance == null)
+    new StructuredValueSerializer();
+  return StructuredValueSerializer_instance;
+}
+function Companion_30() {
+}
+var Companion_instance_32;
+function Companion_getInstance_38() {
+  return Companion_instance_32;
 }
 function $serializer_15() {
   $serializer_instance_15 = this;
@@ -16040,32 +17842,32 @@ function $serializer_15() {
   tmp0_serialDesc.dw('token_type', true);
   tmp0_serialDesc.dw('expires_in', false);
   tmp0_serialDesc.dw('scope', true);
-  this.r6p_1 = tmp0_serialDesc;
+  this.t6w_1 = tmp0_serialDesc;
 }
-protoOf($serializer_15).s6p = function (encoder, value) {
-  var tmp0_desc = this.r6p_1;
+protoOf($serializer_15).u6w = function (encoder, value) {
+  var tmp0_desc = this.t6w_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.p5t_1);
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.q5t_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.q5t_1);
+  tmp1_output.mq(tmp0_desc, 0, value.t5t_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.u5t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.u5t_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.r5t_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.r5t_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.v5t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.v5t_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.s5t_1 === 'Bearer')) {
-    tmp1_output.mq(tmp0_desc, 3, value.s5t_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.w5t_1 === 'Bearer')) {
+    tmp1_output.mq(tmp0_desc, 3, value.w5t_1);
   }
-  tmp1_output.iq(tmp0_desc, 4, value.t5t_1);
-  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.u5t_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.u5t_1);
+  tmp1_output.iq(tmp0_desc, 4, value.x5t_1);
+  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.y5t_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.y5t_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_15).am = function (encoder, value) {
-  return this.s6p(encoder, value instanceof TokenResponseDto ? value : THROW_CCE());
+  return this.u6w(encoder, value instanceof TokenResponseDto ? value : THROW_CCE());
 };
 protoOf($serializer_15).bm = function (decoder) {
-  var tmp0_desc = this.r6p_1;
+  var tmp0_desc = this.t6w_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -16128,7 +17930,7 @@ protoOf($serializer_15).bm = function (decoder) {
   return TokenResponseDto_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
 };
 protoOf($serializer_15).zl = function () {
-  return this.r6p_1;
+  return this.t6w_1;
 };
 protoOf($serializer_15).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -16144,26 +17946,26 @@ function $serializer_getInstance_15() {
 }
 function TokenResponseDto_init_$Init$(seen0, accessToken, refreshToken, idToken, tokenType, expiresIn, scope, serializationConstructorMarker, $this) {
   if (!(17 === (17 & seen0))) {
-    throwMissingFieldException(seen0, 17, $serializer_getInstance_15().r6p_1);
+    throwMissingFieldException(seen0, 17, $serializer_getInstance_15().t6w_1);
   }
-  $this.p5t_1 = accessToken;
+  $this.t5t_1 = accessToken;
   if (0 === (seen0 & 2))
-    $this.q5t_1 = null;
-  else
-    $this.q5t_1 = refreshToken;
-  if (0 === (seen0 & 4))
-    $this.r5t_1 = null;
-  else
-    $this.r5t_1 = idToken;
-  if (0 === (seen0 & 8))
-    $this.s5t_1 = 'Bearer';
-  else
-    $this.s5t_1 = tokenType;
-  $this.t5t_1 = expiresIn;
-  if (0 === (seen0 & 32))
     $this.u5t_1 = null;
   else
-    $this.u5t_1 = scope;
+    $this.u5t_1 = refreshToken;
+  if (0 === (seen0 & 4))
+    $this.v5t_1 = null;
+  else
+    $this.v5t_1 = idToken;
+  if (0 === (seen0 & 8))
+    $this.w5t_1 = 'Bearer';
+  else
+    $this.w5t_1 = tokenType;
+  $this.x5t_1 = expiresIn;
+  if (0 === (seen0 & 32))
+    $this.y5t_1 = null;
+  else
+    $this.y5t_1 = scope;
   return $this;
 }
 function TokenResponseDto_init_$Create$(seen0, accessToken, refreshToken, idToken, tokenType, expiresIn, scope, serializationConstructorMarker) {
@@ -16174,23 +17976,23 @@ function TokenResponseDto(accessToken, refreshToken, idToken, tokenType, expires
   idToken = idToken === VOID ? null : idToken;
   tokenType = tokenType === VOID ? 'Bearer' : tokenType;
   scope = scope === VOID ? null : scope;
-  this.p5t_1 = accessToken;
-  this.q5t_1 = refreshToken;
-  this.r5t_1 = idToken;
-  this.s5t_1 = tokenType;
-  this.t5t_1 = expiresIn;
-  this.u5t_1 = scope;
+  this.t5t_1 = accessToken;
+  this.u5t_1 = refreshToken;
+  this.v5t_1 = idToken;
+  this.w5t_1 = tokenType;
+  this.x5t_1 = expiresIn;
+  this.y5t_1 = scope;
 }
 protoOf(TokenResponseDto).toString = function () {
-  return 'TokenResponseDto(accessToken=' + this.p5t_1 + ', refreshToken=' + this.q5t_1 + ', idToken=' + this.r5t_1 + ', tokenType=' + this.s5t_1 + ', expiresIn=' + this.t5t_1.toString() + ', scope=' + this.u5t_1 + ')';
+  return 'TokenResponseDto(accessToken=' + this.t5t_1 + ', refreshToken=' + this.u5t_1 + ', idToken=' + this.v5t_1 + ', tokenType=' + this.w5t_1 + ', expiresIn=' + this.x5t_1.toString() + ', scope=' + this.y5t_1 + ')';
 };
 protoOf(TokenResponseDto).hashCode = function () {
-  var result = getStringHashCode(this.p5t_1);
-  result = imul(result, 31) + (this.q5t_1 == null ? 0 : getStringHashCode(this.q5t_1)) | 0;
-  result = imul(result, 31) + (this.r5t_1 == null ? 0 : getStringHashCode(this.r5t_1)) | 0;
-  result = imul(result, 31) + getStringHashCode(this.s5t_1) | 0;
-  result = imul(result, 31) + this.t5t_1.hashCode() | 0;
+  var result = getStringHashCode(this.t5t_1);
   result = imul(result, 31) + (this.u5t_1 == null ? 0 : getStringHashCode(this.u5t_1)) | 0;
+  result = imul(result, 31) + (this.v5t_1 == null ? 0 : getStringHashCode(this.v5t_1)) | 0;
+  result = imul(result, 31) + getStringHashCode(this.w5t_1) | 0;
+  result = imul(result, 31) + this.x5t_1.hashCode() | 0;
+  result = imul(result, 31) + (this.y5t_1 == null ? 0 : getStringHashCode(this.y5t_1)) | 0;
   return result;
 };
 protoOf(TokenResponseDto).equals = function (other) {
@@ -16198,17 +18000,17 @@ protoOf(TokenResponseDto).equals = function (other) {
     return true;
   if (!(other instanceof TokenResponseDto))
     return false;
-  if (!(this.p5t_1 === other.p5t_1))
-    return false;
-  if (!(this.q5t_1 == other.q5t_1))
-    return false;
-  if (!(this.r5t_1 == other.r5t_1))
-    return false;
-  if (!(this.s5t_1 === other.s5t_1))
-    return false;
-  if (!equalsLong(this.t5t_1, other.t5t_1))
+  if (!(this.t5t_1 === other.t5t_1))
     return false;
   if (!(this.u5t_1 == other.u5t_1))
+    return false;
+  if (!(this.v5t_1 == other.v5t_1))
+    return false;
+  if (!(this.w5t_1 === other.w5t_1))
+    return false;
+  if (!equalsLong(this.x5t_1, other.x5t_1))
+    return false;
+  if (!(this.y5t_1 == other.y5t_1))
     return false;
   return true;
 };
@@ -16232,15 +18034,15 @@ function parseScopes($this, scope) {
   }
   return destination;
 }
-function Companion_28() {
+function Companion_31() {
 }
-protoOf(Companion_28).e5z = function (dto, accessTokenClaims, idTokenClaims, userInfo) {
-  var accessToken = Companion_instance_20.j60(dto.p5t_1, accessTokenClaims);
-  return new TokenSet(accessToken, dto.q5t_1, dto.r5t_1, idTokenClaims, userInfo, dto.s5t_1, parseScopes(this, dto.u5t_1));
+protoOf(Companion_31).j5z = function (dto, accessTokenClaims, idTokenClaims, userInfo) {
+  var accessToken = Companion_instance_23.o60(dto.t5t_1, accessTokenClaims);
+  return new TokenSet(accessToken, dto.u5t_1, dto.v5t_1, idTokenClaims, userInfo, dto.w5t_1, parseScopes(this, dto.y5t_1));
 };
-var Companion_instance_29;
-function Companion_getInstance_36() {
-  return Companion_instance_29;
+var Companion_instance_33;
+function Companion_getInstance_39() {
+  return Companion_instance_33;
 }
 function TokenSet(accessToken, refreshToken, idToken, idTokenClaims, userInfo, tokenType, scopes) {
   refreshToken = refreshToken === VOID ? null : refreshToken;
@@ -16249,25 +18051,25 @@ function TokenSet(accessToken, refreshToken, idToken, idTokenClaims, userInfo, t
   userInfo = userInfo === VOID ? null : userInfo;
   tokenType = tokenType === VOID ? 'Bearer' : tokenType;
   scopes = scopes === VOID ? emptyList() : scopes;
-  this.c60_1 = accessToken;
-  this.d60_1 = refreshToken;
-  this.e60_1 = idToken;
-  this.f60_1 = idTokenClaims;
-  this.g60_1 = userInfo;
-  this.h60_1 = tokenType;
-  this.i60_1 = scopes;
+  this.h60_1 = accessToken;
+  this.i60_1 = refreshToken;
+  this.j60_1 = idToken;
+  this.k60_1 = idTokenClaims;
+  this.l60_1 = userInfo;
+  this.m60_1 = tokenType;
+  this.n60_1 = scopes;
 }
 protoOf(TokenSet).toString = function () {
-  return 'TokenSet(accessToken=' + this.c60_1.toString() + ', refreshToken=' + this.d60_1 + ', idToken=' + this.e60_1 + ', idTokenClaims=' + toString_0(this.f60_1) + ', userInfo=' + toString_0(this.g60_1) + ', tokenType=' + this.h60_1 + ', scopes=' + toString(this.i60_1) + ')';
+  return 'TokenSet(accessToken=' + this.h60_1.toString() + ', refreshToken=' + this.i60_1 + ', idToken=' + this.j60_1 + ', idTokenClaims=' + toString_0(this.k60_1) + ', userInfo=' + toString_0(this.l60_1) + ', tokenType=' + this.m60_1 + ', scopes=' + toString(this.n60_1) + ')';
 };
 protoOf(TokenSet).hashCode = function () {
-  var result = this.c60_1.hashCode();
-  result = imul(result, 31) + (this.d60_1 == null ? 0 : getStringHashCode(this.d60_1)) | 0;
-  result = imul(result, 31) + (this.e60_1 == null ? 0 : getStringHashCode(this.e60_1)) | 0;
-  result = imul(result, 31) + (this.f60_1 == null ? 0 : this.f60_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.g60_1 == null ? 0 : this.g60_1.hashCode()) | 0;
-  result = imul(result, 31) + getStringHashCode(this.h60_1) | 0;
-  result = imul(result, 31) + hashCode(this.i60_1) | 0;
+  var result = this.h60_1.hashCode();
+  result = imul(result, 31) + (this.i60_1 == null ? 0 : getStringHashCode(this.i60_1)) | 0;
+  result = imul(result, 31) + (this.j60_1 == null ? 0 : getStringHashCode(this.j60_1)) | 0;
+  result = imul(result, 31) + (this.k60_1 == null ? 0 : this.k60_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.l60_1 == null ? 0 : this.l60_1.hashCode()) | 0;
+  result = imul(result, 31) + getStringHashCode(this.m60_1) | 0;
+  result = imul(result, 31) + hashCode(this.n60_1) | 0;
   return result;
 };
 protoOf(TokenSet).equals = function (other) {
@@ -16275,19 +18077,19 @@ protoOf(TokenSet).equals = function (other) {
     return true;
   if (!(other instanceof TokenSet))
     return false;
-  if (!this.c60_1.equals(other.c60_1))
+  if (!this.h60_1.equals(other.h60_1))
     return false;
-  if (!(this.d60_1 == other.d60_1))
+  if (!(this.i60_1 == other.i60_1))
     return false;
-  if (!(this.e60_1 == other.e60_1))
+  if (!(this.j60_1 == other.j60_1))
     return false;
-  if (!equals(this.f60_1, other.f60_1))
+  if (!equals(this.k60_1, other.k60_1))
     return false;
-  if (!equals(this.g60_1, other.g60_1))
+  if (!equals(this.l60_1, other.l60_1))
     return false;
-  if (!(this.h60_1 === other.h60_1))
+  if (!(this.m60_1 === other.m60_1))
     return false;
-  if (!equals(this.i60_1, other.i60_1))
+  if (!equals(this.n60_1, other.n60_1))
     return false;
   return true;
 };
@@ -16305,7 +18107,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_1;
-    if (tmp0_safe_receiver.a17()) {
+    if (tmp0_safe_receiver.b17()) {
       tmp_1 = tmp0_safe_receiver;
     } else {
       tmp_1 = null;
@@ -16313,7 +18115,7 @@ function parseAddress($this, obj) {
     tmp_0 = tmp_1;
   }
   var tmp1_safe_receiver = tmp_0;
-  var tmp_2 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.b17();
+  var tmp_2 = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.c17();
   var tmp_3 = obj.gc('street_address');
   var tmp2_safe_receiver = tmp_3 instanceof JsonPrimitive ? tmp_3 : null;
   var tmp_4;
@@ -16322,7 +18124,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_5;
-    if (tmp2_safe_receiver.a17()) {
+    if (tmp2_safe_receiver.b17()) {
       tmp_5 = tmp2_safe_receiver;
     } else {
       tmp_5 = null;
@@ -16330,7 +18132,7 @@ function parseAddress($this, obj) {
     tmp_4 = tmp_5;
   }
   var tmp3_safe_receiver = tmp_4;
-  var tmp_6 = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.b17();
+  var tmp_6 = tmp3_safe_receiver == null ? null : tmp3_safe_receiver.c17();
   var tmp_7 = obj.gc('locality');
   var tmp4_safe_receiver = tmp_7 instanceof JsonPrimitive ? tmp_7 : null;
   var tmp_8;
@@ -16339,7 +18141,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_9;
-    if (tmp4_safe_receiver.a17()) {
+    if (tmp4_safe_receiver.b17()) {
       tmp_9 = tmp4_safe_receiver;
     } else {
       tmp_9 = null;
@@ -16347,7 +18149,7 @@ function parseAddress($this, obj) {
     tmp_8 = tmp_9;
   }
   var tmp5_safe_receiver = tmp_8;
-  var tmp_10 = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.b17();
+  var tmp_10 = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.c17();
   var tmp_11 = obj.gc('region');
   var tmp6_safe_receiver = tmp_11 instanceof JsonPrimitive ? tmp_11 : null;
   var tmp_12;
@@ -16356,7 +18158,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_13;
-    if (tmp6_safe_receiver.a17()) {
+    if (tmp6_safe_receiver.b17()) {
       tmp_13 = tmp6_safe_receiver;
     } else {
       tmp_13 = null;
@@ -16364,7 +18166,7 @@ function parseAddress($this, obj) {
     tmp_12 = tmp_13;
   }
   var tmp7_safe_receiver = tmp_12;
-  var tmp_14 = tmp7_safe_receiver == null ? null : tmp7_safe_receiver.b17();
+  var tmp_14 = tmp7_safe_receiver == null ? null : tmp7_safe_receiver.c17();
   var tmp_15 = obj.gc('postal_code');
   var tmp8_safe_receiver = tmp_15 instanceof JsonPrimitive ? tmp_15 : null;
   var tmp_16;
@@ -16373,7 +18175,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_17;
-    if (tmp8_safe_receiver.a17()) {
+    if (tmp8_safe_receiver.b17()) {
       tmp_17 = tmp8_safe_receiver;
     } else {
       tmp_17 = null;
@@ -16381,7 +18183,7 @@ function parseAddress($this, obj) {
     tmp_16 = tmp_17;
   }
   var tmp9_safe_receiver = tmp_16;
-  var tmp_18 = tmp9_safe_receiver == null ? null : tmp9_safe_receiver.b17();
+  var tmp_18 = tmp9_safe_receiver == null ? null : tmp9_safe_receiver.c17();
   var tmp_19 = obj.gc('country');
   var tmp10_safe_receiver = tmp_19 instanceof JsonPrimitive ? tmp_19 : null;
   var tmp_20;
@@ -16390,7 +18192,7 @@ function parseAddress($this, obj) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_21;
-    if (tmp10_safe_receiver.a17()) {
+    if (tmp10_safe_receiver.b17()) {
       tmp_21 = tmp10_safe_receiver;
     } else {
       tmp_21 = null;
@@ -16398,19 +18200,19 @@ function parseAddress($this, obj) {
     tmp_20 = tmp_21;
   }
   var tmp11_safe_receiver = tmp_20;
-  return new Address(tmp_2, tmp_6, tmp_10, tmp_14, tmp_18, tmp11_safe_receiver == null ? null : tmp11_safe_receiver.b17());
+  return new Address(tmp_2, tmp_6, tmp_10, tmp_14, tmp_18, tmp11_safe_receiver == null ? null : tmp11_safe_receiver.c17());
 }
-function Companion_29() {
+function Companion_32() {
 }
-protoOf(Companion_29).d5z = function (jwtClaims) {
-  var raw = jwtClaims.s5e_1;
-  var tmp = ensureNotNull(jwtClaims.m5e_1);
-  var tmp_0 = jwtClaims.t5e('name');
-  var tmp_1 = jwtClaims.t5e('given_name');
-  var tmp_2 = jwtClaims.t5e('family_name');
-  var tmp_3 = jwtClaims.t5e('preferred_username');
-  var tmp_4 = jwtClaims.t5e('picture');
-  var tmp_5 = jwtClaims.t5e('locale');
+protoOf(Companion_32).i5z = function (jwtClaims) {
+  var raw = jwtClaims.w5e_1;
+  var tmp = ensureNotNull(jwtClaims.q5e_1);
+  var tmp_0 = jwtClaims.x5e('name');
+  var tmp_1 = jwtClaims.x5e('given_name');
+  var tmp_2 = jwtClaims.x5e('family_name');
+  var tmp_3 = jwtClaims.x5e('preferred_username');
+  var tmp_4 = jwtClaims.x5e('picture');
+  var tmp_5 = jwtClaims.x5e('locale');
   var tmp_6 = raw.j2('updated_at');
   var tmp0_safe_receiver = tmp_6 instanceof JsonPrimitive ? tmp_6 : null;
   var tmp_7;
@@ -16419,7 +18221,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_8;
-    if (!tmp0_safe_receiver.a17()) {
+    if (!tmp0_safe_receiver.b17()) {
       tmp_8 = tmp0_safe_receiver;
     } else {
       tmp_8 = null;
@@ -16428,7 +18230,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
   }
   var tmp1_safe_receiver = tmp_7;
   var tmp_9 = tmp1_safe_receiver == null ? null : get_longOrNull(tmp1_safe_receiver);
-  var tmp_10 = jwtClaims.t5e('email');
+  var tmp_10 = jwtClaims.x5e('email');
   var tmp_11 = raw.j2('email_verified');
   var tmp2_safe_receiver = tmp_11 instanceof JsonPrimitive ? tmp_11 : null;
   var tmp_12;
@@ -16437,7 +18239,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_13;
-    if (!tmp2_safe_receiver.a17()) {
+    if (!tmp2_safe_receiver.b17()) {
       tmp_13 = tmp2_safe_receiver;
     } else {
       tmp_13 = null;
@@ -16446,7 +18248,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
   }
   var tmp3_safe_receiver = tmp_12;
   var tmp_14 = tmp3_safe_receiver == null ? null : get_booleanOrNull(tmp3_safe_receiver);
-  var tmp4_safe_receiver = jwtClaims.k5j('address');
+  var tmp4_safe_receiver = jwtClaims.o5j('address');
   var tmp_15;
   if (tmp4_safe_receiver == null) {
     tmp_15 = null;
@@ -16455,7 +18257,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
     tmp_15 = parseAddress(this, tmp4_safe_receiver);
   }
   var tmp_16 = tmp_15;
-  var tmp_17 = jwtClaims.t5e('phone_number');
+  var tmp_17 = jwtClaims.x5e('phone_number');
   var tmp_18 = raw.j2('phone_number_verified');
   var tmp5_safe_receiver = tmp_18 instanceof JsonPrimitive ? tmp_18 : null;
   var tmp_19;
@@ -16464,7 +18266,7 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_20;
-    if (!tmp5_safe_receiver.a17()) {
+    if (!tmp5_safe_receiver.b17()) {
       tmp_20 = tmp5_safe_receiver;
     } else {
       tmp_20 = null;
@@ -16494,13 +18296,13 @@ protoOf(Companion_29).d5z = function (jwtClaims) {
     var tmp_22 = element.i1();
     // Inline function 'kotlin.collections.component2' call
     var value = element.j1();
-    var tmp$ret$13 = toClaimValue(value);
+    var tmp$ret$13 = toStructuredValue(value);
     destination.m2(tmp_22, tmp$ret$13);
   }
   return new UserInfo(tmp, tmp_0, tmp_1, tmp_2, tmp_3, tmp_4, tmp_5, tmp_9, tmp_10, tmp_14, tmp_16, tmp_17, tmp_21, destination);
 };
-protoOf(Companion_29).v62 = function (dto) {
-  var raw = dto.t6p_1;
+protoOf(Companion_32).a63 = function (dto) {
+  var raw = dto.v6w_1;
   var tmp = raw.gc('sub');
   var tmp0_safe_receiver = tmp instanceof JsonPrimitive ? tmp : null;
   var tmp_0;
@@ -16509,7 +18311,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_1;
-    if (tmp0_safe_receiver.a17()) {
+    if (tmp0_safe_receiver.b17()) {
       tmp_1 = tmp0_safe_receiver;
     } else {
       tmp_1 = null;
@@ -16517,7 +18319,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_0 = tmp_1;
   }
   var tmp1_safe_receiver = tmp_0;
-  var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.b17();
+  var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.c17();
   var tmp_2;
   if (tmp2_safe_receiver == null) {
     tmp_2 = null;
@@ -16547,7 +18349,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_7;
-    if (tmp4_safe_receiver.a17()) {
+    if (tmp4_safe_receiver.b17()) {
       tmp_7 = tmp4_safe_receiver;
     } else {
       tmp_7 = null;
@@ -16555,7 +18357,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_6 = tmp_7;
   }
   var tmp5_safe_receiver = tmp_6;
-  var tmp_8 = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.b17();
+  var tmp_8 = tmp5_safe_receiver == null ? null : tmp5_safe_receiver.c17();
   var tmp_9 = raw.gc('given_name');
   var tmp6_safe_receiver = tmp_9 instanceof JsonPrimitive ? tmp_9 : null;
   var tmp_10;
@@ -16564,7 +18366,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_11;
-    if (tmp6_safe_receiver.a17()) {
+    if (tmp6_safe_receiver.b17()) {
       tmp_11 = tmp6_safe_receiver;
     } else {
       tmp_11 = null;
@@ -16572,7 +18374,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_10 = tmp_11;
   }
   var tmp7_safe_receiver = tmp_10;
-  var tmp_12 = tmp7_safe_receiver == null ? null : tmp7_safe_receiver.b17();
+  var tmp_12 = tmp7_safe_receiver == null ? null : tmp7_safe_receiver.c17();
   var tmp_13 = raw.gc('family_name');
   var tmp8_safe_receiver = tmp_13 instanceof JsonPrimitive ? tmp_13 : null;
   var tmp_14;
@@ -16581,7 +18383,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_15;
-    if (tmp8_safe_receiver.a17()) {
+    if (tmp8_safe_receiver.b17()) {
       tmp_15 = tmp8_safe_receiver;
     } else {
       tmp_15 = null;
@@ -16589,7 +18391,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_14 = tmp_15;
   }
   var tmp9_safe_receiver = tmp_14;
-  var tmp_16 = tmp9_safe_receiver == null ? null : tmp9_safe_receiver.b17();
+  var tmp_16 = tmp9_safe_receiver == null ? null : tmp9_safe_receiver.c17();
   var tmp_17 = raw.gc('preferred_username');
   var tmp10_safe_receiver = tmp_17 instanceof JsonPrimitive ? tmp_17 : null;
   var tmp_18;
@@ -16598,7 +18400,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_19;
-    if (tmp10_safe_receiver.a17()) {
+    if (tmp10_safe_receiver.b17()) {
       tmp_19 = tmp10_safe_receiver;
     } else {
       tmp_19 = null;
@@ -16606,7 +18408,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_18 = tmp_19;
   }
   var tmp11_safe_receiver = tmp_18;
-  var tmp_20 = tmp11_safe_receiver == null ? null : tmp11_safe_receiver.b17();
+  var tmp_20 = tmp11_safe_receiver == null ? null : tmp11_safe_receiver.c17();
   var tmp_21 = raw.gc('picture');
   var tmp12_safe_receiver = tmp_21 instanceof JsonPrimitive ? tmp_21 : null;
   var tmp_22;
@@ -16615,7 +18417,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_23;
-    if (tmp12_safe_receiver.a17()) {
+    if (tmp12_safe_receiver.b17()) {
       tmp_23 = tmp12_safe_receiver;
     } else {
       tmp_23 = null;
@@ -16623,7 +18425,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_22 = tmp_23;
   }
   var tmp13_safe_receiver = tmp_22;
-  var tmp_24 = tmp13_safe_receiver == null ? null : tmp13_safe_receiver.b17();
+  var tmp_24 = tmp13_safe_receiver == null ? null : tmp13_safe_receiver.c17();
   var tmp_25 = raw.gc('locale');
   var tmp14_safe_receiver = tmp_25 instanceof JsonPrimitive ? tmp_25 : null;
   var tmp_26;
@@ -16632,7 +18434,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_27;
-    if (tmp14_safe_receiver.a17()) {
+    if (tmp14_safe_receiver.b17()) {
       tmp_27 = tmp14_safe_receiver;
     } else {
       tmp_27 = null;
@@ -16640,7 +18442,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_26 = tmp_27;
   }
   var tmp15_safe_receiver = tmp_26;
-  var tmp_28 = tmp15_safe_receiver == null ? null : tmp15_safe_receiver.b17();
+  var tmp_28 = tmp15_safe_receiver == null ? null : tmp15_safe_receiver.c17();
   var tmp_29 = raw.gc('updated_at');
   var tmp16_safe_receiver = tmp_29 instanceof JsonPrimitive ? tmp_29 : null;
   var tmp_30;
@@ -16649,7 +18451,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_31;
-    if (!tmp16_safe_receiver.a17()) {
+    if (!tmp16_safe_receiver.b17()) {
       tmp_31 = tmp16_safe_receiver;
     } else {
       tmp_31 = null;
@@ -16666,7 +18468,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_35;
-    if (tmp18_safe_receiver.a17()) {
+    if (tmp18_safe_receiver.b17()) {
       tmp_35 = tmp18_safe_receiver;
     } else {
       tmp_35 = null;
@@ -16674,7 +18476,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_34 = tmp_35;
   }
   var tmp19_safe_receiver = tmp_34;
-  var tmp_36 = tmp19_safe_receiver == null ? null : tmp19_safe_receiver.b17();
+  var tmp_36 = tmp19_safe_receiver == null ? null : tmp19_safe_receiver.c17();
   var tmp_37 = raw.gc('email_verified');
   var tmp20_safe_receiver = tmp_37 instanceof JsonPrimitive ? tmp_37 : null;
   var tmp_38;
@@ -16683,7 +18485,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_39;
-    if (!tmp20_safe_receiver.a17()) {
+    if (!tmp20_safe_receiver.b17()) {
       tmp_39 = tmp20_safe_receiver;
     } else {
       tmp_39 = null;
@@ -16710,7 +18512,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_46;
-    if (tmp23_safe_receiver.a17()) {
+    if (tmp23_safe_receiver.b17()) {
       tmp_46 = tmp23_safe_receiver;
     } else {
       tmp_46 = null;
@@ -16718,7 +18520,7 @@ protoOf(Companion_29).v62 = function (dto) {
     tmp_45 = tmp_46;
   }
   var tmp24_safe_receiver = tmp_45;
-  var tmp_47 = tmp24_safe_receiver == null ? null : tmp24_safe_receiver.b17();
+  var tmp_47 = tmp24_safe_receiver == null ? null : tmp24_safe_receiver.c17();
   var tmp_48 = raw.gc('phone_number_verified');
   var tmp25_safe_receiver = tmp_48 instanceof JsonPrimitive ? tmp_48 : null;
   var tmp_49;
@@ -16727,7 +18529,7 @@ protoOf(Companion_29).v62 = function (dto) {
   } else {
     // Inline function 'kotlin.takeIf' call
     var tmp_50;
-    if (!tmp25_safe_receiver.a17()) {
+    if (!tmp25_safe_receiver.b17()) {
       tmp_50 = tmp25_safe_receiver;
     } else {
       tmp_50 = null;
@@ -16757,23 +18559,23 @@ protoOf(Companion_29).v62 = function (dto) {
     var tmp_52 = element.i1();
     // Inline function 'kotlin.collections.component2' call
     var value = element.j1();
-    var tmp$ret$33 = toClaimValue(value);
+    var tmp$ret$33 = toStructuredValue(value);
     destination.m2(tmp_52, tmp$ret$33);
   }
   return new UserInfo(subject, tmp_8, tmp_12, tmp_16, tmp_20, tmp_24, tmp_28, tmp_32, tmp_36, tmp_40, tmp_43, tmp_47, tmp_51, destination);
 };
-protoOf(Companion_29).u6p = function (dto) {
-  var tmp0_safe_receiver = dto.f6q_1;
+protoOf(Companion_32).w6w = function (dto) {
+  var tmp0_safe_receiver = dto.h6x_1;
   var tmp;
   if (tmp0_safe_receiver == null) {
     tmp = null;
   } else {
     // Inline function 'kotlin.let' call
-    tmp = new Address(tmp0_safe_receiver.j6q_1, tmp0_safe_receiver.k6q_1, tmp0_safe_receiver.l6q_1, tmp0_safe_receiver.m6q_1, tmp0_safe_receiver.n6q_1, tmp0_safe_receiver.o6q_1);
+    tmp = new Address(tmp0_safe_receiver.l6x_1, tmp0_safe_receiver.m6x_1, tmp0_safe_receiver.n6x_1, tmp0_safe_receiver.o6x_1, tmp0_safe_receiver.p6x_1, tmp0_safe_receiver.q6x_1);
   }
   var tmp_0 = tmp;
   // Inline function 'kotlin.collections.mapValues' call
-  var this_0 = dto.i6q_1;
+  var this_0 = dto.k6x_1;
   // Inline function 'kotlin.collections.mapValuesTo' call
   var destination = LinkedHashMap_init_$Create$_0(mapCapacity(this_0.z()));
   // Inline function 'kotlin.collections.associateByTo' call
@@ -16783,14 +18585,14 @@ protoOf(Companion_29).u6p = function (dto) {
     var tmp_1 = element.i1();
     // Inline function 'kotlin.collections.component2' call
     var value = element.j1();
-    var tmp$ret$4 = toClaimValue(value);
+    var tmp$ret$4 = toStructuredValue(value);
     destination.m2(tmp_1, tmp$ret$4);
   }
-  return new UserInfo(dto.v6p_1, dto.w6p_1, dto.x6p_1, dto.y6p_1, dto.z6p_1, dto.a6q_1, dto.b6q_1, dto.c6q_1, dto.d6q_1, dto.e6q_1, tmp_0, dto.g6q_1, dto.h6q_1, destination);
+  return new UserInfo(dto.x6w_1, dto.y6w_1, dto.z6w_1, dto.a6x_1, dto.b6x_1, dto.c6x_1, dto.d6x_1, dto.e6x_1, dto.f6x_1, dto.g6x_1, tmp_0, dto.i6x_1, dto.j6x_1, destination);
 };
-var Companion_instance_30;
-function Companion_getInstance_37() {
-  return Companion_instance_30;
+var Companion_instance_34;
+function Companion_getInstance_40() {
+  return Companion_instance_34;
 }
 function UserInfo(subject, name, givenName, familyName, preferredUsername, picture, locale, updatedAt, email, emailVerified, address, phoneNumber, phoneNumberVerified, rawClaims) {
   name = name === VOID ? null : name;
@@ -16806,39 +18608,39 @@ function UserInfo(subject, name, givenName, familyName, preferredUsername, pictu
   phoneNumber = phoneNumber === VOID ? null : phoneNumber;
   phoneNumberVerified = phoneNumberVerified === VOID ? null : phoneNumberVerified;
   rawClaims = rawClaims === VOID ? emptyMap() : rawClaims;
-  this.w62_1 = subject;
-  this.x62_1 = name;
-  this.y62_1 = givenName;
-  this.z62_1 = familyName;
-  this.a63_1 = preferredUsername;
-  this.b63_1 = picture;
-  this.c63_1 = locale;
-  this.d63_1 = updatedAt;
-  this.e63_1 = email;
-  this.f63_1 = emailVerified;
-  this.g63_1 = address;
-  this.h63_1 = phoneNumber;
-  this.i63_1 = phoneNumberVerified;
-  this.j63_1 = rawClaims;
+  this.b63_1 = subject;
+  this.c63_1 = name;
+  this.d63_1 = givenName;
+  this.e63_1 = familyName;
+  this.f63_1 = preferredUsername;
+  this.g63_1 = picture;
+  this.h63_1 = locale;
+  this.i63_1 = updatedAt;
+  this.j63_1 = email;
+  this.k63_1 = emailVerified;
+  this.l63_1 = address;
+  this.m63_1 = phoneNumber;
+  this.n63_1 = phoneNumberVerified;
+  this.o63_1 = rawClaims;
 }
 protoOf(UserInfo).toString = function () {
-  return 'UserInfo(subject=' + this.w62_1 + ', name=' + this.x62_1 + ', givenName=' + this.y62_1 + ', familyName=' + this.z62_1 + ', preferredUsername=' + this.a63_1 + ', picture=' + this.b63_1 + ', locale=' + this.c63_1 + ', updatedAt=' + toString_0(this.d63_1) + ', email=' + this.e63_1 + ', emailVerified=' + this.f63_1 + ', address=' + toString_0(this.g63_1) + ', phoneNumber=' + this.h63_1 + ', phoneNumberVerified=' + this.i63_1 + ', rawClaims=' + toString(this.j63_1) + ')';
+  return 'UserInfo(subject=' + this.b63_1 + ', name=' + this.c63_1 + ', givenName=' + this.d63_1 + ', familyName=' + this.e63_1 + ', preferredUsername=' + this.f63_1 + ', picture=' + this.g63_1 + ', locale=' + this.h63_1 + ', updatedAt=' + toString_0(this.i63_1) + ', email=' + this.j63_1 + ', emailVerified=' + this.k63_1 + ', address=' + toString_0(this.l63_1) + ', phoneNumber=' + this.m63_1 + ', phoneNumberVerified=' + this.n63_1 + ', rawClaims=' + toString(this.o63_1) + ')';
 };
 protoOf(UserInfo).hashCode = function () {
-  var result = getStringHashCode(this.w62_1);
-  result = imul(result, 31) + (this.x62_1 == null ? 0 : getStringHashCode(this.x62_1)) | 0;
-  result = imul(result, 31) + (this.y62_1 == null ? 0 : getStringHashCode(this.y62_1)) | 0;
-  result = imul(result, 31) + (this.z62_1 == null ? 0 : getStringHashCode(this.z62_1)) | 0;
-  result = imul(result, 31) + (this.a63_1 == null ? 0 : getStringHashCode(this.a63_1)) | 0;
-  result = imul(result, 31) + (this.b63_1 == null ? 0 : getStringHashCode(this.b63_1)) | 0;
+  var result = getStringHashCode(this.b63_1);
   result = imul(result, 31) + (this.c63_1 == null ? 0 : getStringHashCode(this.c63_1)) | 0;
-  result = imul(result, 31) + (this.d63_1 == null ? 0 : this.d63_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.d63_1 == null ? 0 : getStringHashCode(this.d63_1)) | 0;
   result = imul(result, 31) + (this.e63_1 == null ? 0 : getStringHashCode(this.e63_1)) | 0;
-  result = imul(result, 31) + (this.f63_1 == null ? 0 : getBooleanHashCode(this.f63_1)) | 0;
-  result = imul(result, 31) + (this.g63_1 == null ? 0 : this.g63_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.f63_1 == null ? 0 : getStringHashCode(this.f63_1)) | 0;
+  result = imul(result, 31) + (this.g63_1 == null ? 0 : getStringHashCode(this.g63_1)) | 0;
   result = imul(result, 31) + (this.h63_1 == null ? 0 : getStringHashCode(this.h63_1)) | 0;
-  result = imul(result, 31) + (this.i63_1 == null ? 0 : getBooleanHashCode(this.i63_1)) | 0;
-  result = imul(result, 31) + hashCode(this.j63_1) | 0;
+  result = imul(result, 31) + (this.i63_1 == null ? 0 : this.i63_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.j63_1 == null ? 0 : getStringHashCode(this.j63_1)) | 0;
+  result = imul(result, 31) + (this.k63_1 == null ? 0 : getBooleanHashCode(this.k63_1)) | 0;
+  result = imul(result, 31) + (this.l63_1 == null ? 0 : this.l63_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.m63_1 == null ? 0 : getStringHashCode(this.m63_1)) | 0;
+  result = imul(result, 31) + (this.n63_1 == null ? 0 : getBooleanHashCode(this.n63_1)) | 0;
+  result = imul(result, 31) + hashCode(this.o63_1) | 0;
   return result;
 };
 protoOf(UserInfo).equals = function (other) {
@@ -16846,49 +18648,49 @@ protoOf(UserInfo).equals = function (other) {
     return true;
   if (!(other instanceof UserInfo))
     return false;
-  if (!(this.w62_1 === other.w62_1))
-    return false;
-  if (!(this.x62_1 == other.x62_1))
-    return false;
-  if (!(this.y62_1 == other.y62_1))
-    return false;
-  if (!(this.z62_1 == other.z62_1))
-    return false;
-  if (!(this.a63_1 == other.a63_1))
-    return false;
-  if (!(this.b63_1 == other.b63_1))
+  if (!(this.b63_1 === other.b63_1))
     return false;
   if (!(this.c63_1 == other.c63_1))
     return false;
-  if (!equals(this.d63_1, other.d63_1))
+  if (!(this.d63_1 == other.d63_1))
     return false;
   if (!(this.e63_1 == other.e63_1))
     return false;
   if (!(this.f63_1 == other.f63_1))
     return false;
-  if (!equals(this.g63_1, other.g63_1))
+  if (!(this.g63_1 == other.g63_1))
     return false;
   if (!(this.h63_1 == other.h63_1))
     return false;
-  if (!(this.i63_1 == other.i63_1))
+  if (!equals(this.i63_1, other.i63_1))
     return false;
-  if (!equals(this.j63_1, other.j63_1))
+  if (!(this.j63_1 == other.j63_1))
+    return false;
+  if (!(this.k63_1 == other.k63_1))
+    return false;
+  if (!equals(this.l63_1, other.l63_1))
+    return false;
+  if (!(this.m63_1 == other.m63_1))
+    return false;
+  if (!(this.n63_1 == other.n63_1))
+    return false;
+  if (!equals(this.o63_1, other.o63_1))
     return false;
   return true;
 };
 function toDto(_this__u8e3s4) {
   _init_properties_UserInfo_kt__fjatl3();
-  var tmp0_safe_receiver = _this__u8e3s4.g63_1;
+  var tmp0_safe_receiver = _this__u8e3s4.l63_1;
   var tmp;
   if (tmp0_safe_receiver == null) {
     tmp = null;
   } else {
     // Inline function 'kotlin.let' call
-    tmp = new AddressDto(tmp0_safe_receiver.c6o_1, tmp0_safe_receiver.d6o_1, tmp0_safe_receiver.e6o_1, tmp0_safe_receiver.f6o_1, tmp0_safe_receiver.g6o_1, tmp0_safe_receiver.h6o_1);
+    tmp = new AddressDto(tmp0_safe_receiver.c6v_1, tmp0_safe_receiver.d6v_1, tmp0_safe_receiver.e6v_1, tmp0_safe_receiver.f6v_1, tmp0_safe_receiver.g6v_1, tmp0_safe_receiver.h6v_1);
   }
   var tmp_0 = tmp;
   // Inline function 'kotlin.collections.mapValues' call
-  var this_0 = _this__u8e3s4.j63_1;
+  var this_0 = _this__u8e3s4.o63_1;
   // Inline function 'kotlin.collections.mapValuesTo' call
   var destination = LinkedHashMap_init_$Create$_0(mapCapacity(this_0.z()));
   // Inline function 'kotlin.collections.associateByTo' call
@@ -16901,7 +18703,7 @@ function toDto(_this__u8e3s4) {
     var tmp$ret$4 = toJsonElement(value);
     destination.m2(tmp_1, tmp$ret$4);
   }
-  return new UserInfoDto(_this__u8e3s4.w62_1, _this__u8e3s4.x62_1, _this__u8e3s4.y62_1, _this__u8e3s4.z62_1, _this__u8e3s4.a63_1, _this__u8e3s4.b63_1, _this__u8e3s4.c63_1, _this__u8e3s4.d63_1, _this__u8e3s4.e63_1, _this__u8e3s4.f63_1, tmp_0, _this__u8e3s4.h63_1, _this__u8e3s4.i63_1, new JsonObject(destination));
+  return new UserInfoDto(_this__u8e3s4.b63_1, _this__u8e3s4.c63_1, _this__u8e3s4.d63_1, _this__u8e3s4.e63_1, _this__u8e3s4.f63_1, _this__u8e3s4.g63_1, _this__u8e3s4.h63_1, _this__u8e3s4.i63_1, _this__u8e3s4.j63_1, _this__u8e3s4.k63_1, tmp_0, _this__u8e3s4.m63_1, _this__u8e3s4.n63_1, new JsonObject(destination));
 }
 var properties_initialized_UserInfo_kt_wuhn2d;
 function _init_properties_UserInfo_kt__fjatl3() {
@@ -16910,11 +18712,11 @@ function _init_properties_UserInfo_kt__fjatl3() {
     STANDARD_OIDC_TYPED_CLAIMS = setOf(['azp', 'nonce', 'auth_time', 'sid', 'acr', 'amr', 'name', 'given_name', 'family_name', 'preferred_username', 'picture', 'locale', 'updated_at', 'email', 'email_verified', 'address', 'phone_number', 'phone_number_verified']);
   }
 }
-function Companion_30() {
+function Companion_33() {
 }
-var Companion_instance_31;
-function Companion_getInstance_38() {
-  return Companion_instance_31;
+var Companion_instance_35;
+function Companion_getInstance_41() {
+  return Companion_instance_35;
 }
 function $serializer_16() {
   $serializer_instance_16 = this;
@@ -16933,58 +18735,58 @@ function $serializer_16() {
   tmp0_serialDesc.dw('phone_number', true);
   tmp0_serialDesc.dw('phone_number_verified', true);
   tmp0_serialDesc.dw('custom_claims', true);
-  this.p6q_1 = tmp0_serialDesc;
+  this.r6x_1 = tmp0_serialDesc;
 }
-protoOf($serializer_16).q6q = function (encoder, value) {
-  var tmp0_desc = this.p6q_1;
+protoOf($serializer_16).s6x = function (encoder, value) {
+  var tmp0_desc = this.r6x_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.v6p_1);
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.w6p_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.w6p_1);
+  tmp1_output.mq(tmp0_desc, 0, value.x6w_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.y6w_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.y6w_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.x6p_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.x6p_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.z6w_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.z6w_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.y6p_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.y6p_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.a6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.a6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.z6p_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.z6p_1);
+  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.b6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.b6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.a6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.a6q_1);
+  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.c6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.c6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.b6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.b6q_1);
+  if (tmp1_output.uq(tmp0_desc, 6) ? true : !(value.d6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 6, StringSerializer_getInstance(), value.d6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.c6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 7, LongSerializer_getInstance(), value.c6q_1);
+  if (tmp1_output.uq(tmp0_desc, 7) ? true : !(value.e6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 7, LongSerializer_getInstance(), value.e6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.d6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.d6q_1);
+  if (tmp1_output.uq(tmp0_desc, 8) ? true : !(value.f6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 8, StringSerializer_getInstance(), value.f6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.e6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 9, BooleanSerializer_getInstance(), value.e6q_1);
+  if (tmp1_output.uq(tmp0_desc, 9) ? true : !(value.g6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 9, BooleanSerializer_getInstance(), value.g6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.f6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 10, $serializer_getInstance_17(), value.f6q_1);
+  if (tmp1_output.uq(tmp0_desc, 10) ? true : !(value.h6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 10, $serializer_getInstance_17(), value.h6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.g6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 11, StringSerializer_getInstance(), value.g6q_1);
+  if (tmp1_output.uq(tmp0_desc, 11) ? true : !(value.i6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 11, StringSerializer_getInstance(), value.i6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.h6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 12, BooleanSerializer_getInstance(), value.h6q_1);
+  if (tmp1_output.uq(tmp0_desc, 12) ? true : !(value.j6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 12, BooleanSerializer_getInstance(), value.j6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 13) ? true : !value.i6q_1.equals(new JsonObject(emptyMap()))) {
-    tmp1_output.oq(tmp0_desc, 13, JsonObjectSerializer_getInstance(), value.i6q_1);
+  if (tmp1_output.uq(tmp0_desc, 13) ? true : !value.k6x_1.equals(new JsonObject(emptyMap()))) {
+    tmp1_output.oq(tmp0_desc, 13, JsonObjectSerializer_getInstance(), value.k6x_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_16).am = function (encoder, value) {
-  return this.q6q(encoder, value instanceof UserInfoDto ? value : THROW_CCE());
+  return this.s6x(encoder, value instanceof UserInfoDto ? value : THROW_CCE());
 };
 protoOf($serializer_16).bm = function (decoder) {
-  var tmp0_desc = this.p6q_1;
+  var tmp0_desc = this.r6x_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -17103,7 +18905,7 @@ protoOf($serializer_16).bm = function (decoder) {
   return UserInfoDto_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, tmp14_local10, tmp15_local11, tmp16_local12, tmp17_local13, null);
 };
 protoOf($serializer_16).zl = function () {
-  return this.p6q_1;
+  return this.r6x_1;
 };
 protoOf($serializer_16).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -17119,61 +18921,61 @@ function $serializer_getInstance_16() {
 }
 function UserInfoDto_init_$Init$(seen0, subject, name, givenName, familyName, preferredUsername, picture, locale, updatedAt, email, emailVerified, address, phoneNumber, phoneNumberVerified, customClaims, serializationConstructorMarker, $this) {
   if (!(1 === (1 & seen0))) {
-    throwMissingFieldException(seen0, 1, $serializer_getInstance_16().p6q_1);
+    throwMissingFieldException(seen0, 1, $serializer_getInstance_16().r6x_1);
   }
-  $this.v6p_1 = subject;
+  $this.x6w_1 = subject;
   if (0 === (seen0 & 2))
-    $this.w6p_1 = null;
+    $this.y6w_1 = null;
   else
-    $this.w6p_1 = name;
+    $this.y6w_1 = name;
   if (0 === (seen0 & 4))
-    $this.x6p_1 = null;
+    $this.z6w_1 = null;
   else
-    $this.x6p_1 = givenName;
+    $this.z6w_1 = givenName;
   if (0 === (seen0 & 8))
-    $this.y6p_1 = null;
+    $this.a6x_1 = null;
   else
-    $this.y6p_1 = familyName;
+    $this.a6x_1 = familyName;
   if (0 === (seen0 & 16))
-    $this.z6p_1 = null;
+    $this.b6x_1 = null;
   else
-    $this.z6p_1 = preferredUsername;
+    $this.b6x_1 = preferredUsername;
   if (0 === (seen0 & 32))
-    $this.a6q_1 = null;
+    $this.c6x_1 = null;
   else
-    $this.a6q_1 = picture;
+    $this.c6x_1 = picture;
   if (0 === (seen0 & 64))
-    $this.b6q_1 = null;
+    $this.d6x_1 = null;
   else
-    $this.b6q_1 = locale;
+    $this.d6x_1 = locale;
   if (0 === (seen0 & 128))
-    $this.c6q_1 = null;
+    $this.e6x_1 = null;
   else
-    $this.c6q_1 = updatedAt;
+    $this.e6x_1 = updatedAt;
   if (0 === (seen0 & 256))
-    $this.d6q_1 = null;
+    $this.f6x_1 = null;
   else
-    $this.d6q_1 = email;
+    $this.f6x_1 = email;
   if (0 === (seen0 & 512))
-    $this.e6q_1 = null;
+    $this.g6x_1 = null;
   else
-    $this.e6q_1 = emailVerified;
+    $this.g6x_1 = emailVerified;
   if (0 === (seen0 & 1024))
-    $this.f6q_1 = null;
+    $this.h6x_1 = null;
   else
-    $this.f6q_1 = address;
+    $this.h6x_1 = address;
   if (0 === (seen0 & 2048))
-    $this.g6q_1 = null;
+    $this.i6x_1 = null;
   else
-    $this.g6q_1 = phoneNumber;
+    $this.i6x_1 = phoneNumber;
   if (0 === (seen0 & 4096))
-    $this.h6q_1 = null;
+    $this.j6x_1 = null;
   else
-    $this.h6q_1 = phoneNumberVerified;
+    $this.j6x_1 = phoneNumberVerified;
   if (0 === (seen0 & 8192))
-    $this.i6q_1 = new JsonObject(emptyMap());
+    $this.k6x_1 = new JsonObject(emptyMap());
   else
-    $this.i6q_1 = customClaims;
+    $this.k6x_1 = customClaims;
   return $this;
 }
 function UserInfoDto_init_$Create$(seen0, subject, name, givenName, familyName, preferredUsername, picture, locale, updatedAt, email, emailVerified, address, phoneNumber, phoneNumberVerified, customClaims, serializationConstructorMarker) {
@@ -17193,39 +18995,39 @@ function UserInfoDto(subject, name, givenName, familyName, preferredUsername, pi
   phoneNumber = phoneNumber === VOID ? null : phoneNumber;
   phoneNumberVerified = phoneNumberVerified === VOID ? null : phoneNumberVerified;
   customClaims = customClaims === VOID ? new JsonObject(emptyMap()) : customClaims;
-  this.v6p_1 = subject;
-  this.w6p_1 = name;
-  this.x6p_1 = givenName;
-  this.y6p_1 = familyName;
-  this.z6p_1 = preferredUsername;
-  this.a6q_1 = picture;
-  this.b6q_1 = locale;
-  this.c6q_1 = updatedAt;
-  this.d6q_1 = email;
-  this.e6q_1 = emailVerified;
-  this.f6q_1 = address;
-  this.g6q_1 = phoneNumber;
-  this.h6q_1 = phoneNumberVerified;
-  this.i6q_1 = customClaims;
+  this.x6w_1 = subject;
+  this.y6w_1 = name;
+  this.z6w_1 = givenName;
+  this.a6x_1 = familyName;
+  this.b6x_1 = preferredUsername;
+  this.c6x_1 = picture;
+  this.d6x_1 = locale;
+  this.e6x_1 = updatedAt;
+  this.f6x_1 = email;
+  this.g6x_1 = emailVerified;
+  this.h6x_1 = address;
+  this.i6x_1 = phoneNumber;
+  this.j6x_1 = phoneNumberVerified;
+  this.k6x_1 = customClaims;
 }
 protoOf(UserInfoDto).toString = function () {
-  return 'UserInfoDto(subject=' + this.v6p_1 + ', name=' + this.w6p_1 + ', givenName=' + this.x6p_1 + ', familyName=' + this.y6p_1 + ', preferredUsername=' + this.z6p_1 + ', picture=' + this.a6q_1 + ', locale=' + this.b6q_1 + ', updatedAt=' + toString_0(this.c6q_1) + ', email=' + this.d6q_1 + ', emailVerified=' + this.e6q_1 + ', address=' + toString_0(this.f6q_1) + ', phoneNumber=' + this.g6q_1 + ', phoneNumberVerified=' + this.h6q_1 + ', customClaims=' + this.i6q_1.toString() + ')';
+  return 'UserInfoDto(subject=' + this.x6w_1 + ', name=' + this.y6w_1 + ', givenName=' + this.z6w_1 + ', familyName=' + this.a6x_1 + ', preferredUsername=' + this.b6x_1 + ', picture=' + this.c6x_1 + ', locale=' + this.d6x_1 + ', updatedAt=' + toString_0(this.e6x_1) + ', email=' + this.f6x_1 + ', emailVerified=' + this.g6x_1 + ', address=' + toString_0(this.h6x_1) + ', phoneNumber=' + this.i6x_1 + ', phoneNumberVerified=' + this.j6x_1 + ', customClaims=' + this.k6x_1.toString() + ')';
 };
 protoOf(UserInfoDto).hashCode = function () {
-  var result = getStringHashCode(this.v6p_1);
-  result = imul(result, 31) + (this.w6p_1 == null ? 0 : getStringHashCode(this.w6p_1)) | 0;
-  result = imul(result, 31) + (this.x6p_1 == null ? 0 : getStringHashCode(this.x6p_1)) | 0;
-  result = imul(result, 31) + (this.y6p_1 == null ? 0 : getStringHashCode(this.y6p_1)) | 0;
-  result = imul(result, 31) + (this.z6p_1 == null ? 0 : getStringHashCode(this.z6p_1)) | 0;
-  result = imul(result, 31) + (this.a6q_1 == null ? 0 : getStringHashCode(this.a6q_1)) | 0;
-  result = imul(result, 31) + (this.b6q_1 == null ? 0 : getStringHashCode(this.b6q_1)) | 0;
-  result = imul(result, 31) + (this.c6q_1 == null ? 0 : this.c6q_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.d6q_1 == null ? 0 : getStringHashCode(this.d6q_1)) | 0;
-  result = imul(result, 31) + (this.e6q_1 == null ? 0 : getBooleanHashCode(this.e6q_1)) | 0;
-  result = imul(result, 31) + (this.f6q_1 == null ? 0 : this.f6q_1.hashCode()) | 0;
-  result = imul(result, 31) + (this.g6q_1 == null ? 0 : getStringHashCode(this.g6q_1)) | 0;
-  result = imul(result, 31) + (this.h6q_1 == null ? 0 : getBooleanHashCode(this.h6q_1)) | 0;
-  result = imul(result, 31) + this.i6q_1.hashCode() | 0;
+  var result = getStringHashCode(this.x6w_1);
+  result = imul(result, 31) + (this.y6w_1 == null ? 0 : getStringHashCode(this.y6w_1)) | 0;
+  result = imul(result, 31) + (this.z6w_1 == null ? 0 : getStringHashCode(this.z6w_1)) | 0;
+  result = imul(result, 31) + (this.a6x_1 == null ? 0 : getStringHashCode(this.a6x_1)) | 0;
+  result = imul(result, 31) + (this.b6x_1 == null ? 0 : getStringHashCode(this.b6x_1)) | 0;
+  result = imul(result, 31) + (this.c6x_1 == null ? 0 : getStringHashCode(this.c6x_1)) | 0;
+  result = imul(result, 31) + (this.d6x_1 == null ? 0 : getStringHashCode(this.d6x_1)) | 0;
+  result = imul(result, 31) + (this.e6x_1 == null ? 0 : this.e6x_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.f6x_1 == null ? 0 : getStringHashCode(this.f6x_1)) | 0;
+  result = imul(result, 31) + (this.g6x_1 == null ? 0 : getBooleanHashCode(this.g6x_1)) | 0;
+  result = imul(result, 31) + (this.h6x_1 == null ? 0 : this.h6x_1.hashCode()) | 0;
+  result = imul(result, 31) + (this.i6x_1 == null ? 0 : getStringHashCode(this.i6x_1)) | 0;
+  result = imul(result, 31) + (this.j6x_1 == null ? 0 : getBooleanHashCode(this.j6x_1)) | 0;
+  result = imul(result, 31) + this.k6x_1.hashCode() | 0;
   return result;
 };
 protoOf(UserInfoDto).equals = function (other) {
@@ -17233,41 +19035,41 @@ protoOf(UserInfoDto).equals = function (other) {
     return true;
   if (!(other instanceof UserInfoDto))
     return false;
-  if (!(this.v6p_1 === other.v6p_1))
+  if (!(this.x6w_1 === other.x6w_1))
     return false;
-  if (!(this.w6p_1 == other.w6p_1))
+  if (!(this.y6w_1 == other.y6w_1))
     return false;
-  if (!(this.x6p_1 == other.x6p_1))
+  if (!(this.z6w_1 == other.z6w_1))
     return false;
-  if (!(this.y6p_1 == other.y6p_1))
+  if (!(this.a6x_1 == other.a6x_1))
     return false;
-  if (!(this.z6p_1 == other.z6p_1))
+  if (!(this.b6x_1 == other.b6x_1))
     return false;
-  if (!(this.a6q_1 == other.a6q_1))
+  if (!(this.c6x_1 == other.c6x_1))
     return false;
-  if (!(this.b6q_1 == other.b6q_1))
+  if (!(this.d6x_1 == other.d6x_1))
     return false;
-  if (!equals(this.c6q_1, other.c6q_1))
+  if (!equals(this.e6x_1, other.e6x_1))
     return false;
-  if (!(this.d6q_1 == other.d6q_1))
+  if (!(this.f6x_1 == other.f6x_1))
     return false;
-  if (!(this.e6q_1 == other.e6q_1))
+  if (!(this.g6x_1 == other.g6x_1))
     return false;
-  if (!equals(this.f6q_1, other.f6q_1))
+  if (!equals(this.h6x_1, other.h6x_1))
     return false;
-  if (!(this.g6q_1 == other.g6q_1))
+  if (!(this.i6x_1 == other.i6x_1))
     return false;
-  if (!(this.h6q_1 == other.h6q_1))
+  if (!(this.j6x_1 == other.j6x_1))
     return false;
-  if (!this.i6q_1.equals(other.i6q_1))
+  if (!this.k6x_1.equals(other.k6x_1))
     return false;
   return true;
 };
-function Companion_31() {
+function Companion_34() {
 }
-var Companion_instance_32;
-function Companion_getInstance_39() {
-  return Companion_instance_32;
+var Companion_instance_36;
+function Companion_getInstance_42() {
+  return Companion_instance_36;
 }
 function $serializer_17() {
   $serializer_instance_17 = this;
@@ -17278,36 +19080,36 @@ function $serializer_17() {
   tmp0_serialDesc.dw('region', true);
   tmp0_serialDesc.dw('postal_code', true);
   tmp0_serialDesc.dw('country', true);
-  this.r6q_1 = tmp0_serialDesc;
+  this.t6x_1 = tmp0_serialDesc;
 }
-protoOf($serializer_17).s6q = function (encoder, value) {
-  var tmp0_desc = this.r6q_1;
+protoOf($serializer_17).u6x = function (encoder, value) {
+  var tmp0_desc = this.t6x_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  if (tmp1_output.uq(tmp0_desc, 0) ? true : !(value.j6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 0, StringSerializer_getInstance(), value.j6q_1);
+  if (tmp1_output.uq(tmp0_desc, 0) ? true : !(value.l6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 0, StringSerializer_getInstance(), value.l6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.k6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.k6q_1);
+  if (tmp1_output.uq(tmp0_desc, 1) ? true : !(value.m6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 1, StringSerializer_getInstance(), value.m6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.l6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.l6q_1);
+  if (tmp1_output.uq(tmp0_desc, 2) ? true : !(value.n6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 2, StringSerializer_getInstance(), value.n6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.m6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.m6q_1);
+  if (tmp1_output.uq(tmp0_desc, 3) ? true : !(value.o6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 3, StringSerializer_getInstance(), value.o6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.n6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.n6q_1);
+  if (tmp1_output.uq(tmp0_desc, 4) ? true : !(value.p6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 4, StringSerializer_getInstance(), value.p6x_1);
   }
-  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.o6q_1 == null)) {
-    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.o6q_1);
+  if (tmp1_output.uq(tmp0_desc, 5) ? true : !(value.q6x_1 == null)) {
+    tmp1_output.qq(tmp0_desc, 5, StringSerializer_getInstance(), value.q6x_1);
   }
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_17).am = function (encoder, value) {
-  return this.s6q(encoder, value instanceof AddressDto ? value : THROW_CCE());
+  return this.u6x(encoder, value instanceof AddressDto ? value : THROW_CCE());
 };
 protoOf($serializer_17).bm = function (decoder) {
-  var tmp0_desc = this.r6q_1;
+  var tmp0_desc = this.t6x_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -17370,7 +19172,7 @@ protoOf($serializer_17).bm = function (decoder) {
   return AddressDto_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
 };
 protoOf($serializer_17).zl = function () {
-  return this.r6q_1;
+  return this.t6x_1;
 };
 protoOf($serializer_17).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -17386,32 +19188,32 @@ function $serializer_getInstance_17() {
 }
 function AddressDto_init_$Init$(seen0, formatted, streetAddress, locality, region, postalCode, country, serializationConstructorMarker, $this) {
   if (!(0 === (0 & seen0))) {
-    throwMissingFieldException(seen0, 0, $serializer_getInstance_17().r6q_1);
+    throwMissingFieldException(seen0, 0, $serializer_getInstance_17().t6x_1);
   }
   if (0 === (seen0 & 1))
-    $this.j6q_1 = null;
+    $this.l6x_1 = null;
   else
-    $this.j6q_1 = formatted;
+    $this.l6x_1 = formatted;
   if (0 === (seen0 & 2))
-    $this.k6q_1 = null;
+    $this.m6x_1 = null;
   else
-    $this.k6q_1 = streetAddress;
+    $this.m6x_1 = streetAddress;
   if (0 === (seen0 & 4))
-    $this.l6q_1 = null;
+    $this.n6x_1 = null;
   else
-    $this.l6q_1 = locality;
+    $this.n6x_1 = locality;
   if (0 === (seen0 & 8))
-    $this.m6q_1 = null;
+    $this.o6x_1 = null;
   else
-    $this.m6q_1 = region;
+    $this.o6x_1 = region;
   if (0 === (seen0 & 16))
-    $this.n6q_1 = null;
+    $this.p6x_1 = null;
   else
-    $this.n6q_1 = postalCode;
+    $this.p6x_1 = postalCode;
   if (0 === (seen0 & 32))
-    $this.o6q_1 = null;
+    $this.q6x_1 = null;
   else
-    $this.o6q_1 = country;
+    $this.q6x_1 = country;
   return $this;
 }
 function AddressDto_init_$Create$(seen0, formatted, streetAddress, locality, region, postalCode, country, serializationConstructorMarker) {
@@ -17424,23 +19226,23 @@ function AddressDto(formatted, streetAddress, locality, region, postalCode, coun
   region = region === VOID ? null : region;
   postalCode = postalCode === VOID ? null : postalCode;
   country = country === VOID ? null : country;
-  this.j6q_1 = formatted;
-  this.k6q_1 = streetAddress;
-  this.l6q_1 = locality;
-  this.m6q_1 = region;
-  this.n6q_1 = postalCode;
-  this.o6q_1 = country;
+  this.l6x_1 = formatted;
+  this.m6x_1 = streetAddress;
+  this.n6x_1 = locality;
+  this.o6x_1 = region;
+  this.p6x_1 = postalCode;
+  this.q6x_1 = country;
 }
 protoOf(AddressDto).toString = function () {
-  return 'AddressDto(formatted=' + this.j6q_1 + ', streetAddress=' + this.k6q_1 + ', locality=' + this.l6q_1 + ', region=' + this.m6q_1 + ', postalCode=' + this.n6q_1 + ', country=' + this.o6q_1 + ')';
+  return 'AddressDto(formatted=' + this.l6x_1 + ', streetAddress=' + this.m6x_1 + ', locality=' + this.n6x_1 + ', region=' + this.o6x_1 + ', postalCode=' + this.p6x_1 + ', country=' + this.q6x_1 + ')';
 };
 protoOf(AddressDto).hashCode = function () {
-  var result = this.j6q_1 == null ? 0 : getStringHashCode(this.j6q_1);
-  result = imul(result, 31) + (this.k6q_1 == null ? 0 : getStringHashCode(this.k6q_1)) | 0;
-  result = imul(result, 31) + (this.l6q_1 == null ? 0 : getStringHashCode(this.l6q_1)) | 0;
-  result = imul(result, 31) + (this.m6q_1 == null ? 0 : getStringHashCode(this.m6q_1)) | 0;
-  result = imul(result, 31) + (this.n6q_1 == null ? 0 : getStringHashCode(this.n6q_1)) | 0;
-  result = imul(result, 31) + (this.o6q_1 == null ? 0 : getStringHashCode(this.o6q_1)) | 0;
+  var result = this.l6x_1 == null ? 0 : getStringHashCode(this.l6x_1);
+  result = imul(result, 31) + (this.m6x_1 == null ? 0 : getStringHashCode(this.m6x_1)) | 0;
+  result = imul(result, 31) + (this.n6x_1 == null ? 0 : getStringHashCode(this.n6x_1)) | 0;
+  result = imul(result, 31) + (this.o6x_1 == null ? 0 : getStringHashCode(this.o6x_1)) | 0;
+  result = imul(result, 31) + (this.p6x_1 == null ? 0 : getStringHashCode(this.p6x_1)) | 0;
+  result = imul(result, 31) + (this.q6x_1 == null ? 0 : getStringHashCode(this.q6x_1)) | 0;
   return result;
 };
 protoOf(AddressDto).equals = function (other) {
@@ -17448,73 +19250,73 @@ protoOf(AddressDto).equals = function (other) {
     return true;
   if (!(other instanceof AddressDto))
     return false;
-  if (!(this.j6q_1 == other.j6q_1))
+  if (!(this.l6x_1 == other.l6x_1))
     return false;
-  if (!(this.k6q_1 == other.k6q_1))
+  if (!(this.m6x_1 == other.m6x_1))
     return false;
-  if (!(this.l6q_1 == other.l6q_1))
+  if (!(this.n6x_1 == other.n6x_1))
     return false;
-  if (!(this.m6q_1 == other.m6q_1))
+  if (!(this.o6x_1 == other.o6x_1))
     return false;
-  if (!(this.n6q_1 == other.n6q_1))
+  if (!(this.p6x_1 == other.p6x_1))
     return false;
-  if (!(this.o6q_1 == other.o6q_1))
+  if (!(this.q6x_1 == other.q6x_1))
     return false;
   return true;
 };
 function UserInfoResponseDto(claims) {
-  this.t6p_1 = claims;
+  this.v6w_1 = claims;
 }
 protoOf(UserInfoResponseDto).toString = function () {
-  return 'UserInfoResponseDto(claims=' + this.t6p_1.toString() + ')';
+  return 'UserInfoResponseDto(claims=' + this.v6w_1.toString() + ')';
 };
 protoOf(UserInfoResponseDto).hashCode = function () {
-  return this.t6p_1.hashCode();
+  return this.v6w_1.hashCode();
 };
 protoOf(UserInfoResponseDto).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof UserInfoResponseDto))
     return false;
-  if (!this.t6p_1.equals(other.t6p_1))
+  if (!this.v6w_1.equals(other.v6w_1))
     return false;
   return true;
 };
 function Success_1(data) {
   SdkResult.call(this);
-  this.q5w_1 = data;
+  this.v5w_1 = data;
 }
 protoOf(Success_1).toString = function () {
-  return 'Success(data=' + toString_0(this.q5w_1) + ')';
+  return 'Success(data=' + toString_0(this.v5w_1) + ')';
 };
 protoOf(Success_1).hashCode = function () {
-  return this.q5w_1 == null ? 0 : hashCode(this.q5w_1);
+  return this.v5w_1 == null ? 0 : hashCode(this.v5w_1);
 };
 protoOf(Success_1).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof Success_1))
     return false;
-  if (!equals(this.q5w_1, other.q5w_1))
+  if (!equals(this.v5w_1, other.v5w_1))
     return false;
   return true;
 };
 function Failure_1(error) {
   SdkResult.call(this);
-  this.p5w_1 = error;
+  this.u5w_1 = error;
 }
 protoOf(Failure_1).toString = function () {
-  return 'Failure(error=' + toString(this.p5w_1) + ')';
+  return 'Failure(error=' + toString(this.u5w_1) + ')';
 };
 protoOf(Failure_1).hashCode = function () {
-  return hashCode(this.p5w_1);
+  return hashCode(this.u5w_1);
 };
 protoOf(Failure_1).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof Failure_1))
     return false;
-  if (!equals(this.p5w_1, other.p5w_1))
+  if (!equals(this.u5w_1, other.u5w_1))
     return false;
   return true;
 };
@@ -17526,17 +19328,17 @@ function TokenStorageConfig(keystoreAlias, fileName, enableBackup) {
   keystoreAlias = keystoreAlias === VOID ? 'srg_login_sdk_token_key' : keystoreAlias;
   fileName = fileName === VOID ? 'srg_login_tokens' : fileName;
   enableBackup = enableBackup === VOID ? false : enableBackup;
-  this.t6q_1 = keystoreAlias;
-  this.u6q_1 = fileName;
-  this.v6q_1 = enableBackup;
+  this.v6x_1 = keystoreAlias;
+  this.w6x_1 = fileName;
+  this.x6x_1 = enableBackup;
 }
 protoOf(TokenStorageConfig).toString = function () {
-  return 'TokenStorageConfig(keystoreAlias=' + this.t6q_1 + ', fileName=' + this.u6q_1 + ', enableBackup=' + this.v6q_1 + ')';
+  return 'TokenStorageConfig(keystoreAlias=' + this.v6x_1 + ', fileName=' + this.w6x_1 + ', enableBackup=' + this.x6x_1 + ')';
 };
 protoOf(TokenStorageConfig).hashCode = function () {
-  var result = getStringHashCode(this.t6q_1);
-  result = imul(result, 31) + getStringHashCode(this.u6q_1) | 0;
-  result = imul(result, 31) + getBooleanHashCode(this.v6q_1) | 0;
+  var result = getStringHashCode(this.v6x_1);
+  result = imul(result, 31) + getStringHashCode(this.w6x_1) | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.x6x_1) | 0;
   return result;
 };
 protoOf(TokenStorageConfig).equals = function (other) {
@@ -17544,11 +19346,11 @@ protoOf(TokenStorageConfig).equals = function (other) {
     return true;
   if (!(other instanceof TokenStorageConfig))
     return false;
-  if (!(this.t6q_1 === other.t6q_1))
+  if (!(this.v6x_1 === other.v6x_1))
     return false;
-  if (!(this.u6q_1 === other.u6q_1))
+  if (!(this.w6x_1 === other.w6x_1))
     return false;
-  if (!(this.v6q_1 === other.v6q_1))
+  if (!(this.x6x_1 === other.x6x_1))
     return false;
   return true;
 };
@@ -17637,21 +19439,21 @@ function declarePlatformContext(koin, context) {
   // Inline function 'org.koin.core.Koin.declare' call
   var secondaryTypes = emptyList();
   // Inline function 'org.koin.core.registry.InstanceRegistry.declareRootInstance' call
-  var this_0 = koin.w3v_1;
-  var rootQualifier = this_0.c3w_1.v3v_1.j3w_1.h3z_1;
+  var this_0 = koin.y3v_1;
+  var rootQualifier = this_0.e3w_1.x3v_1.l3w_1.j3z_1;
   var tmp0 = Kind_Scoped_getInstance();
   // Inline function 'org.koin.core.definition._createDefinition' call
   var definition = declarePlatformContext$lambda(context);
   var def = new BeanDefinition(rootQualifier, PrimitiveClasses_getInstance().da(), null, definition, tmp0, secondaryTypes);
   var factory = new SingleInstanceFactory(def);
-  var indexKey_0 = indexKey(def.c3x_1, def.d3x_1, def.b3x_1);
-  this_0.a3z(true, indexKey_0, factory);
+  var indexKey_0 = indexKey(def.e3x_1, def.f3x_1, def.d3x_1);
+  this_0.c3z(true, indexKey_0, factory);
   // Inline function 'kotlin.collections.forEach' call
-  var _iterator__ex2g4s = def.g3x_1.t();
+  var _iterator__ex2g4s = def.i3x_1.t();
   while (_iterator__ex2g4s.u()) {
     var element = _iterator__ex2g4s.v();
-    var index = indexKey(element, def.d3x_1, def.b3x_1);
-    this_0.a3z(true, index, factory);
+    var index = indexKey(element, def.f3x_1, def.d3x_1);
+    this_0.c3z(true, index, factory);
   }
 }
 function declarePlatformContext$lambda($instance) {
@@ -17659,11 +19461,11 @@ function declarePlatformContext$lambda($instance) {
     return $instance;
   };
 }
-function Companion_32() {
+function Companion_35() {
 }
-var Companion_instance_33;
-function Companion_getInstance_40() {
-  return Companion_instance_33;
+var Companion_instance_37;
+function Companion_getInstance_43() {
+  return Companion_instance_37;
 }
 function $serializer_18() {
   $serializer_instance_18 = this;
@@ -17672,22 +19474,22 @@ function $serializer_18() {
   tmp0_serialDesc.dw('codeVerifier', false);
   tmp0_serialDesc.dw('nonce', false);
   tmp0_serialDesc.dw('createdAtEpochMs', false);
-  this.w6q_1 = tmp0_serialDesc;
+  this.y6x_1 = tmp0_serialDesc;
 }
-protoOf($serializer_18).x6q = function (encoder, value) {
-  var tmp0_desc = this.w6q_1;
+protoOf($serializer_18).z6x = function (encoder, value) {
+  var tmp0_desc = this.y6x_1;
   var tmp1_output = encoder.zo(tmp0_desc);
-  tmp1_output.mq(tmp0_desc, 0, value.y6q_1);
-  tmp1_output.mq(tmp0_desc, 1, value.z6q_1);
-  tmp1_output.mq(tmp0_desc, 2, value.a6r_1);
-  tmp1_output.iq(tmp0_desc, 3, value.b6r_1);
+  tmp1_output.mq(tmp0_desc, 0, value.a6y_1);
+  tmp1_output.mq(tmp0_desc, 1, value.b6y_1);
+  tmp1_output.mq(tmp0_desc, 2, value.c6y_1);
+  tmp1_output.iq(tmp0_desc, 3, value.d6y_1);
   tmp1_output.ap(tmp0_desc);
 };
 protoOf($serializer_18).am = function (encoder, value) {
-  return this.x6q(encoder, value instanceof StoredTransaction ? value : THROW_CCE());
+  return this.z6x(encoder, value instanceof StoredTransaction ? value : THROW_CCE());
 };
 protoOf($serializer_18).bm = function (decoder) {
-  var tmp0_desc = this.w6q_1;
+  var tmp0_desc = this.y6x_1;
   var tmp1_flag = true;
   var tmp2_index = 0;
   var tmp3_bitMask0 = 0;
@@ -17736,7 +19538,7 @@ protoOf($serializer_18).bm = function (decoder) {
   return StoredTransaction_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
 };
 protoOf($serializer_18).zl = function () {
-  return this.w6q_1;
+  return this.y6x_1;
 };
 protoOf($serializer_18).fw = function () {
   // Inline function 'kotlin.arrayOf' call
@@ -17752,31 +19554,31 @@ function $serializer_getInstance_18() {
 }
 function StoredTransaction_init_$Init$(seen0, state, codeVerifier, nonce, createdAtEpochMs, serializationConstructorMarker, $this) {
   if (!(15 === (15 & seen0))) {
-    throwMissingFieldException(seen0, 15, $serializer_getInstance_18().w6q_1);
+    throwMissingFieldException(seen0, 15, $serializer_getInstance_18().y6x_1);
   }
-  $this.y6q_1 = state;
-  $this.z6q_1 = codeVerifier;
-  $this.a6r_1 = nonce;
-  $this.b6r_1 = createdAtEpochMs;
+  $this.a6y_1 = state;
+  $this.b6y_1 = codeVerifier;
+  $this.c6y_1 = nonce;
+  $this.d6y_1 = createdAtEpochMs;
   return $this;
 }
 function StoredTransaction_init_$Create$(seen0, state, codeVerifier, nonce, createdAtEpochMs, serializationConstructorMarker) {
   return StoredTransaction_init_$Init$(seen0, state, codeVerifier, nonce, createdAtEpochMs, serializationConstructorMarker, objectCreate(protoOf(StoredTransaction)));
 }
 function StoredTransaction(state, codeVerifier, nonce, createdAtEpochMs) {
-  this.y6q_1 = state;
-  this.z6q_1 = codeVerifier;
-  this.a6r_1 = nonce;
-  this.b6r_1 = createdAtEpochMs;
+  this.a6y_1 = state;
+  this.b6y_1 = codeVerifier;
+  this.c6y_1 = nonce;
+  this.d6y_1 = createdAtEpochMs;
 }
 protoOf(StoredTransaction).toString = function () {
-  return 'StoredTransaction(state=' + this.y6q_1 + ', codeVerifier=' + this.z6q_1 + ', nonce=' + this.a6r_1 + ', createdAtEpochMs=' + this.b6r_1.toString() + ')';
+  return 'StoredTransaction(state=' + this.a6y_1 + ', codeVerifier=' + this.b6y_1 + ', nonce=' + this.c6y_1 + ', createdAtEpochMs=' + this.d6y_1.toString() + ')';
 };
 protoOf(StoredTransaction).hashCode = function () {
-  var result = getStringHashCode(this.y6q_1);
-  result = imul(result, 31) + getStringHashCode(this.z6q_1) | 0;
-  result = imul(result, 31) + getStringHashCode(this.a6r_1) | 0;
-  result = imul(result, 31) + this.b6r_1.hashCode() | 0;
+  var result = getStringHashCode(this.a6y_1);
+  result = imul(result, 31) + getStringHashCode(this.b6y_1) | 0;
+  result = imul(result, 31) + getStringHashCode(this.c6y_1) | 0;
+  result = imul(result, 31) + this.d6y_1.hashCode() | 0;
   return result;
 };
 protoOf(StoredTransaction).equals = function (other) {
@@ -17784,13 +19586,13 @@ protoOf(StoredTransaction).equals = function (other) {
     return true;
   if (!(other instanceof StoredTransaction))
     return false;
-  if (!(this.y6q_1 === other.y6q_1))
+  if (!(this.a6y_1 === other.a6y_1))
     return false;
-  if (!(this.z6q_1 === other.z6q_1))
+  if (!(this.b6y_1 === other.b6y_1))
     return false;
-  if (!(this.a6r_1 === other.a6r_1))
+  if (!(this.c6y_1 === other.c6y_1))
     return false;
-  if (!equalsLong(this.b6r_1, other.b6r_1))
+  if (!equalsLong(this.d6y_1, other.d6y_1))
     return false;
   return true;
 };
@@ -17798,9 +19600,9 @@ function sweepExpired($this) {
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
-    var now = $this.e6r_1.s3f();
+    var now = $this.g6y_1.u3f();
     // Inline function 'kotlin.collections.mapNotNull' call
-    var tmp0 = until(0, $this.c6r_1.length);
+    var tmp0 = until(0, $this.e6y_1.length);
     // Inline function 'kotlin.collections.mapNotNullTo' call
     var destination = ArrayList_init_$Create$();
     // Inline function 'kotlin.collections.forEach' call
@@ -17811,7 +19613,7 @@ function sweepExpired($this) {
         var element = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
         var it = element;
-        var tmp0_safe_receiver = $this.c6r_1.key(it);
+        var tmp0_safe_receiver = $this.e6y_1.key(it);
         if (tmp0_safe_receiver == null)
           null;
         else {
@@ -17835,7 +19637,7 @@ function sweepExpired($this) {
     var _iterator__ex2g4s_0 = expiredKeys.t();
     while (_iterator__ex2g4s_0.u()) {
       var element_1 = _iterator__ex2g4s_0.v();
-      $this.c6r_1.removeItem(element_1);
+      $this.e6y_1.removeItem(element_1);
     }
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
@@ -17860,14 +19662,14 @@ function isExpired($this, key, now) {
     tmp = tmp0_elvis_lhs;
   }
   var stored = tmp;
-  return Duration__compareTo_impl_pchp0f(now.g3v(Companion_getInstance_3().b3v(stored.b6r_1)), $this.d6r_1) > 0;
+  return Duration__compareTo_impl_pchp0f(now.i3v(Companion_getInstance_3().d3v(stored.d6y_1)), $this.f6y_1) > 0;
 }
 function readStored($this, key) {
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
     // Inline function 'kotlin.Companion.success' call
-    var value = $this.c6r_1.getItem(key);
+    var value = $this.e6y_1.getItem(key);
     tmp = _Result___init__impl__xyqfz8(value);
   } catch ($p) {
     var tmp_0;
@@ -17899,7 +19701,7 @@ function readStored($this, key) {
     var tmp_4;
     try {
       // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-      var this_1 = $this.f6r_1;
+      var this_1 = $this.h6y_1;
       // Inline function 'kotlinx.serialization.serializer' call
       var this_2 = this_1.um();
       // Inline function 'kotlinx.serialization.internal.cast' call
@@ -17935,19 +19737,19 @@ function readStored($this, key) {
 function keyFor($this, state) {
   return 'srg_login_txn_' + state;
 }
-function Companion_33() {
-  Companion_instance_34 = this;
-  this.g6r_1 = 'srg_login_txn_';
+function Companion_36() {
+  Companion_instance_38 = this;
+  this.i6y_1 = 'srg_login_txn_';
   var tmp = this;
   // Inline function 'kotlin.time.Companion.minutes' call
   Companion_getInstance_0();
-  tmp.h6r_1 = toDuration(5, DurationUnit_MINUTES_getInstance());
+  tmp.j6y_1 = toDuration(5, DurationUnit_MINUTES_getInstance());
 }
-var Companion_instance_34;
-function Companion_getInstance_41() {
-  if (Companion_instance_34 == null)
-    new Companion_33();
-  return Companion_instance_34;
+var Companion_instance_38;
+function Companion_getInstance_44() {
+  if (Companion_instance_38 == null)
+    new Companion_36();
+  return Companion_instance_38;
 }
 function JsAuthorizationStateStore$save$lambda($e) {
   return function () {
@@ -17955,35 +19757,35 @@ function JsAuthorizationStateStore$save$lambda($e) {
   };
 }
 function JsAuthorizationStateStore(storage, ttl, clock) {
-  Companion_getInstance_41();
+  Companion_getInstance_44();
   storage = storage === VOID ? sessionStorage : storage;
-  ttl = ttl === VOID ? Companion_getInstance_41().h6r_1 : ttl;
+  ttl = ttl === VOID ? Companion_getInstance_44().j6y_1 : ttl;
   clock = clock === VOID ? System_instance : clock;
-  this.c6r_1 = storage;
-  this.d6r_1 = ttl;
-  this.e6r_1 = clock;
-  this.f6r_1 = get_WebJson();
+  this.e6y_1 = storage;
+  this.f6y_1 = ttl;
+  this.g6y_1 = clock;
+  this.h6y_1 = get_WebJson();
 }
-protoOf(JsAuthorizationStateStore).d5e = function (transaction, $completion) {
+protoOf(JsAuthorizationStateStore).h5e = function (transaction, $completion) {
   sweepExpired(this);
-  var stored = new StoredTransaction(transaction.z5d_1, transaction.a5e_1, transaction.b5e_1, transaction.c5e_1.f3v());
+  var stored = new StoredTransaction(transaction.d5e_1, transaction.e5e_1, transaction.f5e_1, transaction.g5e_1.h3v());
   try {
-    var tmp = keyFor(this, transaction.z5d_1);
+    var tmp = keyFor(this, transaction.d5e_1);
     // Inline function 'kotlinx.serialization.encodeToString' call
-    var this_0 = this.f6r_1;
+    var this_0 = this.h6y_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_1 = this_0.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
     var this_2 = serializer(this_1, createKType(getKClass(StoredTransaction), arrayOf([]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
     var tmp$ret$2 = this_0.sm(tmp$ret$1, stored);
-    this.c6r_1.setItem(tmp, tmp$ret$2);
+    this.e6y_1.setItem(tmp, tmp$ret$2);
   } catch ($p) {
     if ($p instanceof Error) {
       var e = $p;
       var tmp_0 = SdkLogger_getInstance();
       var tmp_1 = LogCategory_STORAGE_getInstance();
-      tmp_0.b5z(tmp_1, VOID, VOID, JsAuthorizationStateStore$save$lambda(e));
+      tmp_0.g5z(tmp_1, VOID, VOID, JsAuthorizationStateStore$save$lambda(e));
       throw IllegalStateException_init_$Create$_0('Failed to persist authorization transaction', e);
     } else {
       throw $p;
@@ -17991,13 +19793,13 @@ protoOf(JsAuthorizationStateStore).d5e = function (transaction, $completion) {
   }
   return Unit_instance;
 };
-protoOf(JsAuthorizationStateStore).e5e = function (state, $completion) {
+protoOf(JsAuthorizationStateStore).i5e = function (state, $completion) {
   var key = keyFor(this, state);
   var stored = readStored(this, key);
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
-    this.c6r_1.removeItem(key);
+    this.e6y_1.removeItem(key);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -18013,20 +19815,20 @@ protoOf(JsAuthorizationStateStore).e5e = function (state, $completion) {
   }
   if (stored == null)
     return null;
-  var createdAt = Companion_getInstance_3().b3v(stored.b6r_1);
+  var createdAt = Companion_getInstance_3().d3v(stored.d6y_1);
   var tmp_1;
-  if (Duration__compareTo_impl_pchp0f(this.e6r_1.s3f().g3v(createdAt), this.d6r_1) > 0) {
+  if (Duration__compareTo_impl_pchp0f(this.g6y_1.u3f().i3v(createdAt), this.f6y_1) > 0) {
     tmp_1 = null;
   } else {
-    tmp_1 = new AuthorizationTransaction(stored.y6q_1, stored.z6q_1, stored.a6r_1, createdAt);
+    tmp_1 = new AuthorizationTransaction(stored.a6y_1, stored.b6y_1, stored.c6y_1, createdAt);
   }
   return tmp_1;
 };
-protoOf(JsAuthorizationStateStore).f5e = function (state, $completion) {
+protoOf(JsAuthorizationStateStore).j5e = function (state, $completion) {
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
-    this.c6r_1.removeItem(keyFor(this, state));
+    this.e6y_1.removeItem(keyFor(this, state));
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -18046,20 +19848,20 @@ function PlatformAuthContext() {
 }
 function JsAuthContext(platformType) {
   platformType = platformType === VOID ? PlatformType_WEB_getInstance() : platformType;
-  this.i6r_1 = platformType;
+  this.k6y_1 = platformType;
 }
 protoOf(JsAuthContext).toString = function () {
-  return 'JsAuthContext(platformType=' + this.i6r_1.toString() + ')';
+  return 'JsAuthContext(platformType=' + this.k6y_1.toString() + ')';
 };
 protoOf(JsAuthContext).hashCode = function () {
-  return this.i6r_1.hashCode();
+  return this.k6y_1.hashCode();
 };
 protoOf(JsAuthContext).equals = function (other) {
   if (this === other)
     return true;
   if (!(other instanceof JsAuthContext))
     return false;
-  if (!this.i6r_1.equals(other.i6r_1))
+  if (!this.k6y_1.equals(other.k6y_1))
     return false;
   return true;
 };
@@ -18071,25 +19873,25 @@ function unsafeUrlFailure($this, endpoint) {
 }
 function suspendUntilRedirect($this, $completion) {
   var cancellable = new CancellableContinuationImpl(intercepted($completion), 1);
-  cancellable.e1k();
-  return cancellable.g1k();
+  cancellable.f1k();
+  return cancellable.h1k();
 }
 function WebAuthenticatorImpl() {
   BaseWebAuthenticator.call(this);
 }
-protoOf(WebAuthenticatorImpl).h5e = function (authUrl, authContext, $completion) {
+protoOf(WebAuthenticatorImpl).l5e = function (authUrl, authContext, $completion) {
   if (!isSafeNavigationUrl(this, authUrl))
     return unsafeUrlFailure(this, 'authorization');
   window.location.assign(authUrl);
   return suspendUntilRedirect(this, $completion);
 };
-protoOf(WebAuthenticatorImpl).j5e = function (logoutUrl, authContext, $completion) {
+protoOf(WebAuthenticatorImpl).n5e = function (logoutUrl, authContext, $completion) {
   if (!isSafeNavigationUrl(this, logoutUrl))
     return unsafeUrlFailure(this, 'end-session');
   window.location.assign(logoutUrl);
   return suspendUntilRedirect(this, $completion);
 };
-protoOf(WebAuthenticatorImpl).k5e = function (ssoClientUrl, authContext, $completion) {
+protoOf(WebAuthenticatorImpl).o5e = function (ssoClientUrl, authContext, $completion) {
   window.open(ssoClientUrl, '_blank');
   return new Success_1(Unit_instance);
 };
@@ -18154,13 +19956,13 @@ function toUint8Array($this, _this__u8e3s4) {
   var int8 = _this__u8e3s4;
   return new Uint8Array(int8.buffer, int8.byteOffset, int8.length);
 }
-function Companion_34() {
-  this.z6r_1 = 'RSASSA-PKCS1-v1_5';
-  this.a6s_1 = 'ECDSA';
+function Companion_37() {
+  this.b6z_1 = 'RSASSA-PKCS1-v1_5';
+  this.c6z_1 = 'ECDSA';
 }
-var Companion_instance_35;
-function Companion_getInstance_42() {
-  return Companion_instance_35;
+var Companion_instance_39;
+function Companion_getInstance_45() {
+  return Companion_instance_39;
 }
 function JsCryptoService$subtleVerify$lambda($e) {
   return function () {
@@ -18169,12 +19971,12 @@ function JsCryptoService$subtleVerify$lambda($e) {
 }
 function $subtleVerifyCOROUTINE$(_this__u8e3s4, importAlgorithm, jwkObject, verifyAlgorithm, signature, data, resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
-  this.r6r_1 = _this__u8e3s4;
-  this.s6r_1 = importAlgorithm;
-  this.t6r_1 = jwkObject;
-  this.u6r_1 = verifyAlgorithm;
-  this.v6r_1 = signature;
-  this.w6r_1 = data;
+  this.t6y_1 = _this__u8e3s4;
+  this.u6y_1 = importAlgorithm;
+  this.v6y_1 = jwkObject;
+  this.w6y_1 = verifyAlgorithm;
+  this.x6y_1 = signature;
+  this.y6y_1 = data;
 }
 protoOf($subtleVerifyCOROUTINE$).q8 = function () {
   var suspendResult = this.k8_1;
@@ -18186,10 +19988,10 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
           this.j8_1 = 4;
           this.j8_1 = 3;
           var tmp_0 = this;
-          tmp_0.y6r_1 = window.crypto.subtle;
+          tmp_0.a6z_1 = window.crypto.subtle;
           this.i8_1 = 1;
           var this_0 = ['verify'];
-          var tmp_1 = this.y6r_1.importKey('jwk', this.t6r_1, this.s6r_1, false, this_0);
+          var tmp_1 = this.a6z_1.importKey('jwk', this.v6y_1, this.u6y_1, false, this_0);
           suspendResult = await_0(tmp_1 instanceof Promise ? tmp_1 : THROW_CCE(), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
@@ -18199,7 +20001,7 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
         case 1:
           var key = suspendResult;
           this.i8_1 = 2;
-          var tmp_2 = this.y6r_1.verify(this.u6r_1, key, toUint8Array(this.r6r_1, this.v6r_1), toUint8Array(this.r6r_1, this.w6r_1));
+          var tmp_2 = this.a6z_1.verify(this.w6y_1, key, toUint8Array(this.t6y_1, this.x6y_1), toUint8Array(this.t6y_1, this.y6y_1));
           suspendResult = await_0(tmp_2 instanceof Promise ? tmp_2 : THROW_CCE(), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
@@ -18208,7 +20010,7 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
           continue $sm;
         case 2:
           var result = suspendResult;
-          this.x6r_1 = result == true;
+          this.z6y_1 = result == true;
           this.j8_1 = 4;
           this.i8_1 = 5;
           continue $sm;
@@ -18226,8 +20028,8 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
               var tmp_6 = this;
               var tmp_7 = SdkLogger_getInstance();
               var tmp_8 = LogCategory_SECURITY_getInstance();
-              tmp_7.b5z(tmp_8, VOID, VOID, JsCryptoService$subtleVerify$lambda(e_0));
-              tmp_6.x6r_1 = false;
+              tmp_7.g5z(tmp_8, VOID, VOID, JsCryptoService$subtleVerify$lambda(e_0));
+              tmp_6.z6y_1 = false;
               this.i8_1 = 5;
               continue $sm;
             } else {
@@ -18239,7 +20041,7 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
           throw this.l8_1;
         case 5:
           this.j8_1 = 4;
-          return this.x6r_1;
+          return this.z6y_1;
       }
     } catch ($p) {
       var e_1 = $p;
@@ -18254,17 +20056,17 @@ protoOf($subtleVerifyCOROUTINE$).q8 = function () {
 };
 function JsCryptoService() {
 }
-protoOf(JsCryptoService).t5h = function (data, signature, jwk, algorithm, $completion) {
-  if (!(jwk.q5i_1 === 'RSA'))
+protoOf(JsCryptoService).x5h = function (data, signature, jwk, algorithm, $completion) {
+  if (!(jwk.u5i_1 === 'RSA'))
     return false;
   var tmp;
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = jwk.y5i_1;
+  var this_0 = jwk.c5j_1;
   if (this_0 == null || isBlank(this_0)) {
     tmp = true;
   } else {
     // Inline function 'kotlin.text.isNullOrBlank' call
-    var this_1 = jwk.z5i_1;
+    var this_1 = jwk.d5j_1;
     tmp = this_1 == null || isBlank(this_1);
   }
   if (tmp)
@@ -18277,30 +20079,30 @@ protoOf(JsCryptoService).t5h = function (data, signature, jwk, algorithm, $compl
     tmp_0 = tmp0_elvis_lhs;
   }
   var hash = tmp_0;
-  var importAlgorithm = jsObject(Companion_instance_35, [to('name', 'RSASSA-PKCS1-v1_5'), to('hash', hash)]);
-  var jwkObject = jsObject(Companion_instance_35, [to('kty', 'RSA'), to('n', jwk.y5i_1), to('e', jwk.z5i_1), to('alg', algorithm), to('ext', true)]);
-  var verifyAlgorithm = jsObject(Companion_instance_35, [to('name', 'RSASSA-PKCS1-v1_5')]);
+  var importAlgorithm = jsObject(Companion_instance_39, [to('name', 'RSASSA-PKCS1-v1_5'), to('hash', hash)]);
+  var jwkObject = jsObject(Companion_instance_39, [to('kty', 'RSA'), to('n', jwk.c5j_1), to('e', jwk.d5j_1), to('alg', algorithm), to('ext', true)]);
+  var verifyAlgorithm = jsObject(Companion_instance_39, [to('name', 'RSASSA-PKCS1-v1_5')]);
   return subtleVerify(this, importAlgorithm, jwkObject, verifyAlgorithm, signature, data, $completion);
 };
-protoOf(JsCryptoService).s5h = function (data, signature, jwk, algorithm, $completion) {
-  if (!(jwk.q5i_1 === 'EC'))
+protoOf(JsCryptoService).w5h = function (data, signature, jwk, algorithm, $completion) {
+  if (!(jwk.u5i_1 === 'EC'))
     return false;
   var tmp;
   var tmp_0;
   // Inline function 'kotlin.text.isNullOrBlank' call
-  var this_0 = jwk.a5j_1;
+  var this_0 = jwk.e5j_1;
   if (this_0 == null || isBlank(this_0)) {
     tmp_0 = true;
   } else {
     // Inline function 'kotlin.text.isNullOrBlank' call
-    var this_1 = jwk.b5j_1;
+    var this_1 = jwk.f5j_1;
     tmp_0 = this_1 == null || isBlank(this_1);
   }
   if (tmp_0) {
     tmp = true;
   } else {
     // Inline function 'kotlin.text.isNullOrBlank' call
-    var this_2 = jwk.c5j_1;
+    var this_2 = jwk.g5j_1;
     tmp = this_2 == null || isBlank(this_2);
   }
   if (tmp) {
@@ -18322,9 +20124,9 @@ protoOf(JsCryptoService).s5h = function (data, signature, jwk, algorithm, $compl
     tmp_2 = tmp1_elvis_lhs;
   }
   var hash = tmp_2;
-  var importAlgorithm = jsObject(Companion_instance_35, [to('name', 'ECDSA'), to('namedCurve', curve)]);
-  var jwkObject = jsObject(Companion_instance_35, [to('kty', 'EC'), to('crv', jwk.a5j_1), to('x', jwk.b5j_1), to('y', jwk.c5j_1), to('ext', true)]);
-  var verifyAlgorithm = jsObject(Companion_instance_35, [to('name', 'ECDSA'), to('hash', jsObject(Companion_instance_35, [to('name', hash)]))]);
+  var importAlgorithm = jsObject(Companion_instance_39, [to('name', 'ECDSA'), to('namedCurve', curve)]);
+  var jwkObject = jsObject(Companion_instance_39, [to('kty', 'EC'), to('crv', jwk.e5j_1), to('x', jwk.f5j_1), to('y', jwk.g5j_1), to('ext', true)]);
+  var verifyAlgorithm = jsObject(Companion_instance_39, [to('name', 'ECDSA'), to('hash', jsObject(Companion_instance_39, [to('name', hash)]))]);
   return subtleVerify(this, importAlgorithm, jwkObject, verifyAlgorithm, signature, data, $completion);
 };
 function get_platformModule() {
@@ -18342,94 +20144,94 @@ function platformModule$lambda($this$module) {
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition = platformModule$lambda$lambda;
-  var scopeQualifier = Companion_getInstance_1().k3x_1;
+  var scopeQualifier = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind = Kind_Singleton_getInstance();
   var secondaryTypes = emptyList();
   var def = new BeanDefinition(scopeQualifier, getKClass(CryptoService), null, definition, kind, secondaryTypes);
   var factory = new SingleInstanceFactory(def);
-  $this$module.q3y(factory);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory);
+  $this$module.s3y(factory);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory);
   }
   new KoinDefinition($this$module, factory);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_0 = platformModule$lambda$lambda_0;
-  var scopeQualifier_0 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_0 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_0 = Kind_Singleton_getInstance();
   var secondaryTypes_0 = emptyList();
   var def_0 = new BeanDefinition(scopeQualifier_0, getKClass(TokenStorage), null, definition_0, kind_0, secondaryTypes_0);
   var factory_0 = new SingleInstanceFactory(def_0);
-  $this$module.q3y(factory_0);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_0);
+  $this$module.s3y(factory_0);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_0);
   }
   new KoinDefinition($this$module, factory_0);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_1 = platformModule$lambda$lambda_1;
-  var scopeQualifier_1 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_1 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_1 = Kind_Singleton_getInstance();
   var secondaryTypes_1 = emptyList();
   var def_1 = new BeanDefinition(scopeQualifier_1, getKClass(AuthorizationStateStore), null, definition_1, kind_1, secondaryTypes_1);
   var factory_1 = new SingleInstanceFactory(def_1);
-  $this$module.q3y(factory_1);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_1);
+  $this$module.s3y(factory_1);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_1);
   }
   new KoinDefinition($this$module, factory_1);
   // Inline function 'org.koin.core.module.Module.single' call
   // Inline function 'org.koin.core.module._singleInstanceFactory' call
   var definition_2 = platformModule$lambda$lambda_2;
-  var scopeQualifier_2 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_2 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_2 = Kind_Singleton_getInstance();
   var secondaryTypes_2 = emptyList();
   var def_2 = new BeanDefinition(scopeQualifier_2, getKClass(WebAuthenticator), null, definition_2, kind_2, secondaryTypes_2);
   var factory_2 = new SingleInstanceFactory(def_2);
-  $this$module.q3y(factory_2);
-  if (false || $this$module.i3y_1) {
-    $this$module.s3y(factory_2);
+  $this$module.s3y(factory_2);
+  if (false || $this$module.k3y_1) {
+    $this$module.u3y(factory_2);
   }
   new KoinDefinition($this$module, factory_2);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4 = platformModule$lambda$lambda_3;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_3 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_3 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_3 = Kind_Factory_getInstance();
   var secondaryTypes_3 = emptyList();
   var def_3 = new BeanDefinition(scopeQualifier_3, getKClass(PlatformAuthContext), null, tmp4, kind_3, secondaryTypes_3);
   var factory_3 = new FactoryInstanceFactory(def_3);
-  $this$module.q3y(factory_3);
+  $this$module.s3y(factory_3);
   new KoinDefinition($this$module, factory_3);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4_0 = platformModule$lambda$lambda_4;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_4 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_4 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_4 = Kind_Factory_getInstance();
   var secondaryTypes_4 = emptyList();
   var def_4 = new BeanDefinition(scopeQualifier_4, getKClass(AppLifecycleObserver), null, tmp4_0, kind_4, secondaryTypes_4);
   var factory_4 = new FactoryInstanceFactory(def_4);
-  $this$module.q3y(factory_4);
+  $this$module.s3y(factory_4);
   new KoinDefinition($this$module, factory_4);
   // Inline function 'org.koin.core.module.Module.factory' call
   var tmp4_1 = platformModule$lambda$lambda_5;
   // Inline function 'org.koin.core.module.Module.factory' call
   // Inline function 'org.koin.core.module._factoryInstanceFactory' call
-  var scopeQualifier_5 = Companion_getInstance_1().k3x_1;
+  var scopeQualifier_5 = Companion_getInstance_1().m3x_1;
   // Inline function 'org.koin.core.definition._createDefinition' call
   var kind_5 = Kind_Factory_getInstance();
   var secondaryTypes_5 = emptyList();
   var def_5 = new BeanDefinition(scopeQualifier_5, getKClass(AuthenticationManager), null, tmp4_1, kind_5, secondaryTypes_5);
   var factory_5 = new FactoryInstanceFactory(def_5);
-  $this$module.q3y(factory_5);
+  $this$module.s3y(factory_5);
   new KoinDefinition($this$module, factory_5);
   return Unit_instance;
 }
@@ -18456,57 +20258,57 @@ function platformModule$lambda$lambda_3($this$factory, it) {
 function platformModule$lambda$lambda_4($this$factory, _destruct__k2r9zo) {
   _init_properties_SdkModule_js_kt__rastf3();
   // Inline function 'org.koin.core.parameter.ParametersHolder.component1' call
-  var tokenManager = _destruct__k2r9zo.x3y(0, getKClass(TokenManager));
+  var tokenManager = _destruct__k2r9zo.z3y(0, getKClass(TokenManager));
   // Inline function 'org.koin.core.parameter.ParametersHolder.component2' call
-  var eventEmitter = _destruct__k2r9zo.x3y(1, getKClass(EventEmitter));
+  var eventEmitter = _destruct__k2r9zo.z3y(1, getKClass(EventEmitter));
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$2 = $this$factory.r3z(getKClass(PlatformAuthContext), null, null);
+  var tmp$ret$2 = $this$factory.t3z(getKClass(PlatformAuthContext), null, null);
   return new AppLifecycleObserver(tmp$ret$2, tokenManager, eventEmitter);
 }
 function platformModule$lambda$lambda_5($this$factory, _destruct__k2r9zo) {
   _init_properties_SdkModule_js_kt__rastf3();
   // Inline function 'org.koin.core.parameter.ParametersHolder.component1' call
-  var config = _destruct__k2r9zo.x3y(0, getKClass(SrgLoginConfig));
+  var config = _destruct__k2r9zo.z3y(0, getKClass(SrgLoginConfig));
   // Inline function 'org.koin.core.parameter.ParametersHolder.component2' call
-  var openIdConfigRepository = _destruct__k2r9zo.x3y(1, getKClass(OpenIdConfigRepository));
+  var openIdConfigRepository = _destruct__k2r9zo.z3y(1, getKClass(OpenIdConfigRepository));
   // Inline function 'org.koin.core.parameter.ParametersHolder.component3' call
-  var eventEmitter = _destruct__k2r9zo.x3y(2, getKClass(EventEmitter));
+  var eventEmitter = _destruct__k2r9zo.z3y(2, getKClass(EventEmitter));
   var loginFailureEmitter = new LoginFailureEmitter(eventEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp = $this$factory.r3z(getKClass(TokenStorage), null, null);
+  var tmp = $this$factory.t3z(getKClass(TokenStorage), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$4 = $this$factory.r3z(getKClass(JwtValidationService), null, null);
+  var tmp$ret$4 = $this$factory.t3z(getKClass(JwtValidationService), null, null);
   var tokenSuccessHandler = new TokenSuccessHandler(tmp, tmp$ret$4, eventEmitter, loginFailureEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_0 = $this$factory.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp_0 = $this$factory.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$6 = $this$factory.r3z(getKClass(TokenStorage), null, null);
+  var tmp$ret$6 = $this$factory.t3z(getKClass(TokenStorage), null, null);
   var migrationFlow = new MigrationFlow(config, openIdConfigRepository, tmp_0, tokenSuccessHandler, tmp$ret$6, loginFailureEmitter, eventEmitter);
-  if (config.w5a_1) {
+  if (config.a5b_1) {
     var tmp_1 = SdkLogger_getInstance();
     var tmp_2 = LogCategory_SDK_CREATION_getInstance();
-    tmp_1.s5d(tmp_2, VOID, VOID, platformModule$lambda$lambda$lambda);
+    tmp_1.w5d(tmp_2, VOID, VOID, platformModule$lambda$lambda$lambda);
   }
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_3 = $this$factory.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp_3 = $this$factory.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_4 = $this$factory.r3z(getKClass(WebAuthenticator), null, null);
+  var tmp_4 = $this$factory.t3z(getKClass(WebAuthenticator), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_5 = $this$factory.r3z(getKClass(SecurityUtils), null, null);
+  var tmp_5 = $this$factory.t3z(getKClass(SecurityUtils), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$10 = $this$factory.r3z(getKClass(AuthorizationStateStore), null, null);
+  var tmp$ret$10 = $this$factory.t3z(getKClass(AuthorizationStateStore), null, null);
   var loginStrategy = new AuthorizationCodeFlow(config, openIdConfigRepository, tmp_3, tmp_4, tmp_5, tmp$ret$10, tokenSuccessHandler, loginFailureEmitter, eventEmitter);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_6 = $this$factory.r3z(getKClass(TokenStorage), null, null);
+  var tmp_6 = $this$factory.t3z(getKClass(TokenStorage), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_7 = $this$factory.r3z(getKClass(JwtValidationService), null, null);
+  var tmp_7 = $this$factory.t3z(getKClass(JwtValidationService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp_8 = $this$factory.r3z(getKClass(SrgAuthApiService), null, null);
+  var tmp_8 = $this$factory.t3z(getKClass(SrgAuthApiService), null, null);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$14 = $this$factory.r3z(getKClass(WebAuthenticator), null, null);
+  var tmp$ret$14 = $this$factory.t3z(getKClass(WebAuthenticator), null, null);
   var logoutHandler = new WebLogoutHandler(tmp_6, eventEmitter, config, openIdConfigRepository, tmp_7, tmp_8, tmp$ret$14);
   // Inline function 'org.koin.core.scope.Scope.get' call
-  var tmp$ret$15 = $this$factory.r3z(getKClass(WebAuthenticator), null, null);
+  var tmp$ret$15 = $this$factory.t3z(getKClass(WebAuthenticator), null, null);
   return new AuthenticationManagerImpl(loginStrategy, logoutHandler, tmp$ret$15, migrationFlow, loginFailureEmitter);
 }
 function platformModule$lambda$lambda$lambda() {
@@ -18526,40 +20328,40 @@ function createHttpClient$lambda$lambda$lambda($this$Json) {
 }
 function createHttpClient$lambda$lambda_0($this$install) {
   _init_properties_SdkModule_js_kt__rastf3();
-  $this$install.t4n(new Long(30000, 0));
-  $this$install.u4n(new Long(15000, 0));
-  $this$install.v4n(new Long(30000, 0));
+  $this$install.w4n(new Long(30000, 0));
+  $this$install.x4n(new Long(15000, 0));
+  $this$install.y4n(new Long(30000, 0));
   return Unit_instance;
 }
 function createHttpClient$lambda$lambda_1($this$install) {
   _init_properties_SdkModule_js_kt__rastf3();
-  $this$install.o55(new createHttpClient$2$6$1());
-  $this$install.n55_1 = LogLevel_INFO_getInstance();
+  $this$install.s55(new createHttpClient$2$6$1());
+  $this$install.r55_1 = LogLevel_INFO_getInstance();
   return Unit_instance;
 }
 function createHttpClient$lambda$lambda$o$log$lambda($message) {
   return function () {
-    return Companion_instance_6.k6f($message);
+    return Companion_instance_9.p6k($message);
   };
 }
 function createHttpClient$2$6$1() {
 }
-protoOf(createHttpClient$2$6$1).n40 = function (message) {
+protoOf(createHttpClient$2$6$1).p40 = function (message) {
   var tmp = SdkLogger_getInstance();
   var tmp_0 = LogCategory_NETWORK_getInstance();
-  tmp.n5a(tmp_0, VOID, VOID, createHttpClient$lambda$lambda$o$log$lambda(message));
+  tmp.r5a(tmp_0, VOID, VOID, createHttpClient$lambda$lambda$o$log$lambda(message));
 };
 function createHttpClient$lambda($enableLogging) {
   return function ($this$HttpClient) {
-    $this$HttpClient.e46_1 = true;
+    $this$HttpClient.g46_1 = true;
     var tmp = Plugin_getInstance_0();
-    $this$HttpClient.y46(tmp, createHttpClient$lambda$lambda);
+    $this$HttpClient.b47(tmp, createHttpClient$lambda$lambda);
     var tmp_0 = Plugin_getInstance();
-    $this$HttpClient.y46(tmp_0, createHttpClient$lambda$lambda_0);
+    $this$HttpClient.b47(tmp_0, createHttpClient$lambda$lambda_0);
     var tmp_1;
     if ($enableLogging) {
       var tmp_2 = Companion_getInstance_6();
-      $this$HttpClient.y46(tmp_2, createHttpClient$lambda$lambda_1);
+      $this$HttpClient.b47(tmp_2, createHttpClient$lambda$lambda_1);
       tmp_1 = Unit_instance;
     }
     return Unit_instance;
@@ -18606,10 +20408,10 @@ function extractVersion($this, userAgent, prefix) {
 }
 function PlatformInfo() {
 }
-protoOf(PlatformInfo).a5a = function () {
+protoOf(PlatformInfo).e5a = function () {
   return 'JavaScript';
 };
-protoOf(PlatformInfo).b5a = function () {
+protoOf(PlatformInfo).f5a = function () {
   var tmp;
   try {
     var userAgent = window.navigator.userAgent;
@@ -18642,7 +20444,7 @@ protoOf(PlatformInfo).b5a = function () {
   }
   return tmp;
 };
-protoOf(PlatformInfo).c5a = function () {
+protoOf(PlatformInfo).g5a = function () {
   return 'Browser';
 };
 var PlatformInfo_instance;
@@ -18666,28 +20468,60 @@ function _init_properties_WebJson_kt__p3xm3u() {
     WebJson = Json(VOID, WebJson$lambda);
   }
 }
-function SrgLoginWeb$login$slambda$slambda(resultContinuation) {
+function get_PROMPT() {
+  return PROMPT_0;
+}
+var PROMPT_0;
+function get_UI_LOCALES() {
+  return UI_LOCALES_0;
+}
+var UI_LOCALES_0;
+function get_LOGIN_HINT() {
+  return LOGIN_HINT_0;
+}
+var LOGIN_HINT_0;
+function get_MAX_AGE() {
+  return MAX_AGE_0;
+}
+var MAX_AGE_0;
+function get_PROMPT_NONE() {
+  return PROMPT_NONE_0;
+}
+var PROMPT_NONE_0;
+function get_PROMPT_LOGIN() {
+  return PROMPT_LOGIN_0;
+}
+var PROMPT_LOGIN_0;
+function get_PROMPT_CONSENT() {
+  return PROMPT_CONSENT_0;
+}
+var PROMPT_CONSENT_0;
+function get_PROMPT_SELECT_ACCOUNT() {
+  return PROMPT_SELECT_ACCOUNT_0;
+}
+var PROMPT_SELECT_ACCOUNT_0;
+function SrgLoginWeb$startLogin$slambda$slambda(resultContinuation) {
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$login$slambda$slambda).k6s = function (state, $completion) {
-  var tmp = this.l6s(state, $completion);
+protoOf(SrgLoginWeb$startLogin$slambda$slambda).m6z = function (state, $completion) {
+  var tmp = this.n6z(state, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgLoginWeb$login$slambda$slambda).z8 = function (p1, $completion) {
-  return this.k6s(p1 instanceof LoginState ? p1 : THROW_CCE(), $completion);
+protoOf(SrgLoginWeb$startLogin$slambda$slambda).z8 = function (p1, $completion) {
+  return this.m6z(p1 instanceof LoginState ? p1 : THROW_CCE(), $completion);
 };
-protoOf(SrgLoginWeb$login$slambda$slambda).q8 = function () {
+protoOf(SrgLoginWeb$startLogin$slambda$slambda).q8 = function () {
   var suspendResult = this.k8_1;
   $sm: do
     try {
       var tmp = this.i8_1;
       if (tmp === 0) {
         this.j8_1 = 1;
-        var tmp_0 = this.j6s_1;
+        var tmp_0 = this.l6z_1;
         if (tmp_0 instanceof Failure) {
-          var message = '[' + toPublicErrorCode(this.j6s_1.z5c_1) + '] ' + toSanitizedPublicMessage(this.j6s_1.z5c_1);
+          var message = '[' + toPublicErrorCode(this.l6z_1.d5d_1) + '] ' + toSanitizedPublicMessage(this.l6z_1.d5d_1);
           throw IllegalStateException_init_$Create$(toString(message));
         }
         return Unit_instance;
@@ -18700,32 +20534,32 @@ protoOf(SrgLoginWeb$login$slambda$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$login$slambda$slambda).l6s = function (state, completion) {
-  var i = new SrgLoginWeb$login$slambda$slambda(completion);
-  i.j6s_1 = state;
+protoOf(SrgLoginWeb$startLogin$slambda$slambda).n6z = function (state, completion) {
+  var i = new SrgLoginWeb$startLogin$slambda$slambda(completion);
+  i.l6z_1 = state;
   return i;
 };
-function SrgLoginWeb$login$slambda$slambda_0(resultContinuation) {
-  var i = new SrgLoginWeb$login$slambda$slambda(resultContinuation);
+function SrgLoginWeb$startLogin$slambda$slambda_0(resultContinuation) {
+  var i = new SrgLoginWeb$startLogin$slambda$slambda(resultContinuation);
   var l = function (state, $completion) {
-    return i.k6s(state, $completion);
+    return i.m6z(state, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$observeTokenState$slambda$slambda($onState, this$0, resultContinuation) {
-  this.u6s_1 = $onState;
-  this.v6s_1 = this$0;
+  this.w6z_1 = $onState;
+  this.x6z_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).x6s = function (state, $completion) {
-  var tmp = this.y6s(state, $completion);
+protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).z6z = function (state, $completion) {
+  var tmp = this.a70(state, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).z8 = function (p1, $completion) {
-  return this.x6s(p1 instanceof TokenState ? p1 : THROW_CCE(), $completion);
+  return this.z6z(p1 instanceof TokenState ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -18734,7 +20568,7 @@ protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).q8 = function () {
       var tmp = this.i8_1;
       if (tmp === 0) {
         this.j8_1 = 1;
-        this.u6s_1(stateName(this.v6s_1, this.w6s_1));
+        this.w6z_1(stateName(this.x6z_1, this.y6z_1));
         return Unit_instance;
       } else if (tmp === 1) {
         throw this.l8_1;
@@ -18745,15 +20579,15 @@ protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).y6s = function (state, completion) {
-  var i = new SrgLoginWeb$observeTokenState$slambda$slambda(this.u6s_1, this.v6s_1, completion);
-  i.w6s_1 = state;
+protoOf(SrgLoginWeb$observeTokenState$slambda$slambda).a70 = function (state, completion) {
+  var i = new SrgLoginWeb$observeTokenState$slambda$slambda(this.w6z_1, this.x6z_1, completion);
+  i.y6z_1 = state;
   return i;
 };
 function SrgLoginWeb$observeTokenState$slambda$slambda_0($onState, this$0, resultContinuation) {
   var i = new SrgLoginWeb$observeTokenState$slambda$slambda($onState, this$0, resultContinuation);
   var l = function (state, $completion) {
-    return i.x6s(state, $completion);
+    return i.z6z(state, $completion);
   };
   l.$arity = 1;
   return l;
@@ -18796,6 +20630,30 @@ function parseEnvironment($this, value) {
   }
   return tmp$ret$3;
 }
+function startLogin($this, scopes, additionalParameters) {
+  return promise($this.b70_1, VOID, VOID, SrgLoginWeb$startLogin$slambda_0($this, scopes, additionalParameters, null));
+}
+function toStringMap($this, obj) {
+  if (obj == null)
+    return emptyMap();
+  // Inline function 'kotlin.collections.mutableMapOf' call
+  var result = LinkedHashMap_init_$Create$();
+  // Inline function 'kotlin.js.unsafeCast' call
+  var keys = Object.keys(obj);
+  var inductionVariable = 0;
+  var last = keys.length;
+  while (inductionVariable < last) {
+    var key = keys[inductionVariable];
+    inductionVariable = inductionVariable + 1 | 0;
+    var value = obj[key];
+    if (typeof value === 'string') {
+      // Inline function 'kotlin.js.unsafeCast' call
+      // Inline function 'kotlin.collections.set' call
+      result.m2(key, value);
+    }
+  }
+  return result;
+}
 function clearCallbackParamsFromUrl($this) {
   try {
     var cleanUrl = window.location.pathname + window.location.hash;
@@ -18809,10 +20667,10 @@ function clearCallbackParamsFromUrl($this) {
   }
 }
 function accessToken($this, forceRefresh) {
-  return promise($this.z6s_1, VOID, VOID, SrgLoginWeb$accessToken$slambda_0($this, forceRefresh, null));
+  return promise($this.b70_1, VOID, VOID, SrgLoginWeb$accessToken$slambda_0($this, forceRefresh, null));
 }
 function userInfo($this, forceRefresh) {
-  return promise($this.z6s_1, VOID, VOID, SrgLoginWeb$userInfo$slambda_0($this, forceRefresh, null));
+  return promise($this.b70_1, VOID, VOID, SrgLoginWeb$userInfo$slambda_0($this, forceRefresh, null));
 }
 function stateName($this, _this__u8e3s4) {
   var tmp;
@@ -18852,16 +20710,16 @@ function stateName($this, _this__u8e3s4) {
   return tmp;
 }
 function toJs($this, _this__u8e3s4) {
-  return new UserInfoJs(_this__u8e3s4.w62_1, _this__u8e3s4.e63_1, _this__u8e3s4.f63_1, _this__u8e3s4.x62_1, _this__u8e3s4.y62_1, _this__u8e3s4.z62_1, _this__u8e3s4.a63_1, _this__u8e3s4.b63_1);
+  return new UserInfoJs(_this__u8e3s4.b63_1, _this__u8e3s4.j63_1, _this__u8e3s4.k63_1, _this__u8e3s4.c63_1, _this__u8e3s4.d63_1, _this__u8e3s4.e63_1, _this__u8e3s4.f63_1, _this__u8e3s4.g63_1);
 }
 function sam$kotlinx_coroutines_flow_FlowCollector$0_0(function_0) {
-  this.c6t_1 = function_0;
+  this.e70_1 = function_0;
 }
-protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).j1x = function (value, $completion) {
-  return this.c6t_1(value, $completion);
+protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).k1x = function (value, $completion) {
+  return this.e70_1(value, $completion);
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).d3 = function () {
-  return this.c6t_1;
+  return this.e70_1;
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).equals = function (other) {
   var tmp;
@@ -18882,13 +20740,13 @@ protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_0).hashCode = function () {
   return hashCode(this.d3());
 };
 function sam$kotlinx_coroutines_flow_FlowCollector$0_1(function_0) {
-  this.d6t_1 = function_0;
+  this.f70_1 = function_0;
 }
-protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_1).j1x = function (value, $completion) {
-  return this.d6t_1(value, $completion);
+protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_1).k1x = function (value, $completion) {
+  return this.f70_1(value, $completion);
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_1).d3 = function () {
-  return this.d6t_1;
+  return this.f70_1;
 };
 protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_1).equals = function (other) {
   var tmp;
@@ -18911,21 +20769,22 @@ protoOf(sam$kotlinx_coroutines_flow_FlowCollector$0_1).hashCode = function () {
 function SrgLoginWeb$parseEnvironment$lambda(it) {
   return it.t2_1;
 }
-function SrgLoginWeb$login$slambda(this$0, $scopes, resultContinuation) {
-  this.m6t_1 = this$0;
-  this.n6t_1 = $scopes;
+function SrgLoginWeb$startLogin$slambda(this$0, $scopes, $additionalParameters, resultContinuation) {
+  this.o70_1 = this$0;
+  this.p70_1 = $scopes;
+  this.q70_1 = $additionalParameters;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$login$slambda).j2i = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$startLogin$slambda).k2i = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
-protoOf(SrgLoginWeb$login$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+protoOf(SrgLoginWeb$startLogin$slambda).z8 = function (p1, $completion) {
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
-protoOf(SrgLoginWeb$login$slambda).q8 = function () {
+protoOf(SrgLoginWeb$startLogin$slambda).q8 = function () {
   var suspendResult = this.k8_1;
   $sm: do
     try {
@@ -18934,9 +20793,9 @@ protoOf(SrgLoginWeb$login$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          var tmp_0 = this.m6t_1.b6t_1.d5c(Web_getInstance(), new JsAuthContext(), toList_0(this.n6t_1), emptyMap());
-          var tmp_1 = SrgLoginWeb$login$slambda$slambda_0(null);
-          suspendResult = tmp_0.v1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_1), this);
+          var tmp_0 = this.o70_1.d70_1.h5c(Web_getInstance(), new JsAuthContext(), toList_0(this.p70_1), this.q70_1);
+          var tmp_1 = SrgLoginWeb$startLogin$slambda$slambda_0(null);
+          suspendResult = tmp_0.w1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -18958,31 +20817,31 @@ protoOf(SrgLoginWeb$login$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$login$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$login$slambda(this.m6t_1, this.n6t_1, completion);
-  i.o6t_1 = $this$promise;
+protoOf(SrgLoginWeb$startLogin$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$startLogin$slambda(this.o70_1, this.p70_1, this.q70_1, completion);
+  i.r70_1 = $this$promise;
   return i;
 };
-function SrgLoginWeb$login$slambda_0(this$0, $scopes, resultContinuation) {
-  var i = new SrgLoginWeb$login$slambda(this$0, $scopes, resultContinuation);
+function SrgLoginWeb$startLogin$slambda_0(this$0, $scopes, $additionalParameters, resultContinuation) {
+  var i = new SrgLoginWeb$startLogin$slambda(this$0, $scopes, $additionalParameters, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.j2i($this$promise, $completion);
+    return i.k2i($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$handleRedirect$slambda(this$0, resultContinuation) {
-  this.x6t_1 = this$0;
+  this.a71_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$handleRedirect$slambda).z6t = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$handleRedirect$slambda).c71 = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$handleRedirect$slambda).z8 = function (p1, $completion) {
-  return this.z6t((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.c71((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$handleRedirect$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -18993,7 +20852,7 @@ protoOf(SrgLoginWeb$handleRedirect$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.x6t_1.b6t_1.e5c(window.location.href, this);
+          suspendResult = this.a71_1.d70_1.i5c(window.location.href, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19006,14 +20865,14 @@ protoOf(SrgLoginWeb$handleRedirect$slambda).q8 = function () {
             tmp_0 = new LoginResultJs(true, null, null);
           } else {
             if (state instanceof Failure) {
-              tmp_0 = new LoginResultJs(false, toPublicErrorCode(state.z5c_1), toSanitizedPublicMessage(state.z5c_1));
+              tmp_0 = new LoginResultJs(false, toPublicErrorCode(state.d5d_1), toSanitizedPublicMessage(state.d5d_1));
             } else {
               tmp_0 = new LoginResultJs(false, 'UnknownError', 'Unexpected login state');
             }
           }
 
           var result = tmp_0;
-          clearCallbackParamsFromUrl(this.x6t_1);
+          clearCallbackParamsFromUrl(this.a71_1);
           return result;
         case 2:
           throw this.l8_1;
@@ -19029,31 +20888,157 @@ protoOf(SrgLoginWeb$handleRedirect$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$handleRedirect$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$handleRedirect$slambda(this.x6t_1, completion);
-  i.y6t_1 = $this$promise;
+protoOf(SrgLoginWeb$handleRedirect$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$handleRedirect$slambda(this.a71_1, completion);
+  i.b71_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$handleRedirect$slambda_0(this$0, resultContinuation) {
   var i = new SrgLoginWeb$handleRedirect$slambda(this$0, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.z6t($this$promise, $completion);
+    return i.c71($this$promise, $completion);
+  };
+  l.$arity = 1;
+  return l;
+}
+function SrgLoginWeb$logoutThisDevice$slambda(this$0, resultContinuation) {
+  this.l71_1 = this$0;
+  CoroutineImpl.call(this, resultContinuation);
+}
+protoOf(SrgLoginWeb$logoutThisDevice$slambda).k2i = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SrgLoginWeb$logoutThisDevice$slambda).z8 = function (p1, $completion) {
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+};
+protoOf(SrgLoginWeb$logoutThisDevice$slambda).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = this.l71_1.d70_1.k5c(DeviceOnly_getInstance(), this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var result = suspendResult;
+          if (result instanceof Failure_0) {
+            var message = '[' + toPublicErrorCode(result.d5l_1) + '] ' + toSanitizedPublicMessage(result.d5l_1) + ' ' + ('(clearedLocalSession=' + result.b5l_1 + ')');
+            throw IllegalStateException_init_$Create$(toString(message));
+          }
+
+          return Unit_instance;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+protoOf(SrgLoginWeb$logoutThisDevice$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$logoutThisDevice$slambda(this.l71_1, completion);
+  i.m71_1 = $this$promise;
+  return i;
+};
+function SrgLoginWeb$logoutThisDevice$slambda_0(this$0, resultContinuation) {
+  var i = new SrgLoginWeb$logoutThisDevice$slambda(this$0, resultContinuation);
+  var l = function ($this$promise, $completion) {
+    return i.k2i($this$promise, $completion);
+  };
+  l.$arity = 1;
+  return l;
+}
+function SrgLoginWeb$logoutLocally$slambda(this$0, resultContinuation) {
+  this.v71_1 = this$0;
+  CoroutineImpl.call(this, resultContinuation);
+}
+protoOf(SrgLoginWeb$logoutLocally$slambda).k2i = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
+  tmp.k8_1 = Unit_instance;
+  tmp.l8_1 = null;
+  return tmp.q8();
+};
+protoOf(SrgLoginWeb$logoutLocally$slambda).z8 = function (p1, $completion) {
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+};
+protoOf(SrgLoginWeb$logoutLocally$slambda).q8 = function () {
+  var suspendResult = this.k8_1;
+  $sm: do
+    try {
+      var tmp = this.i8_1;
+      switch (tmp) {
+        case 0:
+          this.j8_1 = 2;
+          this.i8_1 = 1;
+          suspendResult = this.v71_1.d70_1.k5c(LocalOnly_getInstance(), this);
+          if (suspendResult === get_COROUTINE_SUSPENDED()) {
+            return suspendResult;
+          }
+
+          continue $sm;
+        case 1:
+          var result = suspendResult;
+          if (result instanceof Failure_0) {
+            var message = '[' + toPublicErrorCode(result.d5l_1) + '] ' + toSanitizedPublicMessage(result.d5l_1) + ' ' + ('(clearedLocalSession=' + result.b5l_1 + ')');
+            throw IllegalStateException_init_$Create$(toString(message));
+          }
+
+          return Unit_instance;
+        case 2:
+          throw this.l8_1;
+      }
+    } catch ($p) {
+      var e = $p;
+      if (this.j8_1 === 2) {
+        throw e;
+      } else {
+        this.i8_1 = this.j8_1;
+        this.l8_1 = e;
+      }
+    }
+   while (true);
+};
+protoOf(SrgLoginWeb$logoutLocally$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$logoutLocally$slambda(this.v71_1, completion);
+  i.w71_1 = $this$promise;
+  return i;
+};
+function SrgLoginWeb$logoutLocally$slambda_0(this$0, resultContinuation) {
+  var i = new SrgLoginWeb$logoutLocally$slambda(this$0, resultContinuation);
+  var l = function ($this$promise, $completion) {
+    return i.k2i($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$logout$slambda(this$0, resultContinuation) {
-  this.i6u_1 = this$0;
+  this.f72_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$logout$slambda).j2i = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$logout$slambda).k2i = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$logout$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$logout$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19063,17 +21048,17 @@ protoOf(SrgLoginWeb$logout$slambda).q8 = function () {
       switch (tmp) {
         case 0:
           this.j8_1 = 4;
-          var redirect = this.i6u_1.a6t_1;
+          var redirect = this.f72_1.c70_1;
           if (!(redirect == null)) {
             this.i8_1 = 2;
-            suspendResult = this.i6u_1.b6t_1.g5c(new FrontChannel(new JsAuthContext(), redirect), this);
+            suspendResult = this.f72_1.d70_1.k5c(new FrontChannel(new JsAuthContext(), redirect), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
             continue $sm;
           } else {
             this.i8_1 = 1;
-            suspendResult = this.i6u_1.b6t_1.g5c(LocalOnly_getInstance(), this);
+            suspendResult = this.f72_1.d70_1.k5c(LocalOnly_getInstance(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -19081,17 +21066,17 @@ protoOf(SrgLoginWeb$logout$slambda).q8 = function () {
           }
 
         case 1:
-          this.k6u_1 = suspendResult;
+          this.h72_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 2:
-          this.k6u_1 = suspendResult;
+          this.h72_1 = suspendResult;
           this.i8_1 = 3;
           continue $sm;
         case 3:
-          var result = this.k6u_1;
+          var result = this.h72_1;
           if (result instanceof Failure_0) {
-            var message = '[' + toPublicErrorCode(result.z5k_1) + '] ' + toSanitizedPublicMessage(result.z5k_1) + ' ' + ('(clearedLocalSession=' + result.x5k_1 + ')');
+            var message = '[' + toPublicErrorCode(result.d5l_1) + '] ' + toSanitizedPublicMessage(result.d5l_1) + ' ' + ('(clearedLocalSession=' + result.b5l_1 + ')');
             throw IllegalStateException_init_$Create$(toString(message));
           }
 
@@ -19110,31 +21095,31 @@ protoOf(SrgLoginWeb$logout$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$logout$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$logout$slambda(this.i6u_1, completion);
-  i.j6u_1 = $this$promise;
+protoOf(SrgLoginWeb$logout$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$logout$slambda(this.f72_1, completion);
+  i.g72_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$logout$slambda_0(this$0, resultContinuation) {
   var i = new SrgLoginWeb$logout$slambda(this$0, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.j2i($this$promise, $completion);
+    return i.k2i($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$isAuthenticated$slambda(this$0, resultContinuation) {
-  this.t6u_1 = this$0;
+  this.q72_1 = this$0;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$isAuthenticated$slambda).v6u = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$isAuthenticated$slambda).s72 = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$isAuthenticated$slambda).z8 = function (p1, $completion) {
-  return this.v6u((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.s72((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$isAuthenticated$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19145,7 +21130,7 @@ protoOf(SrgLoginWeb$isAuthenticated$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.t6u_1.b6t_1.k5c(this);
+          suspendResult = this.q72_1.d70_1.o5c(this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19167,32 +21152,32 @@ protoOf(SrgLoginWeb$isAuthenticated$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$isAuthenticated$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$isAuthenticated$slambda(this.t6u_1, completion);
-  i.u6u_1 = $this$promise;
+protoOf(SrgLoginWeb$isAuthenticated$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$isAuthenticated$slambda(this.q72_1, completion);
+  i.r72_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$isAuthenticated$slambda_0(this$0, resultContinuation) {
   var i = new SrgLoginWeb$isAuthenticated$slambda(this$0, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.v6u($this$promise, $completion);
+    return i.s72($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$accessToken$slambda(this$0, $forceRefresh, resultContinuation) {
-  this.e6v_1 = this$0;
-  this.f6v_1 = $forceRefresh;
+  this.b73_1 = this$0;
+  this.c73_1 = $forceRefresh;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$accessToken$slambda).h6v = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$accessToken$slambda).e73 = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$accessToken$slambda).z8 = function (p1, $completion) {
-  return this.h6v((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.e73((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$accessToken$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19203,7 +21188,7 @@ protoOf(SrgLoginWeb$accessToken$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.e6v_1.b6t_1.i5c(this.f6v_1, this);
+          suspendResult = this.b73_1.d70_1.m5c(this.c73_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19213,7 +21198,7 @@ protoOf(SrgLoginWeb$accessToken$slambda).q8 = function () {
           var result = suspendResult;
           var tmp_0;
           if (result instanceof Success_1) {
-            tmp_0 = result.q5w_1.p62_1;
+            tmp_0 = result.v5w_1.u62_1;
           } else {
             if (result instanceof Failure_1) {
               tmp_0 = null;
@@ -19237,32 +21222,32 @@ protoOf(SrgLoginWeb$accessToken$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$accessToken$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$accessToken$slambda(this.e6v_1, this.f6v_1, completion);
-  i.g6v_1 = $this$promise;
+protoOf(SrgLoginWeb$accessToken$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$accessToken$slambda(this.b73_1, this.c73_1, completion);
+  i.d73_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$accessToken$slambda_0(this$0, $forceRefresh, resultContinuation) {
   var i = new SrgLoginWeb$accessToken$slambda(this$0, $forceRefresh, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.h6v($this$promise, $completion);
+    return i.e73($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$userInfo$slambda(this$0, $forceRefresh, resultContinuation) {
-  this.q6v_1 = this$0;
-  this.r6v_1 = $forceRefresh;
+  this.n73_1 = this$0;
+  this.o73_1 = $forceRefresh;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$userInfo$slambda).t6v = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$userInfo$slambda).q73 = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$userInfo$slambda).z8 = function (p1, $completion) {
-  return this.t6v((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.q73((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$userInfo$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19273,7 +21258,7 @@ protoOf(SrgLoginWeb$userInfo$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.q6v_1.b6t_1.j5c(this.r6v_1, this);
+          suspendResult = this.n73_1.d70_1.n5c(this.o73_1, this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19283,7 +21268,7 @@ protoOf(SrgLoginWeb$userInfo$slambda).q8 = function () {
           var result = suspendResult;
           var tmp_0;
           if (result instanceof Success_1) {
-            tmp_0 = toJs(this.q6v_1, result.q5w_1);
+            tmp_0 = toJs(this.n73_1, result.v5w_1);
           } else {
             if (result instanceof Failure_1) {
               tmp_0 = null;
@@ -19307,32 +21292,32 @@ protoOf(SrgLoginWeb$userInfo$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$userInfo$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$userInfo$slambda(this.q6v_1, this.r6v_1, completion);
-  i.s6v_1 = $this$promise;
+protoOf(SrgLoginWeb$userInfo$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$userInfo$slambda(this.n73_1, this.o73_1, completion);
+  i.p73_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$userInfo$slambda_0(this$0, $forceRefresh, resultContinuation) {
   var i = new SrgLoginWeb$userInfo$slambda(this$0, $forceRefresh, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.t6v($this$promise, $completion);
+    return i.q73($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$openProfile$slambda(this$0, $ssoClientUrl, resultContinuation) {
-  this.c6w_1 = this$0;
-  this.d6w_1 = $ssoClientUrl;
+  this.z73_1 = this$0;
+  this.a74_1 = $ssoClientUrl;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$openProfile$slambda).j2i = function ($this$promise, $completion) {
-  var tmp = this.k2i($this$promise, $completion);
+protoOf(SrgLoginWeb$openProfile$slambda).k2i = function ($this$promise, $completion) {
+  var tmp = this.l2i($this$promise, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$openProfile$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$openProfile$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19343,7 +21328,7 @@ protoOf(SrgLoginWeb$openProfile$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          suspendResult = this.c6w_1.b6t_1.h5c(this.d6w_1, new JsAuthContext(), this);
+          suspendResult = this.z73_1.d70_1.l5c(this.a74_1, new JsAuthContext(), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19365,32 +21350,32 @@ protoOf(SrgLoginWeb$openProfile$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$openProfile$slambda).k2i = function ($this$promise, completion) {
-  var i = new SrgLoginWeb$openProfile$slambda(this.c6w_1, this.d6w_1, completion);
-  i.e6w_1 = $this$promise;
+protoOf(SrgLoginWeb$openProfile$slambda).l2i = function ($this$promise, completion) {
+  var i = new SrgLoginWeb$openProfile$slambda(this.z73_1, this.a74_1, completion);
+  i.b74_1 = $this$promise;
   return i;
 };
 function SrgLoginWeb$openProfile$slambda_0(this$0, $ssoClientUrl, resultContinuation) {
   var i = new SrgLoginWeb$openProfile$slambda(this$0, $ssoClientUrl, resultContinuation);
   var l = function ($this$promise, $completion) {
-    return i.j2i($this$promise, $completion);
+    return i.k2i($this$promise, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$observeTokenState$slambda(this$0, $onState, resultContinuation) {
-  this.n6w_1 = this$0;
-  this.o6w_1 = $onState;
+  this.k74_1 = this$0;
+  this.l74_1 = $onState;
   CoroutineImpl.call(this, resultContinuation);
 }
-protoOf(SrgLoginWeb$observeTokenState$slambda).j2i = function ($this$launch, $completion) {
-  var tmp = this.k2i($this$launch, $completion);
+protoOf(SrgLoginWeb$observeTokenState$slambda).k2i = function ($this$launch, $completion) {
+  var tmp = this.l2i($this$launch, $completion);
   tmp.k8_1 = Unit_instance;
   tmp.l8_1 = null;
   return tmp.q8();
 };
 protoOf(SrgLoginWeb$observeTokenState$slambda).z8 = function (p1, $completion) {
-  return this.j2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  return this.k2i((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
 };
 protoOf(SrgLoginWeb$observeTokenState$slambda).q8 = function () {
   var suspendResult = this.k8_1;
@@ -19401,9 +21386,9 @@ protoOf(SrgLoginWeb$observeTokenState$slambda).q8 = function () {
         case 0:
           this.j8_1 = 2;
           this.i8_1 = 1;
-          var tmp_0 = this.n6w_1.b6t_1.l5c();
-          var tmp_1 = SrgLoginWeb$observeTokenState$slambda$slambda_0(this.o6w_1, this.n6w_1, null);
-          suspendResult = tmp_0.v1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_1(tmp_1), this);
+          var tmp_0 = this.k74_1.d70_1.p5c();
+          var tmp_1 = SrgLoginWeb$observeTokenState$slambda$slambda_0(this.l74_1, this.k74_1, null);
+          suspendResult = tmp_0.w1w(new sam$kotlinx_coroutines_flow_FlowCollector$0_1(tmp_1), this);
           if (suspendResult === get_COROUTINE_SUSPENDED()) {
             return suspendResult;
           }
@@ -19425,28 +21410,28 @@ protoOf(SrgLoginWeb$observeTokenState$slambda).q8 = function () {
     }
    while (true);
 };
-protoOf(SrgLoginWeb$observeTokenState$slambda).k2i = function ($this$launch, completion) {
-  var i = new SrgLoginWeb$observeTokenState$slambda(this.n6w_1, this.o6w_1, completion);
-  i.p6w_1 = $this$launch;
+protoOf(SrgLoginWeb$observeTokenState$slambda).l2i = function ($this$launch, completion) {
+  var i = new SrgLoginWeb$observeTokenState$slambda(this.k74_1, this.l74_1, completion);
+  i.m74_1 = $this$launch;
   return i;
 };
 function SrgLoginWeb$observeTokenState$slambda_0(this$0, $onState, resultContinuation) {
   var i = new SrgLoginWeb$observeTokenState$slambda(this$0, $onState, resultContinuation);
   var l = function ($this$launch, $completion) {
-    return i.j2i($this$launch, $completion);
+    return i.k2i($this$launch, $completion);
   };
   l.$arity = 1;
   return l;
 }
 function SrgLoginWeb$observeTokenState$lambda($job) {
   return function () {
-    $job.q1h();
+    $job.r1h();
     return Unit_instance;
   };
 }
 function SrgLoginWeb(clientId, redirectUri, environment, appId, appName, appVersion, businessUnit, businessUnitName, postLogoutRedirectUri, enableLogging) {
-  this.z6s_1 = CoroutineScope_0(Dispatchers_getInstance().r1r_1.hf(SupervisorJob()));
-  this.a6t_1 = postLogoutRedirectUri;
+  this.b70_1 = CoroutineScope_0(Dispatchers_getInstance().s1r_1.hf(SupervisorJob()));
+  this.c70_1 = postLogoutRedirectUri;
   var tmp = this;
   // Inline function 'kotlin.run' call
   requireSecureWebUri(this, redirectUri, 'redirectUri');
@@ -19456,20 +21441,34 @@ function SrgLoginWeb(clientId, redirectUri, environment, appId, appName, appVers
     // Inline function 'kotlin.let' call
     requireSecureWebUri(this, postLogoutRedirectUri, 'postLogoutRedirectUri');
   }
-  SrgLoginSdk_instance.w5c();
-  tmp.b6t_1 = SrgLoginSdk_instance.x5c(new SrgLoginConfig(clientId, redirectUri, new AppIdentity(appId, appName, appVersion, businessUnit, businessUnitName), parseEnvironment(this, environment), postLogoutRedirectUri, enableLogging));
+  SrgLoginSdk_instance.a5d();
+  tmp.d70_1 = SrgLoginSdk_instance.b5d(new SrgLoginConfig(clientId, redirectUri, new AppIdentity(appId, appName, appVersion, businessUnit, businessUnitName), parseEnvironment(this, environment), postLogoutRedirectUri, enableLogging));
 }
-protoOf(SrgLoginWeb).login = function (scopes) {
-  return promise(this.z6s_1, VOID, VOID, SrgLoginWeb$login$slambda_0(this, scopes, null));
+protoOf(SrgLoginWeb).n74 = function (scopes, additionalParameters) {
+  return startLogin(this, scopes, toStringMap(this, additionalParameters));
+};
+protoOf(SrgLoginWeb).login = function (scopes, additionalParameters, $super) {
+  additionalParameters = additionalParameters === VOID ? null : additionalParameters;
+  return $super === VOID ? this.n74(scopes, additionalParameters) : $super.n74.call(this, scopes, additionalParameters);
+};
+protoOf(SrgLoginWeb).loginSilently = function (scopes) {
+  var silentParams = mapOf_0(to('prompt', 'none'));
+  return startLogin(this, scopes, silentParams);
 };
 protoOf(SrgLoginWeb).handleRedirect = function () {
-  return promise(this.z6s_1, VOID, VOID, SrgLoginWeb$handleRedirect$slambda_0(this, null));
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$handleRedirect$slambda_0(this, null));
+};
+protoOf(SrgLoginWeb).logoutThisDevice = function () {
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$logoutThisDevice$slambda_0(this, null));
+};
+protoOf(SrgLoginWeb).logoutLocally = function () {
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$logoutLocally$slambda_0(this, null));
 };
 protoOf(SrgLoginWeb).logout = function () {
-  return promise(this.z6s_1, VOID, VOID, SrgLoginWeb$logout$slambda_0(this, null));
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$logout$slambda_0(this, null));
 };
 protoOf(SrgLoginWeb).isAuthenticated = function () {
-  return promise(this.z6s_1, VOID, VOID, SrgLoginWeb$isAuthenticated$slambda_0(this, null));
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$isAuthenticated$slambda_0(this, null));
 };
 protoOf(SrgLoginWeb).getAccessToken = function () {
   return accessToken(this, false);
@@ -19484,10 +21483,10 @@ protoOf(SrgLoginWeb).refreshUserInfo = function () {
   return userInfo(this, true);
 };
 protoOf(SrgLoginWeb).openProfile = function (ssoClientUrl) {
-  return promise(this.z6s_1, VOID, VOID, SrgLoginWeb$openProfile$slambda_0(this, ssoClientUrl, null));
+  return promise(this.b70_1, VOID, VOID, SrgLoginWeb$openProfile$slambda_0(this, ssoClientUrl, null));
 };
 protoOf(SrgLoginWeb).observeTokenState = function (onState) {
-  var job = launch(this.z6s_1, VOID, VOID, SrgLoginWeb$observeTokenState$slambda_0(this, onState, null));
+  var job = launch(this.b70_1, VOID, VOID, SrgLoginWeb$observeTokenState$slambda_0(this, onState, null));
   return SrgLoginWeb$observeTokenState$lambda(job);
 };
 function LoginResultJs(authenticated, errorCode, errorMessage) {
@@ -19495,13 +21494,13 @@ function LoginResultJs(authenticated, errorCode, errorMessage) {
   this.errorCode = errorCode;
   this.errorMessage = errorMessage;
 }
-protoOf(LoginResultJs).q6w = function () {
+protoOf(LoginResultJs).o74 = function () {
   return this.authenticated;
 };
-protoOf(LoginResultJs).r6w = function () {
+protoOf(LoginResultJs).p74 = function () {
   return this.errorCode;
 };
-protoOf(LoginResultJs).s6w = function () {
+protoOf(LoginResultJs).q74 = function () {
   return this.errorMessage;
 };
 function UserInfoJs(subject, email, emailVerified, name, givenName, familyName, preferredUsername, picture) {
@@ -19514,28 +21513,28 @@ function UserInfoJs(subject, email, emailVerified, name, givenName, familyName, 
   this.preferredUsername = preferredUsername;
   this.picture = picture;
 }
-protoOf(UserInfoJs).q2v = function () {
+protoOf(UserInfoJs).r2v = function () {
   return this.subject;
 };
-protoOf(UserInfoJs).t6w = function () {
+protoOf(UserInfoJs).r74 = function () {
   return this.email;
 };
-protoOf(UserInfoJs).u6w = function () {
+protoOf(UserInfoJs).s74 = function () {
   return this.emailVerified;
 };
 protoOf(UserInfoJs).m = function () {
   return this.name;
 };
-protoOf(UserInfoJs).v6w = function () {
+protoOf(UserInfoJs).t74 = function () {
   return this.givenName;
 };
-protoOf(UserInfoJs).w6w = function () {
+protoOf(UserInfoJs).u74 = function () {
   return this.familyName;
 };
-protoOf(UserInfoJs).x6w = function () {
+protoOf(UserInfoJs).v74 = function () {
   return this.preferredUsername;
 };
-protoOf(UserInfoJs).y6w = function () {
+protoOf(UserInfoJs).w74 = function () {
   return this.picture;
 };
 function isDocumentHidden($this) {
@@ -19550,16 +21549,16 @@ function AppLifecycleObserver$loadHandler$lambda$lambda_0() {
 }
 function AppLifecycleObserver$loadHandler$lambda(this$0) {
   return function (_unused_var__etf5q3) {
-    var startedTimestamp = System_instance.s3f().f3v();
-    this$0.a6x_1.c5z(new AppStarted(startedTimestamp));
+    var startedTimestamp = System_instance.u3f().h3v();
+    this$0.y74_1.h5z(new AppStarted(startedTimestamp));
     var tmp = SdkLogger_getInstance();
     var tmp_0 = LogCategory_LIFECYCLE_getInstance();
-    tmp.n5a(tmp_0, VOID, VOID, AppLifecycleObserver$loadHandler$lambda$lambda);
-    var foregroundedTimestamp = System_instance.s3f().f3v();
-    this$0.a6x_1.c5z(new AppForegrounded(foregroundedTimestamp));
+    tmp.r5a(tmp_0, VOID, VOID, AppLifecycleObserver$loadHandler$lambda$lambda);
+    var foregroundedTimestamp = System_instance.u3f().h3v();
+    this$0.y74_1.h5z(new AppForegrounded(foregroundedTimestamp));
     var tmp_1 = SdkLogger_getInstance();
     var tmp_2 = LogCategory_LIFECYCLE_getInstance();
-    tmp_1.n5a(tmp_2, VOID, VOID, AppLifecycleObserver$loadHandler$lambda$lambda_0);
+    tmp_1.r5a(tmp_2, VOID, VOID, AppLifecycleObserver$loadHandler$lambda$lambda_0);
     return Unit_instance;
   };
 }
@@ -19571,18 +21570,18 @@ function AppLifecycleObserver$beforeUnloadHandler$lambda$lambda_0() {
 }
 function AppLifecycleObserver$beforeUnloadHandler$lambda(this$0) {
   return function (_unused_var__etf5q3) {
-    var backgroundedTimestamp = System_instance.s3f().f3v();
-    this$0.a6x_1.c5z(new AppBackgrounded(backgroundedTimestamp));
+    var backgroundedTimestamp = System_instance.u3f().h3v();
+    this$0.y74_1.h5z(new AppBackgrounded(backgroundedTimestamp));
     var tmp = SdkLogger_getInstance();
     var tmp_0 = LogCategory_LIFECYCLE_getInstance();
-    tmp.n5a(tmp_0, VOID, VOID, AppLifecycleObserver$beforeUnloadHandler$lambda$lambda);
-    this$0.z6w_1.s5n();
-    var terminatedTimestamp = System_instance.s3f().f3v();
-    this$0.a6x_1.c5z(new AppTerminated(terminatedTimestamp));
+    tmp.r5a(tmp_0, VOID, VOID, AppLifecycleObserver$beforeUnloadHandler$lambda$lambda);
+    this$0.x74_1.w5n();
+    var terminatedTimestamp = System_instance.u3f().h3v();
+    this$0.y74_1.h5z(new AppTerminated(terminatedTimestamp));
     var tmp_1 = SdkLogger_getInstance();
     var tmp_2 = LogCategory_LIFECYCLE_getInstance();
-    tmp_1.n5a(tmp_2, VOID, VOID, AppLifecycleObserver$beforeUnloadHandler$lambda$lambda_0);
-    this$0.z6w_1.b1j();
+    tmp_1.r5a(tmp_2, VOID, VOID, AppLifecycleObserver$beforeUnloadHandler$lambda$lambda_0);
+    this$0.x74_1.c1j();
     return Unit_instance;
   };
 }
@@ -19596,19 +21595,19 @@ function AppLifecycleObserver$visibilityChangeHandler$lambda(this$0) {
   return function (_unused_var__etf5q3) {
     var tmp;
     if (isDocumentHidden(this$0)) {
-      var timestamp = System_instance.s3f().f3v();
-      this$0.a6x_1.c5z(new AppBackgrounded(timestamp));
+      var timestamp = System_instance.u3f().h3v();
+      this$0.y74_1.h5z(new AppBackgrounded(timestamp));
       var tmp_0 = SdkLogger_getInstance();
       var tmp_1 = LogCategory_LIFECYCLE_getInstance();
-      tmp_0.n5a(tmp_1, VOID, VOID, AppLifecycleObserver$visibilityChangeHandler$lambda$lambda);
-      this$0.z6w_1.s5n();
+      tmp_0.r5a(tmp_1, VOID, VOID, AppLifecycleObserver$visibilityChangeHandler$lambda$lambda);
+      this$0.x74_1.w5n();
       tmp = Unit_instance;
     } else {
-      var timestamp_0 = System_instance.s3f().f3v();
-      this$0.a6x_1.c5z(new AppForegrounded(timestamp_0));
+      var timestamp_0 = System_instance.u3f().h3v();
+      this$0.y74_1.h5z(new AppForegrounded(timestamp_0));
       var tmp_2 = SdkLogger_getInstance();
       var tmp_3 = LogCategory_LIFECYCLE_getInstance();
-      tmp_2.n5a(tmp_3, VOID, VOID, AppLifecycleObserver$visibilityChangeHandler$lambda$lambda_0);
+      tmp_2.r5a(tmp_3, VOID, VOID, AppLifecycleObserver$visibilityChangeHandler$lambda$lambda_0);
       tmp = Unit_instance;
     }
     return Unit_instance;
@@ -19632,42 +21631,42 @@ function AppLifecycleObserver$lambda_3() {
   return 'Failed to register AppLifecycleObserver (JS)';
 }
 function AppLifecycleObserver(platformContext, tokenManager, eventEmitter) {
-  this.z6w_1 = tokenManager;
-  this.a6x_1 = eventEmitter;
+  this.x74_1 = tokenManager;
+  this.y74_1 = eventEmitter;
   var tmp = this;
-  tmp.b6x_1 = AppLifecycleObserver$loadHandler$lambda(this);
+  tmp.z74_1 = AppLifecycleObserver$loadHandler$lambda(this);
   var tmp_0 = this;
-  tmp_0.c6x_1 = AppLifecycleObserver$beforeUnloadHandler$lambda(this);
+  tmp_0.a75_1 = AppLifecycleObserver$beforeUnloadHandler$lambda(this);
   var tmp_1 = this;
-  tmp_1.d6x_1 = AppLifecycleObserver$visibilityChangeHandler$lambda(this);
+  tmp_1.b75_1 = AppLifecycleObserver$visibilityChangeHandler$lambda(this);
   var tmp_2 = SdkLogger_getInstance();
   var tmp_3 = LogCategory_LIFECYCLE_getInstance();
-  tmp_2.m5a(tmp_3, VOID, VOID, AppLifecycleObserver$lambda(this));
+  tmp_2.q5a(tmp_3, VOID, VOID, AppLifecycleObserver$lambda(this));
   try {
-    window.addEventListener('load', this.b6x_1);
-    window.addEventListener('beforeunload', this.c6x_1);
-    document.addEventListener('visibilitychange', this.d6x_1);
+    window.addEventListener('load', this.z74_1);
+    window.addEventListener('beforeunload', this.a75_1);
+    document.addEventListener('visibilitychange', this.b75_1);
     if (toString(document.readyState) === 'complete' && !isDocumentHidden(this)) {
-      var startedTimestamp = System_instance.s3f().f3v();
-      this.a6x_1.c5z(new AppStarted(startedTimestamp));
+      var startedTimestamp = System_instance.u3f().h3v();
+      this.y74_1.h5z(new AppStarted(startedTimestamp));
       var tmp_4 = SdkLogger_getInstance();
       var tmp_5 = LogCategory_LIFECYCLE_getInstance();
-      tmp_4.n5a(tmp_5, VOID, VOID, AppLifecycleObserver$lambda_0);
-      var foregroundedTimestamp = System_instance.s3f().f3v();
-      this.a6x_1.c5z(new AppForegrounded(foregroundedTimestamp));
+      tmp_4.r5a(tmp_5, VOID, VOID, AppLifecycleObserver$lambda_0);
+      var foregroundedTimestamp = System_instance.u3f().h3v();
+      this.y74_1.h5z(new AppForegrounded(foregroundedTimestamp));
       var tmp_6 = SdkLogger_getInstance();
       var tmp_7 = LogCategory_LIFECYCLE_getInstance();
-      tmp_6.n5a(tmp_7, VOID, VOID, AppLifecycleObserver$lambda_1);
+      tmp_6.r5a(tmp_7, VOID, VOID, AppLifecycleObserver$lambda_1);
     }
     var tmp_8 = SdkLogger_getInstance();
     var tmp_9 = LogCategory_LIFECYCLE_getInstance();
-    tmp_8.n5a(tmp_9, VOID, VOID, AppLifecycleObserver$lambda_2);
+    tmp_8.r5a(tmp_9, VOID, VOID, AppLifecycleObserver$lambda_2);
   } catch ($p) {
     if ($p instanceof Error) {
       var e = $p;
       var tmp_10 = SdkLogger_getInstance();
       var tmp_11 = LogCategory_LIFECYCLE_getInstance();
-      tmp_10.b5z(tmp_11, e, VOID, AppLifecycleObserver$lambda_3);
+      tmp_10.g5z(tmp_11, e, VOID, AppLifecycleObserver$lambda_3);
     } else {
       throw $p;
     }
@@ -19677,7 +21676,7 @@ function remove($this, key) {
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
-    $this.e6x_1.removeItem(key);
+    $this.c75_1.removeItem(key);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -19693,36 +21692,36 @@ function remove($this, key) {
   }
   return tmp;
 }
-function Companion_35() {
-  this.g6x_1 = 'srg_login_tokens';
-  this.h6x_1 = 'srg_login_jwt_ids';
-  this.i6x_1 = 'srg_login_refresh_metadata';
-  this.j6x_1 = 'srg_login_user_info';
+function Companion_38() {
+  this.e75_1 = 'srg_login_tokens';
+  this.f75_1 = 'srg_login_jwt_ids';
+  this.g75_1 = 'srg_login_refresh_metadata';
+  this.h75_1 = 'srg_login_user_info';
 }
-var Companion_instance_36;
-function Companion_getInstance_43() {
-  return Companion_instance_36;
+var Companion_instance_40;
+function Companion_getInstance_46() {
+  return Companion_instance_40;
 }
 function JsWebTokenStorage(storage) {
   storage = storage === VOID ? sessionStorage : storage;
-  this.e6x_1 = storage;
-  this.f6x_1 = get_WebJson();
+  this.c75_1 = storage;
+  this.d75_1 = get_WebJson();
 }
-protoOf(JsWebTokenStorage).a5z = function (tokens, $completion) {
+protoOf(JsWebTokenStorage).f5z = function (tokens, $completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.write' call
   var key = 'srg_login_tokens';
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
     // Inline function 'kotlinx.serialization.encodeToString' call
-    var this_0 = this.f6x_1;
+    var this_0 = this.d75_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_1 = this_0.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
     var this_2 = serializer(this_1, createKType(getKClass(TokenResponseDto), arrayOf([]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
     var tmp$ret$3 = this_0.sm(tmp$ret$1, tokens);
-    this.e6x_1.setItem(key, tmp$ret$3);
+    this.c75_1.setItem(key, tmp$ret$3);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -19739,19 +21738,19 @@ protoOf(JsWebTokenStorage).a5z = function (tokens, $completion) {
   var tmp$ret$8 = tmp;
   return new Result(tmp$ret$8);
 };
-protoOf(JsWebTokenStorage).t5o = function ($completion) {
+protoOf(JsWebTokenStorage).x5o = function ($completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.read' call
   var key = 'srg_login_tokens';
   var tmp;
   try {
-    var tmp0_safe_receiver = this.e6x_1.getItem(key);
+    var tmp0_safe_receiver = this.c75_1.getItem(key);
     var tmp_0;
     if (tmp0_safe_receiver == null) {
       tmp_0 = null;
     } else {
       // Inline function 'kotlin.let' call
       // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-      var this_0 = this.f6x_1;
+      var this_0 = this.d75_1;
       // Inline function 'kotlinx.serialization.serializer' call
       var this_1 = this_0.um();
       // Inline function 'kotlinx.serialization.internal.cast' call
@@ -19772,24 +21771,24 @@ protoOf(JsWebTokenStorage).t5o = function ($completion) {
   }
   return tmp;
 };
-protoOf(JsWebTokenStorage).l5z = function ($completion) {
+protoOf(JsWebTokenStorage).q5z = function ($completion) {
   return new Result(remove(this, 'srg_login_tokens'));
 };
-protoOf(JsWebTokenStorage).q5n = function (usedIds, $completion) {
+protoOf(JsWebTokenStorage).u5n = function (usedIds, $completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.write' call
   var key = 'srg_login_jwt_ids';
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
     // Inline function 'kotlinx.serialization.encodeToString' call
-    var this_0 = this.f6x_1;
+    var this_0 = this.d75_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_1 = this_0.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
     var this_2 = serializer(this_1, createKType(getKClass(KtMap), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().oa(), arrayOf([]), false)), createInvariantKTypeProjection(createKType(getKClass(Long), arrayOf([]), false))]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
     var tmp$ret$3 = this_0.sm(tmp$ret$1, usedIds);
-    this.e6x_1.setItem(key, tmp$ret$3);
+    this.c75_1.setItem(key, tmp$ret$3);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -19806,19 +21805,19 @@ protoOf(JsWebTokenStorage).q5n = function (usedIds, $completion) {
   var tmp$ret$8 = tmp;
   return new Result(tmp$ret$8);
 };
-protoOf(JsWebTokenStorage).p5n = function ($completion) {
+protoOf(JsWebTokenStorage).t5n = function ($completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.read' call
   var key = 'srg_login_jwt_ids';
   var tmp;
   try {
-    var tmp0_safe_receiver = this.e6x_1.getItem(key);
+    var tmp0_safe_receiver = this.c75_1.getItem(key);
     var tmp_0;
     if (tmp0_safe_receiver == null) {
       tmp_0 = null;
     } else {
       // Inline function 'kotlin.let' call
       // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-      var this_0 = this.f6x_1;
+      var this_0 = this.d75_1;
       // Inline function 'kotlinx.serialization.serializer' call
       var this_1 = this_0.um();
       // Inline function 'kotlinx.serialization.internal.cast' call
@@ -19839,24 +21838,24 @@ protoOf(JsWebTokenStorage).p5n = function ($completion) {
   }
   return tmp;
 };
-protoOf(JsWebTokenStorage).z6c = function ($completion) {
+protoOf(JsWebTokenStorage).f6d = function ($completion) {
   return new Result(remove(this, 'srg_login_jwt_ids'));
 };
-protoOf(JsWebTokenStorage).g5z = function (metadata, $completion) {
+protoOf(JsWebTokenStorage).l5z = function (metadata, $completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.write' call
   var key = 'srg_login_refresh_metadata';
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
     // Inline function 'kotlinx.serialization.encodeToString' call
-    var this_0 = this.f6x_1;
+    var this_0 = this.d75_1;
     // Inline function 'kotlinx.serialization.serializer' call
     var this_1 = this_0.um();
     // Inline function 'kotlinx.serialization.internal.cast' call
     var this_2 = serializer(this_1, createKType(getKClass(RefreshTokenMetadata), arrayOf([]), false));
     var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
     var tmp$ret$3 = this_0.sm(tmp$ret$1, metadata);
-    this.e6x_1.setItem(key, tmp$ret$3);
+    this.c75_1.setItem(key, tmp$ret$3);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -19873,19 +21872,19 @@ protoOf(JsWebTokenStorage).g5z = function (metadata, $completion) {
   var tmp$ret$8 = tmp;
   return new Result(tmp$ret$8);
 };
-protoOf(JsWebTokenStorage).r5w = function ($completion) {
+protoOf(JsWebTokenStorage).w5w = function ($completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.read' call
   var key = 'srg_login_refresh_metadata';
   var tmp;
   try {
-    var tmp0_safe_receiver = this.e6x_1.getItem(key);
+    var tmp0_safe_receiver = this.c75_1.getItem(key);
     var tmp_0;
     if (tmp0_safe_receiver == null) {
       tmp_0 = null;
     } else {
       // Inline function 'kotlin.let' call
       // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-      var this_0 = this.f6x_1;
+      var this_0 = this.d75_1;
       // Inline function 'kotlinx.serialization.serializer' call
       var this_1 = this_0.um();
       // Inline function 'kotlinx.serialization.internal.cast' call
@@ -19906,16 +21905,16 @@ protoOf(JsWebTokenStorage).r5w = function ($completion) {
   }
   return tmp;
 };
-protoOf(JsWebTokenStorage).m5z = function ($completion) {
+protoOf(JsWebTokenStorage).r5z = function ($completion) {
   return new Result(remove(this, 'srg_login_refresh_metadata'));
 };
-protoOf(JsWebTokenStorage).f5z = function (userInfo, $completion) {
+protoOf(JsWebTokenStorage).k5z = function (userInfo, $completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.write' call
   var key = 'srg_login_user_info';
   // Inline function 'kotlin.runCatching' call
   var tmp;
   try {
-    var tmp0 = this.f6x_1;
+    var tmp0 = this.d75_1;
     // Inline function 'kotlinx.serialization.encodeToString' call
     var value = toDto(userInfo);
     // Inline function 'kotlinx.serialization.serializer' call
@@ -19924,7 +21923,7 @@ protoOf(JsWebTokenStorage).f5z = function (userInfo, $completion) {
     var this_1 = serializer(this_0, createKType(getKClass(UserInfoDto), arrayOf([]), false));
     var tmp$ret$1 = isInterface(this_1, KSerializer) ? this_1 : THROW_CCE();
     var tmp$ret$3 = tmp0.sm(tmp$ret$1, value);
-    this.e6x_1.setItem(key, tmp$ret$3);
+    this.c75_1.setItem(key, tmp$ret$3);
     // Inline function 'kotlin.Companion.success' call
     tmp = _Result___init__impl__xyqfz8(Unit_instance);
   } catch ($p) {
@@ -19941,27 +21940,27 @@ protoOf(JsWebTokenStorage).f5z = function (userInfo, $completion) {
   var tmp$ret$8 = tmp;
   return new Result(tmp$ret$8);
 };
-protoOf(JsWebTokenStorage).o62 = function ($completion) {
+protoOf(JsWebTokenStorage).t62 = function ($completion) {
   // Inline function 'ch.srg.login.sdk.token.JsWebTokenStorage.read' call
   var key = 'srg_login_user_info';
   var tmp;
   try {
-    var tmp0_safe_receiver = this.e6x_1.getItem(key);
+    var tmp0_safe_receiver = this.c75_1.getItem(key);
     var tmp_0;
     if (tmp0_safe_receiver == null) {
       tmp_0 = null;
     } else {
       // Inline function 'kotlin.let' call
-      var tmp_1 = Companion_instance_30;
+      var tmp_1 = Companion_instance_34;
       // Inline function 'kotlinx.serialization.json.Json.decodeFromString' call
-      var this_0 = this.f6x_1;
+      var this_0 = this.d75_1;
       // Inline function 'kotlinx.serialization.serializer' call
       var this_1 = this_0.um();
       // Inline function 'kotlinx.serialization.internal.cast' call
       var this_2 = serializer(this_1, createKType(getKClass(UserInfoDto), arrayOf([]), false));
       var tmp$ret$1 = isInterface(this_2, KSerializer) ? this_2 : THROW_CCE();
       var tmp$ret$2 = this_0.tm(tmp$ret$1, tmp0_safe_receiver);
-      tmp_0 = tmp_1.u6p(tmp$ret$2);
+      tmp_0 = tmp_1.w6w(tmp$ret$2);
     }
     tmp = tmp_0;
   } catch ($p) {
@@ -19976,13 +21975,15 @@ protoOf(JsWebTokenStorage).o62 = function ($completion) {
   }
   return tmp;
 };
-protoOf(JsWebTokenStorage).p6c = function ($completion) {
+protoOf(JsWebTokenStorage).v6c = function ($completion) {
   return new Result(remove(this, 'srg_login_user_info'));
 };
 //region block: post-declaration
-protoOf(TokenManagerImpl).r5n = getAccessToken$default;
-protoOf(WebLogoutHandler).x6a = performBackChannelLogout;
-protoOf(WebLogoutHandler).s6b = performFrontChannelLogout;
+protoOf(TokenManagerImpl).v5n = getAccessToken$default;
+protoOf(WebLogoutHandler).d6b = performBackChannelLogout;
+protoOf(WebLogoutHandler).y6b = performFrontChannelLogout;
+protoOf(WebLogoutHandler).e6e = performSilentLogout;
+protoOf(WebLogoutHandler).f6e = performDeviceOnlyLogout;
 protoOf($serializer).gw = typeParametersSerializers;
 protoOf($serializer_0).gw = typeParametersSerializers;
 protoOf($serializer_1).gw = typeParametersSerializers;
@@ -20003,46 +22004,70 @@ protoOf($serializer_15).gw = typeParametersSerializers;
 protoOf($serializer_16).gw = typeParametersSerializers;
 protoOf($serializer_17).gw = typeParametersSerializers;
 protoOf($serializer_18).gw = typeParametersSerializers;
-protoOf(JsCryptoService).s5s = sha256;
+protoOf(JsCryptoService).w5s = sha256;
 //endregion
 //region block: init
 SdkCore_instance = new SdkCore();
-Companion_instance_0 = new Companion();
+Companion_instance_1 = new Companion();
 SrgLoginSdk_instance = new SrgLoginSdk();
-Companion_instance_1 = new Companion_0();
-Companion_instance_2 = new Companion_1();
-Companion_instance_3 = new Companion_2();
+Companion_instance_2 = new Companion_0();
+Companion_instance_3 = new Companion_1();
 SdkSentryConfig_instance = new SdkSentryConfig();
-Companion_instance_5 = new Companion_4();
-Companion_instance_6 = new Companion_5();
+Companion_instance_8 = new Companion_6();
+Companion_instance_9 = new Companion_7();
 ErrorHandlerRegistry_instance = new ErrorHandlerRegistry();
-Companion_instance_7 = new Companion_6();
-Companion_instance_8 = new Companion_7();
-Companion_instance_11 = new Companion_10();
-Companion_instance_13 = new Companion_12();
-Companion_instance_14 = new Companion_13();
-Companion_instance_15 = new Companion_14();
-Companion_instance_16 = new Companion_15();
-Companion_instance_17 = new Companion_16();
-Companion_instance_18 = new Companion_17();
-Companion_instance_19 = new Companion_18();
-Companion_instance_20 = new Companion_19();
-Companion_instance_21 = new Companion_20();
-Companion_instance_24 = new Companion_23();
-Companion_instance_25 = new Companion_24();
-Companion_instance_27 = new Companion_26();
-Companion_instance_28 = new Companion_27();
-Companion_instance_29 = new Companion_28();
-Companion_instance_30 = new Companion_29();
-Companion_instance_31 = new Companion_30();
-Companion_instance_32 = new Companion_31();
-Companion_instance_33 = new Companion_32();
-Companion_instance_35 = new Companion_34();
+Companion_instance_10 = new Companion_8();
+Companion_instance_11 = new Companion_9();
+Companion_instance_14 = new Companion_12();
+Companion_instance_16 = new Companion_14();
+Companion_instance_17 = new Companion_15();
+Companion_instance_18 = new Companion_16();
+Companion_instance_19 = new Companion_17();
+Companion_instance_20 = new Companion_18();
+Companion_instance_21 = new Companion_19();
+Companion_instance_22 = new Companion_20();
+Companion_instance_23 = new Companion_21();
+Companion_instance_24 = new Companion_22();
+Companion_instance_27 = new Companion_25();
+Companion_instance_28 = new Companion_26();
+Companion_instance_30 = new Companion_28();
+Companion_instance_31 = new Companion_29();
+Companion_instance_32 = new Companion_30();
+Companion_instance_33 = new Companion_31();
+Companion_instance_34 = new Companion_32();
+Companion_instance_35 = new Companion_33();
+Companion_instance_36 = new Companion_34();
+Companion_instance_37 = new Companion_35();
+Companion_instance_39 = new Companion_37();
 PlatformInfo_instance = new PlatformInfo();
-Companion_instance_36 = new Companion_35();
+PROMPT_0 = 'prompt';
+UI_LOCALES_0 = 'ui_locales';
+LOGIN_HINT_0 = 'login_hint';
+MAX_AGE_0 = 'max_age';
+PROMPT_NONE_0 = 'none';
+PROMPT_LOGIN_0 = 'login';
+PROMPT_CONSENT_0 = 'consent';
+PROMPT_SELECT_ACCOUNT_0 = 'select_account';
+Companion_instance_40 = new Companion_38();
 //endregion
 //region block: exports
+var PROMPT = {get: get_PROMPT};
+var UI_LOCALES = {get: get_UI_LOCALES};
+var LOGIN_HINT = {get: get_LOGIN_HINT};
+var MAX_AGE = {get: get_MAX_AGE};
+var PROMPT_NONE = {get: get_PROMPT_NONE};
+var PROMPT_LOGIN = {get: get_PROMPT_LOGIN};
+var PROMPT_CONSENT = {get: get_PROMPT_CONSENT};
+var PROMPT_SELECT_ACCOUNT = {get: get_PROMPT_SELECT_ACCOUNT};
 export {
+  PROMPT as PROMPT,
+  UI_LOCALES as UI_LOCALES,
+  LOGIN_HINT as LOGIN_HINT,
+  MAX_AGE as MAX_AGE,
+  PROMPT_NONE as PROMPT_NONE,
+  PROMPT_LOGIN as PROMPT_LOGIN,
+  PROMPT_CONSENT as PROMPT_CONSENT,
+  PROMPT_SELECT_ACCOUNT as PROMPT_SELECT_ACCOUNT,
   SrgLoginWeb as SrgLoginWeb,
   LoginResultJs as LoginResultJs,
   UserInfoJs as UserInfoJs,

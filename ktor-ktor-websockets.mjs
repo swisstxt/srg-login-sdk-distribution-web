@@ -67,14 +67,14 @@ function Companion() {
   while (inductionVariable < last) {
     var element = this_0[inductionVariable];
     inductionVariable = inductionVariable + 1 | 0;
-    var tmp$ret$0 = element.s42_1;
+    var tmp$ret$0 = element.u42_1;
     destination.m2(tmp$ret$0, element);
   }
-  tmp.t42_1 = destination;
-  this.u42_1 = Codes_INTERNAL_ERROR_getInstance();
+  tmp.v42_1 = destination;
+  this.w42_1 = Codes_INTERNAL_ERROR_getInstance();
 }
-protoOf(Companion).v42 = function (code) {
-  return this.t42_1.j2(code);
+protoOf(Companion).x42 = function (code) {
+  return this.v42_1.j2(code);
 };
 var Companion_instance;
 function Companion_getInstance() {
@@ -107,7 +107,7 @@ function Codes_initEntries() {
 }
 function Codes(name, ordinal, code) {
   Enum.call(this, name, ordinal);
-  this.s42_1 = code;
+  this.u42_1 = code;
 }
 function Codes_NORMAL_getInstance() {
   Codes_initEntries();
@@ -158,19 +158,19 @@ function Codes_TRY_AGAIN_LATER_getInstance() {
   return Codes_TRY_AGAIN_LATER_instance;
 }
 function CloseReason(code, message) {
-  this.w42_1 = code;
-  this.x42_1 = message;
+  this.y42_1 = code;
+  this.z42_1 = message;
 }
-protoOf(CloseReason).y42 = function () {
-  return Companion_getInstance().v42(this.w42_1);
+protoOf(CloseReason).a43 = function () {
+  return Companion_getInstance().x42(this.y42_1);
 };
 protoOf(CloseReason).toString = function () {
-  var tmp0_elvis_lhs = this.y42();
-  return 'CloseReason(reason=' + toString(tmp0_elvis_lhs == null ? this.w42_1 : tmp0_elvis_lhs) + ', message=' + this.x42_1 + ')';
+  var tmp0_elvis_lhs = this.a43();
+  return 'CloseReason(reason=' + toString(tmp0_elvis_lhs == null ? this.y42_1 : tmp0_elvis_lhs) + ', message=' + this.z42_1 + ')';
 };
 protoOf(CloseReason).hashCode = function () {
-  var result = this.w42_1;
-  result = imul(result, 31) + getStringHashCode(this.x42_1) | 0;
+  var result = this.y42_1;
+  result = imul(result, 31) + getStringHashCode(this.z42_1) | 0;
   return result;
 };
 protoOf(CloseReason).equals = function (other) {
@@ -179,15 +179,15 @@ protoOf(CloseReason).equals = function (other) {
   if (!(other instanceof CloseReason))
     return false;
   var tmp0_other_with_cast = other instanceof CloseReason ? other : THROW_CCE();
-  if (!(this.w42_1 === tmp0_other_with_cast.w42_1))
+  if (!(this.y42_1 === tmp0_other_with_cast.y42_1))
     return false;
-  if (!(this.x42_1 === tmp0_other_with_cast.x42_1))
+  if (!(this.z42_1 === tmp0_other_with_cast.z42_1))
     return false;
   return true;
 };
 function NonDisposableHandle() {
 }
-protoOf(NonDisposableHandle).b1j = function () {
+protoOf(NonDisposableHandle).c1j = function () {
 };
 protoOf(NonDisposableHandle).toString = function () {
   return 'NonDisposableHandle';
@@ -219,14 +219,14 @@ function Companion_0() {
       tmp$ret$1 = maxElem;
       break $l$block_0;
     }
-    var maxValue = maxElem.c43_1;
+    var maxValue = maxElem.e43_1;
     var inductionVariable = 1;
     if (inductionVariable <= lastIndex)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
         var e = tmp0[i];
-        var v = e.c43_1;
+        var v = e.e43_1;
         if (compareTo(maxValue, v) < 0) {
           maxElem = e;
           maxValue = v;
@@ -235,10 +235,10 @@ function Companion_0() {
        while (!(i === lastIndex));
     tmp$ret$1 = maxElem;
   }
-  tmp.d43_1 = ensureNotNull(tmp$ret$1).c43_1;
+  tmp.f43_1 = ensureNotNull(tmp$ret$1).e43_1;
   var tmp_0 = this;
   var tmp_1 = 0;
-  var tmp_2 = this.d43_1 + 1 | 0;
+  var tmp_2 = this.f43_1 + 1 | 0;
   // Inline function 'kotlin.arrayOfNulls' call
   var tmp_3 = Array(tmp_2);
   while (tmp_1 < tmp_2) {
@@ -254,7 +254,7 @@ function Companion_0() {
       while (inductionVariable_0 < last) {
         var element = tmp0_0[inductionVariable_0];
         inductionVariable_0 = inductionVariable_0 + 1 | 0;
-        if (element.c43_1 === tmp_4) {
+        if (element.e43_1 === tmp_4) {
           if (found) {
             tmp$ret$6 = null;
             break $l$block_2;
@@ -272,7 +272,7 @@ function Companion_0() {
     tmp_3[tmp_4] = tmp$ret$6;
     tmp_1 = tmp_1 + 1 | 0;
   }
-  tmp_0.e43_1 = tmp_3;
+  tmp_0.g43_1 = tmp_3;
 }
 var Companion_instance_0;
 function Companion_getInstance_0() {
@@ -298,8 +298,8 @@ function FrameType_initEntries() {
 }
 function FrameType(name, ordinal, controlFrame, opcode) {
   Enum.call(this, name, ordinal);
-  this.b43_1 = controlFrame;
-  this.c43_1 = opcode;
+  this.d43_1 = controlFrame;
+  this.e43_1 = opcode;
 }
 function FrameType_TEXT_getInstance() {
   FrameType_initEntries();
@@ -336,12 +336,12 @@ function Text_init_$Init$_0(text, $this) {
   var tmp$ret$0;
   $l$block: {
     // Inline function 'io.ktor.utils.io.core.toByteArray' call
-    var charset = Charsets_getInstance().z2l_1;
-    if (charset.equals(Charsets_getInstance().z2l_1)) {
+    var charset = Charsets_getInstance().a2m_1;
+    if (charset.equals(Charsets_getInstance().a2m_1)) {
       tmp$ret$0 = encodeToByteArray(text);
       break $l$block;
     }
-    tmp$ret$0 = encodeToByteArray_0(charset.d2m(), text, 0, text.length);
+    tmp$ret$0 = encodeToByteArray_0(charset.e2m(), text, 0, text.length);
   }
   Text_init_$Init$(true, tmp$ret$0, $this);
   return $this;
@@ -356,9 +356,9 @@ function Close_init_$Init$(reason, $this) {
     // Inline function 'kotlin.contracts.contract' call
     var builder = new BytePacketBuilder();
     try {
-      writeShort(builder, reason.w42_1);
-      writeText(builder, reason.x42_1);
-      tmp$ret$2 = builder.t2e();
+      writeShort(builder, reason.y42_1);
+      writeText(builder, reason.z42_1);
+      tmp$ret$2 = builder.u2e();
       break $l$block;
     } catch ($p) {
       if ($p instanceof Error) {
@@ -381,7 +381,7 @@ function Close_init_$Init$_0(packet, $this) {
   return $this;
 }
 function Close_init_$Init$_1($this) {
-  Close.call($this, Companion_getInstance_1().f43_1);
+  Close.call($this, Companion_getInstance_1().h43_1);
   return $this;
 }
 function Close_init_$Create$_0() {
@@ -404,7 +404,7 @@ function Close(data) {
 }
 function Companion_1() {
   Companion_instance_1 = this;
-  this.f43_1 = new Int8Array(0);
+  this.h43_1 = new Int8Array(0);
 }
 var Companion_instance_1;
 function Companion_getInstance_1() {
@@ -418,16 +418,16 @@ function Frame(fin, frameType, data, disposableHandle, rsv1, rsv2, rsv3) {
   rsv1 = rsv1 === VOID ? false : rsv1;
   rsv2 = rsv2 === VOID ? false : rsv2;
   rsv3 = rsv3 === VOID ? false : rsv3;
-  this.g43_1 = fin;
-  this.h43_1 = frameType;
-  this.i43_1 = data;
-  this.j43_1 = disposableHandle;
-  this.k43_1 = rsv1;
-  this.l43_1 = rsv2;
-  this.m43_1 = rsv3;
+  this.i43_1 = fin;
+  this.j43_1 = frameType;
+  this.k43_1 = data;
+  this.l43_1 = disposableHandle;
+  this.m43_1 = rsv1;
+  this.n43_1 = rsv2;
+  this.o43_1 = rsv3;
 }
 protoOf(Frame).toString = function () {
-  return 'Frame ' + this.h43_1.toString() + ' (fin=' + this.g43_1 + ', buffer len = ' + this.i43_1.length + ')';
+  return 'Frame ' + this.j43_1.toString() + ' (fin=' + this.i43_1 + ', buffer len = ' + this.k43_1.length + ')';
 };
 //region block: init
 NonDisposableHandle_instance = new NonDisposableHandle();

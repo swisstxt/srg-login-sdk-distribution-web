@@ -8,19 +8,19 @@ import {
 initMetadataForClass(ThreadLocalRef, 'ThreadLocalRef', ThreadLocalRef);
 //endregion
 function set_value(_this__u8e3s4, value) {
-  _this__u8e3s4.u3v(value);
+  _this__u8e3s4.w3v(value);
 }
 function ThreadLocalRef() {
-  this.t3v_1 = null;
+  this.v3v_1 = null;
 }
 protoOf(ThreadLocalRef).w3 = function () {
   set_value(this, null);
 };
-protoOf(ThreadLocalRef).s1o = function () {
-  return this.t3v_1;
+protoOf(ThreadLocalRef).t1o = function () {
+  return this.v3v_1;
 };
-protoOf(ThreadLocalRef).u3v = function (value) {
-  this.t3v_1 = value;
+protoOf(ThreadLocalRef).w3v = function (value) {
+  this.v3v_1 = value;
 };
 //region block: exports
 export {

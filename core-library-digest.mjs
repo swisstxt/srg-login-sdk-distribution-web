@@ -69,40 +69,40 @@ function Digest_init_$Init$(algorithm, blockSize, digestLength, $this) {
     var message_2 = 'digestLength cannot be negative';
     throw InvalidParameterException_init_$Create$(toString(message_2));
   }
-  tmp.u40_1 = _Buffer___init__impl__mrnqm7(new Int8Array(blockSize));
-  $this.s40_1 = algorithm;
-  $this.t40_1 = digestLength;
-  $this.v40_1 = 0;
+  tmp.w40_1 = _Buffer___init__impl__mrnqm7(new Int8Array(blockSize));
+  $this.u40_1 = algorithm;
+  $this.v40_1 = digestLength;
+  $this.x40_1 = 0;
   return $this;
 }
-protoOf(Digest).w40 = function () {
-  return this.t40_1;
+protoOf(Digest).y40 = function () {
+  return this.v40_1;
 };
-protoOf(Digest).x40 = function () {
-  return this.s40_1;
+protoOf(Digest).z40 = function () {
+  return this.u40_1;
 };
-protoOf(Digest).y40 = function (input) {
+protoOf(Digest).a41 = function (input) {
   // Inline function 'org.kotlincrypto.core.digest.internal.commonDigest' call
-  var this_0 = this.u40_1;
+  var this_0 = this.w40_1;
   // Inline function 'kotlin.contracts.contract' call
   var p2 = input.length;
-  this.z40(input, 0, p2);
+  this.b41(input, 0, p2);
   // Inline function 'org.kotlincrypto.core.digest.internal.commonDigest' call
-  var bufPos = this.v40_1;
+  var bufPos = this.x40_1;
   // Inline function 'kotlin.contracts.contract' call
   fill(_Buffer___get_value__impl__xxr8tn(this_0), 0, bufPos);
   var p0 = _Buffer___get_value__impl__xxr8tn(this_0);
-  var digest = this.a41(p0, bufPos);
+  var digest = this.c41(p0, bufPos);
   // Inline function 'org.kotlincrypto.core.digest.internal.commonReset' call
   // Inline function 'kotlin.contracts.contract' call
   fill(_Buffer___get_value__impl__xxr8tn(this_0), 0);
-  this.v40_1 = 0;
-  this.b41();
+  this.x40_1 = 0;
+  this.d41();
   return digest;
 };
-protoOf(Digest).z40 = function (input, offset, len) {
-  var tmp0 = this.u40_1;
-  var tmp8 = this.v40_1;
+protoOf(Digest).b41 = function (input, offset, len) {
+  var tmp0 = this.w40_1;
+  var tmp8 = this.x40_1;
   $l$block: {
     // Inline function 'org.kotlincrypto.core.digest.internal.commonUpdate' call
     // Inline function 'kotlin.contracts.contract' call
@@ -122,7 +122,7 @@ protoOf(Digest).z40 = function (input, offset, len) {
         // Inline function 'kotlin.js.unsafeCast' call
         // Inline function 'kotlin.js.asDynamic' call
         arrayCopy(tmp, buf, tmp4, startIndex, limitInput);
-        this.v40_1 = posBuf + len | 0;
+        this.x40_1 = posBuf + len | 0;
         break $l$block;
       }
       var needed = blockSize - posBuf | 0;
@@ -136,7 +136,7 @@ protoOf(Digest).z40 = function (input, offset, len) {
       // Inline function 'kotlin.js.unsafeCast' call
       // Inline function 'kotlin.js.asDynamic' call
       arrayCopy(tmp_0, buf, tmp4_0, tmp6, endIndex);
-      this.c41(buf, 0);
+      this.e41(buf, 0);
       posBuf = 0;
       posInput = posInput + needed | 0;
     }
@@ -155,27 +155,27 @@ protoOf(Digest).z40 = function (input, offset, len) {
         break $l$loop;
       }
       var p1 = posInput;
-      this.c41(input, p1);
+      this.e41(input, p1);
       posInput = posNext;
     }
-    this.v40_1 = posBuf;
+    this.x40_1 = posBuf;
   }
 };
 protoOf(Digest).equals = function (other) {
   var tmp;
   if (other instanceof Digest) {
-    tmp = equals(other.u40_1, this.u40_1);
+    tmp = equals(other.w40_1, this.w40_1);
   } else {
     tmp = false;
   }
   return tmp;
 };
 protoOf(Digest).hashCode = function () {
-  return Buffer__hashCode_impl_3ylui6(this.u40_1);
+  return Buffer__hashCode_impl_3ylui6(this.w40_1);
 };
 protoOf(Digest).toString = function () {
   // Inline function 'org.kotlincrypto.core.digest.internal.commonToString' call
-  return 'Digest[' + this.x40() + ']@' + this.hashCode();
+  return 'Digest[' + this.z40() + ']@' + this.hashCode();
 };
 function Digest() {
 }

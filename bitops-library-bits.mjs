@@ -31,7 +31,7 @@ function Final_init_$Create$(lo, hi) {
   return Final_init_$Init$(lo, hi, objectCreate(protoOf(Final)));
 }
 function Companion() {
-  this.d41_1 = 1048576;
+  this.f41_1 = 1048576;
 }
 var Companion_instance;
 function Companion_getInstance() {
@@ -65,9 +65,9 @@ function Bit32_init_$Init$(lo, hi, incrementBy, $this) {
     var message_3 = 'lo must be a factor of incrementBy[' + incrementBy + ']';
     throw IllegalArgumentException_init_$Create$(toString(message_3));
   }
-  $this.f41_1 = incrementBy;
-  $this.g41_1 = lo;
-  $this.h41_1 = hi;
+  $this.h41_1 = incrementBy;
+  $this.i41_1 = lo;
+  $this.j41_1 = hi;
   return $this;
 }
 function Bit32_init_$Init$_0(incrementBy, $this) {
@@ -79,31 +79,31 @@ function Bit32_init_$Create$(incrementBy) {
 }
 function Final(lo, hi, isBits) {
   Final_1.call(this, isBits);
-  this.j41_1 = lo;
-  this.k41_1 = hi;
+  this.l41_1 = lo;
+  this.m41_1 = hi;
 }
 protoOf(Final).re = function () {
-  return this.j41_1;
+  return this.l41_1;
 };
 protoOf(Final).se = function () {
-  return this.k41_1;
+  return this.m41_1;
 };
-protoOf(Final).l41 = function () {
-  if (this.m41_1)
+protoOf(Final).n41 = function () {
+  if (this.o41_1)
     return this;
-  return new Final(this.j41_1 << 3, this.k41_1 << 3 | (this.j41_1 >>> 29 | 0), true);
+  return new Final(this.l41_1 << 3, this.m41_1 << 3 | (this.l41_1 >>> 29 | 0), true);
 };
 function Final_0() {
 }
-protoOf(Bit32).n41 = function () {
-  this.g41_1 = this.g41_1 + this.f41_1 | 0;
-  if (this.g41_1 === 0) {
-    this.h41_1 = this.h41_1 + 1 | 0;
+protoOf(Bit32).p41 = function () {
+  this.i41_1 = this.i41_1 + this.h41_1 | 0;
+  if (this.i41_1 === 0) {
+    this.j41_1 = this.j41_1 + 1 | 0;
   }
 };
-protoOf(Bit32).o41 = function (additional) {
-  var lo = this.g41_1;
-  var hi = this.h41_1;
+protoOf(Bit32).q41 = function (additional) {
+  var lo = this.i41_1;
+  var hi = this.j41_1;
   var lt0 = lo < 0;
   lo = lo + additional | 0;
   if (lt0 && lo >= 0) {
@@ -111,16 +111,16 @@ protoOf(Bit32).o41 = function (additional) {
   }
   return Final_init_$Create$(lo, hi);
 };
-protoOf(Bit32).d2j = function () {
-  this.g41_1 = 0;
-  this.h41_1 = 0;
+protoOf(Bit32).e2j = function () {
+  this.i41_1 = 0;
+  this.j41_1 = 0;
 };
 function Bit32() {
 }
 function Bit64() {
 }
 function Final_1(isBits) {
-  this.m41_1 = isBits;
+  this.o41_1 = isBits;
 }
 protoOf(Final_1).equals = function (other) {
   var tmp;
@@ -134,24 +134,24 @@ protoOf(Final_1).equals = function (other) {
 protoOf(Final_1).hashCode = function () {
   var result = 17;
   if (this instanceof Final) {
-    result = imul(result, 31) + this.j41_1 | 0;
-    result = imul(result, 31) + this.k41_1 | 0;
+    result = imul(result, 31) + this.l41_1 | 0;
+    result = imul(result, 31) + this.m41_1 | 0;
   } else {
     if (this instanceof Final_0) {
-      result = imul(result, 31) + this.q41_1.hashCode() | 0;
-      result = imul(result, 31) + this.r41_1.hashCode() | 0;
+      result = imul(result, 31) + this.s41_1.hashCode() | 0;
+      result = imul(result, 31) + this.t41_1.hashCode() | 0;
     }
   }
-  result = imul(result, 31) + getBooleanHashCode(this.m41_1) | 0;
+  result = imul(result, 31) + getBooleanHashCode(this.o41_1) | 0;
   return result;
 };
 protoOf(Final_1).toString = function () {
   var tmp;
   if (this instanceof Final) {
-    tmp = 'Counter.Bit32.Final[lo=' + this.j41_1 + ', hi=' + this.k41_1 + ']';
+    tmp = 'Counter.Bit32.Final[lo=' + this.l41_1 + ', hi=' + this.m41_1 + ']';
   } else {
     if (this instanceof Final_0) {
-      tmp = 'Counter.Bit64.Final[lo=' + this.q41_1.toString() + ', hi=' + this.r41_1.toString() + ']';
+      tmp = 'Counter.Bit64.Final[lo=' + this.s41_1.toString() + ', hi=' + this.t41_1.toString() + ']';
     } else {
       noWhenBranchMatchedException();
     }
@@ -159,7 +159,7 @@ protoOf(Final_1).toString = function () {
   return tmp;
 };
 function Counter() {
-  this.s41_1 = new Object();
+  this.u41_1 = new Object();
 }
 protoOf(Counter).equals = function (other) {
   var tmp;
@@ -171,15 +171,15 @@ protoOf(Counter).equals = function (other) {
   return tmp;
 };
 protoOf(Counter).hashCode = function () {
-  return 527 + hashCode(this.s41_1) | 0;
+  return 527 + hashCode(this.u41_1) | 0;
 };
 protoOf(Counter).toString = function () {
   var tmp;
   if (this instanceof Bit32) {
-    tmp = 'Bit32[lo=' + this.g41_1 + ', hi=' + this.h41_1 + ', incrementBy=' + this.f41_1 + ']';
+    tmp = 'Bit32[lo=' + this.i41_1 + ', hi=' + this.j41_1 + ', incrementBy=' + this.h41_1 + ']';
   } else {
     if (this instanceof Bit64) {
-      tmp = 'Bit64[lo=' + this.v41_1.toString() + ', hi=' + this.w41_1.toString() + ', incrementBy=' + this.u41_1.toString() + ']';
+      tmp = 'Bit64[lo=' + this.x41_1.toString() + ', hi=' + this.y41_1.toString() + ', incrementBy=' + this.w41_1.toString() + ']';
     } else {
       noWhenBranchMatchedException();
     }
